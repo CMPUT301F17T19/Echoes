@@ -1,6 +1,3 @@
 This is the test file
-<<<<<<< HEAD
 taijie yang’s edit (taijie)
-=======
-Shan edits it
->>>>>>> 4b2d69b938ed52f038825d5833ac3b0ce726d1e6
+
