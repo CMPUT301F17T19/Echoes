@@ -8,13 +8,13 @@
     tools:context="com.example.cmput301f17t19.echoes.HabitHistoryActivity">
 
     <!--<android.support.v7.widget.Toolbar-->
-        <!--android:id="@+id/habithistory_toolbar"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:minHeight="?attr/actionBarSize"-->
-        <!--android:background="?attr/colorPrimary"-->
-        <!--android:elevation="4dp"-->
-        <!--android:theme="@style/ThemeOverlay.AppCompat.Light"-->
-        <!--app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>-->
+    <!--android:id="@+id/habithistory_toolbar"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:minHeight="?attr/actionBarSize"-->
+    <!--android:background="?attr/colorPrimary"-->
+    <!--android:elevation="4dp"-->
+    <!--android:theme="@style/ThemeOverlay.AppCompat.Light"-->
+    <!--app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>-->
 
 </LinearLayout>
