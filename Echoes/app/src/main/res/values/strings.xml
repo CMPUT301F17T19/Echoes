@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Echoes</string>
+
+    <string name="habithistory_seach">Please enter words to Search</string>
+    <string name="main_menu">Main Menu</string>
 </resources>
