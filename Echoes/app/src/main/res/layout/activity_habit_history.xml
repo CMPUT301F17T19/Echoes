@@ -6,4 +6,58 @@
     android:layout_height="match_parent"
     tools:context="com.example.cmput301f17t19.echoes.HabitHistoryActivity">
 
+    <LinearLayout
+        android:layout_gravity="start"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_margin="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/habit_events"
+            android:textSize="16sp"
+            android:layout_marginRight="4dp"/>
+
+        <Spinner
+            android:id="@+id/habithistory_filter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/habithistory_filter_list"
+            android:spinnerMode="dropdown"/>
+
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/habitevents_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="64"
+        android:padding="16dp" />
+
+    <LinearLayout
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_margin="8dp">
+
+        <Button
+            android:id="@+id/habitevents_map"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/habit_events_map"
+            android:layout_marginRight="16dp"/>
+
+        <Button
+            android:id="@+id/habitevents_add_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/habit_events_add_button"
+            android:layout_marginLeft="16dp"/>
+
+    </LinearLayout>
+
 </LinearLayout>

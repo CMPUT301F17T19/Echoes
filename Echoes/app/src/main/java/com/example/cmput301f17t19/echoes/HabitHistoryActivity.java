@@ -34,7 +34,7 @@ public class HabitHistoryActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_habit_history);
-
+        this.setTitle(R.string.habithistory);
     }
 
     // Reference: https://developer.android.com/training/search/setup.html
