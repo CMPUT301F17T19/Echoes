@@ -3,4 +3,14 @@
 
     <string name="habithistory_seach">Please enter words to Search</string>
     <string name="main_menu">Main Menu</string>
+    <string name="habit_events">Habit Events</string>
+
+    <string name="habithistory">Habit History</string>
+
+    <string-array name="habithistory_filter_list">
+        <item>Please select a Habit Type</item>
+    </string-array>
+
+    <string name="habit_events_map">View Events Map</string>
+    <string name="habit_events_add_button">Add Habit Event</string>
 </resources>

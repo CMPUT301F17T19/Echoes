@@ -37,4 +37,11 @@ public class HabitEventListTest extends ActivityInstrumentationTestCase2 {
     public void testRemove(){
         //TODO: testRemove method after HabitEvent class is done
     }
+
+    /**
+     * Test for sortList() in HabitEventList class
+     */
+    public void testSortList(){
+        //TODO
+    }
 }
