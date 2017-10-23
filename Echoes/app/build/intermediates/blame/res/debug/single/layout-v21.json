@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/Users/taijieyang/Desktop/Echoes/Echoes/Echoes/app/build/intermediates/res/merged/debug/layout-v21/notification_template_icon_group.xml",
+        "source": "/Users/taijieyang/.android/build-cache/0fd8ab01152fb208acba82347de7dd3fca2e6ced/output/res/layout-v21/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "/Users/taijieyang/Desktop/Echoes/Echoes/Echoes/app/build/intermediates/res/merged/debug/layout-v21/notification_action_tombstone.xml",
+        "source": "/Users/taijieyang/.android/build-cache/0fd8ab01152fb208acba82347de7dd3fca2e6ced/output/res/layout-v21/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "/Users/taijieyang/Desktop/Echoes/Echoes/Echoes/app/build/intermediates/res/merged/debug/layout-v21/notification_template_custom_big.xml",
+        "source": "/Users/taijieyang/.android/build-cache/0fd8ab01152fb208acba82347de7dd3fca2e6ced/output/res/layout-v21/notification_template_custom_big.xml"
+    },
+    {
+        "merged": "/Users/taijieyang/Desktop/Echoes/Echoes/Echoes/app/build/intermediates/res/merged/debug/layout-v21/notification_action.xml",
+        "source": "/Users/taijieyang/.android/build-cache/0fd8ab01152fb208acba82347de7dd3fca2e6ced/output/res/layout-v21/notification_action.xml"
+    }
+]
