@@ -23,7 +23,7 @@ import java.util.Date;
  * @version 1.0
  * @since 1.0
  */
-public class HabitEventListTest extends ActivityInstrumentationTestCase2 {
+public class HabitEventListTest extends ActivityInstrumentationTestCase2<HabitHistoryActivity> {
     public HabitEventListTest(){
         super(com.example.cmput301f17t19.echoes.HabitHistoryActivity.class);
     }
