@@ -21,13 +21,13 @@ import java.util.Collections;
  * @since 1.0
  */
 public class HabitEventList {
-    private ArrayList<HabitEvent> habitEvents = new ArrayList<HabitEvent>();
+    private ArrayList<HabitEvent> habitEvents;
 
     /**
      * Constructs a HabitEventList object
      */
     public HabitEventList(){
-
+        habitEvents = new ArrayList<HabitEvent>();
     }
 
     /**

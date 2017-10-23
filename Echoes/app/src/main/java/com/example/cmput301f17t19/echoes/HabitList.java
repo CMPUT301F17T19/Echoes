@@ -20,13 +20,13 @@ import java.util.ArrayList;
  * @since 1.0
  */
 public class HabitList {
-    private ArrayList<Habit> habits = new ArrayList<Habit>();
+    private ArrayList<Habit> habits;
 
     /**
      * Constructs a HabitList object
      */
     public HabitList(){
-
+        habits = new ArrayList<Habit>();
     }
 
     /**
