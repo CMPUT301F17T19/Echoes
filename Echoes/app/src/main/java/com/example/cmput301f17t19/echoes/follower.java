@@ -5,7 +5,7 @@
 package com.example.cmput301f17t19.echoes;
 
 /**
- * Created by CrackCrack on 2017-10-22.
+ * Created by Peter Liang on 2017-10-22.
  */
 
 public class follower {
