@@ -14,6 +14,10 @@ import java.util.Date;
  */
 
 public class HabitEventTest extends ActivityInstrumentationTestCase2 {
+    public HabitEventTest(String pkg, Class activityClass) {
+        super(pkg, activityClass);
+    }
+
     public void testGetTitle(){
 
         HabitEvent habitevent = new HabitEvent("title1", "reason", new Date() );
@@ -63,7 +67,7 @@ public class HabitEventTest extends ActivityInstrumentationTestCase2 {
 
     }
 
-    public void testSetComments(){
+    public void testSetComments() throws ArgTooLongException {
         HabitEvent habitevent = new HabitEvent("title1", "reason", new Date() );
         habitevent.setComments("This is a comment");
         assertTrue("This is a comment" == habitevent.getComments());
