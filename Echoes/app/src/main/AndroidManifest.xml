@@ -22,6 +22,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".HabitHistoryActivity" />
+        <activity android:name=".MyHabitsActivity"></activity>
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login" />

@@ -11,10 +11,12 @@
 package com.example.cmput301f17t19.echoes;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 /**
  * Habit Overview Recycler View Adapter
@@ -71,8 +73,20 @@ public class HabitOverviewAdapter extends RecyclerView.Adapter<HabitOverviewAdap
      */
     class HabitOverviewViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
+        private TextView habitTitleTextView;
+        private TextView habitReasonTextView;
+        private TextView habitDateTextView;
+        private TextView habitStatusTextView;
+
         public HabitOverviewViewHolder(View itemView) {
             super(itemView);
+
+            habitTitleTextView = (TextView) itemView.findViewById(R.id.habitOverview_title);
+            habitReasonTextView = (TextView) itemView.findViewById(R.id.habitOverview_reason);
+            habitDateTextView = (TextView) itemView.findViewById(R.id.habitOverview_date);
+            habitStatusTextView = (TextView) itemView.findViewById(R.id.habitOverview_status);
+
+            itemView.setOnClickListener(this);
         }
 
         /**
@@ -81,11 +95,31 @@ public class HabitOverviewAdapter extends RecyclerView.Adapter<HabitOverviewAdap
          * @param position: The position of the Habit object in the List to be bound with the viewHolder
          */
         private void bind(int position) {
+            // Get the habit object at the specific position in My Habits' list
+            Habit habit_pos = MyHabitsActivity.getHabits_MyHabits().get(position);
+
+            // Set the comment and date
+            habitTitleTextView.setText(habit_pos.getName());
+            habitReasonTextView.setText(habit_pos.getReason());
+            habitDateTextView.setText(habit_pos.getStartDate().toString());
+
+            //TODO set status
 
         }
 
         @Override
         public void onClick(View view) {
+            // The position of the Habit in the list that the user clicks
+            int adapterPosition = getAdapterPosition();
+
+            // The selected Habit object
+            Habit selected_Habit = MyHabitsActivity.getHabits_MyHabits().get(adapterPosition);
+
+            // Start Habit Detail Activity
+            // Show the details of the selected Habit object in Habit Detail Screen
+            // Dummy test, go back to Main Page
+            Intent habitDetail_Intent = new Intent(mContext, MainActivity.class);
+            mContext.startActivity(habitDetail_Intent);
 
         }
     }
