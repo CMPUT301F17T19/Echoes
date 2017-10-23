@@ -13,4 +13,7 @@
 
     <string name="habit_events_map">View Events Map</string>
     <string name="habit_events_add_button">Add Habit Event</string>
+
+    <string name="comment">Comment: </string>
+    <string name="date">Date: </string>
 </resources>
