@@ -10,11 +10,15 @@
 
 package com.example.cmput301f17t19.echoes;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -81,6 +85,31 @@ public class MyHabitsActivity extends AppCompatActivity {
         habitOverviewAdapter = new HabitOverviewAdapter(getApplicationContext());
 
         habitsRecyclerView.setAdapter(habitOverviewAdapter);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.mapp_bar, menu);
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+
+            case R.id.action_menu:
+                finish();
+
+                // Go back to main menu
+                Intent mainMenu_intent = new Intent(getBaseContext(), MainActivity.class);
+                startActivity(mainMenu_intent);
+
+            default:
+                return super.onOptionsItemSelected(item);
+
+        }
     }
 
     /**

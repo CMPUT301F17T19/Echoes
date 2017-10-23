@@ -17,8 +17,17 @@ public class MainActivity extends AppCompatActivity {
         mHabitHistoryButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Open HabitHistory UI
-                Intent habitHistory_intent = new Intent(getBaseContext(), HabitHistoryActivity.class);
+                Intent habitHistory_intent = new Intent(getApplicationContext(), HabitHistoryActivity.class);
                 startActivity(habitHistory_intent);
+            }
+        });
+
+        Button mMyHabitsButton = (Button) findViewById(R.id.myhabits_button);
+        mMyHabitsButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Open My Habits UI
+                Intent myHabits_intent = new Intent(getApplicationContext(), MyHabitsActivity.class);
+                startActivity(myHabits_intent);
             }
         });
     }
