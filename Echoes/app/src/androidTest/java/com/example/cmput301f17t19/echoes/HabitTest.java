@@ -4,8 +4,6 @@
 
 package com.example.cmput301f17t19.echoes;
 
-import android.test.ActivityInstrumentationTestCase2;
-
 import java.util.Date;
 
 import static junit.framework.Assert.assertEquals;
@@ -14,7 +12,7 @@ import static junit.framework.Assert.assertEquals;
  * Created by Hayden Bauder on 23/10/2017.
  */
 
-public class HabitTest {
+public class HabitTest  {
     public Habit testHabit;
 
     public HabitTest() {
