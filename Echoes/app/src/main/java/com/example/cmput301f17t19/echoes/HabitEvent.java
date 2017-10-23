@@ -59,7 +59,7 @@ public class HabitEvent {
         this.StartDate = startDate;
     }
 
-    public void setComments(String comments){
+    public void setComments(String comments) throws ArgTooLongException {
         if (comments.length() > 20)
             throw new ArgTooLongException();
         else
