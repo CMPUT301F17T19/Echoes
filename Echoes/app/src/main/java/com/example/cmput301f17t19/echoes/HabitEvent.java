@@ -60,10 +60,10 @@ public class HabitEvent implements Comparable<HabitEvent> {
         this.StartDate = startDate;
     }
 
-    public void setComments(String comments){
-//        if (comments.length() > 20)
-//            throw new ArgTooLongException();
-//        else
+    public void setComments(String comments) throws ArgTooLongException {
+        if (comments.length() > 20)
+            throw new ArgTooLongException();
+        else
             this.Comments = comments;
 
     }
