@@ -5,7 +5,7 @@
 package com.example.cmput301f17t19.echoes;
 
 /**
- * Created by Gary's on 23/10/2017.
+ * Created by Hayden Bauder on 23/10/2017.
  */
 
 public class Plan {
