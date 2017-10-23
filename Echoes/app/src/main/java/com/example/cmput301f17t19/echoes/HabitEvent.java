@@ -5,6 +5,7 @@
 package com.example.cmput301f17t19.echoes;
 
 import android.media.Image;
+import android.support.annotation.NonNull;
 
 import java.util.Date;
 
@@ -12,7 +13,7 @@ import java.util.Date;
  * Created by taijieyang on 2017/10/22.
  */
 
-public class HabitEvent {
+public class HabitEvent implements Comparable<HabitEvent> {
     public String Title;
     public String Reason;
     public Date StartDate;
@@ -72,5 +73,18 @@ public class HabitEvent {
         //TODO storage for each photographic image to be under 65536 bytes.
 
         this.EventPhoto = eventPhoto;
+    }
+
+    @Override
+    /**
+     * Compare the date of this HabitEvent to the input habitEvent object
+     *
+     * @param habitEvent: HabitEvent
+     * @return positive integer: if the date of this HabitEvent is after the date of input
+     *         0: if the date of this HabitEvent is equal to the date of input
+     *         negative integer: if the date of this HabitEvent is before the date of input
+     */
+    public int compareTo(@NonNull HabitEvent habitEvent) {
+        return this.StartDate.compareTo(habitEvent.getStartDate());
     }
 }
