@@ -17,7 +17,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * Unit Test for HabitEvent class
+ * Unit Test for HabitEventList class
  *
  * @author Shan Lu
  * @version 1.0
