@@ -40,7 +40,7 @@ public class HabitListTest extends ActivityInstrumentationTestCase2 {
         HabitList habitList = new HabitList();
         habitList.add(habit);
 
-        assertTrue(habitList.hasHabitEvent(habit));
+        assertTrue(habitList.hasHabit(habit));
     }
 
     /**
@@ -60,7 +60,7 @@ public class HabitListTest extends ActivityInstrumentationTestCase2 {
 
         habitList.remove(0);
 
-        assertFalse(habitList.hasHabitEvent(habit1));
+        assertFalse(habitList.hasHabit(habit1));
     }
 
     /**
@@ -75,6 +75,6 @@ public class HabitListTest extends ActivityInstrumentationTestCase2 {
         HabitList habitList = new HabitList();
         habitList.add(habit);
 
-        assertTrue(habitList.hasHabitEvent(habit));
+        assertTrue(habitList.hasHabit(habit));
     }
 }

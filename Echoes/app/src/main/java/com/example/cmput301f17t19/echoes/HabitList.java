@@ -54,7 +54,7 @@ public class HabitList {
      * @return true: if the HabitList contain the input Habit object
      *         false: if the HabitList does not contain the input Habit object
      */
-    public boolean hasHabitEvent(Habit habit){
+    public boolean hasHabit(Habit habit){
         return this.habits.contains(habit);
     }
 

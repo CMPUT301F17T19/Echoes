@@ -27,6 +27,8 @@ import io.searchbox.core.Index;
 /**
  * Elastic Search Controller
  *
+ * Reference: https://github.com/searchbox-io/Jest/tree/master/jest
+ *
  * @author Shan Lu
  * @version 1.0
  * @since 1.0
@@ -155,7 +157,39 @@ public class ElasticSearchController {
             return null;
         }
     }
-    
+
+    /**
+     * Update the UserProfile
+     */
+    public static class UpdateUserProfileTask extends AsyncTask<UserProfile, Void, Void> {
+
+        @Override
+        protected Void doInBackground(UserProfile... userProfiles) {
+            UserProfile userProfile = userProfiles[0];
+
+            // Update this userProfile to online database
+            Index index = new Index.Builder(userProfile)
+                    .index(SEARCH_INDEX)
+                    .type(SEARCH_TYPE)
+                    .id(userProfile.getUserName())
+                    .build();
+
+            try {
+                DocumentResult execute = client.execute(index);
+
+                if (execute.isSucceeded()) {
+                    Log.d("update", "Update User Habits Success");
+                } else {
+                    Log.d("update", "Update User Habits Fail");
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            return null;
+        }
+    }
 
     /**
      * Method from lonelyTwitter class

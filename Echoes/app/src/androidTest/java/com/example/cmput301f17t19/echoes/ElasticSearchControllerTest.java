@@ -12,6 +12,7 @@ package com.example.cmput301f17t19.echoes;
 
 import android.test.ActivityInstrumentationTestCase2;
 
+import java.util.Date;
 import java.util.concurrent.ExecutionException;
 
 /**
@@ -86,6 +87,88 @@ public class ElasticSearchControllerTest extends ActivityInstrumentationTestCase
             UserProfile getUserProfile = getUserProfileTask.get();
 
             assertTrue(getDummyUser.getUserName().equals(getUserProfile.getUserName()));
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Test for UpdateUserProfileTask when User updates its HabitList
+     */
+    public void testUpdateUserProfileTaskNewHabits() {
+        ElasticSearchController.GetUserProfileTask getUserProfileTask = new ElasticSearchController.GetUserProfileTask();
+        getUserProfileTask.execute("dummy1");
+
+        try {
+            UserProfile getUserProfile = getUserProfileTask.get();
+
+            HabitList habits = getUserProfile.getHabit_list();
+
+            // Update this habits list
+            Habit testHabit1 = new Habit("updateHa1", "testUpdate1", new Date(), new Plan());
+            Habit testHabit2 = new Habit("updateHa2", "testUpdate2", new Date(), new Plan());
+
+            habits.add(testHabit1);
+            habits.add(testHabit2);
+
+            ElasticSearchController.UpdateUserProfileTask updateUserProfileTask = new ElasticSearchController.UpdateUserProfileTask();
+            updateUserProfileTask.execute(getUserProfile);
+
+            // Get the updated userProfile
+            ElasticSearchController.GetUserProfileTask getUserProfileTaskT = new ElasticSearchController.GetUserProfileTask();
+            getUserProfileTaskT.execute("dummy1");
+
+            UserProfile getUserProfileT = getUserProfileTaskT.get();
+
+            // Check if habits of this userProfile updated
+            HabitList habitsT = getUserProfileT.getHabit_list();
+
+            assertTrue(habitsT.getHabits().get(0).getName().equals("updateHa1"));
+            assertTrue(habitsT.getHabits().get(1).getName().equals("updateHa2"));
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Test for UpdateUserProfileTask when User updates its HabitEventList
+     */
+    public void testUpdateUserProfileTaskNewHabitEvents() {
+        ElasticSearchController.GetUserProfileTask getUserProfileTask = new ElasticSearchController.GetUserProfileTask();
+        getUserProfileTask.execute("dummy1");
+
+        try {
+            UserProfile getUserProfile = getUserProfileTask.get();
+
+            HabitEventList habitEvents = getUserProfile.getHabit_event_list();
+
+            // Update this habits list
+            HabitEvent testHabitEvent1 = new HabitEvent("updateHaE1", "testUpdateHE1", new Date());
+            HabitEvent testHabitEvent2 = new HabitEvent("updateHaE2", "testUpdateHE2", new Date());
+
+            habitEvents.add(testHabitEvent1);
+            habitEvents.add(testHabitEvent2);
+
+            ElasticSearchController.UpdateUserProfileTask updateUserProfileTask = new ElasticSearchController.UpdateUserProfileTask();
+            updateUserProfileTask.execute(getUserProfile);
+
+            // Get the updated userProfile
+            ElasticSearchController.GetUserProfileTask getUserProfileTaskT = new ElasticSearchController.GetUserProfileTask();
+            getUserProfileTaskT.execute("dummy1");
+
+            UserProfile getUserProfileT = getUserProfileTaskT.get();
+
+            // Check if habits of this userProfile updated
+            HabitEventList habitEventsT = getUserProfileT.getHabit_event_list();
+
+            assertTrue(habitEventsT.getHabitEvents().get(0).getTitle().equals("updateHaE1"));
+            assertTrue(habitEventsT.getHabitEvents().get(1).getTitle().equals("updateHaE2"));
 
         } catch (InterruptedException e) {
             e.printStackTrace();
