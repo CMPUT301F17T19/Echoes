@@ -16,13 +16,15 @@ public class UserProfile {
 
     protected ArrayList<Request> requests;
     private String id;
-    public String username;  // unique user
-    public String email_address;     //user contact email address
-    public String phone_number;
-    public String comment;
-    public Image profile_picture;
-    public ArrayList<following>following_list;
-    public ArrayList<follower>follower_list;
+    private String username;  // unique user
+    private String email_address;     //user contact email address
+    private String phone_number;
+    private String comment;
+    private Image profile_picture;
+    private HabitList habit_list;
+    private HabitEventList habit_event_list;
+    private ArrayList<following> following_list;
+    private ArrayList<follower> follower_list;
 
     public UserProfile(String username, String email_address, String phone_number, String comment, Image profile_picture) {
         this.username = username;
@@ -31,9 +33,12 @@ public class UserProfile {
         this.comment = comment;
         this.profile_picture = profile_picture;
 
-        this.following_list = new ArrayList<>();
-        this.follower_list = new ArrayList<>();
-        this.requests = new ArrayList<>();
+        this.habit_list = new HabitList();
+        this.habit_event_list = new HabitEventList();
+
+        this.following_list = new ArrayList<following>();
+        this.follower_list = new ArrayList<follower>();
+        this.requests = new ArrayList<Request>();
 
     }
 
@@ -81,6 +86,14 @@ public class UserProfile {
 
     public void setProfilePicture(Image profile_picture){
         this.profile_picture = profile_picture;
+    }
+
+    public HabitList getHabit_list() {
+        return this.habit_list;
+    }
+
+    public HabitEventList getHabit_event_list() {
+        return this.habit_event_list;
     }
 
     public ArrayList<following> getFollowing(){
