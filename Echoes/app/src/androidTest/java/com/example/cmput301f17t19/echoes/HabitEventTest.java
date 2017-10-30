@@ -14,69 +14,69 @@ import java.util.Date;
  */
 
 public class HabitEventTest extends ActivityInstrumentationTestCase2 {
-    public HabitEventTest(String pkg, Class activityClass) {
-        super(pkg, activityClass);
+    public HabitEventTest() {
+        super(com.example.cmput301f17t19.echoes.HabitEvent.class);
     }
 
     public void testGetTitle(){
 
         HabitEvent habitevent = new HabitEvent("title1", "reason", new Date() );
 
-        assertTrue("test1" == habitevent.getTitle());
+        assertTrue(habitevent.getTitle().equals("title1"));
     }
 
     public void testGetReason(){
         HabitEvent habitevent = new HabitEvent("title1", "reason", new Date() );
 
-        assertTrue("reason" == habitevent.getReason());
+        assertTrue(habitevent.getReason().equals("reason"));
     }
 
     public void testGetDate(){
         HabitEvent habitevent = new HabitEvent("title1", "reason", new Date() );
 
-        assertTrue(new Date() == habitevent.getStartDate());
+        assertTrue(habitevent.getStartDate().equals(new Date()));
     }
 
     public void testGetComments(){
         HabitEvent habitevent = new HabitEvent("title1", "reason", new Date() );
-        assertTrue(null == habitevent.getComments());
+        assertTrue(habitevent.getComments() == null);
     }
 
     public void testGetEventPhoto(){
         HabitEvent habitevent = new HabitEvent("title1", "reason", new Date() );
         Image image = null;
-        assertTrue(image == habitevent.getEventPhoto());
+        assertTrue(habitevent.getEventPhoto() == null);
     }
 
     public void testSetTitle(){
         HabitEvent habitevent = new HabitEvent("title1", "reason", new Date() );
         habitevent.setTitle("title2");
-        assertTrue("test2" == habitevent.getTitle());
+        assertTrue(habitevent.getTitle().equals("title2"));
     }
 
     public void testSetReason(){
         HabitEvent habitevent = new HabitEvent("title1", "reason", new Date() );
         habitevent.setReason("new reason");
-        assertTrue("new reason" == habitevent.getReason());
+        assertTrue(habitevent.getReason().equals("new reason"));
     }
 
     public void testSetDate(){
         HabitEvent habitevent = new HabitEvent("title1", "reason", new Date() );
-        habitevent.setStartDate(new Date());
-        assertTrue(new Date() == habitevent.getStartDate());
+
+        assertTrue(habitevent.getStartDate().equals(new Date()));
 
     }
 
     public void testSetComments() throws ArgTooLongException {
         HabitEvent habitevent = new HabitEvent("title1", "reason", new Date() );
         habitevent.setComments("This is a comment");
-        assertTrue("This is a comment" == habitevent.getComments());
+        assertTrue(habitevent.getComments().equals("This is a comment"));
     }
 
     public void testSetEventPhoto(){
         HabitEvent habitevent = new HabitEvent("title1", "reason", new Date() );
         Image image2 = null;
         habitevent.setEventPhoto(image2);
-        assertTrue(image2 == habitevent.getEventPhoto());
+        assertTrue(habitevent.getEventPhoto() == null);
     }
 }
