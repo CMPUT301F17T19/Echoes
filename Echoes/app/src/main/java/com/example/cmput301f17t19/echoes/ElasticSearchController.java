@@ -17,7 +17,11 @@ import com.searchly.jestdroid.DroidClientConfig;
 import com.searchly.jestdroid.JestClientFactory;
 import com.searchly.jestdroid.JestDroidClient;
 
+import java.io.IOException;
+
+import io.searchbox.client.JestResult;
 import io.searchbox.core.DocumentResult;
+import io.searchbox.core.Get;
 import io.searchbox.core.Index;
 
 /**
@@ -35,6 +39,10 @@ public class ElasticSearchController {
 
     /**
      *  Add new user profile to online database
+     *
+     *  @params UserProfile: The UserProfile object of this user
+     *  @progress Void
+     *  @return Void
      */
     public static class AddNewUserProfileTask extends AsyncTask<UserProfile, Void, Void> {
 
@@ -68,6 +76,86 @@ public class ElasticSearchController {
             return null;
         }
     }
+
+    /**
+     * Check if the username has already been registered
+     *
+     * @params String: The username of this user, id of the UserProfile doc in elasticsearch
+     * @progress Void
+     * @return Boolean: true: The input username has already exist in online database
+     *                  false: The input username does not exist
+     */
+    public static class CheckUserProfileExistTask extends AsyncTask<String, Void, Boolean> {
+
+        @Override
+        protected Boolean doInBackground(String... strings) {
+            verifySettings();
+
+            // input UserName
+            String userName_IN = strings[0];
+
+            // Check if UserProfile with id equals userName_IN exists
+            Get get = new Get.Builder(SEARCH_INDEX, userName_IN)
+                    .type(SEARCH_TYPE)
+                    .build();
+
+            try {
+                JestResult result = client.execute(get);
+
+                if (result.isSucceeded()) {
+                    Log.d("checkUser", "Check userProfile UserName Unique Success");
+                    return true;
+                } else {
+                    Log.d("checkUser", "Check userProfile UserName Unique Fail");
+                    return false;
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            return false;
+        }
+    }
+
+    /**
+     * Get UserProfile of the given user
+     *
+     * @params String: The username of this user, id of the UserProfile doc in elasticsearch
+     * @progress Void
+     * @return UserProfile: The UserProfile with the input username
+     */
+    public static class GetUserProfileTask extends AsyncTask<String, Void, UserProfile> {
+
+        @Override
+        protected UserProfile doInBackground(String... strings) {
+            verifySettings();
+
+            // input UserName
+            String userName_IN = strings[0];
+
+            // Get the Document with ID equals the input username
+            Get get = new Get.Builder(SEARCH_INDEX, userName_IN)
+                    .type(SEARCH_TYPE)
+                    .build();
+
+            try {
+                JestResult result = client.execute(get);
+
+                if (result.isSucceeded()) {
+                    UserProfile userProfile = result.getSourceAsObject(UserProfile.class);
+
+                    return userProfile;
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            return null;
+        }
+    }
+    
 
     /**
      * Method from lonelyTwitter class

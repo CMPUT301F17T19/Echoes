@@ -31,11 +31,5 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // Test for elastic search
-        UserProfile dummyUser = new UserProfile("dummy1", "dummy1@gmail.com", "7803929483", "no comment", null);
-
-        ElasticSearchController.AddNewUserProfileTask addNewUserProfileTask = new ElasticSearchController.AddNewUserProfileTask();
-        addNewUserProfileTask.execute(dummyUser);
-
     }
 }
