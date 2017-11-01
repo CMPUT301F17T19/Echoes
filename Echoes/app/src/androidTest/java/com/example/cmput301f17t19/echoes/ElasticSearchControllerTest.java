@@ -1,5 +1,5 @@
 /*
- * Class Name: ElasticSearchController
+ * Class Name: ElasticSearchControllerTest
  *
  * Version: Version 1.0
  *
