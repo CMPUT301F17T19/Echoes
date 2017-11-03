@@ -30,5 +30,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(myHabits_intent);
             }
         });
+
+        Button mProfileTestButton = (Button) findViewById(R.id.profileTest);
+        mProfileTestButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Open My Habits UI
+                Intent profile_intent = new Intent(getApplicationContext(), UserProfileActivity.class);
+                startActivity(profile_intent);
+            }
+        });
     }
 }
