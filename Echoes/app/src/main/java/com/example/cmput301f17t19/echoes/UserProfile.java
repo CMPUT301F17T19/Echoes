@@ -1,5 +1,5 @@
 /*
- * Class Name: SystemAdministrator
+ * Class Name: UserProfile
  *
  * Version: Version 1.0
  *
