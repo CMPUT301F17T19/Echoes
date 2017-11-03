@@ -1,12 +1,27 @@
 /*
+ * Class Name: Follower
+ *
+ * Version: Version 1.0
+ *
+ * Date: November 3rd, 2017
+ *
  * Copyright (c) Team cmput301f17t19, CMPUT301, University of Alberta - All Rights Reserved. You may use, distribute, or modify this code under terms and conditions of the Code of Students Behaviour at University of Alberta
  */
 
 package com.example.cmput301f17t19.echoes;
 
 /**
- * Created by Peter Liang on 2017-10-22.
+ * Follower has attribute of unique username for each follower of the user
+ *
+ * @author Peter Liang, Shan Lu
+ * @version 1.0
+ * @since 1.0
  */
-
 public class Follower {
+
+    private String username;
+
+    public Follower(String Username) {
+        this.username = Username;
+    }
 }
