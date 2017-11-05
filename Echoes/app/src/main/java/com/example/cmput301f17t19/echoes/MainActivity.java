@@ -36,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Open My Habits UI
                 Intent profile_intent = new Intent(getApplicationContext(), UserProfileActivity.class);
+                // Dummy1 login
+                profile_intent.putExtra(UserProfileActivity.USERPROFILE_TAG, "dummy1");
                 startActivity(profile_intent);
             }
         });
