@@ -35,12 +35,14 @@ public class UserProfile {
     private ArrayList<Follower> follower_list;
     private ArrayList<Request> requests;
 
-    public UserProfile(String username, String email_address, String phone_number, String comment, Image profile_picture) {
+    /**
+     * Constructor for the UserProfile for each user
+     *
+     * @param username: String, unique username for each user
+     *
+     */
+    public UserProfile(String username) {
         this.username = username;
-        this.email_address = email_address;
-        this.phone_number = phone_number;
-        this.comment = comment;
-        this.profile_picture = profile_picture;
 
         this.habit_list = new HabitList();
         this.habit_event_list = new HabitEventList();
@@ -48,7 +50,6 @@ public class UserProfile {
         this.following_list = new ArrayList<Following>();
         this.follower_list = new ArrayList<Follower>();
         this.requests = new ArrayList<Request>();
-
     }
 
     //generate unique id using hashing function according to the username string
@@ -112,8 +113,5 @@ public class UserProfile {
     public ArrayList<Follower> getFollower_list(){
         return follower_list;
     }
-
-
-
 
 }

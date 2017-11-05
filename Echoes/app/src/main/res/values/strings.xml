@@ -46,4 +46,7 @@
     <string name="email">Email:</string>
     <string name="phoneNumber">Phone Number:</string>
 
+    <string name="following">Following</string>
+    <string name="follower">Followers</string>
+
 </resources>
