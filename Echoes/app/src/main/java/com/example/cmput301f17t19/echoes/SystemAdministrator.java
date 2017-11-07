@@ -25,7 +25,7 @@ public class SystemAdministrator extends UserProfile {
     private static int max_img_storage_bytes = 65536;
 
     public SystemAdministrator(String username, String email_address, String phone_number, String comment, Image profile_picture) {
-        super(username, email_address, phone_number, comment, profile_picture);
+        super(username);
     }
 
     /**

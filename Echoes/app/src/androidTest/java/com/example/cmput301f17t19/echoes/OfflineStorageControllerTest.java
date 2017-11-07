@@ -40,7 +40,7 @@ public class OfflineStorageControllerTest extends ActivityInstrumentationTestCas
      * Test for readFromFile() method in OfflineStorageController class
      */
     public void testReadFromFile() {
-        UserProfile userProfile = new UserProfile("dummy1", "dummy1@gmail.com", "7803929483", "dummy1 comment", null);
+        UserProfile userProfile = new UserProfile("dummy1");
 
         HabitList habitList = userProfile.getHabit_list();
         Habit habit1 = new Habit("dum1H1", "test", new Date(), new Plan());
@@ -74,7 +74,7 @@ public class OfflineStorageControllerTest extends ActivityInstrumentationTestCas
      * Test for saveInFile() method in OfflineStorageController class
      */
     public void testSaveInFile() {
-        UserProfile userProfile = new UserProfile("dummy2", "dummy2@gmail.com", "7803929483", "dummy2 comment", null);
+        UserProfile userProfile = new UserProfile("dummy2");
 
         HabitList habitList = userProfile.getHabit_list();
         Habit habit1 = new Habit("dum2H1", "test", new Date(), new Plan());

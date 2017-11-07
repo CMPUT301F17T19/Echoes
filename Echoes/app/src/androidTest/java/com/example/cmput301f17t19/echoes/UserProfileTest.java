@@ -23,7 +23,7 @@ public class UserProfileTest{
     */
     public UserProfileTest(){
         //Image profile_picture = abc.png;
-        this.testProfile = new UserProfile("", "", "", "", null);
+        this.testProfile = new UserProfile("");
     }
 
     public void testUsername() {
