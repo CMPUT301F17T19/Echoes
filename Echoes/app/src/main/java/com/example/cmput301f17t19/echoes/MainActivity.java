@@ -41,5 +41,19 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(profile_intent);
             }
         });
+
+
+        Button mLoginTestButton = (Button) findViewById(R.id.loginTest);
+        mLoginTestButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Open login ui
+                Intent login_intent = new Intent(getApplicationContext(), LoginActivity.class);
+
+                startActivity(login_intent);
+            }
+        });
+
+
+
     }
 }

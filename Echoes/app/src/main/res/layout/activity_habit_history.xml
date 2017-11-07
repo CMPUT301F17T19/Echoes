@@ -8,6 +8,31 @@
     tools:context="com.example.cmput301f17t19.echoes.HabitHistoryActivity">
 
     <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:background="@color/colorPrimary"
+    >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Habit History"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginTop="22dp"
+            android:layout_marginLeft="125dp"
+            android:layout_marginRight="125dp"
+            android:layout_marginBottom="22dp"
+            android:textColor="@color/white"
+
+            />
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_gravity="start"
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -35,7 +60,7 @@
         android:id="@+id/habitevents_recyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="64"/>
+        android:layout_weight="63"/>
 
     <LinearLayout
         android:layout_gravity="center_horizontal"
