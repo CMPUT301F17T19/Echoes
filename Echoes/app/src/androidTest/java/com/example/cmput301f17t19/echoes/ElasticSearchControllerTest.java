@@ -32,7 +32,10 @@ public class ElasticSearchControllerTest extends ActivityInstrumentationTestCase
      * Test for AddNewUserProfileTask
      */
     public void testAddNewUserProfileTask() {
-        UserProfile dummyUser = new UserProfile("dummy1", "dummy1@gmail.com", "7803929483", "no comment", null);
+        UserProfile dummyUser = new UserProfile("dummy1");
+        dummyUser.setEmailAddress("dummy1@gmail.com");
+        dummyUser.setPhoneNumber("7803929483");
+        dummyUser.setComment("no comment");
 
         ElasticSearchController.AddNewUserProfileTask addNewUserProfileTask = new ElasticSearchController.AddNewUserProfileTask();
         addNewUserProfileTask.execute(dummyUser);
@@ -75,7 +78,10 @@ public class ElasticSearchControllerTest extends ActivityInstrumentationTestCase
      * Test for GetUserProfileTask
      */
     public void testGetUserProfileTask() {
-        UserProfile getDummyUser = new UserProfile("GetdummyT", "GetdummyT@gmail.com", "7803929483", "no comment", null);
+        UserProfile getDummyUser = new UserProfile("GetdummyT");
+        getDummyUser.setEmailAddress("GetdummyT@gmail.com");
+        getDummyUser.setPhoneNumber("7803929483");
+        getDummyUser.setComment("no comment");
 
         ElasticSearchController.AddNewUserProfileTask addNewUserProfileTask = new ElasticSearchController.AddNewUserProfileTask();
         addNewUserProfileTask.execute(getDummyUser);
