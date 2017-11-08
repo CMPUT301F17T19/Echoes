@@ -17,6 +17,7 @@ public class Habit {
     public String reason;
     public Date startDate;
     public Plan plan;
+    public Boolean doneToday; // need getters / setters
     public Float progress;
 
     public Habit(String name, String reason, Date startDate, Plan plan) {
@@ -24,12 +25,17 @@ public class Habit {
         setReason(reason);
         this.startDate = startDate;
         this.plan = plan;
+        this.doneToday = FALSE;
         this.progress = 0f;
     }
 
     public Habit(String name, String reason, Date startDate, Plan plan, Float progress) {
         this(name, reason, startDate, plan);
         this.progress = progress;
+    }
+    
+    public Boolean needToDo() {
+        return this.plan.scheduledForToday();
     }
 
     public void setName(String name) throws ArgTooLongException{
