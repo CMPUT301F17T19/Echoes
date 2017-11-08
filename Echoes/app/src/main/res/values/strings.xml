@@ -1,0 +1,53 @@
+<resources>
+    <item name="visible" type="id" />
+    <item name="masked" type="id" />
+    <string name="app_name">Echoes</string>
+
+    <string name="habithistory_seach">Please enter words to Search</string>
+    <string name="main_menu">Main Menu</string>
+
+    <string name="my_habits">My Habits</string>
+    <string name="habit_add_button">Add Habit</string>
+
+    <string name="habit_title">Habit Title:</string>
+    <string name="habit_reason">Habit Reason:</string>
+    <string name="habit_date">Date to Start:</string>
+    <string name="habit_status">Habit Status:</string>
+
+    <string name="habit_events">Habit Events</string>
+
+    <string name="habithistory">Habit History</string>
+
+    <string-array name="habithistory_filter_list">
+        <item>Please select a Habit Type</item>
+    </string-array>
+
+    <string name="habit_events_map">View Events Map</string>
+    <string name="habit_events_add_button">Add Habit Event</string>
+
+    <string name="comment">Comment: </string>
+    <string name="date">Date: </string>
+
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="Username">Username:</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+
+    <string name="userprofile_title">User Profile</string>
+    <string name="email">Email:</string>
+    <string name="phoneNumber">Phone Number:</string>
+
+    <string name="following">Following</string>
+    <string name="follower">Followers</string>
+
+</resources>
