@@ -23,14 +23,23 @@ public class Plan {
         NUM_DAYS
     }
   
-    public ArrayList<DailySchedule> plan;  //schedule[SUNDAY] should be all scheduled times for sunday   
-  
-    public getToDo(Day) throws InvalidDayException{
+    //IMPLEMENT DailySchedule LATER, for now habits are schedueled on Days only. Not specific times.
+    public ArrayList<Boolean> schedule;  //schedule[SUNDAY] should be true if a habit is schedueled for sundays
+    
+    public Plan() {
+        this.schedule = new ArrayList<Boolean>;
+    }
+    
+    public Boolean getToDo(Day day) throws InvalidDayException{
         if (DAY >= NUM_DAYS) {
             throw new InvalidDayException();
         }
         else {
-            return plan.getIndex(DAY);
+            return schedule.get(day);
         }
-    }  
+    }
+    
+    public void setToDo(Day day, Boolean status) {
+        schedule.set(day, status);
+    }
 }
