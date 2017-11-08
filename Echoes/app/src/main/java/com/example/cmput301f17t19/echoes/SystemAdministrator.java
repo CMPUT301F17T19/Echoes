@@ -10,8 +10,6 @@
 
 package com.example.cmput301f17t19.echoes;
 
-import android.media.Image;
-
 /**
  * System Administrator's Profile, subclass of UserProfile
  *
@@ -24,7 +22,7 @@ public class SystemAdministrator extends UserProfile {
     // The maximum size that each photographic image can be stored (in bytes)
     private static int max_img_storage_bytes = 65536;
 
-    public SystemAdministrator(String username, String email_address, String phone_number, String comment, Image profile_picture) {
+    public SystemAdministrator(String username) {
         super(username);
     }
 

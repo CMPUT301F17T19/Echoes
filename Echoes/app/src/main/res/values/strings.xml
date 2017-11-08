@@ -43,6 +43,7 @@
         completions."
     </string>
 
+    <string name="userprofile_title">User Profile</string>
     <string name="email">Email:</string>
     <string name="phoneNumber">Phone Number:</string>
 
