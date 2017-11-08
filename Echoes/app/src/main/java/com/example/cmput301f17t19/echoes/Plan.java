@@ -5,6 +5,7 @@
 package com.example.cmput301f17t19.echoes;
 
 include java.util.Date;
+include java.util.Calender;
 include java.time.LocalTime;
 
 /**
@@ -41,5 +42,12 @@ public class Plan {
     
     public void setToDo(Day day, Boolean status) {
         schedule.set(day, status);
+    }
+    
+    public Boolean scheduledForToday() {
+        Calender c = new Calender();
+        day = c.get(c.DAY_OF_WEEK); //Needs testing
+        
+        return getToDo(day);
     }
 }
