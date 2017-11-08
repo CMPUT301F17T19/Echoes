@@ -15,7 +15,7 @@
         android:id="@+id/my_toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorAccent"
+        android:background="@drawable/first_layer"
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"/>
@@ -31,7 +31,7 @@
             android:layout_width="96dp"
             android:layout_height="96dp"
             android:layout_gravity="center_horizontal"
-            android:layout_margin="8dp"/>
+            android:layout_margin="8dp" />
 
         <TextView
             android:id="@+id/profile_username"
@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_margin="8dp"
-            android:textSize="16sp"
+            android:textSize="24sp"
             android:text="@string/Username"/>
 
         <TextView
@@ -47,32 +47,32 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
             android:layout_marginRight="64dp"
             android:layout_marginLeft="64dp"
             android:text="@string/comment"
-            android:textSize="10sp"/>
+            android:textSize="16sp"/>
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_margin="4dp">
+            android:layout_margin="8dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
-                android:textSize="12sp"
+                android:textSize="16sp"
                 android:text="@string/email"/>
 
             <TextView
                 android:id="@+id/profile_email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="12sp"
+                android:textSize="16sp"
                 android:text="@string/email"/>
 
         </LinearLayout>
@@ -82,20 +82,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_margin="4dp">
+            android:layout_margin="8dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
-                android:textSize="12sp"
+                android:textSize="16sp"
                 android:text="@string/phoneNumber"/>
 
             <TextView
                 android:id="@+id/profile_phone_number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="12sp"
+                android:textSize="16sp"
                 android:text="@string/phoneNumber"/>
 
         </LinearLayout>
