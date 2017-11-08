@@ -42,6 +42,10 @@ public class OfflineStorageControllerTest extends ActivityInstrumentationTestCas
     public void testReadFromFile() {
         UserProfile userProfile = new UserProfile("dummy1");
 
+        userProfile.setEmailAddress("dummy1@gmail.com");
+        userProfile.setPhoneNumber("7803929483");
+        userProfile.setComment("no comment");
+
         HabitList habitList = userProfile.getHabit_list();
         Habit habit1 = new Habit("dum1H1", "test", new Date(), new Plan());
         Habit habit2 = new Habit("dum1H2", "test", new Date(), new Plan());
