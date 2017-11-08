@@ -4,10 +4,8 @@
 
 package com.example.cmput301f17t19.echoes;
 
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
+import android.support.v7.app.AppCompatActivity;
 
 public class main_menu extends AppCompatActivity {
 
@@ -18,35 +16,35 @@ public class main_menu extends AppCompatActivity {
     }
 
 
-    public void viewMyHabits(View view) {
-        Intent intent = new Intent(this, AddNewActivity.class);
-        startActivity(intent);
-    }
-
-    public void viewMyHabits(View view) {
-        Intent intent = new Intent(this, AddNewActivity.class);
-        startActivity(intent);
-    }
-
-    public void viewMyHabits(View view) {
-        Intent intent = new Intent(this, AddNewActivity.class);
-        startActivity(intent);
-    }
-
-    public void viewMyHabits(View view) {
-        Intent intent = new Intent(this, AddNewActivity.class);
-        startActivity(intent);
-    }
-
-    public void viewMyHabits(View view) {
-        Intent intent = new Intent(this, AddNewActivity.class);
-        startActivity(intent);
-    }
-
-    public void Logout(View view) {
-        Intent intent = new Intent(this, AddNewActivity.class);
-        startActivity(intent);
-    }
+//    public void viewMyHabits(View view) {
+//        Intent intent = new Intent(this, AddNewActivity.class);
+//        startActivity(intent);
+//    }
+//
+//    public void viewMyHabits(View view) {
+//        Intent intent = new Intent(this, AddNewActivity.class);
+//        startActivity(intent);
+//    }
+//
+//    public void viewMyHabits(View view) {
+//        Intent intent = new Intent(this, AddNewActivity.class);
+//        startActivity(intent);
+//    }
+//
+//    public void viewMyHabits(View view) {
+//        Intent intent = new Intent(this, AddNewActivity.class);
+//        startActivity(intent);
+//    }
+//
+//    public void viewMyHabits(View view) {
+//        Intent intent = new Intent(this, AddNewActivity.class);
+//        startActivity(intent);
+//    }
+//
+//    public void Logout(View view) {
+//        Intent intent = new Intent(this, AddNewActivity.class);
+//        startActivity(intent);
+//    }
 
 
 }
