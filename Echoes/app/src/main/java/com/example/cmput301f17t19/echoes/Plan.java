@@ -45,9 +45,9 @@ public class Plan {
     }
     
     public Boolean scheduledForToday() {
-        Calender c = new Calender();
-        day = c.get(c.DAY_OF_WEEK); //Needs testing
+        Calendar c = Calendar.getInstance();
+        day = c.get(Calendar.DAY_OF_WEEK); //Needs testing
         
-        return getToDo(day);
+        return getToDo(day - 1);    // subtract 1, because calender does 1 - 7, we do 0 - 6
     }
 }
