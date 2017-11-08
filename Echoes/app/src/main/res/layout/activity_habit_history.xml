@@ -7,30 +7,14 @@
     android:layout_height="match_parent"
     tools:context="com.example.cmput301f17t19.echoes.HabitHistoryActivity">
 
-    <LinearLayout
-        android:orientation="vertical"
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="75dp"
-        android:background="@color/colorPrimary"
-    >
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Habit History"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            android:layout_marginTop="22dp"
-            android:layout_marginLeft="125dp"
-            android:layout_marginRight="125dp"
-            android:layout_marginBottom="22dp"
-            android:textColor="@color/white"
-
-            />
-
-
-
-    </LinearLayout>
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorAccent"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"/>
 
     <LinearLayout
         android:layout_gravity="start"

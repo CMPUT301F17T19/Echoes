@@ -32,9 +32,10 @@ public class HabitEventTest extends ActivityInstrumentationTestCase2 {
     }
 
     public void testGetDate(){
-        HabitEvent habitevent = new HabitEvent("title1", "reason", new Date() );
+        Date date = new Date();
+        HabitEvent habitevent = new HabitEvent("title1", "reason", date );
 
-        assertTrue(habitevent.getStartDate().equals(new Date()));
+        assertTrue(habitevent.getStartDate().equals(date));
     }
 
     public void testGetComments(){
@@ -61,9 +62,10 @@ public class HabitEventTest extends ActivityInstrumentationTestCase2 {
     }
 
     public void testSetDate(){
-        HabitEvent habitevent = new HabitEvent("title1", "reason", new Date() );
+        Date date = new Date();
+        HabitEvent habitevent = new HabitEvent("title1", "reason", date);
 
-        assertTrue(habitevent.getStartDate().equals(new Date()));
+        assertTrue(habitevent.getStartDate().equals(date));
 
     }
 
