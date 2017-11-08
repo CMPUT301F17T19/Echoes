@@ -1,0 +1,3 @@
+// Check all plans for habits in my habits for habits that should occur today.
+// Display them in a listview
+// Need to update plan first...
