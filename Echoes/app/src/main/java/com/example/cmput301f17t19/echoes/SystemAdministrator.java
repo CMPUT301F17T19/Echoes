@@ -38,7 +38,7 @@ public class SystemAdministrator extends UserProfile {
     /**
      * Get the maximum size of image stored
      */
-    public int getMax_img_storage_bytes() {
-        return this.max_img_storage_bytes;
+    public static int getMax_img_storage_bytes() {
+        return max_img_storage_bytes;
     }
 }

@@ -13,8 +13,7 @@
         android:layout_height="?attr/actionBarSize"
         android:background="@drawable/first_layer"
         android:elevation="4dp"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"/>
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"/>
 
     <LinearLayout
         android:layout_gravity="start"
