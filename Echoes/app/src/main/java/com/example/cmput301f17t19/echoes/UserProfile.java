@@ -10,8 +10,6 @@
 
 package com.example.cmput301f17t19.echoes;
 
-import android.media.Image;
-
 import java.util.ArrayList;
 
 /**
@@ -28,7 +26,8 @@ public class UserProfile {
     private String email_address;     //user contact email address
     private String phone_number;
     private String comment;
-    private Image profile_picture;
+    // Byte array of the image
+    private byte[] profile_picture;
     private HabitList habit_list;
     private HabitEventList habit_event_list;
     private ArrayList<Following> following_list;
@@ -43,6 +42,8 @@ public class UserProfile {
      */
     public UserProfile(String username) {
         this.username = username;
+
+        this.profile_picture = null;
 
         this.habit_list = new HabitList();
         this.habit_event_list = new HabitEventList();
@@ -90,11 +91,11 @@ public class UserProfile {
         this.comment = comment;
     }
 
-    public Image getProfilePicture(){
+    public byte[] getProfilePicture(){
         return profile_picture;
     }
 
-    public void setProfilePicture(Image profile_picture){
+    public void setProfilePicture(byte[] profile_picture){
         this.profile_picture = profile_picture;
     }
 
