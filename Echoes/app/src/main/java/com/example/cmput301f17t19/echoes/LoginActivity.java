@@ -113,33 +113,42 @@ public class LoginActivity extends AppCompatActivity  {
             return;
         }
 
-        //check if username exists in the server
-        ElasticSearchController.CheckUserProfileExistTask checkUserProfileExistTask = new ElasticSearchController.CheckUserProfileExistTask();
-
-        checkUserProfileExistTask.execute(userEditText.getText().toString());
+        //check if username exists in the offline file
+        OfflineStorageController offlineStorageController = new OfflineStorageController(this, userEditText.getText().toString());
 
 
-        UserProfile user;
-        try {
-            ElasticSearchController.GetUserProfileTask getUserProfileTask = new ElasticSearchController.GetUserProfileTask();
-            user = getUserProfileTask.get();
-            //UserHolder.getInstance().setUser(user);
-            // intent to MainActivity
-            // http://stackoverflow.com/questions/4878159/whats-the-best-way-to-share-data-between-activities
-            // authored by Cristian
-            // Accessed November 4, 2016
+        if (offlineStorageController.isFileExist()){
+
+            UserProfile user;
+            try {
+                ElasticSearchController.GetUserProfileTask getUserProfileTask = new ElasticSearchController.GetUserProfileTask();
+                user = getUserProfileTask.get();
+
+                //UserHolder.getInstance().setUser(user);
+                // intent to MainActivity
+                // http://stackoverflow.com/questions/4878159/whats-the-best-way-to-share-data-between-activities
+                // authored by Cristian
+                // Accessed November 4, 2016
 
 
-            if (user.getUserName().equals(userEditText.getText().toString())) {
-                Intent map = new Intent(LoginActivity.this, main_menu.class);
-                startActivity(map);
+                if (user.getUserName().equals(userEditText.getText().toString())) {
+                    Intent intent = new Intent(LoginActivity.this, main_menu.class);
+                    startActivity(intent);
+                }
+
+
+            } catch (Exception e) {
+                // no user was found
+                Toast.makeText(LoginActivity.this, "Username not found!", Toast.LENGTH_SHORT).show();
             }
 
+        } else{
 
-        } catch (Exception e) {
-            // no user was found
             Toast.makeText(LoginActivity.this, "Username not found!", Toast.LENGTH_SHORT).show();
+
         }
+
+
 
 
 
