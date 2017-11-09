@@ -47,5 +47,11 @@
         android:layout_height="37dp"
         android:text="HabitdetailTEST" />
 
+    <Button
+        android:id="@+id/habiteventdetail_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="HabitEventList" />
+
 
 </LinearLayout>

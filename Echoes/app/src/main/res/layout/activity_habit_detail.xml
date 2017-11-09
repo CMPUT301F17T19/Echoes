@@ -61,7 +61,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/Habit_reason_editText2"
+            android:id="@+id/Habit_reason_editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -181,6 +181,7 @@
             android:id="@+id/save_button"
             android:layout_width="120dp"
             android:layout_height="50dp"
+            android:onClick="addNewHabit"
             android:text="Save" />
 
         <Button

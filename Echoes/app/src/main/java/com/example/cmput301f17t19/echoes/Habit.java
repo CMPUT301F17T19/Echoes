@@ -5,7 +5,6 @@
 package com.example.cmput301f17t19.echoes;
 
 import java.util.Date;
-import java.lang.Float;
 
 /**
  * Created by Hayden Bauder on 23/10/2017.
@@ -21,11 +20,12 @@ public class Habit {
     public Float progress;
 
     public Habit(String name, String reason, Date startDate, Plan plan) {
-        setName(name);
-        setReason(reason);
+
+        //setName(name);
+        //setReason(reason);
         this.startDate = startDate;
         this.plan = plan;
-        this.doneToday = FALSE;
+        //this.doneToday = False;
         this.progress = 0f;
     }
 
@@ -33,10 +33,12 @@ public class Habit {
         this(name, reason, startDate, plan);
         this.progress = progress;
     }
-    
+
+    /*
     public Boolean needToDo() {
         return this.plan.scheduledForToday();
     }
+    */
 
     public void setName(String name) throws ArgTooLongException{
         if (name.length() > 20) {
@@ -52,7 +54,7 @@ public class Habit {
     }
 
     public void setReason(String reason) throws ArgTooLongException {
-        if (reason.length() > 30 {
+        if (reason.length() > 30 ){
             throw new ArgTooLongException();
         }
         else {
@@ -87,4 +89,7 @@ public class Habit {
     public void setProgress(Float progress) {
         this.progress = progress;
     }
+
+
 }
+

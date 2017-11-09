@@ -7,6 +7,12 @@
 
 
     <item
+        android:drawable="@drawable/third_layer"
+        android:duration="4500" />
+
+
+
+    <item
         android:drawable="@drawable/second_layer"
         android:duration="4500" />
 
@@ -17,9 +23,7 @@
 
 
 
-    <item
-        android:drawable="@drawable/third_layer"
-        android:duration="4500" />
+
 
 
 
