@@ -165,6 +165,8 @@ public class ElasticSearchController {
 
         @Override
         protected Void doInBackground(UserProfile... userProfiles) {
+            verifySettings();
+
             UserProfile userProfile = userProfiles[0];
 
             // Update this userProfile to online database

@@ -19,6 +19,7 @@ import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -169,7 +170,9 @@ public class UserProfileActivity extends AppCompatActivity {
             // Save the uploaded profile photo to Offline Storage
             userProfile.setProfilePicture(PhotoOperator.bitmapToByteArray(resizeBitmap));
             offlineStorageController.saveInFile(userProfile);
-            // TODO: online storage update
+            // online storage update
+            ElasticSearchController.UpdateUserProfileTask updateUserProfileTask = new ElasticSearchController.UpdateUserProfileTask();
+            updateUserProfileTask.execute(userProfile);
 
         }
         else if (requestCode == TakePhotoController.TAKE_PHOTO_CODE && resultCode == RESULT_OK && data != null) {
@@ -185,7 +188,10 @@ public class UserProfileActivity extends AppCompatActivity {
                 // Save the uploaded profile photo to Offline Storage
                 userProfile.setProfilePicture(PhotoOperator.bitmapToByteArray(resizeBitmap));
                 offlineStorageController.saveInFile(userProfile);
-                // TODO: online storage update
+
+                // online storage update
+                ElasticSearchController.UpdateUserProfileTask updateUserProfileTask = new ElasticSearchController.UpdateUserProfileTask();
+                updateUserProfileTask.execute(userProfile);
             }
         }
     }

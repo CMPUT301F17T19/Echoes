@@ -17,13 +17,15 @@ public class Habit {
     public String reason;
     public Date startDate;
     public Plan plan;
+    public Boolean doneToday; // need getters / setters
     public Float progress;
 
     public Habit(String name, String reason, Date startDate, Plan plan) {
-        this.name = name;
-        this.reason = reason;
+        setName(name);
+        setReason(reason);
         this.startDate = startDate;
         this.plan = plan;
+        this.doneToday = FALSE;
         this.progress = 0f;
     }
 
@@ -31,17 +33,31 @@ public class Habit {
         this(name, reason, startDate, plan);
         this.progress = progress;
     }
+    
+    public Boolean needToDo() {
+        return this.plan.scheduledForToday();
+    }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String name) throws ArgTooLongException{
+        if (name.length() > 20) {
+            throw new ArgTooLongException();
+        }
+        else { 
+            this.name = name;
+        }
     }
 
     public String getName() {
         return name;
     }
 
-    public void setReason(String reason) {
-        this.reason = reason;
+    public void setReason(String reason) throws ArgTooLongException {
+        if (reason.length() > 30 {
+            throw new ArgTooLongException();
+        }
+        else {
+            this.reason = reason;
+        }
     }
 
     public String getReason() {
