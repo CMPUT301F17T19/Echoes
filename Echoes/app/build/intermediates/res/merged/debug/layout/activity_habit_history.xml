@@ -7,6 +7,14 @@
     android:layout_height="match_parent"
     tools:context="com.example.cmput301f17t19.echoes.HabitHistoryActivity">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@drawable/first_layer"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"/>
+
     <LinearLayout
         android:layout_gravity="start"
         android:orientation="horizontal"
@@ -35,7 +43,7 @@
         android:id="@+id/habitevents_recyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="64"/>
+        android:layout_weight="63"/>
 
     <LinearLayout
         android:layout_gravity="center_horizontal"
