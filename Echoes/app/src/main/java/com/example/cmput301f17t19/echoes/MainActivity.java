@@ -54,6 +54,17 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        Button mHabitdetailButton = (Button) findViewById(R.id.habitDetail_test);
+        mHabitdetailButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Open login ui
+                Intent login_intent = new Intent(getApplicationContext(), HabitDetail.class);
+
+                startActivity(login_intent);
+            }
+        });
+
+
 
     }
 }
