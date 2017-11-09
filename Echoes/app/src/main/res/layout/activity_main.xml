@@ -41,5 +41,11 @@
         android:layout_height="wrap_content"
         android:text="Log in test"/>
 
+    <Button
+        android:id="@+id/habiteventdetail_button"
+        android:layout_width="142dp"
+        android:layout_height="wrap_content"
+        android:text="Habit Event" />
+
 
 </LinearLayout>

@@ -8,7 +8,6 @@ import android.media.Image;
 import android.support.annotation.NonNull;
 
 import java.util.Date;
-
 /**
  * Created by taijieyang on 2017/10/22.
  */
@@ -19,12 +18,14 @@ public class HabitEvent implements Comparable<HabitEvent> {
     public Date StartDate;
     public String Comments;
     public Image EventPhoto;
+    public boolean status;
 
 
     public HabitEvent(String title, String reason, Date startDate){
         this.Title = title;
         this.Reason = reason;
         this.StartDate = startDate;
+        this.status = false;
     }
 
 
@@ -48,6 +49,8 @@ public class HabitEvent implements Comparable<HabitEvent> {
         return this.EventPhoto;
     }
 
+
+
     public void setTitle(String title){
         this.Title = title;
     }
@@ -56,9 +59,7 @@ public class HabitEvent implements Comparable<HabitEvent> {
         this.Reason = reason;
     }
 
-    public void setStartDate(Date startDate){
-        this.StartDate = startDate;
-    }
+
 
     public void setComments(String comments) throws ArgTooLongException {
         if (comments.length() > 20)

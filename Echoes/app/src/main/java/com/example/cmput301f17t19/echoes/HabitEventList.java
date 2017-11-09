@@ -36,7 +36,10 @@ public class HabitEventList {
      * @param habitEvent: HabitEvent object
      */
     public void add(HabitEvent habitEvent){
-        this.habitEvents.add(habitEvent);
+
+        if(this.hasHabitEvent(habitEvent)){
+            throw new IllegalArgumentException("Duplicate.");
+        }habitEvents.add(habitEvent);
     }
 
     /**

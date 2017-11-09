@@ -30,6 +30,7 @@
             android:label="@string/title_activity_login" />
         <activity android:name=".UserProfileActivity" />
         <activity android:name=".main_menu" />
+        <activity android:name=".HabitEventDetailActivity"></activity>
     </application>
 
 </manifest>

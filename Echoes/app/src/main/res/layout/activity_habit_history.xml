@@ -14,7 +14,7 @@
         android:background="@drawable/first_layer"
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"/>
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Dark" />
 
     <LinearLayout
         android:layout_gravity="start"

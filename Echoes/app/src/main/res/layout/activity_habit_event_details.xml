@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) Team cmput301f17t19, CMPUT301, University of Alberta - All Rights Reserved. You may use, distribute, or modify this code under terms and conditions of the Code of Students Behaviour at University of Alberta
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@drawable/first_layer"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="8dp">
+
+        <TextView
+            android:id="@+id/Habit_Type"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Habit Type:" />
+
+        <Spinner
+            android:id="@+id/Types"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="8dp">
+
+        <TextView
+            android:id="@+id/Comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Optional Comment:" />
+
+        <EditText
+            android:id="@+id/WriteComment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="8dp">
+
+        <TextView
+            android:id="@+id/Date"
+            android:layout_width="wrap_content"
+            android:layout_height="27dp"
+            android:text="Date:" />
+
+        <TextView
+            android:id="@+id/Get_Date"
+            android:layout_width="wrap_content"
+            android:layout_height="27dp"
+            android:layout_weight="1.54" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:layout_margin="8dp">
+
+        <TextView
+            android:id="@+id/Photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Optional Photo:" />
+
+        <ImageView
+            android:id="@+id/imageId"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_weight="0.46" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="8dp">
+
+        <Button
+            android:id="@+id/Take_a_photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.90"
+            android:text="Take a Photo" />
+
+        <Button
+            android:id="@+id/Upload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Upload" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:layout_margin="8dp">
+
+        <TextView
+            android:id="@+id/Attch_Location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Attch Location:" />
+
+        <RadioButton
+            android:id="@+id/Yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Yes"
+            android:layout_weight="0.11" />
+
+        <RadioButton
+            android:id="@+id/No"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.21"
+            android:text="No" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="8dp">
+
+        <TextView
+            android:id="@+id/Location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Location:" />
+
+        <EditText
+            android:id="@+id/Type_Location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_margin="8dp">
+
+        <Button
+            android:id="@+id/Save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Save" />
+
+        <Button
+            android:id="@+id/Cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Cancel" />
+    </LinearLayout>
+</LinearLayout>
