@@ -14,7 +14,8 @@
     <color name="monsoon">#777777</color>
     <color name="jumbo">#f8edf11d</color>
     <color name="aluminum">#999999</color>
-    <color name="base">#AAAAAA</color>
+    <color name="base">#0533b1</color>
     <color name="iron">#CCCCCC</color>
     <color name="white">#FFF</color>
+    <color name="transparent">#80ffffff</color>
 </resources>
