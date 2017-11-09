@@ -4,13 +4,16 @@
 
 package com.example.cmput301f17t19.echoes;
 
-include java.util.Date;
-include java.time.LocalTime;
+
+//import java.time.LocalTime;include java.util.Date;
+//include java.time.LocalTime;
 
 /**
  * Created by Hayden Bauder on 7/11/2017.
  */
- 
+
+/*
+
  // An arraylist of time objects. used by Plan to correspond to a schedule
 public class DailySchedule {
     public ArrayList<LocalTime> schedule;
@@ -23,3 +26,5 @@ public class DailySchedule {
         this.schedule = new ArrayList<LocalTime>;
     }
 }
+*/
+

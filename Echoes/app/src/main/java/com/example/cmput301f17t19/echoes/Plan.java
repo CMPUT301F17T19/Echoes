@@ -4,15 +4,17 @@
 
 package com.example.cmput301f17t19.echoes;
 
-include java.util.Date;
-include java.util.Calender;
-include java.time.LocalTime;
+//include java.util.Date;
+//include java.util.Calender;
+//include java.time.LocalTime;
 
 /**
  * Created by Hayden Bauder on 23/10/2017.
  */
 
+
 public class Plan {
+    /*
     public enum Day {
         SUNDAY,   //0
         MONDAY,   //1
@@ -50,4 +52,5 @@ public class Plan {
         
         return getToDo(day - 1);    // subtract 1, because calender does 1 - 7, we do 0 - 6
     }
+    */
 }
