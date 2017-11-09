@@ -43,6 +43,7 @@
         <activity android:name="com.example.cmput301f17t19.echoes.UserProfileActivity" />
         <activity android:name="com.example.cmput301f17t19.echoes.main_menu" />
         <activity android:name="com.example.cmput301f17t19.echoes.HabitDetail" />
+        <activity android:name="com.example.cmput301f17t19.echoes.HabitEventDetailActivity" />
     </application>
 
 </manifest>
