@@ -14,5 +14,13 @@
     {
         "merged": "/Users/taijieyang/Desktop/Echoes/Echoes/Echoes/app/build/intermediates/res/merged/debug/color-v11/abc_background_cache_hint_selector_material_dark.xml",
         "source": "/Users/taijieyang/.android/build-cache/0fd8ab01152fb208acba82347de7dd3fca2e6ced/output/res/color-v11/abc_background_cache_hint_selector_material_dark.xml"
+    },
+    {
+        "merged": "/Users/PSdream/Desktop/project301/Echoes/Echoes/app/build/intermediates/res/merged/debug/color-v11/abc_background_cache_hint_selector_material_light.xml",
+        "source": "/Users/PSdream/.android/build-cache/2856be483c7c68ea59efefd3b54d3e88c46e5e76/output/res/color-v11/abc_background_cache_hint_selector_material_light.xml"
+    },
+    {
+        "merged": "/Users/PSdream/Desktop/project301/Echoes/Echoes/app/build/intermediates/res/merged/debug/color-v11/abc_background_cache_hint_selector_material_dark.xml",
+        "source": "/Users/PSdream/.android/build-cache/2856be483c7c68ea59efefd3b54d3e88c46e5e76/output/res/color-v11/abc_background_cache_hint_selector_material_dark.xml"
     }
 ]

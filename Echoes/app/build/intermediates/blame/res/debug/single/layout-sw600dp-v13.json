@@ -1,5 +1,9 @@
 [
     {
+        "merged": "/Users/PSdream/Desktop/project301/Echoes/Echoes/app/build/intermediates/res/merged/debug/layout-sw600dp-v13/design_layout_snackbar.xml",
+        "source": "/Users/PSdream/.android/build-cache/c2960b3eb57787929214855fe18321e953bc2f70/output/res/layout-sw600dp-v13/design_layout_snackbar.xml"
+    },
+    {
         "merged": "/Users/taijieyang/Desktop/Echoes/Echoes/app/build/intermediates/res/merged/debug/layout-sw600dp-v13/design_layout_snackbar.xml",
         "source": "/Users/taijieyang/.android/build-cache/62a116c88fc5d743c26ea84790faaca8b26dd9c4/output/res/layout-sw600dp-v13/design_layout_snackbar.xml"
     },
