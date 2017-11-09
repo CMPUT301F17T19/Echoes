@@ -4,8 +4,16 @@
         "source": "/Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/res/mipmap-hdpi/ic_launcher.png"
     },
     {
+        "merged": "/Users/Al/Desktop/Echoes/Echoes/app/build/intermediates/res/merged/debug/mipmap-hdpi/ic_launcher_round.png",
+        "source": "/Users/Al/Desktop/Echoes/Echoes/app/src/main/res/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
         "merged": "/Users/taijieyang/Desktop/Echoes/Echoes/Echoes/app/build/intermediates/res/merged/debug/mipmap-hdpi/ic_launcher_round.png",
         "source": "/Users/taijieyang/Desktop/Echoes/Echoes/Echoes/app/src/main/res/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/Al/Desktop/Echoes/Echoes/app/build/intermediates/res/merged/debug/mipmap-hdpi/ic_launcher.png",
+        "source": "/Users/Al/Desktop/Echoes/Echoes/app/src/main/res/mipmap-hdpi/ic_launcher.png"
     },
     {
         "merged": "/Users/taijieyang/Desktop/Echoes/Echoes/app/build/intermediates/res/merged/debug/mipmap-hdpi/ic_launcher.png",

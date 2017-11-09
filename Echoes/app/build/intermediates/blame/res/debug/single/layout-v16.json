@@ -10,5 +10,9 @@
     {
         "merged": "/Users/taijieyang/Desktop/Echoes/Echoes/app/build/intermediates/res/merged/debug/layout-v16/notification_template_custom_big.xml",
         "source": "/Users/taijieyang/.android/build-cache/0fd8ab01152fb208acba82347de7dd3fca2e6ced/output/res/layout-v16/notification_template_custom_big.xml"
+    },
+    {
+        "merged": "/Users/Al/Desktop/Echoes/Echoes/app/build/intermediates/res/merged/debug/layout-v16/notification_template_custom_big.xml",
+        "source": "/Users/Al/.android/build-cache/bf7c62df187d4cd416dd6dc253acb29f79dcdac7/output/res/layout-v16/notification_template_custom_big.xml"
     }
 ]

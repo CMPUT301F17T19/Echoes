@@ -64,6 +64,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button mHabitEventDetailButton = (Button) findViewById(R.id.habiteventdetail_button);
+        mHabitEventDetailButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Open HabitHistory UI
+                Intent habitEventDetail_intent = new Intent(getApplicationContext(), HabitEventDetailActivity.class);
+                startActivity(habitEventDetail_intent);
+            }
+        });
 
 
     }
