@@ -16,10 +16,6 @@
         "source": "/Users/taijieyang/.android/build-cache/0fd8ab01152fb208acba82347de7dd3fca2e6ced/output/res/drawable/abc_ratingbar_small_material.xml"
     },
     {
-        "merged": "/Users/PSdream/Desktop/project301/Echoes/Echoes/app/build/intermediates/res/merged/debug/drawable/user_icon.png",
-        "source": "/Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/res/drawable/user_icon.png"
-    },
-    {
         "merged": "/Users/Al/Desktop/Echoes/Echoes/app/build/intermediates/res/merged/debug/drawable/whte.jpg",
         "source": "/Users/Al/Desktop/Echoes/Echoes/app/src/main/res/drawable/whte.jpg"
     },
@@ -52,12 +48,12 @@
         "source": "/Users/Al/.android/build-cache/d75da9aa0f6e3df852d38a7ee93acf5b13b5d42c/output/res/drawable/design_password_eye.xml"
     },
     {
-        "merged": "/Users/Al/Desktop/Echoes/Echoes/app/build/intermediates/res/merged/debug/drawable/abc_edit_text_material.xml",
-        "source": "/Users/Al/.android/build-cache/bf7c62df187d4cd416dd6dc253acb29f79dcdac7/output/res/drawable/abc_edit_text_material.xml"
-    },
-    {
         "merged": "/Users/Al/Desktop/Echoes/Echoes/app/build/intermediates/res/merged/debug/drawable/abc_ic_ab_back_material.xml",
         "source": "/Users/Al/.android/build-cache/bf7c62df187d4cd416dd6dc253acb29f79dcdac7/output/res/drawable/abc_ic_ab_back_material.xml"
+    },
+    {
+        "merged": "/Users/Al/Desktop/Echoes/Echoes/app/build/intermediates/res/merged/debug/drawable/abc_edit_text_material.xml",
+        "source": "/Users/Al/.android/build-cache/bf7c62df187d4cd416dd6dc253acb29f79dcdac7/output/res/drawable/abc_edit_text_material.xml"
     },
     {
         "merged": "/Users/Al/Desktop/Echoes/Echoes/app/build/intermediates/res/merged/debug/drawable/menu_ic.png",
@@ -92,12 +88,12 @@
         "source": "/Users/PSdream/.android/build-cache/2856be483c7c68ea59efefd3b54d3e88c46e5e76/output/res/drawable/abc_cab_background_top_material.xml"
     },
     {
-        "merged": "/Users/taijieyang/Desktop/Echoes/Echoes/app/build/intermediates/res/merged/debug/drawable/design_snackbar_background.xml",
-        "source": "/Users/taijieyang/.android/build-cache/62a116c88fc5d743c26ea84790faaca8b26dd9c4/output/res/drawable/design_snackbar_background.xml"
-    },
-    {
         "merged": "/Users/PSdream/Desktop/project301/Echoes/Echoes/app/build/intermediates/res/merged/debug/drawable/menu_ic.png",
         "source": "/Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/res/drawable/menu_ic.png"
+    },
+    {
+        "merged": "/Users/taijieyang/Desktop/Echoes/Echoes/app/build/intermediates/res/merged/debug/drawable/design_snackbar_background.xml",
+        "source": "/Users/taijieyang/.android/build-cache/62a116c88fc5d743c26ea84790faaca8b26dd9c4/output/res/drawable/design_snackbar_background.xml"
     },
     {
         "merged": "/Users/PSdream/Desktop/project301/Echoes/Echoes/app/build/intermediates/res/merged/debug/drawable/abc_ic_ab_back_material.xml",
@@ -160,12 +156,12 @@
         "source": "/Users/taijieyang/.android/build-cache/0fd8ab01152fb208acba82347de7dd3fca2e6ced/output/res/drawable/abc_ic_menu_overflow_material.xml"
     },
     {
-        "merged": "/Users/taijieyang/Desktop/Echoes/Echoes/app/build/intermediates/res/merged/debug/drawable/logo3.png",
-        "source": "/Users/taijieyang/Desktop/Echoes/Echoes/app/src/main/res/drawable/logo3.png"
-    },
-    {
         "merged": "/Users/PSdream/Desktop/project301/Echoes/Echoes/app/build/intermediates/res/merged/debug/drawable/abc_ic_search_api_material.xml",
         "source": "/Users/PSdream/.android/build-cache/2856be483c7c68ea59efefd3b54d3e88c46e5e76/output/res/drawable/abc_ic_search_api_material.xml"
+    },
+    {
+        "merged": "/Users/taijieyang/Desktop/Echoes/Echoes/app/build/intermediates/res/merged/debug/drawable/logo3.png",
+        "source": "/Users/taijieyang/Desktop/Echoes/Echoes/app/src/main/res/drawable/logo3.png"
     },
     {
         "merged": "/Users/PSdream/Desktop/project301/Echoes/Echoes/app/build/intermediates/res/merged/debug/drawable/abc_seekbar_thumb_material.xml",
@@ -192,12 +188,12 @@
         "source": "/Users/taijieyang/.android/build-cache/0fd8ab01152fb208acba82347de7dd3fca2e6ced/output/res/drawable/abc_spinner_textfield_background_material.xml"
     },
     {
-        "merged": "/Users/taijieyang/Desktop/Echoes/Echoes/Echoes/app/build/intermediates/res/merged/debug/drawable/abc_cab_background_top_material.xml",
-        "source": "/Users/taijieyang/.android/build-cache/0fd8ab01152fb208acba82347de7dd3fca2e6ced/output/res/drawable/abc_cab_background_top_material.xml"
-    },
-    {
         "merged": "/Users/taijieyang/Desktop/Echoes/Echoes/Echoes/app/build/intermediates/res/merged/debug/drawable/abc_text_cursor_material.xml",
         "source": "/Users/taijieyang/.android/build-cache/0fd8ab01152fb208acba82347de7dd3fca2e6ced/output/res/drawable/abc_text_cursor_material.xml"
+    },
+    {
+        "merged": "/Users/taijieyang/Desktop/Echoes/Echoes/Echoes/app/build/intermediates/res/merged/debug/drawable/abc_cab_background_top_material.xml",
+        "source": "/Users/taijieyang/.android/build-cache/0fd8ab01152fb208acba82347de7dd3fca2e6ced/output/res/drawable/abc_cab_background_top_material.xml"
     },
     {
         "merged": "/Users/PSdream/Desktop/project301/Echoes/Echoes/app/build/intermediates/res/merged/debug/drawable/abc_switch_thumb_material.xml",
@@ -264,12 +260,12 @@
         "source": "/Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/res/drawable/user1.png"
     },
     {
-        "merged": "/Users/Al/Desktop/Echoes/Echoes/app/build/intermediates/res/merged/debug/drawable/first_layer.xml",
-        "source": "/Users/Al/Desktop/Echoes/Echoes/app/src/main/res/drawable/first_layer.xml"
-    },
-    {
         "merged": "/Users/Al/Desktop/Echoes/Echoes/app/build/intermediates/res/merged/debug/drawable/abc_btn_borderless_material.xml",
         "source": "/Users/Al/.android/build-cache/bf7c62df187d4cd416dd6dc253acb29f79dcdac7/output/res/drawable/abc_btn_borderless_material.xml"
+    },
+    {
+        "merged": "/Users/Al/Desktop/Echoes/Echoes/app/build/intermediates/res/merged/debug/drawable/first_layer.xml",
+        "source": "/Users/Al/Desktop/Echoes/Echoes/app/src/main/res/drawable/first_layer.xml"
     },
     {
         "merged": "/Users/Al/Desktop/Echoes/Echoes/app/build/intermediates/res/merged/debug/drawable/design_fab_background.xml",
@@ -324,6 +320,10 @@
         "source": "/Users/taijieyang/.android/build-cache/0fd8ab01152fb208acba82347de7dd3fca2e6ced/output/res/drawable/abc_ic_arrow_drop_right_black_24dp.xml"
     },
     {
+        "merged": "/Users/PSdream/Desktop/project301/Echoes/Echoes/app/build/intermediates/res/merged/debug/drawable/transparent_rect.xml",
+        "source": "/Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/res/drawable/transparent_rect.xml"
+    },
+    {
         "merged": "/Users/PSdream/Desktop/project301/Echoes/Echoes/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_material.xml",
         "source": "/Users/PSdream/.android/build-cache/2856be483c7c68ea59efefd3b54d3e88c46e5e76/output/res/drawable/abc_ratingbar_material.xml"
     },
@@ -350,6 +350,10 @@
     {
         "merged": "/Users/PSdream/Desktop/project301/Echoes/Echoes/app/build/intermediates/res/merged/debug/drawable/abc_ic_arrow_drop_right_black_24dp.xml",
         "source": "/Users/PSdream/.android/build-cache/2856be483c7c68ea59efefd3b54d3e88c46e5e76/output/res/drawable/abc_ic_arrow_drop_right_black_24dp.xml"
+    },
+    {
+        "merged": "/Users/PSdream/Desktop/project301/Echoes/Echoes/app/build/intermediates/res/merged/debug/drawable/bg.xml",
+        "source": "/Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/res/drawable/bg.xml"
     },
     {
         "merged": "/Users/Al/Desktop/Echoes/Echoes/app/build/intermediates/res/merged/debug/drawable/white.png",
@@ -770,6 +774,10 @@
     {
         "merged": "/Users/PSdream/Desktop/project301/Echoes/Echoes/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_holo_light.xml",
         "source": "/Users/PSdream/.android/build-cache/2856be483c7c68ea59efefd3b54d3e88c46e5e76/output/res/drawable/abc_list_selector_holo_light.xml"
+    },
+    {
+        "merged": "/Users/PSdream/Desktop/project301/Echoes/Echoes/app/build/intermediates/res/merged/debug/drawable/bg2.xml",
+        "source": "/Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/res/drawable/bg2.xml"
     },
     {
         "merged": "/Users/PSdream/Desktop/project301/Echoes/Echoes/app/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_light.xml",
