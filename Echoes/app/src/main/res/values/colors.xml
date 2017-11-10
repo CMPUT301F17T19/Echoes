@@ -4,8 +4,8 @@
     <color name="colorPrimaryDark">#0853e9</color>
     <color name="colorAccent">#FF4081</color>
     <color name="primary">#E43F3F</color>
-    <color name="primary_dark">#E12929</color>
-    <color name="primary_darker">#CC1D1D</color>
+    <color name="primary_dark">#345bdb</color>
+    <color name="primary_darker">#345bdb</color>
     <color name="accent">#FFFFFF</color>
     <color name="red">#ffff0000</color>
     <color name="black">#000000</color>

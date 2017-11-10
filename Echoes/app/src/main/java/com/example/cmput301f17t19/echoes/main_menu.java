@@ -5,23 +5,41 @@
 package com.example.cmput301f17t19.echoes;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
+import android.view.Window;
+import android.view.WindowManager;
 
 public class main_menu extends AppCompatActivity {
 
-    private Button myHabitsButton;
 
     // The user profile of the login user
     private static UserProfile login_UserProfile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        Window window = this.getWindow();
+
+        // clear FLAG_TRANSLUCENT_STATUS flag:
+        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+
+        // add FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS flag to the window
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            window.setStatusBarColor(ContextCompat.getColor(this,R.color.primary_dark));
+        }
+
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
-
+      
         myHabitsButton = (Button) findViewById(R.id.View_My_Habits);
 
         Intent intent = getIntent();
@@ -47,20 +65,21 @@ public class main_menu extends AppCompatActivity {
 //        startActivity(intent);
 //    }
 
-//    public void  (View view) {
+
+    public void Habits_history(View view) {
+        Intent intent = new Intent(this, HabitHistoryActivity.class);
+        startActivity(intent);
+    }
+
+//    public void Habits_events_map(View view) {
 //        Intent intent = new Intent(this, AddNewActivity.class);
 //        startActivity(intent);
 //    }
-//
-//    public void (View view) {
-//        Intent intent = new Intent(this, AddNewActivity.class);
-//        startActivity(intent);
-//    }
-//
-//    public void Logout(View view) {
-//        Intent intent = new Intent(this, AddNewActivity.class);
-//        startActivity(intent);
-//    }
+  
+    public void Logout(View view) {
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+    }
 
     /**
      * Read the offline UserProfile data with logined name

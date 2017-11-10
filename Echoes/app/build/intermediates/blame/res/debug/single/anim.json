@@ -1,11 +1,11 @@
 [
     {
-        "merged": "/Users/taijieyang/Desktop/Echoes/Echoes/Echoes/app/build/intermediates/res/merged/debug/anim/design_bottom_sheet_slide_in.xml",
-        "source": "/Users/taijieyang/.android/build-cache/62a116c88fc5d743c26ea84790faaca8b26dd9c4/output/res/anim/design_bottom_sheet_slide_in.xml"
-    },
-    {
         "merged": "/Users/Al/Desktop/Echoes/Echoes/app/build/intermediates/res/merged/debug/anim/abc_slide_out_bottom.xml",
         "source": "/Users/Al/.android/build-cache/bf7c62df187d4cd416dd6dc253acb29f79dcdac7/output/res/anim/abc_slide_out_bottom.xml"
+    },
+    {
+        "merged": "/Users/taijieyang/Desktop/Echoes/Echoes/Echoes/app/build/intermediates/res/merged/debug/anim/design_bottom_sheet_slide_in.xml",
+        "source": "/Users/taijieyang/.android/build-cache/62a116c88fc5d743c26ea84790faaca8b26dd9c4/output/res/anim/design_bottom_sheet_slide_in.xml"
     },
     {
         "merged": "/Users/taijieyang/Desktop/Echoes/Echoes/app/build/intermediates/res/merged/debug/anim/abc_slide_out_bottom.xml",
@@ -92,12 +92,12 @@
         "source": "/Users/taijieyang/.android/build-cache/62a116c88fc5d743c26ea84790faaca8b26dd9c4/output/res/anim/design_bottom_sheet_slide_in.xml"
     },
     {
-        "merged": "/Users/Al/Desktop/Echoes/Echoes/app/build/intermediates/res/merged/debug/anim/design_bottom_sheet_slide_in.xml",
-        "source": "/Users/Al/.android/build-cache/d75da9aa0f6e3df852d38a7ee93acf5b13b5d42c/output/res/anim/design_bottom_sheet_slide_in.xml"
-    },
-    {
         "merged": "/Users/Al/Desktop/Echoes/Echoes/app/build/intermediates/res/merged/debug/anim/design_snackbar_in.xml",
         "source": "/Users/Al/.android/build-cache/d75da9aa0f6e3df852d38a7ee93acf5b13b5d42c/output/res/anim/design_snackbar_in.xml"
+    },
+    {
+        "merged": "/Users/Al/Desktop/Echoes/Echoes/app/build/intermediates/res/merged/debug/anim/design_bottom_sheet_slide_in.xml",
+        "source": "/Users/Al/.android/build-cache/d75da9aa0f6e3df852d38a7ee93acf5b13b5d42c/output/res/anim/design_bottom_sheet_slide_in.xml"
     },
     {
         "merged": "/Users/taijieyang/Desktop/Echoes/Echoes/app/build/intermediates/res/merged/debug/anim/design_snackbar_out.xml",
