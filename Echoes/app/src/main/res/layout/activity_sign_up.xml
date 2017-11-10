@@ -71,6 +71,15 @@
             android:layout_margin="8dp" />
 
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+
+            android:text="Profile Picture"
+            />
+
 
         <EditText
             android:id="@+id/username"
@@ -79,7 +88,7 @@
             android:layout_width="270dp"
             android:layout_height="35dp"
             android:layout_gravity="center"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="5dp"
             android:drawableLeft="@drawable/user"
             android:drawablePadding="10dp"
             android:paddingStart="10dp"
