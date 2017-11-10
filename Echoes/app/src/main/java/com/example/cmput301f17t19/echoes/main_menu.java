@@ -59,14 +59,14 @@ public class main_menu extends AppCompatActivity {
     }
 
     public void Following(View view) {
-        Intent intent = new Intent(this, Following.class);
-        startActivity(intent);
+//        Intent intent = new Intent(this, Following.class);
+//        startActivity(intent);
     }
 
-//    public void Habits_todo_today (View view) {
+    public void Habits_todo_today (View view) {
 //        Intent intent = new Intent(this, AddNewActivity.class);
 //        startActivity(intent);
-//    }
+    }
 
 
     public void Habits_history(View view) {
@@ -74,10 +74,10 @@ public class main_menu extends AppCompatActivity {
         startActivity(intent);
     }
 
-//    public void Habits_events_map(View view) {
+    public void Habits_events_map(View view) {
 //        Intent intent = new Intent(this, AddNewActivity.class);
 //        startActivity(intent);
-//    }
+    }
   
     public void Logout(View view) {
         Intent intent = new Intent(this, LoginActivity.class);
