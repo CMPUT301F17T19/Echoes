@@ -21,8 +21,8 @@ public class Habit {
 
     public Habit(String name, String reason, Date startDate, Plan plan) {
 
-        //setName(name);
-        //setReason(reason);
+        this.name = name;
+        this.reason = reason;
         this.startDate = startDate;
         this.plan = plan;
         //this.doneToday = False;
@@ -40,26 +40,16 @@ public class Habit {
     }
     */
 
-    public void setName(String name) throws ArgTooLongException{
-        if (name.length() > 20) {
-            throw new ArgTooLongException();
-        }
-        else { 
-            this.name = name;
-        }
+    public void setName(String name){
+        this.name = name;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setReason(String reason) throws ArgTooLongException {
-        if (reason.length() > 30 ){
-            throw new ArgTooLongException();
-        }
-        else {
-            this.reason = reason;
-        }
+    public void setReason(String reason) {
+        this.reason = reason;
     }
 
     public String getReason() {

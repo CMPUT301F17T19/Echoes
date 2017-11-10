@@ -48,7 +48,7 @@ public class OfflineStorageController {
         mContext = context;
 
         // The filename for each userProfile is phone hashing + unique name of the user
-        FILENAME = userName + ".json";
+        FILENAME = userName + ".sav";
     }
 
     /**
@@ -59,7 +59,7 @@ public class OfflineStorageController {
      *                  false: the file does not exist
      */
     public boolean isFileExist() {
-        File file = new File(FILENAME);
+        File file = mContext.getFileStreamPath(FILENAME);
         if(file.exists()){
             Log.d("File", "File exist");
             return true;
