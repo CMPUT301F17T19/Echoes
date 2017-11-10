@@ -29,6 +29,14 @@ import java.util.Date;
 
 public class HabitDetail extends AppCompatActivity {
 
+    // Check if the user wants to create a new Habit or select a existed Habit
+    private boolean isNewHabit;
+
+    // The position of the selected Habit
+    private int selected_pos;
+    // The selected Habit object
+    private Habit selected_Habit;
+
     private Activity mActivity;
     private TextView startDate_TextView;
     private EditText Habit_name_EditText;
@@ -73,6 +81,26 @@ public class HabitDetail extends AppCompatActivity {
         this.setTitle("Habit Details");
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
+
+        Bundle bundle = getIntent().getExtras();
+
+        // Check if the user selected an existed Habit
+        if (bundle == null) {
+            // Open an empty Habit UI
+            isNewHabit = true;
+
+        } else {
+            isNewHabit = false;
+
+            // Get the position of the selected Habit object in the HabitList
+            selected_pos = bundle.getInt(HabitOverviewAdapter.SELECTED_HABIT_POSITION);
+            selected_Habit = main_menu.getLogin_UserProfile().getHabit_list().getHabits().get(selected_pos);
+
+            // Initialize the Habit UI with the selected_Habit info
+            initializeHabitUI(selected_Habit);
+        }
+
+
 
         sunday_CheckBox = (CheckBox) findViewById(R.id.sunday_checkbox);
         monday_CheckBox = (CheckBox) findViewById(R.id.monday_checkBox);
@@ -148,6 +176,7 @@ public class HabitDetail extends AppCompatActivity {
     }
 
     public void addNewHabit(View view) {
+
         boolean isSuccessful = true;
         String Habit_name = Habit_name_EditText.getText().toString();
         String Habit_reason  = Habit_reason_EditText.getText().toString();
@@ -176,6 +205,9 @@ public class HabitDetail extends AppCompatActivity {
             isSuccessful = false;
         }
         Log.d("Date", startDate_TextView.getText().toString());
+
+        // Check if the Title of the Habit is unique
+
         if (isSuccessful){
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/YYYY");
             try {
@@ -194,12 +226,17 @@ public class HabitDetail extends AppCompatActivity {
     }
 
     /**
-     * Return an int array containing the number of checked checkbox
-     * Sunday 0, Monday 1 ...
-     * @return int array
+     * Initialize the Habit Detail UI with the selected Habit object
+     *
+     * @param selected_Habit: Habit, the selected Habit object
      */
+    private void initializeHabitUI(Habit selected_Habit){
+        Habit_name_EditText.setText(selected_Habit.getName());
+        Habit_reason_EditText.setText(selected_Habit.getReason());
+        startDate_TextView.setText(selected_Habit.getStartDate().toString());
 
-
+        // TODO: set plan of the selected Habit
+    }
 }
 
 

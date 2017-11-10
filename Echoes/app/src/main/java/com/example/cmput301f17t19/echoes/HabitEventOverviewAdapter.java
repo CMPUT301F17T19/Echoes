@@ -116,7 +116,7 @@ public class HabitEventOverviewAdapter extends RecyclerView.Adapter<HabitEventOv
             // Start HabitEvent Detail Activity
             // Show the details of the selected HabitEvent object in HabitEvent Detail Screen
             // Dummy test, go back to Main Page
-            Intent habitEventDetail_Intent = new Intent(mContext, MainActivity.class);
+            Intent habitEventDetail_Intent = new Intent(mContext, main_menu.class);
             mContext.startActivity(habitEventDetail_Intent);
         }
     }

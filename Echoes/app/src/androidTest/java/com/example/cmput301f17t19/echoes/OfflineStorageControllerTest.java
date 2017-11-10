@@ -24,7 +24,7 @@ import java.util.Date;
 public class OfflineStorageControllerTest extends ActivityInstrumentationTestCase2 {
 
     public OfflineStorageControllerTest() {
-        super(com.example.cmput301f17t19.echoes.MainActivity.class);
+        super(com.example.cmput301f17t19.echoes.LoginActivity.class);
     }
 
     /**

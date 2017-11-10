@@ -25,7 +25,7 @@ import java.util.concurrent.ExecutionException;
 public class ElasticSearchControllerTest extends ActivityInstrumentationTestCase2 {
 
     public ElasticSearchControllerTest(){
-        super(com.example.cmput301f17t19.echoes.MainActivity.class);
+        super(com.example.cmput301f17t19.echoes.LoginActivity.class);
     }
 
     /**
