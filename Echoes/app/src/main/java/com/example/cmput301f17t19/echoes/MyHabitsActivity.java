@@ -110,7 +110,7 @@ public class MyHabitsActivity extends AppCompatActivity {
                 finish();
 
                 // Go back to main menu
-                Intent mainMenu_intent = new Intent(getBaseContext(), MainActivity.class);
+                Intent mainMenu_intent = new Intent(getBaseContext(), main_menu.class);
                 startActivity(mainMenu_intent);
 
             default:

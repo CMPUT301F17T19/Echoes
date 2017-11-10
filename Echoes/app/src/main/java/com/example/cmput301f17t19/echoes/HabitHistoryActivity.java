@@ -166,7 +166,7 @@ public class HabitHistoryActivity extends AppCompatActivity {
                 finish();
 
                 // Go back to main menu
-                Intent mainMenu_intent = new Intent(getBaseContext(), MainActivity.class);
+                Intent mainMenu_intent = new Intent(getApplicationContext(), main_menu.class);
                 startActivity(mainMenu_intent);
 
             default:
