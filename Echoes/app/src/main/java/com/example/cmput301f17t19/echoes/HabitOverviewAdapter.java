@@ -79,6 +79,8 @@ public class HabitOverviewAdapter extends RecyclerView.Adapter<HabitOverviewAdap
         private TextView habitStatusTextView;
 
         public HabitOverviewViewHolder(View itemView) {
+
+
             super(itemView);
 
             habitTitleTextView = (TextView) itemView.findViewById(R.id.habitOverview_title);
