@@ -7,6 +7,10 @@ package com.example.cmput301f17t19.echoes;
 import android.graphics.drawable.AnimationDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
 
@@ -20,6 +24,16 @@ public class SignUpActivity extends AppCompatActivity {
     LinearLayout myLayout;
     AnimationDrawable animationDrawable;
 
+    private ImageButton profile_ImageButton;
+
+    //UI references
+    private EditText UserName;
+    private EditText UserEmail;
+    private EditText UserPhone;
+    private EditText UserComment;
+    private byte[]   UserProfile_Picture;
+
+    private Button UserSignUp;
 
 
     @Override
@@ -36,5 +50,33 @@ public class SignUpActivity extends AppCompatActivity {
         animationDrawable.setExitFadeDuration(4500);
 
         animationDrawable.start();
+
+
+
+        //reference link
+        profile_ImageButton = (ImageButton) findViewById(R.id.profile_photo);
+        UserName = (EditText) findViewById(R.id.username);
+        UserEmail = (EditText) findViewById(R.id.user_email);
+        UserComment = (EditText) findViewById(R.id.user_comment);
+
+        UserSignUp = (Button) findViewById(R.id.signup);
+
+        UserSignUp.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+                
+
+
+            }
+        });
+
+
+
+
+
     }
+
+
+
+
 }
