@@ -50,8 +50,8 @@ public class MyHabitsActivity extends AppCompatActivity {
     private String login_userName;
     // The user profile of the logged-in user
     private static UserProfile login_userProfile;
-    // The arrayList of Habits of the login user
-    private static ArrayList<Habit> mHabits;
+    // The HabitList of the login user
+    private static HabitList mHabitList;
 
     private Button addHabitButton;
 
@@ -117,7 +117,7 @@ public class MyHabitsActivity extends AppCompatActivity {
         super.onStart();
 
         // The arrayList of habits of the login user
-        mHabits = login_userProfile.getHabit_list().getHabits();
+        mHabitList = login_userProfile.getHabit_list();
 
         habitOverviewAdapter = new HabitOverviewAdapter(getApplicationContext());
 
@@ -152,11 +152,11 @@ public class MyHabitsActivity extends AppCompatActivity {
     }
 
     /**
-     * Get the arrayList of Habit displayed in My Habits
+     * Get the HabitList displayed in My Habits
      */
-    public static ArrayList<Habit> getHabits_MyHabits(){
-        // Get the arrayList of habits of the logged-in user
-        return mHabits;
+    public static HabitList getMyHabitList(){
+        // Get the HabitList of the logged-in user
+        return mHabitList;
     }
 
     /**
@@ -166,7 +166,7 @@ public class MyHabitsActivity extends AppCompatActivity {
      */
     public static void updateHabitList(ArrayList<Habit> updated_HabitList) {
         login_userProfile.getHabit_list().setHabits(updated_HabitList);
-        mHabits = updated_HabitList;
+        mHabitList.setHabits(updated_HabitList);
     }
 
     /**

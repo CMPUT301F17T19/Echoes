@@ -144,7 +144,7 @@ public class HabitDetail extends AppCompatActivity {
 
             // Get the position of the selected Habit object in the HabitList
             selected_pos = bundle.getInt(HabitOverviewAdapter.SELECTED_HABIT_POSITION);
-            selected_Habit = MyHabitsActivity.getHabits_MyHabits().get(selected_pos);
+            selected_Habit = MyHabitsActivity.getMyHabitList().getHabits().get(selected_pos);
 
             // Initialize the Habit UI with the selected_Habit info
             initializeHabitUI();

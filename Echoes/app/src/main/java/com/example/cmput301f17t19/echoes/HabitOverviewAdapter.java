@@ -68,7 +68,7 @@ public class HabitOverviewAdapter extends RecyclerView.Adapter<HabitOverviewAdap
     @Override
     public int getItemCount() {
         // Return the size of HabitList of the logged-in user
-        return MyHabitsActivity.getHabits_MyHabits().size();
+        return MyHabitsActivity.getMyHabitList().getHabits().size();
     }
 
     /**
@@ -101,7 +101,7 @@ public class HabitOverviewAdapter extends RecyclerView.Adapter<HabitOverviewAdap
          */
         private void bind(int position) {
             // Get the habit object at the specific position in My Habits' list
-            Habit habit_pos = MyHabitsActivity.getHabits_MyHabits().get(position);
+            Habit habit_pos = MyHabitsActivity.getMyHabitList().getHabits().get(position);
 
             // Set the comment and date
             habitTitleTextView.setText(habit_pos.getName());
@@ -118,7 +118,7 @@ public class HabitOverviewAdapter extends RecyclerView.Adapter<HabitOverviewAdap
             int adapterPosition = getAdapterPosition();
 
             // The selected Habit object
-            Habit selected_Habit = MyHabitsActivity.getHabits_MyHabits().get(adapterPosition);
+            Habit selected_Habit = MyHabitsActivity.getMyHabitList().getHabits().get(adapterPosition);
 
             // Start Habit Detail Activity
             // Show the details of the selected Habit object in Habit Detail Screen
