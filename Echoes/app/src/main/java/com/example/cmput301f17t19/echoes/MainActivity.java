@@ -74,5 +74,13 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        Button mMainmenuButton = (Button) findViewById(R.id.main_menu_test);
+        mMainmenuButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Open HabitHistory UI
+                Intent main_menu_intent = new Intent(getApplicationContext(), main_menu.class);
+                startActivity(main_menu_intent);
+            }
+        });
     }
 }

@@ -12,14 +12,12 @@ import android.widget.Button;
 
 public class main_menu extends AppCompatActivity {
 
-    private Button myHabitsButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
 
-        myHabitsButton = (Button) findViewById(R.id.View_My_Habits);
     }
 
 
@@ -38,20 +36,21 @@ public class main_menu extends AppCompatActivity {
 //        startActivity(intent);
 //    }
 
-//    public void  (View view) {
+
+    public void Habits_history(View view) {
+        Intent intent = new Intent(this, HabitHistoryActivity.class);
+        startActivity(intent);
+    }
+
+//    public void Habits_events_map(View view) {
 //        Intent intent = new Intent(this, AddNewActivity.class);
 //        startActivity(intent);
 //    }
-//
-//    public void (View view) {
-//        Intent intent = new Intent(this, AddNewActivity.class);
-//        startActivity(intent);
-//    }
-//
-//    public void Logout(View view) {
-//        Intent intent = new Intent(this, AddNewActivity.class);
-//        startActivity(intent);
-//    }
+
+    public void Logout(View view) {
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+    }
 
 
 }

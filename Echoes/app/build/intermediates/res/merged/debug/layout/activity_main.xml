@@ -55,5 +55,11 @@
         android:layout_height="wrap_content"
         android:text="HabitEventList" />
 
+    <Button
+        android:id="@+id/main_menu_test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="main_menu_test" />
+
 
 </LinearLayout>
