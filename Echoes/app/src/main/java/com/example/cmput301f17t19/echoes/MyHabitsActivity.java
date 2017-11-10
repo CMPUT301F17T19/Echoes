@@ -10,6 +10,7 @@
 
 package com.example.cmput301f17t19.echoes;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -25,10 +26,7 @@ import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 
 /**
  * My Habits UI
@@ -38,11 +36,11 @@ import java.util.Date;
  * @since 1.0
  */
 public class MyHabitsActivity extends AppCompatActivity {
-    // The arrayList of Habit objects displayed in My Habits
-    private static ArrayList<Habit> habits_myHabits;
 
     private RecyclerView habitsRecyclerView;
-    private HabitOverviewAdapter habitOverviewAdapter;
+    private static HabitOverviewAdapter habitOverviewAdapter;
+
+    private static Context mContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +70,8 @@ public class MyHabitsActivity extends AppCompatActivity {
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
 
+        mContext = this;
+
         // Set up recycler view for habit event overview in the Habit History
         habitsRecyclerView = (RecyclerView) findViewById(R.id.habits_recyclerView);
 
@@ -88,26 +88,6 @@ public class MyHabitsActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-
-        // Dummy arrayList of habitEvnets in Habit History
-        habits_myHabits = new ArrayList<Habit>();
-        // Add two dummy HabitEvent objects into the list
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        Date date1 = null;
-        Date date2 = null;
-
-        try {
-            date1 = simpleDateFormat.parse("2017-10-01");
-            date2 = simpleDateFormat.parse("2017-10-02");
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-
-        Habit habit1 = new Habit("DummyHabit", "dummy", date1, new Plan());
-        Habit habit2 = new Habit("DummyHabit", "dummy", date2, new Plan());
-
-        habits_myHabits.add(habit1);
-        habits_myHabits.add(habit2);
 
         habitOverviewAdapter = new HabitOverviewAdapter(getApplicationContext());
 
@@ -143,6 +123,31 @@ public class MyHabitsActivity extends AppCompatActivity {
      * Get the arrayList of Habit displayed in My Habits
      */
     public static ArrayList<Habit> getHabits_MyHabits(){
-        return habits_myHabits;
+        // Get the arrayList of habits of the logged-in user
+        return main_menu.getLogin_UserProfile().getHabit_list().getHabits();
+    }
+
+    /**
+     * Update the HabitList of the Logged-in User
+     *
+     * @param updated_HabitList: ArrayList<Habit>, the update HabitList of the logged-in User
+     */
+    public static void updateHabitList(ArrayList<Habit> updated_HabitList) {
+        main_menu.getLogin_UserProfile().getHabit_list().setHabits(updated_HabitList);
+    }
+
+    /**
+     * Update My Habits Screen and User Profile file and online data of the logged-in user
+     */
+    public static void updateDataStorage() {
+        // Update Screen
+        habitOverviewAdapter.notifyDataSetChanged();
+
+        // Update offline file
+        OfflineStorageController offlineStorageController = new OfflineStorageController(mContext, main_menu.getLogin_UserProfile().getUserName());
+        offlineStorageController.saveInFile(main_menu.getLogin_UserProfile());
+
+        // Update Online data
+        ElasticSearchController.syncOnlineWithOffline(main_menu.getLogin_UserProfile());
     }
 }

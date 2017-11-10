@@ -26,6 +26,8 @@ import android.widget.TextView;
  * @since 1.0
  */
 public class HabitOverviewAdapter extends RecyclerView.Adapter<HabitOverviewAdapter.HabitOverviewViewHolder>{
+    public static final String SELECTED_HABIT_POSITION = "SELECTED_HABIT_POSITION";
+
     private Context mContext;
 
     /**
@@ -65,6 +67,7 @@ public class HabitOverviewAdapter extends RecyclerView.Adapter<HabitOverviewAdap
 
     @Override
     public int getItemCount() {
+        // Return the size of HabitList of the logged-in user
         return MyHabitsActivity.getHabits_MyHabits().size();
     }
 
@@ -119,8 +122,10 @@ public class HabitOverviewAdapter extends RecyclerView.Adapter<HabitOverviewAdap
 
             // Start Habit Detail Activity
             // Show the details of the selected Habit object in Habit Detail Screen
-            // Dummy test, go back to Main Page
-            Intent habitDetail_Intent = new Intent(mContext, MainActivity.class);
+            Intent habitDetail_Intent = new Intent(mContext, HabitDetail.class);
+            // Pass the position of the selected Habit item
+            habitDetail_Intent.putExtra(SELECTED_HABIT_POSITION, adapterPosition);
+
             mContext.startActivity(habitDetail_Intent);
 
         }
