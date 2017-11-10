@@ -59,7 +59,7 @@
                     android:layout_width="300dp"
                     android:layout_height="60dp"
                     android:layout_marginLeft="25dp"
-                    android:inputType="textPassword"
+
                     android:textColor="@color/black"
                     android:drawablePadding="10dp"
                     android:paddingStart="10dp"
