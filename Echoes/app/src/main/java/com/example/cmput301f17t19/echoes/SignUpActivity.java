@@ -4,8 +4,10 @@
 
 package com.example.cmput301f17t19.echoes;
 
+import android.graphics.drawable.AnimationDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.LinearLayout;
 
 
 /**
@@ -14,9 +16,25 @@ import android.os.Bundle;
 
 public class SignUpActivity extends AppCompatActivity {
 
+
+    LinearLayout myLayout;
+    AnimationDrawable animationDrawable;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+
+
+        //animation background
+        myLayout = (LinearLayout) findViewById(R.id.myLayout2);
+
+        animationDrawable = (AnimationDrawable) myLayout.getBackground();
+        animationDrawable.setEnterFadeDuration(4500);
+        animationDrawable.setExitFadeDuration(4500);
+
+        animationDrawable.start();
     }
 }

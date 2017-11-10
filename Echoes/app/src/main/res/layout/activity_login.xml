@@ -13,7 +13,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@drawable/bg"
+    android:background="@drawable/my_bg_anim"
     android:id="@+id/myLayout"
     tools:context="com.example.cmput301f17t19.echoes.LoginActivity">
 
@@ -64,7 +64,7 @@
                     android:drawablePadding="10dp"
                     android:paddingStart="10dp"
                     android:textSize="16dp"
-
+                    android:hint="Username"
                     android:drawableLeft="@drawable/user"
                     android:background="@color/white"
                      />
