@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:2:1-39:12
+ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:2:1-38:12
 	package
 		ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:3:5-48
 		INJECTED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml
@@ -38,7 +38,7 @@ ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidM
 	android:name
 		ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:11:22-78
 application
-ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:13:5-37:19
+ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:13:5-36:19
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/PSdream/.android/build-cache/a206bf3dff5b02cdb4d7c0d54ebcfd46d192e33c/output/AndroidManifest.xml:9:5-20
 MERGED from [com.android.support:design:26.0.0-alpha1] /Users/PSdream/.android/build-cache/c2960b3eb57787929214855fe18321e953bc2f70/output/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] /Users/PSdream/.android/build-cache/2856be483c7c68ea59efefd3b54d3e88c46e5e76/output/AndroidManifest.xml:29:5-20
@@ -63,54 +63,50 @@ MERGED from [com.android.support:support-compat:26.0.0-alpha1] /Users/PSdream/.a
 		ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:15:9-43
 	android:theme
 		ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:19:9-65
-activity#com.example.cmput301f17t19.echoes.MainActivity
-ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:20:9-26:20
-	android:name
-		ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:20:19-47
-intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:21:13-25:29
-action#android.intent.action.MAIN
-ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:22:17-69
-	android:name
-		ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:22:25-66
-category#android.intent.category.LAUNCHER
-ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:24:17-77
-	android:name
-		ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:24:27-74
-activity#com.example.cmput301f17t19.echoes.HabitHistoryActivity
-ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:27:9-58
-	android:name
-		ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:27:19-55
-activity#com.example.cmput301f17t19.echoes.MyHabitsActivity
-ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:28:9-54
-	android:name
-		ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:28:19-51
-activity#com.example.cmput301f17t19.echoes.SignUpActivity
-ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:29:9-52
-	android:name
-		ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:29:19-49
 activity#com.example.cmput301f17t19.echoes.LoginActivity
-ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:30:9-32:60
+ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:20:9-28:20
 	android:label
-		ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:32:13-57
+		ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:22:13-45
 	android:name
-		ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:31:13-42
+		ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:21:13-42
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:23:13-27:29
+action#android.intent.action.MAIN
+ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:24:17-69
+	android:name
+		ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:24:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:26:17-77
+	android:name
+		ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:26:27-74
+activity#com.example.cmput301f17t19.echoes.HabitHistoryActivity
+ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:29:9-58
+	android:name
+		ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:29:19-55
+activity#com.example.cmput301f17t19.echoes.MyHabitsActivity
+ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:30:9-54
+	android:name
+		ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:30:19-51
+activity#com.example.cmput301f17t19.echoes.SignUpActivity
+ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:31:9-52
+	android:name
+		ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:31:19-49
 activity#com.example.cmput301f17t19.echoes.UserProfileActivity
-ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:33:9-57
+ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:32:9-57
 	android:name
-		ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:33:19-54
+		ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:32:19-54
 activity#com.example.cmput301f17t19.echoes.main_menu
-ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:34:9-47
+ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:33:9-47
 	android:name
-		ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:34:19-44
+		ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:33:19-44
 activity#com.example.cmput301f17t19.echoes.HabitDetail
-ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:35:9-58
+ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:34:9-58
 	android:name
-		ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:35:19-46
+		ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:34:19-46
 activity#com.example.cmput301f17t19.echoes.HabitEventDetailActivity
-ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:36:9-71
+ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:35:9-71
 	android:name
-		ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:36:19-59
+		ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:35:19-59
 uses-sdk
 INJECTED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/PSdream/.android/build-cache/a206bf3dff5b02cdb4d7c0d54ebcfd46d192e33c/output/AndroidManifest.xml:5:5-7:41

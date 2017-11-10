@@ -27,7 +27,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
-        <activity android:name="com.example.cmput301f17t19.echoes.MainActivity" >
+        <activity
+            android:name="com.example.cmput301f17t19.echoes.LoginActivity"
+            android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -37,9 +39,6 @@
         <activity android:name="com.example.cmput301f17t19.echoes.HabitHistoryActivity" />
         <activity android:name="com.example.cmput301f17t19.echoes.MyHabitsActivity" />
         <activity android:name="com.example.cmput301f17t19.echoes.SignUpActivity" />
-        <activity
-            android:name="com.example.cmput301f17t19.echoes.LoginActivity"
-            android:label="@string/title_activity_login" />
         <activity android:name="com.example.cmput301f17t19.echoes.UserProfileActivity" />
         <activity android:name="com.example.cmput301f17t19.echoes.main_menu" />
         <activity android:name="com.example.cmput301f17t19.echoes.HabitDetail" />

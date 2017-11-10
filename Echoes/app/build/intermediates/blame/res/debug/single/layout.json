@@ -56,12 +56,12 @@
         "source": "/Users/taijieyang/.android/build-cache/0fd8ab01152fb208acba82347de7dd3fca2e6ced/output/res/layout/abc_select_dialog_material.xml"
     },
     {
-        "merged": "/Users/Al/Desktop/Echoes/Echoes/app/build/intermediates/res/merged/debug/layout/abc_action_menu_layout.xml",
-        "source": "/Users/Al/.android/build-cache/bf7c62df187d4cd416dd6dc253acb29f79dcdac7/output/res/layout/abc_action_menu_layout.xml"
-    },
-    {
         "merged": "/Users/taijieyang/Desktop/Echoes/Echoes/app/build/intermediates/res/merged/debug/layout/design_text_input_password_icon.xml",
         "source": "/Users/taijieyang/.android/build-cache/62a116c88fc5d743c26ea84790faaca8b26dd9c4/output/res/layout/design_text_input_password_icon.xml"
+    },
+    {
+        "merged": "/Users/Al/Desktop/Echoes/Echoes/app/build/intermediates/res/merged/debug/layout/abc_action_menu_layout.xml",
+        "source": "/Users/Al/.android/build-cache/bf7c62df187d4cd416dd6dc253acb29f79dcdac7/output/res/layout/abc_action_menu_layout.xml"
     },
     {
         "merged": "/Users/taijieyang/Desktop/Echoes/Echoes/Echoes/app/build/intermediates/res/merged/debug/layout/design_text_input_password_icon.xml",
@@ -208,12 +208,12 @@
         "source": "/Users/Al/.android/build-cache/bf7c62df187d4cd416dd6dc253acb29f79dcdac7/output/res/layout/abc_screen_simple.xml"
     },
     {
-        "merged": "/Users/taijieyang/Desktop/Echoes/Echoes/app/build/intermediates/res/merged/debug/layout/abc_popup_menu_item_layout.xml",
-        "source": "/Users/taijieyang/.android/build-cache/0fd8ab01152fb208acba82347de7dd3fca2e6ced/output/res/layout/abc_popup_menu_item_layout.xml"
-    },
-    {
         "merged": "/Users/PSdream/Desktop/project301/Echoes/Echoes/app/build/intermediates/res/merged/debug/layout/design_layout_tab_text.xml",
         "source": "/Users/PSdream/.android/build-cache/c2960b3eb57787929214855fe18321e953bc2f70/output/res/layout/design_layout_tab_text.xml"
+    },
+    {
+        "merged": "/Users/taijieyang/Desktop/Echoes/Echoes/app/build/intermediates/res/merged/debug/layout/abc_popup_menu_item_layout.xml",
+        "source": "/Users/taijieyang/.android/build-cache/0fd8ab01152fb208acba82347de7dd3fca2e6ced/output/res/layout/abc_popup_menu_item_layout.xml"
     },
     {
         "merged": "/Users/taijieyang/Desktop/Echoes/Echoes/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_checkbox.xml",
@@ -454,10 +454,6 @@
     {
         "merged": "/Users/PSdream/Desktop/project301/Echoes/Echoes/app/build/intermediates/res/merged/debug/layout/design_navigation_item.xml",
         "source": "/Users/PSdream/.android/build-cache/c2960b3eb57787929214855fe18321e953bc2f70/output/res/layout/design_navigation_item.xml"
-    },
-    {
-        "merged": "/Users/PSdream/Desktop/project301/Echoes/Echoes/app/build/intermediates/res/merged/debug/layout/activity_main.xml",
-        "source": "/Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/res/layout/activity_main.xml"
     },
     {
         "merged": "/Users/taijieyang/Desktop/Echoes/Echoes/app/build/intermediates/res/merged/debug/layout/abc_screen_simple_overlay_action_mode.xml",

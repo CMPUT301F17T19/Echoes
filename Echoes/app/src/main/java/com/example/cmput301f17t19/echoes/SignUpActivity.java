@@ -43,7 +43,7 @@ public class SignUpActivity extends AppCompatActivity {
     private EditText UserEmail;
     private EditText UserPhone;
     private EditText UserComment;
-    private byte[]   UserProfile_Picture;
+    private byte[]   UserProfile_Picture = null;
 
     private Button UserSignUp;
 
@@ -250,7 +250,7 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
 
-
+    //handle signUp
     private void SignUp(){
 
         //check if empty username
@@ -262,6 +262,62 @@ public class SignUpActivity extends AppCompatActivity {
             return;
 
         }else{
+
+            //first check if the username already exited
+            //check online server database
+
+            ElasticSearchController.CheckUserProfileExistTask checkUserProfileExistTask = new ElasticSearchController.CheckUserProfileExistTask();
+
+            checkUserProfileExistTask.execute(UserName.getText().toString());
+
+            Boolean check = false;
+
+            try {
+
+                  check = checkUserProfileExistTask.get();
+
+                  if (check){
+
+                      UserProfile userProfile = new UserProfile(UserName.getText().toString());
+
+                      if ( ! UserEmail.getText().toString().isEmpty()) {
+
+                          userProfile.setEmailAddress(UserEmail.getText().toString());
+
+                      }
+
+                      if ( ! UserPhone.getText().toString().isEmpty()) {
+
+                          userProfile.setPhoneNumber(UserPhone.getText().toString());
+
+                      }
+
+                      if ( ! UserComment.getText().toString().isEmpty()) {
+
+                          userProfile.setComment(UserComment.getText().toString());
+
+                      }
+
+                     
+
+
+
+
+                  }else{
+
+
+                      Toast.makeText(SignUpActivity.this, "Sorry. The username you entered is already existed. Please re-enter another username.", Toast.LENGTH_SHORT).show();
+
+
+                  }
+
+
+
+            }catch (Exception e){
+
+                Toast.makeText(SignUpActivity.this, "Sorry. You cannot SignUp while offline.", Toast.LENGTH_SHORT).show();
+
+            }
 
 
 
