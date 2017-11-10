@@ -82,7 +82,7 @@
 
 
         <EditText
-            android:id="@+id/username"
+            android:id="@+id/user_name"
 
             android:background="@drawable/edit_text_round"
             android:layout_width="270dp"

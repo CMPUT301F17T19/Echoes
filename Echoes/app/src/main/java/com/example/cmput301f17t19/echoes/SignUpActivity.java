@@ -10,10 +10,10 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Build;
+import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -85,10 +85,13 @@ public class SignUpActivity extends AppCompatActivity {
 
 
         //reference link
-        profile_ImageButton = (ImageButton) findViewById(R.id.profile_photo);
-        UserName = (EditText) findViewById(R.id.username);
+
+        UserName = (EditText) findViewById(R.id.user_name);
         UserEmail = (EditText) findViewById(R.id.user_email);
         UserComment = (EditText) findViewById(R.id.user_comment);
+
+        UserPhone = (EditText) findViewById(R.id.phone_number);
+
 
         UserSignUp = (Button) findViewById(R.id.signup);
         profile_ImageButton = (ImageButton) findViewById(R.id.profile_photo);
@@ -121,6 +124,7 @@ public class SignUpActivity extends AppCompatActivity {
             }
 
         });
+
 
 
 
@@ -272,4 +276,3 @@ public class SignUpActivity extends AppCompatActivity {
 
 
 }
-

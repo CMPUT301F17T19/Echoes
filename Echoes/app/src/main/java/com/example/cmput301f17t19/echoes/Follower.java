@@ -17,6 +17,7 @@ package com.example.cmput301f17t19.echoes;
  * @version 1.0
  * @since 1.0
  */
+
 public class Follower {
 
     private String username;
@@ -25,3 +26,5 @@ public class Follower {
         this.username = Username;
     }
 }
+
+
