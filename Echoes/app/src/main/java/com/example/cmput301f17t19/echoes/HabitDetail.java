@@ -6,7 +6,6 @@ package com.example.cmput301f17t19.echoes;
 
 import android.app.Activity;
 import android.app.DatePickerDialog;
-import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
@@ -193,9 +192,75 @@ public class HabitDetail extends AppCompatActivity {
 
     public void addNewHabit(View view) {
 
+        if (isNewHabit) {
+            // User is about to add a new Habit
+            boolean isSuccessful = checkDataValid();
+
+            // Check if the title entered exist in the HabitList of the user
+            String title_entered = Habit_name_EditText.getText().toString().trim();
+            if (MyHabitsActivity.getMyHabitList().hasHabitTitle(title_entered)) {
+                Habit_name_EditText.setError("This type of Habit already exists. Please enter a new Type of Habit, or edit the old one");
+                isSuccessful = false;
+            }
+
+            if (isSuccessful) {
+                // Create a new Habit and add to the User's HabitList
+                Habit new_Habit = createNewHabit();
+
+                if (new_Habit != null) {
+                    // Add this new Habit to the HabitList of the login User
+                    HabitList mHabitList = MyHabitsActivity.getMyHabitList();
+                    mHabitList.add(new_Habit);
+
+                    // Update Data in My Habits Activity
+                    MyHabitsActivity.updateHabitList(mHabitList.getHabits());
+                    // Update Data in online and offline data storage
+                    MyHabitsActivity.updateDataStorage();
+                }
+
+                // Close HabitDetail
+                finish();
+            }
+
+        } else{
+            // User is about to edit an existing Habit
+            boolean isSuccessful = checkDataValid();
+
+            // Check if the title entered exist in the HabitList of the user other than the selected position
+            String title_entered = Habit_name_EditText.getText().toString().trim();
+            if (MyHabitsActivity.getMyHabitList().hasHabitTitle(title_entered, selected_pos)) {
+                Habit_name_EditText.setError("This type of Habit already exists. Please enter a new Type of Habit, or edit the old one");
+                isSuccessful = false;
+            }
+
+            if (isSuccessful) {
+                // Create a new Habit and add to the User's HabitList
+                Habit new_Habit = createNewHabit();
+
+                if (new_Habit != null) {
+                    // Replace this new Habit to the Habit at the selected position in HabitList
+                    HabitList mHabitList = MyHabitsActivity.getMyHabitList();
+                    mHabitList.getHabits().set(selected_pos, new_Habit);
+
+                    // Update Data in My Habits Activity
+                    MyHabitsActivity.updateHabitList(mHabitList.getHabits());
+                    // Update Data in online and offline data storage
+                    MyHabitsActivity.updateDataStorage();
+                }
+
+                // Close HabitDetail
+                finish();
+            }
+        }
+    }
+
+    /**
+     * Check if the data in the fields are valid
+     */
+    private boolean checkDataValid() {
         boolean isSuccessful = true;
-        String Habit_name = Habit_name_EditText.getText().toString();
-        String Habit_reason  = Habit_reason_EditText.getText().toString();
+        String Habit_name = Habit_name_EditText.getText().toString().trim();
+        String Habit_reason  = Habit_reason_EditText.getText().toString().trim();
 
         if ((Habit_name.length() == 0) || Habit_name.length() > 20){
             Habit_name_EditText.setError("Habit name should not be empty or beyond 20 words!");
@@ -214,31 +279,39 @@ public class HabitDetail extends AppCompatActivity {
         }
 
         ArrayList<Integer> checkedCheckbox = checkedCheckBox();
-        Log.d("check", checkedCheckbox.toString());
 
         if (checkedCheckbox.size() == 0){
             Toast.makeText(this, "Please select at least one plan day", Toast.LENGTH_LONG).show();
             isSuccessful = false;
         }
-        Log.d("Date", startDate_TextView.getText().toString());
 
-        // Check if the Title of the Habit is unique
+        return isSuccessful;
+    }
 
-        if (isSuccessful){
-            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/YYYY");
-            try {
-                Date date = simpleDateFormat.parse(startDate_TextView.getText().toString());
+    /**
+     * Create a new Habit according to the data user entered
+     */
+    private Habit createNewHabit() {
+        //TODO: Create new Habit
+        String habit_Name = Habit_name_EditText.getText().toString().trim();
+        String habit_Reason = Habit_reason_EditText.getText().toString().trim();
 
-               // Habit new_habit = new Habit(Habit_name, Habit_reason, date, );
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/YYYY");
+        try {
+            Date habit_Date = simpleDateFormat.parse(startDate_TextView.getText().toString());
 
-                Intent intent = new Intent(this,MyHabitsActivity.class);
-                startActivity(intent);
+            // TODO: read and set Habit Plan
+            Habit new_Habit = new Habit(habit_Name, habit_Reason, habit_Date, new Plan());
 
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
+            Log.d("HabitD", "Create a new Habit");
+
+            return new_Habit;
+
+        } catch (ParseException e) {
+            e.printStackTrace();
         }
 
+        return null;
     }
 
     /**

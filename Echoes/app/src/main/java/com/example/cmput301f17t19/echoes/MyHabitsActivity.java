@@ -47,7 +47,7 @@ public class MyHabitsActivity extends AppCompatActivity {
     private static Context mContext;
 
     // The userName of the Logged-in user
-    private String login_userName;
+    private static String login_userName;
     // The user profile of the logged-in user
     private static UserProfile login_userProfile;
     // The HabitList of the login user
@@ -81,12 +81,11 @@ public class MyHabitsActivity extends AppCompatActivity {
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
 
+        mContext = this;
+
         // Get the login username and user Profile
         Intent intent = getIntent();
         login_userName = intent.getStringExtra(LOGIN_USERNAME);
-        login_userProfile = getLogin_UserProfile();
-
-        mContext = this;
 
         // Set up recycler view for habit event overview in the Habit History
         habitsRecyclerView = (RecyclerView) findViewById(R.id.habits_recyclerView);
@@ -116,10 +115,13 @@ public class MyHabitsActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        // The arrayList of habits of the login user
+        // the User Profile of the login user
+        login_userProfile = getLogin_UserProfile();
+
+        // The HabitList of the login user
         mHabitList = login_userProfile.getHabit_list();
 
-        habitOverviewAdapter = new HabitOverviewAdapter(getApplicationContext());
+        habitOverviewAdapter = new HabitOverviewAdapter(this);
 
         habitsRecyclerView.setAdapter(habitOverviewAdapter);
     }
@@ -139,7 +141,7 @@ public class MyHabitsActivity extends AppCompatActivity {
             case R.id.action_menu:
                 // Go back to main menu
                 // Pass the username of the login user to the main menu
-                Intent mainMenu_intent = new Intent(getApplicationContext(), main_menu.class);
+                Intent mainMenu_intent = new Intent(this, main_menu.class);
                 mainMenu_intent.putExtra(LOGIN_USERNAME, login_userName);
                 startActivity(mainMenu_intent);
 
