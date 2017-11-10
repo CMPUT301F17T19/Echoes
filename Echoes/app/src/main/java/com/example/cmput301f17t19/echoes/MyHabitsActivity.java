@@ -23,10 +23,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 
 import java.util.ArrayList;
+
+import static com.example.cmput301f17t19.echoes.LoginActivity.LOGIN_USERNAME;
 
 /**
  * My Habits UI
@@ -41,6 +45,15 @@ public class MyHabitsActivity extends AppCompatActivity {
     private static HabitOverviewAdapter habitOverviewAdapter;
 
     private static Context mContext;
+
+    // The userName of the Logged-in user
+    private String login_userName;
+    // The user profile of the logged-in user
+    private static UserProfile login_userProfile;
+    // The arrayList of Habits of the login user
+    private static ArrayList<Habit> mHabits;
+
+    private Button addHabitButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,14 +74,17 @@ public class MyHabitsActivity extends AppCompatActivity {
 
 
 
-
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_myhabits);
         this.setTitle(R.string.my_habits);
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
+
+        // Get the login username and user Profile
+        Intent intent = getIntent();
+        login_userName = intent.getStringExtra(LOGIN_USERNAME);
+        login_userProfile = getLogin_UserProfile();
 
         mContext = this;
 
@@ -83,11 +99,25 @@ public class MyHabitsActivity extends AppCompatActivity {
         habitsRecyclerView.addItemDecoration(mDividerItemDecoration);
 
         habitsRecyclerView.setHasFixedSize(true);
+
+        addHabitButton = (Button) findViewById(R.id.habit_add_button);
+
+        addHabitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Open an empty Habit Detail Screen
+                Intent habitDetail_Intent = new Intent(mContext, HabitDetail.class);
+                mContext.startActivity(habitDetail_Intent);
+            }
+        });
     }
 
     @Override
     protected void onStart() {
         super.onStart();
+
+        // The arrayList of habits of the login user
+        mHabits = login_userProfile.getHabit_list().getHabits();
 
         habitOverviewAdapter = new HabitOverviewAdapter(getApplicationContext());
 
@@ -107,11 +137,13 @@ public class MyHabitsActivity extends AppCompatActivity {
         switch (item.getItemId()) {
 
             case R.id.action_menu:
-                finish();
-
                 // Go back to main menu
-                Intent mainMenu_intent = new Intent(getBaseContext(), main_menu.class);
+                // Pass the username of the login user to the main menu
+                Intent mainMenu_intent = new Intent(getApplicationContext(), main_menu.class);
+                mainMenu_intent.putExtra(LOGIN_USERNAME, login_userName);
                 startActivity(mainMenu_intent);
+
+                finish();
 
             default:
                 return super.onOptionsItemSelected(item);
@@ -124,7 +156,7 @@ public class MyHabitsActivity extends AppCompatActivity {
      */
     public static ArrayList<Habit> getHabits_MyHabits(){
         // Get the arrayList of habits of the logged-in user
-        return main_menu.getLogin_UserProfile().getHabit_list().getHabits();
+        return mHabits;
     }
 
     /**
@@ -133,7 +165,8 @@ public class MyHabitsActivity extends AppCompatActivity {
      * @param updated_HabitList: ArrayList<Habit>, the update HabitList of the logged-in User
      */
     public static void updateHabitList(ArrayList<Habit> updated_HabitList) {
-        main_menu.getLogin_UserProfile().getHabit_list().setHabits(updated_HabitList);
+        login_userProfile.getHabit_list().setHabits(updated_HabitList);
+        mHabits = updated_HabitList;
     }
 
     /**
@@ -144,10 +177,21 @@ public class MyHabitsActivity extends AppCompatActivity {
         habitOverviewAdapter.notifyDataSetChanged();
 
         // Update offline file
-        OfflineStorageController offlineStorageController = new OfflineStorageController(mContext, main_menu.getLogin_UserProfile().getUserName());
-        offlineStorageController.saveInFile(main_menu.getLogin_UserProfile());
+        OfflineStorageController offlineStorageController = new OfflineStorageController(mContext, login_userProfile.getUserName());
+        offlineStorageController.saveInFile(login_userProfile);
 
         // Update Online data
-        ElasticSearchController.syncOnlineWithOffline(main_menu.getLogin_UserProfile());
+        ElasticSearchController.syncOnlineWithOffline(login_userProfile);
+    }
+
+    /**
+     * Get the Login user Profile from offline file
+     *
+     * @return UserProfile: the User Profile of the login User
+     */
+    private UserProfile getLogin_UserProfile() {
+        OfflineStorageController offlineStorageController = new OfflineStorageController(this, login_userName);
+
+        return offlineStorageController.readFromFile();
     }
 }
