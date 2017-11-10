@@ -22,7 +22,7 @@ public class HabitTest  {
     public void testHabitName() {
         String test = "This is a test name";
         String result;
-        testHabit.setName(test);
+//        testHabit.setName(test);
         result = testHabit.getName();
 
         assertEquals(test, result);
@@ -31,7 +31,7 @@ public class HabitTest  {
     public void testHabitReason() {
         String test = "This is a test reason";
         String result;
-        testHabit.setReason(test);
+//        testHabit.setReason(test);
         result = testHabit.getReason();
 
         assertEquals(test, result);
