@@ -59,6 +59,41 @@ public class HabitList {
     }
 
     /**
+     * Check if the HabitList contains the Habit with the same input title
+     *
+     * @param habit_title: The title of the Habit
+     * @return true: if the HabitList contain the Habit with the same input title
+     *         false: if the HabitList does not contain the Habit with the same input title
+     */
+    public boolean hasHabitTitle(String habit_title) {
+        // Check if the Habit in the arrayList of Habit contains the same title as the input
+        for (Habit habit : this.habits) {
+            if (habit.getName().equals(habit_title)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Check if the HabitList other than the specified position contains the Habit with the same
+     * input title
+     *
+     * @param habit_title: The title of the Habit
+     * @return true: if the HabitList contain the Habit with the same input title
+     *         false: if the HabitList does not contain the Habit with the same input title
+     */
+    public boolean hasHabitTitle(String habit_title, int pos) {
+        // Check if the Habit in the arrayList of Habit contains the same title as the input
+        for (int i = 0; i < this.habits.size(); i++) {
+            if (this.habits.get(i).getName().equals(habit_title) && i != pos) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
      * Get the habit arraylist
      *
      * @return habits: ArrayList<Habit>
