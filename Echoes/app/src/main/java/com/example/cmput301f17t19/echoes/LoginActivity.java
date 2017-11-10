@@ -32,6 +32,8 @@ import android.widget.Toast;
  */
 public class LoginActivity extends AppCompatActivity  {
 
+    public static final String LOGIN_USERNAME = "LOGIN_USERNAME";
+
     /**
      * Id to identity READ_CONTACTS permission request.
      */
@@ -105,53 +107,35 @@ public class LoginActivity extends AppCompatActivity  {
     //handling login
     private void login() {
 
-        // check if username/password are empty
-        int textlength = userEditText.getText().length();
+        // check if username/password are empty, discard empty space
+        String login_UserName = userEditText.getText().toString().trim();
 
-        if (textlength == 0) {
+        if (login_UserName.length() == 0) {
             Toast.makeText(LoginActivity.this, "Please provide a Username!", Toast.LENGTH_SHORT).show();
             return;
-        }
-
-        //check if username exists in the offline file
-        OfflineStorageController offlineStorageController = new OfflineStorageController(this, userEditText.getText().toString());
-
-
-        if (offlineStorageController.isFileExist()){
-
-            UserProfile user;
-            try {
-                ElasticSearchController.GetUserProfileTask getUserProfileTask = new ElasticSearchController.GetUserProfileTask();
-                user = getUserProfileTask.get();
-
-                //UserHolder.getInstance().setUser(user);
-                // intent to MainActivity
-                // http://stackoverflow.com/questions/4878159/whats-the-best-way-to-share-data-between-activities
-                // authored by Cristian
-                // Accessed November 4, 2016
-
-
-                if (user.getUserName().equals(userEditText.getText().toString())) {
-                    Intent intent = new Intent(LoginActivity.this, main_menu.class);
-                    startActivity(intent);
-                }
-
-
-            } catch (Exception e) {
-                // no user was found
-                Toast.makeText(LoginActivity.this, "Username not found!", Toast.LENGTH_SHORT).show();
-            }
-
         } else{
 
-            Toast.makeText(LoginActivity.this, "Username not found!", Toast.LENGTH_SHORT).show();
+            //check if username exists in the offline file
+            OfflineStorageController offlineStorageController = new OfflineStorageController(this, login_UserName);
 
+
+            if (offlineStorageController.isFileExist()){
+
+                // User File exist, this user has logged in before
+                // Pass the login User to the main menu
+                Intent main_menu_Intent = new Intent(LoginActivity.this, main_menu.class);
+                main_menu_Intent.putExtra(LOGIN_USERNAME, login_UserName);
+
+                startActivity(main_menu_Intent);
+
+                finish();
+
+            } else{
+
+                Toast.makeText(LoginActivity.this, "Username not found!", Toast.LENGTH_SHORT).show();
+
+            }
         }
-
-
-
-
-
     }
 
 
@@ -167,5 +151,5 @@ public class LoginActivity extends AppCompatActivity  {
 
 
 
-    }
+}
 
