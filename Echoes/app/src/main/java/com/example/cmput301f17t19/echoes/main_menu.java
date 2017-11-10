@@ -14,10 +14,15 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 
+import static com.example.cmput301f17t19.echoes.LoginActivity.LOGIN_USERNAME;
+
 public class main_menu extends AppCompatActivity {
 
-    // The user profile of the login user
-    private static UserProfile login_UserProfile;
+    // The user name of the login user
+    private static String login_UserName;
+
+    // The user Profile of the login user
+    private UserProfile login_UserProfile;
 
     private Button myHabitsButton;
 
@@ -47,15 +52,20 @@ public class main_menu extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        String login_Username = intent.getStringExtra(LoginActivity.LOGIN_USERNAME);
+        login_UserName = intent.getStringExtra(LOGIN_USERNAME);
 
-        setLogin_UserProfile(login_Username);
+        setLogin_UserProfile(login_UserName);
     }
 
 
     public void viewMyHabits(View view) {
+        // Pass the login User Name to the MyHabits Activity
         Intent intent = new Intent(this, MyHabitsActivity.class);
+        intent.putExtra(LOGIN_USERNAME, login_UserName);
+
         startActivity(intent);
+
+        finish();
     }
 
     public void Following(View view) {
@@ -70,8 +80,13 @@ public class main_menu extends AppCompatActivity {
 
 
     public void Habits_history(View view) {
-        Intent intent = new Intent(this, HabitHistoryActivity.class);
-        startActivity(intent);
+//        // Pass the login User Name to the HabitHistory Activity
+//        Intent intent = new Intent(this, HabitHistoryActivity.class);
+//        intent.putExtra(LOGIN_USERNAME, login_UserName);
+//
+//        startActivity(intent);
+//
+//        finish();
     }
 
     public void Habits_events_map(View view) {
@@ -99,23 +114,5 @@ public class main_menu extends AppCompatActivity {
 
         // Sync the offline file with online data storage
         ElasticSearchController.syncOnlineWithOffline(login_UserProfile);
-    }
-
-    /**
-     * Get the logined User Profile
-     *
-     * @return login_UserProfile: UserProfile, the user profile of the logged-in user
-     */
-    public static UserProfile getLogin_UserProfile() {
-        return login_UserProfile;
-    }
-
-    /**
-     * Update the User Profile of the logged-in user
-     *
-     * @param updated_UserProfile: UserProfile, the Updated User Profile of the logged-in user
-     */
-    public static void setLogin_UserProfile(UserProfile updated_UserProfile) {
-        login_UserProfile = updated_UserProfile;
     }
 }

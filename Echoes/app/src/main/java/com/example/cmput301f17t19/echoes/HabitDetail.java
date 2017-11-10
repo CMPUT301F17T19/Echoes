@@ -16,6 +16,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -52,6 +53,8 @@ public class HabitDetail extends AppCompatActivity {
     private CheckBox friday_CheckBox;
     private CheckBox saturday_CheckBox;
 
+    private Button cancelButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,26 +84,6 @@ public class HabitDetail extends AppCompatActivity {
         this.setTitle("Habit Details");
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
-
-        Bundle bundle = getIntent().getExtras();
-
-        // Check if the user selected an existed Habit
-        if (bundle == null) {
-            // Open an empty Habit UI
-            isNewHabit = true;
-
-        } else {
-            isNewHabit = false;
-
-            // Get the position of the selected Habit object in the HabitList
-            selected_pos = bundle.getInt(HabitOverviewAdapter.SELECTED_HABIT_POSITION);
-            selected_Habit = main_menu.getLogin_UserProfile().getHabit_list().getHabits().get(selected_pos);
-
-            // Initialize the Habit UI with the selected_Habit info
-            initializeHabitUI(selected_Habit);
-        }
-
-
 
         sunday_CheckBox = (CheckBox) findViewById(R.id.sunday_checkbox);
         monday_CheckBox = (CheckBox) findViewById(R.id.monday_checkBox);
@@ -139,8 +122,41 @@ public class HabitDetail extends AppCompatActivity {
             }
         });
 
+        cancelButton = (Button) findViewById(R.id.cancel_button);
+
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Go back to MyHabits Screen
+                finish();
+            }
+        });
+
+        Bundle bundle = getIntent().getExtras();
+
+        // Check if the user selected an existed Habit
+        if (bundle == null) {
+            // Open an empty Habit UI
+            isNewHabit = true;
+
+        } else {
+            isNewHabit = false;
+
+            // Get the position of the selected Habit object in the HabitList
+            selected_pos = bundle.getInt(HabitOverviewAdapter.SELECTED_HABIT_POSITION);
+            selected_Habit = MyHabitsActivity.getHabits_MyHabits().get(selected_pos);
+
+            // Initialize the Habit UI with the selected_Habit info
+            initializeHabitUI();
+        }
+
     }
 
+    /**
+     * Get an array of checked CheckBox num
+     *
+     * @return checkedCheckBox: ArrayList<Integer>
+     */
     private ArrayList<Integer> checkedCheckBox(){
         ArrayList<Integer> checkedCheckBox = new ArrayList<Integer>();
 
@@ -227,10 +243,8 @@ public class HabitDetail extends AppCompatActivity {
 
     /**
      * Initialize the Habit Detail UI with the selected Habit object
-     *
-     * @param selected_Habit: Habit, the selected Habit object
      */
-    private void initializeHabitUI(Habit selected_Habit){
+    private void initializeHabitUI(){
         Habit_name_EditText.setText(selected_Habit.getName());
         Habit_reason_EditText.setText(selected_Habit.getReason());
         startDate_TextView.setText(selected_Habit.getStartDate().toString());
