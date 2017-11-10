@@ -67,4 +67,13 @@ public class HabitList {
         return this.habits;
     }
 
+    /**
+     * Set the habit arrayList
+     *
+     * @param habits, ArrayList<Habit>, the ArrayList of Habit objects
+     */
+    public void setHabits(ArrayList<Habit> habits) {
+        this.habits = habits;
+    }
+
 }

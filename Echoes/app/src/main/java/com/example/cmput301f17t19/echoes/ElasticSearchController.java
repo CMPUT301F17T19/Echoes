@@ -207,4 +207,15 @@ public class ElasticSearchController {
             client = (JestDroidClient) factory.getObject();
         }
     }
+
+    /**
+     * Sync online User Profile data with offline file
+     *
+     * @param offlineUserProfile: UserProfile, the user profile of the user read from the offline file
+     */
+    public static void syncOnlineWithOffline(UserProfile offlineUserProfile) {
+        // Sync the User Profile from the offline file
+        ElasticSearchController.UpdateUserProfileTask updateUserProfileTask = new UpdateUserProfileTask();
+        updateUserProfileTask.execute(offlineUserProfile);
+    }
 }
