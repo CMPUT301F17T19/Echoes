@@ -50,6 +50,7 @@ MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] /Users/PSdr
 MERGED from [com.android.support:support-fragment:26.0.0-alpha1] /Users/PSdream/.android/build-cache/d02103b05ce78872aae77bf914712196e9e834a5/output/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] /Users/PSdream/.android/build-cache/4515f48dc9eab270359181e43d5386a55884311b/output/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] /Users/PSdream/.android/build-cache/0225ced43691844e02e7e5b630ddaa27bf2bf8a7/output/AndroidManifest.xml:29:5-20
+MERGED from [com.andkulikov:transitionseverywhere:1.7.7] /Users/PSdream/.android/build-cache/daa26f2cb4ae7aa0179d3194dc318e28adf6e959/output/AndroidManifest.xml:12:5-20
 MERGED from [com.android.support:support-compat:26.0.0-alpha1] /Users/PSdream/.android/build-cache/48f79eec8e797d3aba3cb708edaa3c0465795842/output/AndroidManifest.xml:29:5-20
 	android:label
 		ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:16:9-41
@@ -121,6 +122,7 @@ MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] /Users/PSdr
 MERGED from [com.android.support:support-fragment:26.0.0-alpha1] /Users/PSdream/.android/build-cache/d02103b05ce78872aae77bf914712196e9e834a5/output/AndroidManifest.xml:21:5-23:60
 MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] /Users/PSdream/.android/build-cache/4515f48dc9eab270359181e43d5386a55884311b/output/AndroidManifest.xml:21:5-23:58
 MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] /Users/PSdream/.android/build-cache/0225ced43691844e02e7e5b630ddaa27bf2bf8a7/output/AndroidManifest.xml:21:5-23:61
+MERGED from [com.andkulikov:transitionseverywhere:1.7.7] /Users/PSdream/.android/build-cache/daa26f2cb4ae7aa0179d3194dc318e28adf6e959/output/AndroidManifest.xml:8:5-10:41
 MERGED from [com.android.support:support-compat:26.0.0-alpha1] /Users/PSdream/.android/build-cache/48f79eec8e797d3aba3cb708edaa3c0465795842/output/AndroidManifest.xml:21:5-23:58
 	tools:overrideLibrary
 		ADDED from [com.android.support:design:26.0.0-alpha1] /Users/PSdream/.android/build-cache/c2960b3eb57787929214855fe18321e953bc2f70/output/AndroidManifest.xml:23:9-59
