@@ -14,11 +14,11 @@ import java.util.Date;
  */
 
 public class HabitEvent implements Comparable<HabitEvent> {
-    public String Title;
-    public String Reason;
-    public Date StartDate;
-    public String Comments;
-    public Image EventPhoto;
+    private String Title;
+    private String Reason;
+    private Date StartDate;
+    private String Comments;
+    private Image EventPhoto;
 
 
     public HabitEvent(String title, String reason, Date startDate){

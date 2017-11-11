@@ -225,6 +225,13 @@ public class MyHabitsActivity extends AppCompatActivity {
     }
 
     /**
+     * Get the user profile of the login user
+     */
+    public static UserProfile getLogin_userProfile() {
+        return login_userProfile;
+    }
+
+    /**
      * Update the HabitList of the Logged-in User
      *
      * @param updated_HabitList: ArrayList<Habit>, the update HabitList of the logged-in User
