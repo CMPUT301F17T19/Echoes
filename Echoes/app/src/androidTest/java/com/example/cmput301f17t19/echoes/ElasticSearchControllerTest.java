@@ -72,6 +72,20 @@ public class ElasticSearchControllerTest extends ActivityInstrumentationTestCase
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
+
+        ElasticSearchController.CheckUserProfileExistTask checkUserProfileExistTask1 = new ElasticSearchController.CheckUserProfileExistTask();
+        checkUserProfileExistTask1.execute("dummy1");
+
+        try {
+            Boolean isExist = checkUserProfileExistTask1.get();
+
+            assertTrue(isExist);
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
     }
 
     /**

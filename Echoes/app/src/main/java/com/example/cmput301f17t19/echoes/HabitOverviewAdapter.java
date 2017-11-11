@@ -18,6 +18,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
+
 /**
  * Habit Overview Recycler View Adapter
  *
@@ -106,7 +108,9 @@ public class HabitOverviewAdapter extends RecyclerView.Adapter<HabitOverviewAdap
             // Set the comment and date
             habitTitleTextView.setText(habit_pos.getName());
             habitReasonTextView.setText(habit_pos.getReason());
-            habitDateTextView.setText(habit_pos.getStartDate().toString());
+
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            habitDateTextView.setText(simpleDateFormat.format(habit_pos.getStartDate()));
 
             //TODO set status
 
