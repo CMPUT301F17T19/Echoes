@@ -19,7 +19,6 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -49,7 +48,9 @@ public class SignUpActivity extends AppCompatActivity {
     private EditText UserEmail;
     private EditText UserPhone;
     private EditText UserComment;
-    private ImageButton profile_ImageButton;
+    //private ImageButton profile_ImageButton;
+
+    private de.hdodenhof.circleimageview.CircleImageView profile_ImageButton;
 
     private byte[]   UserProfile_Picture = null;
 
@@ -102,7 +103,7 @@ public class SignUpActivity extends AppCompatActivity {
 
 
         UserSignUp = (Button) findViewById(R.id.signup);
-        profile_ImageButton = (ImageButton) findViewById(R.id.profile_photo);
+        profile_ImageButton = (de.hdodenhof.circleimageview.CircleImageView) findViewById(R.id.profile_image);
 
 
         UserName.getText().clear();
@@ -208,6 +209,11 @@ public class SignUpActivity extends AppCompatActivity {
 
             // Resize the bitmap to user profile's size
             Bitmap resizeBitmap = PhotoOperator.resizeImage(bitmap, profile_ImageButton.getWidth(), profile_ImageButton.getHeight());
+
+
+
+
+
 
             // Set the scaled profile photo to the view
             profile_ImageButton.setImageBitmap(resizeBitmap);
