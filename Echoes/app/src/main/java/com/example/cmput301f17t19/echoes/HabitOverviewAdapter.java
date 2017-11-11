@@ -112,8 +112,8 @@ public class HabitOverviewAdapter extends RecyclerView.Adapter<HabitOverviewAdap
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
             habitDateTextView.setText(simpleDateFormat.format(habit_pos.getStartDate()));
 
-            //TODO set status
-
+            HabitStatus habitStatus = new HabitStatus(MyHabitsActivity.getLogin_userProfile(), habit_pos);
+            habitStatusTextView.setText(Float.toString(habitStatus.statisticalPlannedHabitStatus()));
         }
 
         @Override

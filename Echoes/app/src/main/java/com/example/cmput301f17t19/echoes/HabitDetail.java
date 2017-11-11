@@ -120,7 +120,8 @@ public class HabitDetail extends AppCompatActivity {
                 int day = calendar.get(Calendar.DAY_OF_MONTH);
 
                 start_Date = new DatePickerDialog(mActivity, dateCallback, year, month, day);
-                start_Date.getDatePicker().setMinDate(calendar.getTimeInMillis());
+                // The start date need not be after the current date
+                start_Date.getDatePicker().setMaxDate(calendar.getTimeInMillis());
                 //Showing the DatePickerDialog
                 start_Date.show();
             }
