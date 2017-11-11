@@ -24,7 +24,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.ImageButton;
 import android.widget.TextView;
 
 import static com.example.cmput301f17t19.echoes.SelectPhotoController.loadPhoto;
@@ -46,7 +45,7 @@ public class UserProfileActivity extends AppCompatActivity {
 
     private OfflineStorageController offlineStorageController;
 
-    private ImageButton profile_ImageButton;
+    private de.hdodenhof.circleimageview.CircleImageView profile_ImageButton;
 
     private TextView profile_username_TextView;
     private TextView profile_userComment_TextView;
@@ -83,7 +82,7 @@ public class UserProfileActivity extends AppCompatActivity {
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
 
-        profile_ImageButton = (ImageButton) findViewById(R.id.profile_photo);
+        profile_ImageButton = (de.hdodenhof.circleimageview.CircleImageView) findViewById(R.id.profile_photo);
 
         profile_username_TextView = (TextView) findViewById(R.id.profile_username);
         profile_userComment_TextView = (TextView) findViewById(R.id.profile_comment);

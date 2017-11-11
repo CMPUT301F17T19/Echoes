@@ -110,7 +110,7 @@ public class SignUpActivity extends AppCompatActivity {
         UserEmail.getText().clear();
         UserComment.getText().clear();
         UserPhone.getText().clear();
-        profile_ImageButton.setImageBitmap(null);
+
 
 
         UserSignUp.setOnClickListener(new View.OnClickListener() {
@@ -209,10 +209,7 @@ public class SignUpActivity extends AppCompatActivity {
 
             // Resize the bitmap to user profile's size
             Bitmap resizeBitmap = PhotoOperator.resizeImage(bitmap, profile_ImageButton.getWidth(), profile_ImageButton.getHeight());
-
-
-
-
+            
 
 
             // Set the scaled profile photo to the view

@@ -25,13 +25,18 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_margin="8dp">
-        
-        <ImageButton
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/profile_photo"
-            android:layout_width="96dp"
-            android:layout_height="96dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_margin="8dp" />
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/user_profile_icon"
+            app:civ_border_width="2dp"
+            android:layout_margin="8dp"
+            android:layout_gravity="center"
+            app:civ_border_color="#FF000000"/>
 
         <TextView
             android:id="@+id/profile_username"

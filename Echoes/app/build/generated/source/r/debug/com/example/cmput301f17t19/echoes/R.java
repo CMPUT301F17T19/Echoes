@@ -3367,13 +3367,13 @@ containing a value of this type.
         public static final int abc_textfield_search_material=0x7f020051;
         public static final int abc_vector_test=0x7f020052;
         public static final int avd_hide_password=0x7f020053;
-        public static final int avd_hide_password_1=0x7f02007e;
-        public static final int avd_hide_password_2=0x7f02007f;
-        public static final int avd_hide_password_3=0x7f020080;
+        public static final int avd_hide_password_1=0x7f02007f;
+        public static final int avd_hide_password_2=0x7f020080;
+        public static final int avd_hide_password_3=0x7f020081;
         public static final int avd_show_password=0x7f020054;
-        public static final int avd_show_password_1=0x7f020081;
-        public static final int avd_show_password_2=0x7f020082;
-        public static final int avd_show_password_3=0x7f020083;
+        public static final int avd_show_password_1=0x7f020082;
+        public static final int avd_show_password_2=0x7f020083;
+        public static final int avd_show_password_3=0x7f020084;
         public static final int bg=0x7f020055;
         public static final int bg2=0x7f020056;
         public static final int btn=0x7f020057;
@@ -3400,8 +3400,8 @@ containing a value of this type.
         public static final int notification_bg_normal=0x7f02006c;
         public static final int notification_bg_normal_pressed=0x7f02006d;
         public static final int notification_icon_background=0x7f02006e;
-        public static final int notification_template_icon_bg=0x7f02007c;
-        public static final int notification_template_icon_low_bg=0x7f02007d;
+        public static final int notification_template_icon_bg=0x7f02007d;
+        public static final int notification_template_icon_low_bg=0x7f02007e;
         public static final int notification_tile_bg=0x7f02006f;
         public static final int notify_panel_notification_icon_bg=0x7f020070;
         public static final int phone_icon=0x7f020071;
@@ -3413,8 +3413,9 @@ containing a value of this type.
         public static final int user=0x7f020077;
         public static final int user1=0x7f020078;
         public static final int user_ic=0x7f020079;
-        public static final int white=0x7f02007a;
-        public static final int whte=0x7f02007b;
+        public static final int user_profile_icon=0x7f02007a;
+        public static final int white=0x7f02007b;
+        public static final int whte=0x7f02007c;
     }
     public static final class id {
         public static final int Attch_Location=0x7f0e00aa;
