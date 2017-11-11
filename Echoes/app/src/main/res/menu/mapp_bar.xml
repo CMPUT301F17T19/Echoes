@@ -6,6 +6,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <!--User Profile View-->
+    <item
+        android:id="@+id/action_UserProfile"
+        android:icon="@drawable/user_ic"
+        android:title="@string/userprofile_title"
+        app:showAsAction="ifRoom"/>
+
     <!--Menu View-->
     <item
         android:id="@+id/action_menu"

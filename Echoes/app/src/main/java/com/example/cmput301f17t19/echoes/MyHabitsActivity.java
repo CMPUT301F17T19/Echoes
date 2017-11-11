@@ -201,10 +201,19 @@ public class MyHabitsActivity extends AppCompatActivity {
 
                 finish();
 
-            default:
-                return super.onOptionsItemSelected(item);
+                break;
 
+            case R.id.action_UserProfile:
+                // Go to User Profile
+                // Pass the username of the login user to the user profile
+                Intent userProfile_intent = new Intent(this, UserProfile.class);
+                userProfile_intent.putExtra(UserProfileActivity.USERPROFILE_TAG, login_userName);
+                startActivity(userProfile_intent);
+
+                break;
         }
+
+        return super.onOptionsItemSelected(item);
     }
 
     /**
