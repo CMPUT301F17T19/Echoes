@@ -23,6 +23,7 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import static com.example.cmput301f17t19.echoes.LoginActivity.LOGIN_USERNAME;
 import static com.example.cmput301f17t19.echoes.SelectPhotoController.loadPhoto;
 
 
@@ -36,13 +37,18 @@ public class SignUpActivity extends AppCompatActivity {
     LinearLayout myLayout;
     AnimationDrawable animationDrawable;
 
-    private ImageButton profile_ImageButton;
+
+    private OfflineStorageController offlineStorageController;
+
+
 
     //UI references
     private EditText UserName;
     private EditText UserEmail;
     private EditText UserPhone;
     private EditText UserComment;
+    private ImageButton profile_ImageButton;
+
     private byte[]   UserProfile_Picture = null;
 
     private Button UserSignUp;
@@ -200,11 +206,17 @@ public class SignUpActivity extends AppCompatActivity {
             // Set the scaled profile photo to the view
             profile_ImageButton.setImageBitmap(resizeBitmap);
 
+            //store the photo to the user profile pic tmp variable
+            UserProfile_Picture = PhotoOperator.bitmapToByteArray(resizeBitmap);
+
+
             // Save the uploaded profile photo to Offline Storage
             //userProfile.setProfilePicture(PhotoOperator.bitmapToByteArray(resizeBitmap));
             //offlineStorageController.saveInFile(userProfile);
             // online storage update
-            ElasticSearchController.UpdateUserProfileTask updateUserProfileTask = new ElasticSearchController.UpdateUserProfileTask();
+
+
+            //ElasticSearchController.UpdateUserProfileTask updateUserProfileTask = new ElasticSearchController.UpdateUserProfileTask();
             //updateUserProfileTask.execute(userProfile);
 
         }
@@ -218,12 +230,17 @@ public class SignUpActivity extends AppCompatActivity {
                 // Set the scaled profile photo to the view
                 profile_ImageButton.setImageBitmap(resizeBitmap);
 
+
+                //store the photo to the user profile pic tmp variable
+                UserProfile_Picture = PhotoOperator.bitmapToByteArray(resizeBitmap);
+
+
                 // Save the uploaded profile photo to Offline Storage
                 //userProfile.setProfilePicture(PhotoOperator.bitmapToByteArray(resizeBitmap));
                 //offlineStorageController.saveInFile(userProfile);
 
                 // online storage update
-                ElasticSearchController.UpdateUserProfileTask updateUserProfileTask = new ElasticSearchController.UpdateUserProfileTask();
+                //ElasticSearchController.UpdateUserProfileTask updateUserProfileTask = new ElasticSearchController.UpdateUserProfileTask();
                 //updateUserProfileTask.execute(userProfile);
             }
         }
@@ -246,6 +263,7 @@ public class SignUpActivity extends AppCompatActivity {
         UserEmail.getText().clear();
         UserComment.getText().clear();
         UserPhone.getText().clear();
+        profile_ImageButton.setImageBitmap(null);
 
     }
 
@@ -277,8 +295,12 @@ public class SignUpActivity extends AppCompatActivity {
                   check = checkUserProfileExistTask.get();
 
                   if (check){
+                      //valid username
 
+                      //create new user profile for this user
                       UserProfile userProfile = new UserProfile(UserName.getText().toString());
+
+                      //set up user profile detail accordingly
 
                       if ( ! UserEmail.getText().toString().isEmpty()) {
 
@@ -298,7 +320,30 @@ public class SignUpActivity extends AppCompatActivity {
 
                       }
 
-                     
+
+                      if (UserProfile_Picture != null){
+
+                          userProfile.setProfilePicture(UserProfile_Picture);
+
+                      }
+
+
+
+                      //create a new file to store the new user profile to the local/offline storage
+                      offlineStorageController = new OfflineStorageController(this, UserName.getText().toString());
+                      //save that user profile into its file
+                      offlineStorageController.saveInFile(userProfile);
+
+                      //create new storage for new user in server
+                      ElasticSearchController.AddNewUserProfileTask addNuewUserProfileTask = new ElasticSearchController.AddNewUserProfileTask();
+                      addNuewUserProfileTask.execute(userProfile);
+
+
+                      //login with this new userprofile data info to the main page
+                      Intent main_menu_Intent = new Intent(SignUpActivity.this, main_menu.class);
+                      main_menu_Intent.putExtra(LOGIN_USERNAME, UserName.getText().toString());
+
+                      startActivity(main_menu_Intent);
 
 
 

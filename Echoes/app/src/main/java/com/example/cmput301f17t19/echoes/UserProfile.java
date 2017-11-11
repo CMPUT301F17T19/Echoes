@@ -44,6 +44,9 @@ public class UserProfile {
         this.username = username;
 
         this.profile_picture = null;
+        this.email_address = null;
+        this.phone_number = null;
+        this.comment = null;
 
         this.habit_list = new HabitList();
         this.habit_event_list = new HabitEventList();
