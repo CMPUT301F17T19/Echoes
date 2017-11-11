@@ -9,6 +9,10 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -47,6 +51,9 @@ public class main_menu extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
+
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionBar(myToolbar);
       
         myHabitsButton = (Button) findViewById(R.id.View_My_Habits);
 
@@ -55,6 +62,44 @@ public class main_menu extends AppCompatActivity {
         login_UserName = intent.getStringExtra(LOGIN_USERNAME);
 
         setLogin_UserProfile(login_UserName);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.mapp_bar, menu);
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+
+            case R.id.action_menu:
+                // Go back to main menu
+                // Pass the username of the login user to the main menu
+                Intent mainMenu_intent = new Intent(this, main_menu.class);
+                mainMenu_intent.putExtra(LOGIN_USERNAME, login_UserName);
+                startActivity(mainMenu_intent);
+
+                finish();
+
+                break;
+
+            case R.id.action_UserProfile:
+                // Go to User Profile
+                // Pass the username of the login user to the user profile
+                Intent userProfile_intent = new Intent(this, UserProfileActivity.class);
+                userProfile_intent.putExtra(UserProfileActivity.USERPROFILE_TAG, login_UserName);
+                startActivity(userProfile_intent);
+
+                finish();
+
+                break;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
 
@@ -97,6 +142,8 @@ public class main_menu extends AppCompatActivity {
     public void Logout(View view) {
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
+
+        finish();
     }
 
     /**

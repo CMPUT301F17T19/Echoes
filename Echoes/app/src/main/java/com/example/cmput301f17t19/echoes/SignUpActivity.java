@@ -23,6 +23,8 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import java.util.concurrent.ExecutionException;
+
 import static com.example.cmput301f17t19.echoes.LoginActivity.LOGIN_USERNAME;
 import static com.example.cmput301f17t19.echoes.SelectPhotoController.loadPhoto;
 
@@ -103,7 +105,11 @@ public class SignUpActivity extends AppCompatActivity {
         profile_ImageButton = (ImageButton) findViewById(R.id.profile_photo);
 
 
-
+        UserName.getText().clear();
+        UserEmail.getText().clear();
+        UserComment.getText().clear();
+        UserPhone.getText().clear();
+        profile_ImageButton.setImageBitmap(null);
 
 
         UserSignUp.setOnClickListener(new View.OnClickListener() {
@@ -246,33 +252,11 @@ public class SignUpActivity extends AppCompatActivity {
         }
     }
 
-
-
-
-
-
-
-
-
-
-    //overwrite onStart
-    @Override
-    protected void onStart() {
-        super.onStart();
-        UserName.getText().clear();
-        UserEmail.getText().clear();
-        UserComment.getText().clear();
-        UserPhone.getText().clear();
-        profile_ImageButton.setImageBitmap(null);
-
-    }
-
-
     //handle signUp
     private void SignUp(){
 
         //check if empty username
-        int text_len = UserName.getText().length();
+        int text_len = UserName.getText().toString().trim().length();
 
         if (text_len == 0){
 
@@ -286,7 +270,7 @@ public class SignUpActivity extends AppCompatActivity {
 
             ElasticSearchController.CheckUserProfileExistTask checkUserProfileExistTask = new ElasticSearchController.CheckUserProfileExistTask();
 
-            checkUserProfileExistTask.execute(UserName.getText().toString());
+            checkUserProfileExistTask.execute(UserName.getText().toString().trim());
 
             Boolean check = false;
 
@@ -294,11 +278,11 @@ public class SignUpActivity extends AppCompatActivity {
 
                   check = checkUserProfileExistTask.get();
 
-                  if (check){
+                  if (!check){
                       //valid username
 
                       //create new user profile for this user
-                      UserProfile userProfile = new UserProfile(UserName.getText().toString());
+                      UserProfile userProfile = new UserProfile(UserName.getText().toString().trim());
 
                       //set up user profile detail accordingly
 
@@ -330,7 +314,7 @@ public class SignUpActivity extends AppCompatActivity {
 
 
                       //create a new file to store the new user profile to the local/offline storage
-                      offlineStorageController = new OfflineStorageController(this, UserName.getText().toString());
+                      offlineStorageController = new OfflineStorageController(this, UserName.getText().toString().trim());
                       //save that user profile into its file
                       offlineStorageController.saveInFile(userProfile);
 
@@ -341,9 +325,11 @@ public class SignUpActivity extends AppCompatActivity {
 
                       //login with this new userprofile data info to the main page
                       Intent main_menu_Intent = new Intent(SignUpActivity.this, main_menu.class);
-                      main_menu_Intent.putExtra(LOGIN_USERNAME, UserName.getText().toString());
+                      main_menu_Intent.putExtra(LOGIN_USERNAME, UserName.getText().toString().trim());
 
                       startActivity(main_menu_Intent);
+
+                      finish();
 
 
 
@@ -352,20 +338,21 @@ public class SignUpActivity extends AppCompatActivity {
 
 
                       Toast.makeText(SignUpActivity.this, "Sorry. The username you entered is already existed. Please re-enter another username.", Toast.LENGTH_SHORT).show();
-
+                      UserName.setError("The username you entered is already existed.");
 
                   }
 
 
 
-            }catch (Exception e){
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+                Toast.makeText(SignUpActivity.this, "Sorry. You cannot SignUp while offline.", Toast.LENGTH_SHORT).show();
 
+            } catch (ExecutionException e) {
+                e.printStackTrace();
                 Toast.makeText(SignUpActivity.this, "Sorry. You cannot SignUp while offline.", Toast.LENGTH_SHORT).show();
 
             }
-
-
-
 
         }
 
