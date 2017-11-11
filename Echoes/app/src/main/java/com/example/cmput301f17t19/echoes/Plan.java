@@ -29,10 +29,15 @@ public class Plan {
     }
 
     //IMPLEMENT DailySchedule LATER, for now habits are schedueled on Days only. Not specific times.
-    public ArrayList<Boolean> schedule;  //schedule[SUNDAY] should be true if a habit is schedueled for sundays
+    private ArrayList<Boolean> schedule;  //schedule[SUNDAY] should be true if a habit is schedueled for sundays
 
     public Plan() {
+        // Originally all false
         this.schedule = new ArrayList<Boolean>();
+
+        for (int i = 0; i < 7; i++) {
+            this.schedule.add(false);
+        }
     }
 
 //    public Boolean getToDo(Day day) throws InvalidDayException{
@@ -44,9 +49,87 @@ public class Plan {
 //        }
 //    }
 //
-//    public void setToDo(Day day, Boolean status) {
-//        schedule.set(day, status);
-//    }
+    public void setToDo(int day, Boolean status) {
+        schedule.set(day, status);
+    }
+
+    /**
+     * Get the schedule of the Plan
+     */
+    public ArrayList<Boolean> getSchedule() {
+        return this.schedule;
+    }
+
+    /**
+     * Get the description of the schedule of the Plan
+     *
+     * @return scheduleDescription: The String description of the planned schedule
+     */
+    public ArrayList<String> getScheduleDescription() {
+        ArrayList<String> scheduleDescription = new ArrayList<String>();
+
+        for (int day = 0; day < 7; day++) {
+            switch (day) {
+                case 0:
+                    // Sunday
+                    if (this.schedule.get(day)) {
+                        scheduleDescription.add("Sunday");
+                    }
+
+                    break;
+
+                case 1:
+                    // Monday
+                    if (this.schedule.get(day)) {
+                        scheduleDescription.add("Monday");
+                    }
+
+                    break;
+
+                case 2:
+                    // Tuesday
+                    if (this.schedule.get(day)) {
+                        scheduleDescription.add("Tuesday");
+                    }
+
+                    break;
+
+                case 3:
+                    // Wednesday
+                    if (this.schedule.get(day)) {
+                        scheduleDescription.add("Wednesday");
+                    }
+
+                    break;
+
+                case 4:
+                    // Thursday
+                    if (this.schedule.get(day)) {
+                        scheduleDescription.add("Thursday");
+                    }
+
+                    break;
+
+                case 5:
+                    // Friday
+                    if (this.schedule.get(day)) {
+                        scheduleDescription.add("Friday");
+                    }
+
+                    break;
+
+                case 6:
+                    // Saturday
+                    if (this.schedule.get(day)) {
+                        scheduleDescription.add("Saturday");
+                    }
+
+                    break;
+            }
+        }
+
+        return scheduleDescription;
+    }
 //
 //    public Boolean scheduledForToday() {
 //        Calendar c = Calendar.getInstance();

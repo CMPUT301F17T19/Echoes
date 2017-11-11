@@ -12,6 +12,10 @@ package com.example.cmput301f17t19.echoes;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
@@ -20,6 +24,7 @@ import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -124,6 +129,55 @@ public class MyHabitsActivity extends AppCompatActivity {
         habitOverviewAdapter = new HabitOverviewAdapter(this);
 
         habitsRecyclerView.setAdapter(habitOverviewAdapter);
+
+        // Implement swipe to left to delete for recycler view
+        ItemTouchHelper.SimpleCallback simpleItemTouchCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
+
+            @Override
+            public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
+                return false;
+            }
+
+            @Override
+            public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
+                // Remove the swiped item from the list and screen
+                int position = viewHolder.getAdapterPosition();
+
+                mHabitList.remove(position);
+
+                habitOverviewAdapter.notifyItemRemoved(position);
+
+                // Update the data saved in file
+                updateDataStorage();
+            }
+
+            // Reference: https://stackoverflow.com/questions/30820806/adding-a-colored-background-with-text-icon-under-swiped-row-when-using-androids
+            @Override
+            public void onChildDraw(Canvas c, RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder,
+                                    float dX, float dY, int actionState, boolean isCurrentlyActive) {
+                if (actionState == ItemTouchHelper.ACTION_STATE_SWIPE) {
+                    super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
+
+                    View itemView = viewHolder.itemView;
+                    if (dX < 0) {
+                        // Show the delete icon
+                        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.delete_drawable);
+                        Paint paint = new Paint();
+                        paint.setARGB(255, 255, 0, 0);
+                        c.drawBitmap(bitmap, dX + (float)itemView.getWidth(),
+                                (float) itemView.getTop() + (float) itemView.getHeight()/2 - (float) bitmap.getHeight()/2,
+                                paint);
+                    }
+
+                } else {
+                    super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
+                }
+            }
+        };
+
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleItemTouchCallback);
+        // Attach item touch helper to the recycler view
+        itemTouchHelper.attachToRecyclerView(habitsRecyclerView);
     }
 
     @Override

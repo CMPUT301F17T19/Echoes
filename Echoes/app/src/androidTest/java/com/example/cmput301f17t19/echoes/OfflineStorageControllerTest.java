@@ -12,6 +12,8 @@ package com.example.cmput301f17t19.echoes;
 
 import android.test.ActivityInstrumentationTestCase2;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -43,7 +45,7 @@ public class OfflineStorageControllerTest extends ActivityInstrumentationTestCas
     /**
      * Test for readFromFile() method in OfflineStorageController class
      */
-    public void testReadFromFile() {
+    public void testReadFromFile() throws ParseException {
         UserProfile userProfile = new UserProfile("dummy1");
 
         userProfile.setEmailAddress("dummy1@gmail.com");
@@ -51,8 +53,12 @@ public class OfflineStorageControllerTest extends ActivityInstrumentationTestCas
         userProfile.setComment("no comment");
 
         HabitList habitList = userProfile.getHabit_list();
-        Habit habit1 = new Habit("dum1H1", "test", new Date(), new Plan());
-        Habit habit2 = new Habit("dum1H2", "test", new Date(), new Plan());
+
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Date date = simpleDateFormat.parse("2017-10-01");
+
+        Habit habit1 = new Habit("dum1H1", "test", date, new Plan());
+        Habit habit2 = new Habit("dum1H2", "test", date, new Plan());
 
         habitList.add(habit1);
         habitList.add(habit2);
@@ -81,12 +87,16 @@ public class OfflineStorageControllerTest extends ActivityInstrumentationTestCas
     /**
      * Test for saveInFile() method in OfflineStorageController class
      */
-    public void testSaveInFile() {
+    public void testSaveInFile() throws ParseException {
         UserProfile userProfile = new UserProfile("dummy2");
 
         HabitList habitList = userProfile.getHabit_list();
-        Habit habit1 = new Habit("dum2H1", "test", new Date(), new Plan());
-        Habit habit2 = new Habit("dum2H2", "test", new Date(), new Plan());
+
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Date date = simpleDateFormat.parse("2017-10-01");
+
+        Habit habit1 = new Habit("dum2H1", "test", date, new Plan());
+        Habit habit2 = new Habit("dum2H2", "test", date, new Plan());
 
         habitList.add(habit1);
         habitList.add(habit2);

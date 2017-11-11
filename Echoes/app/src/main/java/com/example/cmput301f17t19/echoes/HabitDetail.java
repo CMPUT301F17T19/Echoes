@@ -25,6 +25,7 @@ import android.widget.Toast;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 
 public class HabitDetail extends AppCompatActivity {
@@ -100,22 +101,26 @@ public class HabitDetail extends AppCompatActivity {
         startDate_TextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Reference: https://www.edureka.co/blog/android-tutorials-event-listeners/
+                // Reference: https://android--examples.blogspot.ca/2015/05/how-to-use-datepickerdialog-in-android.html
                 //Setting OnDateSetListener on the DatePickerDialog
                 DatePickerDialog.OnDateSetListener dateCallback = new DatePickerDialog.OnDateSetListener() {
 
                     @Override
                     public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
 
-                        //Displaying a Toast with the date selected
-                        Toast.makeText(mActivity, "The date is : " + dayOfMonth+"/"+  ++monthOfYear +"/"+  year, Toast.LENGTH_LONG).show();
-
-                        startDate_TextView.setText(dayOfMonth+"/"+  ++monthOfYear +"/"+  year);
+                        //Set the startDate textview with the date selected
+                        startDate_TextView.setText(year+"-"+ ++monthOfYear +"-"+ dayOfMonth);
                     }
                 };
 
-                start_Date = new DatePickerDialog(mActivity, dateCallback, 2017, 10, 10);
-                start_Date.getDatePicker().setMinDate(System.currentTimeMillis());
+                // The current day, month, year
+                Calendar calendar = Calendar.getInstance();
+                int year = calendar.get(Calendar.YEAR);
+                int month = calendar.get(Calendar.MONTH);
+                int day = calendar.get(Calendar.DAY_OF_MONTH);
+
+                start_Date = new DatePickerDialog(mActivity, dateCallback, year, month, day);
+                start_Date.getDatePicker().setMinDate(calendar.getTimeInMillis());
                 //Showing the DatePickerDialog
                 start_Date.show();
             }
@@ -237,6 +242,12 @@ public class HabitDetail extends AppCompatActivity {
                 // Create a new Habit and add to the User's HabitList
                 Habit new_Habit = createNewHabit();
 
+                ArrayList<String> testPlan = new_Habit.getPlan().getScheduleDescription();
+
+                for (String plan : testPlan) {
+                    Log.d("Test", plan);
+                }
+
                 if (new_Habit != null) {
                     // Replace this new Habit to the Habit at the selected position in HabitList
                     HabitList mHabitList = MyHabitsActivity.getMyHabitList();
@@ -292,18 +303,23 @@ public class HabitDetail extends AppCompatActivity {
      * Create a new Habit according to the data user entered
      */
     private Habit createNewHabit() {
-        //TODO: Create new Habit
+
         String habit_Name = Habit_name_EditText.getText().toString().trim();
         String habit_Reason = Habit_reason_EditText.getText().toString().trim();
 
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/YYYY");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         try {
             Date habit_Date = simpleDateFormat.parse(startDate_TextView.getText().toString());
 
-            // TODO: read and set Habit Plan
-            Habit new_Habit = new Habit(habit_Name, habit_Reason, habit_Date, new Plan());
+            ArrayList<Integer> checkedCheckbox = checkedCheckBox();
+            Plan habit_Plan = new Plan();
 
-            Log.d("HabitD", "Create a new Habit");
+            for (Integer day_Int : checkedCheckbox){
+                // Set the checked Checkbox's corresponding position to true
+                habit_Plan.setToDo(day_Int, true);
+            }
+
+            Habit new_Habit = new Habit(habit_Name, habit_Reason, habit_Date, habit_Plan);
 
             return new_Habit;
 
@@ -320,9 +336,57 @@ public class HabitDetail extends AppCompatActivity {
     private void initializeHabitUI(){
         Habit_name_EditText.setText(selected_Habit.getName());
         Habit_reason_EditText.setText(selected_Habit.getReason());
-        startDate_TextView.setText(selected_Habit.getStartDate().toString());
 
-        // TODO: set plan of the selected Habit
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        startDate_TextView.setText(simpleDateFormat.format(selected_Habit.getStartDate()));
+
+        Plan habit_Plan = selected_Habit.getPlan();
+
+        for (int day = 0; day < 7; day++) {
+            switch (day) {
+                case 0:
+                    // Sunday
+                    sunday_CheckBox.setChecked(habit_Plan.getSchedule().get(day));
+
+                    break;
+
+                case 1:
+                    // Monday
+                    monday_CheckBox.setChecked(habit_Plan.getSchedule().get(day));
+
+                    break;
+
+                case 2:
+                    // Tuesday
+                    tuesday_CheckBox.setChecked(habit_Plan.getSchedule().get(day));
+
+                    break;
+
+                case 3:
+                    // Wednesday
+                    wednesday_CheckBox.setChecked(habit_Plan.getSchedule().get(day));
+
+                    break;
+
+                case 4:
+                    // Thursday
+                    thursday_CheckBox.setChecked(habit_Plan.getSchedule().get(day));
+
+                    break;
+
+                case 5:
+                    // Friday
+                    friday_CheckBox.setChecked(habit_Plan.getSchedule().get(day));
+
+                    break;
+
+                case 6:
+                    // Saturday
+                    saturday_CheckBox.setChecked(habit_Plan.getSchedule().get(day));
+
+                    break;
+            }
+        }
     }
 }
 
