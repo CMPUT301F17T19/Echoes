@@ -119,8 +119,11 @@ public class main_menu extends AppCompatActivity {
     }
 
     public void Habits_todo_today (View view) {
-//        Intent intent = new Intent(this, AddNewActivity.class);
-//        startActivity(intent);
+        Intent intent = new Intent(this, ToDoActivity.class);
+        intent.putExtra(LOGIN_USERNAME, login_UserName);
+
+        startActivity(intent);
+        finish();
     }
 
 

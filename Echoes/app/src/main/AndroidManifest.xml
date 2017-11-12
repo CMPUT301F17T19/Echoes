@@ -31,6 +31,7 @@
         <activity android:name=".SignUpActivity" />
         <activity android:name=".UserProfileActivity" />
         <activity android:name=".main_menu" />
+        <activity android:name=".ToDoActivity" />
         <activity android:name=".HabitDetail"></activity>
         <activity android:name=".HabitEventDetailActivity"></activity>
     </application>

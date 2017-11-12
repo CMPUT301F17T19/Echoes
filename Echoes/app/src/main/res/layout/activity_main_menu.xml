@@ -52,6 +52,7 @@
         android:layout_height="60dp"
         android:layout_marginTop="15dp"
 
+        android:onClick="Habits_todo_today"
         android:text="Habits TODO Today "
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
