@@ -35,7 +35,7 @@ public class HabitEventListTest extends ActivityInstrumentationTestCase2 {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Date date = simpleDateFormat.parse("2017-10-01");
 
-        HabitEvent habitEvent = new HabitEvent("testHabitEvent", "testAdd", date);
+        HabitEvent habitEvent = new HabitEvent("testHabitEvent", date);
 
         HabitEventList habitEventList = new HabitEventList();
         habitEventList.add(habitEvent);
@@ -51,8 +51,8 @@ public class HabitEventListTest extends ActivityInstrumentationTestCase2 {
         Date date1 = simpleDateFormat.parse("2017-10-01");
         Date date2 = simpleDateFormat.parse("2017-10-02");
 
-        HabitEvent habitEvent1 = new HabitEvent("testHabitEvent", "testRemove", date1);
-        HabitEvent habitEvent2 = new HabitEvent("testHabitEvent", "testRemove", date2);
+        HabitEvent habitEvent1 = new HabitEvent("testHabitEvent", date1);
+        HabitEvent habitEvent2 = new HabitEvent("testHabitEvent", date2);
 
         HabitEventList habitEventList = new HabitEventList();
         habitEventList.add(habitEvent1);
@@ -75,12 +75,12 @@ public class HabitEventListTest extends ActivityInstrumentationTestCase2 {
         Date date5 = simpleDateFormat.parse("2014-09-08");
         Date date6 = simpleDateFormat.parse("2015-06-08");
 
-        HabitEvent habitEvent1 = new HabitEvent("testHabitEvent", "testSort", date1);
-        HabitEvent habitEvent2 = new HabitEvent("testHabitEvent", "testSort", date2);
-        HabitEvent habitEvent3 = new HabitEvent("testHabitEvent", "testSort", date3);
-        HabitEvent habitEvent4 = new HabitEvent("testHabitEvent", "testSort", date4);
-        HabitEvent habitEvent5 = new HabitEvent("testHabitEvent", "testSort", date5);
-        HabitEvent habitEvent6 = new HabitEvent("testHabitEvent", "testSort", date6);
+        HabitEvent habitEvent1 = new HabitEvent("testHabitEvent", date1);
+        HabitEvent habitEvent2 = new HabitEvent("testHabitEvent", date2);
+        HabitEvent habitEvent3 = new HabitEvent("testHabitEvent", date3);
+        HabitEvent habitEvent4 = new HabitEvent("testHabitEvent", date4);
+        HabitEvent habitEvent5 = new HabitEvent("testHabitEvent", date5);
+        HabitEvent habitEvent6 = new HabitEvent("testHabitEvent", date6);
 
         HabitEventList habitEventList = new HabitEventList();
 
@@ -107,7 +107,7 @@ public class HabitEventListTest extends ActivityInstrumentationTestCase2 {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Date date = simpleDateFormat.parse("2017-10-01");
 
-        HabitEvent habitEvent = new HabitEvent("testHabitEvent", "test", date);
+        HabitEvent habitEvent = new HabitEvent("testHabitEvent", date);
 
         HabitEventList habitEventList = new HabitEventList();
         habitEventList.add(habitEvent);

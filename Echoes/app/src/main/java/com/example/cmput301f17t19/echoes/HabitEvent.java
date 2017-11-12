@@ -4,7 +4,6 @@
 
 package com.example.cmput301f17t19.echoes;
 
-import android.media.Image;
 import android.support.annotation.NonNull;
 
 import java.util.Date;
@@ -15,25 +14,20 @@ import java.util.Date;
 
 public class HabitEvent implements Comparable<HabitEvent> {
     private String Title;
-    private String Reason;
     private Date StartDate;
     private String Comments;
-    private Image EventPhoto;
+    private byte[] EventPhoto;
 
 
-    public HabitEvent(String title, String reason, Date startDate){
+    public HabitEvent(String title, Date startDate){
         this.Title = title;
-        this.Reason = reason;
         this.StartDate = startDate;
+        this.Comments = "";
     }
 
 
     public String getTitle(){
         return this.Title;
-    }
-
-    public String getReason(){
-        return this.Reason;
     }
 
     public Date getStartDate(){
@@ -44,16 +38,12 @@ public class HabitEvent implements Comparable<HabitEvent> {
         return this.Comments;
     }
 
-    public Image getEventPhoto(){
+    public byte[] getEventPhoto(){
         return this.EventPhoto;
     }
 
     public void setTitle(String title){
         this.Title = title;
-    }
-
-    public void setReason(String reason){
-        this.Reason = reason;
     }
 
     public void setStartDate(Date startDate){
@@ -68,10 +58,7 @@ public class HabitEvent implements Comparable<HabitEvent> {
 
     }
 
-    public void setEventPhoto(Image eventPhoto){
-
-        //TODO storage for each photographic image to be under 65536 bytes.
-
+    public void setEventPhoto(byte[] eventPhoto){
         this.EventPhoto = eventPhoto;
     }
 

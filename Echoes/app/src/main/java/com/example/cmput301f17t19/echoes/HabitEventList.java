@@ -10,6 +10,7 @@
 
 package com.example.cmput301f17t19.echoes;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -56,14 +57,58 @@ public class HabitEventList {
     }
 
     /**
-     * Check if the HabitEventList contains the HabitEvent object
+     * Check if the HabitEventList contains the HabitEvent with the given type and event date
      *
-     * @param habitEvent: HabitEvent
-     * @return true: if the HabitEventList contain the input HabitEvent object
-     *         false: if the HabitEventList does not contain the input HabitEvent object
+     * @param habitType: the type of the habit event
+     * @param eventDate: the date string of the habit event
+     *
+     * @return true: if the HabitEventList contain HabitEvent with the given type and event date
+     *         false: if the HabitEventList does not contain HabitEvent with the given type and event date
      */
-    public boolean hasHabitEvent(HabitEvent habitEvent){
-        return this.habitEvents.contains(habitEvent);
+    public boolean hasHabitEvent(String habitType, String eventDate){
+        boolean ifContain = false;
+
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+
+        for (HabitEvent habitEvent : habitEvents) {
+            String type = habitEvent.getTitle();
+            String date = simpleDateFormat.format(habitEvent.getStartDate());
+
+            if (habitType.equals(type) && eventDate.equals(date)) {
+                ifContain = true;
+
+                break;
+            }
+        }
+
+        return ifContain;
+    }
+
+    /**
+     * Check if the HabitEventList contains the HabitEvent with the given type and event date other than the given position
+     *
+     * @param habitType: the type of the habit event
+     * @param eventDate: the date string of the habit event
+     *
+     * @return true: if the HabitEventList contain HabitEvent with the given type and event date
+     *         false: if the HabitEventList does not contain HabitEvent with the given type and event date
+     */
+    public boolean hasHabitEvent(String habitType, String eventDate, int selected_pos){
+        boolean ifContain = false;
+
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+
+        for (int i = 0; i < habitEvents.size(); i++) {
+            String type = habitEvents.get(i).getTitle();
+            String date = simpleDateFormat.format(habitEvents.get(i).getStartDate());
+
+            if (habitType.equals(type) && eventDate.equals(date) && i != selected_pos) {
+                ifContain = true;
+                break;
+            }
+        }
+
+        return ifContain;
     }
 
     /**
@@ -73,5 +118,14 @@ public class HabitEventList {
      */
     public ArrayList<HabitEvent> getHabitEvents(){
         return this.habitEvents;
+    }
+
+    /**
+     * Set the habitEvent arraylist
+     *
+     * @param HabitEvents: ArrayList<HabitEvent>
+     */
+    public void setHabitEvents(ArrayList<HabitEvent> HabitEvents){
+        this.habitEvents=  HabitEvents;
     }
 }

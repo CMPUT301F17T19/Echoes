@@ -26,13 +26,14 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
+
+import static com.example.cmput301f17t19.echoes.LoginActivity.LOGIN_USERNAME;
 
 /**
  * Habit History UI
@@ -43,11 +44,19 @@ import java.util.Date;
  */
 public class HabitHistoryActivity extends AppCompatActivity {
 
-    // The arrayList of HabitEvent objects displayed in Habit History
-    private static ArrayList<HabitEvent> habitEvents_HabitHistory;
+    // The username of the login user
+    private static String login_Username;
+    // The user profile of the login user
+    private static UserProfile login_userProfile;
+    // The HabitEventList of the login user
+    private static HabitEventList mHabitEventList;
 
     private RecyclerView habitEventsRecyclerView;
-    private HabitEventOverviewAdapter habitEventOverviewAdapter;
+    private static HabitEventOverviewAdapter habitEventOverviewAdapter;
+
+    private static Context mContext;
+
+    private Button addEventButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +84,23 @@ public class HabitHistoryActivity extends AppCompatActivity {
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
 
+        mContext = this;
+
+        // Get the login username and user Profile
+        Intent intent = getIntent();
+        login_Username = intent.getStringExtra(LOGIN_USERNAME);
+
+        addEventButton = (Button) findViewById(R.id.habitevents_add_button);
+
+        addEventButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Open Habit Event Detail
+                Intent habitEventDetail_Intent = new Intent(mContext, HabitEventDetailActivity.class);
+                startActivity(habitEventDetail_Intent);
+            }
+        });
+
         // Set up recycler view for habit event overview in the Habit History
         habitEventsRecyclerView = (RecyclerView) findViewById(R.id.habitevents_recyclerView);
 
@@ -92,34 +118,12 @@ public class HabitHistoryActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        // Dummy arrayList of habitEvnets in Habit History
-        habitEvents_HabitHistory = new ArrayList<HabitEvent>();
-        // Add two dummy HabitEvent objects into the list
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        Date date1 = null;
-        Date date2 = null;
+        // The UserProfile of the login user
+        login_userProfile = getLogin_UserProfile();
+        // The HabitEventList of the login user
+        mHabitEventList = login_userProfile.getHabit_event_list();
 
-        try {
-            date1 = simpleDateFormat.parse("2017-10-01");
-            date2 = simpleDateFormat.parse("2017-10-02");
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-
-        HabitEvent habitEvent1 = new HabitEvent("DummyHabitEvent", "dummy", date1);
-        HabitEvent habitEvent2 = new HabitEvent("DummyHabitEvent", "dummy", date2);
-
-        try {
-            habitEvent1.setComments("Dummy Habit Event 1");
-            habitEvent2.setComments("Dummy Habit Event 2");
-        } catch (ArgTooLongException e) {
-            e.printStackTrace();
-        }
-
-        habitEvents_HabitHistory.add(habitEvent1);
-        habitEvents_HabitHistory.add(habitEvent2);
-
-        habitEventOverviewAdapter = new HabitEventOverviewAdapter(getApplicationContext());
+        habitEventOverviewAdapter = new HabitEventOverviewAdapter(this);
 
         habitEventsRecyclerView.setAdapter(habitEventOverviewAdapter);
     }
@@ -144,7 +148,7 @@ public class HabitHistoryActivity extends AppCompatActivity {
             }
 
             public boolean onQueryTextSubmit(String query) {
-                if (query != "" || query != null){
+                if (!query.equals("") || query != null){
                     // Search the given words in the HabitEventList
                     Log.d("Search words", query);
                 }
@@ -163,23 +167,66 @@ public class HabitHistoryActivity extends AppCompatActivity {
         switch (item.getItemId()) {
 
             case R.id.action_menu:
-                finish();
 
                 // Go back to main menu
-                Intent mainMenu_intent = new Intent(getApplicationContext(), main_menu.class);
+                Intent mainMenu_intent = new Intent(this, main_menu.class);
+                mainMenu_intent.putExtra(LOGIN_USERNAME, login_Username);
                 startActivity(mainMenu_intent);
 
-            default:
-                return super.onOptionsItemSelected(item);
+                finish();
 
+                break;
         }
+        return super.onOptionsItemSelected(item);
     }
 
     /**
-     * Get the arrayList of HabitEvent displayed in Habit History
+     * Get the HabitEventList of the login user
      */
-    public static ArrayList<HabitEvent> getHabitEvents_HabitHistory(){
-        return habitEvents_HabitHistory;
+    public static HabitEventList getmHabitEventList(){
+        return mHabitEventList;
     }
 
+    /**
+     * Get the user Profile of the login user
+     */
+    public static UserProfile getLogin_userProfile() {
+        return login_userProfile;
+    }
+
+    /**
+     * Update the HabitEventList of the Logged-in User
+     *
+     * @param updated_HabitEventList: ArrayList<HabitEvent>, the update HabitEventList of the logged-in User
+     */
+    public static void updateHabitEventList(ArrayList<HabitEvent> updated_HabitEventList) {
+        login_userProfile.getHabit_event_list().setHabitEvents(updated_HabitEventList);
+        mHabitEventList.setHabitEvents(updated_HabitEventList);
+    }
+
+    /**
+     * Update My Habits Screen and User Profile file and online data of the logged-in user
+     */
+    public static void updateDataStorage() {
+        // Update Screen
+        habitEventOverviewAdapter.notifyDataSetChanged();
+
+        // Update offline file
+        OfflineStorageController offlineStorageController = new OfflineStorageController(mContext, login_userProfile.getUserName());
+        offlineStorageController.saveInFile(login_userProfile);
+
+        // Update Online data
+        ElasticSearchController.syncOnlineWithOffline(login_userProfile);
+    }
+
+    /**
+     * Get the Login user Profile from offline file
+     *
+     * @return UserProfile: the User Profile of the login User
+     */
+    private UserProfile getLogin_UserProfile() {
+        OfflineStorageController offlineStorageController = new OfflineStorageController(this, login_Username);
+
+        return offlineStorageController.readFromFile();
+    }
 }

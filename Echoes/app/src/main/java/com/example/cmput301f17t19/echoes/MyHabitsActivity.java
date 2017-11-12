@@ -206,7 +206,7 @@ public class MyHabitsActivity extends AppCompatActivity {
             case R.id.action_UserProfile:
                 // Go to User Profile
                 // Pass the username of the login user to the user profile
-                Intent userProfile_intent = new Intent(this, UserProfile.class);
+                Intent userProfile_intent = new Intent(this, UserProfileActivity.class);
                 userProfile_intent.putExtra(UserProfileActivity.USERPROFILE_TAG, login_userName);
                 startActivity(userProfile_intent);
 

@@ -66,13 +66,17 @@ public class HabitList {
      *         false: if the HabitList does not contain the Habit with the same input title
      */
     public boolean hasHabitTitle(String habit_title) {
+        boolean isContain = false;
         // Check if the Habit in the arrayList of Habit contains the same title as the input
         for (Habit habit : this.habits) {
             if (habit.getName().equals(habit_title)) {
-                return true;
+                isContain = true;
+
+                break;
             }
         }
-        return false;
+
+        return isContain;
     }
 
     /**
@@ -84,13 +88,15 @@ public class HabitList {
      *         false: if the HabitList does not contain the Habit with the same input title
      */
     public boolean hasHabitTitle(String habit_title, int pos) {
+        boolean isContain = false;
         // Check if the Habit in the arrayList of Habit contains the same title as the input
         for (int i = 0; i < this.habits.size(); i++) {
             if (this.habits.get(i).getName().equals(habit_title) && i != pos) {
-                return true;
+                isContain = true;
+                break;
             }
         }
-        return false;
+        return isContain;
     }
 
     /**
