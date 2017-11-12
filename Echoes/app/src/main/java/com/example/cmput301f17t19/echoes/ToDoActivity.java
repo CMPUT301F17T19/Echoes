@@ -10,6 +10,7 @@ import android.widget.ListView;
 
 public class ToDoActivity extends AppCompatActivity {
 
+    //Dummy Arrays for now
     String[] nameArray = {
             "Wake up before 8:00",
             "Eat breakfast",
@@ -34,4 +35,6 @@ public class ToDoActivity extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.listViewToDo);
         listView.setAdapter(adapter);
     }
+
+    // Need OnItemClickListener forlist entries
 }
