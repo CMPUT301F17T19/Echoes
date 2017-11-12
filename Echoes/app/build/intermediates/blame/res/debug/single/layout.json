@@ -12,12 +12,12 @@
         "source": "C:\\Users\\taijieyang\\Desktop\\Echoes\\Echoes\\app\\src\\main\\res\\layout\\activity_login.xml"
     },
     {
-        "merged": "C:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_multichoice_material.xml",
-        "source": "C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\layout\\select_dialog_multichoice_material.xml"
-    },
-    {
         "merged": "C:\\Users\\taijieyang\\Desktop\\Echoes\\Echoes\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main_menu.xml",
         "source": "C:\\Users\\taijieyang\\Desktop\\Echoes\\Echoes\\app\\src\\main\\res\\layout\\activity_main_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_multichoice_material.xml",
+        "source": "C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\layout\\select_dialog_multichoice_material.xml"
     },
     {
         "merged": "C:\\Users\\Gary's\\cmput301\\Echoes\\Echoes\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_dropdown_item_icons_2line.xml",
@@ -72,12 +72,12 @@
         "source": "C:\\Users\\PSdream\\.android\\build-cache\\c2960b3eb57787929214855fe18321e953bc2f70\\output\\res\\layout\\design_navigation_item_subheader.xml"
     },
     {
-        "merged": "C:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_singlechoice_material.xml",
-        "source": "C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\layout\\select_dialog_singlechoice_material.xml"
-    },
-    {
         "merged": "C:\\Users\\taijieyang\\Desktop\\Echoes\\Echoes\\Echoes\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_separator.xml",
         "source": "C:\\Users\\taijieyang\\.android\\build-cache\\62a116c88fc5d743c26ea84790faaca8b26dd9c4\\output\\res\\layout\\design_navigation_item_separator.xml"
+    },
+    {
+        "merged": "C:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_singlechoice_material.xml",
+        "source": "C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\layout\\select_dialog_singlechoice_material.xml"
     },
     {
         "merged": "C:\\Users\\taijieyang\\Desktop\\Echoes\\Echoes\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_habit_overview.xml",
@@ -92,24 +92,24 @@
         "source": "C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\layout\\abc_screen_content_include.xml"
     },
     {
-        "merged": "C:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_select_dialog_material.xml",
-        "source": "C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\layout\\abc_select_dialog_material.xml"
-    },
-    {
         "merged": "C:\\Users\\Al\\Desktop\\Echoes\\Echoes\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_time.xml",
         "source": "C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\layout\\notification_template_part_time.xml"
+    },
+    {
+        "merged": "C:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_select_dialog_material.xml",
+        "source": "C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\layout\\abc_select_dialog_material.xml"
     },
     {
         "merged": "C:\\Users\\Gary's\\cmput301\\Echoes\\Echoes\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_menu_item_action_area.xml",
         "source": "C:\\Users\\Gary's\\.android\\build-cache\\af47d95c89f7af7933e1c69336bafb6765d551c6\\output\\res\\layout\\design_menu_item_action_area.xml"
     },
     {
-        "merged": "C:\\Users\\taijieyang\\Desktop\\Echoes\\Echoes\\Echoes\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_menu_item_action_area.xml",
-        "source": "C:\\Users\\taijieyang\\.android\\build-cache\\62a116c88fc5d743c26ea84790faaca8b26dd9c4\\output\\res\\layout\\design_menu_item_action_area.xml"
-    },
-    {
         "merged": "C:\\Users\\taijieyang\\Desktop\\Echoes\\Echoes\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_view.xml",
         "source": "C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\layout\\abc_search_view.xml"
+    },
+    {
+        "merged": "C:\\Users\\taijieyang\\Desktop\\Echoes\\Echoes\\Echoes\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_menu_item_action_area.xml",
+        "source": "C:\\Users\\taijieyang\\.android\\build-cache\\62a116c88fc5d743c26ea84790faaca8b26dd9c4\\output\\res\\layout\\design_menu_item_action_area.xml"
     },
     {
         "merged": "C:\\Users\\taijieyang\\Desktop\\Echoes\\Echoes\\Echoes\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_dialog_title_material.xml",
