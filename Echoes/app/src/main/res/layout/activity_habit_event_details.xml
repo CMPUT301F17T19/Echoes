@@ -71,6 +71,7 @@
         <TextView
             android:id="@+id/Get_Date"
             android:layout_width="wrap_content"
+            android:text="Click to select event date"
             android:layout_height="27dp"
             android:layout_weight="1.54" />
     </LinearLayout>

@@ -94,8 +94,6 @@ public class main_menu extends AppCompatActivity {
                 userProfile_intent.putExtra(UserProfileActivity.USERPROFILE_TAG, login_UserName);
                 startActivity(userProfile_intent);
 
-                finish();
-
                 break;
         }
 
@@ -128,13 +126,13 @@ public class main_menu extends AppCompatActivity {
 
 
     public void Habits_history(View view) {
-//        // Pass the login User Name to the HabitHistory Activity
-//        Intent intent = new Intent(this, HabitHistoryActivity.class);
-//        intent.putExtra(LOGIN_USERNAME, login_UserName);
-//
-//        startActivity(intent);
-//
-//        finish();
+        // Pass the login User Name to the HabitHistory Activity
+        Intent intent = new Intent(this, HabitHistoryActivity.class);
+        intent.putExtra(LOGIN_USERNAME, login_UserName);
+
+        startActivity(intent);
+
+        finish();
     }
 
     public void Habits_events_map(View view) {

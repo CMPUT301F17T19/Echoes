@@ -8,6 +8,7 @@ import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
@@ -24,9 +25,11 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
-import java.util.List;
 
 import static com.example.cmput301f17t19.echoes.SelectPhotoController.loadPhoto;
 
@@ -35,20 +38,32 @@ import static com.example.cmput301f17t19.echoes.SelectPhotoController.loadPhoto;
  */
 
 public class HabitEventDetailActivity extends AppCompatActivity {
-    HabitEventList habitEventList = new HabitEventList();
-    Spinner Types;
-    EditText WriteComment;
-    TextView date_TextView;
-    EditText Type_Location;
-    private TextView btnDatePicker;
+
+    // Check if the user wants to create a new HabitEvent or select a existed HabitEvent
+    private boolean isNewHabitEvent;
+
+    // The position of the selected HabitEvent
+    private int selected_pos;
+    // The selected Habit object
+    private HabitEvent selected_HabitEvent;
+
+    private Spinner Types;
+    private ArrayList<String> spinnerTypes;
+    private EditText WriteComment;
+    private TextView date_TextView;
+    private EditText Type_Location;
     private DatePickerDialog datePickerDialog;
     private Activity mActivity;
-    Date date;
 
     private Button select_photo_button;
     private Button take_photo_button;
 
+    private Button save_button;
+    private Button cancel_button;
+
     private ImageView imageView;
+
+    private byte[] eventImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,14 +84,14 @@ public class HabitEventDetailActivity extends AppCompatActivity {
 
 
 
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_habit_event_details);
 
         mActivity = this;
 
+        save_button = (Button) findViewById(R.id.Save);
+        cancel_button = (Button) findViewById(R.id.Cancel);
 
-        final Button Save = (Button)findViewById(R.id.Save);
         Types = (Spinner)findViewById(R.id.Types);
         date_TextView = (TextView) findViewById(R.id.Get_Date);
         WriteComment = (EditText)findViewById(R.id.WriteComment);
@@ -87,41 +102,43 @@ public class HabitEventDetailActivity extends AppCompatActivity {
 
         imageView = (ImageView) findViewById(R.id.imageId);
 
-        List<String> spinnerArray =  new ArrayList<String>();
-        spinnerArray.add("1");
-        spinnerArray.add("2");
+        // Set the Spinner
+        spinnerTypes =  getUserHabitTypes();
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(
-                this, android.R.layout.simple_spinner_item, spinnerArray);
+        ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(
+                this, android.R.layout.simple_spinner_item, spinnerTypes);
 
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        Types.setAdapter(adapter);
-
-        //Typecasting the Button
-        btnDatePicker = (TextView) findViewById(R.id.Get_Date);
+        Types.setAdapter(spinnerAdapter);
 
         //Setting an OnclickListener on the Button
-        btnDatePicker.setOnClickListener(new View.OnClickListener() {
+        date_TextView.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
+                // Reference: https://android--examples.blogspot.ca/2015/05/how-to-use-datepickerdialog-in-android.html
                 //Setting OnDateSetListener on the DatePickerDialog
                 DatePickerDialog.OnDateSetListener dateCallback = new DatePickerDialog.OnDateSetListener() {
 
                     @Override
                     public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-
-//Displaying a Toast with the date selected
-                        Toast.makeText(mActivity, "The date is : " + dayOfMonth+"/"+  ++monthOfYear +"/"+  year, Toast.LENGTH_LONG).show();
-
-                        date_TextView.setText(dayOfMonth+"/"+  ++monthOfYear +"/"+  year);
+                        //Set the date textview with the date selected
+                        date_TextView.setText(year+"-"+ ++monthOfYear +"-"+ dayOfMonth);
                     }
                 };
 
-//Creating an object of DatePickerDialog incontext of the Mainactivity
+                //Creating an object of DatePickerDialog incontext of the Mainactivity
+                // The current day, month, year
+                Calendar calendar = Calendar.getInstance();
+                int year = calendar.get(Calendar.YEAR);
+                int month = calendar.get(Calendar.MONTH);
+                int day = calendar.get(Calendar.DAY_OF_MONTH);
+
                 //dateCallback is called which defined below
-                datePickerDialog = new DatePickerDialog(mActivity, dateCallback, 2017, 11, 12);
+                datePickerDialog = new DatePickerDialog(mActivity, dateCallback, year, month, day);
+                // The event date need not be after the current date
+                datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis()+(1000 * 60 * 60 * 1));
                 //Showing the DatePickerDialog
                 datePickerDialog.show();
             }
@@ -156,35 +173,40 @@ public class HabitEventDetailActivity extends AppCompatActivity {
             }
         });
 
+        // Save button
+        save_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                saveHabitEvent();
+            }
+        });
 
+        // Cancel button
+        cancel_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Go back to HabitHistory Screen
+                finish();
+            }
+        });
 
-//https://www.edureka.co/blog/android-tutorials-event-listeners/
-//            @Override
-//            public void set(String WriteComment) throws ArgTooLongException {
-//                if (WriteComment.length() > 30)
-//                    throw new ArgTooLongException();
-//                else
+        Bundle bundle = getIntent().getExtras();
 
+        // Check if the user selected an existed Habit
+        if (bundle == null) {
+            // Open an empty HabitEvent UI
+            isNewHabitEvent = true;
 
-        this.WriteComment = WriteComment;
+        } else {
+            isNewHabitEvent = false;
 
-//        Save.setOnClickListener(new View.OnClickListener() {
-//
-//            public void onClick(View v) {
-//
-//                Counter tmp = new Counter(name.getText().toString(), d, Integer.parseInt(c_value.getText().toString()),
-//                        Integer.parseInt(i_value.getText().toString()),
-//                        comment.getText().toString());
-//
-//                clist.addCounter(tmp);
-//                clist.save(NewCounterActivity.this);
-//                Toast.makeText(getApplicationContext(), name.getText().toString() +
-//                        " has been added!", Toast.LENGTH_SHORT).show();
-//
-//                Intent intent = new Intent(NewCounterActivity.this, MainActivity.class);
-//                startActivity(intent);
-//            }
-//        });
+            // Get the position of the selected HabitEvent object in the HabitEventList
+            selected_pos = bundle.getInt(HabitEventOverviewAdapter.SELECTED_HABIT_EVENT_POSITION);
+            selected_HabitEvent = HabitHistoryActivity.getmHabitEventList().getHabitEvents().get(selected_pos);
+
+            // Initialize the Habit UI with the selected_HabitEvent info
+            initializeHabitEventUI();
+        }
 
     }
 
@@ -201,6 +223,8 @@ public class HabitEventDetailActivity extends AppCompatActivity {
             // Set the scaled profile photo to the view
             imageView.setImageBitmap(resizeBitmap);
 
+            eventImage = PhotoOperator.bitmapToByteArray(resizeBitmap);
+
         }
         else if (requestCode == TakePhotoController.TAKE_PHOTO_CODE && resultCode == RESULT_OK && data != null) {
             Bitmap bitmap = TakePhotoController.loadPhoto(data);
@@ -211,8 +235,203 @@ public class HabitEventDetailActivity extends AppCompatActivity {
 
                 // Set the scaled profile photo to the view
                 imageView.setImageBitmap(resizeBitmap);
+
+                eventImage = PhotoOperator.bitmapToByteArray(resizeBitmap);
             }
         }
     }
 
+    /**
+     * Get the login user's all habit types
+     *
+     * @return return an arraylist of user's habit types
+     */
+    private ArrayList<String> getUserHabitTypes() {
+        // The arraylist of all habits that the login user has
+        ArrayList<Habit> mHabits = HabitHistoryActivity.getLogin_userProfile().getHabit_list().getHabits();
+
+        ArrayList<String> habitTypes = new ArrayList<String>();
+
+        for (Habit habit : mHabits) {
+            if (!habitTypes.contains(habit.getName())) {
+                // Add this Habit Typr to habitTypes
+                habitTypes.add(habit.getName());
+            }
+        }
+
+        return habitTypes;
+    }
+
+    /**
+     * Initialize the HabitEvent Detail UI with the selected HabitEvent object
+     */
+    private void initializeHabitEventUI() {
+        // Set Event Type
+        String eventType = selected_HabitEvent.getTitle();
+
+        if (spinnerTypes.contains(eventType)) {
+            // Set the spinner at this position
+            int type_pos = spinnerTypes.indexOf(eventType);
+            Types.setSelection(type_pos);
+        } else {
+            // the Habit Type is deleted, add it to the end of types list and Spinner
+            spinnerTypes.add(eventType);
+
+            ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(
+                    this, android.R.layout.simple_spinner_item, spinnerTypes);
+
+            spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+            Types.setAdapter(spinnerAdapter);
+        }
+
+        // Set Event Comment
+        WriteComment.setText(selected_HabitEvent.getComments());
+
+        // Set Event Date
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        date_TextView.setText(simpleDateFormat.format(selected_HabitEvent.getStartDate()));
+
+        // Set Event Photo
+        if (selected_HabitEvent.getEventPhoto() != null) {
+            eventImage = selected_HabitEvent.getEventPhoto();
+            imageView.setImageBitmap(BitmapFactory.decodeByteArray(eventImage, 0, eventImage.length));
+        }
+    }
+
+    /**
+     * Save the changes to the selected HabitEvent, or create a new HabitEvent and save to HabitEventList
+     */
+    private void saveHabitEvent(){
+        if (isNewHabitEvent) {
+            // The user is about to add a new HabitEvent
+            boolean isValid = checkValid();
+
+            // Check if the HabitEvent has the same title and event date exist in HabitEventList
+            String eventType = Types.getSelectedItem().toString();
+            String eventDate = date_TextView.getText().toString();
+
+            if (HabitHistoryActivity.getmHabitEventList().hasHabitEvent(eventType, eventDate)) {
+                Toast.makeText(this, "The HabitEvent for this Type has already done on the selected date.", Toast.LENGTH_LONG).show();
+
+                isValid = false;
+            }
+
+            if (isValid) {
+                // Create a new Habit Event and add to user's HabitEventList
+                HabitEvent new_HabitEvent = createNewHabitEvent();
+
+                if (new_HabitEvent != null) {
+                    // Add this new HabitEvent to the HabitEventList of the login User
+                    HabitEventList mHabitEventList = HabitHistoryActivity.getmHabitEventList();
+                    mHabitEventList.add(new_HabitEvent);
+                    // Sort List
+                    mHabitEventList.sortList();
+
+                    // Update Data in HabitHistory Activity
+                    HabitHistoryActivity.updateHabitEventList(mHabitEventList.getHabitEvents());
+                    // Update Data in online and offline data storage
+                    HabitHistoryActivity.updateDataStorage();
+                }
+
+                // Close HabitEvent Detail
+                finish();
+            }
+
+        } else {
+            // The user is about to edit an existing HabitEvent
+            boolean isValid = checkValid();
+
+            // Check if the HabitEvent has the same title and event date exist in HabitEventList other than the selected position
+            String eventType = Types.getSelectedItem().toString();
+            String eventDate = date_TextView.getText().toString();
+
+            if (HabitHistoryActivity.getmHabitEventList().hasHabitEvent(eventType, eventDate, selected_pos)) {
+                Toast.makeText(this, "The HabitEvent for this Type has already done on the selected date.", Toast.LENGTH_LONG).show();
+
+                isValid = false;
+            }
+
+            if (isValid) {
+                // Create a new Habit Event and add to user's HabitEventList
+                HabitEvent new_HabitEvent = createNewHabitEvent();
+
+                if (new_HabitEvent != null) {
+                    // Replace this new HabitEvent to the HabitEvent at the selected position in HabitEventList
+                    HabitEventList mHabitEventList = HabitHistoryActivity.getmHabitEventList();
+                    mHabitEventList.getHabitEvents().set(selected_pos, new_HabitEvent);
+                    // Sort List
+                    mHabitEventList.sortList();
+
+                    // Update Data in HabitHistory Activity
+                    HabitHistoryActivity.updateHabitEventList(mHabitEventList.getHabitEvents());
+                    // Update Data in online and offline data storage
+                    HabitHistoryActivity.updateDataStorage();
+                }
+
+                // Close HabitEvent Detail
+                finish();
+            }
+        }
+    }
+
+    /**
+     * Check if the input field is valid
+     */
+    private boolean checkValid() {
+        boolean isValid = true;
+
+        String event_comment = WriteComment.getText().toString().trim();
+
+        // comment no more than 20 characters
+        if (event_comment.length() > 20) {
+            WriteComment.setError("The length of comment cannot be more than 20 characters");
+            isValid = false;
+        }
+
+        // Check date
+        if (date_TextView.getText().toString().equals("Click to select event date")){
+            Toast.makeText(this, "Please select event date", Toast.LENGTH_LONG).show();
+            isValid = false;
+        }
+
+        return isValid;
+    }
+
+    /**
+     * Create a new Habit Event
+     */
+    private HabitEvent createNewHabitEvent() {
+        HabitEvent new_HabitEvent = null;
+
+        String eventType = Types.getSelectedItem().toString();
+
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        try {
+            Date eventDate = simpleDateFormat.parse(date_TextView.getText().toString());
+
+            new_HabitEvent = new HabitEvent(eventType, eventDate);
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        if (new_HabitEvent != null) {
+            // Set comment
+            if (WriteComment.getText().toString().trim().length() != 0) {
+                try {
+                    new_HabitEvent.setComments(WriteComment.getText().toString().trim());
+                } catch (ArgTooLongException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            // Set image
+            if (eventImage != null) {
+                new_HabitEvent.setEventPhoto(eventImage);
+            }
+        }
+
+        return new_HabitEvent;
+    }
 }

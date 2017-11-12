@@ -107,7 +107,6 @@ public class HabitDetail extends AppCompatActivity {
 
                     @Override
                     public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-
                         //Set the startDate textview with the date selected
                         startDate_TextView.setText(year+"-"+ ++monthOfYear +"-"+ dayOfMonth);
                     }
@@ -121,7 +120,7 @@ public class HabitDetail extends AppCompatActivity {
 
                 start_Date = new DatePickerDialog(mActivity, dateCallback, year, month, day);
                 // The start date need not be after the current date
-                start_Date.getDatePicker().setMaxDate(calendar.getTimeInMillis());
+                start_Date.getDatePicker().setMaxDate(System.currentTimeMillis()+(1000 * 60 * 60 * 1));
                 //Showing the DatePickerDialog
                 start_Date.show();
             }

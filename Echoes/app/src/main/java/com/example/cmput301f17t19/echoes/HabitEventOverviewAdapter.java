@@ -27,6 +27,7 @@ import android.widget.TextView;
  */
 
 public class HabitEventOverviewAdapter extends RecyclerView.Adapter<HabitEventOverviewAdapter.HabitEventOverviewViewHolder> {
+    public static final String SELECTED_HABIT_EVENT_POSITION = "SELECTED_HABIT_EVENT_POSITION";
 
     private Context mContext;
 
@@ -67,7 +68,7 @@ public class HabitEventOverviewAdapter extends RecyclerView.Adapter<HabitEventOv
 
     @Override
     public int getItemCount() {
-        return HabitHistoryActivity.getHabitEvents_HabitHistory().size();
+        return HabitHistoryActivity.getmHabitEventList().getHabitEvents().size();
     }
 
     /**
@@ -96,7 +97,7 @@ public class HabitEventOverviewAdapter extends RecyclerView.Adapter<HabitEventOv
          */
         private void bind(int position) {
             // Get the habit event object at the specific position in the Habit History's list
-            HabitEvent habitEvent_pos = HabitHistoryActivity.getHabitEvents_HabitHistory().get(position);
+            HabitEvent habitEvent_pos = HabitHistoryActivity.getmHabitEventList().getHabitEvents().get(position);
 
             // Set the comment and date
             habitEventCommentTextView.setText(habitEvent_pos.getComments());
@@ -111,12 +112,14 @@ public class HabitEventOverviewAdapter extends RecyclerView.Adapter<HabitEventOv
             int adapterPosition = getAdapterPosition();
 
             // The selected HabitEvent object
-            HabitEvent selected_HabitEvent = HabitHistoryActivity.getHabitEvents_HabitHistory().get(adapterPosition);
+            HabitEvent selected_HabitEvent = HabitHistoryActivity.getmHabitEventList().getHabitEvents().get(adapterPosition);
 
             // Start HabitEvent Detail Activity
             // Show the details of the selected HabitEvent object in HabitEvent Detail Screen
-            // Dummy test, go back to Main Page
-            Intent habitEventDetail_Intent = new Intent(mContext, main_menu.class);
+            Intent habitEventDetail_Intent = new Intent(mContext, HabitEventDetailActivity.class);
+            // Pass the position of the selected HabitEvent
+            habitEventDetail_Intent.putExtra(SELECTED_HABIT_EVENT_POSITION,adapterPosition);
+
             mContext.startActivity(habitEventDetail_Intent);
         }
     }
