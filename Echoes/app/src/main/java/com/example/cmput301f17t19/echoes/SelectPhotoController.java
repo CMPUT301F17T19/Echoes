@@ -41,6 +41,7 @@ public class SelectPhotoController {
      *
      * Reference: https://developer.android.com/training/permissions/requesting.html
      *
+     * @param activity: Activity
      */
     public static void askPermission(Activity activity) {
 
@@ -57,7 +58,7 @@ public class SelectPhotoController {
     /**
      * Return the intent of selecting a photo from gallery
      *
-     * Returns: selectPhotoIntent, Intent, selecting a photo from gallery intent
+     * @return Intent: selectPhotoIntent, selecting a photo from gallery intent
      */
     public static Intent selectPhotoFromGallery(){
         Intent selectPhotoIntent = new Intent(Intent.ACTION_PICK,
@@ -70,6 +71,10 @@ public class SelectPhotoController {
      *
      * Reference: https://stackoverflow.com/questions/13023788/how-to-load-an-image-in-image-view-from-gallery
      *
+     * @param context: Context
+     * @param data: Intent
+     *
+     * @return Bitmap: the uploaded bitmap image
      */
     public static Bitmap loadPhoto(Context context, Intent data){
         Uri selectedImage = data.getData();

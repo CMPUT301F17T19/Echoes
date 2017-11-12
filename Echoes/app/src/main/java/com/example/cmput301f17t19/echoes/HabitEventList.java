@@ -62,8 +62,8 @@ public class HabitEventList {
      * @param habitType: the type of the habit event
      * @param eventDate: the date string of the habit event
      *
-     * @return true: if the HabitEventList contain HabitEvent with the given type and event date
-     *         false: if the HabitEventList does not contain HabitEvent with the given type and event date
+     * @return Boolean: true, if the HabitEventList contain HabitEvent with the given type and event date
+     *                  false, if the HabitEventList does not contain HabitEvent with the given type and event date
      */
     public boolean hasHabitEvent(String habitType, String eventDate){
         boolean ifContain = false;
@@ -90,8 +90,8 @@ public class HabitEventList {
      * @param habitType: the type of the habit event
      * @param eventDate: the date string of the habit event
      *
-     * @return true: if the HabitEventList contain HabitEvent with the given type and event date
-     *         false: if the HabitEventList does not contain HabitEvent with the given type and event date
+     * @return Boolean: true, if the HabitEventList contain HabitEvent with the given type and event date
+     *                  false, if the HabitEventList does not contain HabitEvent with the given type and event date
      */
     public boolean hasHabitEvent(String habitType, String eventDate, int selected_pos){
         boolean ifContain = false;
@@ -114,7 +114,7 @@ public class HabitEventList {
     /**
      * Get the habitEvent arraylist
      *
-     * @return habitEvents: ArrayList<HabitEvent>
+     * @return ArrayList<HabitEvent>: the habitEvent arraylist
      */
     public ArrayList<HabitEvent> getHabitEvents(){
         return this.habitEvents;
@@ -123,7 +123,7 @@ public class HabitEventList {
     /**
      * Set the habitEvent arraylist
      *
-     * @param HabitEvents: ArrayList<HabitEvent>
+     * @param HabitEvents: ArrayList<HabitEvent>, the habitEvent arraylist
      */
     public void setHabitEvents(ArrayList<HabitEvent> HabitEvents){
         this.habitEvents=  HabitEvents;

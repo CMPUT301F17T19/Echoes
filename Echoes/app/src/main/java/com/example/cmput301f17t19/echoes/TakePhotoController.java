@@ -1,4 +1,10 @@
 /*
+ * Class Name: TakePhotoController
+ *
+ * Version: Version 1.0
+ *
+ * Date: November 8th, 2017
+ *
  * Copyright (c) Team cmput301f17t19, CMPUT301, University of Alberta - All Rights Reserved. You may use, distribute, or modify this code under terms and conditions of the Code of Students Behaviour at University of Alberta
  */
 
@@ -16,9 +22,12 @@ import android.support.v4.graphics.BitmapCompat;
 import android.util.Log;
 
 /**
- * Created by shanlu on 2017-11-08.
+ * Take a Photo using camera and upload
+ *
+ * @author Shan Lu
+ * @version 1.0
+ * @since 1.0
  */
-
 public class TakePhotoController {
 
     public final static int TAKE_PHOTO_CODE = 22;
@@ -28,6 +37,7 @@ public class TakePhotoController {
      *
      * Reference: https://developer.android.com/training/permissions/requesting.html
      *
+     * @param activity: Activity
      */
     public static void askPermission(Activity activity) {
 
@@ -44,7 +54,7 @@ public class TakePhotoController {
     /**
      * Return the intent of taking a photo using camera
      *
-     * Returns: takePhotoIntent, Intent, taking a photo using camera intent
+     * @return Intent: takePhotoIntent, taking a photo using camera intent
      */
     public static Intent takePhotoIntent(){
         Intent takePhotoIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
@@ -57,6 +67,8 @@ public class TakePhotoController {
      *
      * Reference: https://stackoverflow.com/questions/8505647/how-to-capture-the-photo-from-camera-on-android-emulator
      *
+     * @param data: Intent
+     * @return Bitmap: the taken photo bitmap
      */
     public static Bitmap loadPhoto(Intent data){
         Bundle extras = data.getExtras();

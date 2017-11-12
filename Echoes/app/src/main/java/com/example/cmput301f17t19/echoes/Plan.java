@@ -1,4 +1,10 @@
 /*
+ * Class Name: Plan
+ *
+ * Version: Version 1.0
+ *
+ * Date: October 23rd, 2017
+ *
  * Copyright (c) Team cmput301f17t19, CMPUT301, University of Alberta - All Rights Reserved. You may use, distribute, or modify this code under terms and conditions of the Code of Students Behaviour at University of Alberta
  */
 
@@ -11,10 +17,12 @@ package com.example.cmput301f17t19.echoes;
 import java.util.ArrayList;
 
 /**
- * Created by Hayden Bauder on 23/10/2017.
+ * The plan of the Habit
+ *
+ * @author Hayden Bauder
+ * @version 1.0
+ * @since 1.0
  */
-
-
 public class Plan {
 
     public enum Day {
@@ -31,6 +39,9 @@ public class Plan {
     //IMPLEMENT DailySchedule LATER, for now habits are schedueled on Days only. Not specific times.
     private ArrayList<Boolean> schedule;  //schedule[SUNDAY] should be true if a habit is schedueled for sundays
 
+    /**
+     * Constructor for the Plan object, initially all false
+     */
     public Plan() {
         // Originally all false
         this.schedule = new ArrayList<Boolean>();
@@ -49,12 +60,21 @@ public class Plan {
 //        }
 //    }
 //
+
+    /**
+     * Set the status of the day
+     *
+     * @param day: integer, represent each day (Monday, Tuesday, etc.)
+     * @param status: Boolean, whether the habit needs to be done on this day
+     */
     public void setToDo(int day, Boolean status) {
         schedule.set(day, status);
     }
 
     /**
      * Get the schedule of the Plan
+     *
+     * @return ArrayList<Boolean>: The array list of boolean represents whether the habit needs to be done on each day
      */
     public ArrayList<Boolean> getSchedule() {
         return this.schedule;
@@ -130,6 +150,7 @@ public class Plan {
 
         return scheduleDescription;
     }
+
 //
 //    public Boolean scheduledForToday() {
 //        Calendar c = Calendar.getInstance();

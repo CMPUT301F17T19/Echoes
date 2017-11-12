@@ -35,6 +35,9 @@ public class HabitStatus {
 
     /**
      * Constructor for Habit Status
+     *
+     * @param userProfile: UserProfile, the user profile
+     * @param habit: Habit, the selected Habit
      */
     public HabitStatus(UserProfile userProfile, Habit habit) {
         this.mUserProfile = userProfile;

@@ -22,6 +22,11 @@ public class Follower {
 
     private String username;
 
+    /**
+     * Constructor for the Follower object, set the username of the follower
+     *
+     * @param Username: String, the username of the follower
+     */
     public Follower(String Username) {
         this.username = Username;
     }

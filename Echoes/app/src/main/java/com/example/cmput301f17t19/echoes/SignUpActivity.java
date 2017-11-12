@@ -1,4 +1,10 @@
 /*
+ * Class Name: SignUpActivity
+ *
+ * Version: Version 1.0
+ *
+ * Date: October 23rd, 2017
+ *
  * Copyright (c) Team cmput301f17t19, CMPUT301, University of Alberta - All Rights Reserved. You may use, distribute, or modify this code under terms and conditions of the Code of Students Behaviour at University of Alberta
  */
 
@@ -27,11 +33,13 @@ import java.util.concurrent.ExecutionException;
 import static com.example.cmput301f17t19.echoes.LoginActivity.LOGIN_USERNAME;
 import static com.example.cmput301f17t19.echoes.SelectPhotoController.loadPhoto;
 
-
 /**
- * Created by Peter Liang on 2017-10-23.
+ * Sign Up Activity
+ *
+ * @author Peter Liang
+ * @version 1.0
+ * @since 1.0
  */
-
 public class SignUpActivity extends AppCompatActivity {
 
 
@@ -197,9 +205,13 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
 
-
-
-
+    /**
+     * Set the image from upload photo or take photo
+     *
+     * @param requestCode
+     * @param resultCode
+     * @param data
+     */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -255,7 +267,9 @@ public class SignUpActivity extends AppCompatActivity {
         }
     }
 
-    //handle signUp
+    /**
+     * handle sign up
+     */
     private void SignUp(){
 
         //check if empty username

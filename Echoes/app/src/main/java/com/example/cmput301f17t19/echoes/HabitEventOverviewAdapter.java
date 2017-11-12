@@ -43,7 +43,7 @@ public class HabitEventOverviewAdapter extends RecyclerView.Adapter<HabitEventOv
      *
      * @param parent: The parent which contains the ViewHolder
      * @param viewType: The view type of this view holder
-     * @return
+     * @return HabitEventOverviewAdapter.HabitEventOverviewViewHolder
      */
     @Override
     public HabitEventOverviewAdapter.HabitEventOverviewViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -66,6 +66,11 @@ public class HabitEventOverviewAdapter extends RecyclerView.Adapter<HabitEventOv
         holder.bind(position);
     }
 
+    /**
+     * Return the total number of items in the list
+     *
+     * @return int: the total number of items in the list
+     */
     @Override
     public int getItemCount() {
         return HabitHistoryActivity.getmHabitEventList().getHabitEvents().size();
@@ -80,6 +85,11 @@ public class HabitEventOverviewAdapter extends RecyclerView.Adapter<HabitEventOv
         private TextView habitEventCommentTextView;
         private TextView habitEventDateTextView;
 
+        /**
+         * Constructor for HabitEventOverviewViewHolder
+         *
+         * @param itemView
+         */
         public HabitEventOverviewViewHolder(View itemView) {
             super(itemView);
 
@@ -106,6 +116,11 @@ public class HabitEventOverviewAdapter extends RecyclerView.Adapter<HabitEventOv
             //TODO set image
         }
 
+        /**
+         * Send the intent to open the HabitEventDetail Activity of  the selected HabitEvent
+         *
+         * @param view: View, the view of HabitEvent clicked
+         */
         @Override
         public void onClick(View view) {
             // The position of the HabitEvent in the list that the user clicks

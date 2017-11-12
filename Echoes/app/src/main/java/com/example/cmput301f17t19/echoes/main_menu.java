@@ -1,4 +1,10 @@
 /*
+ * Class Name: main_menu
+ *
+ * Version: Version 1.0
+ *
+ * Date: November 7th, 2017
+ *
  * Copyright (c) Team cmput301f17t19, CMPUT301, University of Alberta - All Rights Reserved. You may use, distribute, or modify this code under terms and conditions of the Code of Students Behaviour at University of Alberta
  */
 
@@ -20,6 +26,13 @@ import android.widget.Button;
 
 import static com.example.cmput301f17t19.echoes.LoginActivity.LOGIN_USERNAME;
 
+/**
+ * Main Menu
+ *
+ * @author Taijie Yang
+ * @version 1.0
+ * @since 1.0
+ */
 public class main_menu extends AppCompatActivity {
 
     // The user name of the login user
@@ -100,7 +113,11 @@ public class main_menu extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-
+    /**
+     * Send intent to open MyHabits
+     *
+     * @param view
+     */
     public void viewMyHabits(View view) {
         // Pass the login User Name to the MyHabits Activity
         Intent intent = new Intent(this, MyHabitsActivity.class);
@@ -111,11 +128,21 @@ public class main_menu extends AppCompatActivity {
         finish();
     }
 
+    /**
+     * Send intent to open Following list
+     *
+     * @param view
+     */
     public void Following(View view) {
 //        Intent intent = new Intent(this, Following.class);
 //        startActivity(intent);
     }
 
+    /**
+     * Send intent to open TODO_LIST
+     *
+     * @param view
+     */
     public void Habits_todo_today (View view) {
         Intent intent = new Intent(this, ToDoActivity.class);
         intent.putExtra(LOGIN_USERNAME, login_UserName);
@@ -124,7 +151,11 @@ public class main_menu extends AppCompatActivity {
         finish();
     }
 
-
+    /**
+     * Send intent to open HabitHistory
+     *
+     * @param view
+     */
     public void Habits_history(View view) {
         // Pass the login User Name to the HabitHistory Activity
         Intent intent = new Intent(this, HabitHistoryActivity.class);
@@ -135,11 +166,21 @@ public class main_menu extends AppCompatActivity {
         finish();
     }
 
+    /**
+     * Send intent to open events map
+     *
+     * @param view
+     */
     public void Habits_events_map(View view) {
 //        Intent intent = new Intent(this, AddNewActivity.class);
 //        startActivity(intent);
     }
-  
+
+    /**
+     * Logout, go back to login screen
+     *
+     * @param view
+     */
     public void Logout(View view) {
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
