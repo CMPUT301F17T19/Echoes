@@ -67,7 +67,7 @@ public class HabitEventOverviewAdapter extends RecyclerView.Adapter<HabitEventOv
 
     @Override
     public int getItemCount() {
-        return HabitHistoryActivity.getHabitEvents_HabitHistory().size();
+        return HabitHistoryActivity.getMyHabitEventList().getHabitEvents().size();
     }
 
     /**
@@ -96,7 +96,7 @@ public class HabitEventOverviewAdapter extends RecyclerView.Adapter<HabitEventOv
          */
         private void bind(int position) {
             // Get the habit event object at the specific position in the Habit History's list
-            HabitEvent habitEvent_pos = HabitHistoryActivity.getHabitEvents_HabitHistory().get(position);
+            HabitEvent habitEvent_pos = HabitHistoryActivity.getMyHabitEventList().getHabitEvents().get(position);
 
             // Set the comment and date
             habitEventCommentTextView.setText(habitEvent_pos.getComments());
@@ -111,7 +111,7 @@ public class HabitEventOverviewAdapter extends RecyclerView.Adapter<HabitEventOv
             int adapterPosition = getAdapterPosition();
 
             // The selected HabitEvent object
-            HabitEvent selected_HabitEvent = HabitHistoryActivity.getHabitEvents_HabitHistory().get(adapterPosition);
+            HabitEvent selected_HabitEvent = HabitHistoryActivity.getMyHabitEventList().getHabitEvents().get(adapterPosition);
 
             // Start HabitEvent Detail Activity
             // Show the details of the selected HabitEvent object in HabitEvent Detail Screen

@@ -1,18 +1,22 @@
 [
     {
-        "merged": "/Users/Al/Desktop/Echoes/Echoes/app/build/intermediates/res/merged/debug/animator-v21/design_appbar_state_list_animator.xml",
-        "source": "/Users/Al/.android/build-cache/d75da9aa0f6e3df852d38a7ee93acf5b13b5d42c/output/res/animator-v21/design_appbar_state_list_animator.xml"
+        "merged": "D:\\Users\\taijieyang\\Desktop\\Echoes\\Echoes\\app\\build\\intermediates\\res\\merged\\debug\\animator-v21\\design_appbar_state_list_animator.xml",
+        "source": "D:\\Users\\taijieyang\\.android\\build-cache\\62a116c88fc5d743c26ea84790faaca8b26dd9c4\\output\\res\\animator-v21\\design_appbar_state_list_animator.xml"
     },
     {
-        "merged": "/Users/taijieyang/Desktop/Echoes/Echoes/Echoes/app/build/intermediates/res/merged/debug/animator-v21/design_appbar_state_list_animator.xml",
-        "source": "/Users/taijieyang/.android/build-cache/62a116c88fc5d743c26ea84790faaca8b26dd9c4/output/res/animator-v21/design_appbar_state_list_animator.xml"
+        "merged": "D:\\Users\\taijieyang\\Desktop\\Echoes\\Echoes\\Echoes\\app\\build\\intermediates\\res\\merged\\debug\\animator-v21\\design_appbar_state_list_animator.xml",
+        "source": "D:\\Users\\taijieyang\\.android\\build-cache\\62a116c88fc5d743c26ea84790faaca8b26dd9c4\\output\\res\\animator-v21\\design_appbar_state_list_animator.xml"
     },
     {
-        "merged": "/Users/taijieyang/Desktop/Echoes/Echoes/app/build/intermediates/res/merged/debug/animator-v21/design_appbar_state_list_animator.xml",
-        "source": "/Users/taijieyang/.android/build-cache/62a116c88fc5d743c26ea84790faaca8b26dd9c4/output/res/animator-v21/design_appbar_state_list_animator.xml"
+        "merged": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\app\\build\\intermediates\\res\\merged\\debug\\animator-v21\\design_appbar_state_list_animator.xml",
+        "source": "D:\\Users\\PSdream\\.android\\build-cache\\c2960b3eb57787929214855fe18321e953bc2f70\\output\\res\\animator-v21\\design_appbar_state_list_animator.xml"
     },
     {
-        "merged": "/Users/PSdream/Desktop/project301/Echoes/Echoes/app/build/intermediates/res/merged/debug/animator-v21/design_appbar_state_list_animator.xml",
-        "source": "/Users/PSdream/.android/build-cache/c2960b3eb57787929214855fe18321e953bc2f70/output/res/animator-v21/design_appbar_state_list_animator.xml"
+        "merged": "D:\\D\\GitHub\\Echoes\\Echoes\\app\\build\\intermediates\\res\\merged\\debug\\animator-v21\\design_appbar_state_list_animator.xml",
+        "source": "C:\\Users\\Mitchell Ballou\\.android\\build-cache\\006969b895b55cfcb1c5eb466c62bc5499b95a7a\\output\\res\\animator-v21\\design_appbar_state_list_animator.xml"
+    },
+    {
+        "merged": "D:\\Users\\Al\\Desktop\\Echoes\\Echoes\\app\\build\\intermediates\\res\\merged\\debug\\animator-v21\\design_appbar_state_list_animator.xml",
+        "source": "D:\\Users\\Al\\.android\\build-cache\\d75da9aa0f6e3df852d38a7ee93acf5b13b5d42c\\output\\res\\animator-v21\\design_appbar_state_list_animator.xml"
     }
 ]

@@ -13,6 +13,10 @@ package com.example.cmput301f17t19.echoes;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
@@ -22,12 +26,16 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.Toast;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -38,16 +46,28 @@ import java.util.Date;
  * Habit History UI
  *
  * @author Shan Lu
+ * @author Mitchell Ballou
+ *
  * @version 1.0
  * @since 1.0
  */
 public class HabitHistoryActivity extends AppCompatActivity {
 
-    // The arrayList of HabitEvent objects displayed in Habit History
-    private static ArrayList<HabitEvent> habitEvents_HabitHistory;
 
     private RecyclerView habitEventsRecyclerView;
-    private HabitEventOverviewAdapter habitEventOverviewAdapter;
+    public static HabitEventOverviewAdapter habitEventOverviewAdapter;
+
+    private static Context mContext;
+
+    // The userName of the Logged-in user
+    private static String login_userName;
+    // The user profile of the logged-in user
+    private static UserProfile login_userProfile;
+    // The HabitList of the login user
+    private static HabitEventList habitEvents_HabitHistory;
+
+    private Button addHabitEventButton;
+    private Button habitEventsMapButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,9 +83,8 @@ public class HabitHistoryActivity extends AppCompatActivity {
 
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            window.setStatusBarColor(ContextCompat.getColor(this,R.color.primary_dark));
+            window.setStatusBarColor(ContextCompat.getColor(this, R.color.primary_dark));
         }
-
 
 
         super.onCreate(savedInstanceState);
@@ -74,6 +93,8 @@ public class HabitHistoryActivity extends AppCompatActivity {
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
+
+        mContext = this;
 
         // Set up recycler view for habit event overview in the Habit History
         habitEventsRecyclerView = (RecyclerView) findViewById(R.id.habitevents_recyclerView);
@@ -86,43 +107,93 @@ public class HabitHistoryActivity extends AppCompatActivity {
         habitEventsRecyclerView.addItemDecoration(mDividerItemDecoration);
 
         habitEventsRecyclerView.setHasFixedSize(true);
+
+        habitEventsMapButton = (Button) findViewById(R.id.habitevents_map);
+
+        habitEventsMapButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), "Will be enabled in Project Part 5", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        addHabitEventButton = (Button) findViewById(R.id.habitevents_add_button);
+
+        addHabitEventButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Open an empty Habit Event Detail Screen
+                Intent newHabitEvent_Intent = new Intent(mContext, HabitEventDetailActivity.class);
+                mContext.startActivity(newHabitEvent_Intent);
+            }
+        });
     }
+
 
     @Override
     protected void onStart() {
         super.onStart();
 
-        // Dummy arrayList of habitEvnets in Habit History
-        habitEvents_HabitHistory = new ArrayList<HabitEvent>();
-        // Add two dummy HabitEvent objects into the list
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        Date date1 = null;
-        Date date2 = null;
+        // the User Profile of the login user
+        login_userProfile = getLogin_UserProfile();
 
-        try {
-            date1 = simpleDateFormat.parse("2017-10-01");
-            date2 = simpleDateFormat.parse("2017-10-02");
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+        // The HabitEventList of the login user
+        habitEvents_HabitHistory = login_userProfile.getHabit_event_list();
 
-        HabitEvent habitEvent1 = new HabitEvent("DummyHabitEvent", "dummy", date1);
-        HabitEvent habitEvent2 = new HabitEvent("DummyHabitEvent", "dummy", date2);
-
-        try {
-            habitEvent1.setComments("Dummy Habit Event 1");
-            habitEvent2.setComments("Dummy Habit Event 2");
-        } catch (ArgTooLongException e) {
-            e.printStackTrace();
-        }
-
-        habitEvents_HabitHistory.add(habitEvent1);
-        habitEvents_HabitHistory.add(habitEvent2);
-
-        habitEventOverviewAdapter = new HabitEventOverviewAdapter(getApplicationContext());
+        habitEventOverviewAdapter = new HabitEventOverviewAdapter(this);
 
         habitEventsRecyclerView.setAdapter(habitEventOverviewAdapter);
+
+        // Implement swipe to left to delete for recycler view
+        ItemTouchHelper.SimpleCallback simpleItemTouchCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
+
+            @Override
+            public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
+                return false;
+            }
+
+            @Override
+            public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
+                // Remove the swiped item from the list and screen
+                int position = viewHolder.getAdapterPosition();
+
+                habitEvents_HabitHistory.remove(position);
+
+                habitEventOverviewAdapter.notifyItemRemoved(position);
+
+                // Update the data saved in file
+                updateDataStorage();
+            }
+
+            // Reference: https://stackoverflow.com/questions/30820806/adding-a-colored-background-with-text-icon-under-swiped-row-when-using-androids
+            @Override
+            public void onChildDraw(Canvas c, RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder,
+                                    float dX, float dY, int actionState, boolean isCurrentlyActive) {
+                if (actionState == ItemTouchHelper.ACTION_STATE_SWIPE) {
+                    super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
+
+                    View itemView = viewHolder.itemView;
+                    if (dX < 0) {
+                        // Show the delete icon
+                        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.delete_drawable);
+                        Paint paint = new Paint();
+                        paint.setARGB(255, 255, 0, 0);
+                        c.drawBitmap(bitmap, dX + (float)itemView.getWidth(),
+                                (float) itemView.getTop() + (float) itemView.getHeight()/2 - (float) bitmap.getHeight()/2,
+                                paint);
+                    }
+
+                } else {
+                    super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
+                }
+            }
+        };
+
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleItemTouchCallback);
+        // Attach item touch helper to the recycler view
+        itemTouchHelper.attachToRecyclerView(habitEventsRecyclerView);
     }
+
 
     // Reference: https://developer.android.com/training/search/setup.html
     @Override
@@ -174,12 +245,54 @@ public class HabitHistoryActivity extends AppCompatActivity {
 
         }
     }
-
     /**
-     * Get the arrayList of HabitEvent displayed in Habit History
+     * Get the HabitEventList displayed in Habit History
      */
-    public static ArrayList<HabitEvent> getHabitEvents_HabitHistory(){
+    public static HabitEventList getMyHabitEventList(){
+        // Get the HabitList of the logged-in user
         return habitEvents_HabitHistory;
     }
 
+    /**
+     * Get the user profile of the login user
+     */
+    public static UserProfile getLogin_userProfile() {
+        return login_userProfile;
+    }
+
+    /**
+     * Update the HabitList of the Logged-in User
+     *
+     * @param updated_HabitEventList: ArrayList<HabitEvent>, the update HabitEventList of the logged-in User
+     */
+    public static void updateHabitEventList(ArrayList<HabitEvent> updated_HabitEventList) {
+        login_userProfile.getHabit_event_list().setHabitEvents(updated_HabitEventList);
+        habitEvents_HabitHistory.setHabitEvents(updated_HabitEventList);
+    }
+
+    /**
+     * Update My Habits Screen and User Profile file and online data of the logged-in user
+     */
+    public static void updateDataStorage() {
+        // Update Screen
+        habitEventOverviewAdapter.notifyDataSetChanged();
+
+        // Update offline file
+        OfflineStorageController offlineStorageController = new OfflineStorageController(mContext, login_userProfile.getUserName());
+        offlineStorageController.saveInFile(login_userProfile);
+
+        // Update Online data
+        ElasticSearchController.syncOnlineWithOffline(login_userProfile);
+    }
+
+    /**
+     * Get the Login user Profile from offline file
+     *
+     * @return UserProfile: the User Profile of the login User
+     */
+    private UserProfile getLogin_UserProfile() {
+        OfflineStorageController offlineStorageController = new OfflineStorageController(this, login_userName);
+
+        return offlineStorageController.readFromFile();
+    }
 }

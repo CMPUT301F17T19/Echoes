@@ -17,6 +17,8 @@ import java.util.Collections;
  * Represents a List of User's habit events
  *
  * @author Shan Lu
+ * @author Mitchell Ballou
+ *
  * @version 1.0
  * @since 1.0
  */
@@ -74,4 +76,14 @@ public class HabitEventList {
     public ArrayList<HabitEvent> getHabitEvents(){
         return this.habitEvents;
     }
+
+    /**
+     * Set the habitEvent arrayList
+     *
+     * @param habitEvents, ArrayList<HabitEvent>, the ArrayList of Habit objects
+     */
+    public void setHabitEvents(ArrayList<HabitEvent> habitEvents) {
+        this.habitEvents = habitEvents;
+    }
+
 }

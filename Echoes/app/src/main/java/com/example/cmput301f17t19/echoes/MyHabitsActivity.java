@@ -130,7 +130,7 @@ public class MyHabitsActivity extends AppCompatActivity {
 
         habitsRecyclerView.setAdapter(habitOverviewAdapter);
 
-        // Implement swipe to left to delete for recycler view
+       // Implement swipe to left to delete for recycler view
         ItemTouchHelper.SimpleCallback simpleItemTouchCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
 
             @Override

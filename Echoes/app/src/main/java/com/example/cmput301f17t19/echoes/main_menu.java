@@ -30,6 +30,8 @@ public class main_menu extends AppCompatActivity {
 
     private Button myHabitsButton;
 
+    private Button habitEventsButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -56,6 +58,8 @@ public class main_menu extends AppCompatActivity {
         setSupportActionBar(myToolbar);
       
         myHabitsButton = (Button) findViewById(R.id.View_My_Habits);
+
+        habitEventsButton = (Button) findViewById(R.id.habit_history);
 
         Intent intent = getIntent();
 
@@ -125,13 +129,13 @@ public class main_menu extends AppCompatActivity {
 
 
     public void Habits_history(View view) {
-//        // Pass the login User Name to the HabitHistory Activity
-//        Intent intent = new Intent(this, HabitHistoryActivity.class);
-//        intent.putExtra(LOGIN_USERNAME, login_UserName);
-//
-//        startActivity(intent);
-//
-//        finish();
+        //Pass the login User Name to the HabitHistory Activity
+        Intent intent = new Intent(this, HabitHistoryActivity.class);
+        intent.putExtra(LOGIN_USERNAME, login_UserName);
+
+        startActivity(intent);
+
+        finish();
     }
 
     public void Habits_events_map(View view) {
