@@ -116,6 +116,9 @@ public class MyHabitsActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Set user profile and habit list
+     */
     @Override
     protected void onStart() {
         super.onStart();
@@ -218,6 +221,8 @@ public class MyHabitsActivity extends AppCompatActivity {
 
     /**
      * Get the HabitList displayed in My Habits
+     *
+     * @return HabitList: the HabitList of the user
      */
     public static HabitList getMyHabitList(){
         // Get the HabitList of the logged-in user
@@ -226,6 +231,8 @@ public class MyHabitsActivity extends AppCompatActivity {
 
     /**
      * Get the user profile of the login user
+     *
+     * @return UserProfile: the user profile of the user
      */
     public static UserProfile getLogin_userProfile() {
         return login_userProfile;

@@ -22,6 +22,11 @@ public class SystemAdministrator extends UserProfile {
     // The maximum size that each photographic image can be stored (in bytes)
     private static int max_img_storage_bytes = 65536;
 
+    /**
+     * Constructor for System Administrator
+     *
+     * @param username: String, the username of the system administrator
+     */
     public SystemAdministrator(String username) {
         super(username);
     }
@@ -36,7 +41,9 @@ public class SystemAdministrator extends UserProfile {
     }
 
     /**
-     * Get the maximum size of image stored
+     * Get the maximum size of image can be stored
+     *
+     * @return int: the the maximum size of image can be stored
      */
     public static int getMax_img_storage_bytes() {
         return max_img_storage_bytes;

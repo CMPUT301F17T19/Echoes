@@ -1,6 +1,12 @@
 /*
-* Copyright (c) Team cmput301f17t19, CMPUT301, University of Alberta - All Rights Reserved. You may use, distribute, or modify this code under terms and conditions of the Code of Students Behaviour at University of Alberta
-*/
+ * Class Name: HabitDetail
+ *
+ * Version: Version 1.0
+ *
+ * Date: November 8th, 2017
+ *
+ * Copyright (c) Team cmput301f17t19, CMPUT301, University of Alberta - All Rights Reserved. You may use, distribute, or modify this code under terms and conditions of the Code of Students Behaviour at University of Alberta
+ */
 
 package com.example.cmput301f17t19.echoes;
 
@@ -28,6 +34,13 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
+/**
+ * HabitDetail Activity
+ *
+ * @author Taijie Yang, Shan Lu
+ * @version 1.0
+ * @since 1.0
+ */
 public class HabitDetail extends AppCompatActivity {
 
     // Check if the user wants to create a new Habit or select a existed Habit
@@ -159,7 +172,7 @@ public class HabitDetail extends AppCompatActivity {
     /**
      * Get an array of checked CheckBox num
      *
-     * @return checkedCheckBox: ArrayList<Integer>
+     * @return ArrayList<Integer>: an array of checked CheckBox num
      */
     private ArrayList<Integer> checkedCheckBox(){
         ArrayList<Integer> checkedCheckBox = new ArrayList<Integer>();
@@ -195,6 +208,11 @@ public class HabitDetail extends AppCompatActivity {
         return checkedCheckBox;
     }
 
+    /**
+     * Add a new Habit object or save the changes made to the selected Habit object
+     *
+     * @param view: View, add Habit button View
+     */
     public void addNewHabit(View view) {
 
         if (isNewHabit) {
@@ -267,6 +285,9 @@ public class HabitDetail extends AppCompatActivity {
 
     /**
      * Check if the data in the fields are valid
+     *
+     * @return Boolean: true: the data in the fields are valid
+     *                  false: the data in the fields are not valid
      */
     private boolean checkDataValid() {
         boolean isSuccessful = true;
@@ -301,6 +322,8 @@ public class HabitDetail extends AppCompatActivity {
 
     /**
      * Create a new Habit according to the data user entered
+     *
+     * @return Habit: the new Habit object created
      */
     private Habit createNewHabit() {
 

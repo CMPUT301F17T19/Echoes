@@ -51,8 +51,8 @@ public class HabitList {
      * Check if the HabitList contains the Habit object
      *
      * @param habit: Habit
-     * @return true: if the HabitList contain the input Habit object
-     *         false: if the HabitList does not contain the input Habit object
+     * @return Boolean: true, if the HabitList contain the input Habit object
+     *                  false, if the HabitList does not contain the input Habit object
      */
     public boolean hasHabit(Habit habit){
         return this.habits.contains(habit);
@@ -62,8 +62,8 @@ public class HabitList {
      * Check if the HabitList contains the Habit with the same input title
      *
      * @param habit_title: The title of the Habit
-     * @return true: if the HabitList contain the Habit with the same input title
-     *         false: if the HabitList does not contain the Habit with the same input title
+     * @return Boolean: true, if the HabitList contain the Habit with the same input title
+     *                  false, if the HabitList does not contain the Habit with the same input title
      */
     public boolean hasHabitTitle(String habit_title) {
         boolean isContain = false;
@@ -84,8 +84,8 @@ public class HabitList {
      * input title
      *
      * @param habit_title: The title of the Habit
-     * @return true: if the HabitList contain the Habit with the same input title
-     *         false: if the HabitList does not contain the Habit with the same input title
+     * @return Boolean: true, if the HabitList contain the Habit with the same input title
+     *                  false, if the HabitList does not contain the Habit with the same input title
      */
     public boolean hasHabitTitle(String habit_title, int pos) {
         boolean isContain = false;
@@ -102,7 +102,7 @@ public class HabitList {
     /**
      * Get the habit arraylist
      *
-     * @return habits: ArrayList<Habit>
+     * @return ArrayList<Habit>: the habit arraylist
      */
     public ArrayList<Habit> getHabits(){
         return this.habits;

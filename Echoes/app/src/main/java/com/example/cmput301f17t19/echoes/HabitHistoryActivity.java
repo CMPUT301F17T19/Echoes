@@ -182,6 +182,8 @@ public class HabitHistoryActivity extends AppCompatActivity {
 
     /**
      * Get the HabitEventList of the login user
+     *
+     * @return HabitEventList: the HabitEventList of the login user
      */
     public static HabitEventList getmHabitEventList(){
         return mHabitEventList;
@@ -189,6 +191,8 @@ public class HabitHistoryActivity extends AppCompatActivity {
 
     /**
      * Get the user Profile of the login user
+     *
+     * @return UserProfile: the user Profile of the login user
      */
     public static UserProfile getLogin_userProfile() {
         return login_userProfile;

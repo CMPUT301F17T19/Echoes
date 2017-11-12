@@ -44,7 +44,7 @@ public class HabitOverviewAdapter extends RecyclerView.Adapter<HabitOverviewAdap
      *
      * @param parent: The parent which contains the ViewHolder
      * @param viewType: The view type of this view holder
-     * @return
+     * @return HabitOverviewAdapter.HabitOverviewViewHolder
      */
     @Override
     public HabitOverviewAdapter.HabitOverviewViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -116,6 +116,11 @@ public class HabitOverviewAdapter extends RecyclerView.Adapter<HabitOverviewAdap
             habitStatusTextView.setText(Float.toString(habitStatus.statisticalPlannedHabitStatus()));
         }
 
+        /**
+         * Send the intent to open the HabitDetail Activity of  the selected Habit
+         *
+         * @param view: View, the view of Habit clicked
+         */
         @Override
         public void onClick(View view) {
             // The position of the Habit in the list that the user clicks

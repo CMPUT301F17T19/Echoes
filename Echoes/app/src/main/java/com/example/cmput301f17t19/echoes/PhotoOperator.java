@@ -1,4 +1,10 @@
 /*
+ * Class Name: PhotoOperator
+ *
+ * Version: Version 1.0
+ *
+ * Date: November 8th, 2017
+ *
  * Copyright (c) Team cmput301f17t19, CMPUT301, University of Alberta - All Rights Reserved. You may use, distribute, or modify this code under terms and conditions of the Code of Students Behaviour at University of Alberta
  */
 
@@ -13,13 +19,19 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 /**
- * Created by shanlu on 2017-11-08.
+ * Process photo
+ *
+ * @author Shan Lu
+ * @version 1.0
+ * @since 1.0
  */
-
 public class PhotoOperator {
 
     /**
      * Convert bitmap to byte array
+     *
+     * @param bitmap: Bitmap
+     * @return byte[]: the byte array of the bitmap
      */
     public static byte[] bitmapToByteArray(Bitmap bitmap) {
         // The output stream of the bitmap
@@ -35,6 +47,9 @@ public class PhotoOperator {
      * Compress the image under the required max storage size
      *
      * Reference: https://stackoverflow.com/questions/28760941/compress-image-file-from-camera-to-certain-size
+     *
+     * @param bitmap: Bitmap, the bitmap to be compressed
+     * @return Bitmap: the compressed bitmap
      */
     public static Bitmap compressImage(Bitmap bitmap) {
         Log.d("Test", "Compress image");
@@ -77,6 +92,11 @@ public class PhotoOperator {
      *
      * Reference: https://stackoverflow.com/questions/8471226/how-to-resize-image-bitmap-to-a-given-size
      *
+     * @param bitmap: Bitmap, the selected bitmap image
+     * @param required_width: integer, the required width of the output bitmap
+     * @param required_height: integer, the required height of the output bitmap
+     *
+     * @return Bitmap: the resized bitmap
      */
     public static Bitmap resizeImage(Bitmap bitmap, int required_width, int required_height){
 

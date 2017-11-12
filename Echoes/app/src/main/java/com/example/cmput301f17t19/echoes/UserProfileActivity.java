@@ -175,6 +175,13 @@ public class UserProfileActivity extends AppCompatActivity {
         return profilePhoto_dialog_builder;
     }
 
+    /**
+     * Set the image from upload photo or take photo
+     *
+     * @param requestCode
+     * @param resultCode
+     * @param data
+     */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);

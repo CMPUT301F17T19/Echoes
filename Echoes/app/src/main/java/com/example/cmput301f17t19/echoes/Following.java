@@ -22,12 +22,19 @@ import java.util.concurrent.ExecutionException;
 public class Following {
     private String username;
 
+    /**
+     * Constructor for the Following object, set the username of the following
+     *
+     * @param Username: String, the username of the follower
+     */
     public Following(String Username) {
         this.username = Username;
     }
 
     /**
      * Get the UserProfile of the user that followed by me from Online database
+     *
+     * @return followingUserProfile: UserProfile, the user profile of the following user
      */
     public UserProfile getUserProfileOnline() {
         // Read the UserProfile with username from online database

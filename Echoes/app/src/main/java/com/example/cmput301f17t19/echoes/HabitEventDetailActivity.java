@@ -1,4 +1,10 @@
 /*
+ * Class Name: HabitEventDetailActivity
+ *
+ * Version: Version 1.0
+ *
+ * Date: November 8th, 2017
+ *
  * Copyright (c) Team cmput301f17t19, CMPUT301, University of Alberta - All Rights Reserved. You may use, distribute, or modify this code under terms and conditions of the Code of Students Behaviour at University of Alberta
  */
 
@@ -34,9 +40,12 @@ import java.util.Date;
 import static com.example.cmput301f17t19.echoes.SelectPhotoController.loadPhoto;
 
 /**
- * Created by xinrui on 2017-11-08.
+ * HabitEventDetail Activity
+ *
+ * @author Xinrui Lu, Shan Lu
+ * @version 1.0
+ * @since 1.0
  */
-
 public class HabitEventDetailActivity extends AppCompatActivity {
 
     // Check if the user wants to create a new HabitEvent or select a existed HabitEvent
@@ -210,6 +219,13 @@ public class HabitEventDetailActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Set the image from upload photo or take photo
+     *
+     * @param requestCode
+     * @param resultCode
+     * @param data
+     */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -244,7 +260,7 @@ public class HabitEventDetailActivity extends AppCompatActivity {
     /**
      * Get the login user's all habit types
      *
-     * @return return an arraylist of user's habit types
+     * @return ArrayList<String>: an arraylist of user's habit types
      */
     private ArrayList<String> getUserHabitTypes() {
         // The arraylist of all habits that the login user has
@@ -377,6 +393,9 @@ public class HabitEventDetailActivity extends AppCompatActivity {
 
     /**
      * Check if the input field is valid
+     *
+     * @return Boolean: true, the input field is valid
+     *                  false, the input field is valid
      */
     private boolean checkValid() {
         boolean isValid = true;
@@ -400,6 +419,8 @@ public class HabitEventDetailActivity extends AppCompatActivity {
 
     /**
      * Create a new Habit Event
+     *
+     * @return HabitEvent: the new HabitEvent object created
      */
     private HabitEvent createNewHabitEvent() {
         HabitEvent new_HabitEvent = null;

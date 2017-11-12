@@ -160,6 +160,10 @@ public class ElasticSearchController {
 
     /**
      * Update the UserProfile
+     *
+     * @params UserProfile: The UserProfile object of this user
+     * @progress Void
+     * @return Void
      */
     public static class UpdateUserProfileTask extends AsyncTask<UserProfile, Void, Void> {
 

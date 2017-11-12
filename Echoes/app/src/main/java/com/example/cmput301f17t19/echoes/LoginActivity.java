@@ -1,4 +1,10 @@
 /*
+ * Class Name: LoginActivity
+ *
+ * Version: Version 1.0
+ *
+ * Date: November 7th, 2017
+ *
  * Copyright (c) Team cmput301f17t19, CMPUT301, University of Alberta - All Rights Reserved. You may use, distribute, or modify this code under terms and conditions of the Code of Students Behaviour at University of Alberta
  */
 
@@ -21,17 +27,11 @@ import android.widget.Toast;
 
 
 /**
- * User Profile, represents each user
+ * A login screen that offers login via email/password.
  *
  * @author Zhaozhen(peter) Liang
  * @version 1.0
  * @since 1.0
- */
-
-
-
-/**
- * A login screen that offers login via email/password.
  */
 public class LoginActivity extends AppCompatActivity  {
 
@@ -116,7 +116,6 @@ public class LoginActivity extends AppCompatActivity  {
 
     }
 
-    //overwrite onStart
     @Override
     protected void onStart() {
         super.onStart();
@@ -124,8 +123,9 @@ public class LoginActivity extends AppCompatActivity  {
     }
 
 
-
-    //handling login
+    /**
+     * handling login
+     */
     private void login() {
 
         // check if username/password are empty, discard empty space
@@ -159,18 +159,13 @@ public class LoginActivity extends AppCompatActivity  {
         }
     }
 
-
-
-    //handling signup
+    /**
+     * handling signup
+     */
     private void signUp() {
         Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
         startActivity(intent);
     }
-
-
-
-
-
 
 }
 
