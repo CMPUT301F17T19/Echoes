@@ -32,7 +32,7 @@ public class HabitDetail extends AppCompatActivity {
         mActivity = this;
 
         this.setTitle("Habit Details");
-        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(myToolbar);
 
         Habit_reason_EditText = (EditText) findViewById(R.id.Habit_reason_editText);
