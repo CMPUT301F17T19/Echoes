@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.test.ActivityInstrumentationTestCase2;
 import android.util.Log;
 
+import com.robotium.solo.Solo;
 
 
 /**
@@ -12,7 +13,7 @@ import android.util.Log;
 
 public class LoginActivityTest extends ActivityInstrumentationTestCase2<LoginActivity> {
 
-   // public Solo solo;
+    public Solo solo;
 
     public LoginActivityTest() {
         super(com.example.cmput301f17t19.echoes.LoginActivity.class);

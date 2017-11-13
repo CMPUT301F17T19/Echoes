@@ -40,7 +40,7 @@ public class HabitEventListTest extends ActivityInstrumentationTestCase2 {
         HabitEventList habitEventList = new HabitEventList();
         habitEventList.add(habitEvent);
 
-        assertTrue(habitEventList.hasHabitEvent(habitEvent));
+        assertTrue(habitEventList.getHabitEvents().contains(habitEvent));
     }
 
     /**
@@ -60,7 +60,7 @@ public class HabitEventListTest extends ActivityInstrumentationTestCase2 {
 
         habitEventList.remove(0);
 
-        assertFalse(habitEventList.hasHabitEvent(habitEvent1));
+        assertFalse(habitEventList.getHabitEvents().contains(habitEvent1));
     }
 
     /**
@@ -112,6 +112,6 @@ public class HabitEventListTest extends ActivityInstrumentationTestCase2 {
         HabitEventList habitEventList = new HabitEventList();
         habitEventList.add(habitEvent);
 
-        assertTrue(habitEventList.hasHabitEvent(habitEvent));
+        assertTrue(habitEventList.getHabitEvents().contains(habitEvent));
     }
 }
