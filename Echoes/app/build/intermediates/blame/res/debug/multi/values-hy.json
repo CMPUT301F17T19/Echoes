@@ -1,5 +1,1621 @@
 [
     {
+        "outputFile": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\Desktop\\Echoes\\Echoes\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-hy\\values-hy.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 102,
+                    "endOffset": 153
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 102,
+                        "endOffset": 153
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 158,
+                    "endColumn": 107,
+                    "endOffset": 261
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 158,
+                        "endColumn": 107,
+                        "endOffset": 261
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 266,
+                    "endColumn": 122,
+                    "endOffset": 384
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 266,
+                        "endColumn": 122,
+                        "endOffset": 384
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 389,
+                    "endColumn": 100,
+                    "endOffset": 485
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 389,
+                        "endColumn": 100,
+                        "endOffset": 485
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 490,
+                    "endColumn": 109,
+                    "endOffset": 595
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 490,
+                        "endColumn": 109,
+                        "endOffset": 595
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 600,
+                    "endColumn": 88,
+                    "endOffset": 684
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 600,
+                        "endColumn": 88,
+                        "endOffset": 684
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 689,
+                    "endColumn": 105,
+                    "endOffset": 790
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 689,
+                        "endColumn": 105,
+                        "endOffset": 790
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 795,
+                    "endColumn": 114,
+                    "endOffset": 905
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 795,
+                        "endColumn": 114,
+                        "endOffset": 905
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 910,
+                    "endColumn": 81,
+                    "endOffset": 987
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 910,
+                        "endColumn": 81,
+                        "endOffset": 987
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 992,
+                    "endColumn": 80,
+                    "endOffset": 1068
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 992,
+                        "endColumn": 80,
+                        "endOffset": 1068
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 1073,
+                    "endColumn": 84,
+                    "endOffset": 1153
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 1073,
+                        "endColumn": 84,
+                        "endOffset": 1153
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 1158,
+                    "endColumn": 106,
+                    "endOffset": 1260
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 1158,
+                        "endColumn": 106,
+                        "endOffset": 1260
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 1265,
+                    "endColumn": 106,
+                    "endOffset": 1367
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 1265,
+                        "endColumn": 106,
+                        "endOffset": 1367
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 1372,
+                    "endColumn": 98,
+                    "endOffset": 1466
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 1372,
+                        "endColumn": 98,
+                        "endOffset": 1466
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 1471,
+                    "endColumn": 109,
+                    "endOffset": 1576
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 1471,
+                        "endColumn": 109,
+                        "endOffset": 1576
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 1581,
+                    "endColumn": 106,
+                    "endOffset": 1683
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 1581,
+                        "endColumn": 106,
+                        "endOffset": 1683
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 1688,
+                    "endColumn": 99,
+                    "endOffset": 1783
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 1688,
+                        "endColumn": 99,
+                        "endOffset": 1783
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 19,
+                    "startColumn": 4,
+                    "startOffset": 1788,
+                    "endColumn": 124,
+                    "endOffset": 1908
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 1788,
+                        "endColumn": 124,
+                        "endOffset": 1908
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 20,
+                    "startColumn": 4,
+                    "startOffset": 1913,
+                    "endColumn": 98,
+                    "endOffset": 2007
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 1913,
+                        "endColumn": 98,
+                        "endOffset": 2007
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 21,
+                    "startColumn": 4,
+                    "startOffset": 2012,
+                    "endColumn": 81,
+                    "endOffset": 2089
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 21,
+                        "startColumn": 4,
+                        "startOffset": 2012,
+                        "endColumn": 81,
+                        "endOffset": 2089
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 22,
+                    "startColumn": 4,
+                    "startOffset": 2094,
+                    "endColumn": 100,
+                    "endOffset": 2190
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 22,
+                        "startColumn": 4,
+                        "startOffset": 2094,
+                        "endColumn": 100,
+                        "endOffset": 2190
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\D\\GitHub\\Echoes2\\Echoes\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-hy\\values-hy.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 102,
+                    "endOffset": 153
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 102,
+                        "endOffset": 153
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 158,
+                    "endColumn": 107,
+                    "endOffset": 261
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 158,
+                        "endColumn": 107,
+                        "endOffset": 261
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 266,
+                    "endColumn": 122,
+                    "endOffset": 384
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 266,
+                        "endColumn": 122,
+                        "endOffset": 384
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 389,
+                    "endColumn": 100,
+                    "endOffset": 485
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 389,
+                        "endColumn": 100,
+                        "endOffset": 485
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 490,
+                    "endColumn": 109,
+                    "endOffset": 595
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 490,
+                        "endColumn": 109,
+                        "endOffset": 595
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 600,
+                    "endColumn": 88,
+                    "endOffset": 684
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 600,
+                        "endColumn": 88,
+                        "endOffset": 684
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 689,
+                    "endColumn": 105,
+                    "endOffset": 790
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 689,
+                        "endColumn": 105,
+                        "endOffset": 790
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 795,
+                    "endColumn": 114,
+                    "endOffset": 905
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 795,
+                        "endColumn": 114,
+                        "endOffset": 905
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 910,
+                    "endColumn": 81,
+                    "endOffset": 987
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 910,
+                        "endColumn": 81,
+                        "endOffset": 987
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 992,
+                    "endColumn": 80,
+                    "endOffset": 1068
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 992,
+                        "endColumn": 80,
+                        "endOffset": 1068
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 1073,
+                    "endColumn": 84,
+                    "endOffset": 1153
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 1073,
+                        "endColumn": 84,
+                        "endOffset": 1153
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 1158,
+                    "endColumn": 106,
+                    "endOffset": 1260
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 1158,
+                        "endColumn": 106,
+                        "endOffset": 1260
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 1265,
+                    "endColumn": 106,
+                    "endOffset": 1367
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 1265,
+                        "endColumn": 106,
+                        "endOffset": 1367
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 1372,
+                    "endColumn": 98,
+                    "endOffset": 1466
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 1372,
+                        "endColumn": 98,
+                        "endOffset": 1466
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 1471,
+                    "endColumn": 109,
+                    "endOffset": 1576
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 1471,
+                        "endColumn": 109,
+                        "endOffset": 1576
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 1581,
+                    "endColumn": 106,
+                    "endOffset": 1683
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 1581,
+                        "endColumn": 106,
+                        "endOffset": 1683
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 1688,
+                    "endColumn": 99,
+                    "endOffset": 1783
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 1688,
+                        "endColumn": 99,
+                        "endOffset": 1783
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 19,
+                    "startColumn": 4,
+                    "startOffset": 1788,
+                    "endColumn": 124,
+                    "endOffset": 1908
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 1788,
+                        "endColumn": 124,
+                        "endOffset": 1908
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 20,
+                    "startColumn": 4,
+                    "startOffset": 1913,
+                    "endColumn": 98,
+                    "endOffset": 2007
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 1913,
+                        "endColumn": 98,
+                        "endOffset": 2007
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 21,
+                    "startColumn": 4,
+                    "startOffset": 2012,
+                    "endColumn": 81,
+                    "endOffset": 2089
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 21,
+                        "startColumn": 4,
+                        "startOffset": 2012,
+                        "endColumn": 81,
+                        "endOffset": 2089
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 22,
+                    "startColumn": 4,
+                    "startOffset": 2094,
+                    "endColumn": 100,
+                    "endOffset": 2190
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 22,
+                        "startColumn": 4,
+                        "startOffset": 2094,
+                        "endColumn": 100,
+                        "endOffset": 2190
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\Desktop\\Echoes\\Echoes\\Echoes\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-hy\\values-hy.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 102,
+                    "endOffset": 153
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 102,
+                        "endOffset": 153
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 158,
+                    "endColumn": 107,
+                    "endOffset": 261
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 158,
+                        "endColumn": 107,
+                        "endOffset": 261
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 266,
+                    "endColumn": 122,
+                    "endOffset": 384
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 266,
+                        "endColumn": 122,
+                        "endOffset": 384
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 389,
+                    "endColumn": 100,
+                    "endOffset": 485
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 389,
+                        "endColumn": 100,
+                        "endOffset": 485
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 490,
+                    "endColumn": 109,
+                    "endOffset": 595
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 490,
+                        "endColumn": 109,
+                        "endOffset": 595
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 600,
+                    "endColumn": 88,
+                    "endOffset": 684
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 600,
+                        "endColumn": 88,
+                        "endOffset": 684
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 689,
+                    "endColumn": 105,
+                    "endOffset": 790
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 689,
+                        "endColumn": 105,
+                        "endOffset": 790
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 795,
+                    "endColumn": 114,
+                    "endOffset": 905
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 795,
+                        "endColumn": 114,
+                        "endOffset": 905
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 910,
+                    "endColumn": 81,
+                    "endOffset": 987
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 910,
+                        "endColumn": 81,
+                        "endOffset": 987
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 992,
+                    "endColumn": 80,
+                    "endOffset": 1068
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 992,
+                        "endColumn": 80,
+                        "endOffset": 1068
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 1073,
+                    "endColumn": 84,
+                    "endOffset": 1153
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 1073,
+                        "endColumn": 84,
+                        "endOffset": 1153
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 1158,
+                    "endColumn": 106,
+                    "endOffset": 1260
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 1158,
+                        "endColumn": 106,
+                        "endOffset": 1260
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 1265,
+                    "endColumn": 106,
+                    "endOffset": 1367
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 1265,
+                        "endColumn": 106,
+                        "endOffset": 1367
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 1372,
+                    "endColumn": 98,
+                    "endOffset": 1466
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 1372,
+                        "endColumn": 98,
+                        "endOffset": 1466
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 1471,
+                    "endColumn": 109,
+                    "endOffset": 1576
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 1471,
+                        "endColumn": 109,
+                        "endOffset": 1576
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 1581,
+                    "endColumn": 106,
+                    "endOffset": 1683
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 1581,
+                        "endColumn": 106,
+                        "endOffset": 1683
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 1688,
+                    "endColumn": 99,
+                    "endOffset": 1783
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 1688,
+                        "endColumn": 99,
+                        "endOffset": 1783
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 19,
+                    "startColumn": 4,
+                    "startOffset": 1788,
+                    "endColumn": 124,
+                    "endOffset": 1908
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 1788,
+                        "endColumn": 124,
+                        "endOffset": 1908
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 20,
+                    "startColumn": 4,
+                    "startOffset": 1913,
+                    "endColumn": 98,
+                    "endOffset": 2007
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 1913,
+                        "endColumn": 98,
+                        "endOffset": 2007
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 21,
+                    "startColumn": 4,
+                    "startOffset": 2012,
+                    "endColumn": 81,
+                    "endOffset": 2089
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 21,
+                        "startColumn": 4,
+                        "startOffset": 2012,
+                        "endColumn": 81,
+                        "endOffset": 2089
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 22,
+                    "startColumn": 4,
+                    "startOffset": 2094,
+                    "endColumn": 100,
+                    "endOffset": 2190
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 22,
+                        "startColumn": 4,
+                        "startOffset": 2094,
+                        "endColumn": 100,
+                        "endOffset": 2190
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\Desktop\\Echoes\\Echoes\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-hy\\values-hy.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 102,
+                    "endOffset": 153
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 102,
+                        "endOffset": 153
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 158,
+                    "endColumn": 107,
+                    "endOffset": 261
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 158,
+                        "endColumn": 107,
+                        "endOffset": 261
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 266,
+                    "endColumn": 122,
+                    "endOffset": 384
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 266,
+                        "endColumn": 122,
+                        "endOffset": 384
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 389,
+                    "endColumn": 100,
+                    "endOffset": 485
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 389,
+                        "endColumn": 100,
+                        "endOffset": 485
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 490,
+                    "endColumn": 109,
+                    "endOffset": 595
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 490,
+                        "endColumn": 109,
+                        "endOffset": 595
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 600,
+                    "endColumn": 88,
+                    "endOffset": 684
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 600,
+                        "endColumn": 88,
+                        "endOffset": 684
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 689,
+                    "endColumn": 105,
+                    "endOffset": 790
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 689,
+                        "endColumn": 105,
+                        "endOffset": 790
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 795,
+                    "endColumn": 114,
+                    "endOffset": 905
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 795,
+                        "endColumn": 114,
+                        "endOffset": 905
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 910,
+                    "endColumn": 81,
+                    "endOffset": 987
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 910,
+                        "endColumn": 81,
+                        "endOffset": 987
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 992,
+                    "endColumn": 80,
+                    "endOffset": 1068
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 992,
+                        "endColumn": 80,
+                        "endOffset": 1068
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 1073,
+                    "endColumn": 84,
+                    "endOffset": 1153
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 1073,
+                        "endColumn": 84,
+                        "endOffset": 1153
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 1158,
+                    "endColumn": 106,
+                    "endOffset": 1260
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 1158,
+                        "endColumn": 106,
+                        "endOffset": 1260
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 1265,
+                    "endColumn": 106,
+                    "endOffset": 1367
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 1265,
+                        "endColumn": 106,
+                        "endOffset": 1367
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 1372,
+                    "endColumn": 98,
+                    "endOffset": 1466
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 1372,
+                        "endColumn": 98,
+                        "endOffset": 1466
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 1471,
+                    "endColumn": 109,
+                    "endOffset": 1576
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 1471,
+                        "endColumn": 109,
+                        "endOffset": 1576
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 1581,
+                    "endColumn": 106,
+                    "endOffset": 1683
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 1581,
+                        "endColumn": 106,
+                        "endOffset": 1683
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 1688,
+                    "endColumn": 99,
+                    "endOffset": 1783
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 1688,
+                        "endColumn": 99,
+                        "endOffset": 1783
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 19,
+                    "startColumn": 4,
+                    "startOffset": 1788,
+                    "endColumn": 124,
+                    "endOffset": 1908
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 1788,
+                        "endColumn": 124,
+                        "endOffset": 1908
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 20,
+                    "startColumn": 4,
+                    "startOffset": 1913,
+                    "endColumn": 98,
+                    "endOffset": 2007
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 1913,
+                        "endColumn": 98,
+                        "endOffset": 2007
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 21,
+                    "startColumn": 4,
+                    "startOffset": 2012,
+                    "endColumn": 81,
+                    "endOffset": 2089
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 21,
+                        "startColumn": 4,
+                        "startOffset": 2012,
+                        "endColumn": 81,
+                        "endOffset": 2089
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 22,
+                    "startColumn": 4,
+                    "startOffset": 2094,
+                    "endColumn": 100,
+                    "endOffset": 2190
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-hy\\values-hy.xml",
+                    "position": {
+                        "startLine": 22,
+                        "startColumn": 4,
+                        "startOffset": 2094,
+                        "endColumn": 100,
+                        "endOffset": 2190
+                    }
+                }
+            }
+        ]
+    },
+    {
         "outputFile": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-hy\\values-hy.xml",
         "map": [
             {
@@ -1212,7 +2828,7 @@
         ]
     },
     {
-        "outputFile": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\D\\GitHub\\Echoes2\\Echoes\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-hy\\values-hy.xml",
+        "outputFile": "/Users/Al/Desktop/Echoes/Echoes/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-hy/values-hy.xml",
         "map": [
             {
                 "to": {
@@ -1223,7 +2839,7 @@
                     "endOffset": 153
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-hy\\values-hy.xml",
+                    "file": "/Users/Al/.android/build-cache/bf7c62df187d4cd416dd6dc253acb29f79dcdac7/output/res/values-hy/values-hy.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -1242,7 +2858,7 @@
                     "endOffset": 261
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-hy\\values-hy.xml",
+                    "file": "/Users/Al/.android/build-cache/bf7c62df187d4cd416dd6dc253acb29f79dcdac7/output/res/values-hy/values-hy.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -1261,7 +2877,7 @@
                     "endOffset": 384
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-hy\\values-hy.xml",
+                    "file": "/Users/Al/.android/build-cache/bf7c62df187d4cd416dd6dc253acb29f79dcdac7/output/res/values-hy/values-hy.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -1280,7 +2896,7 @@
                     "endOffset": 485
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-hy\\values-hy.xml",
+                    "file": "/Users/Al/.android/build-cache/bf7c62df187d4cd416dd6dc253acb29f79dcdac7/output/res/values-hy/values-hy.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -1299,7 +2915,7 @@
                     "endOffset": 595
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-hy\\values-hy.xml",
+                    "file": "/Users/Al/.android/build-cache/bf7c62df187d4cd416dd6dc253acb29f79dcdac7/output/res/values-hy/values-hy.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -1318,7 +2934,7 @@
                     "endOffset": 684
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-hy\\values-hy.xml",
+                    "file": "/Users/Al/.android/build-cache/bf7c62df187d4cd416dd6dc253acb29f79dcdac7/output/res/values-hy/values-hy.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
@@ -1337,7 +2953,7 @@
                     "endOffset": 790
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-hy\\values-hy.xml",
+                    "file": "/Users/Al/.android/build-cache/bf7c62df187d4cd416dd6dc253acb29f79dcdac7/output/res/values-hy/values-hy.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 4,
@@ -1356,7 +2972,7 @@
                     "endOffset": 905
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-hy\\values-hy.xml",
+                    "file": "/Users/Al/.android/build-cache/bf7c62df187d4cd416dd6dc253acb29f79dcdac7/output/res/values-hy/values-hy.xml",
                     "position": {
                         "startLine": 9,
                         "startColumn": 4,
@@ -1375,7 +2991,7 @@
                     "endOffset": 987
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-hy\\values-hy.xml",
+                    "file": "/Users/Al/.android/build-cache/bf7c62df187d4cd416dd6dc253acb29f79dcdac7/output/res/values-hy/values-hy.xml",
                     "position": {
                         "startLine": 10,
                         "startColumn": 4,
@@ -1394,7 +3010,7 @@
                     "endOffset": 1068
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-hy\\values-hy.xml",
+                    "file": "/Users/Al/.android/build-cache/bf7c62df187d4cd416dd6dc253acb29f79dcdac7/output/res/values-hy/values-hy.xml",
                     "position": {
                         "startLine": 11,
                         "startColumn": 4,
@@ -1413,7 +3029,7 @@
                     "endOffset": 1153
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-hy\\values-hy.xml",
+                    "file": "/Users/Al/.android/build-cache/bf7c62df187d4cd416dd6dc253acb29f79dcdac7/output/res/values-hy/values-hy.xml",
                     "position": {
                         "startLine": 12,
                         "startColumn": 4,
@@ -1432,7 +3048,7 @@
                     "endOffset": 1260
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-hy\\values-hy.xml",
+                    "file": "/Users/Al/.android/build-cache/bf7c62df187d4cd416dd6dc253acb29f79dcdac7/output/res/values-hy/values-hy.xml",
                     "position": {
                         "startLine": 13,
                         "startColumn": 4,
@@ -1451,7 +3067,7 @@
                     "endOffset": 1367
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-hy\\values-hy.xml",
+                    "file": "/Users/Al/.android/build-cache/bf7c62df187d4cd416dd6dc253acb29f79dcdac7/output/res/values-hy/values-hy.xml",
                     "position": {
                         "startLine": 14,
                         "startColumn": 4,
@@ -1470,7 +3086,7 @@
                     "endOffset": 1466
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-hy\\values-hy.xml",
+                    "file": "/Users/Al/.android/build-cache/bf7c62df187d4cd416dd6dc253acb29f79dcdac7/output/res/values-hy/values-hy.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 4,
@@ -1489,7 +3105,7 @@
                     "endOffset": 1576
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-hy\\values-hy.xml",
+                    "file": "/Users/Al/.android/build-cache/bf7c62df187d4cd416dd6dc253acb29f79dcdac7/output/res/values-hy/values-hy.xml",
                     "position": {
                         "startLine": 16,
                         "startColumn": 4,
@@ -1508,7 +3124,7 @@
                     "endOffset": 1683
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-hy\\values-hy.xml",
+                    "file": "/Users/Al/.android/build-cache/bf7c62df187d4cd416dd6dc253acb29f79dcdac7/output/res/values-hy/values-hy.xml",
                     "position": {
                         "startLine": 17,
                         "startColumn": 4,
@@ -1527,7 +3143,7 @@
                     "endOffset": 1783
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-hy\\values-hy.xml",
+                    "file": "/Users/Al/.android/build-cache/bf7c62df187d4cd416dd6dc253acb29f79dcdac7/output/res/values-hy/values-hy.xml",
                     "position": {
                         "startLine": 18,
                         "startColumn": 4,
@@ -1546,7 +3162,7 @@
                     "endOffset": 1908
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-hy\\values-hy.xml",
+                    "file": "/Users/Al/.android/build-cache/bf7c62df187d4cd416dd6dc253acb29f79dcdac7/output/res/values-hy/values-hy.xml",
                     "position": {
                         "startLine": 19,
                         "startColumn": 4,
@@ -1565,7 +3181,7 @@
                     "endOffset": 2007
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-hy\\values-hy.xml",
+                    "file": "/Users/Al/.android/build-cache/bf7c62df187d4cd416dd6dc253acb29f79dcdac7/output/res/values-hy/values-hy.xml",
                     "position": {
                         "startLine": 20,
                         "startColumn": 4,
@@ -1584,7 +3200,7 @@
                     "endOffset": 2089
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-hy\\values-hy.xml",
+                    "file": "/Users/Al/.android/build-cache/bf7c62df187d4cd416dd6dc253acb29f79dcdac7/output/res/values-hy/values-hy.xml",
                     "position": {
                         "startLine": 21,
                         "startColumn": 4,
@@ -1603,1219 +3219,7 @@
                     "endOffset": 2190
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 22,
-                        "startColumn": 4,
-                        "startOffset": 2094,
-                        "endColumn": 100,
-                        "endOffset": 2190
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "outputFile": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\Desktop\\Echoes\\Echoes\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-hy\\values-hy.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 102,
-                    "endOffset": 153
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 2,
-                        "startColumn": 4,
-                        "startOffset": 55,
-                        "endColumn": 102,
-                        "endOffset": 153
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 3,
-                    "startColumn": 4,
-                    "startOffset": 158,
-                    "endColumn": 107,
-                    "endOffset": 261
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 3,
-                        "startColumn": 4,
-                        "startOffset": 158,
-                        "endColumn": 107,
-                        "endOffset": 261
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 4,
-                    "startColumn": 4,
-                    "startOffset": 266,
-                    "endColumn": 122,
-                    "endOffset": 384
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 266,
-                        "endColumn": 122,
-                        "endOffset": 384
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 5,
-                    "startColumn": 4,
-                    "startOffset": 389,
-                    "endColumn": 100,
-                    "endOffset": 485
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 5,
-                        "startColumn": 4,
-                        "startOffset": 389,
-                        "endColumn": 100,
-                        "endOffset": 485
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 6,
-                    "startColumn": 4,
-                    "startOffset": 490,
-                    "endColumn": 109,
-                    "endOffset": 595
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 6,
-                        "startColumn": 4,
-                        "startOffset": 490,
-                        "endColumn": 109,
-                        "endOffset": 595
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 7,
-                    "startColumn": 4,
-                    "startOffset": 600,
-                    "endColumn": 88,
-                    "endOffset": 684
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 7,
-                        "startColumn": 4,
-                        "startOffset": 600,
-                        "endColumn": 88,
-                        "endOffset": 684
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 8,
-                    "startColumn": 4,
-                    "startOffset": 689,
-                    "endColumn": 105,
-                    "endOffset": 790
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 8,
-                        "startColumn": 4,
-                        "startOffset": 689,
-                        "endColumn": 105,
-                        "endOffset": 790
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 9,
-                    "startColumn": 4,
-                    "startOffset": 795,
-                    "endColumn": 114,
-                    "endOffset": 905
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 9,
-                        "startColumn": 4,
-                        "startOffset": 795,
-                        "endColumn": 114,
-                        "endOffset": 905
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 10,
-                    "startColumn": 4,
-                    "startOffset": 910,
-                    "endColumn": 81,
-                    "endOffset": 987
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 10,
-                        "startColumn": 4,
-                        "startOffset": 910,
-                        "endColumn": 81,
-                        "endOffset": 987
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 11,
-                    "startColumn": 4,
-                    "startOffset": 992,
-                    "endColumn": 80,
-                    "endOffset": 1068
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 11,
-                        "startColumn": 4,
-                        "startOffset": 992,
-                        "endColumn": 80,
-                        "endOffset": 1068
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 12,
-                    "startColumn": 4,
-                    "startOffset": 1073,
-                    "endColumn": 84,
-                    "endOffset": 1153
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 12,
-                        "startColumn": 4,
-                        "startOffset": 1073,
-                        "endColumn": 84,
-                        "endOffset": 1153
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 13,
-                    "startColumn": 4,
-                    "startOffset": 1158,
-                    "endColumn": 106,
-                    "endOffset": 1260
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 13,
-                        "startColumn": 4,
-                        "startOffset": 1158,
-                        "endColumn": 106,
-                        "endOffset": 1260
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 14,
-                    "startColumn": 4,
-                    "startOffset": 1265,
-                    "endColumn": 106,
-                    "endOffset": 1367
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 14,
-                        "startColumn": 4,
-                        "startOffset": 1265,
-                        "endColumn": 106,
-                        "endOffset": 1367
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 15,
-                    "startColumn": 4,
-                    "startOffset": 1372,
-                    "endColumn": 98,
-                    "endOffset": 1466
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 15,
-                        "startColumn": 4,
-                        "startOffset": 1372,
-                        "endColumn": 98,
-                        "endOffset": 1466
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 16,
-                    "startColumn": 4,
-                    "startOffset": 1471,
-                    "endColumn": 109,
-                    "endOffset": 1576
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 16,
-                        "startColumn": 4,
-                        "startOffset": 1471,
-                        "endColumn": 109,
-                        "endOffset": 1576
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 17,
-                    "startColumn": 4,
-                    "startOffset": 1581,
-                    "endColumn": 106,
-                    "endOffset": 1683
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 17,
-                        "startColumn": 4,
-                        "startOffset": 1581,
-                        "endColumn": 106,
-                        "endOffset": 1683
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 18,
-                    "startColumn": 4,
-                    "startOffset": 1688,
-                    "endColumn": 99,
-                    "endOffset": 1783
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 18,
-                        "startColumn": 4,
-                        "startOffset": 1688,
-                        "endColumn": 99,
-                        "endOffset": 1783
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 19,
-                    "startColumn": 4,
-                    "startOffset": 1788,
-                    "endColumn": 124,
-                    "endOffset": 1908
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 19,
-                        "startColumn": 4,
-                        "startOffset": 1788,
-                        "endColumn": 124,
-                        "endOffset": 1908
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 20,
-                    "startColumn": 4,
-                    "startOffset": 1913,
-                    "endColumn": 98,
-                    "endOffset": 2007
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 20,
-                        "startColumn": 4,
-                        "startOffset": 1913,
-                        "endColumn": 98,
-                        "endOffset": 2007
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 21,
-                    "startColumn": 4,
-                    "startOffset": 2012,
-                    "endColumn": 81,
-                    "endOffset": 2089
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 21,
-                        "startColumn": 4,
-                        "startOffset": 2012,
-                        "endColumn": 81,
-                        "endOffset": 2089
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 22,
-                    "startColumn": 4,
-                    "startOffset": 2094,
-                    "endColumn": 100,
-                    "endOffset": 2190
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 22,
-                        "startColumn": 4,
-                        "startOffset": 2094,
-                        "endColumn": 100,
-                        "endOffset": 2190
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "outputFile": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\Desktop\\Echoes\\Echoes\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-hy\\values-hy.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 102,
-                    "endOffset": 153
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 2,
-                        "startColumn": 4,
-                        "startOffset": 55,
-                        "endColumn": 102,
-                        "endOffset": 153
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 3,
-                    "startColumn": 4,
-                    "startOffset": 158,
-                    "endColumn": 107,
-                    "endOffset": 261
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 3,
-                        "startColumn": 4,
-                        "startOffset": 158,
-                        "endColumn": 107,
-                        "endOffset": 261
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 4,
-                    "startColumn": 4,
-                    "startOffset": 266,
-                    "endColumn": 122,
-                    "endOffset": 384
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 266,
-                        "endColumn": 122,
-                        "endOffset": 384
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 5,
-                    "startColumn": 4,
-                    "startOffset": 389,
-                    "endColumn": 100,
-                    "endOffset": 485
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 5,
-                        "startColumn": 4,
-                        "startOffset": 389,
-                        "endColumn": 100,
-                        "endOffset": 485
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 6,
-                    "startColumn": 4,
-                    "startOffset": 490,
-                    "endColumn": 109,
-                    "endOffset": 595
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 6,
-                        "startColumn": 4,
-                        "startOffset": 490,
-                        "endColumn": 109,
-                        "endOffset": 595
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 7,
-                    "startColumn": 4,
-                    "startOffset": 600,
-                    "endColumn": 88,
-                    "endOffset": 684
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 7,
-                        "startColumn": 4,
-                        "startOffset": 600,
-                        "endColumn": 88,
-                        "endOffset": 684
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 8,
-                    "startColumn": 4,
-                    "startOffset": 689,
-                    "endColumn": 105,
-                    "endOffset": 790
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 8,
-                        "startColumn": 4,
-                        "startOffset": 689,
-                        "endColumn": 105,
-                        "endOffset": 790
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 9,
-                    "startColumn": 4,
-                    "startOffset": 795,
-                    "endColumn": 114,
-                    "endOffset": 905
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 9,
-                        "startColumn": 4,
-                        "startOffset": 795,
-                        "endColumn": 114,
-                        "endOffset": 905
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 10,
-                    "startColumn": 4,
-                    "startOffset": 910,
-                    "endColumn": 81,
-                    "endOffset": 987
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 10,
-                        "startColumn": 4,
-                        "startOffset": 910,
-                        "endColumn": 81,
-                        "endOffset": 987
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 11,
-                    "startColumn": 4,
-                    "startOffset": 992,
-                    "endColumn": 80,
-                    "endOffset": 1068
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 11,
-                        "startColumn": 4,
-                        "startOffset": 992,
-                        "endColumn": 80,
-                        "endOffset": 1068
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 12,
-                    "startColumn": 4,
-                    "startOffset": 1073,
-                    "endColumn": 84,
-                    "endOffset": 1153
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 12,
-                        "startColumn": 4,
-                        "startOffset": 1073,
-                        "endColumn": 84,
-                        "endOffset": 1153
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 13,
-                    "startColumn": 4,
-                    "startOffset": 1158,
-                    "endColumn": 106,
-                    "endOffset": 1260
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 13,
-                        "startColumn": 4,
-                        "startOffset": 1158,
-                        "endColumn": 106,
-                        "endOffset": 1260
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 14,
-                    "startColumn": 4,
-                    "startOffset": 1265,
-                    "endColumn": 106,
-                    "endOffset": 1367
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 14,
-                        "startColumn": 4,
-                        "startOffset": 1265,
-                        "endColumn": 106,
-                        "endOffset": 1367
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 15,
-                    "startColumn": 4,
-                    "startOffset": 1372,
-                    "endColumn": 98,
-                    "endOffset": 1466
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 15,
-                        "startColumn": 4,
-                        "startOffset": 1372,
-                        "endColumn": 98,
-                        "endOffset": 1466
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 16,
-                    "startColumn": 4,
-                    "startOffset": 1471,
-                    "endColumn": 109,
-                    "endOffset": 1576
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 16,
-                        "startColumn": 4,
-                        "startOffset": 1471,
-                        "endColumn": 109,
-                        "endOffset": 1576
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 17,
-                    "startColumn": 4,
-                    "startOffset": 1581,
-                    "endColumn": 106,
-                    "endOffset": 1683
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 17,
-                        "startColumn": 4,
-                        "startOffset": 1581,
-                        "endColumn": 106,
-                        "endOffset": 1683
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 18,
-                    "startColumn": 4,
-                    "startOffset": 1688,
-                    "endColumn": 99,
-                    "endOffset": 1783
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 18,
-                        "startColumn": 4,
-                        "startOffset": 1688,
-                        "endColumn": 99,
-                        "endOffset": 1783
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 19,
-                    "startColumn": 4,
-                    "startOffset": 1788,
-                    "endColumn": 124,
-                    "endOffset": 1908
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 19,
-                        "startColumn": 4,
-                        "startOffset": 1788,
-                        "endColumn": 124,
-                        "endOffset": 1908
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 20,
-                    "startColumn": 4,
-                    "startOffset": 1913,
-                    "endColumn": 98,
-                    "endOffset": 2007
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 20,
-                        "startColumn": 4,
-                        "startOffset": 1913,
-                        "endColumn": 98,
-                        "endOffset": 2007
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 21,
-                    "startColumn": 4,
-                    "startOffset": 2012,
-                    "endColumn": 81,
-                    "endOffset": 2089
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 21,
-                        "startColumn": 4,
-                        "startOffset": 2012,
-                        "endColumn": 81,
-                        "endOffset": 2089
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 22,
-                    "startColumn": 4,
-                    "startOffset": 2094,
-                    "endColumn": 100,
-                    "endOffset": 2190
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 22,
-                        "startColumn": 4,
-                        "startOffset": 2094,
-                        "endColumn": 100,
-                        "endOffset": 2190
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "outputFile": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\cmput301\\Echoes\\Echoes\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-hy\\values-hy.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 102,
-                    "endOffset": 153
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 2,
-                        "startColumn": 4,
-                        "startOffset": 55,
-                        "endColumn": 102,
-                        "endOffset": 153
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 3,
-                    "startColumn": 4,
-                    "startOffset": 158,
-                    "endColumn": 107,
-                    "endOffset": 261
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 3,
-                        "startColumn": 4,
-                        "startOffset": 158,
-                        "endColumn": 107,
-                        "endOffset": 261
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 4,
-                    "startColumn": 4,
-                    "startOffset": 266,
-                    "endColumn": 122,
-                    "endOffset": 384
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 266,
-                        "endColumn": 122,
-                        "endOffset": 384
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 5,
-                    "startColumn": 4,
-                    "startOffset": 389,
-                    "endColumn": 100,
-                    "endOffset": 485
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 5,
-                        "startColumn": 4,
-                        "startOffset": 389,
-                        "endColumn": 100,
-                        "endOffset": 485
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 6,
-                    "startColumn": 4,
-                    "startOffset": 490,
-                    "endColumn": 109,
-                    "endOffset": 595
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 6,
-                        "startColumn": 4,
-                        "startOffset": 490,
-                        "endColumn": 109,
-                        "endOffset": 595
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 7,
-                    "startColumn": 4,
-                    "startOffset": 600,
-                    "endColumn": 88,
-                    "endOffset": 684
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 7,
-                        "startColumn": 4,
-                        "startOffset": 600,
-                        "endColumn": 88,
-                        "endOffset": 684
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 8,
-                    "startColumn": 4,
-                    "startOffset": 689,
-                    "endColumn": 105,
-                    "endOffset": 790
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 8,
-                        "startColumn": 4,
-                        "startOffset": 689,
-                        "endColumn": 105,
-                        "endOffset": 790
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 9,
-                    "startColumn": 4,
-                    "startOffset": 795,
-                    "endColumn": 114,
-                    "endOffset": 905
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 9,
-                        "startColumn": 4,
-                        "startOffset": 795,
-                        "endColumn": 114,
-                        "endOffset": 905
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 10,
-                    "startColumn": 4,
-                    "startOffset": 910,
-                    "endColumn": 81,
-                    "endOffset": 987
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 10,
-                        "startColumn": 4,
-                        "startOffset": 910,
-                        "endColumn": 81,
-                        "endOffset": 987
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 11,
-                    "startColumn": 4,
-                    "startOffset": 992,
-                    "endColumn": 80,
-                    "endOffset": 1068
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 11,
-                        "startColumn": 4,
-                        "startOffset": 992,
-                        "endColumn": 80,
-                        "endOffset": 1068
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 12,
-                    "startColumn": 4,
-                    "startOffset": 1073,
-                    "endColumn": 84,
-                    "endOffset": 1153
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 12,
-                        "startColumn": 4,
-                        "startOffset": 1073,
-                        "endColumn": 84,
-                        "endOffset": 1153
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 13,
-                    "startColumn": 4,
-                    "startOffset": 1158,
-                    "endColumn": 106,
-                    "endOffset": 1260
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 13,
-                        "startColumn": 4,
-                        "startOffset": 1158,
-                        "endColumn": 106,
-                        "endOffset": 1260
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 14,
-                    "startColumn": 4,
-                    "startOffset": 1265,
-                    "endColumn": 106,
-                    "endOffset": 1367
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 14,
-                        "startColumn": 4,
-                        "startOffset": 1265,
-                        "endColumn": 106,
-                        "endOffset": 1367
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 15,
-                    "startColumn": 4,
-                    "startOffset": 1372,
-                    "endColumn": 98,
-                    "endOffset": 1466
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 15,
-                        "startColumn": 4,
-                        "startOffset": 1372,
-                        "endColumn": 98,
-                        "endOffset": 1466
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 16,
-                    "startColumn": 4,
-                    "startOffset": 1471,
-                    "endColumn": 109,
-                    "endOffset": 1576
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 16,
-                        "startColumn": 4,
-                        "startOffset": 1471,
-                        "endColumn": 109,
-                        "endOffset": 1576
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 17,
-                    "startColumn": 4,
-                    "startOffset": 1581,
-                    "endColumn": 106,
-                    "endOffset": 1683
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 17,
-                        "startColumn": 4,
-                        "startOffset": 1581,
-                        "endColumn": 106,
-                        "endOffset": 1683
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 18,
-                    "startColumn": 4,
-                    "startOffset": 1688,
-                    "endColumn": 99,
-                    "endOffset": 1783
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 18,
-                        "startColumn": 4,
-                        "startOffset": 1688,
-                        "endColumn": 99,
-                        "endOffset": 1783
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 19,
-                    "startColumn": 4,
-                    "startOffset": 1788,
-                    "endColumn": 124,
-                    "endOffset": 1908
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 19,
-                        "startColumn": 4,
-                        "startOffset": 1788,
-                        "endColumn": 124,
-                        "endOffset": 1908
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 20,
-                    "startColumn": 4,
-                    "startOffset": 1913,
-                    "endColumn": 98,
-                    "endOffset": 2007
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 20,
-                        "startColumn": 4,
-                        "startOffset": 1913,
-                        "endColumn": 98,
-                        "endOffset": 2007
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 21,
-                    "startColumn": 4,
-                    "startOffset": 2012,
-                    "endColumn": 81,
-                    "endOffset": 2089
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-hy\\values-hy.xml",
-                    "position": {
-                        "startLine": 21,
-                        "startColumn": 4,
-                        "startOffset": 2012,
-                        "endColumn": 81,
-                        "endOffset": 2089
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 22,
-                    "startColumn": 4,
-                    "startOffset": 2094,
-                    "endColumn": 100,
-                    "endOffset": 2190
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-hy\\values-hy.xml",
+                    "file": "/Users/Al/.android/build-cache/bf7c62df187d4cd416dd6dc253acb29f79dcdac7/output/res/values-hy/values-hy.xml",
                     "position": {
                         "startLine": 22,
                         "startColumn": 4,
@@ -3232,7 +3636,7 @@
         ]
     },
     {
-        "outputFile": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\Desktop\\Echoes\\Echoes\\Echoes\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-hy\\values-hy.xml",
+        "outputFile": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\cmput301\\Echoes\\Echoes\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-hy\\values-hy.xml",
         "map": [
             {
                 "to": {
@@ -3243,7 +3647,7 @@
                     "endOffset": 153
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-hy\\values-hy.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -3262,7 +3666,7 @@
                     "endOffset": 261
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-hy\\values-hy.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -3281,7 +3685,7 @@
                     "endOffset": 384
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-hy\\values-hy.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -3300,7 +3704,7 @@
                     "endOffset": 485
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-hy\\values-hy.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -3319,7 +3723,7 @@
                     "endOffset": 595
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-hy\\values-hy.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -3338,7 +3742,7 @@
                     "endOffset": 684
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-hy\\values-hy.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
@@ -3357,7 +3761,7 @@
                     "endOffset": 790
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-hy\\values-hy.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 4,
@@ -3376,7 +3780,7 @@
                     "endOffset": 905
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-hy\\values-hy.xml",
                     "position": {
                         "startLine": 9,
                         "startColumn": 4,
@@ -3395,7 +3799,7 @@
                     "endOffset": 987
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-hy\\values-hy.xml",
                     "position": {
                         "startLine": 10,
                         "startColumn": 4,
@@ -3414,7 +3818,7 @@
                     "endOffset": 1068
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-hy\\values-hy.xml",
                     "position": {
                         "startLine": 11,
                         "startColumn": 4,
@@ -3433,7 +3837,7 @@
                     "endOffset": 1153
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-hy\\values-hy.xml",
                     "position": {
                         "startLine": 12,
                         "startColumn": 4,
@@ -3452,7 +3856,7 @@
                     "endOffset": 1260
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-hy\\values-hy.xml",
                     "position": {
                         "startLine": 13,
                         "startColumn": 4,
@@ -3471,7 +3875,7 @@
                     "endOffset": 1367
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-hy\\values-hy.xml",
                     "position": {
                         "startLine": 14,
                         "startColumn": 4,
@@ -3490,7 +3894,7 @@
                     "endOffset": 1466
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-hy\\values-hy.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 4,
@@ -3509,7 +3913,7 @@
                     "endOffset": 1576
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-hy\\values-hy.xml",
                     "position": {
                         "startLine": 16,
                         "startColumn": 4,
@@ -3528,7 +3932,7 @@
                     "endOffset": 1683
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-hy\\values-hy.xml",
                     "position": {
                         "startLine": 17,
                         "startColumn": 4,
@@ -3547,7 +3951,7 @@
                     "endOffset": 1783
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-hy\\values-hy.xml",
                     "position": {
                         "startLine": 18,
                         "startColumn": 4,
@@ -3566,7 +3970,7 @@
                     "endOffset": 1908
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-hy\\values-hy.xml",
                     "position": {
                         "startLine": 19,
                         "startColumn": 4,
@@ -3585,7 +3989,7 @@
                     "endOffset": 2007
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-hy\\values-hy.xml",
                     "position": {
                         "startLine": 20,
                         "startColumn": 4,
@@ -3604,7 +4008,7 @@
                     "endOffset": 2089
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-hy\\values-hy.xml",
                     "position": {
                         "startLine": 21,
                         "startColumn": 4,
@@ -3623,7 +4027,7 @@
                     "endOffset": 2190
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-hy\\values-hy.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-hy\\values-hy.xml",
                     "position": {
                         "startLine": 22,
                         "startColumn": 4,

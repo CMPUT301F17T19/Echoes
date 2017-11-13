@@ -1,5 +1,2025 @@
 [
     {
+        "outputFile": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\Desktop\\Echoes\\Echoes\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-uz\\values-uz.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 104,
+                    "endOffset": 155
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 104,
+                        "endOffset": 155
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 160,
+                    "endColumn": 107,
+                    "endOffset": 263
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 160,
+                        "endColumn": 107,
+                        "endOffset": 263
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 268,
+                    "endColumn": 122,
+                    "endOffset": 386
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 268,
+                        "endColumn": 122,
+                        "endOffset": 386
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 391,
+                    "endColumn": 103,
+                    "endOffset": 490
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 391,
+                        "endColumn": 103,
+                        "endOffset": 490
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 495,
+                    "endColumn": 113,
+                    "endOffset": 604
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 495,
+                        "endColumn": 113,
+                        "endOffset": 604
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 609,
+                    "endColumn": 85,
+                    "endOffset": 690
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 609,
+                        "endColumn": 85,
+                        "endOffset": 690
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 695,
+                    "endColumn": 110,
+                    "endOffset": 801
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 695,
+                        "endColumn": 110,
+                        "endOffset": 801
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 806,
+                    "endColumn": 115,
+                    "endOffset": 917
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 806,
+                        "endColumn": 115,
+                        "endOffset": 917
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 922,
+                    "endColumn": 79,
+                    "endOffset": 997
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 922,
+                        "endColumn": 79,
+                        "endOffset": 997
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 1002,
+                    "endColumn": 78,
+                    "endOffset": 1076
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 1002,
+                        "endColumn": 78,
+                        "endOffset": 1076
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 1081,
+                    "endColumn": 83,
+                    "endOffset": 1160
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 1081,
+                        "endColumn": 83,
+                        "endOffset": 1160
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 1165,
+                    "endColumn": 108,
+                    "endOffset": 1269
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 1165,
+                        "endColumn": 108,
+                        "endOffset": 1269
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 1274,
+                    "endColumn": 106,
+                    "endOffset": 1376
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 1274,
+                        "endColumn": 106,
+                        "endOffset": 1376
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 1381,
+                    "endColumn": 100,
+                    "endOffset": 1477
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 1381,
+                        "endColumn": 100,
+                        "endOffset": 1477
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 1482,
+                    "endColumn": 107,
+                    "endOffset": 1585
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 1482,
+                        "endColumn": 107,
+                        "endOffset": 1585
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 1590,
+                    "endColumn": 104,
+                    "endOffset": 1690
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 1590,
+                        "endColumn": 104,
+                        "endOffset": 1690
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 1695,
+                    "endColumn": 106,
+                    "endOffset": 1797
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 1695,
+                        "endColumn": 106,
+                        "endOffset": 1797
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 19,
+                    "startColumn": 4,
+                    "startOffset": 1802,
+                    "endColumn": 123,
+                    "endOffset": 1921
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 1802,
+                        "endColumn": 123,
+                        "endOffset": 1921
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 20,
+                    "startColumn": 4,
+                    "startOffset": 1926,
+                    "endColumn": 98,
+                    "endOffset": 2020
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 1926,
+                        "endColumn": 98,
+                        "endOffset": 2020
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 21,
+                    "startColumn": 4,
+                    "startOffset": 2025,
+                    "endColumn": 83,
+                    "endOffset": 2104
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 21,
+                        "startColumn": 4,
+                        "startOffset": 2025,
+                        "endColumn": 83,
+                        "endOffset": 2104
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 22,
+                    "startColumn": 4,
+                    "startOffset": 2109,
+                    "endColumn": 100,
+                    "endOffset": 2205
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 22,
+                        "startColumn": 4,
+                        "startOffset": 2109,
+                        "endColumn": 100,
+                        "endOffset": 2205
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\D\\GitHub\\Echoes2\\Echoes\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-uz\\values-uz.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 104,
+                    "endOffset": 155
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 104,
+                        "endOffset": 155
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 160,
+                    "endColumn": 107,
+                    "endOffset": 263
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 160,
+                        "endColumn": 107,
+                        "endOffset": 263
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 268,
+                    "endColumn": 122,
+                    "endOffset": 386
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 268,
+                        "endColumn": 122,
+                        "endOffset": 386
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 391,
+                    "endColumn": 103,
+                    "endOffset": 490
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 391,
+                        "endColumn": 103,
+                        "endOffset": 490
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 495,
+                    "endColumn": 113,
+                    "endOffset": 604
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 495,
+                        "endColumn": 113,
+                        "endOffset": 604
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 609,
+                    "endColumn": 85,
+                    "endOffset": 690
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 609,
+                        "endColumn": 85,
+                        "endOffset": 690
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 695,
+                    "endColumn": 110,
+                    "endOffset": 801
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 695,
+                        "endColumn": 110,
+                        "endOffset": 801
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 806,
+                    "endColumn": 115,
+                    "endOffset": 917
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 806,
+                        "endColumn": 115,
+                        "endOffset": 917
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 922,
+                    "endColumn": 79,
+                    "endOffset": 997
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 922,
+                        "endColumn": 79,
+                        "endOffset": 997
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 1002,
+                    "endColumn": 78,
+                    "endOffset": 1076
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 1002,
+                        "endColumn": 78,
+                        "endOffset": 1076
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 1081,
+                    "endColumn": 83,
+                    "endOffset": 1160
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 1081,
+                        "endColumn": 83,
+                        "endOffset": 1160
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 1165,
+                    "endColumn": 108,
+                    "endOffset": 1269
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 1165,
+                        "endColumn": 108,
+                        "endOffset": 1269
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 1274,
+                    "endColumn": 106,
+                    "endOffset": 1376
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 1274,
+                        "endColumn": 106,
+                        "endOffset": 1376
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 1381,
+                    "endColumn": 100,
+                    "endOffset": 1477
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 1381,
+                        "endColumn": 100,
+                        "endOffset": 1477
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 1482,
+                    "endColumn": 107,
+                    "endOffset": 1585
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 1482,
+                        "endColumn": 107,
+                        "endOffset": 1585
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 1590,
+                    "endColumn": 104,
+                    "endOffset": 1690
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 1590,
+                        "endColumn": 104,
+                        "endOffset": 1690
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 1695,
+                    "endColumn": 106,
+                    "endOffset": 1797
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 1695,
+                        "endColumn": 106,
+                        "endOffset": 1797
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 19,
+                    "startColumn": 4,
+                    "startOffset": 1802,
+                    "endColumn": 123,
+                    "endOffset": 1921
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 1802,
+                        "endColumn": 123,
+                        "endOffset": 1921
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 20,
+                    "startColumn": 4,
+                    "startOffset": 1926,
+                    "endColumn": 98,
+                    "endOffset": 2020
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 1926,
+                        "endColumn": 98,
+                        "endOffset": 2020
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 21,
+                    "startColumn": 4,
+                    "startOffset": 2025,
+                    "endColumn": 83,
+                    "endOffset": 2104
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 21,
+                        "startColumn": 4,
+                        "startOffset": 2025,
+                        "endColumn": 83,
+                        "endOffset": 2104
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 22,
+                    "startColumn": 4,
+                    "startOffset": 2109,
+                    "endColumn": 100,
+                    "endOffset": 2205
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 22,
+                        "startColumn": 4,
+                        "startOffset": 2109,
+                        "endColumn": 100,
+                        "endOffset": 2205
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "/Users/Al/Desktop/Echoes/Echoes/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-uz/values-uz.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 104,
+                    "endOffset": 155
+                },
+                "from": {
+                    "file": "/Users/Al/.android/build-cache/bf7c62df187d4cd416dd6dc253acb29f79dcdac7/output/res/values-uz/values-uz.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 104,
+                        "endOffset": 155
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 160,
+                    "endColumn": 107,
+                    "endOffset": 263
+                },
+                "from": {
+                    "file": "/Users/Al/.android/build-cache/bf7c62df187d4cd416dd6dc253acb29f79dcdac7/output/res/values-uz/values-uz.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 160,
+                        "endColumn": 107,
+                        "endOffset": 263
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 268,
+                    "endColumn": 122,
+                    "endOffset": 386
+                },
+                "from": {
+                    "file": "/Users/Al/.android/build-cache/bf7c62df187d4cd416dd6dc253acb29f79dcdac7/output/res/values-uz/values-uz.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 268,
+                        "endColumn": 122,
+                        "endOffset": 386
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 391,
+                    "endColumn": 103,
+                    "endOffset": 490
+                },
+                "from": {
+                    "file": "/Users/Al/.android/build-cache/bf7c62df187d4cd416dd6dc253acb29f79dcdac7/output/res/values-uz/values-uz.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 391,
+                        "endColumn": 103,
+                        "endOffset": 490
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 495,
+                    "endColumn": 113,
+                    "endOffset": 604
+                },
+                "from": {
+                    "file": "/Users/Al/.android/build-cache/bf7c62df187d4cd416dd6dc253acb29f79dcdac7/output/res/values-uz/values-uz.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 495,
+                        "endColumn": 113,
+                        "endOffset": 604
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 609,
+                    "endColumn": 85,
+                    "endOffset": 690
+                },
+                "from": {
+                    "file": "/Users/Al/.android/build-cache/bf7c62df187d4cd416dd6dc253acb29f79dcdac7/output/res/values-uz/values-uz.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 609,
+                        "endColumn": 85,
+                        "endOffset": 690
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 695,
+                    "endColumn": 110,
+                    "endOffset": 801
+                },
+                "from": {
+                    "file": "/Users/Al/.android/build-cache/bf7c62df187d4cd416dd6dc253acb29f79dcdac7/output/res/values-uz/values-uz.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 695,
+                        "endColumn": 110,
+                        "endOffset": 801
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 806,
+                    "endColumn": 115,
+                    "endOffset": 917
+                },
+                "from": {
+                    "file": "/Users/Al/.android/build-cache/bf7c62df187d4cd416dd6dc253acb29f79dcdac7/output/res/values-uz/values-uz.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 806,
+                        "endColumn": 115,
+                        "endOffset": 917
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 922,
+                    "endColumn": 79,
+                    "endOffset": 997
+                },
+                "from": {
+                    "file": "/Users/Al/.android/build-cache/bf7c62df187d4cd416dd6dc253acb29f79dcdac7/output/res/values-uz/values-uz.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 922,
+                        "endColumn": 79,
+                        "endOffset": 997
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 1002,
+                    "endColumn": 78,
+                    "endOffset": 1076
+                },
+                "from": {
+                    "file": "/Users/Al/.android/build-cache/bf7c62df187d4cd416dd6dc253acb29f79dcdac7/output/res/values-uz/values-uz.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 1002,
+                        "endColumn": 78,
+                        "endOffset": 1076
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 1081,
+                    "endColumn": 83,
+                    "endOffset": 1160
+                },
+                "from": {
+                    "file": "/Users/Al/.android/build-cache/bf7c62df187d4cd416dd6dc253acb29f79dcdac7/output/res/values-uz/values-uz.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 1081,
+                        "endColumn": 83,
+                        "endOffset": 1160
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 1165,
+                    "endColumn": 108,
+                    "endOffset": 1269
+                },
+                "from": {
+                    "file": "/Users/Al/.android/build-cache/bf7c62df187d4cd416dd6dc253acb29f79dcdac7/output/res/values-uz/values-uz.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 1165,
+                        "endColumn": 108,
+                        "endOffset": 1269
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 1274,
+                    "endColumn": 106,
+                    "endOffset": 1376
+                },
+                "from": {
+                    "file": "/Users/Al/.android/build-cache/bf7c62df187d4cd416dd6dc253acb29f79dcdac7/output/res/values-uz/values-uz.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 1274,
+                        "endColumn": 106,
+                        "endOffset": 1376
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 1381,
+                    "endColumn": 100,
+                    "endOffset": 1477
+                },
+                "from": {
+                    "file": "/Users/Al/.android/build-cache/bf7c62df187d4cd416dd6dc253acb29f79dcdac7/output/res/values-uz/values-uz.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 1381,
+                        "endColumn": 100,
+                        "endOffset": 1477
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 1482,
+                    "endColumn": 107,
+                    "endOffset": 1585
+                },
+                "from": {
+                    "file": "/Users/Al/.android/build-cache/bf7c62df187d4cd416dd6dc253acb29f79dcdac7/output/res/values-uz/values-uz.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 1482,
+                        "endColumn": 107,
+                        "endOffset": 1585
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 1590,
+                    "endColumn": 104,
+                    "endOffset": 1690
+                },
+                "from": {
+                    "file": "/Users/Al/.android/build-cache/bf7c62df187d4cd416dd6dc253acb29f79dcdac7/output/res/values-uz/values-uz.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 1590,
+                        "endColumn": 104,
+                        "endOffset": 1690
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 1695,
+                    "endColumn": 106,
+                    "endOffset": 1797
+                },
+                "from": {
+                    "file": "/Users/Al/.android/build-cache/bf7c62df187d4cd416dd6dc253acb29f79dcdac7/output/res/values-uz/values-uz.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 1695,
+                        "endColumn": 106,
+                        "endOffset": 1797
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 19,
+                    "startColumn": 4,
+                    "startOffset": 1802,
+                    "endColumn": 123,
+                    "endOffset": 1921
+                },
+                "from": {
+                    "file": "/Users/Al/.android/build-cache/bf7c62df187d4cd416dd6dc253acb29f79dcdac7/output/res/values-uz/values-uz.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 1802,
+                        "endColumn": 123,
+                        "endOffset": 1921
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 20,
+                    "startColumn": 4,
+                    "startOffset": 1926,
+                    "endColumn": 98,
+                    "endOffset": 2020
+                },
+                "from": {
+                    "file": "/Users/Al/.android/build-cache/bf7c62df187d4cd416dd6dc253acb29f79dcdac7/output/res/values-uz/values-uz.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 1926,
+                        "endColumn": 98,
+                        "endOffset": 2020
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 21,
+                    "startColumn": 4,
+                    "startOffset": 2025,
+                    "endColumn": 83,
+                    "endOffset": 2104
+                },
+                "from": {
+                    "file": "/Users/Al/.android/build-cache/bf7c62df187d4cd416dd6dc253acb29f79dcdac7/output/res/values-uz/values-uz.xml",
+                    "position": {
+                        "startLine": 21,
+                        "startColumn": 4,
+                        "startOffset": 2025,
+                        "endColumn": 83,
+                        "endOffset": 2104
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 22,
+                    "startColumn": 4,
+                    "startOffset": 2109,
+                    "endColumn": 100,
+                    "endOffset": 2205
+                },
+                "from": {
+                    "file": "/Users/Al/.android/build-cache/bf7c62df187d4cd416dd6dc253acb29f79dcdac7/output/res/values-uz/values-uz.xml",
+                    "position": {
+                        "startLine": 22,
+                        "startColumn": 4,
+                        "startOffset": 2109,
+                        "endColumn": 100,
+                        "endOffset": 2205
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "/Users/taijieyang/Desktop/Echoes/Echoes/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-uz/values-uz.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 104,
+                    "endOffset": 155
+                },
+                "from": {
+                    "file": "/Users/taijieyang/.android/build-cache/0fd8ab01152fb208acba82347de7dd3fca2e6ced/output/res/values-uz/values-uz.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 104,
+                        "endOffset": 155
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 160,
+                    "endColumn": 107,
+                    "endOffset": 263
+                },
+                "from": {
+                    "file": "/Users/taijieyang/.android/build-cache/0fd8ab01152fb208acba82347de7dd3fca2e6ced/output/res/values-uz/values-uz.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 160,
+                        "endColumn": 107,
+                        "endOffset": 263
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 268,
+                    "endColumn": 122,
+                    "endOffset": 386
+                },
+                "from": {
+                    "file": "/Users/taijieyang/.android/build-cache/0fd8ab01152fb208acba82347de7dd3fca2e6ced/output/res/values-uz/values-uz.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 268,
+                        "endColumn": 122,
+                        "endOffset": 386
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 391,
+                    "endColumn": 103,
+                    "endOffset": 490
+                },
+                "from": {
+                    "file": "/Users/taijieyang/.android/build-cache/0fd8ab01152fb208acba82347de7dd3fca2e6ced/output/res/values-uz/values-uz.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 391,
+                        "endColumn": 103,
+                        "endOffset": 490
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 495,
+                    "endColumn": 113,
+                    "endOffset": 604
+                },
+                "from": {
+                    "file": "/Users/taijieyang/.android/build-cache/0fd8ab01152fb208acba82347de7dd3fca2e6ced/output/res/values-uz/values-uz.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 495,
+                        "endColumn": 113,
+                        "endOffset": 604
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 609,
+                    "endColumn": 85,
+                    "endOffset": 690
+                },
+                "from": {
+                    "file": "/Users/taijieyang/.android/build-cache/0fd8ab01152fb208acba82347de7dd3fca2e6ced/output/res/values-uz/values-uz.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 609,
+                        "endColumn": 85,
+                        "endOffset": 690
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 695,
+                    "endColumn": 110,
+                    "endOffset": 801
+                },
+                "from": {
+                    "file": "/Users/taijieyang/.android/build-cache/0fd8ab01152fb208acba82347de7dd3fca2e6ced/output/res/values-uz/values-uz.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 695,
+                        "endColumn": 110,
+                        "endOffset": 801
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 806,
+                    "endColumn": 115,
+                    "endOffset": 917
+                },
+                "from": {
+                    "file": "/Users/taijieyang/.android/build-cache/0fd8ab01152fb208acba82347de7dd3fca2e6ced/output/res/values-uz/values-uz.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 806,
+                        "endColumn": 115,
+                        "endOffset": 917
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 922,
+                    "endColumn": 79,
+                    "endOffset": 997
+                },
+                "from": {
+                    "file": "/Users/taijieyang/.android/build-cache/0fd8ab01152fb208acba82347de7dd3fca2e6ced/output/res/values-uz/values-uz.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 922,
+                        "endColumn": 79,
+                        "endOffset": 997
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 1002,
+                    "endColumn": 78,
+                    "endOffset": 1076
+                },
+                "from": {
+                    "file": "/Users/taijieyang/.android/build-cache/0fd8ab01152fb208acba82347de7dd3fca2e6ced/output/res/values-uz/values-uz.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 1002,
+                        "endColumn": 78,
+                        "endOffset": 1076
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 1081,
+                    "endColumn": 83,
+                    "endOffset": 1160
+                },
+                "from": {
+                    "file": "/Users/taijieyang/.android/build-cache/0fd8ab01152fb208acba82347de7dd3fca2e6ced/output/res/values-uz/values-uz.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 1081,
+                        "endColumn": 83,
+                        "endOffset": 1160
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 1165,
+                    "endColumn": 108,
+                    "endOffset": 1269
+                },
+                "from": {
+                    "file": "/Users/taijieyang/.android/build-cache/0fd8ab01152fb208acba82347de7dd3fca2e6ced/output/res/values-uz/values-uz.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 1165,
+                        "endColumn": 108,
+                        "endOffset": 1269
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 1274,
+                    "endColumn": 106,
+                    "endOffset": 1376
+                },
+                "from": {
+                    "file": "/Users/taijieyang/.android/build-cache/0fd8ab01152fb208acba82347de7dd3fca2e6ced/output/res/values-uz/values-uz.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 1274,
+                        "endColumn": 106,
+                        "endOffset": 1376
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 1381,
+                    "endColumn": 100,
+                    "endOffset": 1477
+                },
+                "from": {
+                    "file": "/Users/taijieyang/.android/build-cache/0fd8ab01152fb208acba82347de7dd3fca2e6ced/output/res/values-uz/values-uz.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 1381,
+                        "endColumn": 100,
+                        "endOffset": 1477
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 1482,
+                    "endColumn": 107,
+                    "endOffset": 1585
+                },
+                "from": {
+                    "file": "/Users/taijieyang/.android/build-cache/0fd8ab01152fb208acba82347de7dd3fca2e6ced/output/res/values-uz/values-uz.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 1482,
+                        "endColumn": 107,
+                        "endOffset": 1585
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 1590,
+                    "endColumn": 104,
+                    "endOffset": 1690
+                },
+                "from": {
+                    "file": "/Users/taijieyang/.android/build-cache/0fd8ab01152fb208acba82347de7dd3fca2e6ced/output/res/values-uz/values-uz.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 1590,
+                        "endColumn": 104,
+                        "endOffset": 1690
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 1695,
+                    "endColumn": 106,
+                    "endOffset": 1797
+                },
+                "from": {
+                    "file": "/Users/taijieyang/.android/build-cache/0fd8ab01152fb208acba82347de7dd3fca2e6ced/output/res/values-uz/values-uz.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 1695,
+                        "endColumn": 106,
+                        "endOffset": 1797
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 19,
+                    "startColumn": 4,
+                    "startOffset": 1802,
+                    "endColumn": 123,
+                    "endOffset": 1921
+                },
+                "from": {
+                    "file": "/Users/taijieyang/.android/build-cache/0fd8ab01152fb208acba82347de7dd3fca2e6ced/output/res/values-uz/values-uz.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 1802,
+                        "endColumn": 123,
+                        "endOffset": 1921
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 20,
+                    "startColumn": 4,
+                    "startOffset": 1926,
+                    "endColumn": 98,
+                    "endOffset": 2020
+                },
+                "from": {
+                    "file": "/Users/taijieyang/.android/build-cache/0fd8ab01152fb208acba82347de7dd3fca2e6ced/output/res/values-uz/values-uz.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 1926,
+                        "endColumn": 98,
+                        "endOffset": 2020
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 21,
+                    "startColumn": 4,
+                    "startOffset": 2025,
+                    "endColumn": 83,
+                    "endOffset": 2104
+                },
+                "from": {
+                    "file": "/Users/taijieyang/.android/build-cache/0fd8ab01152fb208acba82347de7dd3fca2e6ced/output/res/values-uz/values-uz.xml",
+                    "position": {
+                        "startLine": 21,
+                        "startColumn": 4,
+                        "startOffset": 2025,
+                        "endColumn": 83,
+                        "endOffset": 2104
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 22,
+                    "startColumn": 4,
+                    "startOffset": 2109,
+                    "endColumn": 100,
+                    "endOffset": 2205
+                },
+                "from": {
+                    "file": "/Users/taijieyang/.android/build-cache/0fd8ab01152fb208acba82347de7dd3fca2e6ced/output/res/values-uz/values-uz.xml",
+                    "position": {
+                        "startLine": 22,
+                        "startColumn": 4,
+                        "startOffset": 2109,
+                        "endColumn": 100,
+                        "endOffset": 2205
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\cmput301\\Echoes\\Echoes\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-uz\\values-uz.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 104,
+                    "endOffset": 155
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 104,
+                        "endOffset": 155
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 160,
+                    "endColumn": 107,
+                    "endOffset": 263
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 160,
+                        "endColumn": 107,
+                        "endOffset": 263
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 268,
+                    "endColumn": 122,
+                    "endOffset": 386
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 268,
+                        "endColumn": 122,
+                        "endOffset": 386
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 391,
+                    "endColumn": 103,
+                    "endOffset": 490
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 391,
+                        "endColumn": 103,
+                        "endOffset": 490
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 495,
+                    "endColumn": 113,
+                    "endOffset": 604
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 495,
+                        "endColumn": 113,
+                        "endOffset": 604
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 609,
+                    "endColumn": 85,
+                    "endOffset": 690
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 609,
+                        "endColumn": 85,
+                        "endOffset": 690
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 695,
+                    "endColumn": 110,
+                    "endOffset": 801
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 695,
+                        "endColumn": 110,
+                        "endOffset": 801
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 806,
+                    "endColumn": 115,
+                    "endOffset": 917
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 806,
+                        "endColumn": 115,
+                        "endOffset": 917
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 922,
+                    "endColumn": 79,
+                    "endOffset": 997
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 922,
+                        "endColumn": 79,
+                        "endOffset": 997
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 1002,
+                    "endColumn": 78,
+                    "endOffset": 1076
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 1002,
+                        "endColumn": 78,
+                        "endOffset": 1076
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 1081,
+                    "endColumn": 83,
+                    "endOffset": 1160
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 1081,
+                        "endColumn": 83,
+                        "endOffset": 1160
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 1165,
+                    "endColumn": 108,
+                    "endOffset": 1269
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 1165,
+                        "endColumn": 108,
+                        "endOffset": 1269
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 1274,
+                    "endColumn": 106,
+                    "endOffset": 1376
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 1274,
+                        "endColumn": 106,
+                        "endOffset": 1376
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 1381,
+                    "endColumn": 100,
+                    "endOffset": 1477
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 1381,
+                        "endColumn": 100,
+                        "endOffset": 1477
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 1482,
+                    "endColumn": 107,
+                    "endOffset": 1585
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 1482,
+                        "endColumn": 107,
+                        "endOffset": 1585
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 1590,
+                    "endColumn": 104,
+                    "endOffset": 1690
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 1590,
+                        "endColumn": 104,
+                        "endOffset": 1690
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 1695,
+                    "endColumn": 106,
+                    "endOffset": 1797
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 1695,
+                        "endColumn": 106,
+                        "endOffset": 1797
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 19,
+                    "startColumn": 4,
+                    "startOffset": 1802,
+                    "endColumn": 123,
+                    "endOffset": 1921
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 1802,
+                        "endColumn": 123,
+                        "endOffset": 1921
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 20,
+                    "startColumn": 4,
+                    "startOffset": 1926,
+                    "endColumn": 98,
+                    "endOffset": 2020
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 1926,
+                        "endColumn": 98,
+                        "endOffset": 2020
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 21,
+                    "startColumn": 4,
+                    "startOffset": 2025,
+                    "endColumn": 83,
+                    "endOffset": 2104
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 21,
+                        "startColumn": 4,
+                        "startOffset": 2025,
+                        "endColumn": 83,
+                        "endOffset": 2104
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 22,
+                    "startColumn": 4,
+                    "startOffset": 2109,
+                    "endColumn": 100,
+                    "endOffset": 2205
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-uz\\values-uz.xml",
+                    "position": {
+                        "startLine": 22,
+                        "startColumn": 4,
+                        "startOffset": 2109,
+                        "endColumn": 100,
+                        "endOffset": 2205
+                    }
+                }
+            }
+        ]
+    },
+    {
         "outputFile": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-uz\\values-uz.xml",
         "map": [
             {
@@ -808,7 +2828,7 @@
         ]
     },
     {
-        "outputFile": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\Desktop\\Echoes\\Echoes\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-uz\\values-uz.xml",
+        "outputFile": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-uz\\values-uz.xml",
         "map": [
             {
                 "to": {
@@ -819,7 +2839,7 @@
                     "endOffset": 155
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-uz\\values-uz.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-uz\\values-uz.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -838,7 +2858,7 @@
                     "endOffset": 263
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-uz\\values-uz.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-uz\\values-uz.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -857,7 +2877,7 @@
                     "endOffset": 386
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-uz\\values-uz.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-uz\\values-uz.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -876,7 +2896,7 @@
                     "endOffset": 490
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-uz\\values-uz.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-uz\\values-uz.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -895,7 +2915,7 @@
                     "endOffset": 604
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-uz\\values-uz.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-uz\\values-uz.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -914,7 +2934,7 @@
                     "endOffset": 690
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-uz\\values-uz.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-uz\\values-uz.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
@@ -933,7 +2953,7 @@
                     "endOffset": 801
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-uz\\values-uz.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-uz\\values-uz.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 4,
@@ -952,7 +2972,7 @@
                     "endOffset": 917
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-uz\\values-uz.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-uz\\values-uz.xml",
                     "position": {
                         "startLine": 9,
                         "startColumn": 4,
@@ -971,7 +2991,7 @@
                     "endOffset": 997
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-uz\\values-uz.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-uz\\values-uz.xml",
                     "position": {
                         "startLine": 10,
                         "startColumn": 4,
@@ -990,7 +3010,7 @@
                     "endOffset": 1076
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-uz\\values-uz.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-uz\\values-uz.xml",
                     "position": {
                         "startLine": 11,
                         "startColumn": 4,
@@ -1009,7 +3029,7 @@
                     "endOffset": 1160
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-uz\\values-uz.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-uz\\values-uz.xml",
                     "position": {
                         "startLine": 12,
                         "startColumn": 4,
@@ -1028,7 +3048,7 @@
                     "endOffset": 1269
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-uz\\values-uz.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-uz\\values-uz.xml",
                     "position": {
                         "startLine": 13,
                         "startColumn": 4,
@@ -1047,7 +3067,7 @@
                     "endOffset": 1376
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-uz\\values-uz.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-uz\\values-uz.xml",
                     "position": {
                         "startLine": 14,
                         "startColumn": 4,
@@ -1066,7 +3086,7 @@
                     "endOffset": 1477
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-uz\\values-uz.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-uz\\values-uz.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 4,
@@ -1085,7 +3105,7 @@
                     "endOffset": 1585
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-uz\\values-uz.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-uz\\values-uz.xml",
                     "position": {
                         "startLine": 16,
                         "startColumn": 4,
@@ -1104,7 +3124,7 @@
                     "endOffset": 1690
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-uz\\values-uz.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-uz\\values-uz.xml",
                     "position": {
                         "startLine": 17,
                         "startColumn": 4,
@@ -1123,7 +3143,7 @@
                     "endOffset": 1797
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-uz\\values-uz.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-uz\\values-uz.xml",
                     "position": {
                         "startLine": 18,
                         "startColumn": 4,
@@ -1142,7 +3162,7 @@
                     "endOffset": 1921
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-uz\\values-uz.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-uz\\values-uz.xml",
                     "position": {
                         "startLine": 19,
                         "startColumn": 4,
@@ -1161,7 +3181,7 @@
                     "endOffset": 2020
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-uz\\values-uz.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-uz\\values-uz.xml",
                     "position": {
                         "startLine": 20,
                         "startColumn": 4,
@@ -1180,7 +3200,7 @@
                     "endOffset": 2104
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-uz\\values-uz.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-uz\\values-uz.xml",
                     "position": {
                         "startLine": 21,
                         "startColumn": 4,
@@ -1199,1219 +3219,7 @@
                     "endOffset": 2205
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 22,
-                        "startColumn": 4,
-                        "startOffset": 2109,
-                        "endColumn": 100,
-                        "endOffset": 2205
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "outputFile": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\Desktop\\Echoes\\Echoes\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-uz\\values-uz.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 104,
-                    "endOffset": 155
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 2,
-                        "startColumn": 4,
-                        "startOffset": 55,
-                        "endColumn": 104,
-                        "endOffset": 155
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 3,
-                    "startColumn": 4,
-                    "startOffset": 160,
-                    "endColumn": 107,
-                    "endOffset": 263
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 3,
-                        "startColumn": 4,
-                        "startOffset": 160,
-                        "endColumn": 107,
-                        "endOffset": 263
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 4,
-                    "startColumn": 4,
-                    "startOffset": 268,
-                    "endColumn": 122,
-                    "endOffset": 386
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 268,
-                        "endColumn": 122,
-                        "endOffset": 386
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 5,
-                    "startColumn": 4,
-                    "startOffset": 391,
-                    "endColumn": 103,
-                    "endOffset": 490
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 5,
-                        "startColumn": 4,
-                        "startOffset": 391,
-                        "endColumn": 103,
-                        "endOffset": 490
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 6,
-                    "startColumn": 4,
-                    "startOffset": 495,
-                    "endColumn": 113,
-                    "endOffset": 604
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 6,
-                        "startColumn": 4,
-                        "startOffset": 495,
-                        "endColumn": 113,
-                        "endOffset": 604
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 7,
-                    "startColumn": 4,
-                    "startOffset": 609,
-                    "endColumn": 85,
-                    "endOffset": 690
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 7,
-                        "startColumn": 4,
-                        "startOffset": 609,
-                        "endColumn": 85,
-                        "endOffset": 690
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 8,
-                    "startColumn": 4,
-                    "startOffset": 695,
-                    "endColumn": 110,
-                    "endOffset": 801
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 8,
-                        "startColumn": 4,
-                        "startOffset": 695,
-                        "endColumn": 110,
-                        "endOffset": 801
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 9,
-                    "startColumn": 4,
-                    "startOffset": 806,
-                    "endColumn": 115,
-                    "endOffset": 917
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 9,
-                        "startColumn": 4,
-                        "startOffset": 806,
-                        "endColumn": 115,
-                        "endOffset": 917
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 10,
-                    "startColumn": 4,
-                    "startOffset": 922,
-                    "endColumn": 79,
-                    "endOffset": 997
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 10,
-                        "startColumn": 4,
-                        "startOffset": 922,
-                        "endColumn": 79,
-                        "endOffset": 997
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 11,
-                    "startColumn": 4,
-                    "startOffset": 1002,
-                    "endColumn": 78,
-                    "endOffset": 1076
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 11,
-                        "startColumn": 4,
-                        "startOffset": 1002,
-                        "endColumn": 78,
-                        "endOffset": 1076
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 12,
-                    "startColumn": 4,
-                    "startOffset": 1081,
-                    "endColumn": 83,
-                    "endOffset": 1160
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 12,
-                        "startColumn": 4,
-                        "startOffset": 1081,
-                        "endColumn": 83,
-                        "endOffset": 1160
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 13,
-                    "startColumn": 4,
-                    "startOffset": 1165,
-                    "endColumn": 108,
-                    "endOffset": 1269
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 13,
-                        "startColumn": 4,
-                        "startOffset": 1165,
-                        "endColumn": 108,
-                        "endOffset": 1269
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 14,
-                    "startColumn": 4,
-                    "startOffset": 1274,
-                    "endColumn": 106,
-                    "endOffset": 1376
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 14,
-                        "startColumn": 4,
-                        "startOffset": 1274,
-                        "endColumn": 106,
-                        "endOffset": 1376
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 15,
-                    "startColumn": 4,
-                    "startOffset": 1381,
-                    "endColumn": 100,
-                    "endOffset": 1477
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 15,
-                        "startColumn": 4,
-                        "startOffset": 1381,
-                        "endColumn": 100,
-                        "endOffset": 1477
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 16,
-                    "startColumn": 4,
-                    "startOffset": 1482,
-                    "endColumn": 107,
-                    "endOffset": 1585
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 16,
-                        "startColumn": 4,
-                        "startOffset": 1482,
-                        "endColumn": 107,
-                        "endOffset": 1585
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 17,
-                    "startColumn": 4,
-                    "startOffset": 1590,
-                    "endColumn": 104,
-                    "endOffset": 1690
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 17,
-                        "startColumn": 4,
-                        "startOffset": 1590,
-                        "endColumn": 104,
-                        "endOffset": 1690
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 18,
-                    "startColumn": 4,
-                    "startOffset": 1695,
-                    "endColumn": 106,
-                    "endOffset": 1797
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 18,
-                        "startColumn": 4,
-                        "startOffset": 1695,
-                        "endColumn": 106,
-                        "endOffset": 1797
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 19,
-                    "startColumn": 4,
-                    "startOffset": 1802,
-                    "endColumn": 123,
-                    "endOffset": 1921
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 19,
-                        "startColumn": 4,
-                        "startOffset": 1802,
-                        "endColumn": 123,
-                        "endOffset": 1921
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 20,
-                    "startColumn": 4,
-                    "startOffset": 1926,
-                    "endColumn": 98,
-                    "endOffset": 2020
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 20,
-                        "startColumn": 4,
-                        "startOffset": 1926,
-                        "endColumn": 98,
-                        "endOffset": 2020
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 21,
-                    "startColumn": 4,
-                    "startOffset": 2025,
-                    "endColumn": 83,
-                    "endOffset": 2104
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 21,
-                        "startColumn": 4,
-                        "startOffset": 2025,
-                        "endColumn": 83,
-                        "endOffset": 2104
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 22,
-                    "startColumn": 4,
-                    "startOffset": 2109,
-                    "endColumn": 100,
-                    "endOffset": 2205
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 22,
-                        "startColumn": 4,
-                        "startOffset": 2109,
-                        "endColumn": 100,
-                        "endOffset": 2205
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "outputFile": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\cmput301\\Echoes\\Echoes\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-uz\\values-uz.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 104,
-                    "endOffset": 155
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 2,
-                        "startColumn": 4,
-                        "startOffset": 55,
-                        "endColumn": 104,
-                        "endOffset": 155
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 3,
-                    "startColumn": 4,
-                    "startOffset": 160,
-                    "endColumn": 107,
-                    "endOffset": 263
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 3,
-                        "startColumn": 4,
-                        "startOffset": 160,
-                        "endColumn": 107,
-                        "endOffset": 263
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 4,
-                    "startColumn": 4,
-                    "startOffset": 268,
-                    "endColumn": 122,
-                    "endOffset": 386
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 268,
-                        "endColumn": 122,
-                        "endOffset": 386
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 5,
-                    "startColumn": 4,
-                    "startOffset": 391,
-                    "endColumn": 103,
-                    "endOffset": 490
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 5,
-                        "startColumn": 4,
-                        "startOffset": 391,
-                        "endColumn": 103,
-                        "endOffset": 490
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 6,
-                    "startColumn": 4,
-                    "startOffset": 495,
-                    "endColumn": 113,
-                    "endOffset": 604
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 6,
-                        "startColumn": 4,
-                        "startOffset": 495,
-                        "endColumn": 113,
-                        "endOffset": 604
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 7,
-                    "startColumn": 4,
-                    "startOffset": 609,
-                    "endColumn": 85,
-                    "endOffset": 690
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 7,
-                        "startColumn": 4,
-                        "startOffset": 609,
-                        "endColumn": 85,
-                        "endOffset": 690
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 8,
-                    "startColumn": 4,
-                    "startOffset": 695,
-                    "endColumn": 110,
-                    "endOffset": 801
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 8,
-                        "startColumn": 4,
-                        "startOffset": 695,
-                        "endColumn": 110,
-                        "endOffset": 801
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 9,
-                    "startColumn": 4,
-                    "startOffset": 806,
-                    "endColumn": 115,
-                    "endOffset": 917
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 9,
-                        "startColumn": 4,
-                        "startOffset": 806,
-                        "endColumn": 115,
-                        "endOffset": 917
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 10,
-                    "startColumn": 4,
-                    "startOffset": 922,
-                    "endColumn": 79,
-                    "endOffset": 997
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 10,
-                        "startColumn": 4,
-                        "startOffset": 922,
-                        "endColumn": 79,
-                        "endOffset": 997
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 11,
-                    "startColumn": 4,
-                    "startOffset": 1002,
-                    "endColumn": 78,
-                    "endOffset": 1076
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 11,
-                        "startColumn": 4,
-                        "startOffset": 1002,
-                        "endColumn": 78,
-                        "endOffset": 1076
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 12,
-                    "startColumn": 4,
-                    "startOffset": 1081,
-                    "endColumn": 83,
-                    "endOffset": 1160
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 12,
-                        "startColumn": 4,
-                        "startOffset": 1081,
-                        "endColumn": 83,
-                        "endOffset": 1160
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 13,
-                    "startColumn": 4,
-                    "startOffset": 1165,
-                    "endColumn": 108,
-                    "endOffset": 1269
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 13,
-                        "startColumn": 4,
-                        "startOffset": 1165,
-                        "endColumn": 108,
-                        "endOffset": 1269
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 14,
-                    "startColumn": 4,
-                    "startOffset": 1274,
-                    "endColumn": 106,
-                    "endOffset": 1376
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 14,
-                        "startColumn": 4,
-                        "startOffset": 1274,
-                        "endColumn": 106,
-                        "endOffset": 1376
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 15,
-                    "startColumn": 4,
-                    "startOffset": 1381,
-                    "endColumn": 100,
-                    "endOffset": 1477
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 15,
-                        "startColumn": 4,
-                        "startOffset": 1381,
-                        "endColumn": 100,
-                        "endOffset": 1477
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 16,
-                    "startColumn": 4,
-                    "startOffset": 1482,
-                    "endColumn": 107,
-                    "endOffset": 1585
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 16,
-                        "startColumn": 4,
-                        "startOffset": 1482,
-                        "endColumn": 107,
-                        "endOffset": 1585
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 17,
-                    "startColumn": 4,
-                    "startOffset": 1590,
-                    "endColumn": 104,
-                    "endOffset": 1690
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 17,
-                        "startColumn": 4,
-                        "startOffset": 1590,
-                        "endColumn": 104,
-                        "endOffset": 1690
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 18,
-                    "startColumn": 4,
-                    "startOffset": 1695,
-                    "endColumn": 106,
-                    "endOffset": 1797
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 18,
-                        "startColumn": 4,
-                        "startOffset": 1695,
-                        "endColumn": 106,
-                        "endOffset": 1797
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 19,
-                    "startColumn": 4,
-                    "startOffset": 1802,
-                    "endColumn": 123,
-                    "endOffset": 1921
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 19,
-                        "startColumn": 4,
-                        "startOffset": 1802,
-                        "endColumn": 123,
-                        "endOffset": 1921
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 20,
-                    "startColumn": 4,
-                    "startOffset": 1926,
-                    "endColumn": 98,
-                    "endOffset": 2020
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 20,
-                        "startColumn": 4,
-                        "startOffset": 1926,
-                        "endColumn": 98,
-                        "endOffset": 2020
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 21,
-                    "startColumn": 4,
-                    "startOffset": 2025,
-                    "endColumn": 83,
-                    "endOffset": 2104
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 21,
-                        "startColumn": 4,
-                        "startOffset": 2025,
-                        "endColumn": 83,
-                        "endOffset": 2104
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 22,
-                    "startColumn": 4,
-                    "startOffset": 2109,
-                    "endColumn": 100,
-                    "endOffset": 2205
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 22,
-                        "startColumn": 4,
-                        "startOffset": 2109,
-                        "endColumn": 100,
-                        "endOffset": 2205
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "outputFile": "/Users/taijieyang/Desktop/Echoes/Echoes/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-uz/values-uz.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 104,
-                    "endOffset": 155
-                },
-                "from": {
-                    "file": "/Users/taijieyang/.android/build-cache/0fd8ab01152fb208acba82347de7dd3fca2e6ced/output/res/values-uz/values-uz.xml",
-                    "position": {
-                        "startLine": 2,
-                        "startColumn": 4,
-                        "startOffset": 55,
-                        "endColumn": 104,
-                        "endOffset": 155
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 3,
-                    "startColumn": 4,
-                    "startOffset": 160,
-                    "endColumn": 107,
-                    "endOffset": 263
-                },
-                "from": {
-                    "file": "/Users/taijieyang/.android/build-cache/0fd8ab01152fb208acba82347de7dd3fca2e6ced/output/res/values-uz/values-uz.xml",
-                    "position": {
-                        "startLine": 3,
-                        "startColumn": 4,
-                        "startOffset": 160,
-                        "endColumn": 107,
-                        "endOffset": 263
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 4,
-                    "startColumn": 4,
-                    "startOffset": 268,
-                    "endColumn": 122,
-                    "endOffset": 386
-                },
-                "from": {
-                    "file": "/Users/taijieyang/.android/build-cache/0fd8ab01152fb208acba82347de7dd3fca2e6ced/output/res/values-uz/values-uz.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 268,
-                        "endColumn": 122,
-                        "endOffset": 386
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 5,
-                    "startColumn": 4,
-                    "startOffset": 391,
-                    "endColumn": 103,
-                    "endOffset": 490
-                },
-                "from": {
-                    "file": "/Users/taijieyang/.android/build-cache/0fd8ab01152fb208acba82347de7dd3fca2e6ced/output/res/values-uz/values-uz.xml",
-                    "position": {
-                        "startLine": 5,
-                        "startColumn": 4,
-                        "startOffset": 391,
-                        "endColumn": 103,
-                        "endOffset": 490
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 6,
-                    "startColumn": 4,
-                    "startOffset": 495,
-                    "endColumn": 113,
-                    "endOffset": 604
-                },
-                "from": {
-                    "file": "/Users/taijieyang/.android/build-cache/0fd8ab01152fb208acba82347de7dd3fca2e6ced/output/res/values-uz/values-uz.xml",
-                    "position": {
-                        "startLine": 6,
-                        "startColumn": 4,
-                        "startOffset": 495,
-                        "endColumn": 113,
-                        "endOffset": 604
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 7,
-                    "startColumn": 4,
-                    "startOffset": 609,
-                    "endColumn": 85,
-                    "endOffset": 690
-                },
-                "from": {
-                    "file": "/Users/taijieyang/.android/build-cache/0fd8ab01152fb208acba82347de7dd3fca2e6ced/output/res/values-uz/values-uz.xml",
-                    "position": {
-                        "startLine": 7,
-                        "startColumn": 4,
-                        "startOffset": 609,
-                        "endColumn": 85,
-                        "endOffset": 690
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 8,
-                    "startColumn": 4,
-                    "startOffset": 695,
-                    "endColumn": 110,
-                    "endOffset": 801
-                },
-                "from": {
-                    "file": "/Users/taijieyang/.android/build-cache/0fd8ab01152fb208acba82347de7dd3fca2e6ced/output/res/values-uz/values-uz.xml",
-                    "position": {
-                        "startLine": 8,
-                        "startColumn": 4,
-                        "startOffset": 695,
-                        "endColumn": 110,
-                        "endOffset": 801
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 9,
-                    "startColumn": 4,
-                    "startOffset": 806,
-                    "endColumn": 115,
-                    "endOffset": 917
-                },
-                "from": {
-                    "file": "/Users/taijieyang/.android/build-cache/0fd8ab01152fb208acba82347de7dd3fca2e6ced/output/res/values-uz/values-uz.xml",
-                    "position": {
-                        "startLine": 9,
-                        "startColumn": 4,
-                        "startOffset": 806,
-                        "endColumn": 115,
-                        "endOffset": 917
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 10,
-                    "startColumn": 4,
-                    "startOffset": 922,
-                    "endColumn": 79,
-                    "endOffset": 997
-                },
-                "from": {
-                    "file": "/Users/taijieyang/.android/build-cache/0fd8ab01152fb208acba82347de7dd3fca2e6ced/output/res/values-uz/values-uz.xml",
-                    "position": {
-                        "startLine": 10,
-                        "startColumn": 4,
-                        "startOffset": 922,
-                        "endColumn": 79,
-                        "endOffset": 997
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 11,
-                    "startColumn": 4,
-                    "startOffset": 1002,
-                    "endColumn": 78,
-                    "endOffset": 1076
-                },
-                "from": {
-                    "file": "/Users/taijieyang/.android/build-cache/0fd8ab01152fb208acba82347de7dd3fca2e6ced/output/res/values-uz/values-uz.xml",
-                    "position": {
-                        "startLine": 11,
-                        "startColumn": 4,
-                        "startOffset": 1002,
-                        "endColumn": 78,
-                        "endOffset": 1076
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 12,
-                    "startColumn": 4,
-                    "startOffset": 1081,
-                    "endColumn": 83,
-                    "endOffset": 1160
-                },
-                "from": {
-                    "file": "/Users/taijieyang/.android/build-cache/0fd8ab01152fb208acba82347de7dd3fca2e6ced/output/res/values-uz/values-uz.xml",
-                    "position": {
-                        "startLine": 12,
-                        "startColumn": 4,
-                        "startOffset": 1081,
-                        "endColumn": 83,
-                        "endOffset": 1160
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 13,
-                    "startColumn": 4,
-                    "startOffset": 1165,
-                    "endColumn": 108,
-                    "endOffset": 1269
-                },
-                "from": {
-                    "file": "/Users/taijieyang/.android/build-cache/0fd8ab01152fb208acba82347de7dd3fca2e6ced/output/res/values-uz/values-uz.xml",
-                    "position": {
-                        "startLine": 13,
-                        "startColumn": 4,
-                        "startOffset": 1165,
-                        "endColumn": 108,
-                        "endOffset": 1269
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 14,
-                    "startColumn": 4,
-                    "startOffset": 1274,
-                    "endColumn": 106,
-                    "endOffset": 1376
-                },
-                "from": {
-                    "file": "/Users/taijieyang/.android/build-cache/0fd8ab01152fb208acba82347de7dd3fca2e6ced/output/res/values-uz/values-uz.xml",
-                    "position": {
-                        "startLine": 14,
-                        "startColumn": 4,
-                        "startOffset": 1274,
-                        "endColumn": 106,
-                        "endOffset": 1376
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 15,
-                    "startColumn": 4,
-                    "startOffset": 1381,
-                    "endColumn": 100,
-                    "endOffset": 1477
-                },
-                "from": {
-                    "file": "/Users/taijieyang/.android/build-cache/0fd8ab01152fb208acba82347de7dd3fca2e6ced/output/res/values-uz/values-uz.xml",
-                    "position": {
-                        "startLine": 15,
-                        "startColumn": 4,
-                        "startOffset": 1381,
-                        "endColumn": 100,
-                        "endOffset": 1477
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 16,
-                    "startColumn": 4,
-                    "startOffset": 1482,
-                    "endColumn": 107,
-                    "endOffset": 1585
-                },
-                "from": {
-                    "file": "/Users/taijieyang/.android/build-cache/0fd8ab01152fb208acba82347de7dd3fca2e6ced/output/res/values-uz/values-uz.xml",
-                    "position": {
-                        "startLine": 16,
-                        "startColumn": 4,
-                        "startOffset": 1482,
-                        "endColumn": 107,
-                        "endOffset": 1585
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 17,
-                    "startColumn": 4,
-                    "startOffset": 1590,
-                    "endColumn": 104,
-                    "endOffset": 1690
-                },
-                "from": {
-                    "file": "/Users/taijieyang/.android/build-cache/0fd8ab01152fb208acba82347de7dd3fca2e6ced/output/res/values-uz/values-uz.xml",
-                    "position": {
-                        "startLine": 17,
-                        "startColumn": 4,
-                        "startOffset": 1590,
-                        "endColumn": 104,
-                        "endOffset": 1690
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 18,
-                    "startColumn": 4,
-                    "startOffset": 1695,
-                    "endColumn": 106,
-                    "endOffset": 1797
-                },
-                "from": {
-                    "file": "/Users/taijieyang/.android/build-cache/0fd8ab01152fb208acba82347de7dd3fca2e6ced/output/res/values-uz/values-uz.xml",
-                    "position": {
-                        "startLine": 18,
-                        "startColumn": 4,
-                        "startOffset": 1695,
-                        "endColumn": 106,
-                        "endOffset": 1797
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 19,
-                    "startColumn": 4,
-                    "startOffset": 1802,
-                    "endColumn": 123,
-                    "endOffset": 1921
-                },
-                "from": {
-                    "file": "/Users/taijieyang/.android/build-cache/0fd8ab01152fb208acba82347de7dd3fca2e6ced/output/res/values-uz/values-uz.xml",
-                    "position": {
-                        "startLine": 19,
-                        "startColumn": 4,
-                        "startOffset": 1802,
-                        "endColumn": 123,
-                        "endOffset": 1921
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 20,
-                    "startColumn": 4,
-                    "startOffset": 1926,
-                    "endColumn": 98,
-                    "endOffset": 2020
-                },
-                "from": {
-                    "file": "/Users/taijieyang/.android/build-cache/0fd8ab01152fb208acba82347de7dd3fca2e6ced/output/res/values-uz/values-uz.xml",
-                    "position": {
-                        "startLine": 20,
-                        "startColumn": 4,
-                        "startOffset": 1926,
-                        "endColumn": 98,
-                        "endOffset": 2020
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 21,
-                    "startColumn": 4,
-                    "startOffset": 2025,
-                    "endColumn": 83,
-                    "endOffset": 2104
-                },
-                "from": {
-                    "file": "/Users/taijieyang/.android/build-cache/0fd8ab01152fb208acba82347de7dd3fca2e6ced/output/res/values-uz/values-uz.xml",
-                    "position": {
-                        "startLine": 21,
-                        "startColumn": 4,
-                        "startOffset": 2025,
-                        "endColumn": 83,
-                        "endOffset": 2104
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 22,
-                    "startColumn": 4,
-                    "startOffset": 2109,
-                    "endColumn": 100,
-                    "endOffset": 2205
-                },
-                "from": {
-                    "file": "/Users/taijieyang/.android/build-cache/0fd8ab01152fb208acba82347de7dd3fca2e6ced/output/res/values-uz/values-uz.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-uz\\values-uz.xml",
                     "position": {
                         "startLine": 22,
                         "startColumn": 4,
@@ -2828,7 +3636,7 @@
         ]
     },
     {
-        "outputFile": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-uz\\values-uz.xml",
+        "outputFile": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\Desktop\\Echoes\\Echoes\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-uz\\values-uz.xml",
         "map": [
             {
                 "to": {
@@ -2839,7 +3647,7 @@
                     "endOffset": 155
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-uz\\values-uz.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-uz\\values-uz.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -2858,7 +3666,7 @@
                     "endOffset": 263
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-uz\\values-uz.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-uz\\values-uz.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -2877,7 +3685,7 @@
                     "endOffset": 386
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-uz\\values-uz.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-uz\\values-uz.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -2896,7 +3704,7 @@
                     "endOffset": 490
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-uz\\values-uz.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-uz\\values-uz.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -2915,7 +3723,7 @@
                     "endOffset": 604
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-uz\\values-uz.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-uz\\values-uz.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -2934,7 +3742,7 @@
                     "endOffset": 690
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-uz\\values-uz.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-uz\\values-uz.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
@@ -2953,7 +3761,7 @@
                     "endOffset": 801
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-uz\\values-uz.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-uz\\values-uz.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 4,
@@ -2972,7 +3780,7 @@
                     "endOffset": 917
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-uz\\values-uz.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-uz\\values-uz.xml",
                     "position": {
                         "startLine": 9,
                         "startColumn": 4,
@@ -2991,7 +3799,7 @@
                     "endOffset": 997
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-uz\\values-uz.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-uz\\values-uz.xml",
                     "position": {
                         "startLine": 10,
                         "startColumn": 4,
@@ -3010,7 +3818,7 @@
                     "endOffset": 1076
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-uz\\values-uz.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-uz\\values-uz.xml",
                     "position": {
                         "startLine": 11,
                         "startColumn": 4,
@@ -3029,7 +3837,7 @@
                     "endOffset": 1160
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-uz\\values-uz.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-uz\\values-uz.xml",
                     "position": {
                         "startLine": 12,
                         "startColumn": 4,
@@ -3048,7 +3856,7 @@
                     "endOffset": 1269
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-uz\\values-uz.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-uz\\values-uz.xml",
                     "position": {
                         "startLine": 13,
                         "startColumn": 4,
@@ -3067,7 +3875,7 @@
                     "endOffset": 1376
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-uz\\values-uz.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-uz\\values-uz.xml",
                     "position": {
                         "startLine": 14,
                         "startColumn": 4,
@@ -3086,7 +3894,7 @@
                     "endOffset": 1477
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-uz\\values-uz.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-uz\\values-uz.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 4,
@@ -3105,7 +3913,7 @@
                     "endOffset": 1585
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-uz\\values-uz.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-uz\\values-uz.xml",
                     "position": {
                         "startLine": 16,
                         "startColumn": 4,
@@ -3124,7 +3932,7 @@
                     "endOffset": 1690
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-uz\\values-uz.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-uz\\values-uz.xml",
                     "position": {
                         "startLine": 17,
                         "startColumn": 4,
@@ -3143,7 +3951,7 @@
                     "endOffset": 1797
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-uz\\values-uz.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-uz\\values-uz.xml",
                     "position": {
                         "startLine": 18,
                         "startColumn": 4,
@@ -3162,7 +3970,7 @@
                     "endOffset": 1921
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-uz\\values-uz.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-uz\\values-uz.xml",
                     "position": {
                         "startLine": 19,
                         "startColumn": 4,
@@ -3181,7 +3989,7 @@
                     "endOffset": 2020
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-uz\\values-uz.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-uz\\values-uz.xml",
                     "position": {
                         "startLine": 20,
                         "startColumn": 4,
@@ -3200,7 +4008,7 @@
                     "endOffset": 2104
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-uz\\values-uz.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-uz\\values-uz.xml",
                     "position": {
                         "startLine": 21,
                         "startColumn": 4,
@@ -3219,411 +4027,7 @@
                     "endOffset": 2205
                 },
                 "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 22,
-                        "startColumn": 4,
-                        "startOffset": 2109,
-                        "endColumn": 100,
-                        "endOffset": 2205
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "outputFile": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\D\\GitHub\\Echoes2\\Echoes\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-uz\\values-uz.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 104,
-                    "endOffset": 155
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 2,
-                        "startColumn": 4,
-                        "startOffset": 55,
-                        "endColumn": 104,
-                        "endOffset": 155
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 3,
-                    "startColumn": 4,
-                    "startOffset": 160,
-                    "endColumn": 107,
-                    "endOffset": 263
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 3,
-                        "startColumn": 4,
-                        "startOffset": 160,
-                        "endColumn": 107,
-                        "endOffset": 263
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 4,
-                    "startColumn": 4,
-                    "startOffset": 268,
-                    "endColumn": 122,
-                    "endOffset": 386
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 268,
-                        "endColumn": 122,
-                        "endOffset": 386
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 5,
-                    "startColumn": 4,
-                    "startOffset": 391,
-                    "endColumn": 103,
-                    "endOffset": 490
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 5,
-                        "startColumn": 4,
-                        "startOffset": 391,
-                        "endColumn": 103,
-                        "endOffset": 490
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 6,
-                    "startColumn": 4,
-                    "startOffset": 495,
-                    "endColumn": 113,
-                    "endOffset": 604
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 6,
-                        "startColumn": 4,
-                        "startOffset": 495,
-                        "endColumn": 113,
-                        "endOffset": 604
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 7,
-                    "startColumn": 4,
-                    "startOffset": 609,
-                    "endColumn": 85,
-                    "endOffset": 690
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 7,
-                        "startColumn": 4,
-                        "startOffset": 609,
-                        "endColumn": 85,
-                        "endOffset": 690
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 8,
-                    "startColumn": 4,
-                    "startOffset": 695,
-                    "endColumn": 110,
-                    "endOffset": 801
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 8,
-                        "startColumn": 4,
-                        "startOffset": 695,
-                        "endColumn": 110,
-                        "endOffset": 801
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 9,
-                    "startColumn": 4,
-                    "startOffset": 806,
-                    "endColumn": 115,
-                    "endOffset": 917
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 9,
-                        "startColumn": 4,
-                        "startOffset": 806,
-                        "endColumn": 115,
-                        "endOffset": 917
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 10,
-                    "startColumn": 4,
-                    "startOffset": 922,
-                    "endColumn": 79,
-                    "endOffset": 997
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 10,
-                        "startColumn": 4,
-                        "startOffset": 922,
-                        "endColumn": 79,
-                        "endOffset": 997
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 11,
-                    "startColumn": 4,
-                    "startOffset": 1002,
-                    "endColumn": 78,
-                    "endOffset": 1076
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 11,
-                        "startColumn": 4,
-                        "startOffset": 1002,
-                        "endColumn": 78,
-                        "endOffset": 1076
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 12,
-                    "startColumn": 4,
-                    "startOffset": 1081,
-                    "endColumn": 83,
-                    "endOffset": 1160
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 12,
-                        "startColumn": 4,
-                        "startOffset": 1081,
-                        "endColumn": 83,
-                        "endOffset": 1160
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 13,
-                    "startColumn": 4,
-                    "startOffset": 1165,
-                    "endColumn": 108,
-                    "endOffset": 1269
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 13,
-                        "startColumn": 4,
-                        "startOffset": 1165,
-                        "endColumn": 108,
-                        "endOffset": 1269
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 14,
-                    "startColumn": 4,
-                    "startOffset": 1274,
-                    "endColumn": 106,
-                    "endOffset": 1376
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 14,
-                        "startColumn": 4,
-                        "startOffset": 1274,
-                        "endColumn": 106,
-                        "endOffset": 1376
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 15,
-                    "startColumn": 4,
-                    "startOffset": 1381,
-                    "endColumn": 100,
-                    "endOffset": 1477
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 15,
-                        "startColumn": 4,
-                        "startOffset": 1381,
-                        "endColumn": 100,
-                        "endOffset": 1477
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 16,
-                    "startColumn": 4,
-                    "startOffset": 1482,
-                    "endColumn": 107,
-                    "endOffset": 1585
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 16,
-                        "startColumn": 4,
-                        "startOffset": 1482,
-                        "endColumn": 107,
-                        "endOffset": 1585
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 17,
-                    "startColumn": 4,
-                    "startOffset": 1590,
-                    "endColumn": 104,
-                    "endOffset": 1690
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 17,
-                        "startColumn": 4,
-                        "startOffset": 1590,
-                        "endColumn": 104,
-                        "endOffset": 1690
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 18,
-                    "startColumn": 4,
-                    "startOffset": 1695,
-                    "endColumn": 106,
-                    "endOffset": 1797
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 18,
-                        "startColumn": 4,
-                        "startOffset": 1695,
-                        "endColumn": 106,
-                        "endOffset": 1797
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 19,
-                    "startColumn": 4,
-                    "startOffset": 1802,
-                    "endColumn": 123,
-                    "endOffset": 1921
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 19,
-                        "startColumn": 4,
-                        "startOffset": 1802,
-                        "endColumn": 123,
-                        "endOffset": 1921
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 20,
-                    "startColumn": 4,
-                    "startOffset": 1926,
-                    "endColumn": 98,
-                    "endOffset": 2020
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 20,
-                        "startColumn": 4,
-                        "startOffset": 1926,
-                        "endColumn": 98,
-                        "endOffset": 2020
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 21,
-                    "startColumn": 4,
-                    "startOffset": 2025,
-                    "endColumn": 83,
-                    "endOffset": 2104
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-uz\\values-uz.xml",
-                    "position": {
-                        "startLine": 21,
-                        "startColumn": 4,
-                        "startOffset": 2025,
-                        "endColumn": 83,
-                        "endOffset": 2104
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 22,
-                    "startColumn": 4,
-                    "startOffset": 2109,
-                    "endColumn": 100,
-                    "endOffset": 2205
-                },
-                "from": {
-                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-uz\\values-uz.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\bf7c62df187d4cd416dd6dc253acb29f79dcdac7\\output\\res\\values-uz\\values-uz.xml",
                     "position": {
                         "startLine": 22,
                         "startColumn": 4,
