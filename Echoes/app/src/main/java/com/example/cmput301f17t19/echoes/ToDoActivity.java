@@ -19,15 +19,21 @@ import java.util.Calendar;
 
 import static com.example.cmput301f17t19.echoes.LoginActivity.LOGIN_USERNAME;
 
+/**
+ * To Do Activity
+ *
+ * @author Hayden Bauder
+ * @version 1.0
+ * @since 1.0
+ */
 public class ToDoActivity extends AppCompatActivity {
 
-    // Dummy arrays for now
-    //TODO: add getToDo method to HabitList class
+    //TODO: add getToDo method to HabitList class?
     public ArrayList<String> nameArray;
     public ArrayList<String> reasonArray;
     public ArrayList<Habit> todoArray; // refactor two above arrays to just one
 
-    ListView listView;
+    ListView listView; // will display list of habits
 
     // The userName of the Logged-in user
     private static String login_userName;
@@ -67,7 +73,7 @@ public class ToDoActivity extends AppCompatActivity {
         nameArray = new ArrayList<String>();
         reasonArray = new ArrayList<String>();
 
-        populateArrays(myHabitList);
+        populateArrays(myHabitList); // populate the listView with the data
 
         ToDoListAdapter adapter = new ToDoListAdapter(this,
                 nameArray,
@@ -118,17 +124,20 @@ public class ToDoActivity extends AppCompatActivity {
     }
 
     //TODO: this is duplicate code! from myHabits. Refactor?
+    // gets the user's preofile so we can look at the HabitList
     private UserProfile getLogin_UserProfile() {
         OfflineStorageController offlineStorageController = new OfflineStorageController(this, login_userName);
 
         return offlineStorageController.readFromFile();
     }
 
+    // Check all of the users habits, only add ones that are scheduled for today.
+    //TODO: implement system for removing habits from this list once done
     public void populateArrays(HabitList habitList) {
         for (int index=0; index < myHabitList.getHabits().size(); index++) {
 
             Habit habit = myHabitList.getHabits().get(index);
-            Calendar c = Calendar.getInstance(); //use to get current day
+            Calendar c = Calendar.getInstance(); // get current day
             int today = c.get(Calendar.DAY_OF_WEEK);
 
             if (habit.getPlan().getSchedule().get(today-1)){

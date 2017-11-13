@@ -11,18 +11,24 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 /**
- * Created by Hayden Bauder on 09/11/2017.
+ * ToDoListAdapter
+ *
+ * @author Hayden Bauder
+ * @version 1.0
+ * @since 1.0
+ * Reference: https://appsandbiscuits.com/listview-tutorial-android-12-ccef4ead27cc
  */
 
-// following https://appsandbiscuits.com/listview-tutorial-android-12-ccef4ead27cc
 
 public class ToDoListAdapter extends ArrayAdapter {
 
     private final Activity context;
 
+    // Each entry in the list view has 2 text fields, Name and Reason
     private final ArrayList<String> nameArray;
     private final ArrayList<String> reasonArray;
 
+    // Contruct the adaptor
     public ToDoListAdapter(Activity context,
                            ArrayList<String> nameArray,
                            ArrayList<String> reasonArray){
@@ -44,6 +50,7 @@ public class ToDoListAdapter extends ArrayAdapter {
         // get TextViews from todo_list_layout xml
         TextView nameText   = (TextView) rowView.findViewById(R.id.nameTextView);
         TextView reasonText = (TextView) rowView.findViewById(R.id.reasonTextView);
+        // set the values
         nameText.setText(nameArray.get(position));
         reasonText.setText(reasonArray.get(position));
 
