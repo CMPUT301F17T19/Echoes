@@ -5,6 +5,7 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/habit_event_detail_layout"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -19,6 +20,7 @@
         app:popupTheme="@style/ThemeOverlay.AppCompat.Dark" />
 
     <LinearLayout
+        android:id="@+id/habit_event_type_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -39,6 +41,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/habit_event_comment_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -57,6 +60,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/habit_event_date_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -77,6 +81,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/habit_event_photo_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -97,6 +102,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/habit_event_add_photo_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -118,6 +124,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/habit_event_attch_loc_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -146,6 +153,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/habit_event_loc_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -166,6 +174,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/habit_event_buttons_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
