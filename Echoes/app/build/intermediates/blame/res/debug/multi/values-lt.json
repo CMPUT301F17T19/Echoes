@@ -1,409 +1,5 @@
 [
     {
-        "outputFile": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-lt\\values-lt.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 115,
-                    "endOffset": 166
-                },
-                "from": {
-                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
-                    "position": {
-                        "startLine": 2,
-                        "startColumn": 4,
-                        "startOffset": 55,
-                        "endColumn": 115,
-                        "endOffset": 166
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 3,
-                    "startColumn": 4,
-                    "startOffset": 171,
-                    "endColumn": 107,
-                    "endOffset": 274
-                },
-                "from": {
-                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
-                    "position": {
-                        "startLine": 3,
-                        "startColumn": 4,
-                        "startOffset": 171,
-                        "endColumn": 107,
-                        "endOffset": 274
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 4,
-                    "startColumn": 4,
-                    "startOffset": 279,
-                    "endColumn": 122,
-                    "endOffset": 397
-                },
-                "from": {
-                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 279,
-                        "endColumn": 122,
-                        "endOffset": 397
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 5,
-                    "startColumn": 4,
-                    "startOffset": 402,
-                    "endColumn": 100,
-                    "endOffset": 498
-                },
-                "from": {
-                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
-                    "position": {
-                        "startLine": 5,
-                        "startColumn": 4,
-                        "startOffset": 402,
-                        "endColumn": 100,
-                        "endOffset": 498
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 6,
-                    "startColumn": 4,
-                    "startOffset": 503,
-                    "endColumn": 112,
-                    "endOffset": 611
-                },
-                "from": {
-                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
-                    "position": {
-                        "startLine": 6,
-                        "startColumn": 4,
-                        "startOffset": 503,
-                        "endColumn": 112,
-                        "endOffset": 611
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 7,
-                    "startColumn": 4,
-                    "startOffset": 616,
-                    "endColumn": 86,
-                    "endOffset": 698
-                },
-                "from": {
-                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
-                    "position": {
-                        "startLine": 7,
-                        "startColumn": 4,
-                        "startOffset": 616,
-                        "endColumn": 86,
-                        "endOffset": 698
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 8,
-                    "startColumn": 4,
-                    "startOffset": 703,
-                    "endColumn": 108,
-                    "endOffset": 807
-                },
-                "from": {
-                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
-                    "position": {
-                        "startLine": 8,
-                        "startColumn": 4,
-                        "startOffset": 703,
-                        "endColumn": 108,
-                        "endOffset": 807
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 9,
-                    "startColumn": 4,
-                    "startOffset": 812,
-                    "endColumn": 120,
-                    "endOffset": 928
-                },
-                "from": {
-                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
-                    "position": {
-                        "startLine": 9,
-                        "startColumn": 4,
-                        "startOffset": 812,
-                        "endColumn": 120,
-                        "endOffset": 928
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 10,
-                    "startColumn": 4,
-                    "startOffset": 933,
-                    "endColumn": 81,
-                    "endOffset": 1010
-                },
-                "from": {
-                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
-                    "position": {
-                        "startLine": 10,
-                        "startColumn": 4,
-                        "startOffset": 933,
-                        "endColumn": 81,
-                        "endOffset": 1010
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 11,
-                    "startColumn": 4,
-                    "startOffset": 1015,
-                    "endColumn": 80,
-                    "endOffset": 1091
-                },
-                "from": {
-                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
-                    "position": {
-                        "startLine": 11,
-                        "startColumn": 4,
-                        "startOffset": 1015,
-                        "endColumn": 80,
-                        "endOffset": 1091
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 12,
-                    "startColumn": 4,
-                    "startOffset": 1096,
-                    "endColumn": 84,
-                    "endOffset": 1176
-                },
-                "from": {
-                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
-                    "position": {
-                        "startLine": 12,
-                        "startColumn": 4,
-                        "startOffset": 1096,
-                        "endColumn": 84,
-                        "endOffset": 1176
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 13,
-                    "startColumn": 4,
-                    "startOffset": 1181,
-                    "endColumn": 108,
-                    "endOffset": 1285
-                },
-                "from": {
-                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
-                    "position": {
-                        "startLine": 13,
-                        "startColumn": 4,
-                        "startOffset": 1181,
-                        "endColumn": 108,
-                        "endOffset": 1285
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 14,
-                    "startColumn": 4,
-                    "startOffset": 1290,
-                    "endColumn": 108,
-                    "endOffset": 1394
-                },
-                "from": {
-                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
-                    "position": {
-                        "startLine": 14,
-                        "startColumn": 4,
-                        "startOffset": 1290,
-                        "endColumn": 108,
-                        "endOffset": 1394
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 15,
-                    "startColumn": 4,
-                    "startOffset": 1399,
-                    "endColumn": 99,
-                    "endOffset": 1494
-                },
-                "from": {
-                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
-                    "position": {
-                        "startLine": 15,
-                        "startColumn": 4,
-                        "startOffset": 1399,
-                        "endColumn": 99,
-                        "endOffset": 1494
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 16,
-                    "startColumn": 4,
-                    "startOffset": 1499,
-                    "endColumn": 109,
-                    "endOffset": 1604
-                },
-                "from": {
-                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
-                    "position": {
-                        "startLine": 16,
-                        "startColumn": 4,
-                        "startOffset": 1499,
-                        "endColumn": 109,
-                        "endOffset": 1604
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 17,
-                    "startColumn": 4,
-                    "startOffset": 1609,
-                    "endColumn": 103,
-                    "endOffset": 1708
-                },
-                "from": {
-                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
-                    "position": {
-                        "startLine": 17,
-                        "startColumn": 4,
-                        "startOffset": 1609,
-                        "endColumn": 103,
-                        "endOffset": 1708
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 18,
-                    "startColumn": 4,
-                    "startOffset": 1713,
-                    "endColumn": 112,
-                    "endOffset": 1821
-                },
-                "from": {
-                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
-                    "position": {
-                        "startLine": 18,
-                        "startColumn": 4,
-                        "startOffset": 1713,
-                        "endColumn": 112,
-                        "endOffset": 1821
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 19,
-                    "startColumn": 4,
-                    "startOffset": 1826,
-                    "endColumn": 129,
-                    "endOffset": 1951
-                },
-                "from": {
-                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
-                    "position": {
-                        "startLine": 19,
-                        "startColumn": 4,
-                        "startOffset": 1826,
-                        "endColumn": 129,
-                        "endOffset": 1951
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 20,
-                    "startColumn": 4,
-                    "startOffset": 1956,
-                    "endColumn": 100,
-                    "endOffset": 2052
-                },
-                "from": {
-                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
-                    "position": {
-                        "startLine": 20,
-                        "startColumn": 4,
-                        "startOffset": 1956,
-                        "endColumn": 100,
-                        "endOffset": 2052
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 21,
-                    "startColumn": 4,
-                    "startOffset": 2057,
-                    "endColumn": 82,
-                    "endOffset": 2135
-                },
-                "from": {
-                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
-                    "position": {
-                        "startLine": 21,
-                        "startColumn": 4,
-                        "startOffset": 2057,
-                        "endColumn": 82,
-                        "endOffset": 2135
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 22,
-                    "startColumn": 4,
-                    "startOffset": 2140,
-                    "endColumn": 100,
-                    "endOffset": 2236
-                },
-                "from": {
-                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
-                    "position": {
-                        "startLine": 22,
-                        "startColumn": 4,
-                        "startOffset": 2140,
-                        "endColumn": 100,
-                        "endOffset": 2236
-                    }
-                }
-            }
-        ]
-    },
-    {
         "outputFile": "D:\\D\\GitHub\\Echoes2\\Echoes\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-lt\\values-lt.xml",
         "map": [
             {
@@ -796,6 +392,410 @@
                 },
                 "from": {
                     "file": "C:\\Users\\Mitchell Ballou\\.android\\build-cache\\02854f53badd995be84e2a90f8b28f38196e1dc7\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 22,
+                        "startColumn": 4,
+                        "startOffset": 2140,
+                        "endColumn": 100,
+                        "endOffset": 2236
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-lt\\values-lt.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 115,
+                    "endOffset": 166
+                },
+                "from": {
+                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 115,
+                        "endOffset": 166
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 171,
+                    "endColumn": 107,
+                    "endOffset": 274
+                },
+                "from": {
+                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 171,
+                        "endColumn": 107,
+                        "endOffset": 274
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 279,
+                    "endColumn": 122,
+                    "endOffset": 397
+                },
+                "from": {
+                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 279,
+                        "endColumn": 122,
+                        "endOffset": 397
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 402,
+                    "endColumn": 100,
+                    "endOffset": 498
+                },
+                "from": {
+                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 402,
+                        "endColumn": 100,
+                        "endOffset": 498
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 503,
+                    "endColumn": 112,
+                    "endOffset": 611
+                },
+                "from": {
+                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 503,
+                        "endColumn": 112,
+                        "endOffset": 611
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 616,
+                    "endColumn": 86,
+                    "endOffset": 698
+                },
+                "from": {
+                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 616,
+                        "endColumn": 86,
+                        "endOffset": 698
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 703,
+                    "endColumn": 108,
+                    "endOffset": 807
+                },
+                "from": {
+                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 703,
+                        "endColumn": 108,
+                        "endOffset": 807
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 812,
+                    "endColumn": 120,
+                    "endOffset": 928
+                },
+                "from": {
+                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 812,
+                        "endColumn": 120,
+                        "endOffset": 928
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 933,
+                    "endColumn": 81,
+                    "endOffset": 1010
+                },
+                "from": {
+                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 933,
+                        "endColumn": 81,
+                        "endOffset": 1010
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 1015,
+                    "endColumn": 80,
+                    "endOffset": 1091
+                },
+                "from": {
+                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 1015,
+                        "endColumn": 80,
+                        "endOffset": 1091
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 1096,
+                    "endColumn": 84,
+                    "endOffset": 1176
+                },
+                "from": {
+                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 1096,
+                        "endColumn": 84,
+                        "endOffset": 1176
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 1181,
+                    "endColumn": 108,
+                    "endOffset": 1285
+                },
+                "from": {
+                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 1181,
+                        "endColumn": 108,
+                        "endOffset": 1285
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 1290,
+                    "endColumn": 108,
+                    "endOffset": 1394
+                },
+                "from": {
+                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 1290,
+                        "endColumn": 108,
+                        "endOffset": 1394
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 1399,
+                    "endColumn": 99,
+                    "endOffset": 1494
+                },
+                "from": {
+                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 1399,
+                        "endColumn": 99,
+                        "endOffset": 1494
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 1499,
+                    "endColumn": 109,
+                    "endOffset": 1604
+                },
+                "from": {
+                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 1499,
+                        "endColumn": 109,
+                        "endOffset": 1604
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 1609,
+                    "endColumn": 103,
+                    "endOffset": 1708
+                },
+                "from": {
+                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 1609,
+                        "endColumn": 103,
+                        "endOffset": 1708
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 1713,
+                    "endColumn": 112,
+                    "endOffset": 1821
+                },
+                "from": {
+                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 1713,
+                        "endColumn": 112,
+                        "endOffset": 1821
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 19,
+                    "startColumn": 4,
+                    "startOffset": 1826,
+                    "endColumn": 129,
+                    "endOffset": 1951
+                },
+                "from": {
+                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 1826,
+                        "endColumn": 129,
+                        "endOffset": 1951
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 20,
+                    "startColumn": 4,
+                    "startOffset": 1956,
+                    "endColumn": 100,
+                    "endOffset": 2052
+                },
+                "from": {
+                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 1956,
+                        "endColumn": 100,
+                        "endOffset": 2052
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 21,
+                    "startColumn": 4,
+                    "startOffset": 2057,
+                    "endColumn": 82,
+                    "endOffset": 2135
+                },
+                "from": {
+                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 21,
+                        "startColumn": 4,
+                        "startOffset": 2057,
+                        "endColumn": 82,
+                        "endOffset": 2135
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 22,
+                    "startColumn": 4,
+                    "startOffset": 2140,
+                    "endColumn": 100,
+                    "endOffset": 2236
+                },
+                "from": {
+                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
                     "position": {
                         "startLine": 22,
                         "startColumn": 4,
@@ -1212,410 +1212,6 @@
         ]
     },
     {
-        "outputFile": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-lt\\values-lt.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 115,
-                    "endOffset": 166
-                },
-                "from": {
-                    "file": "D:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
-                    "position": {
-                        "startLine": 2,
-                        "startColumn": 4,
-                        "startOffset": 55,
-                        "endColumn": 115,
-                        "endOffset": 166
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 3,
-                    "startColumn": 4,
-                    "startOffset": 171,
-                    "endColumn": 107,
-                    "endOffset": 274
-                },
-                "from": {
-                    "file": "D:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
-                    "position": {
-                        "startLine": 3,
-                        "startColumn": 4,
-                        "startOffset": 171,
-                        "endColumn": 107,
-                        "endOffset": 274
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 4,
-                    "startColumn": 4,
-                    "startOffset": 279,
-                    "endColumn": 122,
-                    "endOffset": 397
-                },
-                "from": {
-                    "file": "D:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 279,
-                        "endColumn": 122,
-                        "endOffset": 397
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 5,
-                    "startColumn": 4,
-                    "startOffset": 402,
-                    "endColumn": 100,
-                    "endOffset": 498
-                },
-                "from": {
-                    "file": "D:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
-                    "position": {
-                        "startLine": 5,
-                        "startColumn": 4,
-                        "startOffset": 402,
-                        "endColumn": 100,
-                        "endOffset": 498
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 6,
-                    "startColumn": 4,
-                    "startOffset": 503,
-                    "endColumn": 112,
-                    "endOffset": 611
-                },
-                "from": {
-                    "file": "D:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
-                    "position": {
-                        "startLine": 6,
-                        "startColumn": 4,
-                        "startOffset": 503,
-                        "endColumn": 112,
-                        "endOffset": 611
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 7,
-                    "startColumn": 4,
-                    "startOffset": 616,
-                    "endColumn": 86,
-                    "endOffset": 698
-                },
-                "from": {
-                    "file": "D:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
-                    "position": {
-                        "startLine": 7,
-                        "startColumn": 4,
-                        "startOffset": 616,
-                        "endColumn": 86,
-                        "endOffset": 698
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 8,
-                    "startColumn": 4,
-                    "startOffset": 703,
-                    "endColumn": 108,
-                    "endOffset": 807
-                },
-                "from": {
-                    "file": "D:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
-                    "position": {
-                        "startLine": 8,
-                        "startColumn": 4,
-                        "startOffset": 703,
-                        "endColumn": 108,
-                        "endOffset": 807
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 9,
-                    "startColumn": 4,
-                    "startOffset": 812,
-                    "endColumn": 120,
-                    "endOffset": 928
-                },
-                "from": {
-                    "file": "D:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
-                    "position": {
-                        "startLine": 9,
-                        "startColumn": 4,
-                        "startOffset": 812,
-                        "endColumn": 120,
-                        "endOffset": 928
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 10,
-                    "startColumn": 4,
-                    "startOffset": 933,
-                    "endColumn": 81,
-                    "endOffset": 1010
-                },
-                "from": {
-                    "file": "D:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
-                    "position": {
-                        "startLine": 10,
-                        "startColumn": 4,
-                        "startOffset": 933,
-                        "endColumn": 81,
-                        "endOffset": 1010
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 11,
-                    "startColumn": 4,
-                    "startOffset": 1015,
-                    "endColumn": 80,
-                    "endOffset": 1091
-                },
-                "from": {
-                    "file": "D:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
-                    "position": {
-                        "startLine": 11,
-                        "startColumn": 4,
-                        "startOffset": 1015,
-                        "endColumn": 80,
-                        "endOffset": 1091
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 12,
-                    "startColumn": 4,
-                    "startOffset": 1096,
-                    "endColumn": 84,
-                    "endOffset": 1176
-                },
-                "from": {
-                    "file": "D:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
-                    "position": {
-                        "startLine": 12,
-                        "startColumn": 4,
-                        "startOffset": 1096,
-                        "endColumn": 84,
-                        "endOffset": 1176
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 13,
-                    "startColumn": 4,
-                    "startOffset": 1181,
-                    "endColumn": 108,
-                    "endOffset": 1285
-                },
-                "from": {
-                    "file": "D:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
-                    "position": {
-                        "startLine": 13,
-                        "startColumn": 4,
-                        "startOffset": 1181,
-                        "endColumn": 108,
-                        "endOffset": 1285
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 14,
-                    "startColumn": 4,
-                    "startOffset": 1290,
-                    "endColumn": 108,
-                    "endOffset": 1394
-                },
-                "from": {
-                    "file": "D:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
-                    "position": {
-                        "startLine": 14,
-                        "startColumn": 4,
-                        "startOffset": 1290,
-                        "endColumn": 108,
-                        "endOffset": 1394
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 15,
-                    "startColumn": 4,
-                    "startOffset": 1399,
-                    "endColumn": 99,
-                    "endOffset": 1494
-                },
-                "from": {
-                    "file": "D:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
-                    "position": {
-                        "startLine": 15,
-                        "startColumn": 4,
-                        "startOffset": 1399,
-                        "endColumn": 99,
-                        "endOffset": 1494
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 16,
-                    "startColumn": 4,
-                    "startOffset": 1499,
-                    "endColumn": 109,
-                    "endOffset": 1604
-                },
-                "from": {
-                    "file": "D:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
-                    "position": {
-                        "startLine": 16,
-                        "startColumn": 4,
-                        "startOffset": 1499,
-                        "endColumn": 109,
-                        "endOffset": 1604
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 17,
-                    "startColumn": 4,
-                    "startOffset": 1609,
-                    "endColumn": 103,
-                    "endOffset": 1708
-                },
-                "from": {
-                    "file": "D:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
-                    "position": {
-                        "startLine": 17,
-                        "startColumn": 4,
-                        "startOffset": 1609,
-                        "endColumn": 103,
-                        "endOffset": 1708
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 18,
-                    "startColumn": 4,
-                    "startOffset": 1713,
-                    "endColumn": 112,
-                    "endOffset": 1821
-                },
-                "from": {
-                    "file": "D:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
-                    "position": {
-                        "startLine": 18,
-                        "startColumn": 4,
-                        "startOffset": 1713,
-                        "endColumn": 112,
-                        "endOffset": 1821
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 19,
-                    "startColumn": 4,
-                    "startOffset": 1826,
-                    "endColumn": 129,
-                    "endOffset": 1951
-                },
-                "from": {
-                    "file": "D:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
-                    "position": {
-                        "startLine": 19,
-                        "startColumn": 4,
-                        "startOffset": 1826,
-                        "endColumn": 129,
-                        "endOffset": 1951
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 20,
-                    "startColumn": 4,
-                    "startOffset": 1956,
-                    "endColumn": 100,
-                    "endOffset": 2052
-                },
-                "from": {
-                    "file": "D:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
-                    "position": {
-                        "startLine": 20,
-                        "startColumn": 4,
-                        "startOffset": 1956,
-                        "endColumn": 100,
-                        "endOffset": 2052
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 21,
-                    "startColumn": 4,
-                    "startOffset": 2057,
-                    "endColumn": 82,
-                    "endOffset": 2135
-                },
-                "from": {
-                    "file": "D:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
-                    "position": {
-                        "startLine": 21,
-                        "startColumn": 4,
-                        "startOffset": 2057,
-                        "endColumn": 82,
-                        "endOffset": 2135
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 22,
-                    "startColumn": 4,
-                    "startOffset": 2140,
-                    "endColumn": 100,
-                    "endOffset": 2236
-                },
-                "from": {
-                    "file": "D:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
-                    "position": {
-                        "startLine": 22,
-                        "startColumn": 4,
-                        "startOffset": 2140,
-                        "endColumn": 100,
-                        "endOffset": 2236
-                    }
-                }
-            }
-        ]
-    },
-    {
         "outputFile": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\cmput301\\Echoes\\Echoes\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-lt\\values-lt.xml",
         "map": [
             {
@@ -2008,6 +1604,410 @@
                 },
                 "from": {
                     "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 22,
+                        "startColumn": 4,
+                        "startOffset": 2140,
+                        "endColumn": 100,
+                        "endOffset": 2236
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\Desktop\\Echoes\\Echoes\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-lt\\values-lt.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 115,
+                    "endOffset": 166
+                },
+                "from": {
+                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 115,
+                        "endOffset": 166
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 171,
+                    "endColumn": 107,
+                    "endOffset": 274
+                },
+                "from": {
+                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 171,
+                        "endColumn": 107,
+                        "endOffset": 274
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 279,
+                    "endColumn": 122,
+                    "endOffset": 397
+                },
+                "from": {
+                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 279,
+                        "endColumn": 122,
+                        "endOffset": 397
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 402,
+                    "endColumn": 100,
+                    "endOffset": 498
+                },
+                "from": {
+                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 402,
+                        "endColumn": 100,
+                        "endOffset": 498
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 503,
+                    "endColumn": 112,
+                    "endOffset": 611
+                },
+                "from": {
+                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 503,
+                        "endColumn": 112,
+                        "endOffset": 611
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 616,
+                    "endColumn": 86,
+                    "endOffset": 698
+                },
+                "from": {
+                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 616,
+                        "endColumn": 86,
+                        "endOffset": 698
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 703,
+                    "endColumn": 108,
+                    "endOffset": 807
+                },
+                "from": {
+                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 703,
+                        "endColumn": 108,
+                        "endOffset": 807
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 812,
+                    "endColumn": 120,
+                    "endOffset": 928
+                },
+                "from": {
+                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 812,
+                        "endColumn": 120,
+                        "endOffset": 928
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 933,
+                    "endColumn": 81,
+                    "endOffset": 1010
+                },
+                "from": {
+                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 933,
+                        "endColumn": 81,
+                        "endOffset": 1010
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 1015,
+                    "endColumn": 80,
+                    "endOffset": 1091
+                },
+                "from": {
+                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 1015,
+                        "endColumn": 80,
+                        "endOffset": 1091
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 1096,
+                    "endColumn": 84,
+                    "endOffset": 1176
+                },
+                "from": {
+                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 1096,
+                        "endColumn": 84,
+                        "endOffset": 1176
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 1181,
+                    "endColumn": 108,
+                    "endOffset": 1285
+                },
+                "from": {
+                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 1181,
+                        "endColumn": 108,
+                        "endOffset": 1285
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 1290,
+                    "endColumn": 108,
+                    "endOffset": 1394
+                },
+                "from": {
+                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 1290,
+                        "endColumn": 108,
+                        "endOffset": 1394
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 1399,
+                    "endColumn": 99,
+                    "endOffset": 1494
+                },
+                "from": {
+                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 1399,
+                        "endColumn": 99,
+                        "endOffset": 1494
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 1499,
+                    "endColumn": 109,
+                    "endOffset": 1604
+                },
+                "from": {
+                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 1499,
+                        "endColumn": 109,
+                        "endOffset": 1604
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 1609,
+                    "endColumn": 103,
+                    "endOffset": 1708
+                },
+                "from": {
+                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 1609,
+                        "endColumn": 103,
+                        "endOffset": 1708
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 1713,
+                    "endColumn": 112,
+                    "endOffset": 1821
+                },
+                "from": {
+                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 1713,
+                        "endColumn": 112,
+                        "endOffset": 1821
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 19,
+                    "startColumn": 4,
+                    "startOffset": 1826,
+                    "endColumn": 129,
+                    "endOffset": 1951
+                },
+                "from": {
+                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 1826,
+                        "endColumn": 129,
+                        "endOffset": 1951
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 20,
+                    "startColumn": 4,
+                    "startOffset": 1956,
+                    "endColumn": 100,
+                    "endOffset": 2052
+                },
+                "from": {
+                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 1956,
+                        "endColumn": 100,
+                        "endOffset": 2052
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 21,
+                    "startColumn": 4,
+                    "startOffset": 2057,
+                    "endColumn": 82,
+                    "endOffset": 2135
+                },
+                "from": {
+                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 21,
+                        "startColumn": 4,
+                        "startOffset": 2057,
+                        "endColumn": 82,
+                        "endOffset": 2135
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 22,
+                    "startColumn": 4,
+                    "startOffset": 2140,
+                    "endColumn": 100,
+                    "endOffset": 2236
+                },
+                "from": {
+                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-lt\\values-lt.xml",
                     "position": {
                         "startLine": 22,
                         "startColumn": 4,
@@ -2424,7 +2424,7 @@
         ]
     },
     {
-        "outputFile": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\Desktop\\Echoes\\Echoes\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-lt\\values-lt.xml",
+        "outputFile": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-lt\\values-lt.xml",
         "map": [
             {
                 "to": {
@@ -2435,7 +2435,7 @@
                     "endOffset": 166
                 },
                 "from": {
-                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-lt\\values-lt.xml",
+                    "file": "D:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -2454,7 +2454,7 @@
                     "endOffset": 274
                 },
                 "from": {
-                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-lt\\values-lt.xml",
+                    "file": "D:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -2473,7 +2473,7 @@
                     "endOffset": 397
                 },
                 "from": {
-                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-lt\\values-lt.xml",
+                    "file": "D:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -2492,7 +2492,7 @@
                     "endOffset": 498
                 },
                 "from": {
-                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-lt\\values-lt.xml",
+                    "file": "D:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -2511,7 +2511,7 @@
                     "endOffset": 611
                 },
                 "from": {
-                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-lt\\values-lt.xml",
+                    "file": "D:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -2530,7 +2530,7 @@
                     "endOffset": 698
                 },
                 "from": {
-                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-lt\\values-lt.xml",
+                    "file": "D:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
@@ -2549,7 +2549,7 @@
                     "endOffset": 807
                 },
                 "from": {
-                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-lt\\values-lt.xml",
+                    "file": "D:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 4,
@@ -2568,7 +2568,7 @@
                     "endOffset": 928
                 },
                 "from": {
-                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-lt\\values-lt.xml",
+                    "file": "D:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
                     "position": {
                         "startLine": 9,
                         "startColumn": 4,
@@ -2587,7 +2587,7 @@
                     "endOffset": 1010
                 },
                 "from": {
-                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-lt\\values-lt.xml",
+                    "file": "D:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
                     "position": {
                         "startLine": 10,
                         "startColumn": 4,
@@ -2606,7 +2606,7 @@
                     "endOffset": 1091
                 },
                 "from": {
-                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-lt\\values-lt.xml",
+                    "file": "D:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
                     "position": {
                         "startLine": 11,
                         "startColumn": 4,
@@ -2625,7 +2625,7 @@
                     "endOffset": 1176
                 },
                 "from": {
-                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-lt\\values-lt.xml",
+                    "file": "D:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
                     "position": {
                         "startLine": 12,
                         "startColumn": 4,
@@ -2644,7 +2644,7 @@
                     "endOffset": 1285
                 },
                 "from": {
-                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-lt\\values-lt.xml",
+                    "file": "D:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
                     "position": {
                         "startLine": 13,
                         "startColumn": 4,
@@ -2663,7 +2663,7 @@
                     "endOffset": 1394
                 },
                 "from": {
-                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-lt\\values-lt.xml",
+                    "file": "D:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
                     "position": {
                         "startLine": 14,
                         "startColumn": 4,
@@ -2682,7 +2682,7 @@
                     "endOffset": 1494
                 },
                 "from": {
-                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-lt\\values-lt.xml",
+                    "file": "D:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 4,
@@ -2701,7 +2701,7 @@
                     "endOffset": 1604
                 },
                 "from": {
-                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-lt\\values-lt.xml",
+                    "file": "D:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
                     "position": {
                         "startLine": 16,
                         "startColumn": 4,
@@ -2720,7 +2720,7 @@
                     "endOffset": 1708
                 },
                 "from": {
-                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-lt\\values-lt.xml",
+                    "file": "D:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
                     "position": {
                         "startLine": 17,
                         "startColumn": 4,
@@ -2739,7 +2739,7 @@
                     "endOffset": 1821
                 },
                 "from": {
-                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-lt\\values-lt.xml",
+                    "file": "D:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
                     "position": {
                         "startLine": 18,
                         "startColumn": 4,
@@ -2758,7 +2758,7 @@
                     "endOffset": 1951
                 },
                 "from": {
-                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-lt\\values-lt.xml",
+                    "file": "D:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
                     "position": {
                         "startLine": 19,
                         "startColumn": 4,
@@ -2777,7 +2777,7 @@
                     "endOffset": 2052
                 },
                 "from": {
-                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-lt\\values-lt.xml",
+                    "file": "D:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
                     "position": {
                         "startLine": 20,
                         "startColumn": 4,
@@ -2796,7 +2796,7 @@
                     "endOffset": 2135
                 },
                 "from": {
-                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-lt\\values-lt.xml",
+                    "file": "D:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
                     "position": {
                         "startLine": 21,
                         "startColumn": 4,
@@ -2815,7 +2815,411 @@
                     "endOffset": 2236
                 },
                 "from": {
-                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\0fd8ab01152fb208acba82347de7dd3fca2e6ced\\output\\res\\values-lt\\values-lt.xml",
+                    "file": "D:\\Users\\PSdream\\.android\\build-cache\\2856be483c7c68ea59efefd3b54d3e88c46e5e76\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 22,
+                        "startColumn": 4,
+                        "startOffset": 2140,
+                        "endColumn": 100,
+                        "endOffset": 2236
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "C:\\Users\\Gary's\\cmput301\\Echoes\\Echoes\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-lt\\values-lt.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 115,
+                    "endOffset": 166
+                },
+                "from": {
+                    "file": "C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 115,
+                        "endOffset": 166
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 171,
+                    "endColumn": 107,
+                    "endOffset": 274
+                },
+                "from": {
+                    "file": "C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 171,
+                        "endColumn": 107,
+                        "endOffset": 274
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 279,
+                    "endColumn": 122,
+                    "endOffset": 397
+                },
+                "from": {
+                    "file": "C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 279,
+                        "endColumn": 122,
+                        "endOffset": 397
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 402,
+                    "endColumn": 100,
+                    "endOffset": 498
+                },
+                "from": {
+                    "file": "C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 402,
+                        "endColumn": 100,
+                        "endOffset": 498
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 503,
+                    "endColumn": 112,
+                    "endOffset": 611
+                },
+                "from": {
+                    "file": "C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 503,
+                        "endColumn": 112,
+                        "endOffset": 611
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 616,
+                    "endColumn": 86,
+                    "endOffset": 698
+                },
+                "from": {
+                    "file": "C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 616,
+                        "endColumn": 86,
+                        "endOffset": 698
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 703,
+                    "endColumn": 108,
+                    "endOffset": 807
+                },
+                "from": {
+                    "file": "C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 703,
+                        "endColumn": 108,
+                        "endOffset": 807
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 812,
+                    "endColumn": 120,
+                    "endOffset": 928
+                },
+                "from": {
+                    "file": "C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 812,
+                        "endColumn": 120,
+                        "endOffset": 928
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 933,
+                    "endColumn": 81,
+                    "endOffset": 1010
+                },
+                "from": {
+                    "file": "C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 933,
+                        "endColumn": 81,
+                        "endOffset": 1010
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 1015,
+                    "endColumn": 80,
+                    "endOffset": 1091
+                },
+                "from": {
+                    "file": "C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 1015,
+                        "endColumn": 80,
+                        "endOffset": 1091
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 1096,
+                    "endColumn": 84,
+                    "endOffset": 1176
+                },
+                "from": {
+                    "file": "C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 1096,
+                        "endColumn": 84,
+                        "endOffset": 1176
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 1181,
+                    "endColumn": 108,
+                    "endOffset": 1285
+                },
+                "from": {
+                    "file": "C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 1181,
+                        "endColumn": 108,
+                        "endOffset": 1285
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 1290,
+                    "endColumn": 108,
+                    "endOffset": 1394
+                },
+                "from": {
+                    "file": "C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 1290,
+                        "endColumn": 108,
+                        "endOffset": 1394
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 1399,
+                    "endColumn": 99,
+                    "endOffset": 1494
+                },
+                "from": {
+                    "file": "C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 1399,
+                        "endColumn": 99,
+                        "endOffset": 1494
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 1499,
+                    "endColumn": 109,
+                    "endOffset": 1604
+                },
+                "from": {
+                    "file": "C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 1499,
+                        "endColumn": 109,
+                        "endOffset": 1604
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 1609,
+                    "endColumn": 103,
+                    "endOffset": 1708
+                },
+                "from": {
+                    "file": "C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 1609,
+                        "endColumn": 103,
+                        "endOffset": 1708
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 1713,
+                    "endColumn": 112,
+                    "endOffset": 1821
+                },
+                "from": {
+                    "file": "C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 1713,
+                        "endColumn": 112,
+                        "endOffset": 1821
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 19,
+                    "startColumn": 4,
+                    "startOffset": 1826,
+                    "endColumn": 129,
+                    "endOffset": 1951
+                },
+                "from": {
+                    "file": "C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 1826,
+                        "endColumn": 129,
+                        "endOffset": 1951
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 20,
+                    "startColumn": 4,
+                    "startOffset": 1956,
+                    "endColumn": 100,
+                    "endOffset": 2052
+                },
+                "from": {
+                    "file": "C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 1956,
+                        "endColumn": 100,
+                        "endOffset": 2052
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 21,
+                    "startColumn": 4,
+                    "startOffset": 2057,
+                    "endColumn": 82,
+                    "endOffset": 2135
+                },
+                "from": {
+                    "file": "C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-lt\\values-lt.xml",
+                    "position": {
+                        "startLine": 21,
+                        "startColumn": 4,
+                        "startOffset": 2057,
+                        "endColumn": 82,
+                        "endOffset": 2135
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 22,
+                    "startColumn": 4,
+                    "startOffset": 2140,
+                    "endColumn": 100,
+                    "endOffset": 2236
+                },
+                "from": {
+                    "file": "C:\\Users\\Gary's\\.android\\build-cache\\5c762c56502c134452e2ff97b4fd04978afb870b\\output\\res\\values-lt\\values-lt.xml",
                     "position": {
                         "startLine": 22,
                         "startColumn": 4,

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -13,21 +14,17 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ListView;
 
+import java.util.ArrayList;
+
 import static com.example.cmput301f17t19.echoes.LoginActivity.LOGIN_USERNAME;
 
 public class ToDoActivity extends AppCompatActivity {
 
     // Dummy arrays for now
     //TODO: add getToDo method to HabitList class
-    String[] nameArray = {
-            "Wake up before 8:00",
-            "Eat breakfast",
-            "Get to class"};
+    public ArrayList<String> nameArray;
 
-    String[] reasonArray = {
-            "Get ready for school",
-            "Most important meal",
-            "Class starts at 10:00"};
+    public ArrayList<String> reasonArray;
 
     ListView listView;
 
@@ -36,7 +33,7 @@ public class ToDoActivity extends AppCompatActivity {
     // The user profile of the logged-in user
     private static UserProfile login_userProfile;
     // The HabitList of the login user
-    private static HabitList mHabitList;
+    private static HabitList myHabitList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,12 +52,21 @@ public class ToDoActivity extends AppCompatActivity {
             window.setStatusBarColor(ContextCompat.getColor(this,R.color.primary_dark));
         }
 
-
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_todo);
 
         Intent intent = getIntent();
+
+        login_userName = intent.getStringExtra(LOGIN_USERNAME);
+
+        login_userProfile = getLogin_UserProfile();
+
+        myHabitList = login_userProfile.getHabit_list();
+
+        nameArray = new ArrayList<String>();
+        reasonArray = new ArrayList<String>();
+
+        populateArrays(myHabitList);
 
         ToDoListAdapter adapter = new ToDoListAdapter(this,
                 nameArray,
@@ -71,8 +77,6 @@ public class ToDoActivity extends AppCompatActivity {
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
-
-        login_userName = intent.getStringExtra(LOGIN_USERNAME);
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -110,5 +114,23 @@ public class ToDoActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    //TODO: this is duplicate code! from myHabits. Refactor?
+    private UserProfile getLogin_UserProfile() {
+        OfflineStorageController offlineStorageController = new OfflineStorageController(this, login_userName);
+
+        return offlineStorageController.readFromFile();
+    }
+
+    public void populateArrays(HabitList habitList) {
+        for (int index=0; index < myHabitList.getHabits().size(); index++) {
+            Habit habit = myHabitList.getHabits().get(index);
+            if (!habit.doneToday)
+            Log.d("Habit Name:", habit.getName());
+            nameArray.add(habit.getName());
+            reasonArray.add(habit.getReason());
+            Log.d("Habit Added", "Success");
+        }
     }
 }
