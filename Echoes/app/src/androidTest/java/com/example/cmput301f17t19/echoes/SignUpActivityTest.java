@@ -34,4 +34,9 @@ public class SignUpActivityTest extends ActivityInstrumentationTestCase2<SignUpA
     }
 
 
+    public void test_Sign_Up(){
+
+    }
+
+
 }
