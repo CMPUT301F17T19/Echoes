@@ -1,157 +1,157 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:2:1-39:12
+ADDED from D:\D\GitHub\Echoes2\Echoes\app\src\main\AndroidManifest.xml:2:1-39:12
 	package
-		ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:3:5-48
-		INJECTED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml
+		ADDED from D:\D\GitHub\Echoes2\Echoes\app\src\main\AndroidManifest.xml:3:5-48
+		INJECTED from D:\D\GitHub\Echoes2\Echoes\app\src\main\AndroidManifest.xml
+		INJECTED from D:\D\GitHub\Echoes2\Echoes\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml
+		INJECTED from D:\D\GitHub\Echoes2\Echoes\app\src\main\AndroidManifest.xml
+		INJECTED from D:\D\GitHub\Echoes2\Echoes\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:2:11-69
+		ADDED from D:\D\GitHub\Echoes2\Echoes\app\src\main\AndroidManifest.xml:2:11-69
 	android:versionCode
-		INJECTED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml
+		INJECTED from D:\D\GitHub\Echoes2\Echoes\app\src\main\AndroidManifest.xml
+		INJECTED from D:\D\GitHub\Echoes2\Echoes\app\src\main\AndroidManifest.xml
 uses-permission#android.permission.GET_ACCOUNTS
-ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:6:5-71
+ADDED from D:\D\GitHub\Echoes2\Echoes\app\src\main\AndroidManifest.xml:6:5-71
 	android:name
-		ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:6:22-68
+		ADDED from D:\D\GitHub\Echoes2\Echoes\app\src\main\AndroidManifest.xml:6:22-68
 uses-permission#android.permission.READ_PROFILE
-ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:7:5-71
+ADDED from D:\D\GitHub\Echoes2\Echoes\app\src\main\AndroidManifest.xml:7:5-71
 	android:name
-		ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:7:22-68
+		ADDED from D:\D\GitHub\Echoes2\Echoes\app\src\main\AndroidManifest.xml:7:22-68
 uses-permission#android.permission.READ_CONTACTS
-ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:8:5-72
+ADDED from D:\D\GitHub\Echoes2\Echoes\app\src\main\AndroidManifest.xml:8:5-72
 	android:name
-		ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:8:22-69
+		ADDED from D:\D\GitHub\Echoes2\Echoes\app\src\main\AndroidManifest.xml:8:22-69
 uses-permission#android.permission.INTERNET
-ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:9:5-67
+ADDED from D:\D\GitHub\Echoes2\Echoes\app\src\main\AndroidManifest.xml:9:5-67
 	android:name
-		ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:9:22-64
+		ADDED from D:\D\GitHub\Echoes2\Echoes\app\src\main\AndroidManifest.xml:9:22-64
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:10:5-80
+ADDED from D:\D\GitHub\Echoes2\Echoes\app\src\main\AndroidManifest.xml:10:5-80
 	android:name
-		ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:10:22-77
+		ADDED from D:\D\GitHub\Echoes2\Echoes\app\src\main\AndroidManifest.xml:10:22-77
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:11:5-81
+ADDED from D:\D\GitHub\Echoes2\Echoes\app\src\main\AndroidManifest.xml:11:5-81
 	android:name
-		ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:11:22-78
+		ADDED from D:\D\GitHub\Echoes2\Echoes\app\src\main\AndroidManifest.xml:11:22-78
 application
-ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:13:5-37:19
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/PSdream/.android/build-cache/a206bf3dff5b02cdb4d7c0d54ebcfd46d192e33c/output/AndroidManifest.xml:9:5-20
-MERGED from [com.android.support:design:26.0.0-alpha1] /Users/PSdream/.android/build-cache/c2960b3eb57787929214855fe18321e953bc2f70/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] /Users/PSdream/.android/build-cache/2856be483c7c68ea59efefd3b54d3e88c46e5e76/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] /Users/PSdream/.android/build-cache/3ba273b47caaff7d5cb8f6a0560976968a6c7647/output/AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] /Users/PSdream/.android/build-cache/c42c945b97f8cb8b92fc4e1a046f2bdebb654747/output/AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:transition:26.0.0-alpha1] /Users/PSdream/.android/build-cache/8cc82cd7efc048598f4016d8966d058726d63451/output/AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:support-v4:26.0.0-alpha1] /Users/PSdream/.android/build-cache/8fdece81d17f07cd60d87074904c7e6efd1f679a/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] /Users/PSdream/.android/build-cache/e2ac1ca45c65be5e781c5bb020dd47cd05543819/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-fragment:26.0.0-alpha1] /Users/PSdream/.android/build-cache/d02103b05ce78872aae77bf914712196e9e834a5/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] /Users/PSdream/.android/build-cache/4515f48dc9eab270359181e43d5386a55884311b/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] /Users/PSdream/.android/build-cache/0225ced43691844e02e7e5b630ddaa27bf2bf8a7/output/AndroidManifest.xml:29:5-20
-MERGED from [com.andkulikov:transitionseverywhere:1.7.7] /Users/PSdream/.android/build-cache/daa26f2cb4ae7aa0179d3194dc318e28adf6e959/output/AndroidManifest.xml:12:5-20
-MERGED from [com.android.support:support-compat:26.0.0-alpha1] /Users/PSdream/.android/build-cache/48f79eec8e797d3aba3cb708edaa3c0465795842/output/AndroidManifest.xml:29:5-20
-MERGED from [de.hdodenhof:circleimageview:2.1.0] /Users/PSdream/.android/build-cache/2ea423e1e64a9bffa2dda58fc698b68f08da1f77/output/AndroidManifest.xml:9:5-20
+ADDED from D:\D\GitHub\Echoes2\Echoes\app\src\main\AndroidManifest.xml:13:5-37:19
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Mitchell Ballou\.android\build-cache\b8ff5071f4255ef91a1087d2d26ae193391cd95b\output\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:design:26.0.0-alpha1] C:\Users\Mitchell Ballou\.android\build-cache\006969b895b55cfcb1c5eb466c62bc5499b95a7a\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\Mitchell Ballou\.android\build-cache\02854f53badd995be84e2a90f8b28f38196e1dc7\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] C:\Users\Mitchell Ballou\.android\build-cache\51be326f29b8b22fd13fdea381117fb23cafe7dc\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] C:\Users\Mitchell Ballou\.android\build-cache\743427c7684b5ffbee6581275d5693ee67a96f12\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:transition:26.0.0-alpha1] C:\Users\Mitchell Ballou\.android\build-cache\22cb3aa35788f78e96b5dcf178c445f269cbe09c\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\Mitchell Ballou\.android\build-cache\05f15d5b8692cf18a9ec44e0c92d7d090f786eb8\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] C:\Users\Mitchell Ballou\.android\build-cache\9d834a5527da97e1504b2f21f0c586c32e6b80db\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] C:\Users\Mitchell Ballou\.android\build-cache\56677ff19f88bf40f862674ca9a3069d9712cc44\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] C:\Users\Mitchell Ballou\.android\build-cache\1726f585ca280d9af5515e736914d4ab15948f43\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] C:\Users\Mitchell Ballou\.android\build-cache\a9182c57e2b2245bd627777413fa58537af02915\output\AndroidManifest.xml:29:5-20
+MERGED from [com.andkulikov:transitionseverywhere:1.7.7] C:\Users\Mitchell Ballou\.android\build-cache\b0387bd9ffbf4adf5086ec5736b1f2c2891d6c1d\output\AndroidManifest.xml:12:5-20
+MERGED from [com.android.support:support-compat:26.0.0-alpha1] C:\Users\Mitchell Ballou\.android\build-cache\2a789b07a5173813dd10b0afcb6ce6b5707604bc\output\AndroidManifest.xml:29:5-20
+MERGED from [de.hdodenhof:circleimageview:2.1.0] C:\Users\Mitchell Ballou\.android\build-cache\503d8dac6b529b92bd521d2701fdee6ec077d46e\output\AndroidManifest.xml:9:5-20
 	android:label
-		ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:16:9-41
+		ADDED from D:\D\GitHub\Echoes2\Echoes\app\src\main\AndroidManifest.xml:16:9-41
 	android:supportsRtl
-		ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:18:9-35
+		ADDED from D:\D\GitHub\Echoes2\Echoes\app\src\main\AndroidManifest.xml:18:9-35
 	android:roundIcon
-		ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:17:9-54
+		ADDED from D:\D\GitHub\Echoes2\Echoes\app\src\main\AndroidManifest.xml:17:9-54
 	android:allowBackup
-		ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:14:9-35
+		ADDED from D:\D\GitHub\Echoes2\Echoes\app\src\main\AndroidManifest.xml:14:9-35
 	android:icon
-		ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:15:9-43
+		ADDED from D:\D\GitHub\Echoes2\Echoes\app\src\main\AndroidManifest.xml:15:9-43
 	android:theme
-		ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:19:9-65
+		ADDED from D:\D\GitHub\Echoes2\Echoes\app\src\main\AndroidManifest.xml:19:9-65
 activity#com.example.cmput301f17t19.echoes.LoginActivity
-ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:20:9-28:20
+ADDED from D:\D\GitHub\Echoes2\Echoes\app\src\main\AndroidManifest.xml:20:9-28:20
 	android:label
-		ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:22:13-45
+		ADDED from D:\D\GitHub\Echoes2\Echoes\app\src\main\AndroidManifest.xml:22:13-45
 	android:name
-		ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:21:13-42
+		ADDED from D:\D\GitHub\Echoes2\Echoes\app\src\main\AndroidManifest.xml:21:13-42
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:23:13-27:29
+ADDED from D:\D\GitHub\Echoes2\Echoes\app\src\main\AndroidManifest.xml:23:13-27:29
 action#android.intent.action.MAIN
-ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:24:17-69
+ADDED from D:\D\GitHub\Echoes2\Echoes\app\src\main\AndroidManifest.xml:24:17-69
 	android:name
-		ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:24:25-66
+		ADDED from D:\D\GitHub\Echoes2\Echoes\app\src\main\AndroidManifest.xml:24:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:26:17-77
+ADDED from D:\D\GitHub\Echoes2\Echoes\app\src\main\AndroidManifest.xml:26:17-77
 	android:name
-		ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:26:27-74
+		ADDED from D:\D\GitHub\Echoes2\Echoes\app\src\main\AndroidManifest.xml:26:27-74
 activity#com.example.cmput301f17t19.echoes.HabitHistoryActivity
-ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:29:9-58
+ADDED from D:\D\GitHub\Echoes2\Echoes\app\src\main\AndroidManifest.xml:29:9-58
 	android:name
-		ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:29:19-55
+		ADDED from D:\D\GitHub\Echoes2\Echoes\app\src\main\AndroidManifest.xml:29:19-55
 activity#com.example.cmput301f17t19.echoes.MyHabitsActivity
-ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:30:9-54
+ADDED from D:\D\GitHub\Echoes2\Echoes\app\src\main\AndroidManifest.xml:30:9-54
 	android:name
-		ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:30:19-51
+		ADDED from D:\D\GitHub\Echoes2\Echoes\app\src\main\AndroidManifest.xml:30:19-51
 activity#com.example.cmput301f17t19.echoes.SignUpActivity
-ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:31:9-52
+ADDED from D:\D\GitHub\Echoes2\Echoes\app\src\main\AndroidManifest.xml:31:9-52
 	android:name
-		ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:31:19-49
+		ADDED from D:\D\GitHub\Echoes2\Echoes\app\src\main\AndroidManifest.xml:31:19-49
 activity#com.example.cmput301f17t19.echoes.UserProfileActivity
-ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:32:9-57
+ADDED from D:\D\GitHub\Echoes2\Echoes\app\src\main\AndroidManifest.xml:32:9-57
 	android:name
-		ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:32:19-54
+		ADDED from D:\D\GitHub\Echoes2\Echoes\app\src\main\AndroidManifest.xml:32:19-54
 activity#com.example.cmput301f17t19.echoes.main_menu
-ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:33:9-47
+ADDED from D:\D\GitHub\Echoes2\Echoes\app\src\main\AndroidManifest.xml:33:9-47
 	android:name
-		ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:33:19-44
+		ADDED from D:\D\GitHub\Echoes2\Echoes\app\src\main\AndroidManifest.xml:33:19-44
 activity#com.example.cmput301f17t19.echoes.ToDoActivity
-ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:34:9-50
+ADDED from D:\D\GitHub\Echoes2\Echoes\app\src\main\AndroidManifest.xml:34:9-50
 	android:name
-		ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:34:19-47
+		ADDED from D:\D\GitHub\Echoes2\Echoes\app\src\main\AndroidManifest.xml:34:19-47
 activity#com.example.cmput301f17t19.echoes.HabitDetail
-ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:35:9-58
+ADDED from D:\D\GitHub\Echoes2\Echoes\app\src\main\AndroidManifest.xml:35:9-58
 	android:name
-		ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:35:19-46
+		ADDED from D:\D\GitHub\Echoes2\Echoes\app\src\main\AndroidManifest.xml:35:19-46
 activity#com.example.cmput301f17t19.echoes.HabitEventDetailActivity
-ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:36:9-71
+ADDED from D:\D\GitHub\Echoes2\Echoes\app\src\main\AndroidManifest.xml:36:9-71
 	android:name
-		ADDED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml:36:19-59
+		ADDED from D:\D\GitHub\Echoes2\Echoes\app\src\main\AndroidManifest.xml:36:19-59
 uses-sdk
-INJECTED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/PSdream/.android/build-cache/a206bf3dff5b02cdb4d7c0d54ebcfd46d192e33c/output/AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support:design:26.0.0-alpha1] /Users/PSdream/.android/build-cache/c2960b3eb57787929214855fe18321e953bc2f70/output/AndroidManifest.xml:21:5-23:62
-MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] /Users/PSdream/.android/build-cache/2856be483c7c68ea59efefd3b54d3e88c46e5e76/output/AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] /Users/PSdream/.android/build-cache/3ba273b47caaff7d5cb8f6a0560976968a6c7647/output/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] /Users/PSdream/.android/build-cache/c42c945b97f8cb8b92fc4e1a046f2bdebb654747/output/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:recyclerview-v7:26.0.0-alpha1] /Users/PSdream/.android/build-cache/6592c1f53d9932511e97fc9a521e4355dba1dca4/output/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:transition:26.0.0-alpha1] /Users/PSdream/.android/build-cache/8cc82cd7efc048598f4016d8966d058726d63451/output/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:26.0.0-alpha1] /Users/PSdream/.android/build-cache/8fdece81d17f07cd60d87074904c7e6efd1f679a/output/AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] /Users/PSdream/.android/build-cache/e2ac1ca45c65be5e781c5bb020dd47cd05543819/output/AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-fragment:26.0.0-alpha1] /Users/PSdream/.android/build-cache/d02103b05ce78872aae77bf914712196e9e834a5/output/AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] /Users/PSdream/.android/build-cache/4515f48dc9eab270359181e43d5386a55884311b/output/AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] /Users/PSdream/.android/build-cache/0225ced43691844e02e7e5b630ddaa27bf2bf8a7/output/AndroidManifest.xml:21:5-23:61
-MERGED from [com.andkulikov:transitionseverywhere:1.7.7] /Users/PSdream/.android/build-cache/daa26f2cb4ae7aa0179d3194dc318e28adf6e959/output/AndroidManifest.xml:8:5-10:41
-MERGED from [com.android.support:support-compat:26.0.0-alpha1] /Users/PSdream/.android/build-cache/48f79eec8e797d3aba3cb708edaa3c0465795842/output/AndroidManifest.xml:21:5-23:58
-MERGED from [de.hdodenhof:circleimageview:2.1.0] /Users/PSdream/.android/build-cache/2ea423e1e64a9bffa2dda58fc698b68f08da1f77/output/AndroidManifest.xml:5:5-7:41
+INJECTED from D:\D\GitHub\Echoes2\Echoes\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Mitchell Ballou\.android\build-cache\b8ff5071f4255ef91a1087d2d26ae193391cd95b\output\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:design:26.0.0-alpha1] C:\Users\Mitchell Ballou\.android\build-cache\006969b895b55cfcb1c5eb466c62bc5499b95a7a\output\AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\Mitchell Ballou\.android\build-cache\02854f53badd995be84e2a90f8b28f38196e1dc7\output\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] C:\Users\Mitchell Ballou\.android\build-cache\51be326f29b8b22fd13fdea381117fb23cafe7dc\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] C:\Users\Mitchell Ballou\.android\build-cache\743427c7684b5ffbee6581275d5693ee67a96f12\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:26.0.0-alpha1] C:\Users\Mitchell Ballou\.android\build-cache\926c727610cb17304eeb5af4274f9328eb2122a7\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:26.0.0-alpha1] C:\Users\Mitchell Ballou\.android\build-cache\22cb3aa35788f78e96b5dcf178c445f269cbe09c\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\Mitchell Ballou\.android\build-cache\05f15d5b8692cf18a9ec44e0c92d7d090f786eb8\output\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] C:\Users\Mitchell Ballou\.android\build-cache\9d834a5527da97e1504b2f21f0c586c32e6b80db\output\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] C:\Users\Mitchell Ballou\.android\build-cache\56677ff19f88bf40f862674ca9a3069d9712cc44\output\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] C:\Users\Mitchell Ballou\.android\build-cache\1726f585ca280d9af5515e736914d4ab15948f43\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] C:\Users\Mitchell Ballou\.android\build-cache\a9182c57e2b2245bd627777413fa58537af02915\output\AndroidManifest.xml:21:5-23:61
+MERGED from [com.andkulikov:transitionseverywhere:1.7.7] C:\Users\Mitchell Ballou\.android\build-cache\b0387bd9ffbf4adf5086ec5736b1f2c2891d6c1d\output\AndroidManifest.xml:8:5-10:41
+MERGED from [com.android.support:support-compat:26.0.0-alpha1] C:\Users\Mitchell Ballou\.android\build-cache\2a789b07a5173813dd10b0afcb6ce6b5707604bc\output\AndroidManifest.xml:21:5-23:58
+MERGED from [de.hdodenhof:circleimageview:2.1.0] C:\Users\Mitchell Ballou\.android\build-cache\503d8dac6b529b92bd521d2701fdee6ec077d46e\output\AndroidManifest.xml:5:5-7:41
 	tools:overrideLibrary
-		ADDED from [com.android.support:design:26.0.0-alpha1] /Users/PSdream/.android/build-cache/c2960b3eb57787929214855fe18321e953bc2f70/output/AndroidManifest.xml:23:9-59
+		ADDED from [com.android.support:design:26.0.0-alpha1] C:\Users\Mitchell Ballou\.android\build-cache\006969b895b55cfcb1c5eb466c62bc5499b95a7a\output\AndroidManifest.xml:23:9-59
 	android:targetSdkVersion
-		INJECTED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml
+		INJECTED from D:\D\GitHub\Echoes2\Echoes\app\src\main\AndroidManifest.xml
+		INJECTED from D:\D\GitHub\Echoes2\Echoes\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/PSdream/Desktop/project301/Echoes/Echoes/app/src/main/AndroidManifest.xml
+		INJECTED from D:\D\GitHub\Echoes2\Echoes\app\src\main\AndroidManifest.xml
+		INJECTED from D:\D\GitHub\Echoes2\Echoes\app\src\main\AndroidManifest.xml
 meta-data#android.support.VERSION
-ADDED from [com.android.support:design:26.0.0-alpha1] /Users/PSdream/.android/build-cache/c2960b3eb57787929214855fe18321e953bc2f70/output/AndroidManifest.xml:25:5-27:41
-MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] /Users/PSdream/.android/build-cache/2856be483c7c68ea59efefd3b54d3e88c46e5e76/output/AndroidManifest.xml:25:5-27:41
-MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] /Users/PSdream/.android/build-cache/3ba273b47caaff7d5cb8f6a0560976968a6c7647/output/AndroidManifest.xml:22:5-24:41
-MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] /Users/PSdream/.android/build-cache/c42c945b97f8cb8b92fc4e1a046f2bdebb654747/output/AndroidManifest.xml:22:5-24:41
-MERGED from [com.android.support:recyclerview-v7:26.0.0-alpha1] /Users/PSdream/.android/build-cache/6592c1f53d9932511e97fc9a521e4355dba1dca4/output/AndroidManifest.xml:22:5-24:41
-MERGED from [com.android.support:transition:26.0.0-alpha1] /Users/PSdream/.android/build-cache/8cc82cd7efc048598f4016d8966d058726d63451/output/AndroidManifest.xml:22:5-24:41
-MERGED from [com.android.support:support-v4:26.0.0-alpha1] /Users/PSdream/.android/build-cache/8fdece81d17f07cd60d87074904c7e6efd1f679a/output/AndroidManifest.xml:25:5-27:41
-MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] /Users/PSdream/.android/build-cache/e2ac1ca45c65be5e781c5bb020dd47cd05543819/output/AndroidManifest.xml:25:5-27:41
-MERGED from [com.android.support:support-fragment:26.0.0-alpha1] /Users/PSdream/.android/build-cache/d02103b05ce78872aae77bf914712196e9e834a5/output/AndroidManifest.xml:25:5-27:41
-MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] /Users/PSdream/.android/build-cache/4515f48dc9eab270359181e43d5386a55884311b/output/AndroidManifest.xml:25:5-27:41
-MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] /Users/PSdream/.android/build-cache/0225ced43691844e02e7e5b630ddaa27bf2bf8a7/output/AndroidManifest.xml:25:5-27:41
-MERGED from [com.android.support:support-compat:26.0.0-alpha1] /Users/PSdream/.android/build-cache/48f79eec8e797d3aba3cb708edaa3c0465795842/output/AndroidManifest.xml:25:5-27:41
+ADDED from [com.android.support:design:26.0.0-alpha1] C:\Users\Mitchell Ballou\.android\build-cache\006969b895b55cfcb1c5eb466c62bc5499b95a7a\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\Mitchell Ballou\.android\build-cache\02854f53badd995be84e2a90f8b28f38196e1dc7\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] C:\Users\Mitchell Ballou\.android\build-cache\51be326f29b8b22fd13fdea381117fb23cafe7dc\output\AndroidManifest.xml:22:5-24:41
+MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] C:\Users\Mitchell Ballou\.android\build-cache\743427c7684b5ffbee6581275d5693ee67a96f12\output\AndroidManifest.xml:22:5-24:41
+MERGED from [com.android.support:recyclerview-v7:26.0.0-alpha1] C:\Users\Mitchell Ballou\.android\build-cache\926c727610cb17304eeb5af4274f9328eb2122a7\output\AndroidManifest.xml:22:5-24:41
+MERGED from [com.android.support:transition:26.0.0-alpha1] C:\Users\Mitchell Ballou\.android\build-cache\22cb3aa35788f78e96b5dcf178c445f269cbe09c\output\AndroidManifest.xml:22:5-24:41
+MERGED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\Mitchell Ballou\.android\build-cache\05f15d5b8692cf18a9ec44e0c92d7d090f786eb8\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] C:\Users\Mitchell Ballou\.android\build-cache\9d834a5527da97e1504b2f21f0c586c32e6b80db\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] C:\Users\Mitchell Ballou\.android\build-cache\56677ff19f88bf40f862674ca9a3069d9712cc44\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] C:\Users\Mitchell Ballou\.android\build-cache\1726f585ca280d9af5515e736914d4ab15948f43\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] C:\Users\Mitchell Ballou\.android\build-cache\a9182c57e2b2245bd627777413fa58537af02915\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-compat:26.0.0-alpha1] C:\Users\Mitchell Ballou\.android\build-cache\2a789b07a5173813dd10b0afcb6ce6b5707604bc\output\AndroidManifest.xml:25:5-27:41
 	android:value
-		ADDED from [com.android.support:design:26.0.0-alpha1] /Users/PSdream/.android/build-cache/c2960b3eb57787929214855fe18321e953bc2f70/output/AndroidManifest.xml:27:9-38
+		ADDED from [com.android.support:design:26.0.0-alpha1] C:\Users\Mitchell Ballou\.android\build-cache\006969b895b55cfcb1c5eb466c62bc5499b95a7a\output\AndroidManifest.xml:27:9-38
 	android:name
-		ADDED from [com.android.support:design:26.0.0-alpha1] /Users/PSdream/.android/build-cache/c2960b3eb57787929214855fe18321e953bc2f70/output/AndroidManifest.xml:26:9-47
+		ADDED from [com.android.support:design:26.0.0-alpha1] C:\Users\Mitchell Ballou\.android\build-cache\006969b895b55cfcb1c5eb466c62bc5499b95a7a\output\AndroidManifest.xml:26:9-47

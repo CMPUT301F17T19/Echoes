@@ -13,6 +13,10 @@ package com.example.cmput301f17t19.echoes;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
@@ -22,6 +26,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -30,6 +35,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -57,6 +63,7 @@ public class HabitHistoryActivity extends AppCompatActivity {
     private static Context mContext;
 
     private Button addEventButton;
+    private Button habitEventsMapButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,6 +108,15 @@ public class HabitHistoryActivity extends AppCompatActivity {
             }
         });
 
+        habitEventsMapButton = (Button) findViewById(R.id.habitevents_map);
+
+        habitEventsMapButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), "Will be enabled in Project Part 5", Toast.LENGTH_SHORT).show();
+            }
+        });
+
         // Set up recycler view for habit event overview in the Habit History
         habitEventsRecyclerView = (RecyclerView) findViewById(R.id.habitevents_recyclerView);
 
@@ -118,15 +134,78 @@ public class HabitHistoryActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        // The UserProfile of the login user
+        // the User Profile of the login user
         login_userProfile = getLogin_UserProfile();
+
         // The HabitEventList of the login user
         mHabitEventList = login_userProfile.getHabit_event_list();
 
         habitEventOverviewAdapter = new HabitEventOverviewAdapter(this);
 
         habitEventsRecyclerView.setAdapter(habitEventOverviewAdapter);
+
+        // Implement swipe to left to delete for recycler view
+        ItemTouchHelper.SimpleCallback simpleItemTouchCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
+
+            @Override
+            public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
+                return false;
+            }
+
+            @Override
+            public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
+                // Remove the swiped item from the list and screen
+                int position = viewHolder.getAdapterPosition();
+
+                mHabitEventList.remove(position);
+
+                habitEventOverviewAdapter.notifyItemRemoved(position);
+
+                // Update the data saved in file
+                updateDataStorage();
+            }
+
+            // Reference: https://stackoverflow.com/questions/30820806/adding-a-colored-background-with-text-icon-under-swiped-row-when-using-androids
+            @Override
+            public void onChildDraw(Canvas c, RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder,
+                                    float dX, float dY, int actionState, boolean isCurrentlyActive) {
+                if (actionState == ItemTouchHelper.ACTION_STATE_SWIPE) {
+                    super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
+
+                    View itemView = viewHolder.itemView;
+                    if (dX < 0) {
+                        // Show the delete icon
+                        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.delete_drawable);
+                        Paint paint = new Paint();
+                        paint.setARGB(255, 255, 0, 0);
+                        c.drawBitmap(bitmap, dX + (float)itemView.getWidth(),
+                                (float) itemView.getTop() + (float) itemView.getHeight()/2 - (float) bitmap.getHeight()/2,
+                                paint);
+                    }
+
+                } else {
+                    super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
+                }
+            }
+        };
+
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleItemTouchCallback);
+        // Attach item touch helper to the recycler view
+        itemTouchHelper.attachToRecyclerView(habitEventsRecyclerView);
     }
+//    @Override
+//    protected void onStart() {
+//        super.onStart();
+//
+//        // The UserProfile of the login user
+//        login_userProfile = getLogin_UserProfile();
+//        // The HabitEventList of the login user
+//        mHabitEventList = login_userProfile.getHabit_event_list();
+//
+//        habitEventOverviewAdapter = new HabitEventOverviewAdapter(this);
+//
+//        habitEventsRecyclerView.setAdapter(habitEventOverviewAdapter);
+//    }
 
     // Reference: https://developer.android.com/training/search/setup.html
     @Override
@@ -209,7 +288,7 @@ public class HabitHistoryActivity extends AppCompatActivity {
     }
 
     /**
-     * Update My Habits Screen and User Profile file and online data of the logged-in user
+     * Update Habits History Screen and User Profile file and online data of the logged-in user
      */
     public static void updateDataStorage() {
         // Update Screen
