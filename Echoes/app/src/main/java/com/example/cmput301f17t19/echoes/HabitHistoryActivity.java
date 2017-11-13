@@ -34,6 +34,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
@@ -168,6 +169,29 @@ public class HabitHistoryActivity extends AppCompatActivity {
 
         Types.setAdapter(spinnerAdapter);
 
+        // setOnItemSelectedListener for spinner
+        // Reference: https://stackoverflow.com/questions/12108893/set-onclicklistener-for-spinner-item
+        Types.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+        {
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
+            {
+                String selectedItem = parent.getItemAtPosition(position).toString();
+                if(!selectedItem.equals(type))
+                {
+                    // Update the HabitEventList to be displayed
+                    type = selectedItem;
+                    mTypeHabitEventList = getmHabitEventList();
+
+                    habitEventOverviewAdapter.notifyDataSetChanged();
+
+                }
+            } // to close the onItemSelected
+            public void onNothingSelected(AdapterView<?> parent)
+            {
+
+            }
+        });
+
         // Implement swipe to left to delete for recycler view
         ItemTouchHelper.SimpleCallback simpleItemTouchCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
 
@@ -272,7 +296,7 @@ public class HabitHistoryActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private static String SpinnerTypeSelected() {
+    public static String SpinnerTypeSelected() {
         return type = Types.getSelectedItem().toString();
     }
 
@@ -311,6 +335,7 @@ public class HabitHistoryActivity extends AppCompatActivity {
             mTypeHabitEventList = login_userProfile.getHabit_event_list();
         } else {
             HabitEventList userHabitEventList = login_userProfile.getHabit_event_list();
+            mTypeHabitEventList = new HabitEventList();
             for (int i = 0; i < userHabitEventList.size(); i++) {
                 if (userHabitEventList.get(i).getTitle().equals(type)) {
                     mTypeHabitEventList.add(userHabitEventList.getHabitEvent(i));

@@ -74,6 +74,11 @@ public class HabitEventDetailActivity extends AppCompatActivity {
 
     private byte[] eventImage;
 
+    // The old habit type
+    private String old_HabitType;
+    // The old habit date
+    private String old_HabitDate;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -313,6 +318,10 @@ public class HabitEventDetailActivity extends AppCompatActivity {
             eventImage = selected_HabitEvent.getEventPhoto();
             imageView.setImageBitmap(BitmapFactory.decodeByteArray(eventImage, 0, eventImage.length));
         }
+
+        // Assign old habit type and habit date
+        old_HabitType = eventType;
+        old_HabitDate = date_TextView.getText().toString();
     }
 
     /**
@@ -339,7 +348,7 @@ public class HabitEventDetailActivity extends AppCompatActivity {
 
                 if (new_HabitEvent != null) {
                     // Add this new HabitEvent to the HabitEventList of the login User
-                    HabitEventList mHabitEventList = HabitHistoryActivity.getmHabitEventList();
+                    HabitEventList mHabitEventList = HabitHistoryActivity.getLogin_userProfile().getHabit_event_list();
                     mHabitEventList.add(new_HabitEvent);
                     // Sort List
                     mHabitEventList.sortList();
@@ -362,7 +371,24 @@ public class HabitEventDetailActivity extends AppCompatActivity {
             String eventType = Types.getSelectedItem().toString();
             String eventDate = date_TextView.getText().toString();
 
-            if (HabitHistoryActivity.getmHabitEventList().hasHabitEvent(eventType, eventDate, selected_pos)) {
+            // Get the old position of the selected HabitEvent in all HabitEventList
+            int old_position = 0;
+            HabitEventList allHabitEvents = HabitHistoryActivity.getLogin_userProfile().getHabit_event_list();
+
+            for (int i = 0; i < allHabitEvents.size(); i++) {
+                String thisType = allHabitEvents.get(i).getTitle();
+
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                String thisDate = simpleDateFormat.format(allHabitEvents.get(i).getStartDate());
+
+                if (old_HabitType.equals(thisType) && old_HabitDate.equals(thisDate)) {
+                    // Find the old_position
+                    old_position = i;
+                }
+            }
+
+            // Check if same habit event exists
+            if (HabitHistoryActivity.getLogin_userProfile().getHabit_event_list().hasHabitEvent(eventType, eventDate, old_position)) {
                 Toast.makeText(this, "The HabitEvent for this Type has already done on the selected date.", Toast.LENGTH_LONG).show();
 
                 isValid = false;
@@ -374,8 +400,8 @@ public class HabitEventDetailActivity extends AppCompatActivity {
 
                 if (new_HabitEvent != null) {
                     // Replace this new HabitEvent to the HabitEvent at the selected position in HabitEventList
-                    HabitEventList mHabitEventList = HabitHistoryActivity.getmHabitEventList();
-                    mHabitEventList.getHabitEvents().set(selected_pos, new_HabitEvent);
+                    HabitEventList mHabitEventList = HabitHistoryActivity.getLogin_userProfile().getHabit_event_list();
+                    mHabitEventList.getHabitEvents().set(old_position, new_HabitEvent);
                     // Sort List
                     mHabitEventList.sortList();
 
