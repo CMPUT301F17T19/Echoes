@@ -29,7 +29,7 @@
     <ImageView android:src="@drawable/logo3"
         android:layout_width="380dp"
         android:layout_height="180dp"
-
+        android:id="@+id/logo_image"
         android:layout_gravity="center_horizontal" />
 
 
