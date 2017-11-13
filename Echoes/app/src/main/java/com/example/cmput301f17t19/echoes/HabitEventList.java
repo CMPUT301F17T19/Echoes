@@ -62,7 +62,7 @@ public class HabitEventList {
      *
      * @return size of the Habit Event List
      */
-    public int size(){return this.size();}
+    public int size(){return this.habitEvents.size();}
 
     /**
      * Check if the HabitEventList contains the HabitEvent with the given type and event date

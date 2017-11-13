@@ -34,7 +34,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
@@ -57,8 +56,7 @@ public class HabitHistoryActivity extends AppCompatActivity {
     private static String login_Username;
     // The user profile of the login user
     private static UserProfile login_userProfile;
-    // The HabitEventList of the login user
-    private static HabitEventList mHabitEventList;
+    // The HabitEventList displayed of the login user
     private static HabitEventList mTypeHabitEventList;
 
     private RecyclerView habitEventsRecyclerView;
@@ -87,9 +85,8 @@ public class HabitHistoryActivity extends AppCompatActivity {
 
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            window.setStatusBarColor(ContextCompat.getColor(this,R.color.primary_dark));
+            window.setStatusBarColor(ContextCompat.getColor(this, R.color.primary_dark));
         }
-
 
 
         super.onCreate(savedInstanceState);
@@ -100,11 +97,16 @@ public class HabitHistoryActivity extends AppCompatActivity {
         setSupportActionBar(myToolbar);
 
         mContext = this;
-        spinnerTypes.add("All");
+        spinnerTypes = new ArrayList<String>();
 
         // Get the login username and user Profile
         Intent intent = getIntent();
-        login_Username = intent.getStringExtra(LOGIN_USERNAME);
+        if (intent.getStringExtra(LOGIN_USERNAME) != null) {
+            login_Username = intent.getStringExtra(LOGIN_USERNAME);
+        } else {
+            // For test
+            login_Username = "dummy3";
+        }
 
         addEventButton = (Button) findViewById(R.id.habitevents_add_button);
 
@@ -147,17 +149,17 @@ public class HabitHistoryActivity extends AppCompatActivity {
         // the User Profile of the login user
         login_userProfile = getLogin_UserProfile();
 
-        Types = (Spinner)findViewById(R.id.habithistory_filter);
+        Types = (Spinner) findViewById(R.id.habithistory_filter);
 
-        // The HabitEventList of the login user
-        mHabitEventList = login_userProfile.getHabit_event_list();
+        // The HabitEventList displayed of the login user
+        mTypeHabitEventList = login_userProfile.getHabit_event_list();
 
         habitEventOverviewAdapter = new HabitEventOverviewAdapter(this);
 
         habitEventsRecyclerView.setAdapter(habitEventOverviewAdapter);
 
         // Set the Spinner
-        spinnerTypes =  getUserHabitTypes();
+        spinnerTypes = getUserHabitTypes();
 
         ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(
                 this, android.R.layout.simple_spinner_item, spinnerTypes);
@@ -179,7 +181,7 @@ public class HabitHistoryActivity extends AppCompatActivity {
                 // Remove the swiped item from the list and screen
                 int position = viewHolder.getAdapterPosition();
 
-                mHabitEventList.remove(position);
+                mTypeHabitEventList.remove(position);
 
                 habitEventOverviewAdapter.notifyItemRemoved(position);
 
@@ -237,7 +239,7 @@ public class HabitHistoryActivity extends AppCompatActivity {
             }
 
             public boolean onQueryTextSubmit(String query) {
-                if (!query.equals("") || query != null){
+                if (!query.equals("") || query != null) {
                     // Search the given words in the HabitEventList
                     Log.d("Search words", query);
                 }
@@ -270,7 +272,7 @@ public class HabitHistoryActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private static String SpinnerTypeSelected(){
+    private static String SpinnerTypeSelected() {
         return type = Types.getSelectedItem().toString();
     }
 
@@ -284,6 +286,8 @@ public class HabitHistoryActivity extends AppCompatActivity {
         ArrayList<Habit> mHabits = HabitHistoryActivity.getLogin_userProfile().getHabit_list().getHabits();
 
         ArrayList<String> habitTypes = new ArrayList<String>();
+
+        habitTypes.add("All");
 
         for (Habit habit : mHabits) {
             if (!habitTypes.contains(habit.getName())) {
@@ -300,19 +304,21 @@ public class HabitHistoryActivity extends AppCompatActivity {
      *
      * @return HabitEventList: the HabitEventList of the login user
      */
-    public static HabitEventList getmHabitEventList(){
+    public static HabitEventList getmHabitEventList() {
         type = SpinnerTypeSelected();
-        if (type == "All"){
-            return mHabitEventList;
-        }
-        else
-            for (int i = 0; i < mHabitEventList.size(); i++) {
-                if (mHabitEventList.get(i).getTitle() == type) {
-                    mTypeHabitEventList.add(mHabitEventList.getHabitEvent(i));
+
+        if (type.equals("All")) {
+            mTypeHabitEventList = login_userProfile.getHabit_event_list();
+        } else {
+            HabitEventList userHabitEventList = login_userProfile.getHabit_event_list();
+            for (int i = 0; i < userHabitEventList.size(); i++) {
+                if (userHabitEventList.get(i).getTitle().equals(type)) {
+                    mTypeHabitEventList.add(userHabitEventList.getHabitEvent(i));
                 }
             }
-            return mTypeHabitEventList;
         }
+
+        return mTypeHabitEventList;
     }
 
     /**
@@ -331,7 +337,7 @@ public class HabitHistoryActivity extends AppCompatActivity {
      */
     public static void updateHabitEventList(ArrayList<HabitEvent> updated_HabitEventList) {
         login_userProfile.getHabit_event_list().setHabitEvents(updated_HabitEventList);
-        mHabitEventList.setHabitEvents(updated_HabitEventList);
+        mTypeHabitEventList.setHabitEvents(updated_HabitEventList);
     }
 
     /**
