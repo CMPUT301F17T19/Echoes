@@ -3,7 +3,7 @@
     package="com.example.cmput301f17t19.echoes.test" >
 
     <uses-sdk
-        android:minSdkVersion="18"
+        android:minSdkVersion="25"
         android:targetSdkVersion="26" />
 
     <instrumentation

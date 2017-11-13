@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
+        "outputFile": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Gary's\\cmput301\\Echoes\\Echoes\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 96
                 },
                 "from": {
-                    "file": "D:\\Users\\PSdream\\.android\\build-cache\\14c1ac871f5f0f59d569143c5f93c6d191c602a7\\output\\res\\values\\values.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Gary's\\.android\\build-cache\\8207c33f88b91fbe64130936151e7b7bce585b0e\\output\\res\\values\\values.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -24,7 +24,7 @@
         ]
     },
     {
-        "outputFile": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\Desktop\\Echoes\\Echoes\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
+        "outputFile": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\Desktop\\Echoes\\Echoes\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
         "map": [
             {
                 "to": {
@@ -35,7 +35,7 @@
                     "endOffset": 96
                 },
                 "from": {
-                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\a3e966a6c3089527e0f35ed0a61f6d96281941d7\\output\\res\\values\\values.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\236961e7d88b680bd82a0a26bc6bf7c148696228\\output\\res\\values\\values.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -48,7 +48,7 @@
         ]
     },
     {
-        "outputFile": "D:\\D\\GitHub\\Echoes2\\Echoes\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
+        "outputFile": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
         "map": [
             {
                 "to": {
@@ -59,7 +59,7 @@
                     "endOffset": 96
                 },
                 "from": {
-                    "file": "C:\\Users\\Mitchell Ballou\\.android\\build-cache\\32c8ac241213a717d902ed738c660a7b4f4392d8\\output\\res\\values\\values.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\.android\\build-cache\\14c1ac871f5f0f59d569143c5f93c6d191c602a7\\output\\res\\values\\values.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -72,7 +72,7 @@
         ]
     },
     {
-        "outputFile": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\cmput301\\Echoes\\Echoes\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
+        "outputFile": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\Desktop\\Echoes\\Echoes\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
         "map": [
             {
                 "to": {
@@ -83,7 +83,7 @@
                     "endOffset": 96
                 },
                 "from": {
-                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\8207c33f88b91fbe64130936151e7b7bce585b0e\\output\\res\\values\\values.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Al\\.android\\build-cache\\a3e966a6c3089527e0f35ed0a61f6d96281941d7\\output\\res\\values\\values.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -96,7 +96,7 @@
         ]
     },
     {
-        "outputFile": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\Desktop\\Echoes\\Echoes\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
+        "outputFile": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\D\\GitHub\\Echoes2\\Echoes\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
         "map": [
             {
                 "to": {
@@ -107,7 +107,7 @@
                     "endOffset": 96
                 },
                 "from": {
-                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\236961e7d88b680bd82a0a26bc6bf7c148696228\\output\\res\\values\\values.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/C:\\Users\\Mitchell Ballou\\.android\\build-cache\\32c8ac241213a717d902ed738c660a7b4f4392d8\\output\\res\\values\\values.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -120,7 +120,7 @@
         ]
     },
     {
-        "outputFile": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
+        "outputFile": "/Users/taijieyang/Desktop/Echoes/Echoes/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values/values.xml",
         "map": [
             {
                 "to": {
@@ -131,7 +131,7 @@
                     "endOffset": 96
                 },
                 "from": {
-                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\14c1ac871f5f0f59d569143c5f93c6d191c602a7\\output\\res\\values\\values.xml",
+                    "file": "/Users/taijieyang/.android/build-cache/236961e7d88b680bd82a0a26bc6bf7c148696228/output/res/values/values.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -144,7 +144,7 @@
         ]
     },
     {
-        "outputFile": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\Desktop\\Echoes\\Echoes\\Echoes\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
+        "outputFile": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\Desktop\\Echoes\\Echoes\\Echoes\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
         "map": [
             {
                 "to": {
@@ -155,7 +155,79 @@
                     "endOffset": 96
                 },
                 "from": {
-                    "file": "D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\236961e7d88b680bd82a0a26bc6bf7c148696228\\output\\res\\values\\values.xml",
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\taijieyang\\.android\\build-cache\\236961e7d88b680bd82a0a26bc6bf7c148696228\\output\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 229,
+                        "endColumn": 45,
+                        "endOffset": 270
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "/Users/Al/Desktop/Echoes/Echoes/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values/values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 45,
+                    "endOffset": 96
+                },
+                "from": {
+                    "file": "/Users/Al/.android/build-cache/a3e966a6c3089527e0f35ed0a61f6d96281941d7/output/res/values/values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 229,
+                        "endColumn": 45,
+                        "endOffset": 270
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 45,
+                    "endOffset": 96
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\PSdream\\.android\\build-cache\\14c1ac871f5f0f59d569143c5f93c6d191c602a7\\output\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 229,
+                        "endColumn": 45,
+                        "endOffset": 270
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\cmput301\\Echoes\\Echoes\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 45,
+                    "endOffset": 96
+                },
+                "from": {
+                    "file": "/Users/taijieyang/Desktop/Echoes/Echoes/D:\\Users\\PSdream\\Desktop\\project301\\Echoes\\Echoes\\C:\\Users\\Gary's\\.android\\build-cache\\8207c33f88b91fbe64130936151e7b7bce585b0e\\output\\res\\values\\values.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
