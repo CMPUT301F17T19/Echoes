@@ -171,6 +171,7 @@ public class UserProfile {
         return this.habit_event_list;
     }
 
+
     /**
      * Get the following array of the user
      *

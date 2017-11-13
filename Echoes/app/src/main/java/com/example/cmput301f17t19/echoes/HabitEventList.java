@@ -49,12 +49,20 @@ public class HabitEventList {
         this.habitEvents.remove(idx);
     }
 
+    public HabitEvent get(int idx) { return this.habitEvents.get(idx); }
+
     /**
      * Sort the HabitEvent objects in the list in reverse chronological order (most recent coming first).
      */
     public void sortList(){
         Collections.sort(habitEvents, Collections.<HabitEvent>reverseOrder());
     }
+
+    /**
+     *
+     * @return size of the Habit Event List
+     */
+    public int size(){return this.size();}
 
     /**
      * Check if the HabitEventList contains the HabitEvent with the given type and event date
@@ -82,6 +90,11 @@ public class HabitEventList {
         }
 
         return ifContain;
+    }
+
+
+    public HabitEvent getHabitEvent(int idx){
+        return this.habitEvents.get(idx);
     }
 
     /**

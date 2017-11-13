@@ -34,7 +34,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -56,14 +59,19 @@ public class HabitHistoryActivity extends AppCompatActivity {
     private static UserProfile login_userProfile;
     // The HabitEventList of the login user
     private static HabitEventList mHabitEventList;
+    private static HabitEventList mTypeHabitEventList;
 
     private RecyclerView habitEventsRecyclerView;
     private static HabitEventOverviewAdapter habitEventOverviewAdapter;
 
     private static Context mContext;
+    private static String type;
 
     private Button addEventButton;
     private Button habitEventsMapButton;
+    private static Spinner Types;
+    private ArrayList<String> spinnerTypes;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,6 +100,7 @@ public class HabitHistoryActivity extends AppCompatActivity {
         setSupportActionBar(myToolbar);
 
         mContext = this;
+        spinnerTypes.add("All");
 
         // Get the login username and user Profile
         Intent intent = getIntent();
@@ -130,6 +139,7 @@ public class HabitHistoryActivity extends AppCompatActivity {
         habitEventsRecyclerView.setHasFixedSize(true);
     }
 
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -137,12 +147,24 @@ public class HabitHistoryActivity extends AppCompatActivity {
         // the User Profile of the login user
         login_userProfile = getLogin_UserProfile();
 
+        Types = (Spinner)findViewById(R.id.habithistory_filter);
+
         // The HabitEventList of the login user
         mHabitEventList = login_userProfile.getHabit_event_list();
 
         habitEventOverviewAdapter = new HabitEventOverviewAdapter(this);
 
         habitEventsRecyclerView.setAdapter(habitEventOverviewAdapter);
+
+        // Set the Spinner
+        spinnerTypes =  getUserHabitTypes();
+
+        ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(
+                this, android.R.layout.simple_spinner_item, spinnerTypes);
+
+        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        Types.setAdapter(spinnerAdapter);
 
         // Implement swipe to left to delete for recycler view
         ItemTouchHelper.SimpleCallback simpleItemTouchCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
@@ -178,8 +200,8 @@ public class HabitHistoryActivity extends AppCompatActivity {
                         Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.delete_drawable);
                         Paint paint = new Paint();
                         paint.setARGB(255, 255, 0, 0);
-                        c.drawBitmap(bitmap, dX + (float)itemView.getWidth(),
-                                (float) itemView.getTop() + (float) itemView.getHeight()/2 - (float) bitmap.getHeight()/2,
+                        c.drawBitmap(bitmap, dX + (float) itemView.getWidth(),
+                                (float) itemView.getTop() + (float) itemView.getHeight() / 2 - (float) bitmap.getHeight() / 2,
                                 paint);
                     }
 
@@ -189,23 +211,11 @@ public class HabitHistoryActivity extends AppCompatActivity {
             }
         };
 
+
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleItemTouchCallback);
         // Attach item touch helper to the recycler view
         itemTouchHelper.attachToRecyclerView(habitEventsRecyclerView);
     }
-//    @Override
-//    protected void onStart() {
-//        super.onStart();
-//
-//        // The UserProfile of the login user
-//        login_userProfile = getLogin_UserProfile();
-//        // The HabitEventList of the login user
-//        mHabitEventList = login_userProfile.getHabit_event_list();
-//
-//        habitEventOverviewAdapter = new HabitEventOverviewAdapter(this);
-//
-//        habitEventsRecyclerView.setAdapter(habitEventOverviewAdapter);
-//    }
 
     // Reference: https://developer.android.com/training/search/setup.html
     @Override
@@ -241,6 +251,7 @@ public class HabitHistoryActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -259,13 +270,49 @@ public class HabitHistoryActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    private static String SpinnerTypeSelected(){
+        return type = Types.getSelectedItem().toString();
+    }
+
+    /**
+     * Get the login user's all habit types
+     *
+     * @return ArrayList<String>: an arraylist of user's habit types
+     */
+    private ArrayList<String> getUserHabitTypes() {
+        // The arraylist of all habits that the login user has
+        ArrayList<Habit> mHabits = HabitHistoryActivity.getLogin_userProfile().getHabit_list().getHabits();
+
+        ArrayList<String> habitTypes = new ArrayList<String>();
+
+        for (Habit habit : mHabits) {
+            if (!habitTypes.contains(habit.getName())) {
+                // Add this Habit Type to habitTypes
+                habitTypes.add(habit.getName());
+            }
+        }
+
+        return habitTypes;
+    }
+
     /**
      * Get the HabitEventList of the login user
      *
      * @return HabitEventList: the HabitEventList of the login user
      */
     public static HabitEventList getmHabitEventList(){
-        return mHabitEventList;
+        type = SpinnerTypeSelected();
+        if (type == "All"){
+            return mHabitEventList;
+        }
+        else
+            for (int i = 0; i < mHabitEventList.size(); i++) {
+                if (mHabitEventList.get(i).getTitle() == type) {
+                    mTypeHabitEventList.add(mHabitEventList.getHabitEvent(i));
+                }
+            }
+            return mTypeHabitEventList;
+        }
     }
 
     /**
