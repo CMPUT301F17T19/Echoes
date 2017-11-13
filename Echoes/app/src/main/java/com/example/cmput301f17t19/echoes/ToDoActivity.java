@@ -24,8 +24,8 @@ public class ToDoActivity extends AppCompatActivity {
     // Dummy arrays for now
     //TODO: add getToDo method to HabitList class
     public ArrayList<String> nameArray;
-
     public ArrayList<String> reasonArray;
+    public ArrayList<Habit> todoArray; // refactor two above arrays to just one
 
     ListView listView;
 
@@ -126,10 +126,11 @@ public class ToDoActivity extends AppCompatActivity {
 
     public void populateArrays(HabitList habitList) {
         for (int index=0; index < myHabitList.getHabits().size(); index++) {
+
             Habit habit = myHabitList.getHabits().get(index);
-            Calendar c = Calendar.getInstance();
+            Calendar c = Calendar.getInstance(); //use to get current day
             int today = c.get(Calendar.DAY_OF_WEEK);
-            //!habit.doneToday
+
             if (habit.getPlan().getSchedule().get(today-1)){
                 if (!habit.doneToday) {
                     nameArray.add(habit.getName());
