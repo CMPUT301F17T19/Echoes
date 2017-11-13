@@ -6,6 +6,7 @@ package com.example.cmput301f17t19.echoes;
 
 import android.app.Activity;
 import android.test.ActivityInstrumentationTestCase2;
+import android.widget.EditText;
 
 import com.robotium.solo.Solo;
 
@@ -17,23 +18,38 @@ public class main_menuTest extends ActivityInstrumentationTestCase2 {
     private Solo solo;
 
     public main_menuTest() {
-        super(com.example.cmput301f17t19.echoes.main_menu.class);
+        super(com.example.cmput301f17t19.echoes.LoginActivity.class);
     }
 
     public void setUp() throws Exception {
         solo = new Solo(getInstrumentation(), getActivity());
     }
 
-    public void testStart() throws Exception {
+   public void testStart() throws Exception {
         Activity activity = getActivity();
-    }
+   }
 
-    public void testViewMyHabit() {
-        // test if the button works correctly
+    public void login() {
+        solo.assertCurrentActivity("Wrong Activity",  LoginActivity.class);
+        //create a new username login for testing
+        UserProfile userProfile = new UserProfile("dummy3");
+        OfflineStorageController offlineStorageController = new OfflineStorageController(getActivity().getApplicationContext(), userProfile.getUserName());
+        offlineStorageController.saveInFile(userProfile);
+
+
+        //enter the usrname "dummy3"
+        solo.enterText((EditText) solo.getView(R.id.username),"dummy3");
+        solo.clickOnView(solo.getView(R.id.username_sign_in_button));
         solo.assertCurrentActivity("Wrong Activity", main_menu.class);
-        solo.clickOnView(solo.getView(R.id.View_My_Habits));
-        solo.assertCurrentActivity("Wrong Activity", MyHabitsActivity.class);
+
+
     }
+//    public void testViewMyHabit() {
+//        // test if the button works correctly
+//        solo.assertCurrentActivity("Wrong Activity", main_menu.class);
+//        solo.clickOnView(solo.getView(R.id.View_My_Habits));
+//        solo.assertCurrentActivity("Wrong Activity", MyHabitsActivity.class);
+//    }
 
 //    public void testFollowing() {
 //        // test if the button works correctly
@@ -50,12 +66,12 @@ public class main_menuTest extends ActivityInstrumentationTestCase2 {
 //        solo.assertCurrentActivity("Wrong Activity", .class);
 //    }
 
-    public void testHabitHistory() {
-        // test if the button works correctly
-        solo.assertCurrentActivity("Wrong Activity", main_menu.class);
-        solo.clickOnView(solo.getView(R.id.habit_history));
-        solo.assertCurrentActivity("Wrong Activity", HabitHistoryActivity.class);
-    }
+//    public void testHabitHistory() {
+//        // test if the button works correctly
+//        solo.assertCurrentActivity("Wrong Activity", main_menu.class);
+//        solo.clickOnView(solo.getView(R.id.habit_history));
+//        solo.assertCurrentActivity("Wrong Activity", HabitHistoryActivity.class);
+//    }
 
 //    public void testHabitEventMap() {
 //        // test if the button works correctly
@@ -64,12 +80,12 @@ public class main_menuTest extends ActivityInstrumentationTestCase2 {
 //        solo.assertCurrentActivity("Wrong Activity", .class);
 //    }
 
-    public void testLogout() {
-        // test if the button works correctly
-        solo.assertCurrentActivity("Wrong Activity", main_menu.class);
-        solo.clickOnView(solo.getView(R.id.logout));
-        solo.assertCurrentActivity("Wrong Activity", LoginActivity.class);
-    }
+//    public void testLogout() {
+//        // test if the button works correctly
+//        solo.assertCurrentActivity("Wrong Activity", main_menu.class);
+//        solo.clickOnView(solo.getView(R.id.logout));
+//        solo.assertCurrentActivity("Wrong Activity", LoginActivity.class);
+//    }
 
 
 }
