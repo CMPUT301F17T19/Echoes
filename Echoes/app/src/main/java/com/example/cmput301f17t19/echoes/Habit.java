@@ -42,7 +42,7 @@ public class Habit {
         this.reason = reason;
         this.startDate = startDate;
         this.plan = plan;
-        //this.doneToday = False;
+        this.doneToday = Boolean.FALSE;
         this.progress = 0f;
     }
 

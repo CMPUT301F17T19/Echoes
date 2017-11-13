@@ -15,6 +15,7 @@ import android.view.WindowManager;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 import static com.example.cmput301f17t19.echoes.LoginActivity.LOGIN_USERNAME;
 
@@ -126,11 +127,13 @@ public class ToDoActivity extends AppCompatActivity {
     public void populateArrays(HabitList habitList) {
         for (int index=0; index < myHabitList.getHabits().size(); index++) {
             Habit habit = myHabitList.getHabits().get(index);
-            if (!habit.doneToday)
-            Log.d("Habit Name:", habit.getName());
-            nameArray.add(habit.getName());
-            reasonArray.add(habit.getReason());
-            Log.d("Habit Added", "Success");
+            Calendar c = Calendar.getInstance();
+            int today = c.get(Calendar.DAY_OF_WEEK);
+
+            if (!habit.doneToday && habit.getPlan().getSchedule().get(0)){
+                nameArray.add(habit.getName());
+                reasonArray.add(habit.getReason());
+            }
         }
     }
 }
