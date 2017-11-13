@@ -90,7 +90,12 @@ public class MyHabitsActivity extends AppCompatActivity {
 
         // Get the login username and user Profile
         Intent intent = getIntent();
-        login_userName = intent.getStringExtra(LOGIN_USERNAME);
+        if (intent.getStringExtra(LOGIN_USERNAME) == null) {
+            // For test
+            login_userName = "dummy3";
+        } else {
+            login_userName = intent.getStringExtra(LOGIN_USERNAME);
+        }
 
         // Set up recycler view for habit event overview in the Habit History
         habitsRecyclerView = (RecyclerView) findViewById(R.id.habits_recyclerView);
@@ -272,5 +277,12 @@ public class MyHabitsActivity extends AppCompatActivity {
         OfflineStorageController offlineStorageController = new OfflineStorageController(this, login_userName);
 
         return offlineStorageController.readFromFile();
+    }
+
+    /**
+     * For Robotium test, get the RecyclerView
+     */
+    public RecyclerView getHabitsRecyclerView() {
+        return habitsRecyclerView;
     }
 }

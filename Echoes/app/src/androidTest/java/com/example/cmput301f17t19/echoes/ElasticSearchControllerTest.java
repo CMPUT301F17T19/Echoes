@@ -169,8 +169,8 @@ public class ElasticSearchControllerTest extends ActivityInstrumentationTestCase
             HabitEventList habitEvents = getUserProfile.getHabit_event_list();
 
             // Update this habits list
-            HabitEvent testHabitEvent1 = new HabitEvent("updateHaE1", "testUpdateHE1", new Date());
-            HabitEvent testHabitEvent2 = new HabitEvent("updateHaE2", "testUpdateHE2", new Date());
+            HabitEvent testHabitEvent1 = new HabitEvent("updateHaE1", new Date());
+            HabitEvent testHabitEvent2 = new HabitEvent("updateHaE2", new Date());
 
             habitEvents.add(testHabitEvent1);
             habitEvents.add(testHabitEvent2);

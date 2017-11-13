@@ -34,7 +34,7 @@ public class HabitEventTest extends ActivityInstrumentationTestCase2 {
 
     public void testGetComments(){
         HabitEvent habitevent = new HabitEvent("title1", new Date() );
-        assertTrue(habitevent.getComments() == null);
+        assertTrue(habitevent.getComments() == "");
     }
 
     public void testGetEventPhoto(){

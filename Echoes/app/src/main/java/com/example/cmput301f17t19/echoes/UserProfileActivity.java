@@ -93,8 +93,14 @@ public class UserProfileActivity extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
-            // Get the username passed from other activity
-            profile_username = bundle.getString(USERPROFILE_TAG);
+            if (bundle.getString(USERPROFILE_TAG) != null) {
+                // Get the username passed from other activity
+                profile_username = bundle.getString(USERPROFILE_TAG);
+
+            } else {
+                // For UserProfileActivity test
+                profile_username = "dummy3";
+            }
 
             // Get the UserProfile object with the given username
             offlineStorageController = new OfflineStorageController(getApplicationContext(), profile_username);
@@ -112,6 +118,8 @@ public class UserProfileActivity extends AppCompatActivity {
             profile_userPhone_TextView.setText(userProfile.getPhoneNumber());
             profile_userFollower_TextView.setText(Integer.toString(userProfile.getFollower_list().size()));
             profile_userFollowing_TextView.setText(Integer.toString(userProfile.getFollowing().size()));
+        } else {
+            unitTest();
         }
 
         // onClickLister for profile image button
@@ -222,5 +230,31 @@ public class UserProfileActivity extends AppCompatActivity {
                 updateUserProfileTask.execute(userProfile);
             }
         }
+    }
+
+    /**
+     * Unit test for UserProfileActivity
+     */
+    private void unitTest(){
+        // For UserProfileActivity test
+        profile_username = "dummy3";
+
+        // Get the UserProfile object with the given username
+        offlineStorageController = new OfflineStorageController(getApplicationContext(), profile_username);
+
+        userProfile = offlineStorageController.readFromFile();
+
+        // Set User Profile Photo, Username, UserBioComment, Email, PhoneNumber, Num of Followers and Following
+        if (userProfile.getProfilePicture() != null){
+            profile_ImageButton.setImageBitmap(BitmapFactory.decodeByteArray(userProfile.getProfilePicture(), 0, userProfile.getProfilePicture().length));
+        }
+
+        profile_username_TextView.setText(userProfile.getUserName());
+        profile_userComment_TextView.setText(userProfile.getComment());
+        profile_userEmail_TextView.setText(userProfile.getEmailAddress());
+        profile_userPhone_TextView.setText(userProfile.getPhoneNumber());
+        profile_userFollower_TextView.setText(Integer.toString(userProfile.getFollower_list().size()));
+        profile_userFollowing_TextView.setText(Integer.toString(userProfile.getFollowing().size()));
+
     }
 }
