@@ -52,9 +52,9 @@ public class LoginActivityTest extends ActivityInstrumentationTestCase2<LoginAct
         solo.clickOnView(solo.getView(R.id.username_sign_in_button));
 
         //load activity
-        solo.waitForActivity(HabitDetail.class, 2000);
+        solo.waitForActivity(main_menu.class, 2000);
         //check if successfully log in
-        solo.assertCurrentActivity("Wrong Activity", HabitDetail.class);
+        solo.assertCurrentActivity("Wrong Activity", main_menu.class);
 
 
     }
@@ -82,7 +82,25 @@ public class LoginActivityTest extends ActivityInstrumentationTestCase2<LoginAct
 
     }
 
-    
+
+    public void testClickSignUplink(){
+
+        // check if it is currently in the right activity
+        solo.assertCurrentActivity("Wrong Activity",  LoginActivity.class);
+
+
+        //click sign in button
+        solo.clickOnView(solo.getView(R.id.link_signup));
+
+
+        //load activity
+        solo.waitForActivity(SignUpActivity.class, 2000);
+        //check if it is in the correct sign up activity
+        solo.assertCurrentActivity("link to SignUp activity failed", SignUpActivity.class);
+
+    }
+
+
 
 
 
