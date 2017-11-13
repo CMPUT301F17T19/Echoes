@@ -129,10 +129,12 @@ public class ToDoActivity extends AppCompatActivity {
             Habit habit = myHabitList.getHabits().get(index);
             Calendar c = Calendar.getInstance();
             int today = c.get(Calendar.DAY_OF_WEEK);
-
-            if (!habit.doneToday && habit.getPlan().getSchedule().get(0)){
-                nameArray.add(habit.getName());
-                reasonArray.add(habit.getReason());
+            //!habit.doneToday
+            if (habit.getPlan().getSchedule().get(today-1)){
+                if (!habit.doneToday) {
+                    nameArray.add(habit.getName());
+                    reasonArray.add(habit.getReason());
+                }
             }
         }
     }

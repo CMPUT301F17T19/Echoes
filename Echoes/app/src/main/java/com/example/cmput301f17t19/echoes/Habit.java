@@ -58,6 +58,7 @@ public class Habit {
     public Habit(String name, String reason, Date startDate, Plan plan, Float progress) {
         this(name, reason, startDate, plan);
         this.progress = progress;
+        this.doneToday = Boolean.FALSE;
     }
 
     /*
