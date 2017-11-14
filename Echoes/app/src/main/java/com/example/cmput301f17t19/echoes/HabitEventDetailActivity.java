@@ -216,7 +216,7 @@ public class HabitEventDetailActivity extends AppCompatActivity {
 
             // Get the position of the selected HabitEvent object in the HabitEventList
             selected_pos = bundle.getInt(HabitEventOverviewAdapter.SELECTED_HABIT_EVENT_POSITION);
-            selected_HabitEvent = HabitHistoryActivity.getmHabitEventList().getHabitEvents().get(selected_pos);
+            selected_HabitEvent = HabitHistoryActivity.getDisplayedHabitEventList().getHabitEvents().get(selected_pos);
 
             // Initialize the Habit UI with the selected_HabitEvent info
             initializeHabitEventUI();
@@ -336,7 +336,7 @@ public class HabitEventDetailActivity extends AppCompatActivity {
             String eventType = Types.getSelectedItem().toString();
             String eventDate = date_TextView.getText().toString();
 
-            if (HabitHistoryActivity.getmHabitEventList().hasHabitEvent(eventType, eventDate)) {
+            if (HabitHistoryActivity.getLogin_userProfile().getHabit_event_list().hasHabitEvent(eventType, eventDate)) {
                 Toast.makeText(this, "The HabitEvent for this Type has already done on the selected date.", Toast.LENGTH_LONG).show();
 
                 isValid = false;
@@ -372,20 +372,7 @@ public class HabitEventDetailActivity extends AppCompatActivity {
             String eventDate = date_TextView.getText().toString();
 
             // Get the old position of the selected HabitEvent in all HabitEventList
-            int old_position = 0;
-            HabitEventList allHabitEvents = HabitHistoryActivity.getLogin_userProfile().getHabit_event_list();
-
-            for (int i = 0; i < allHabitEvents.size(); i++) {
-                String thisType = allHabitEvents.get(i).getTitle();
-
-                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-                String thisDate = simpleDateFormat.format(allHabitEvents.get(i).getStartDate());
-
-                if (old_HabitType.equals(thisType) && old_HabitDate.equals(thisDate)) {
-                    // Find the old_position
-                    old_position = i;
-                }
-            }
+            int old_position = HabitHistoryActivity.getOldPosition(old_HabitType, old_HabitDate);
 
             // Check if same habit event exists
             if (HabitHistoryActivity.getLogin_userProfile().getHabit_event_list().hasHabitEvent(eventType, eventDate, old_position)) {

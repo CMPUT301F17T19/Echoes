@@ -28,6 +28,9 @@
     <string name="comment">Comment: </string>
     <string name="date">Date: </string>
 
+    <string name="search">Search</string>
+    <string name="search_hint">Search word Habit Event\'s comment</string>
+
     <string name="title_activity_login">Sign in</string>
 
     <!-- Strings related to login -->
