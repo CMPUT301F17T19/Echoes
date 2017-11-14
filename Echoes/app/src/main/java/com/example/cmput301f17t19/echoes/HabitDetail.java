@@ -133,7 +133,13 @@ public class HabitDetail extends AppCompatActivity {
 
                 start_Date = new DatePickerDialog(mActivity, dateCallback, year, month, day);
                 // The start date need not be after the current date
-                start_Date.getDatePicker().setMaxDate(System.currentTimeMillis()+(1000 * 60 * 60 * 1));
+                // Reference: https://stackoverflow.com/questions/32231734/datepicker-crashes-when-select-date-beyond-min-or-max-date-android-5-1
+                Calendar cal1 = Calendar.getInstance();
+                cal1.set(Calendar.HOUR_OF_DAY, 23);
+                cal1.set(Calendar.MINUTE, 59);
+                cal1.set(Calendar.SECOND, 59);
+                cal1.set(Calendar.MILLISECOND,999);
+                start_Date.getDatePicker().setMaxDate(cal1.getTimeInMillis());
                 //Showing the DatePickerDialog
                 start_Date.show();
             }
