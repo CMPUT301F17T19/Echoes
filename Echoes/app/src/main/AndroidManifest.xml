@@ -26,7 +26,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".HabitHistoryActivity" />
+        <activity android:name=".HabitHistoryActivity"></activity>
         <activity android:name=".MyHabitsActivity" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".UserProfileActivity" />

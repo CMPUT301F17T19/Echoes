@@ -18,6 +18,31 @@
         app:popupTheme="@style/ThemeOverlay.AppCompat.Dark" />
 
     <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/search_comment_edittext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="6"
+            android:inputType="text"
+            android:hint="@string/search_hint"
+            android:textSize="17sp"
+            android:maxLines="1"
+            android:layout_marginRight="8dp"/>
+
+        <Button
+            android:id="@+id/search_comment_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/search"/>
+
+    </LinearLayout>
+
+    <LinearLayout
         android:id="@+id/habit_events_type_layout"
         android:layout_gravity="start"
         android:orientation="horizontal"

@@ -10,7 +10,6 @@
 
 package com.example.cmput301f17t19.echoes;
 
-import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -24,7 +23,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import android.util.Log;
@@ -37,9 +35,11 @@ import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import static com.example.cmput301f17t19.echoes.LoginActivity.LOGIN_USERNAME;
@@ -71,9 +71,15 @@ public class HabitHistoryActivity extends AppCompatActivity {
     private static Spinner Types;
     private ArrayList<String> spinnerTypes;
 
+    // Search editText
+    private static EditText search_EditText;
+    // Search button
+    private Button search_Button;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.d("T", "oncreate");
 
 
         Window window = this.getWindow();
@@ -129,6 +135,11 @@ public class HabitHistoryActivity extends AppCompatActivity {
             }
         });
 
+        // Search Edit Text
+        search_EditText = (EditText) findViewById(R.id.search_comment_edittext);
+        // Search Button
+        search_Button = (Button) findViewById(R.id.search_comment_button);
+
         // Set up recycler view for habit event overview in the Habit History
         habitEventsRecyclerView = (RecyclerView) findViewById(R.id.habitevents_recyclerView);
 
@@ -153,7 +164,8 @@ public class HabitHistoryActivity extends AppCompatActivity {
         Types = (Spinner) findViewById(R.id.habithistory_filter);
 
         // The HabitEventList displayed of the login user
-        mTypeHabitEventList = login_userProfile.getHabit_event_list();
+        mTypeHabitEventList = new HabitEventList();
+        mTypeHabitEventList.setHabitEvents((ArrayList<HabitEvent>) login_userProfile.getHabit_event_list().getHabitEvents().clone());
 
         habitEventOverviewAdapter = new HabitEventOverviewAdapter(this);
 
@@ -161,6 +173,7 @@ public class HabitHistoryActivity extends AppCompatActivity {
 
         // Set the Spinner
         spinnerTypes = getUserHabitTypes();
+        type = spinnerTypes.get(0);
 
         ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(
                 this, android.R.layout.simple_spinner_item, spinnerTypes);
@@ -180,7 +193,7 @@ public class HabitHistoryActivity extends AppCompatActivity {
                 {
                     // Update the HabitEventList to be displayed
                     type = selectedItem;
-                    mTypeHabitEventList = getmHabitEventList();
+                    mTypeHabitEventList.setHabitEvents((ArrayList<HabitEvent>) filterHabitEvent().getHabitEvents().clone());
 
                     habitEventOverviewAdapter.notifyDataSetChanged();
 
@@ -189,6 +202,18 @@ public class HabitHistoryActivity extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parent)
             {
 
+            }
+        });
+
+        search_Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Get the searched word
+                String enteredWord = search_EditText.getText().toString().trim();
+                // Filter the Recycler View
+                mTypeHabitEventList.setHabitEvents((ArrayList<HabitEvent>) filterHabitEvent().getHabitEvents().clone());
+
+                habitEventsRecyclerView.getAdapter().notifyDataSetChanged();
             }
         });
 
@@ -205,11 +230,18 @@ public class HabitHistoryActivity extends AppCompatActivity {
                 // Remove the swiped item from the list and screen
                 int position = viewHolder.getAdapterPosition();
 
+                // Move the swiped item in original list
+                String oldType = mTypeHabitEventList.get(position).getTitle();
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                String oldDate = simpleDateFormat.format(mTypeHabitEventList.get(position).getStartDate());
+
+                int old_position = getOldPosition(oldType, oldDate);
+
+                login_userProfile.getHabit_event_list().remove(old_position);
+
                 mTypeHabitEventList.remove(position);
 
-                habitEventOverviewAdapter.notifyItemRemoved(position);
-
-                // Update the data saved in file
+                // Update the data saved in file and screen
                 updateDataStorage();
             }
 
@@ -243,40 +275,14 @@ public class HabitHistoryActivity extends AppCompatActivity {
         itemTouchHelper.attachToRecyclerView(habitEventsRecyclerView);
     }
 
-    // Reference: https://developer.android.com/training/search/setup.html
+    // Reference: https://developer.android.com/guide/topics/search/search-dialog.html
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.habithistory_app_bar, menu);
 
-        // Setting up the Search Interface
-        SearchManager searchManager =
-                (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-        SearchView searchView =
-                (SearchView) menu.findItem(R.id.action_search).getActionView();
-        searchView.setSearchableInfo(
-                searchManager.getSearchableInfo(getComponentName()));
-
-        SearchView.OnQueryTextListener queryTextListener = new SearchView.OnQueryTextListener() {
-            public boolean onQueryTextChange(String newText) {
-                return false;
-            }
-
-            public boolean onQueryTextSubmit(String query) {
-                if (!query.equals("") || query != null) {
-                    // Search the given words in the HabitEventList
-                    Log.d("Search words", query);
-                }
-
-                return false;
-            }
-        };
-        searchView.setOnQueryTextListener(queryTextListener);
-        searchView.clearFocus();
-
         return super.onCreateOptionsMenu(menu);
     }
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -296,7 +302,7 @@ public class HabitHistoryActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public static String SpinnerTypeSelected() {
+    private static String SpinnerTypeSelected() {
         return type = Types.getSelectedItem().toString();
     }
 
@@ -324,25 +330,11 @@ public class HabitHistoryActivity extends AppCompatActivity {
     }
 
     /**
-     * Get the HabitEventList of the login user
+     * Get the displayed HabitEventList of the login user
      *
-     * @return HabitEventList: the HabitEventList of the login user
+     * @return HabitEventList: the displayed HabitEventList of the login user
      */
-    public static HabitEventList getmHabitEventList() {
-        type = SpinnerTypeSelected();
-
-        if (type.equals("All")) {
-            mTypeHabitEventList = login_userProfile.getHabit_event_list();
-        } else {
-            HabitEventList userHabitEventList = login_userProfile.getHabit_event_list();
-            mTypeHabitEventList = new HabitEventList();
-            for (int i = 0; i < userHabitEventList.size(); i++) {
-                if (userHabitEventList.get(i).getTitle().equals(type)) {
-                    mTypeHabitEventList.add(userHabitEventList.getHabitEvent(i));
-                }
-            }
-        }
-
+    public static HabitEventList getDisplayedHabitEventList() {
         return mTypeHabitEventList;
     }
 
@@ -361,8 +353,10 @@ public class HabitHistoryActivity extends AppCompatActivity {
      * @param updated_HabitEventList: ArrayList<HabitEvent>, the update HabitEventList of the logged-in User
      */
     public static void updateHabitEventList(ArrayList<HabitEvent> updated_HabitEventList) {
-        login_userProfile.getHabit_event_list().setHabitEvents(updated_HabitEventList);
-        mTypeHabitEventList.setHabitEvents(updated_HabitEventList);
+        login_userProfile.getHabit_event_list().setHabitEvents((ArrayList<HabitEvent>) updated_HabitEventList.clone());
+        mTypeHabitEventList.setHabitEvents((ArrayList<HabitEvent>) updated_HabitEventList.clone());
+        type = "All";
+        search_EditText.setText("");
     }
 
     /**
@@ -389,5 +383,67 @@ public class HabitHistoryActivity extends AppCompatActivity {
         OfflineStorageController offlineStorageController = new OfflineStorageController(this, login_Username);
 
         return offlineStorageController.readFromFile();
+    }
+
+    /**
+     * Get the old position of the selected HabitEvent in all HabitEventList
+     *
+     * @param old_HabitType: String, the old habit type
+     * @param old_HabitDate: String, the old habit date in string
+     *
+     * @return Integer: the old position of selected HabitEvent in user's HabitEventList
+     */
+    public static int getOldPosition(String old_HabitType, String old_HabitDate) {
+        int old_position = 0;
+        HabitEventList allHabitEvents = HabitHistoryActivity.getLogin_userProfile().getHabit_event_list();
+
+        for (int i = 0; i < allHabitEvents.size(); i++) {
+            String thisType = allHabitEvents.get(i).getTitle();
+
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            String thisDate = simpleDateFormat.format(allHabitEvents.get(i).getStartDate());
+
+            if (old_HabitType.equals(thisType) && old_HabitDate.equals(thisDate)) {
+                // Find the old_position
+                old_position = i;
+            }
+        }
+
+        return old_position;
+    }
+
+    /**
+     * Filter Habit Event type and searched word
+     */
+    private HabitEventList filterHabitEvent() {
+        HabitEventList filteredHabitEventList = new HabitEventList();
+
+        // Get the word filter
+        String searchedWord = search_EditText.getText().toString().trim();
+        // Get the type filter
+        String filteredType = SpinnerTypeSelected();
+
+        // The HabitEventList of login user
+        HabitEventList user_HabitEventList = login_userProfile.getHabit_event_list();
+
+        for (HabitEvent habitEvent : user_HabitEventList.getHabitEvents()) {
+            if (filteredType.equals("All")) {
+                // All types
+                if (searchedWord.equals("")) {
+                    return user_HabitEventList;
+                } else {
+                    if (habitEvent.getComments().contains(searchedWord)) {
+                        filteredHabitEventList.add(habitEvent);
+                    }
+                }
+            } else {
+                // Filtered type
+                if (habitEvent.getComments().contains(searchedWord) && habitEvent.getTitle().equals(filteredType)) {
+                    filteredHabitEventList.add(habitEvent);
+                }
+            }
+        }
+
+        return filteredHabitEventList;
     }
 }
