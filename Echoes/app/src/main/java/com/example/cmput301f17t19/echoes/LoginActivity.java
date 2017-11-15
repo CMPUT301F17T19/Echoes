@@ -10,8 +10,8 @@
 
 package com.example.cmput301f17t19.echoes;
 
+import android.animation.Animator;
 import android.app.Activity;
-import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -19,8 +19,10 @@ import android.os.Handler;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.ViewAnimationUtils;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.animation.AccelerateInterpolator;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -49,6 +51,10 @@ public class LoginActivity extends AppCompatActivity  {
 
     private Activity mActivity;
 
+
+
+
+    private View animateView;
 
     // UI references.
     private TextView signupTextView;
@@ -163,22 +169,16 @@ public class LoginActivity extends AppCompatActivity  {
 
                         public void run() {
 
+                            toNextPage();
 
-                            Username_sign_in_button.stopAnimation();
 
-
-                            ActivityOptions activityOptions = ActivityOptions.makeSceneTransitionAnimation(mActivity, Username_sign_in_button, login_UserName);
-
-                            startActivity(main_menu_Intent, activityOptions.toBundle());
-
-                            finish();
                         }
 
 
 
                 };
 
-                handler.postDelayed(runnable,3000);
+                handler.postDelayed(runnable,6000);
 
 
 
@@ -200,6 +200,55 @@ public class LoginActivity extends AppCompatActivity  {
             }
         }
     }
+
+
+
+
+
+
+    private void toNextPage(){
+
+        final String login_UserName = userEditText.getText().toString().trim();
+        final Intent main_menu_Intent = new Intent(LoginActivity.this, main_menu.class);
+        main_menu_Intent.putExtra(LOGIN_USERNAME, login_UserName);
+
+        int cx = (Username_sign_in_button.getLeft() + Username_sign_in_button.getRight()) / 2;
+        int cy = (Username_sign_in_button.getTop() + Username_sign_in_button.getBottom()) / 2;
+
+        Animator animator = ViewAnimationUtils.createCircularReveal(animateView,cx,cy,0,getResources().getDisplayMetrics().heightPixels * 1.2f);
+        animator.setDuration(500);
+        animator.setInterpolator(new AccelerateInterpolator());
+        animateView.setVisibility(View.VISIBLE);
+        animator.start();
+        animator.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                startActivity(main_menu_Intent);
+                Username_sign_in_button.stopAnimation();
+                animateView.setVisibility(View.INVISIBLE);
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+
+            }
+        });
+
+    }
+
+
+
+
 
     /**
      * handling signup
