@@ -10,6 +10,7 @@
 
 package com.example.cmput301f17t19.echoes;
 
+import android.app.Activity;
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Build;
@@ -45,6 +46,8 @@ public class LoginActivity extends AppCompatActivity  {
     private static final int REQUEST_READ_CONTACTS = 0;
 
     private static final int REQUEST_SIGNUP = 0;
+
+    private Activity mActivity;
 
 
     // UI references.
@@ -92,7 +95,7 @@ public class LoginActivity extends AppCompatActivity  {
         });
 
 
-
+        mActivity = this;
 
         //check and handle sign_in,sign_up stuff
         userEditText = (EditText) findViewById(R.id.username);
@@ -130,7 +133,7 @@ public class LoginActivity extends AppCompatActivity  {
     private void login() {
 
         // check if username/password are empty, discard empty space
-        String login_UserName = userEditText.getText().toString().trim();
+        final String login_UserName = userEditText.getText().toString().trim();
 
         if (login_UserName.length() == 0) {
             Toast.makeText(LoginActivity.this, "Please provide a Username!", Toast.LENGTH_SHORT).show();
@@ -145,7 +148,7 @@ public class LoginActivity extends AppCompatActivity  {
                 // User File exist, this user has logged in before
                 // Pass the login User to the main menu
 
-                Intent main_menu_Intent = new Intent(LoginActivity.this, main_menu.class);
+                final Intent main_menu_Intent = new Intent(LoginActivity.this, main_menu.class);
                 main_menu_Intent.putExtra(LOGIN_USERNAME, login_UserName);
 
                 Handler handler=  new Handler();
@@ -154,20 +157,21 @@ public class LoginActivity extends AppCompatActivity  {
 
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
 
+                    Username_sign_in_button.startAnimation();
+
                     Runnable runnable = new Runnable()  {
 
                         public void run() {
-
-                            Username_sign_in_button.startAnimation();
 
 
                             Username_sign_in_button.stopAnimation();
 
 
-                            ActivityOptions activityOptions = ActivityOptions.makeSceneTransitionAnimation(
-                                    this, Username_sign_in_button, Username_sign_in_button.getTransitionName());
+                            ActivityOptions activityOptions = ActivityOptions.makeSceneTransitionAnimation(mActivity, Username_sign_in_button, login_UserName);
 
                             startActivity(main_menu_Intent, activityOptions.toBundle());
+
+                            finish();
                         }
 
 
@@ -182,12 +186,12 @@ public class LoginActivity extends AppCompatActivity  {
 
 
 
-                //Intent main_menu_Intent = new Intent(LoginActivity.this, main_menu.class);
-                main_menu_Intent.putExtra(LOGIN_USERNAME, login_UserName);
+//                //Intent main_menu_Intent = new Intent(LoginActivity.this, main_menu.class);
+//                main_menu_Intent.putExtra(LOGIN_USERNAME, login_UserName);
+//
+//                startActivity(main_menu_Intent);
 
-                startActivity(main_menu_Intent);
-
-                finish();
+//                finish();
 
             } else{
 
