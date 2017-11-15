@@ -10,9 +10,11 @@
 
 package com.example.cmput301f17t19.echoes;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -22,6 +24,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import br.com.simplepass.loading_button_lib.customViews.CircularProgressButton;
 
 
 /**
@@ -48,7 +52,7 @@ public class LoginActivity extends AppCompatActivity  {
     private EditText userEditText;
     private Button loginButton;
 
-
+    private br.com.simplepass.loading_button_lib.customViews.CircularProgressButton Username_sign_in_button;
 
 
     @Override
@@ -75,7 +79,17 @@ public class LoginActivity extends AppCompatActivity  {
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_login);
 
+       Username_sign_in_button = (CircularProgressButton) findViewById(R.id.username_sign_in_button);
 
+
+        Username_sign_in_button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+                login();
+
+
+            }
+        });
 
 
 
@@ -93,13 +107,14 @@ public class LoginActivity extends AppCompatActivity  {
         });
 
         //call signin handler when signin being clicked
+        /*
         loginButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 login();
             }
         });
 
-
+        */
     }
 
     @Override
@@ -127,10 +142,47 @@ public class LoginActivity extends AppCompatActivity  {
 
 
             if (offlineStorageController.isFileExist()){
-
                 // User File exist, this user has logged in before
                 // Pass the login User to the main menu
+
                 Intent main_menu_Intent = new Intent(LoginActivity.this, main_menu.class);
+                main_menu_Intent.putExtra(LOGIN_USERNAME, login_UserName);
+
+                Handler handler=  new Handler();
+
+
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+
+                    Runnable runnable = new Runnable()  {
+
+                        public void run() {
+
+                            Username_sign_in_button.startAnimation();
+
+
+                            Username_sign_in_button.stopAnimation();
+
+
+                            ActivityOptions activityOptions = ActivityOptions.makeSceneTransitionAnimation(
+                                    this, Username_sign_in_button, Username_sign_in_button.getTransitionName());
+
+                            startActivity(main_menu_Intent, activityOptions.toBundle());
+                        }
+
+
+
+                };
+
+                handler.postDelayed(runnable,3000);
+
+
+
+                }
+
+
+
+                //Intent main_menu_Intent = new Intent(LoginActivity.this, main_menu.class);
                 main_menu_Intent.putExtra(LOGIN_USERNAME, login_UserName);
 
                 startActivity(main_menu_Intent);
