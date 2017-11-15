@@ -14,7 +14,6 @@ import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.drawable.AnimationDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
@@ -25,7 +24,6 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import java.util.concurrent.ExecutionException;
@@ -43,8 +41,7 @@ import static com.example.cmput301f17t19.echoes.SelectPhotoController.loadPhoto;
 public class SignUpActivity extends AppCompatActivity {
 
 
-    LinearLayout myLayout;
-    AnimationDrawable animationDrawable;
+
 
 
     private OfflineStorageController offlineStorageController;
@@ -80,7 +77,7 @@ public class SignUpActivity extends AppCompatActivity {
 
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            window.setStatusBarColor(ContextCompat.getColor(this,R.color.primary_dark));
+            window.setStatusBarColor(ContextCompat.getColor(this,R.color.dimPurple));
         }
 
 
@@ -90,14 +87,7 @@ public class SignUpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up);
 
 
-        //animation background
-        myLayout = (LinearLayout) findViewById(R.id.myLayout2);
 
-        animationDrawable = (AnimationDrawable) myLayout.getBackground();
-        animationDrawable.setEnterFadeDuration(4500);
-        animationDrawable.setExitFadeDuration(4500);
-
-        animationDrawable.start();
 
 
 

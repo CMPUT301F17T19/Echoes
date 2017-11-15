@@ -11,7 +11,6 @@
 package com.example.cmput301f17t19.echoes;
 
 import android.content.Intent;
-import android.graphics.drawable.AnimationDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
@@ -21,7 +20,6 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -51,8 +49,6 @@ public class LoginActivity extends AppCompatActivity  {
     private Button loginButton;
 
 
-    LinearLayout myLayout;
-    AnimationDrawable animationDrawable;
 
 
     @Override
@@ -70,7 +66,7 @@ public class LoginActivity extends AppCompatActivity  {
 
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            window.setStatusBarColor(ContextCompat.getColor(this,R.color.primary_dark));
+            window.setStatusBarColor(ContextCompat.getColor(this,R.color.dimPurple));
         }
 
 
@@ -79,17 +75,7 @@ public class LoginActivity extends AppCompatActivity  {
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_login);
 
-        /********************************************************************************/
-        //animation background
-        myLayout = (LinearLayout) findViewById(R.id.myLayout);
 
-        animationDrawable = (AnimationDrawable) myLayout.getBackground();
-        animationDrawable.setEnterFadeDuration(3000);
-        animationDrawable.setExitFadeDuration(3000);
-
-        animationDrawable.start();
-
-        /********************************************************************************/
 
 
 
@@ -168,4 +154,3 @@ public class LoginActivity extends AppCompatActivity  {
     }
 
 }
-

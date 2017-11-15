@@ -13,7 +13,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@drawable/my_bg_anim"
+    android:weightSum="3"
+    android:background="@drawable/bg4"
     android:id="@+id/myLayout"
     tools:context="com.example.cmput301f17t19.echoes.LoginActivity">
 
@@ -26,9 +27,15 @@
         android:layout_marginBottom="8dp"
         android:visibility="gone" />
 
-    <ImageView android:src="@drawable/logo3"
+    <ImageView
         android:layout_width="380dp"
         android:layout_height="180dp"
+        android:src="@drawable/logo8"
+        android:gravity="center"
+        android:layout_weight=".01"
+        android:textColor="@color/white"
+        android:textStyle="italic"
+        android:textSize="55dp"
         android:id="@+id/logo_image"
         android:layout_gravity="center_horizontal" />
 
@@ -36,6 +43,7 @@
     <ScrollView
         android:id="@+id/login_form"
         android:layout_width="match_parent"
+        android:layout_weight="2.99"
         android:layout_height="match_parent">
 
 
@@ -46,56 +54,87 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="90dp"
             >
 
 
 
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
+                    <ImageView
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/user_icon"
+                        android:layout_marginLeft="5dp"
+
+                        />
 
                 <EditText
-
+                    android:layout_marginLeft="8dp"
+                    android:backgroundTint="@color/white"
+                    android:backgroundTintMode="screen"
                     android:id="@+id/username"
-                    android:layout_width="300dp"
+                    android:layout_width="400dp"
                     android:layout_height="60dp"
-                    android:layout_gravity="center"
-                    android:textColor="@color/black"
-                    android:drawablePadding="10dp"
-                    android:paddingStart="10dp"
-                    android:textSize="16dp"
+
+                    android:textColor="@color/white"
+
+                    android:textColorHint="@color/white"
+
+                    android:textSize="23dp"
                     android:hint="Username"
-                    android:drawableLeft="@drawable/user"
-                    android:background="@color/white"
+
+
                      />
 
-
+                </LinearLayout>
 
             <Button
                 android:id="@+id/username_sign_in_button"
 
-                android:layout_width="150dp"
+                android:layout_width="300dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center"
                 android:layout_marginBottom="24dp"
-                android:layout_marginTop="70dp"
-
+                android:layout_marginTop="50dp"
+                android:textColor="@color/white"
                 android:background="@drawable/btn"
-
                 android:text="Sign In"
-
                 android:textAllCaps="false"
-
                 android:textSize="20dp" />
 
 
-            <TextView android:id="@+id/link_signup"
-                android:layout_width="fill_parent"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="30dp"
-                android:text="No account yet? Create one"
-                android:gravity="center"
-                android:textColor="@color/black"
-                android:textSize="16dip"/>
+                android:text="No account yet?"
+                android:layout_marginLeft="55dp"
+                android:textColor="@color/monsoon"
+                android:textSize="18dip"/>
+
+
+                <TextView
+                    android:id="@+id/link_signup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" Create One!"
+                    android:textColor="@color/white"
+                    android:textSize="18dp"
+                    />
+
+        </LinearLayout>
+
 
         </LinearLayout>
     </ScrollView>
