@@ -1,6 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
 <!--
   ~ Copyright (c) Team cmput301f17t19, CMPUT301, University of Alberta - All Rights Reserved. You may use, distribute, or modify this code under terms and conditions of the Code of Students Behaviour at University of Alberta
   -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.cmput301f17t19.echoes.LoginActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -16,7 +23,7 @@
     android:weightSum="3"
     android:background="@drawable/bg4"
     android:id="@+id/myLayout"
-    tools:context="com.example.cmput301f17t19.echoes.LoginActivity">
+   >
 
     <!-- Login progress -->
     <ProgressBar
@@ -69,16 +76,17 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/user_icon"
-                        android:layout_marginLeft="5dp"
+                        android:layout_marginLeft="10dp"
 
                         />
 
                 <EditText
                     android:layout_marginLeft="8dp"
-                    android:backgroundTint="@color/white"
-                    android:backgroundTintMode="screen"
+
+                    android:background="@drawable/edit_text_style"
                     android:id="@+id/username"
-                    android:layout_width="400dp"
+
+                    android:layout_width="280dp"
                     android:layout_height="60dp"
 
                     android:textColor="@color/white"
@@ -102,6 +110,7 @@
                 android:transitionName="transition"
                 android:layout_width="300dp"
                 android:layout_height="60dp"
+                android:textStyle="bold"
                 android:layout_gravity="center"
                 android:layout_marginBottom="24dp"
                 android:layout_marginTop="50dp"
@@ -134,6 +143,7 @@
                     android:layout_height="wrap_content"
                     android:text=" Create One!"
                     android:textColor="@color/white"
+                    android:textStyle="bold"
                     android:textSize="18dp"
                     />
 
@@ -142,4 +152,15 @@
 
         </LinearLayout>
     </ScrollView>
+
 </LinearLayout>
+
+    <View
+        android:id="@+id/animate_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/redPink"
+        android:visibility="invisible"
+        />
+
+</FrameLayout>
