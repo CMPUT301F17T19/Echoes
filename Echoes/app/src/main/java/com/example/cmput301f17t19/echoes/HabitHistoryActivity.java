@@ -159,7 +159,7 @@ public class HabitHistoryActivity extends AppCompatActivity {
         super.onStart();
 
         // the User Profile of the login user
-        login_userProfile = getLogin_UserProfile();
+        login_userProfile = OfflineStorageController.getLogin_UserProfile(this, login_Username);
 
         Types = (Spinner) findViewById(R.id.habithistory_filter);
 
@@ -174,6 +174,7 @@ public class HabitHistoryActivity extends AppCompatActivity {
         // Set the Spinner
         spinnerTypes = getUserHabitTypes();
         type = spinnerTypes.get(0);
+        search_EditText.setText("");
 
         ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(
                 this, android.R.layout.simple_spinner_item, spinnerTypes);
@@ -372,17 +373,6 @@ public class HabitHistoryActivity extends AppCompatActivity {
 
         // Update Online data
         ElasticSearchController.syncOnlineWithOffline(login_userProfile);
-    }
-
-    /**
-     * Get the Login user Profile from offline file
-     *
-     * @return UserProfile: the User Profile of the login User
-     */
-    private UserProfile getLogin_UserProfile() {
-        OfflineStorageController offlineStorageController = new OfflineStorageController(this, login_Username);
-
-        return offlineStorageController.readFromFile();
     }
 
     /**

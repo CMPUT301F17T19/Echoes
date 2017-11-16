@@ -103,7 +103,7 @@ public class UserProfileActivity extends AppCompatActivity {
             }
 
             // Get the UserProfile object with the given username
-            offlineStorageController = new OfflineStorageController(getApplicationContext(), profile_username);
+            offlineStorageController = new OfflineStorageController(this, profile_username);
 
             userProfile = offlineStorageController.readFromFile();
 
@@ -240,7 +240,7 @@ public class UserProfileActivity extends AppCompatActivity {
         profile_username = "dummy3";
 
         // Get the UserProfile object with the given username
-        offlineStorageController = new OfflineStorageController(getApplicationContext(), profile_username);
+        offlineStorageController = new OfflineStorageController(this, profile_username);
 
         userProfile = offlineStorageController.readFromFile();
 
