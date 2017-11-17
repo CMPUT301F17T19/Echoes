@@ -89,7 +89,7 @@ public class FollowingSharingController {
 
         // Get the received requests of searched user
         ElasticSearchController.CheckUserReceivedRequestsExistTask checkUserReceivedRequestsExistTask = new ElasticSearchController.CheckUserReceivedRequestsExistTask();
-        checkUserFollowingsExistTask.execute(searchedUserProfile.getUserName());
+        checkUserReceivedRequestsExistTask.execute(searchedUserProfile.getUserName());
 
         try {
             boolean isExist = checkUserFollowingsExistTask.get();
@@ -192,6 +192,48 @@ public class FollowingSharingController {
         loginUserProfile.addFollower(new Follower(selectedRequestUsername));
 
         // Remove the corresponding received request of the login user
+        removedSelectedFollowingRequest(loginUserProfile, selectedRequestUsername, context);
+
+
+        // Add login user to the following list of the user with selectedRequestUsername
+        ElasticSearchController.GetUserFollowingListTask getUserFollowingListTask = new ElasticSearchController.GetUserFollowingListTask();
+        getUserFollowingListTask.execute(selectedRequestUsername);
+
+        try {
+            UserFollowingList userFollowingList = getUserFollowingListTask.get();
+            userFollowingList.getFollowings().add(new Following(loginUserProfile.getUserName()));
+
+            // Save online data storage
+            ElasticSearchController.UpdateUserFollowingListTask updateUserFollowingListTask = new ElasticSearchController.UpdateUserFollowingListTask();
+            updateUserFollowingListTask.execute(userFollowingList);
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * The login user decline the request sent from selectedRequestUsername
+     * @param loginUserProfile: UserProfile, the user profile of the login user
+     * @param selectedRequestUsername: String, the username of the selected Request
+     * @param context: Context
+     */
+    public static void declineFollowingRequest(UserProfile loginUserProfile, String selectedRequestUsername, Context context) {
+        // Remove the selectedRequestUsername from the received request list of the login user
+        removedSelectedFollowingRequest(loginUserProfile, selectedRequestUsername, context);
+    }
+
+    /**
+     * Remove the selectedRequestUsername from the received request list of the login user
+     *
+     * @param loginUserProfile: UserProfile, the user profile of the login user
+     * @param selectedRequestUsername: String, the username of the selected Request
+     * @param context: Context
+     */
+    private static void removedSelectedFollowingRequest(UserProfile loginUserProfile, String selectedRequestUsername, Context context) {
+        // Remove the corresponding received request of the login user
         ElasticSearchController.GetUserReceivedRequestsTask getUserReceivedRequestsTask = new ElasticSearchController.GetUserReceivedRequestsTask();
         getUserReceivedRequestsTask.execute(loginUserProfile.getUserName());
 
@@ -217,25 +259,6 @@ public class FollowingSharingController {
             OfflineStorageController offlineStorageController = new OfflineStorageController(context, loginUserProfile.getUserName());
             offlineStorageController.saveInFile(loginUserProfile);
             ElasticSearchController.syncOnlineWithOffline(loginUserProfile);
-
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        }
-
-
-        // Add login user to the following list of the user with selectedRequestUsername
-        ElasticSearchController.GetUserFollowingListTask getUserFollowingListTask = new ElasticSearchController.GetUserFollowingListTask();
-        getUserFollowingListTask.execute(selectedRequestUsername);
-
-        try {
-            UserFollowingList userFollowingList = getUserFollowingListTask.get();
-            userFollowingList.getFollowings().add(new Following(loginUserProfile.getUserName()));
-
-            // Save online data storage
-            ElasticSearchController.UpdateUserFollowingListTask updateUserFollowingListTask = new ElasticSearchController.UpdateUserFollowingListTask();
-            updateUserFollowingListTask.execute(userFollowingList);
 
         } catch (InterruptedException e) {
             e.printStackTrace();

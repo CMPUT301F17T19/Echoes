@@ -136,17 +136,6 @@ public class UserProfileActivity extends AppCompatActivity {
         } else {
             unitTest();
         }
-
-        // onClickLister for profile image button
-        profile_ImageButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                // show the dialog
-                AlertDialog profilePhoto_dialog = buildAlertDialog().create();
-                profilePhoto_dialog.show();
-            }
-        });
     }
 
     /**

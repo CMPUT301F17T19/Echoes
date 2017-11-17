@@ -82,8 +82,6 @@ public class HabitsFollowingActivity extends AppCompatActivity {
             login_UserName = "dummy3";
         }
 
-        login_userProfile = OfflineStorageController.getLogin_UserProfile(this, login_UserName);
-
         searchUser_EditText = (EditText) findViewById(R.id.search_user_edittext);
         searchUser_Button = (Button) findViewById(R.id.search_user_button);
 
@@ -106,6 +104,8 @@ public class HabitsFollowingActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+
+        login_userProfile = OfflineStorageController.getLogin_UserProfile(this, login_UserName);
 
         searchUser_EditText.setText("");
     }

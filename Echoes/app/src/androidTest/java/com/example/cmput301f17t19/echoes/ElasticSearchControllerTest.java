@@ -40,6 +40,18 @@ public class ElasticSearchControllerTest extends ActivityInstrumentationTestCase
         ElasticSearchController.AddNewUserProfileTask addNewUserProfileTask = new ElasticSearchController.AddNewUserProfileTask();
         addNewUserProfileTask.execute(dummyUser);
 
+        // Create new userReceivedRequestList for this user
+        UserReceivedRequestsList userReceivedRequestsList = new UserReceivedRequestsList(dummyUser.getUserName());
+        // Add to online data storage
+        ElasticSearchController.AddNewUserReceivedRequestsTask addNewUserReceivedRequestsTask = new ElasticSearchController.AddNewUserReceivedRequestsTask();
+        addNewUserReceivedRequestsTask.execute(userReceivedRequestsList);
+
+        // Create new userFollowingList for this user
+        UserFollowingList userFollowingList = new UserFollowingList(dummyUser.getUserName());
+        // Add to online data storage
+        ElasticSearchController.AddNewUserFollowingsTask addNewUserFollowingsTask = new ElasticSearchController.AddNewUserFollowingsTask();
+        addNewUserFollowingsTask.execute(userFollowingList);
+
         ElasticSearchController.CheckUserProfileExistTask checkUserProfileExistTask = new ElasticSearchController.CheckUserProfileExistTask();
         checkUserProfileExistTask.execute("dummy1");
 
@@ -99,6 +111,18 @@ public class ElasticSearchControllerTest extends ActivityInstrumentationTestCase
 
         ElasticSearchController.AddNewUserProfileTask addNewUserProfileTask = new ElasticSearchController.AddNewUserProfileTask();
         addNewUserProfileTask.execute(getDummyUser);
+
+        // Create new userReceivedRequestList for this user
+        UserReceivedRequestsList userReceivedRequestsList = new UserReceivedRequestsList(getDummyUser.getUserName());
+        // Add to online data storage
+        ElasticSearchController.AddNewUserReceivedRequestsTask addNewUserReceivedRequestsTask = new ElasticSearchController.AddNewUserReceivedRequestsTask();
+        addNewUserReceivedRequestsTask.execute(userReceivedRequestsList);
+
+        // Create new userFollowingList for this user
+        UserFollowingList userFollowingList = new UserFollowingList(getDummyUser.getUserName());
+        // Add to online data storage
+        ElasticSearchController.AddNewUserFollowingsTask addNewUserFollowingsTask = new ElasticSearchController.AddNewUserFollowingsTask();
+        addNewUserFollowingsTask.execute(userFollowingList);
 
         ElasticSearchController.GetUserProfileTask getUserProfileTask = new ElasticSearchController.GetUserProfileTask();
         getUserProfileTask.execute("GetdummyT");

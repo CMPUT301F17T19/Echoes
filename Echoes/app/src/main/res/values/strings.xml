@@ -62,7 +62,7 @@
 
     <string name="search_user_hint">Please enter the username for search</string>
 
-    <string name="noUser_matched">No user named</string>
+    <string name="noUser_matched">No User Matched or Check Network Connection</string>
 
     <string name="followed">Followed</string>
     <string name="sentRequest">Pending Following Request</string>

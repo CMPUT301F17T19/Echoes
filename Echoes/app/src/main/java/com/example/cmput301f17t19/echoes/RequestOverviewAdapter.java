@@ -31,7 +31,6 @@ import java.util.concurrent.ExecutionException;
  * @since 1.0
  */
 public class RequestOverviewAdapter extends RecyclerView.Adapter<RequestOverviewAdapter.RequestOverviewViewHolder>{
-    public static final String SELECTED_HABIT_POSITION = "SELECTED_HABIT_POSITION";
 
     private Context mContext;
 
@@ -73,8 +72,7 @@ public class RequestOverviewAdapter extends RecyclerView.Adapter<RequestOverview
     @Override
     public int getItemCount() {
         // Return the size of received request list of the logged-in user
-        //TODO
-        return MyHabitsActivity.getMyHabitList().getHabits().size();
+        return UserMessageActivity.getReceivedRequests().size();
     }
 
     /**
@@ -105,9 +103,9 @@ public class RequestOverviewAdapter extends RecyclerView.Adapter<RequestOverview
          *
          * @param position: The position of the Request User Profile object in the List to be bound with the viewHolder
          */
-        private void bind(final int position) {
+        private void bind(int position) {
             // Get the request user profile object at the specific position in Received Requests list
-            final ReceivedRequest receivedRequest_pos = UserMessageActivity.getReceivedRequests().get(position);
+            ReceivedRequest receivedRequest_pos = UserMessageActivity.getReceivedRequests().get(position);
 
             ElasticSearchController.GetUserProfileTask getUserProfileTask = new ElasticSearchController.GetUserProfileTask();
             getUserProfileTask.execute(receivedRequest_pos.getUsername());
@@ -136,10 +134,10 @@ public class RequestOverviewAdapter extends RecyclerView.Adapter<RequestOverview
                 @Override
                 public void onClick(View view) {
                     // Accept the following request from the selected user
-                    FollowingSharingController.acceptFollowingRequest(UserMessageActivity.getLogin_userProfile(), receivedRequest_pos.getUsername(), mContext);
+                    FollowingSharingController.acceptFollowingRequest(UserMessageActivity.getLogin_userProfile(), UserMessageActivity.getReceivedRequests().get(getAdapterPosition()).getUsername(), mContext);
 
                     // Remove the selected request from the list
-                    UserMessageActivity.getReceivedRequests().remove(position);
+                    UserMessageActivity.getReceivedRequests().remove(getAdapterPosition());
                     UserMessageActivity.getRequestOverviewAdapter().notifyDataSetChanged();
                 }
             });
@@ -148,8 +146,10 @@ public class RequestOverviewAdapter extends RecyclerView.Adapter<RequestOverview
             decline_Button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    // Decline the following request from the selected user
+                    FollowingSharingController.declineFollowingRequest(UserMessageActivity.getLogin_userProfile(), UserMessageActivity.getReceivedRequests().get(getAdapterPosition()).getUsername(), mContext);
                     // Remove the selected request from the list
-                    UserMessageActivity.getReceivedRequests().remove(position);
+                    UserMessageActivity.getReceivedRequests().remove(getAdapterPosition());
                     UserMessageActivity.getRequestOverviewAdapter().notifyDataSetChanged();
                 }
             });
@@ -169,7 +169,7 @@ public class RequestOverviewAdapter extends RecyclerView.Adapter<RequestOverview
             ReceivedRequest selected_ReceivedRequest = UserMessageActivity.getReceivedRequests().get(adapterPosition);
 
             // Start UserProfile Activity
-            Intent userProfile_Intent = new Intent(mContext, HabitDetail.class);
+            Intent userProfile_Intent = new Intent(mContext, UserProfileActivity.class);
             // Pass the username of the selected received request
             userProfile_Intent.putExtra(UserProfileActivity.SEARCHED_USERPROFILE_TAG, selected_ReceivedRequest.getUsername());
 
