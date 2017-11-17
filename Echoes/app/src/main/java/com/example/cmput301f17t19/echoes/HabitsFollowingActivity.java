@@ -104,6 +104,13 @@ public class HabitsFollowingActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onStart() {
+        super.onStart();
+
+        searchUser_EditText.setText("");
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.mapp_bar, menu);
@@ -136,8 +143,12 @@ public class HabitsFollowingActivity extends AppCompatActivity {
                 break;
 
             case R.id.action_UserMessage:
-                // Open the message of the user
-                //TODO
+                // Pass the username of the login user to the user message activity
+                Intent userMessage_intent = new Intent(this, UserMessageActivity.class);
+                userMessage_intent.putExtra(LOGIN_USERNAME, login_UserName);
+                startActivity(userMessage_intent);
+
+                break;
         }
 
         return super.onOptionsItemSelected(item);

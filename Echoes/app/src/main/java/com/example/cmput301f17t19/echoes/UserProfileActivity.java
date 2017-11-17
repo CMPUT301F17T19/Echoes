@@ -11,6 +11,7 @@
 package com.example.cmput301f17t19.echoes;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -63,6 +64,7 @@ public class UserProfileActivity extends AppCompatActivity {
     private Button request_Button;
 
     private Activity mActivity;
+    private Context mContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,6 +95,7 @@ public class UserProfileActivity extends AppCompatActivity {
         setSupportActionBar(myToolbar);
 
         mActivity = this;
+        mContext = this;
 
         profile_ImageButton = (de.hdodenhof.circleimageview.CircleImageView) findViewById(R.id.profile_photo);
 
@@ -171,31 +174,30 @@ public class UserProfileActivity extends AppCompatActivity {
             request_Button.setVisibility(View.VISIBLE);
 
             // Set the text of the request Button
-            int followingIndicator = FollowingSharingController.checkSearchedUserStat(HabitsFollowingActivity.getLogin_userProfile(), searched_profile_username);
+            int followingIndicator = FollowingSharingController.checkSearchedUserStat(HabitsFollowingActivity.getLogin_userProfile(), userProfile, mContext);
 
             if (followingIndicator == 0) {
                 // Already followed this searched user, able to unfollow
-                request_Button.setText(R.string.unfollow);
+                request_Button.setText(R.string.followed);
             } else if (followingIndicator == 1) {
                 // Already sent following request (pending)
                 request_Button.setText(R.string.sentRequest);
             } else if (followingIndicator == 2) {
                 // Able to send follow request
                 request_Button.setText(R.string.follow);
+            } else {
+                // Network error
+                request_Button.setText(R.string.network_error);
             }
 
             request_Button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
 
-                    int FollowingIndicator = FollowingSharingController.checkSearchedUserStat(HabitsFollowingActivity.getLogin_userProfile(), searched_profile_username);
+                    int FollowingIndicator = FollowingSharingController.checkSearchedUserStat(HabitsFollowingActivity.getLogin_userProfile(), userProfile, mContext);
 
                     if (FollowingIndicator == 0) {
-                        // Unfollow the searched user
-                        FollowingSharingController.UnfollowUser(HabitsFollowingActivity.getLogin_userProfile(), userProfile, mActivity);
-
-                        // Set the button to follow (Able to follow again)
-                        request_Button.setText(R.string.follow);
+                        // Followed the searched user
 
                     } else if (FollowingIndicator == 1) {
                         // Pending request, do nothing
@@ -206,6 +208,9 @@ public class UserProfileActivity extends AppCompatActivity {
 
                         // Set the button to pending
                         request_Button.setText(R.string.sentRequest);
+                    } else {
+                        // Network error
+                        request_Button.setText(R.string.network_error);
                     }
                 }
             });

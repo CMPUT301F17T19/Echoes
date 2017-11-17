@@ -64,8 +64,16 @@
 
     <string name="noUser_matched">No user named</string>
 
-    <string name="unfollow">Unfollow</string>
+    <string name="followed">Followed</string>
     <string name="sentRequest">Pending Following Request</string>
     <string name="follow">Follow + </string>
+
+    <string name="receivedRequest">Received Following Requests</string>
+
+    <string name="userMessage">My Messages</string>
+    <string name="accept">Accept</string>
+    <string name="decline">Decline</string>
+
+    <string name="network_error">Network Error</string>
 
 </resources>

@@ -11,8 +11,11 @@
 package com.example.cmput301f17t19.echoes;
 
 import android.app.Activity;
+import android.content.Context;
+import android.util.Log;
 
 import java.util.ArrayList;
+import java.util.concurrent.ExecutionException;
 
 /**
  * Controller for following and sharing
@@ -27,68 +30,109 @@ public class FollowingSharingController {
      * Check if the username is in the following list of the login user or is in the request list of the login user
      *
      * @param loginUserProfile: UserProfile: the user profile of the login user
-     * @param searchedUsername: String: the username of the searched user
-     * @return int: 0: the given searched username is in my following list
+     * @param searchedUserProfile: String: the UserProfile of the searched user
+     * @param context: Context
+     * @return int: -1: Network error
+     *              0: the given searched username is in my following list
      *              1: already sent following request to the given searched username
      *              2: not following or sent request
      */
-    public static int checkSearchedUserStat(UserProfile loginUserProfile, String searchedUsername) {
-        ArrayList<Following> myFollowing = loginUserProfile.getFollowing();
-        ArrayList<SentRequest> mySentRequest = loginUserProfile.getSentRequests();
+    public static int checkSearchedUserStat(UserProfile loginUserProfile, UserProfile searchedUserProfile, Context context) {
+        int statIndicator = -2;
 
-        if (loginUserProfile.isInFollowing(searchedUsername)) {
-            // The searched username is in my following list
-            return 0;
-        } else {
-            if (loginUserProfile.isInSentRequests(searchedUsername)) {
-                // The searched username is in my sent requests list
-                return 1;
+        // Get the following list of the login user
+        ElasticSearchController.CheckUserFollowingsExistTask checkUserFollowingsExistTask = new ElasticSearchController.CheckUserFollowingsExistTask();
+        checkUserFollowingsExistTask.execute(loginUserProfile.getUserName());
+
+        try {
+            boolean isExist = checkUserFollowingsExistTask.get();
+
+            if (isExist) {
+                // Get the FollowingList of the login user
+                ElasticSearchController.GetUserFollowingListTask getUserFollowingListTask = new ElasticSearchController.GetUserFollowingListTask();
+                getUserFollowingListTask.execute(loginUserProfile.getUserName());
+
+                UserFollowingList loginUserFollowingList = getUserFollowingListTask.get();
+
+                // Check if searched username in login user's following list
+                ArrayList<Following> loginUser_Following = loginUserFollowingList.getFollowings();
+                // Set the online following list with offline data
+                loginUserProfile.setFollowing(loginUser_Following);
+                // Update offline and online data storage
+                OfflineStorageController offlineStorageController = new OfflineStorageController(context, loginUserProfile.getUserName());
+                offlineStorageController.saveInFile(loginUserProfile);
+                ElasticSearchController.syncOnlineWithOffline(loginUserProfile);
+
+                for (Following following : loginUser_Following) {
+                    if (following.getUsername().equals(searchedUserProfile.getUserName())) {
+                        // Login user is already followed the search user
+                        statIndicator = 0;
+                        break;
+                    }
+                }
             } else {
-                // the login user did not follow or send following request to the searched username
-                return 2;
+                // Add login user following list to online
+                UserFollowingList userFollowingList = new UserFollowingList(loginUserProfile.getUserName());
+                ElasticSearchController.AddNewUserFollowingsTask addNewUserFollowingsTask = new ElasticSearchController.AddNewUserFollowingsTask();
+                addNewUserFollowingsTask.execute(userFollowingList);
             }
-        }
-    }
 
-    /**
-     * Unfollow the given user
-     *
-     * @param loginUserProfile: UserProfile, user profile of the login user
-     * @param unfollowedUserProfile: UserProfile, user profile of the unfollowed user
-     * @param activity: Activity
-     */
-    public static void UnfollowUser(UserProfile loginUserProfile, UserProfile unfollowedUserProfile, Activity activity) {
-        // Remove the unfollowed user from the following list of the login user
-        ArrayList<Following> loginFollowings = loginUserProfile.getFollowing();
-
-        for(Following following : loginFollowings) {
-            if (following.getUsername().equals(unfollowedUserProfile.getUserName())) {
-                // Remove
-                loginFollowings.remove(following);
-                break;
-            }
+        } catch (InterruptedException e) {
+            statIndicator = -1;
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            statIndicator = -1;
+            e.printStackTrace();
         }
 
-        // Update offline storage of the login user and sync with online
-        OfflineStorageController mOfflineStorageController = new OfflineStorageController(activity, loginUserProfile.getUserName());
-        mOfflineStorageController.saveInFile(loginUserProfile);
-        // Sync login user data with online data
-        ElasticSearchController.syncOnlineWithOffline(loginUserProfile);
 
-        // Remove the login user from the follower list of the unfollowed user
-        ArrayList<Follower> unfollowedFollower = unfollowedUserProfile.getFollower_list();
 
-        for (Follower follower : unfollowedFollower) {
-            if (follower.getUsername().equals(loginUserProfile.getUserName())) {
-                // Remove
-                unfollowedFollower.remove(follower);
-                break;
+        // Get the received requests of searched user
+        ElasticSearchController.CheckUserReceivedRequestsExistTask checkUserReceivedRequestsExistTask = new ElasticSearchController.CheckUserReceivedRequestsExistTask();
+        checkUserFollowingsExistTask.execute(searchedUserProfile.getUserName());
+
+        try {
+            boolean isExist = checkUserFollowingsExistTask.get();
+
+            if (isExist) {
+                // Get the ReceivedRequestList of the searched user
+                ElasticSearchController.GetUserReceivedRequestsTask getUserReceivedRequestsTask = new ElasticSearchController.GetUserReceivedRequestsTask();
+                getUserReceivedRequestsTask.execute(searchedUserProfile.getUserName());
+
+                UserReceivedRequestsList userReceivedRequestsList = getUserReceivedRequestsTask.get();
+
+                // Check if the login username in the received request list of the searched User
+                ArrayList<ReceivedRequest> receivedRequests = userReceivedRequestsList.getReceivedRequests();
+                for (ReceivedRequest receivedRequest : receivedRequests) {
+                    if (receivedRequest.getUsername().equals(loginUserProfile.getUserName())) {
+                        // The login user has already sent following request to the searched user
+                        statIndicator = 1;
+                        break;
+                    }
+                }
+
+
+            } else {
+                // Add the new ReceivedRequestList of the searched user to online data storage
+                UserReceivedRequestsList userReceivedRequestsList = new UserReceivedRequestsList(searchedUserProfile.getUserName());
+                ElasticSearchController.AddNewUserReceivedRequestsTask addNewUserReceivedRequestsTask = new ElasticSearchController.AddNewUserReceivedRequestsTask();
+                addNewUserReceivedRequestsTask.execute(userReceivedRequestsList);
             }
+
+        } catch (InterruptedException e) {
+            statIndicator = -1;
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            statIndicator = -1;
+            e.printStackTrace();
         }
 
-        // Update the unfollowed user's data online
-        ElasticSearchController.UpdateUserProfileTask updateUserProfileTask = new ElasticSearchController.UpdateUserProfileTask();
-        updateUserProfileTask.execute(unfollowedUserProfile);
+        if (statIndicator == -2) {
+            // The login user is not following or sent request to the searched user
+            statIndicator = 2;
+        }
+
+        return statIndicator;
     }
 
     /**
@@ -99,22 +143,41 @@ public class FollowingSharingController {
      * @param activity: Activity
      */
     public static void sendFollowingRequest(UserProfile loginUserProfile, UserProfile searchedUserProfile, Activity activity) {
-        // Add the searched user to the sent request of the login user
-        SentRequest sentRequest = new SentRequest(searchedUserProfile.getUserName());
-        loginUserProfile.getSentRequests().add(sentRequest);
-
-        // Update offline storage of the login user and sync with online
-        OfflineStorageController mOfflineStorageController = new OfflineStorageController(activity, loginUserProfile.getUserName());
-        mOfflineStorageController.saveInFile(loginUserProfile);
-        // Sync login user data with online data
-        ElasticSearchController.syncOnlineWithOffline(loginUserProfile);
-
         // Add the login user to the received request of the search user
-        ReceivedRequest receivedRequest = new ReceivedRequest(loginUserProfile.getUserName());
-        searchedUserProfile.getReceivedRequests().add(receivedRequest);
+        ElasticSearchController.CheckUserReceivedRequestsExistTask checkUserReceivedRequestsExistTask = new ElasticSearchController.CheckUserReceivedRequestsExistTask();
+        checkUserReceivedRequestsExistTask.execute(searchedUserProfile.getUserName());
 
-        // Update the searched user's data online
-        ElasticSearchController.UpdateUserProfileTask updateUserProfileTask = new ElasticSearchController.UpdateUserProfileTask();
-        updateUserProfileTask.execute(searchedUserProfile);
+        try {
+            boolean isExist = checkUserReceivedRequestsExistTask.get();
+
+            if (isExist) {
+                ElasticSearchController.GetUserReceivedRequestsTask getUserReceivedRequestsTask = new ElasticSearchController.GetUserReceivedRequestsTask();
+                getUserReceivedRequestsTask.execute(searchedUserProfile.getUserName());
+
+                UserReceivedRequestsList userReceivedRequestsList = getUserReceivedRequestsTask.get();
+
+                if (userReceivedRequestsList != null) {
+                    userReceivedRequestsList.getReceivedRequests().add(new ReceivedRequest(loginUserProfile.getUserName()));
+
+                    ElasticSearchController.AddNewUserReceivedRequestsTask addNewUserReceivedRequestsTask = new ElasticSearchController.AddNewUserReceivedRequestsTask();
+                    addNewUserReceivedRequestsTask.execute(userReceivedRequestsList);
+                } else {
+                    Log.d("Test", "Network error");
+                }
+
+            } else {
+                UserReceivedRequestsList userReceivedRequestsList = new UserReceivedRequestsList(searchedUserProfile.getUserName());
+                // Add the new received request list to online
+                userReceivedRequestsList.getReceivedRequests().add(new ReceivedRequest(loginUserProfile.getUserName()));
+
+                ElasticSearchController.AddNewUserReceivedRequestsTask addNewUserReceivedRequestsTask = new ElasticSearchController.AddNewUserReceivedRequestsTask();
+                addNewUserReceivedRequestsTask.execute(userReceivedRequestsList);
+            }
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -32,8 +32,7 @@ public class UserProfile {
     private HabitEventList habit_event_list;
     private ArrayList<Following> following_list;
     private ArrayList<Follower> follower_list;
-    private ArrayList<ReceivedRequest> receivedRequests;
-    private ArrayList<SentRequest> sentRequests;
+    private ArrayList<ReceivedRequest> receivedRequests_list;
 
     /**
      * Constructor for the UserProfile for each user
@@ -54,8 +53,7 @@ public class UserProfile {
 
         this.following_list = new ArrayList<Following>();
         this.follower_list = new ArrayList<Follower>();
-        this.receivedRequests = new ArrayList<ReceivedRequest>();
-        this.sentRequests = new ArrayList<SentRequest>();
+        this.receivedRequests_list = new ArrayList<ReceivedRequest>();
     }
 
     /**
@@ -67,21 +65,12 @@ public class UserProfile {
     }
 
     /**
-     * Add the request from other user
+     * Set the Received Requests list
      *
-     * @param receivedRequest: ReceivedRequest, the following request received from other user
+     * @param receivedRequests: ArrayList<ReceivedRequest>, the following request list received from other user
      */
-    public void addReceivedRequest(ReceivedRequest receivedRequest){
-        receivedRequests.add(receivedRequest);
-    }
-
-    /**
-     * Remove the received request from other user
-     *
-     * @param receivedRequest: ReceivedRequest, the following request received from other user
-     */
-    public void removeReceivedRequest(ReceivedRequest receivedRequest){
-        receivedRequests.remove(receivedRequest);
+    public void addReceivedRequest(ArrayList<ReceivedRequest> receivedRequests){
+        receivedRequests_list = receivedRequests;
     }
 
     /**
@@ -90,47 +79,7 @@ public class UserProfile {
      * @return receivedRequests
      */
     public ArrayList<ReceivedRequest> getReceivedRequests() {
-        return receivedRequests;
-    }
-
-    /**
-     * Add the request sent to other user
-     *
-     * @param sentRequest: SentRequest, the following request sent to other user
-     */
-    public void addSentRequest(SentRequest sentRequest){
-        sentRequests.add(sentRequest);
-    }
-
-    /**
-     * Remove the received request sent to other user
-     *
-     * @param sentRequest: SentRequest, the following request sent to other user
-     */
-    public void removeSentRequest(SentRequest sentRequest){
-        sentRequests.remove(sentRequest);
-    }
-
-    /**
-     * Get the sent requests list
-     *
-     * @return sentRequests
-     */
-    public ArrayList<SentRequest> getSentRequests() {
-        return sentRequests;
-    }
-
-    /**
-     * Check if the given username is in the login user's sent requests
-     */
-    public boolean isInSentRequests(String given_username) {
-        for (SentRequest sentRequest : sentRequests) {
-            if (sentRequest.getUsername().equals(given_username)) {
-                return true;
-            }
-        }
-
-        return false;
+        return receivedRequests_list;
     }
 
     /**
@@ -232,10 +181,10 @@ public class UserProfile {
     }
 
     /**
-     * Add the following in my following list
+     * Set the following list
      */
-    public void addFollowing(Following following) {
-        following_list.add(following);
+    public void setFollowing(ArrayList<Following> followings) {
+        following_list = followings;
     }
 
     /**
@@ -245,19 +194,6 @@ public class UserProfile {
      */
     public ArrayList<Following> getFollowing(){
         return following_list;
-    }
-
-    /**
-     * Check if the given username in following list
-     */
-    public boolean isInFollowing(String given_username) {
-        for (Following following : following_list) {
-            if (following.getUsername().equals(given_username)) {
-                return true;
-            }
-        }
-
-        return false;
     }
 
     /**

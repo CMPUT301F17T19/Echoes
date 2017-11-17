@@ -41,6 +41,9 @@ public class ElasticSearchController {
     private static final String SEARCH_INDEX = "cmput301f17t19";
     private static final String SEARCH_TYPE = "userprofile";
 
+    private static final String SEARCH_TYPE_REQUESTS = "userreceivedrequests";
+    private static final String SEARCH_TYPE_FOLLOWINGS = "userfollowings";
+
     /**
      *  Add new user profile to online database
      *
@@ -240,6 +243,322 @@ public class ElasticSearchController {
             }
             catch (Exception e) {
                 Log.i("Error", "Something went wrong when we tried to communicate with the elasticsearch server!");
+            }
+
+            return null;
+        }
+    }
+
+    /**
+     *  Add new user's Received Request list to online database
+     *
+     *  @params UserReceivedRequestsList: The Received Requests list object of this user
+     *  @progress Void
+     *  @return Void
+     */
+    public static class AddNewUserReceivedRequestsTask extends AsyncTask<UserReceivedRequestsList, Void, Void> {
+
+        @Override
+        protected Void doInBackground(UserReceivedRequestsList... userReceivedRequestsLists) {
+            verifySettings();
+
+            UserReceivedRequestsList userReceivedRequestsList = userReceivedRequestsLists[0];
+
+            // Set the unique ID for the document of this UserReceivedRequestList to be the uniqueUsername of this user
+            String doc_ID = userReceivedRequestsList.getUserName();
+
+            // Add this new user to online database
+            Index index = new Index.Builder(userReceivedRequestsList)
+                    .index(SEARCH_INDEX)
+                    .type(SEARCH_TYPE_REQUESTS)
+                    .id(doc_ID)
+                    .build();
+
+            try {
+                DocumentResult execute = client.execute(index);
+
+                if(execute.isSucceeded()){
+                    Log.d("addUser", "Add user received request Success");
+                }
+            }
+            catch (Exception e) {
+                Log.i("Error", "The application failed to build and send the tweets");
+            }
+
+            return null;
+        }
+    }
+
+    /**
+     * Check if the received requests of the username has already exist
+     *
+     * @params String: The username of this user, id of the UserReceivedRequest doc in elasticsearch
+     * @progress Void
+     * @return Boolean: true: The input username's requests list has already exist in online database
+     *                  false: The input username's requests list does not exist
+     */
+    public static class CheckUserReceivedRequestsExistTask extends AsyncTask<String, Void, Boolean> {
+
+        @Override
+        protected Boolean doInBackground(String... strings) {
+            verifySettings();
+
+            // input UserName
+            String userName_IN = strings[0];
+
+            // Check if UserProfile with id equals userName_IN exists
+            Get get = new Get.Builder(SEARCH_INDEX, userName_IN)
+                    .type(SEARCH_TYPE_REQUESTS)
+                    .build();
+
+            try {
+                JestResult result = client.execute(get);
+
+                if (result.isSucceeded()) {
+                    Log.d("checkUser", "Check userProfile UserName Unique Success");
+                    return true;
+                } else {
+                    Log.d("checkUser", "Check userProfile UserName Unique Fail");
+                    return false;
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            return false;
+        }
+    }
+
+    /**
+     * Get UserReceivedRequestList of the given user
+     *
+     * @params String: The username of this user, id of the UserReceivedRequest doc in elasticsearch
+     * @progress Void
+     * @return UserReceivedRequestsList: The UserReceivedRequestsList with the input username
+     */
+    public static class GetUserReceivedRequestsTask extends AsyncTask<String, Void, UserReceivedRequestsList> {
+
+        @Override
+        protected UserReceivedRequestsList doInBackground(String... strings) {
+            verifySettings();
+
+            // input UserName
+            String userName_IN = strings[0];
+
+            // Get the Document with ID equals the input username
+            Get get = new Get.Builder(SEARCH_INDEX, userName_IN)
+                    .type(SEARCH_TYPE_REQUESTS)
+                    .build();
+
+            try {
+                JestResult result = client.execute(get);
+
+                if (result.isSucceeded()) {
+                    UserReceivedRequestsList userReceivedRequestsList = result.getSourceAsObject(UserReceivedRequestsList.class);
+
+                    return userReceivedRequestsList;
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            return null;
+        }
+    }
+
+    /**
+     * Update the UserReceivedRequestsList
+     *
+     * @params UserReceivedRequestsList: The UserReceivedRequestsList object of this user
+     * @progress Void
+     * @return Void
+     */
+    public static class UpdateUserReceivedRequestsListTask extends AsyncTask<UserReceivedRequestsList, Void, Void> {
+
+        @Override
+        protected Void doInBackground(UserReceivedRequestsList... userReceivedRequestsLists) {
+            verifySettings();
+
+            UserReceivedRequestsList userReceivedRequestsList = userReceivedRequestsLists[0];
+
+            // Update this userProfile to online database
+            Index index = new Index.Builder(userReceivedRequestsList)
+                    .index(SEARCH_INDEX)
+                    .type(SEARCH_TYPE_REQUESTS)
+                    .id(userReceivedRequestsList.getUserName())
+                    .build();
+
+            try {
+                DocumentResult execute = client.execute(index);
+
+                if (execute.isSucceeded()) {
+                    Log.d("update", "Update User Habits Success");
+                } else {
+                    Log.d("update", "Update User Habits Fail");
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            return null;
+        }
+    }
+
+    /**
+     *  Add new user's Following list to online database
+     *
+     *  @params UserFollowingList: The followings list object of this user
+     *  @progress Void
+     *  @return Void
+     */
+    public static class AddNewUserFollowingsTask extends AsyncTask<UserFollowingList, Void, Void> {
+
+        @Override
+        protected Void doInBackground(UserFollowingList... userFollowingLists) {
+            verifySettings();
+
+            UserFollowingList userFollowingList = userFollowingLists[0];
+
+            // Set the unique ID for the document of this UserFollowingList to be the uniqueUsername of this user
+            String doc_ID = userFollowingList.getUserName();
+
+            // Add this new user to online database
+            Index index = new Index.Builder(userFollowingList)
+                    .index(SEARCH_INDEX)
+                    .type(SEARCH_TYPE_FOLLOWINGS)
+                    .id(doc_ID)
+                    .build();
+
+            try {
+                DocumentResult execute = client.execute(index);
+
+                if(execute.isSucceeded()){
+                    Log.d("addUser", "Add user following list Success");
+                }
+            }
+            catch (Exception e) {
+                Log.i("Error", "The application failed to build and send the tweets");
+            }
+
+            return null;
+        }
+    }
+
+    /**
+     * Check if the followings list of the username has already exist
+     *
+     * @params String: The username of this user, id of the UserFollowings doc in elasticsearch
+     * @progress Void
+     * @return Boolean: true: The input username's following list has already exist in online database
+     *                  false: The input username's following list does not exist
+     */
+    public static class CheckUserFollowingsExistTask extends AsyncTask<String, Void, Boolean> {
+
+        @Override
+        protected Boolean doInBackground(String... strings) {
+            verifySettings();
+
+            // input UserName
+            String userName_IN = strings[0];
+
+            // Check if UserProfile with id equals userName_IN exists
+            Get get = new Get.Builder(SEARCH_INDEX, userName_IN)
+                    .type(SEARCH_TYPE_FOLLOWINGS)
+                    .build();
+
+            try {
+                JestResult result = client.execute(get);
+
+                if (result.isSucceeded()) {
+                    Log.d("checkUser", "Check userFollowing UserName Unique Success");
+                    return true;
+                } else {
+                    Log.d("checkUser", "Check userFollowing UserName Unique Fail");
+                    return false;
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            return false;
+        }
+    }
+
+    /**
+     * Get UserFollowingList of the given user
+     *
+     * @params String: The username of this user, id of the UserFollowingList doc in elasticsearch
+     * @progress Void
+     * @return UserFollowingList: The UserFollowingList with the input username
+     */
+    public static class GetUserFollowingListTask extends AsyncTask<String, Void, UserFollowingList> {
+
+        @Override
+        protected UserFollowingList doInBackground(String... strings) {
+            verifySettings();
+
+            // input UserName
+            String userName_IN = strings[0];
+
+            // Get the Document with ID equals the input username
+            Get get = new Get.Builder(SEARCH_INDEX, userName_IN)
+                    .type(SEARCH_TYPE_FOLLOWINGS)
+                    .build();
+
+            try {
+                JestResult result = client.execute(get);
+
+                if (result.isSucceeded()) {
+                    UserFollowingList userFollowingList = result.getSourceAsObject(UserFollowingList.class);
+
+                    return userFollowingList;
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            return null;
+        }
+    }
+
+    /**
+     * Update the UserFollowingList
+     *
+     * @params UserFollowingList: The UserFollowingList object of this user
+     * @progress Void
+     * @return Void
+     */
+    public static class UpdateUserFollowingListTask extends AsyncTask<UserFollowingList, Void, Void> {
+
+        @Override
+        protected Void doInBackground(UserFollowingList... userFollowingLists) {
+            verifySettings();
+
+            UserFollowingList userFollowingList = userFollowingLists[0];
+
+            // Update this userProfile to online database
+            Index index = new Index.Builder(userFollowingList)
+                    .index(SEARCH_INDEX)
+                    .type(SEARCH_TYPE_FOLLOWINGS)
+                    .id(userFollowingList.getUserName())
+                    .build();
+
+            try {
+                DocumentResult execute = client.execute(index);
+
+                if (execute.isSucceeded()) {
+                    Log.d("update", "Update User Habits Success");
+                } else {
+                    Log.d("update", "Update User Habits Fail");
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
             }
 
             return null;
