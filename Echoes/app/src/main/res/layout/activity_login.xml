@@ -89,11 +89,15 @@
                     android:layout_width="280dp"
                     android:layout_height="60dp"
 
+                    android:inputType="textVisiblePassword"
+
                     android:textColor="@color/white"
 
                     android:textColorHint="@color/white"
 
-                    android:textSize="23dp"
+                    android:imeOptions="actionDone"
+
+                    android:textSize="20dp"
                     android:hint="Username"
 
 
@@ -110,7 +114,7 @@
                 android:transitionName="transition"
                 android:layout_width="300dp"
                 android:layout_height="60dp"
-                android:textStyle="bold"
+
                 android:layout_gravity="center"
                 android:layout_marginBottom="24dp"
                 android:layout_marginTop="50dp"
@@ -143,7 +147,7 @@
                     android:layout_height="wrap_content"
                     android:text=" Create One!"
                     android:textColor="@color/white"
-                    android:textStyle="bold"
+
                     android:textSize="18dp"
                     />
 

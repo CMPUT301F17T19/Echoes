@@ -405,7 +405,7 @@ public class SignUpActivity extends AppCompatActivity {
         main_menu_Intent.putExtra(LOGIN_USERNAME, login_UserName);
 
         int cx = 380;
-        int cy = 990;
+        int cy = 1010;
 
         Animator animator = ViewAnimationUtils.createCircularReveal(animateView,cx,cy,0,getResources().getDisplayMetrics().heightPixels * 1.2f);
         animator.setDuration(400);

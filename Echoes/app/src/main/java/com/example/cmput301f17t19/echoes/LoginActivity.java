@@ -11,16 +11,20 @@
 package com.example.cmput301f17t19.echoes;
 
 import android.animation.Animator;
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewAnimationUtils;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.AccelerateInterpolator;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -61,6 +65,8 @@ public class LoginActivity extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
 
 
+
+        //getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
         /*
         Window window = this.getWindow();
 
@@ -101,8 +107,30 @@ public class LoginActivity extends AppCompatActivity  {
 
 
 
+
         //check and handle sign_in,sign_up stuff
         userEditText = (EditText) findViewById(R.id.username);
+
+        userEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                boolean handled = false;
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
+
+
+
+                    hideKeyboard(LoginActivity.this);
+
+                    login();
+
+
+                    handled = true;
+                }
+                return handled;
+            }
+        });
+
+        userEditText.requestFocus();
 
         signupTextView = (TextView) findViewById(R.id.link_signup);
 
@@ -252,5 +280,23 @@ public class LoginActivity extends AppCompatActivity  {
         Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
         startActivity(intent);
     }
+
+
+
+
+
+    public void hideKeyboard(Activity activity) {
+        InputMethodManager imm = (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
+        //Find the currently focused view, so we can grab the correct window token from it.
+        View view = activity.getCurrentFocus();
+        //If no view currently has focus, create a new one, just so we can grab a window token from it
+        if (view == null) {
+            view = new View(activity);
+        }
+        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+    }
+
+
+
 
 }
