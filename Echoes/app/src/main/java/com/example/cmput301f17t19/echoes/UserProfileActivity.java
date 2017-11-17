@@ -24,6 +24,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.TextView;
 
 import static com.example.cmput301f17t19.echoes.SelectPhotoController.loadPhoto;
@@ -39,9 +40,13 @@ public class UserProfileActivity extends AppCompatActivity {
 
     public static final String USERPROFILE_TAG = "USERPROFILE_TAG";
 
+    public static final String SEARCHED_USERPROFILE_TAG = "SEARCHED_USERPROFILE_TAG";
+
     private String profile_username;
 
     private UserProfile userProfile;
+
+    private String searched_profile_username;
 
     private OfflineStorageController offlineStorageController;
 
@@ -53,6 +58,11 @@ public class UserProfileActivity extends AppCompatActivity {
     private TextView profile_userPhone_TextView;
     private TextView profile_userFollower_TextView;
     private TextView profile_userFollowing_TextView;
+
+    // Send request button
+    private Button request_Button;
+
+    private Activity mActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,6 +92,8 @@ public class UserProfileActivity extends AppCompatActivity {
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
 
+        mActivity = this;
+
         profile_ImageButton = (de.hdodenhof.circleimageview.CircleImageView) findViewById(R.id.profile_photo);
 
         profile_username_TextView = (TextView) findViewById(R.id.profile_username);
@@ -91,33 +103,33 @@ public class UserProfileActivity extends AppCompatActivity {
         profile_userFollower_TextView = (TextView) findViewById(R.id.follower_num);
         profile_userFollowing_TextView = (TextView) findViewById(R.id.following_num);
 
+        request_Button = (Button) findViewById(R.id.Request_Button);
+
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
             if (bundle.getString(USERPROFILE_TAG) != null) {
                 // Get the username passed from other activity
                 profile_username = bundle.getString(USERPROFILE_TAG);
 
+                // Get the UserProfile object with the given username
+                offlineStorageController = new OfflineStorageController(this, profile_username);
+
+            } else if (bundle.getString(SEARCHED_USERPROFILE_TAG) != null) {
+                // Get the searched profile username passed from other activity
+                searched_profile_username = bundle.getString(SEARCHED_USERPROFILE_TAG);
+
+                // Get the UserProfile object with the given username
+                offlineStorageController = new OfflineStorageController(this, searched_profile_username);
+
             } else {
                 // For UserProfileActivity test
                 profile_username = "dummy3";
             }
 
-            // Get the UserProfile object with the given username
-            offlineStorageController = new OfflineStorageController(this, profile_username);
-
             userProfile = offlineStorageController.readFromFile();
 
-            // Set User Profile Photo, Username, UserBioComment, Email, PhoneNumber, Num of Followers and Following
-            if (userProfile.getProfilePicture() != null){
-                profile_ImageButton.setImageBitmap(BitmapFactory.decodeByteArray(userProfile.getProfilePicture(), 0, userProfile.getProfilePicture().length));
-            }
+            setUI();
 
-            profile_username_TextView.setText(userProfile.getUserName());
-            profile_userComment_TextView.setText(userProfile.getComment());
-            profile_userEmail_TextView.setText(userProfile.getEmailAddress());
-            profile_userPhone_TextView.setText(userProfile.getPhoneNumber());
-            profile_userFollower_TextView.setText(Integer.toString(userProfile.getFollower_list().size()));
-            profile_userFollowing_TextView.setText(Integer.toString(userProfile.getFollowing().size()));
         } else {
             unitTest();
         }
@@ -132,6 +144,84 @@ public class UserProfileActivity extends AppCompatActivity {
                 profilePhoto_dialog.show();
             }
         });
+    }
+
+    /**
+     * Set User Interface
+     */
+    private void setUI() {
+        if (searched_profile_username == null) {
+            // The profile of the login user
+            // No need to show request button
+            request_Button.setVisibility(View.INVISIBLE);
+
+            // onClickLister for profile image button
+            profile_ImageButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    // show the dialog
+                    AlertDialog profilePhoto_dialog = buildAlertDialog().create();
+                    profilePhoto_dialog.show();
+                }
+            });
+        } else {
+            // Show the request button
+            // No need to show request button
+            request_Button.setVisibility(View.VISIBLE);
+
+            // Set the text of the request Button
+            int followingIndicator = FollowingSharingController.checkSearchedUserStat(HabitsFollowingActivity.getLogin_userProfile(), searched_profile_username);
+
+            if (followingIndicator == 0) {
+                // Already followed this searched user, able to unfollow
+                request_Button.setText(R.string.unfollow);
+            } else if (followingIndicator == 1) {
+                // Already sent following request (pending)
+                request_Button.setText(R.string.sentRequest);
+            } else if (followingIndicator == 2) {
+                // Able to send follow request
+                request_Button.setText(R.string.follow);
+            }
+
+            request_Button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    int FollowingIndicator = FollowingSharingController.checkSearchedUserStat(HabitsFollowingActivity.getLogin_userProfile(), searched_profile_username);
+
+                    if (FollowingIndicator == 0) {
+                        // Unfollow the searched user
+                        FollowingSharingController.UnfollowUser(HabitsFollowingActivity.getLogin_userProfile(), userProfile, mActivity);
+
+                        // Set the button to follow (Able to follow again)
+                        request_Button.setText(R.string.follow);
+
+                    } else if (FollowingIndicator == 1) {
+                        // Pending request, do nothing
+
+                    } else if (FollowingIndicator == 2) {
+                        // Follow the search user
+                        FollowingSharingController.sendFollowingRequest(HabitsFollowingActivity.getLogin_userProfile(), userProfile, mActivity);
+
+                        // Set the button to pending
+                        request_Button.setText(R.string.sentRequest);
+                    }
+                }
+            });
+        }
+
+        // Set User Profile Photo, Username, UserBioComment, Email, PhoneNumber, Num of Followers and Following
+        if (userProfile.getProfilePicture() != null){
+            profile_ImageButton.setImageBitmap(BitmapFactory.decodeByteArray(userProfile.getProfilePicture(), 0, userProfile.getProfilePicture().length));
+        }
+
+        profile_username_TextView.setText(userProfile.getUserName());
+        profile_userComment_TextView.setText(userProfile.getComment());
+        profile_userEmail_TextView.setText(userProfile.getEmailAddress());
+        profile_userPhone_TextView.setText(userProfile.getPhoneNumber());
+        profile_userFollower_TextView.setText(Integer.toString(userProfile.getFollower_list().size()));
+        profile_userFollowing_TextView.setText(Integer.toString(userProfile.getFollowing().size()));
     }
 
     /**

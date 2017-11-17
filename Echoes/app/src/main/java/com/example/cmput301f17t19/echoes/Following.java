@@ -19,16 +19,14 @@ import java.util.concurrent.ExecutionException;
  * @version 1.0
  * @since 1.0
  */
-public class Following {
-    private String username;
-
+public class Following extends Follow_Request {
     /**
      * Constructor for the Following object, set the username of the following
      *
      * @param Username: String, the username of the follower
      */
     public Following(String Username) {
-        this.username = Username;
+        super(Username);
     }
 
     /**
@@ -39,7 +37,7 @@ public class Following {
     public UserProfile getUserProfileOnline() {
         // Read the UserProfile with username from online database
         ElasticSearchController.GetUserProfileTask getUserProfileTask = new ElasticSearchController.GetUserProfileTask();
-        getUserProfileTask.execute(username);
+        getUserProfileTask.execute(super.getUsername());
 
         try {
             UserProfile followingUserProfile = getUserProfileTask.get();

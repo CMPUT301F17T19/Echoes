@@ -23,6 +23,8 @@ import io.searchbox.client.JestResult;
 import io.searchbox.core.DocumentResult;
 import io.searchbox.core.Get;
 import io.searchbox.core.Index;
+import io.searchbox.core.Search;
+import io.searchbox.core.SearchResult;
 
 /**
  * Elastic Search Controller
@@ -191,6 +193,53 @@ public class ElasticSearchController {
 
             } catch (IOException e) {
                 e.printStackTrace();
+            }
+
+            return null;
+        }
+    }
+
+    /**
+     * Get a list of user whose username matches with given string
+     *
+     * @params String: The username searched
+     * @progress Void
+     * @return UserProfile: The UserProfile of the searched user
+     */
+    public static class SearchUsernameTask extends AsyncTask<String, Void, UserProfile> {
+
+        @Override
+        protected UserProfile doInBackground(String... strings) {
+            verifySettings();
+
+            String searchedWord = strings[0];
+
+            // search user whose _id(username) matches the searched word (Exact match so far)
+            String query = "{\n" +
+                    "    \"query\" : {\n" +
+                    "        \"term\" : { \"_id\" : \"" + searchedWord + "\" }\n" +
+                    "    }\n" +
+                    "}";
+
+            Search search = new Search.Builder(query)
+                    .addIndex(SEARCH_INDEX)
+                    .addType(SEARCH_TYPE)
+                    .build();
+
+            try {
+                // get the results of the query
+                SearchResult result = client.execute(search);
+                if(result.isSucceeded()){
+                    UserProfile searchedUserProfile = result.getSourceAsObject(UserProfile.class);
+
+                    return searchedUserProfile;
+
+                } else {
+                    Log.i("Error", "the search query failed to find any username that matched");
+                }
+            }
+            catch (Exception e) {
+                Log.i("Error", "Something went wrong when we tried to communicate with the elasticsearch server!");
             }
 
             return null;

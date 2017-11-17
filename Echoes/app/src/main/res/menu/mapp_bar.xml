@@ -6,6 +6,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <!--The message View of the user-->
+    <item
+        android:id="@+id/action_UserMessage"
+        android:icon="@drawable/message_ic"
+        android:title="@string/user_message"
+        app:showAsAction="ifRoom"/>
+
     <!--User Profile View-->
     <item
         android:id="@+id/action_UserProfile"
