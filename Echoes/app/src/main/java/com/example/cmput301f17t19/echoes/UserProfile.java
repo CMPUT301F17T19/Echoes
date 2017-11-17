@@ -69,7 +69,7 @@ public class UserProfile {
      *
      * @param receivedRequests: ArrayList<ReceivedRequest>, the following request list received from other user
      */
-    public void addReceivedRequest(ArrayList<ReceivedRequest> receivedRequests){
+    public void setReceivedRequest(ArrayList<ReceivedRequest> receivedRequests){
         receivedRequests_list = receivedRequests;
     }
 

@@ -12,6 +12,7 @@ package com.example.cmput301f17t19.echoes;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,7 +21,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.text.SimpleDateFormat;
+import java.util.concurrent.ExecutionException;
 
 /**
  * Request Overview Recycler View Adapter
@@ -104,24 +105,58 @@ public class RequestOverviewAdapter extends RecyclerView.Adapter<RequestOverview
          *
          * @param position: The position of the Request User Profile object in the List to be bound with the viewHolder
          */
-        private void bind(int position) {
+        private void bind(final int position) {
             // Get the request user profile object at the specific position in Received Requests list
-            UserProfile requestUser_pos = UserMessageActivity.get
-            Habit habit_pos = MyHabitsActivity.getMyHabitList().getHabits().get(position);
+            final ReceivedRequest receivedRequest_pos = UserMessageActivity.getReceivedRequests().get(position);
 
-            // Set the comment and date
-            habitTitleTextView.setText(habit_pos.getName());
-            habitReasonTextView.setText(habit_pos.getReason());
+            ElasticSearchController.GetUserProfileTask getUserProfileTask = new ElasticSearchController.GetUserProfileTask();
+            getUserProfileTask.execute(receivedRequest_pos.getUsername());
 
-            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-            habitDateTextView.setText(simpleDateFormat.format(habit_pos.getStartDate()));
+            try {
+                UserProfile userProfile = getUserProfileTask.get();
 
-            HabitStatus habitStatus = new HabitStatus(MyHabitsActivity.getLogin_userProfile(), habit_pos);
-            habitStatusTextView.setText(Float.toString(habitStatus.statisticalPlannedHabitStatus()));
+                if (userProfile != null) {
+                    if (userProfile.getProfilePicture() != null) {
+                        // Set profile photo
+                        requestUserImage.setImageBitmap(BitmapFactory.decodeByteArray(userProfile.getProfilePicture(),0,userProfile.getProfilePicture().length));
+                    }
+                }
+
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            }
+
+            // Set the username
+            requestUserName.setText(receivedRequest_pos.getUsername());
+
+            // Accept button
+            accept_Button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    // Accept the following request from the selected user
+                    FollowingSharingController.acceptFollowingRequest(UserMessageActivity.getLogin_userProfile(), receivedRequest_pos.getUsername(), mContext);
+
+                    // Remove the selected request from the list
+                    UserMessageActivity.getReceivedRequests().remove(position);
+                    UserMessageActivity.getRequestOverviewAdapter().notifyDataSetChanged();
+                }
+            });
+
+            // Decline button
+            decline_Button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    // Remove the selected request from the list
+                    UserMessageActivity.getReceivedRequests().remove(position);
+                    UserMessageActivity.getRequestOverviewAdapter().notifyDataSetChanged();
+                }
+            });
         }
 
         /**
-         * Send the intent to open the HabitDetail Activity of  the selected Habit
+         * Send the intent to open the UserProfile Activity of  the requested user
          *
          * @param view: View, the view of Habit clicked
          */
@@ -131,15 +166,14 @@ public class RequestOverviewAdapter extends RecyclerView.Adapter<RequestOverview
             int adapterPosition = getAdapterPosition();
 
             // The selected Habit object
-            Habit selected_Habit = MyHabitsActivity.getMyHabitList().getHabits().get(adapterPosition);
+            ReceivedRequest selected_ReceivedRequest = UserMessageActivity.getReceivedRequests().get(adapterPosition);
 
-            // Start Habit Detail Activity
-            // Show the details of the selected Habit object in Habit Detail Screen
-            Intent habitDetail_Intent = new Intent(mContext, HabitDetail.class);
-            // Pass the position of the selected Habit item
-            habitDetail_Intent.putExtra(SELECTED_HABIT_POSITION, adapterPosition);
+            // Start UserProfile Activity
+            Intent userProfile_Intent = new Intent(mContext, HabitDetail.class);
+            // Pass the username of the selected received request
+            userProfile_Intent.putExtra(UserProfileActivity.SEARCHED_USERPROFILE_TAG, selected_ReceivedRequest.getUsername());
 
-            mContext.startActivity(habitDetail_Intent);
+            mContext.startActivity(userProfile_Intent);
 
         }
     }

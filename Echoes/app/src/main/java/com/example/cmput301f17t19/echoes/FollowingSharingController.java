@@ -180,4 +180,67 @@ public class FollowingSharingController {
             e.printStackTrace();
         }
     }
+
+    /**
+     * The login user accept the request sent from selectedRequestUsername
+     * @param loginUserProfile: UserProfile, the user profile of the login user
+     * @param selectedRequestUsername: String, the username of the selected Request
+     * @param context: Context
+     */
+    public static void acceptFollowingRequest(UserProfile loginUserProfile, String selectedRequestUsername, Context context) {
+        // Add the selectedRequestUsername to the follower list of the login user
+        loginUserProfile.addFollower(new Follower(selectedRequestUsername));
+
+        // Remove the corresponding received request of the login user
+        ElasticSearchController.GetUserReceivedRequestsTask getUserReceivedRequestsTask = new ElasticSearchController.GetUserReceivedRequestsTask();
+        getUserReceivedRequestsTask.execute(loginUserProfile.getUserName());
+
+        try {
+            UserReceivedRequestsList userReceivedRequestsList = getUserReceivedRequestsTask.get();
+
+            // The arraylist of the received request of the login user
+            ArrayList<ReceivedRequest> receivedRequests = userReceivedRequestsList.getReceivedRequests();
+
+            // Remove the corresponding selected user
+            for (ReceivedRequest receivedRequest : receivedRequests) {
+                if (receivedRequest.getUsername().equals(selectedRequestUsername)) {
+                    receivedRequests.remove(receivedRequest);
+                    break;
+                }
+            }
+
+            // Update online storage
+            ElasticSearchController.UpdateUserReceivedRequestsListTask updateUserReceivedRequestsListTask = new ElasticSearchController.UpdateUserReceivedRequestsListTask();
+            updateUserReceivedRequestsListTask.execute(userReceivedRequestsList);
+            // Update offline UserProfile and sync with online
+            loginUserProfile.setReceivedRequest(receivedRequests);
+            OfflineStorageController offlineStorageController = new OfflineStorageController(context, loginUserProfile.getUserName());
+            offlineStorageController.saveInFile(loginUserProfile);
+            ElasticSearchController.syncOnlineWithOffline(loginUserProfile);
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+
+
+        // Add login user to the following list of the user with selectedRequestUsername
+        ElasticSearchController.GetUserFollowingListTask getUserFollowingListTask = new ElasticSearchController.GetUserFollowingListTask();
+        getUserFollowingListTask.execute(selectedRequestUsername);
+
+        try {
+            UserFollowingList userFollowingList = getUserFollowingListTask.get();
+            userFollowingList.getFollowings().add(new Following(loginUserProfile.getUserName()));
+
+            // Save online data storage
+            ElasticSearchController.UpdateUserFollowingListTask updateUserFollowingListTask = new ElasticSearchController.UpdateUserFollowingListTask();
+            updateUserFollowingListTask.execute(userFollowingList);
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+    }
 }
