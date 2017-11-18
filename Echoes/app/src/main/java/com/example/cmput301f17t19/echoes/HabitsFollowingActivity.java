@@ -16,6 +16,9 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DividerItemDecoration;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -25,6 +28,9 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+
+import java.util.ArrayList;
+import java.util.concurrent.ExecutionException;
 
 import static com.example.cmput301f17t19.echoes.LoginActivity.LOGIN_USERNAME;
 
@@ -41,6 +47,14 @@ public class HabitsFollowingActivity extends AppCompatActivity {
     private static String login_UserName;
     // The user profile of the login user
     private static UserProfile login_userProfile;
+
+    private RecyclerView habitStatus_RecyclerView;
+    private static HabitStatusAdapter habitStatusAdapter;
+
+    // ArrayList of followings habits statuses of the login user
+    private ArrayList<Following> myFollowings;
+    // array list of FollowingHabitsStatus, containint all habits statuses of my followings
+    private static ArrayList<FollowingHabitsStatus> myFollowingHabitsStatuses;
 
     private EditText searchUser_EditText;
     private Button searchUser_Button;
@@ -99,6 +113,18 @@ public class HabitsFollowingActivity extends AppCompatActivity {
                 }
             }
         });
+
+        // Set up recycler view
+        habitStatus_RecyclerView = (RecyclerView) findViewById(R.id.habitstatus_recyclerView);
+
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+        habitStatus_RecyclerView.setLayoutManager(layoutManager);
+
+        DividerItemDecoration mDividerItemDecoration = new DividerItemDecoration(habitStatus_RecyclerView.getContext(),
+                layoutManager.getOrientation());
+        habitStatus_RecyclerView.addItemDecoration(mDividerItemDecoration);
+
+        habitStatus_RecyclerView.setHasFixedSize(true);
     }
 
     @Override
@@ -106,6 +132,41 @@ public class HabitsFollowingActivity extends AppCompatActivity {
         super.onStart();
 
         login_userProfile = OfflineStorageController.getLogin_UserProfile(this, login_UserName);
+
+        // Get the following list
+        ElasticSearchController.GetUserFollowingListTask getUserFollowingListTask = new ElasticSearchController.GetUserFollowingListTask();
+        getUserFollowingListTask.execute(login_UserName);
+
+        try {
+            UserFollowingList userFollowingList = getUserFollowingListTask.get();
+
+            if (userFollowingList != null) {
+                myFollowings = userFollowingList.getFollowings();
+
+                // Update following list of the login user in userprofile
+                login_userProfile.setFollowing(myFollowings);
+                // Update offline and sync with online
+                OfflineStorageController offlineStorageController = new OfflineStorageController(this, login_UserName);
+                offlineStorageController.saveInFile(login_userProfile);
+                ElasticSearchController.syncOnlineWithOffline(login_userProfile);
+
+                // Create the array list of FollowingHabitsStatus, containint all habits statuses of my followings
+                myFollowingHabitsStatuses = FollowingSharingController.createFollowingHabitsStatuses(myFollowings);
+
+                habitStatusAdapter = new HabitStatusAdapter(this);
+                habitStatus_RecyclerView.setAdapter(habitStatusAdapter);
+
+            } else {
+                myFollowings = new ArrayList<Following>();
+            }
+
+
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
 
         searchUser_EditText.setText("");
     }
@@ -161,5 +222,12 @@ public class HabitsFollowingActivity extends AppCompatActivity {
      */
     public static UserProfile getLogin_userProfile() {
         return login_userProfile;
+    }
+
+    /**
+     * Get array list of FollowingHabitsStatus
+     */
+    public static ArrayList<FollowingHabitsStatus> getMyFollowingHabitsStatuses() {
+        return myFollowingHabitsStatuses;
     }
 }

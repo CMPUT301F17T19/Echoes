@@ -367,6 +367,9 @@ public class HabitHistoryActivity extends AppCompatActivity {
         // Update Screen
         habitEventOverviewAdapter.notifyDataSetChanged();
 
+        // Update the Habit Status for the login user for all habits
+        login_userProfile = HabitStatus.updateAllHabitsStatus(login_userProfile);
+
         // Update offline file
         OfflineStorageController offlineStorageController = new OfflineStorageController(mContext, login_userProfile.getUserName());
         offlineStorageController.saveInFile(login_userProfile);

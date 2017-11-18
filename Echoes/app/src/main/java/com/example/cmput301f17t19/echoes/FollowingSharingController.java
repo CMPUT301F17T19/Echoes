@@ -266,4 +266,58 @@ public class FollowingSharingController {
             e.printStackTrace();
         }
     }
+
+    /**
+     * Return an array list of FollowingHabitsStatus, containint all habits statuses of my followings
+     *
+     * @param myFollowings: ArrayList<Following>: the users I'm following
+     * @return ArrayList<FollowingHabitsStatus>: an array list of FollowingHabitsStatus, containint all habits statuses of my followings
+     */
+    public static ArrayList<FollowingHabitsStatus> createFollowingHabitsStatuses(ArrayList<Following> myFollowings) {
+        ArrayList<FollowingHabitsStatus> myFollowingHabitsStatuses = new ArrayList<FollowingHabitsStatus>();
+
+        for (Following following : myFollowings) {
+            // Get the habits list of this following
+            // Get the user profile of this following
+            ElasticSearchController.GetUserProfileTask getUserProfileTask = new ElasticSearchController.GetUserProfileTask();
+            getUserProfileTask.execute(following.getUsername());
+
+            try {
+                UserProfile following_UserProfile = getUserProfileTask.get();
+
+                if (following_UserProfile != null) {
+                    // Get the HabitList of this user
+                    HabitList followingHabitList = following_UserProfile.getHabit_list();
+                    ArrayList<Habit> followingHabits = followingHabitList.getHabits();
+
+                    for (Habit habit : followingHabits) {
+                        // Get the habitEvent list of this habit
+                        ArrayList<HabitEvent> thisHabitEvents = new ArrayList<HabitEvent>();
+
+                        HabitEventList allHabitEventList = following_UserProfile.getHabit_event_list();
+                        ArrayList<HabitEvent> allHabitEvents = allHabitEventList.getHabitEvents();
+
+                        for (HabitEvent habitEvent : allHabitEvents) {
+                            if (habitEvent.getTitle().equals(habit.getName())) {
+                                // Add this habit event to this Habit's HabitEvents list
+                                thisHabitEvents.add(habitEvent);
+                            }
+                        }
+
+                        FollowingHabitsStatus followingHabitsStatus = new FollowingHabitsStatus(following_UserProfile.getUserName(), following_UserProfile.getProfilePicture(), habit, thisHabitEvents);
+
+                        // Add this followingHabitsStatus to array list
+                        myFollowingHabitsStatuses.add(followingHabitsStatus);
+                    }
+                }
+
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return myFollowingHabitsStatuses;
+    }
 }

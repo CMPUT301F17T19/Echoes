@@ -172,6 +172,13 @@ public class UserProfile {
     }
 
     /**
+     * Set the HabitList of the user
+     */
+    public void setHabit_list(HabitList habitList) {
+        this.habit_list = habitList;
+    }
+
+    /**
      * Get the HabitEventList of the user
      *
      * @return HabitEventList: the HabitEventList of the user

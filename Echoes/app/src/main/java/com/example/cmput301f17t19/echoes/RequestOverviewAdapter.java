@@ -76,7 +76,7 @@ public class RequestOverviewAdapter extends RecyclerView.Adapter<RequestOverview
     }
 
     /**
-     * View Holder for each HabitEvent object displayed in HabitHistory
+     * View Holder for each Request object displayed in Received Requests
      */
     class RequestOverviewViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
