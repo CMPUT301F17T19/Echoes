@@ -337,6 +337,18 @@ public class SignUpActivity extends AppCompatActivity {
                       ElasticSearchController.AddNewUserProfileTask addNuewUserProfileTask = new ElasticSearchController.AddNewUserProfileTask();
                       addNuewUserProfileTask.execute(userProfile);
 
+                      // Create new userReceivedRequestList for this user
+                      UserReceivedRequestsList userReceivedRequestsList = new UserReceivedRequestsList(UserName.getText().toString().trim());
+                      // Add to online data storage
+                      ElasticSearchController.AddNewUserReceivedRequestsTask addNewUserReceivedRequestsTask = new ElasticSearchController.AddNewUserReceivedRequestsTask();
+                      addNewUserReceivedRequestsTask.execute(userReceivedRequestsList);
+
+                      // Create new userFollowingList for this user
+                      UserFollowingList userFollowingList = new UserFollowingList(UserName.getText().toString().trim());
+                      // Add to online data storage
+                      ElasticSearchController.AddNewUserFollowingsTask addNewUserFollowingsTask = new ElasticSearchController.AddNewUserFollowingsTask();
+                      addNewUserFollowingsTask.execute(userFollowingList);
+
 
                       Handler handler=  new Handler();
 

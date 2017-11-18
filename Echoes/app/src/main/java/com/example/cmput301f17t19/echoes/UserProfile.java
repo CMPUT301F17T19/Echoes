@@ -32,7 +32,7 @@ public class UserProfile {
     private HabitEventList habit_event_list;
     private ArrayList<Following> following_list;
     private ArrayList<Follower> follower_list;
-    private ArrayList<Request> requests;
+    private ArrayList<ReceivedRequest> receivedRequests_list;
 
     /**
      * Constructor for the UserProfile for each user
@@ -53,7 +53,7 @@ public class UserProfile {
 
         this.following_list = new ArrayList<Following>();
         this.follower_list = new ArrayList<Follower>();
-        this.requests = new ArrayList<Request>();
+        this.receivedRequests_list = new ArrayList<ReceivedRequest>();
     }
 
     /**
@@ -65,12 +65,21 @@ public class UserProfile {
     }
 
     /**
-     * Add the request from other user
+     * Set the Received Requests list
      *
-     * @param request: Request, the following request from other user
+     * @param receivedRequests: ArrayList<ReceivedRequest>, the following request list received from other user
      */
-    public void addRequest(Request request){
-        requests.add(request);
+    public void setReceivedRequest(ArrayList<ReceivedRequest> receivedRequests){
+        receivedRequests_list = receivedRequests;
+    }
+
+    /**
+     * Get the Received requests list
+     *
+     * @return receivedRequests
+     */
+    public ArrayList<ReceivedRequest> getReceivedRequests() {
+        return receivedRequests_list;
     }
 
     /**
@@ -163,6 +172,13 @@ public class UserProfile {
     }
 
     /**
+     * Set the HabitList of the user
+     */
+    public void setHabit_list(HabitList habitList) {
+        this.habit_list = habitList;
+    }
+
+    /**
      * Get the HabitEventList of the user
      *
      * @return HabitEventList: the HabitEventList of the user
@@ -171,6 +187,12 @@ public class UserProfile {
         return this.habit_event_list;
     }
 
+    /**
+     * Set the following list
+     */
+    public void setFollowing(ArrayList<Following> followings) {
+        following_list = followings;
+    }
 
     /**
      * Get the following array of the user
@@ -179,6 +201,13 @@ public class UserProfile {
      */
     public ArrayList<Following> getFollowing(){
         return following_list;
+    }
+
+    /**
+     * Add the follower in my follower list
+     */
+    public void addFollower(Follower follower) {
+        follower_list.add(follower);
     }
 
     /**

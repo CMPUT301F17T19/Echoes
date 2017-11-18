@@ -144,7 +144,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/following_title"
+            android:id="@+id/following_layout"
             android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -169,6 +169,11 @@
 
     </LinearLayout>
 
-
+    <Button
+        android:id="@+id/Request_Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="8dp"/>
 
 </LinearLayout>

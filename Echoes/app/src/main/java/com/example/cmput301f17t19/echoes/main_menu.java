@@ -134,8 +134,11 @@ public class main_menu extends AppCompatActivity {
      * @param view
      */
     public void Following(View view) {
-//        Intent intent = new Intent(this, Following.class);
-//        startActivity(intent);
+        Intent intent = new Intent(this, HabitsFollowingActivity.class);
+        intent.putExtra(LOGIN_USERNAME, login_UserName);
+
+        startActivity(intent);
+        finish();
     }
 
     /**

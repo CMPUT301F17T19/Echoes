@@ -129,7 +129,7 @@ public class MyHabitsActivity extends AppCompatActivity {
         super.onStart();
 
         // the User Profile of the login user
-        login_userProfile = getLogin_UserProfile();
+        login_userProfile = OfflineStorageController.getLogin_UserProfile(this, login_userName);
 
         // The HabitList of the login user
         mHabitList = login_userProfile.getHabit_list();
@@ -266,17 +266,6 @@ public class MyHabitsActivity extends AppCompatActivity {
 
         // Update Online data
         ElasticSearchController.syncOnlineWithOffline(login_userProfile);
-    }
-
-    /**
-     * Get the Login user Profile from offline file
-     *
-     * @return UserProfile: the User Profile of the login User
-     */
-    private UserProfile getLogin_UserProfile() {
-        OfflineStorageController offlineStorageController = new OfflineStorageController(this, login_userName);
-
-        return offlineStorageController.readFromFile();
     }
 
     /**

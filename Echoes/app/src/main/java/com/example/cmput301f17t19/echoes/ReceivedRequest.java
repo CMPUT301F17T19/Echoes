@@ -1,5 +1,5 @@
 /*
- * Class Name: Request
+ * Class Name: ReceivedRequest
  *
  * Version: Version 1.0
  *
@@ -17,7 +17,13 @@ package com.example.cmput301f17t19.echoes;
  * @version 1.0
  * @since 1.0
  */
-public class Request {
-
-
+public class ReceivedRequest extends Follow_Request {
+    /**
+     * Constructor for the Received Request object, set the username of the user sending the request
+     *
+     * @param Username: String, the username of the follower
+     */
+    public ReceivedRequest(String Username) {
+        super(Username);
+    }
 }

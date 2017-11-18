@@ -143,4 +143,26 @@ public class HabitStatus {
 
         return totalPlanned;
     }
+
+    /**
+     * Update the whole Habits status of the login user
+     */
+    public static UserProfile updateAllHabitsStatus(UserProfile loginUserProfile) {
+        // Update the Habit Status for the login user for all habits
+        HabitList habitList = loginUserProfile.getHabit_list();
+        ArrayList<Habit> userHabits = habitList.getHabits();
+
+        for (int i = 0; i < userHabits.size(); i++) {
+            // The status of this habit
+            HabitStatus habitStatus = new HabitStatus(loginUserProfile, userHabits.get(i));
+            // Set the status of this habit
+            userHabits.get(i).setProgress(habitStatus.statisticalPlannedHabitStatus());
+        }
+
+        habitList.setHabits(userHabits);
+
+        loginUserProfile.setHabit_list(habitList);
+
+        return loginUserProfile;
+    }
 }

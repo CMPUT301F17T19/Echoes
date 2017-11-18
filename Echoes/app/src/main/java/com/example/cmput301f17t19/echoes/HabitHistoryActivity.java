@@ -25,7 +25,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.support.v7.widget.helper.ItemTouchHelper;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -79,8 +78,6 @@ public class HabitHistoryActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Log.d("T", "oncreate");
-
 
         Window window = this.getWindow();
 
@@ -159,7 +156,7 @@ public class HabitHistoryActivity extends AppCompatActivity {
         super.onStart();
 
         // the User Profile of the login user
-        login_userProfile = getLogin_UserProfile();
+        login_userProfile = OfflineStorageController.getLogin_UserProfile(this, login_Username);
 
         Types = (Spinner) findViewById(R.id.habithistory_filter);
 
@@ -167,13 +164,14 @@ public class HabitHistoryActivity extends AppCompatActivity {
         mTypeHabitEventList = new HabitEventList();
         mTypeHabitEventList.setHabitEvents((ArrayList<HabitEvent>) login_userProfile.getHabit_event_list().getHabitEvents().clone());
 
-        habitEventOverviewAdapter = new HabitEventOverviewAdapter(this);
+        habitEventOverviewAdapter = new HabitEventOverviewAdapter(this, false);
 
         habitEventsRecyclerView.setAdapter(habitEventOverviewAdapter);
 
         // Set the Spinner
         spinnerTypes = getUserHabitTypes();
         type = spinnerTypes.get(0);
+        search_EditText.setText("");
 
         ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(
                 this, android.R.layout.simple_spinner_item, spinnerTypes);
@@ -366,23 +364,15 @@ public class HabitHistoryActivity extends AppCompatActivity {
         // Update Screen
         habitEventOverviewAdapter.notifyDataSetChanged();
 
+        // Update the Habit Status for the login user for all habits
+        login_userProfile = HabitStatus.updateAllHabitsStatus(login_userProfile);
+
         // Update offline file
         OfflineStorageController offlineStorageController = new OfflineStorageController(mContext, login_userProfile.getUserName());
         offlineStorageController.saveInFile(login_userProfile);
 
         // Update Online data
         ElasticSearchController.syncOnlineWithOffline(login_userProfile);
-    }
-
-    /**
-     * Get the Login user Profile from offline file
-     *
-     * @return UserProfile: the User Profile of the login User
-     */
-    private UserProfile getLogin_UserProfile() {
-        OfflineStorageController offlineStorageController = new OfflineStorageController(this, login_Username);
-
-        return offlineStorageController.readFromFile();
     }
 
     /**

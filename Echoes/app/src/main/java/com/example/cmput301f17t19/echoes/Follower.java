@@ -18,9 +18,7 @@ package com.example.cmput301f17t19.echoes;
  * @since 1.0
  */
 
-public class Follower {
-
-    private String username;
+public class Follower extends Follow_Request {
 
     /**
      * Constructor for the Follower object, set the username of the follower
@@ -28,7 +26,7 @@ public class Follower {
      * @param Username: String, the username of the follower
      */
     public Follower(String Username) {
-        this.username = Username;
+        super(Username);
     }
 }
 

@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -66,7 +65,7 @@ public class ToDoActivity extends AppCompatActivity {
 
         login_userName = intent.getStringExtra(LOGIN_USERNAME);
 
-        login_userProfile = getLogin_UserProfile();
+        login_userProfile = OfflineStorageController.getLogin_UserProfile(this, login_userName);
 
         myHabitList = login_userProfile.getHabit_list();
 
@@ -123,13 +122,12 @@ public class ToDoActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    //TODO: this is duplicate code! from myHabits. Refactor?
-    // gets the user's preofile so we can look at the HabitList
-    private UserProfile getLogin_UserProfile() {
-        OfflineStorageController offlineStorageController = new OfflineStorageController(this, login_userName);
-
-        return offlineStorageController.readFromFile();
-    }
+//    // gets the user's preofile so we can look at the HabitList
+//    private UserProfile getLogin_UserProfile() {
+//        OfflineStorageController offlineStorageController = new OfflineStorageController(this, login_userName);
+//
+//        return offlineStorageController.readFromFile();
+//    }
 
     // Check all of the users habits, only add ones that are scheduled for today.
     //TODO: implement system for removing habits from this list once done

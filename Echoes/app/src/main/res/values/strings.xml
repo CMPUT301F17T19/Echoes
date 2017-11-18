@@ -53,4 +53,29 @@
     <string name="following">Following</string>
     <string name="follower">Followers</string>
 
+    <string name="user_message">User Message</string>
+
+    <string name="habits_following">Habits Following</string>
+
+    <string name="searched_user">Searched Users</string>
+    <string name="next_page">Next Page</string>
+
+    <string name="search_user_hint">Please enter the username for search</string>
+
+    <string name="noUser_matched">No User Matched or Check Network Connection</string>
+
+    <string name="followed">Followed</string>
+    <string name="sentRequest">Pending Following Request</string>
+    <string name="follow">Follow + </string>
+
+    <string name="receivedRequest">Received Following Requests</string>
+
+    <string name="userMessage">My Messages</string>
+    <string name="accept">Accept</string>
+    <string name="decline">Decline</string>
+
+    <string name="network_error">Network Error</string>
+
+    <string name="followingHabitEvents">My Following Habit Events</string>
+
 </resources>

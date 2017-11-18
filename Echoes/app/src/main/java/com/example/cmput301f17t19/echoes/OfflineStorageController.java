@@ -10,6 +10,7 @@
 
 package com.example.cmput301f17t19.echoes;
 
+import android.app.Activity;
 import android.content.Context;
 import android.util.Log;
 
@@ -125,5 +126,18 @@ public class OfflineStorageController {
 
             throw new RuntimeException();
         }
+    }
+
+    /**
+     * Get the Login user Profile from offline file
+     *
+     * @param activity: Activity
+     * @param loginUserName: String, the login username
+     * @return UserProfile: the User Profile of the login User
+     */
+    public static UserProfile getLogin_UserProfile(Activity activity, String loginUserName) {
+        OfflineStorageController offlineStorageController = new OfflineStorageController(activity, loginUserName);
+
+        return offlineStorageController.readFromFile();
     }
 }
