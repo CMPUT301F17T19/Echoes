@@ -25,7 +25,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.support.v7.widget.helper.ItemTouchHelper;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -79,8 +78,6 @@ public class HabitHistoryActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Log.d("T", "oncreate");
-
 
         Window window = this.getWindow();
 
@@ -167,7 +164,7 @@ public class HabitHistoryActivity extends AppCompatActivity {
         mTypeHabitEventList = new HabitEventList();
         mTypeHabitEventList.setHabitEvents((ArrayList<HabitEvent>) login_userProfile.getHabit_event_list().getHabitEvents().clone());
 
-        habitEventOverviewAdapter = new HabitEventOverviewAdapter(this);
+        habitEventOverviewAdapter = new HabitEventOverviewAdapter(this, false);
 
         habitEventsRecyclerView.setAdapter(habitEventOverviewAdapter);
 

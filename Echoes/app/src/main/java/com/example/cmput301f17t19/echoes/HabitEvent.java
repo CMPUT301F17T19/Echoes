@@ -10,8 +10,12 @@
 
 package com.example.cmput301f17t19.echoes;
 
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.support.annotation.NonNull;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -21,7 +25,7 @@ import java.util.Date;
  * @version 1.0
  * @since 1.0
  */
-public class HabitEvent implements Comparable<HabitEvent> {
+public class HabitEvent implements Comparable<HabitEvent>, Parcelable {
     private String Title;
     private Date StartDate;
     private String Comments;
@@ -128,4 +132,63 @@ public class HabitEvent implements Comparable<HabitEvent> {
     public int compareTo(@NonNull HabitEvent habitEvent) {
         return this.StartDate.compareTo(habitEvent.getStartDate());
     }
+
+    /**
+     * Constructor used when reconstructing a habit event object from Parcel
+     *
+     * @param parcel: Parcel, the parcel used to recreate the habit event object
+     *
+     */
+    private HabitEvent(Parcel parcel) {
+        this.Title = parcel.readString();
+
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        try {
+            this.StartDate = simpleDateFormat.parse(parcel.readString());
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        this.Comments = parcel.readString();
+
+        this.EventPhoto = parcel.createByteArray();
+    }
+
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    /**
+     * Write the habit event object content to parcel
+     *
+     * @param out Parcel
+     * @param flags int
+     */
+    @Override
+    public void writeToParcel(Parcel out, int flags) {
+        out.writeString(this.Title);
+
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        out.writeString(simpleDateFormat.format(this.StartDate));
+
+        out.writeString(this.Comments);
+
+        out.writeByteArray(this.EventPhoto);
+    }
+
+    /**
+     * Create Habit Event object from parcel
+     */
+    public static final Parcelable.Creator<HabitEvent> CREATOR = new Parcelable.Creator<HabitEvent>() {
+
+        public HabitEvent createFromParcel(Parcel in) {
+            return new HabitEvent(in);
+        }
+
+        public HabitEvent[] newArray(int size) {
+            return new HabitEvent[size];
+        }
+    };
 }

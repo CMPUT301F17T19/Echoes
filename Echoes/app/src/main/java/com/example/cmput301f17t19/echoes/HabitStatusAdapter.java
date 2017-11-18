@@ -11,6 +11,7 @@
 package com.example.cmput301f17t19.echoes;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -18,6 +19,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+
+import static com.example.cmput301f17t19.echoes.FollowingHabitEventsActivity.FOLLOWINGHABITEVENT_TAG;
 
 /**
  * Habit Status Recycler View Adapter
@@ -125,8 +130,15 @@ public class HabitStatusAdapter extends RecyclerView.Adapter<HabitStatusAdapter.
          */
         @Override
         public void onClick(View view) {
-            //TODO
+            // The selected FollowingHabitsStatus
+            FollowingHabitsStatus selected_FollowingHabitsStatus = HabitsFollowingActivity.getMyFollowingHabitsStatuses().get(getAdapterPosition());
+            // The habit event list of this Habit
+            ArrayList<HabitEvent> habit_HabitEvents = selected_FollowingHabitsStatus.getFollowingHabitEvents();
 
+            Intent followingHabit_HabitEvents_Intent = new Intent(mContext, FollowingHabitEventsActivity.class);
+            followingHabit_HabitEvents_Intent.putExtra(FOLLOWINGHABITEVENT_TAG, habit_HabitEvents);
+
+            mContext.startActivity(followingHabit_HabitEvents_Intent);
         }
     }
 }

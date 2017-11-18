@@ -76,4 +76,6 @@
 
     <string name="network_error">Network Error</string>
 
+    <string name="followingHabitEvents">My Following Habit Events</string>
+
 </resources>

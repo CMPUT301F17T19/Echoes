@@ -36,7 +36,8 @@
         <activity android:name=".HabitEventDetailActivity" />
         <activity android:name=".HabitsFollowingActivity" />
         <activity android:name=".SearchedUserActivity" />
-        <activity android:name=".UserMessageActivity"></activity>
+        <activity android:name=".UserMessageActivity" />
+        <activity android:name=".FollowingHabitEventsActivity"></activity>
     </application>
 
 </manifest>
