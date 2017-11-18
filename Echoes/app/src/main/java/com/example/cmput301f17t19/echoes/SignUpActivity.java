@@ -10,19 +10,21 @@
 
 package com.example.cmput301f17t19.echoes;
 
+import android.animation.Animator;
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
+import android.os.Handler;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.ViewAnimationUtils;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
+import android.view.animation.AccelerateInterpolator;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -41,7 +43,7 @@ import static com.example.cmput301f17t19.echoes.SelectPhotoController.loadPhoto;
 public class SignUpActivity extends AppCompatActivity {
 
 
-
+    private View animateView;
 
 
     private OfflineStorageController offlineStorageController;
@@ -59,14 +61,14 @@ public class SignUpActivity extends AppCompatActivity {
 
     private byte[]   UserProfile_Picture = null;
 
-    private Button UserSignUp;
 
+    private br.com.simplepass.loading_button_lib.customViews.CircularProgressButton UserSignUp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
 
-
+        /*
         Window window = this.getWindow();
 
         // clear FLAG_TRANSLUCENT_STATUS flag:
@@ -80,7 +82,10 @@ public class SignUpActivity extends AppCompatActivity {
             window.setStatusBarColor(ContextCompat.getColor(this,R.color.dimPurple));
         }
 
+        */
 
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
 
         super.onCreate(savedInstanceState);
@@ -93,6 +98,8 @@ public class SignUpActivity extends AppCompatActivity {
 
         //reference link
 
+        animateView = findViewById(R.id.animate_view2);
+
         UserName = (EditText) findViewById(R.id.user_name);
         UserEmail = (EditText) findViewById(R.id.user_email);
         UserComment = (EditText) findViewById(R.id.user_comment);
@@ -100,7 +107,8 @@ public class SignUpActivity extends AppCompatActivity {
         UserPhone = (EditText) findViewById(R.id.phone_number);
 
 
-        UserSignUp = (Button) findViewById(R.id.signup);
+        UserSignUp = (br.com.simplepass.loading_button_lib.customViews.CircularProgressButton) findViewById(R.id.signup);
+
         profile_ImageButton = (de.hdodenhof.circleimageview.CircleImageView) findViewById(R.id.profile_image);
 
 
@@ -342,13 +350,31 @@ public class SignUpActivity extends AppCompatActivity {
                       addNewUserFollowingsTask.execute(userFollowingList);
 
 
-                      //login with this new userprofile data info to the main page
-                      Intent main_menu_Intent = new Intent(SignUpActivity.this, main_menu.class);
-                      main_menu_Intent.putExtra(LOGIN_USERNAME, UserName.getText().toString().trim());
+                      Handler handler=  new Handler();
 
-                      startActivity(main_menu_Intent);
 
-                      finish();
+
+                      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+
+                          UserSignUp.startAnimation();
+
+                          Runnable runnable = new Runnable()  {
+
+                              public void run() {
+
+                                  toNextPage();
+
+
+                              }
+
+
+                          };
+
+                          handler.postDelayed(runnable,1000);
+
+                      }
+
+
 
 
 
@@ -376,6 +402,53 @@ public class SignUpActivity extends AppCompatActivity {
         }
 
 
+
+    }
+
+
+
+
+
+    private void toNextPage(){
+
+
+        final String login_UserName = UserName.getText().toString().trim();
+        final Intent main_menu_Intent = new Intent(SignUpActivity.this, main_menu.class);
+        main_menu_Intent.putExtra(LOGIN_USERNAME, login_UserName);
+
+        int cx = 380;
+        int cy = 1010;
+
+        Animator animator = ViewAnimationUtils.createCircularReveal(animateView,cx,cy,0,getResources().getDisplayMetrics().heightPixels * 1.2f);
+        animator.setDuration(400);
+        animator.setInterpolator(new AccelerateInterpolator());
+        animateView.setVisibility(View.VISIBLE);
+        animator.start();
+        animator.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                UserSignUp.stopAnimation();
+                animateView.setVisibility(View.VISIBLE);
+                //ActivityOptions activityOptions = ActivityOptions.makeSceneTransitionAnimation(mActivity, Username_sign_in_button, "transition");
+                startActivity(main_menu_Intent);
+                finish();
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+
+            }
+        });
 
     }
 

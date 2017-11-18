@@ -3,6 +3,14 @@
   ~ Copyright (c) Team cmput301f17t19, CMPUT301, University of Alberta - All Rights Reserved. You may use, distribute, or modify this code under terms and conditions of the Code of Students Behaviour at University of Alberta
   -->
 
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.cmput301f17t19.echoes.SignUpActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -14,9 +22,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:id="@+id/myLayout2"
     android:paddingRight="@dimen/activity_horizontal_margin"
-
     android:background="@drawable/bg4"
-    tools:context="com.example.cmput301f17t19.echoes.SignUpActivity"
     >
 
     <ImageView
@@ -161,10 +167,15 @@
 
 
 
-        <Button
+        <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
+            app:spinning_bar_color="@color/white"
+            app:spinning_bar_width="4dp"
+            app:initialCornerAngle="50dp"
+            app:finalCornerAngle="50dp"
+            android:transitionName="transition"
             android:id="@+id/signup"
             android:layout_width="300dp"
-            android:layout_height="60dp"
+            android:layout_height="55dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             android:layout_gravity="center"
@@ -172,6 +183,7 @@
             android:layout_marginBottom="10dp"
             android:layout_marginTop="15dp"
             android:text="Sign Up"
+
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="20dp"
@@ -183,6 +195,15 @@
 
 </LinearLayout>
 
+    <View
+        android:id="@+id/animate_view2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/redPink"
+        android:visibility="invisible"
+        />
+
+</FrameLayout>
 
 
 

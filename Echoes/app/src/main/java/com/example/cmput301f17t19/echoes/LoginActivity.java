@@ -10,18 +10,26 @@
 
 package com.example.cmput301f17t19.echoes;
 
+import android.animation.Animator;
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.ViewAnimationUtils;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
+import android.view.animation.AccelerateInterpolator;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import br.com.simplepass.loading_button_lib.customViews.CircularProgressButton;
 
 
 /**
@@ -43,12 +51,14 @@ public class LoginActivity extends AppCompatActivity  {
     private static final int REQUEST_SIGNUP = 0;
 
 
+    private View animateView;
+
     // UI references.
     private TextView signupTextView;
     private EditText userEditText;
-    private Button loginButton;
 
 
+    private br.com.simplepass.loading_button_lib.customViews.CircularProgressButton Username_sign_in_button;
 
 
     @Override
@@ -56,6 +66,8 @@ public class LoginActivity extends AppCompatActivity  {
 
 
 
+        //getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
+        /*
         Window window = this.getWindow();
 
         // clear FLAG_TRANSLUCENT_STATUS flag:
@@ -68,13 +80,29 @@ public class LoginActivity extends AppCompatActivity  {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             window.setStatusBarColor(ContextCompat.getColor(this,R.color.dimPurple));
         }
+        */
+
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
 
         //activity initialization
         super.onCreate(savedInstanceState);
-        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+
         setContentView(R.layout.activity_login);
 
+
+       Username_sign_in_button = (CircularProgressButton) findViewById(R.id.username_sign_in_button);
+
+
+        Username_sign_in_button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+                login();
+
+
+            }
+        });
 
 
 
@@ -82,8 +110,35 @@ public class LoginActivity extends AppCompatActivity  {
 
         //check and handle sign_in,sign_up stuff
         userEditText = (EditText) findViewById(R.id.username);
-        loginButton = (Button) findViewById(R.id.username_sign_in_button);
+
+        userEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                boolean handled = false;
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
+
+
+
+                    hideKeyboard(LoginActivity.this);
+
+                    login();
+
+
+                    handled = true;
+                }
+                return handled;
+            }
+        });
+
+        userEditText.requestFocus();
+
         signupTextView = (TextView) findViewById(R.id.link_signup);
+
+
+
+        animateView = findViewById(R.id.animate_view);
+
+
 
         //handle signup when signup being clicked
         signupTextView.setOnClickListener(new View.OnClickListener() {
@@ -93,13 +148,14 @@ public class LoginActivity extends AppCompatActivity  {
         });
 
         //call signin handler when signin being clicked
+        /*
         loginButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 login();
             }
         });
 
-
+        */
     }
 
     @Override
@@ -115,7 +171,7 @@ public class LoginActivity extends AppCompatActivity  {
     private void login() {
 
         // check if username/password are empty, discard empty space
-        String login_UserName = userEditText.getText().toString().trim();
+        final String login_UserName = userEditText.getText().toString().trim();
 
         if (login_UserName.length() == 0) {
             Toast.makeText(LoginActivity.this, "Please provide a Username!", Toast.LENGTH_SHORT).show();
@@ -127,15 +183,35 @@ public class LoginActivity extends AppCompatActivity  {
 
 
             if (offlineStorageController.isFileExist()){
-
                 // User File exist, this user has logged in before
                 // Pass the login User to the main menu
-                Intent main_menu_Intent = new Intent(LoginActivity.this, main_menu.class);
-                main_menu_Intent.putExtra(LOGIN_USERNAME, login_UserName);
 
-                startActivity(main_menu_Intent);
 
-                finish();
+                Handler handler=  new Handler();
+
+
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+
+                    Username_sign_in_button.startAnimation();
+
+                    Runnable runnable = new Runnable()  {
+
+                        public void run() {
+
+                            toNextPage();
+
+
+                        }
+
+
+                };
+
+                handler.postDelayed(runnable,3000);
+
+                }
+
+
 
             } else{
 
@@ -145,6 +221,58 @@ public class LoginActivity extends AppCompatActivity  {
         }
     }
 
+
+
+
+
+
+    private void toNextPage(){
+
+
+        final String login_UserName = userEditText.getText().toString().trim();
+        final Intent main_menu_Intent = new Intent(LoginActivity.this, main_menu.class);
+        main_menu_Intent.putExtra(LOGIN_USERNAME, login_UserName);
+
+        int cx = 380;
+        int cy = 830;
+
+        Animator animator = ViewAnimationUtils.createCircularReveal(animateView,cx,cy,0,getResources().getDisplayMetrics().heightPixels * 1.2f);
+        animator.setDuration(400);
+        animator.setInterpolator(new AccelerateInterpolator());
+        animateView.setVisibility(View.VISIBLE);
+        animator.start();
+        animator.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                Username_sign_in_button.stopAnimation();
+                animateView.setVisibility(View.VISIBLE);
+                //ActivityOptions activityOptions = ActivityOptions.makeSceneTransitionAnimation(mActivity, Username_sign_in_button, "transition");
+                startActivity(main_menu_Intent);
+                finish();
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+
+            }
+        });
+
+    }
+
+
+
+
+
     /**
      * handling signup
      */
@@ -152,5 +280,23 @@ public class LoginActivity extends AppCompatActivity  {
         Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
         startActivity(intent);
     }
+
+
+
+
+
+    public void hideKeyboard(Activity activity) {
+        InputMethodManager imm = (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
+        //Find the currently focused view, so we can grab the correct window token from it.
+        View view = activity.getCurrentFocus();
+        //If no view currently has focus, create a new one, just so we can grab a window token from it
+        if (view == null) {
+            view = new View(activity);
+        }
+        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+    }
+
+
+
 
 }
