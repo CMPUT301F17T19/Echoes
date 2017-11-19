@@ -90,7 +90,7 @@
                     android:layout_height="60dp"
 
                     android:inputType="textVisiblePassword"
-
+                    android:maxLines="1"
                     android:textColor="@color/white"
 
                     android:textColorHint="@color/white"
@@ -136,7 +136,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="30dp"
                 android:text="No account yet?"
-                android:layout_marginLeft="55dp"
+                android:layout_marginLeft="62dp"
                 android:textColor="@color/monsoon"
                 android:textSize="18dip"/>
 
