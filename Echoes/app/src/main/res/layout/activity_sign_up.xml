@@ -130,6 +130,7 @@
             android:textColor="@color/white"
             android:ems="10"
             android:paddingStart="5dp"
+            android:inputType="textEmailAddress"
             android:hint="Email: OPTIONAL"
             />
 
@@ -146,6 +147,7 @@
             android:textColorHint="@color/white"
             android:textSize="18dp"
             android:backgroundTint="@color/white"
+            android:inputType="phone"
             android:textColor="@color/white"
             android:hint="Phone Number: OPTIONAL"
             />
@@ -161,6 +163,7 @@
             android:textColorHint="@color/white"
             android:textSize="18dp"
             android:textColor="@color/white"
+            android:inputType="text"
             android:backgroundTint="@color/white"
             android:hint="Say Something: OPTIONAL"
            />

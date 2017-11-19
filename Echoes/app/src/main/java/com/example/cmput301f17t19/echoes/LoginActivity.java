@@ -119,8 +119,6 @@ public class LoginActivity extends AppCompatActivity  {
 
 
 
-                    hideKeyboard(LoginActivity.this);
-
                     login();
 
 
@@ -185,6 +183,9 @@ public class LoginActivity extends AppCompatActivity  {
             if (offlineStorageController.isFileExist()){
                 // User File exist, this user has logged in before
                 // Pass the login User to the main menu
+
+
+                hideKeyboard(LoginActivity.this);
 
 
                 Handler handler=  new Handler();
