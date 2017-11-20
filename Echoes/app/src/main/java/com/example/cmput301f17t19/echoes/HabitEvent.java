@@ -172,6 +172,12 @@ public class HabitEvent implements Comparable<HabitEvent>, Parcelable {
         this.Comments = parcel.readString();
 
         this.EventPhoto = parcel.createByteArray();
+
+        this.location = Location.CREATOR.createFromParcel(parcel);
+        // Set null when location is not attached
+        if (this.location.getProvider() == null) {
+            this.location = null;
+        }
     }
 
 
@@ -196,6 +202,10 @@ public class HabitEvent implements Comparable<HabitEvent>, Parcelable {
         out.writeString(this.Comments);
 
         out.writeByteArray(this.EventPhoto);
+
+        if (this.location != null) {
+            location.writeToParcel(out, flags);
+        }
     }
 
     /**

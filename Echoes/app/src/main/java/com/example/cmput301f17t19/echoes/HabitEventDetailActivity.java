@@ -95,6 +95,7 @@ public class HabitEventDetailActivity extends AppCompatActivity {
     // location raido group
     private RadioGroup loc_RadioGroup;
     private RadioButton loc_yes_RadioButton;
+    private RadioButton loc_no_RadioButton;
 
     private TextView lat_loc_TextView;
     private TextView lon_loc_TextView;
@@ -136,6 +137,7 @@ public class HabitEventDetailActivity extends AppCompatActivity {
 
         loc_RadioGroup = (RadioGroup) findViewById(R.id.loc_radiogroup);
         loc_yes_RadioButton = (RadioButton) findViewById(R.id.Yes);
+        loc_no_RadioButton = (RadioButton) findViewById(R.id.No);
 
         lat_loc_TextView = (TextView) findViewById(R.id.lat_location);
         lon_loc_TextView = (TextView) findViewById(R.id.lon_location);
@@ -440,6 +442,8 @@ public class HabitEventDetailActivity extends AppCompatActivity {
             lon_loc_TextView.setText(Double.toString(selected_HabitEvent.getLocation().getLongitude()));
 
             loc_yes_RadioButton.setChecked(true);
+        } else {
+            loc_no_RadioButton.setChecked(true);
         }
 
         // Assign old habit type and habit date
