@@ -108,6 +108,14 @@ public class main_menu extends AppCompatActivity {
                 startActivity(userProfile_intent);
 
                 break;
+
+            case R.id.action_UserMessage:
+                // Pass the username of the login user to the user message activity
+                Intent userMessage_intent = new Intent(this, UserMessageActivity.class);
+                userMessage_intent.putExtra(LOGIN_USERNAME, login_UserName);
+                startActivity(userMessage_intent);
+
+                break;
         }
 
         return super.onOptionsItemSelected(item);

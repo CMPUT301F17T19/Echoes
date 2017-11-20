@@ -77,5 +77,9 @@
     <string name="network_error">Network Error</string>
 
     <string name="followingHabitEvents">My Following Habit Events</string>
+    <string name="title_activity_maps">Map</string>
+
+    <string name="select_loc">Select a Location</string>
+    <string name="save_selected_loc">Save selected location</string>
 
 </resources>

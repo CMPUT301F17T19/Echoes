@@ -10,6 +10,7 @@
 
 package com.example.cmput301f17t19.echoes;
 
+import android.location.Location;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
@@ -30,6 +31,7 @@ public class HabitEvent implements Comparable<HabitEvent>, Parcelable {
     private Date StartDate;
     private String Comments;
     private byte[] EventPhoto;
+    private Location location;
 
     /**
      * Constructor for the HabitEvent object
@@ -118,6 +120,24 @@ public class HabitEvent implements Comparable<HabitEvent>, Parcelable {
      */
     public void setEventPhoto(byte[] eventPhoto){
         this.EventPhoto = eventPhoto;
+    }
+
+    /**
+     * Set the location of the HabitEvent
+     *
+     * @param location1: Location, the location of the habit event
+     */
+    public void setLocation(Location location1) {
+        this.location = location1;
+    }
+
+    /**
+     * Get the location of the habit event
+     *
+     * @return Location: the location of the habit event
+     */
+    public Location getLocation() {
+        return location;
     }
 
     /**

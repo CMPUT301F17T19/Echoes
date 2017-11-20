@@ -137,19 +137,26 @@
             android:layout_height="wrap_content"
             android:text="Attch Location:" />
 
-        <RadioButton
-            android:id="@+id/Yes"
-            android:layout_width="wrap_content"
+        <RadioGroup
+            android:id="@+id/loc_radiogroup"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Yes"
-            android:layout_weight="0.11" />
+            android:layout_marginStart="8dp">
 
-        <RadioButton
-            android:id="@+id/No"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.21"
-            android:text="No" />
+            <RadioButton
+                android:id="@+id/Yes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yes"/>
+
+            <RadioButton
+                android:id="@+id/No"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No" />
+
+        </RadioGroup>
+
     </LinearLayout>
 
     <LinearLayout
@@ -163,13 +170,34 @@
             android:id="@+id/Location"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Location:" />
+            android:text="Location:"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"/>
 
-        <EditText
-            android:id="@+id/Type_Location"
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_weight="6">
+
+            <TextView
+                android:id="@+id/lat_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/lon_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/habitevent_select_loc_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/select_loc"
+            android:layout_weight="1"/>
 
     </LinearLayout>
 
