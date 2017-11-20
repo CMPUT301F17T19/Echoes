@@ -59,6 +59,8 @@ public class HabitsFollowingActivity extends AppCompatActivity {
     private EditText searchUser_EditText;
     private Button searchUser_Button;
 
+    private Button recentHabitEventsMap_Button;
+
     private Activity mActivity;
 
     @Override
@@ -111,6 +113,31 @@ public class HabitsFollowingActivity extends AppCompatActivity {
 
                     startActivity(searchUser_Intent);
                 }
+            }
+        });
+
+        recentHabitEventsMap_Button = (Button) findViewById(R.id.recentEventsMap_Button);
+
+        recentHabitEventsMap_Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Open the map to show the my followings' most recent habit events that have location
+                // The most recent habit events of my followings
+                ArrayList<HabitEvent> recentFollowingHabitEvents = FollowingSharingController.createFollowingRecentHabitEvents(myFollowings);
+
+                // Send the array list of the recent habit events with locations to map intent
+                ArrayList<HabitEvent> recentFollowingHabitEventsWithLocs = new ArrayList<HabitEvent>();
+                for (HabitEvent habitEvent : recentFollowingHabitEvents) {
+                    if (habitEvent.getLocation() != null) {
+                        recentFollowingHabitEventsWithLocs.add(habitEvent);
+                    }
+                }
+
+                // Open map
+                Intent map_intent = new Intent(mActivity, MapsActivity.class);
+                map_intent.putParcelableArrayListExtra(MapsActivity.HABIT_EVENT_SHOW_LOCATION_TAG, recentFollowingHabitEventsWithLocs);
+
+                startActivity(map_intent);
             }
         });
 
