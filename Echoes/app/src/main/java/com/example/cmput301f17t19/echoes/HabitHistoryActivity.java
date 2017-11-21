@@ -36,7 +36,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -128,7 +127,10 @@ public class HabitHistoryActivity extends AppCompatActivity {
         habitEventsMapButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), "Will be enabled in Project Part 5", Toast.LENGTH_SHORT).show();
+                Intent map_intent = new Intent(mContext, MapsActivity.class);
+                map_intent.putParcelableArrayListExtra(MapsActivity.HABIT_EVENT_SHOW_LOCATION_TAG, mTypeHabitEventList.getHabitEvents());
+
+                startActivity(map_intent);
             }
         });
 

@@ -320,4 +320,51 @@ public class FollowingSharingController {
 
         return myFollowingHabitsStatuses;
     }
+
+    /**
+     * Get all most recent habit events from my following
+     *
+     * @param myFollowings: ArrayList<Following>: the users I'm following
+     * @return ArrayList<HabitEvent>: an array list of most recent habit events of my followings
+     */
+    public static ArrayList<HabitEvent> createFollowingRecentHabitEvents(ArrayList<Following> myFollowings) {
+        ArrayList<HabitEvent> recentHabitEvents = new ArrayList<HabitEvent>();
+
+        for (Following following : myFollowings) {
+            // Get the habits list of this following
+            // Get the user profile of this following
+            ElasticSearchController.GetUserProfileTask getUserProfileTask = new ElasticSearchController.GetUserProfileTask();
+            getUserProfileTask.execute(following.getUsername());
+
+            try {
+                UserProfile following_UserProfile = getUserProfileTask.get();
+
+                if (following_UserProfile != null) {
+                    // Habit Types that added in recentHabitEvents
+                    ArrayList<String> addedHabitsTypes = new ArrayList<String>();
+
+                    // The habit events of the following
+                    ArrayList<HabitEvent> followingHabitEvents = following_UserProfile.getHabit_event_list().getHabitEvents();
+
+                    for (HabitEvent habitEvent : followingHabitEvents) {
+                        // Add the most recent habit event for each habit to the array
+                        // Check if the habitEvent's type has already been added to recent habit events array
+                        if (!addedHabitsTypes.contains(habitEvent.getTitle())) {
+                            // add this habit event to the most recent habit event array
+                            recentHabitEvents.add(habitEvent);
+
+                            addedHabitsTypes.add(habitEvent.getTitle());
+                        }
+                    }
+                }
+
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return recentHabitEvents;
+    }
 }

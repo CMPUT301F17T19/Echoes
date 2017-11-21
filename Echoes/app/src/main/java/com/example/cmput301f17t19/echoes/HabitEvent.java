@@ -10,6 +10,7 @@
 
 package com.example.cmput301f17t19.echoes;
 
+import android.location.Location;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
@@ -30,6 +31,8 @@ public class HabitEvent implements Comparable<HabitEvent>, Parcelable {
     private Date StartDate;
     private String Comments;
     private byte[] EventPhoto;
+    private Location location;
+    private boolean hasLocation;
 
     /**
      * Constructor for the HabitEvent object
@@ -121,6 +124,38 @@ public class HabitEvent implements Comparable<HabitEvent>, Parcelable {
     }
 
     /**
+     * Set the location of the HabitEvent
+     *
+     * @param location1: Location, the location of the habit event
+     */
+    public void setLocation(Location location1) {
+        this.location = location1;
+    }
+
+    /**
+     * Get the location of the habit event
+     *
+     * @return Location: the location of the habit event
+     */
+    public Location getLocation() {
+        return location;
+    }
+
+    /**
+     * Set location indicator
+     */
+    public void setLocationIndicator(boolean hasLocation) {
+        this.hasLocation = hasLocation;
+    }
+
+    /**
+     * Get the location indicator
+     */
+    public boolean getLocationIndicator() {
+        return this.hasLocation;
+    }
+
+    /**
      * Compare the date of this HabitEvent to the input habitEvent object
      *
      * @param habitEvent: HabitEvent
@@ -152,6 +187,12 @@ public class HabitEvent implements Comparable<HabitEvent>, Parcelable {
         this.Comments = parcel.readString();
 
         this.EventPhoto = parcel.createByteArray();
+
+        this.hasLocation = parcel.readByte() != 0;
+
+        if (this.hasLocation) {
+            this.location = Location.CREATOR.createFromParcel(parcel);
+        }
     }
 
 
@@ -176,6 +217,12 @@ public class HabitEvent implements Comparable<HabitEvent>, Parcelable {
         out.writeString(this.Comments);
 
         out.writeByteArray(this.EventPhoto);
+
+        out.writeByte((byte) (this.hasLocation ? 1 : 0));
+
+        if (this.location != null) {
+            location.writeToParcel(out, flags);
+        }
     }
 
     /**

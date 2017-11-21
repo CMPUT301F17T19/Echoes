@@ -24,6 +24,9 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 
+import java.util.ArrayList;
+import java.util.concurrent.ExecutionException;
+
 import static com.example.cmput301f17t19.echoes.LoginActivity.LOGIN_USERNAME;
 
 /**
@@ -108,6 +111,14 @@ public class main_menu extends AppCompatActivity {
                 startActivity(userProfile_intent);
 
                 break;
+
+            case R.id.action_UserMessage:
+                // Pass the username of the login user to the user message activity
+                Intent userMessage_intent = new Intent(this, UserMessageActivity.class);
+                userMessage_intent.putExtra(LOGIN_USERNAME, login_UserName);
+                startActivity(userMessage_intent);
+
+                break;
         }
 
         return super.onOptionsItemSelected(item);
@@ -175,8 +186,37 @@ public class main_menu extends AppCompatActivity {
      * @param view
      */
     public void Habits_events_map(View view) {
-//        Intent intent = new Intent(this, AddNewActivity.class);
-//        startActivity(intent);
+        // Show my habit events and my followings' most recent habit events for each habit on map
+        // My habit events in habit history
+        ArrayList<HabitEvent> shownHabitEvents_Map = login_UserProfile.getHabit_event_list().getHabitEvents();
+        // Get My followings
+        ElasticSearchController.GetUserFollowingListTask getUserFollowingListTask = new ElasticSearchController.GetUserFollowingListTask();
+        getUserFollowingListTask.execute(login_UserName);
+        try {
+            UserFollowingList userFollowingList = getUserFollowingListTask.get();
+
+            if (userFollowingList != null) {
+                ArrayList<Following> myFollowings = userFollowingList.getFollowings();
+
+                // My followings most recent habit events for each habit
+                ArrayList<HabitEvent> myFollowingRecentHabitEvents = FollowingSharingController.createFollowingRecentHabitEvents(myFollowings);
+
+                // Add this array list to habit events shown on map
+                for (HabitEvent habitEvent : myFollowingRecentHabitEvents) {
+                    shownHabitEvents_Map.add(habitEvent);
+                }
+            }
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+
+        Intent map_intent = new Intent(this, MapsActivity.class);
+        map_intent.putParcelableArrayListExtra(MapsActivity.HABIT_EVENT_SHOW_LOCATION_TAG, shownHabitEvents_Map);
+
+        startActivity(map_intent);
     }
 
     /**

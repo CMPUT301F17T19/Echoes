@@ -15,8 +15,10 @@ import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.location.Location;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -27,9 +29,20 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
+import com.google.android.gms.common.GooglePlayServicesRepairableException;
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.location.places.Place;
+import com.google.android.gms.location.places.ui.PlacePicker;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.tasks.OnSuccessListener;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -47,6 +60,7 @@ import static com.example.cmput301f17t19.echoes.SelectPhotoController.loadPhoto;
  * @since 1.0
  */
 public class HabitEventDetailActivity extends AppCompatActivity {
+    private static final int PLACE_PICKER_REQUEST = 1;
 
     // Check if the user wants to create a new HabitEvent or select a existed HabitEvent
     private boolean isNewHabitEvent;
@@ -60,7 +74,6 @@ public class HabitEventDetailActivity extends AppCompatActivity {
     private ArrayList<String> spinnerTypes;
     private EditText WriteComment;
     private TextView date_TextView;
-    private EditText Type_Location;
     private DatePickerDialog datePickerDialog;
     private Activity mActivity;
 
@@ -79,6 +92,16 @@ public class HabitEventDetailActivity extends AppCompatActivity {
     // The old habit date
     private String old_HabitDate;
 
+    // location raido group
+    private RadioGroup loc_RadioGroup;
+    private RadioButton loc_yes_RadioButton;
+    private RadioButton loc_no_RadioButton;
+
+    private TextView lat_loc_TextView;
+    private TextView lon_loc_TextView;
+
+    private Button select_loc_Button;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -93,9 +116,8 @@ public class HabitEventDetailActivity extends AppCompatActivity {
 
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            window.setStatusBarColor(ContextCompat.getColor(this,R.color.primary_dark));
+            window.setStatusBarColor(ContextCompat.getColor(this, R.color.primary_dark));
         }
-
 
 
         super.onCreate(savedInstanceState);
@@ -106,18 +128,25 @@ public class HabitEventDetailActivity extends AppCompatActivity {
         save_button = (Button) findViewById(R.id.Save);
         cancel_button = (Button) findViewById(R.id.Cancel);
 
-        Types = (Spinner)findViewById(R.id.Types);
+        Types = (Spinner) findViewById(R.id.Types);
         date_TextView = (TextView) findViewById(R.id.Get_Date);
-        WriteComment = (EditText)findViewById(R.id.WriteComment);
-        Type_Location = (EditText)findViewById(R.id.Type_Location);
+        WriteComment = (EditText) findViewById(R.id.WriteComment);
 
         select_photo_button = (Button) findViewById(R.id.Upload);
         take_photo_button = (Button) findViewById(R.id.Take_a_photo);
 
+        loc_RadioGroup = (RadioGroup) findViewById(R.id.loc_radiogroup);
+        loc_yes_RadioButton = (RadioButton) findViewById(R.id.Yes);
+        loc_no_RadioButton = (RadioButton) findViewById(R.id.No);
+
+        lat_loc_TextView = (TextView) findViewById(R.id.lat_location);
+        lon_loc_TextView = (TextView) findViewById(R.id.lon_location);
+        select_loc_Button = (Button) findViewById(R.id.habitevent_select_loc_button);
+
         imageView = (ImageView) findViewById(R.id.imageId);
 
         // Set the Spinner
-        spinnerTypes =  getUserHabitTypes();
+        spinnerTypes = getUserHabitTypes();
 
         ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(
                 this, android.R.layout.simple_spinner_item, spinnerTypes);
@@ -138,7 +167,7 @@ public class HabitEventDetailActivity extends AppCompatActivity {
                     @Override
                     public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
                         //Set the date textview with the date selected
-                        date_TextView.setText(year+"-"+ ++monthOfYear +"-"+ dayOfMonth);
+                        date_TextView.setText(year + "-" + ++monthOfYear + "-" + dayOfMonth);
                     }
                 };
 
@@ -157,7 +186,7 @@ public class HabitEventDetailActivity extends AppCompatActivity {
                 cal1.set(Calendar.HOUR_OF_DAY, 23);
                 cal1.set(Calendar.MINUTE, 59);
                 cal1.set(Calendar.SECOND, 59);
-                cal1.set(Calendar.MILLISECOND,999);
+                cal1.set(Calendar.MILLISECOND, 999);
                 datePickerDialog.getDatePicker().setMaxDate(cal1.getTimeInMillis());
                 //Showing the DatePickerDialog
                 datePickerDialog.show();
@@ -190,6 +219,81 @@ public class HabitEventDetailActivity extends AppCompatActivity {
                 // Create the intent of taking a photo and start this activity for result
                 Intent takePhotoIntent = TakePhotoController.takePhotoIntent();
                 startActivityForResult(takePhotoIntent, TakePhotoController.TAKE_PHOTO_CODE);
+            }
+        });
+
+        // Click radio button
+        loc_RadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                RadioButton checkedRadioButton = (RadioButton) radioGroup.findViewById(i);
+
+                switch (i) {
+                    case R.id.Yes:
+                        boolean yesIsChecked = checkedRadioButton.isChecked();
+
+                        if (yesIsChecked) {
+                            if (lat_loc_TextView.getText().toString().trim().length() == 0 ||
+                                    lon_loc_TextView.getText().toString().trim().length() == 0) {
+                                // Set current location as default
+                                FusedLocationProviderClient mFusedLocationClient = LocationServices.getFusedLocationProviderClient(mActivity);
+
+                                // Reference: https://stackoverflow.com/questions/2227292/how-to-get-latitude-and-longitude-of-the-mobile-device-in-android
+                                boolean isLocPermissionAllowed = LocationUtil.checkLocationPermission(mActivity);
+
+                                if (isLocPermissionAllowed) {
+                                    mFusedLocationClient.getLastLocation()
+                                            .addOnSuccessListener(mActivity, new OnSuccessListener<Location>() {
+                                                @Override
+                                                public void onSuccess(Location location) {
+                                                    // Got last known location. In some rare situations this can be null.
+                                                    if (location != null) {
+                                                        lat_loc_TextView.setText(Double.toString(location.getLatitude()));
+                                                        lon_loc_TextView.setText(Double.toString(location.getLongitude()));
+
+                                                    } else {
+                                                        Toast.makeText(mActivity, "Please select a location.", Toast.LENGTH_LONG).show();
+                                                    }
+                                                }
+                                            });
+
+                                } else {
+                                    Toast.makeText(mActivity, "Access Location Permission Denied. Please allow location accession.", Toast.LENGTH_LONG).show();
+                                }
+                            }
+                        }
+
+                        break;
+
+                    case R.id.No:
+                        boolean noIsChecked = checkedRadioButton.isChecked();
+
+                        if (noIsChecked) {
+                            lat_loc_TextView.setText("");
+                            lon_loc_TextView.setText("");
+                        }
+
+                        break;
+                }
+            }
+        });
+
+        // Click select location button to open map to select Habit event location
+        select_loc_Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Open Place Picker
+                // Reference: https://developers.google.com/places/android-api/placepicker
+                PlacePicker.IntentBuilder builder = new PlacePicker.IntentBuilder();
+
+                try {
+                    startActivityForResult(builder.build(mActivity), PLACE_PICKER_REQUEST);
+                } catch (GooglePlayServicesRepairableException e) {
+                    e.printStackTrace();
+                } catch (GooglePlayServicesNotAvailableException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -266,6 +370,13 @@ public class HabitEventDetailActivity extends AppCompatActivity {
                 eventImage = PhotoOperator.bitmapToByteArray(resizeBitmap);
             }
         }
+        else if(requestCode == PLACE_PICKER_REQUEST && resultCode == RESULT_OK) {
+            Place place = PlacePicker.getPlace(data, this);
+            LatLng selectedLoc = place.getLatLng();
+            // Set UI
+            lat_loc_TextView.setText(Double.toString(selectedLoc.latitude));
+            lon_loc_TextView.setText(Double.toString(selectedLoc.longitude));
+        }
     }
 
     /**
@@ -325,6 +436,16 @@ public class HabitEventDetailActivity extends AppCompatActivity {
             imageView.setImageBitmap(BitmapFactory.decodeByteArray(eventImage, 0, eventImage.length));
         }
 
+        // Set Event Location
+        if (selected_HabitEvent.getLocation() != null) {
+            lat_loc_TextView.setText(Double.toString(selected_HabitEvent.getLocation().getLatitude()));
+            lon_loc_TextView.setText(Double.toString(selected_HabitEvent.getLocation().getLongitude()));
+
+            loc_yes_RadioButton.setChecked(true);
+        } else {
+            loc_no_RadioButton.setChecked(true);
+        }
+
         // Assign old habit type and habit date
         old_HabitType = eventType;
         old_HabitDate = date_TextView.getText().toString();
@@ -339,7 +460,16 @@ public class HabitEventDetailActivity extends AppCompatActivity {
             boolean isValid = checkValid();
 
             // Check if the HabitEvent has the same title and event date exist in HabitEventList
-            String eventType = Types.getSelectedItem().toString();
+            String eventType;
+            if (Types.getSelectedItem() == null) {
+                eventType = "";
+                isValid = false;
+                Toast.makeText(this, "You have no habit. Please create a habit.", Toast.LENGTH_LONG).show();
+
+            } else {
+                eventType = Types.getSelectedItem().toString();
+            }
+
             String eventDate = date_TextView.getText().toString();
 
             if (HabitHistoryActivity.getLogin_userProfile().getHabit_event_list().hasHabitEvent(eventType, eventDate)) {
@@ -469,6 +599,25 @@ public class HabitEventDetailActivity extends AppCompatActivity {
             // Set image
             if (eventImage != null) {
                 new_HabitEvent.setEventPhoto(eventImage);
+            }
+
+            // Set whether attach location
+            if (loc_yes_RadioButton.isChecked()) {
+                new_HabitEvent.setLocationIndicator(true);
+            } else {
+                new_HabitEvent.setLocationIndicator(false);
+            }
+
+            // Set location
+            if (lat_loc_TextView.getText().toString().length() != 0 && lon_loc_TextView.getText().toString().length() != 0) {
+                Double loc_Lat = Double.parseDouble(lat_loc_TextView.getText().toString());
+                Double loc_Lon = Double.parseDouble(lon_loc_TextView.getText().toString());
+
+                Location location = new Location(new_HabitEvent.getTitle() + " " + simpleDateFormat.format(new_HabitEvent.getStartDate()));
+                location.setLatitude(loc_Lat);
+                location.setLongitude(loc_Lon);
+
+                new_HabitEvent.setLocation(location);
             }
         }
 
