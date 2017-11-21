@@ -125,17 +125,9 @@ public class HabitsFollowingActivity extends AppCompatActivity {
                 // The most recent habit events of my followings
                 ArrayList<HabitEvent> recentFollowingHabitEvents = FollowingSharingController.createFollowingRecentHabitEvents(myFollowings);
 
-                // Send the array list of the recent habit events with locations to map intent
-                ArrayList<HabitEvent> recentFollowingHabitEventsWithLocs = new ArrayList<HabitEvent>();
-                for (HabitEvent habitEvent : recentFollowingHabitEvents) {
-                    if (habitEvent.getLocation() != null) {
-                        recentFollowingHabitEventsWithLocs.add(habitEvent);
-                    }
-                }
-
-                // Open map
+                // Send my followings most recent habit events of each habit to map intent
                 Intent map_intent = new Intent(mActivity, MapsActivity.class);
-                map_intent.putParcelableArrayListExtra(MapsActivity.HABIT_EVENT_SHOW_LOCATION_TAG, recentFollowingHabitEventsWithLocs);
+                map_intent.putParcelableArrayListExtra(MapsActivity.HABIT_EVENT_SHOW_LOCATION_TAG, recentFollowingHabitEvents);
 
                 startActivity(map_intent);
             }

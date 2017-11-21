@@ -32,6 +32,7 @@ public class HabitEvent implements Comparable<HabitEvent>, Parcelable {
     private String Comments;
     private byte[] EventPhoto;
     private Location location;
+    private boolean hasLocation;
 
     /**
      * Constructor for the HabitEvent object
@@ -141,6 +142,20 @@ public class HabitEvent implements Comparable<HabitEvent>, Parcelable {
     }
 
     /**
+     * Set location indicator
+     */
+    public void setLocationIndicator(boolean hasLocation) {
+        this.hasLocation = hasLocation;
+    }
+
+    /**
+     * Get the location indicator
+     */
+    public boolean getLocationIndicator() {
+        return this.hasLocation;
+    }
+
+    /**
      * Compare the date of this HabitEvent to the input habitEvent object
      *
      * @param habitEvent: HabitEvent
@@ -173,10 +188,10 @@ public class HabitEvent implements Comparable<HabitEvent>, Parcelable {
 
         this.EventPhoto = parcel.createByteArray();
 
-        this.location = Location.CREATOR.createFromParcel(parcel);
-        // Set null when location is not attached
-        if (this.location.getProvider() == null) {
-            this.location = null;
+        this.hasLocation = parcel.readByte() != 0;
+
+        if (this.hasLocation) {
+            this.location = Location.CREATOR.createFromParcel(parcel);
         }
     }
 
@@ -202,6 +217,8 @@ public class HabitEvent implements Comparable<HabitEvent>, Parcelable {
         out.writeString(this.Comments);
 
         out.writeByteArray(this.EventPhoto);
+
+        out.writeByte((byte) (this.hasLocation ? 1 : 0));
 
         if (this.location != null) {
             location.writeToParcel(out, flags);

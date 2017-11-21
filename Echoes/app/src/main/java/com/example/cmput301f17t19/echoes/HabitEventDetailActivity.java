@@ -601,6 +601,13 @@ public class HabitEventDetailActivity extends AppCompatActivity {
                 new_HabitEvent.setEventPhoto(eventImage);
             }
 
+            // Set whether attach location
+            if (loc_yes_RadioButton.isChecked()) {
+                new_HabitEvent.setLocationIndicator(true);
+            } else {
+                new_HabitEvent.setLocationIndicator(false);
+            }
+
             // Set location
             if (lat_loc_TextView.getText().toString().length() != 0 && lon_loc_TextView.getText().toString().length() != 0) {
                 Double loc_Lat = Double.parseDouble(lat_loc_TextView.getText().toString());

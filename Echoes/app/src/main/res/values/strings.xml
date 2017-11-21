@@ -82,6 +82,8 @@
     <string name="select_loc">Select a Location</string>
     <string name="save_selected_loc">Save selected location</string>
 
-    <string name="recentEventsMap">See most recent habit events on map</string>
+    <string name="recentEventsMap">See my Followings most recent habit event for each habit on map</string>
+
+    <string name="highlightLoc">Highlight Habit events within 5km of my current Location</string>
 
 </resources>

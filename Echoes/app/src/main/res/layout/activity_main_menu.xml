@@ -75,6 +75,7 @@
         android:layout_width="200dp"
         android:layout_height="60dp"
         android:text="Habit Event Map"
+        android:onClick="Habits_events_map"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginTop="15dp"
