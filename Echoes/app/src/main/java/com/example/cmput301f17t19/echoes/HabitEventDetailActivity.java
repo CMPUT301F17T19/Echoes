@@ -283,16 +283,21 @@ public class HabitEventDetailActivity extends AppCompatActivity {
         select_loc_Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Open Place Picker
-                // Reference: https://developers.google.com/places/android-api/placepicker
-                PlacePicker.IntentBuilder builder = new PlacePicker.IntentBuilder();
+                // Check if yes button clicked
+                if (loc_yes_RadioButton.isChecked()) {
+                    // Open Place Picker
+                    // Reference: https://developers.google.com/places/android-api/placepicker
+                    PlacePicker.IntentBuilder builder = new PlacePicker.IntentBuilder();
 
-                try {
-                    startActivityForResult(builder.build(mActivity), PLACE_PICKER_REQUEST);
-                } catch (GooglePlayServicesRepairableException e) {
-                    e.printStackTrace();
-                } catch (GooglePlayServicesNotAvailableException e) {
-                    e.printStackTrace();
+                    try {
+                        startActivityForResult(builder.build(mActivity), PLACE_PICKER_REQUEST);
+                    } catch (GooglePlayServicesRepairableException e) {
+                        e.printStackTrace();
+                    } catch (GooglePlayServicesNotAvailableException e) {
+                        e.printStackTrace();
+                    }
+                } else {
+                    Toast.makeText(mActivity, "Please check attach location first", Toast.LENGTH_LONG).show();
                 }
             }
         });
