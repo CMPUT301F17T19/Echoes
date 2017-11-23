@@ -25,17 +25,32 @@
         tools:layout_editor_absoluteY="0dp"
         tools:layout_editor_absoluteX="8dp" />
 
-    <TextView
+    <LinearLayout
+        android:id="@+id/receivedRequest_LinearLayout"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/receivedRequest"
-        android:textSize="18sp"
-        android:layout_margin="8dp"/>
+        android:layout_height="wrap_content">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/receivedRequestRecyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="8dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/receivedRequest"
+            android:textSize="18sp"
+            android:layout_margin="8dp"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/receivedRequestRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/userMessage_networkError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/userMessage_networkError"
+        android:layout_margin="16dp"/>
 
 </LinearLayout>

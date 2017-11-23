@@ -23,6 +23,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
@@ -207,16 +208,18 @@ public class main_menu extends AppCompatActivity {
                 }
             }
 
+            Intent map_intent = new Intent(this, MapsActivity.class);
+            map_intent.putParcelableArrayListExtra(MapsActivity.HABIT_EVENT_SHOW_LOCATION_TAG, shownHabitEvents_Map);
+
+            startActivity(map_intent);
+
         } catch (InterruptedException e) {
+            Toast.makeText(this, "You can only see habit events of your followings and yours on Map online.", Toast.LENGTH_LONG).show();
             e.printStackTrace();
         } catch (ExecutionException e) {
+            Toast.makeText(this, "You can only see habit events of your followings and yours on Map online.", Toast.LENGTH_LONG).show();
             e.printStackTrace();
         }
-
-        Intent map_intent = new Intent(this, MapsActivity.class);
-        map_intent.putParcelableArrayListExtra(MapsActivity.HABIT_EVENT_SHOW_LOCATION_TAG, shownHabitEvents_Map);
-
-        startActivity(map_intent);
     }
 
     /**

@@ -15,6 +15,7 @@ import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -31,7 +32,6 @@ import android.widget.Toast;
 import java.util.concurrent.ExecutionException;
 
 import static com.example.cmput301f17t19.echoes.LoginActivity.LOGIN_USERNAME;
-import static com.example.cmput301f17t19.echoes.SelectPhotoController.loadPhoto;
 
 /**
  * Sign Up Activity
@@ -215,7 +215,7 @@ public class SignUpActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == SelectPhotoController.SELECT_PHOTO_GALLERY_CODE && resultCode == RESULT_OK && data != null) {
-            Bitmap bitmap = loadPhoto(this, data);
+            Bitmap bitmap = SelectPhotoController.loadPhoto(this, data);
 
             // Resize the bitmap to user profile's size
             Bitmap resizeBitmap = PhotoOperator.resizeImage(bitmap, profile_ImageButton.getWidth(), profile_ImageButton.getHeight());
@@ -227,16 +227,6 @@ public class SignUpActivity extends AppCompatActivity {
 
             //store the photo to the user profile pic tmp variable
             UserProfile_Picture = PhotoOperator.bitmapToByteArray(resizeBitmap);
-
-
-            // Save the uploaded profile photo to Offline Storage
-            //userProfile.setProfilePicture(PhotoOperator.bitmapToByteArray(resizeBitmap));
-            //offlineStorageController.saveInFile(userProfile);
-            // online storage update
-
-
-            //ElasticSearchController.UpdateUserProfileTask updateUserProfileTask = new ElasticSearchController.UpdateUserProfileTask();
-            //updateUserProfileTask.execute(userProfile);
 
         }
         else if (requestCode == TakePhotoController.TAKE_PHOTO_CODE && resultCode == RESULT_OK && data != null) {
@@ -252,15 +242,6 @@ public class SignUpActivity extends AppCompatActivity {
 
                 //store the photo to the user profile pic tmp variable
                 UserProfile_Picture = PhotoOperator.bitmapToByteArray(resizeBitmap);
-
-
-                // Save the uploaded profile photo to Offline Storage
-                //userProfile.setProfilePicture(PhotoOperator.bitmapToByteArray(resizeBitmap));
-                //offlineStorageController.saveInFile(userProfile);
-
-                // online storage update
-                //ElasticSearchController.UpdateUserProfileTask updateUserProfileTask = new ElasticSearchController.UpdateUserProfileTask();
-                //updateUserProfileTask.execute(userProfile);
             }
         }
     }
@@ -291,9 +272,13 @@ public class SignUpActivity extends AppCompatActivity {
 
             try {
 
-                  check = checkUserProfileExistTask.get();
+                check = checkUserProfileExistTask.get();
 
-                  if (!check){
+                if (check == null) {
+                    // Offline, not allowed to sign up
+                    Toast.makeText(SignUpActivity.this, "Sorry. You cannot SignUp while offline.", Toast.LENGTH_SHORT).show();
+
+                } else if (!check){
                       //valid username
 
                       //create new user profile for this user
@@ -319,66 +304,71 @@ public class SignUpActivity extends AppCompatActivity {
 
                       }
 
+                      if (UserProfile_Picture == null) {
+                          // Use the default profile photo
+                          Bitmap default_profile_img = BitmapFactory.decodeResource(getResources(), R.drawable.user_profile_icon);
+                          default_profile_img = PhotoOperator.compressImage(default_profile_img);
 
-                      if (UserProfile_Picture != null){
+                          // Resize the bitmap to user profile's size
+                          Bitmap resizeBitmap = PhotoOperator.resizeImage(default_profile_img, profile_ImageButton.getWidth(), profile_ImageButton.getHeight());
 
-                          userProfile.setProfilePicture(UserProfile_Picture);
-
+                          //store the photo to the user profile pic tmp variable
+                          UserProfile_Picture = PhotoOperator.bitmapToByteArray(resizeBitmap);
                       }
 
+                      // Set user profile img
+                      userProfile.setProfilePicture(UserProfile_Picture);
 
+                    //create new storage for new user in server
+                    ElasticSearchController.AddNewUserProfileTask addNewUserProfileTask = new ElasticSearchController.AddNewUserProfileTask();
+                    addNewUserProfileTask.execute(userProfile);
 
-                      //create a new file to store the new user profile to the local/offline storage
-                      offlineStorageController = new OfflineStorageController(this, UserName.getText().toString().trim());
-                      //save that user profile into its file
-                      offlineStorageController.saveInFile(userProfile);
+                    // Create new userReceivedRequestList for this user
+                    UserReceivedRequestsList userReceivedRequestsList = new UserReceivedRequestsList(UserName.getText().toString().trim());
+                    // Add to online data storage
+                    ElasticSearchController.AddNewUserReceivedRequestsTask addNewUserReceivedRequestsTask = new ElasticSearchController.AddNewUserReceivedRequestsTask();
+                    addNewUserReceivedRequestsTask.execute(userReceivedRequestsList);
 
-                      //create new storage for new user in server
-                      ElasticSearchController.AddNewUserProfileTask addNuewUserProfileTask = new ElasticSearchController.AddNewUserProfileTask();
-                      addNuewUserProfileTask.execute(userProfile);
+                    // Create new userFollowingList for this user
+                    UserFollowingList userFollowingList = new UserFollowingList(UserName.getText().toString().trim());
+                    // Add to online data storage
+                    ElasticSearchController.AddNewUserFollowingsTask addNewUserFollowingsTask = new ElasticSearchController.AddNewUserFollowingsTask();
+                    addNewUserFollowingsTask.execute(userFollowingList);
 
-                      // Create new userReceivedRequestList for this user
-                      UserReceivedRequestsList userReceivedRequestsList = new UserReceivedRequestsList(UserName.getText().toString().trim());
-                      // Add to online data storage
-                      ElasticSearchController.AddNewUserReceivedRequestsTask addNewUserReceivedRequestsTask = new ElasticSearchController.AddNewUserReceivedRequestsTask();
-                      addNewUserReceivedRequestsTask.execute(userReceivedRequestsList);
+                    // Check if offline
+                    if (addNewUserProfileTask.get() == null || addNewUserReceivedRequestsTask.get() == null || addNewUserFollowingsTask.get() == null) {
+                        // Offline
+                        Toast.makeText(SignUpActivity.this, "Sorry. You cannot SignUp while offline.", Toast.LENGTH_SHORT).show();
+                    } else {
+                        //create a new file to store the new user profile to the local/offline storage
+                        offlineStorageController = new OfflineStorageController(this, UserName.getText().toString().trim());
+                        //save that user profile into its file
+                        offlineStorageController.saveInFile(userProfile);
 
-                      // Create new userFollowingList for this user
-                      UserFollowingList userFollowingList = new UserFollowingList(UserName.getText().toString().trim());
-                      // Add to online data storage
-                      ElasticSearchController.AddNewUserFollowingsTask addNewUserFollowingsTask = new ElasticSearchController.AddNewUserFollowingsTask();
-                      addNewUserFollowingsTask.execute(userFollowingList);
-
-
-                      Handler handler=  new Handler();
-
-
-
-                      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-
-                          UserSignUp.startAnimation();
-
-                          Runnable runnable = new Runnable()  {
-
-                              public void run() {
-
-                                  toNextPage();
-
-
-                              }
-
-
-                          };
-
-                          handler.postDelayed(runnable,1000);
-
-                      }
+                        Handler handler=  new Handler();
 
 
 
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+
+                            UserSignUp.startAnimation();
+
+                            Runnable runnable = new Runnable()  {
+
+                                public void run() {
+
+                                    toNextPage();
 
 
+                                }
 
+
+                            };
+
+                            handler.postDelayed(runnable,1000);
+
+                        }
+                    }
                   }else{
 
 

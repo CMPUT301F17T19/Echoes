@@ -26,6 +26,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.concurrent.ExecutionException;
@@ -154,80 +155,95 @@ public class UserProfileActivity extends AppCompatActivity {
      * Set User Interface
      */
     private void setUI() {
-        if (searched_profile_username == null) {
-            // The profile of the login user
-            // No need to show request button
-            request_Button.setVisibility(View.INVISIBLE);
+        // If userProfile is null, getting online data failed
+        if (userProfile == null) {
+            // No need to show the linear layout for user profile and the request button
+            ((LinearLayout) findViewById(R.id.profile_info_layout)).setVisibility(View.GONE);
+            ((LinearLayout) findViewById(R.id.follow_layout)).setVisibility(View.GONE);
+            request_Button.setVisibility(View.GONE);
 
-            // onClickLister for profile image button
-            profile_ImageButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
+            // Show the Network error TextView
+            ((TextView) findViewById(R.id.userProfile_newtorkError)).setVisibility(View.VISIBLE);
 
-                    // show the dialog
-                    AlertDialog profilePhoto_dialog = buildAlertDialog().create();
-                    profilePhoto_dialog.show();
-                }
-            });
         } else {
-            // Show the request button
-            // No need to show request button
-            request_Button.setVisibility(View.VISIBLE);
+            // Hide the Network error TextView
+            ((TextView) findViewById(R.id.userProfile_newtorkError)).setVisibility(View.GONE);
 
-            // Set the text of the request Button
-            int followingIndicator = FollowingSharingController.checkSearchedUserStat(HabitsFollowingActivity.getLogin_userProfile(), userProfile, mContext);
+            if (searched_profile_username == null) {
+                // The profile of the login user
+                // No need to show request button
+                request_Button.setVisibility(View.INVISIBLE);
 
-            if (followingIndicator == 0) {
-                // Already followed this searched user, able to unfollow
-                request_Button.setText(R.string.followed);
-            } else if (followingIndicator == 1) {
-                // Already sent following request (pending)
-                request_Button.setText(R.string.sentRequest);
-            } else if (followingIndicator == 2) {
-                // Able to send follow request
-                request_Button.setText(R.string.follow);
+                // onClickLister for profile image button
+                profile_ImageButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        // show the dialog
+                        AlertDialog profilePhoto_dialog = buildAlertDialog().create();
+                        profilePhoto_dialog.show();
+                    }
+                });
             } else {
-                // Network error
-                request_Button.setText(R.string.network_error);
+                // Show the request button
+                // No need to show request button
+                request_Button.setVisibility(View.VISIBLE);
+
+                // Set the text of the request Button
+                int followingIndicator = FollowingSharingController.checkSearchedUserStat(HabitsFollowingActivity.getLogin_userProfile(), userProfile, mContext);
+
+                if (followingIndicator == 0) {
+                    // Already followed this searched user, able to unfollow
+                    request_Button.setText(R.string.followed);
+                } else if (followingIndicator == 1) {
+                    // Already sent following request (pending)
+                    request_Button.setText(R.string.sentRequest);
+                } else if (followingIndicator == 2) {
+                    // Able to send follow request
+                    request_Button.setText(R.string.follow);
+                } else {
+                    // Network error
+                    request_Button.setText(R.string.network_error);
+                }
+
+                request_Button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        int FollowingIndicator = FollowingSharingController.checkSearchedUserStat(HabitsFollowingActivity.getLogin_userProfile(), userProfile, mContext);
+
+                        if (FollowingIndicator == 0) {
+                            // Followed the searched user
+
+                        } else if (FollowingIndicator == 1) {
+                            // Pending request, do nothing
+
+                        } else if (FollowingIndicator == 2) {
+                            // Follow the search user
+                            FollowingSharingController.sendFollowingRequest(HabitsFollowingActivity.getLogin_userProfile(), userProfile, mActivity);
+
+                            // Set the button to pending
+                            request_Button.setText(R.string.sentRequest);
+                        } else {
+                            // Network error
+                            request_Button.setText(R.string.network_error);
+                        }
+                    }
+                });
             }
 
-            request_Button.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
+            // Set User Profile Photo, Username, UserBioComment, Email, PhoneNumber, Num of Followers and Following
+            if (userProfile.getProfilePicture() != null){
+                profile_ImageButton.setImageBitmap(BitmapFactory.decodeByteArray(userProfile.getProfilePicture(), 0, userProfile.getProfilePicture().length));
+            }
 
-                    int FollowingIndicator = FollowingSharingController.checkSearchedUserStat(HabitsFollowingActivity.getLogin_userProfile(), userProfile, mContext);
-
-                    if (FollowingIndicator == 0) {
-                        // Followed the searched user
-
-                    } else if (FollowingIndicator == 1) {
-                        // Pending request, do nothing
-
-                    } else if (FollowingIndicator == 2) {
-                        // Follow the search user
-                        FollowingSharingController.sendFollowingRequest(HabitsFollowingActivity.getLogin_userProfile(), userProfile, mActivity);
-
-                        // Set the button to pending
-                        request_Button.setText(R.string.sentRequest);
-                    } else {
-                        // Network error
-                        request_Button.setText(R.string.network_error);
-                    }
-                }
-            });
+            profile_username_TextView.setText(userProfile.getUserName());
+            profile_userComment_TextView.setText(userProfile.getComment());
+            profile_userEmail_TextView.setText(userProfile.getEmailAddress());
+            profile_userPhone_TextView.setText(userProfile.getPhoneNumber());
+            profile_userFollower_TextView.setText(Integer.toString(userProfile.getFollower_list().size()));
+            profile_userFollowing_TextView.setText(Integer.toString(userProfile.getFollowing().size()));
         }
-
-        // Set User Profile Photo, Username, UserBioComment, Email, PhoneNumber, Num of Followers and Following
-        if (userProfile.getProfilePicture() != null){
-            profile_ImageButton.setImageBitmap(BitmapFactory.decodeByteArray(userProfile.getProfilePicture(), 0, userProfile.getProfilePicture().length));
-        }
-
-        profile_username_TextView.setText(userProfile.getUserName());
-        profile_userComment_TextView.setText(userProfile.getComment());
-        profile_userEmail_TextView.setText(userProfile.getEmailAddress());
-        profile_userPhone_TextView.setText(userProfile.getPhoneNumber());
-        profile_userFollower_TextView.setText(Integer.toString(userProfile.getFollower_list().size()));
-        profile_userFollowing_TextView.setText(Integer.toString(userProfile.getFollowing().size()));
     }
 
     /**

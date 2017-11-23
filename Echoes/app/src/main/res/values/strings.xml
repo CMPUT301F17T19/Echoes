@@ -86,4 +86,8 @@
 
     <string name="highlightLoc">Highlight Habit events within 5km of my current Location</string>
 
+    <string name="userProfile_networkError">You can only see other users profile when you are online.</string>
+    <string name="userMessage_networkError">You can only see your message from other users when you are online.</string>
+    <string name="habitsFollowing_networkError">You can only see all Habits from your followings when you are online.</string>
+
 </resources>

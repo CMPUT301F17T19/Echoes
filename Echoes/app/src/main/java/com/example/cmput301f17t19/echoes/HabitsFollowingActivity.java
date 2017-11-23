@@ -28,6 +28,8 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
@@ -160,6 +162,8 @@ public class HabitsFollowingActivity extends AppCompatActivity {
             UserFollowingList userFollowingList = getUserFollowingListTask.get();
 
             if (userFollowingList != null) {
+                ((TextView) findViewById(R.id.habitsFollowing_NetworkError)).setVisibility(View.GONE);
+
                 myFollowings = userFollowingList.getFollowings();
 
                 // Update following list of the login user in userprofile
@@ -176,7 +180,9 @@ public class HabitsFollowingActivity extends AppCompatActivity {
                 habitStatus_RecyclerView.setAdapter(habitStatusAdapter);
 
             } else {
-                myFollowings = new ArrayList<Following>();
+                // Offline, show offline error
+                ((LinearLayout) findViewById(R.id.habitsFollowing_Layout)).setVisibility(View.GONE);
+                ((TextView) findViewById(R.id.habitsFollowing_NetworkError)).setVisibility(View.VISIBLE);
             }
 
 

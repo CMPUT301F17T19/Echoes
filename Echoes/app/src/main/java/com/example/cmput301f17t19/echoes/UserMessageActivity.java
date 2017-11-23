@@ -11,6 +11,9 @@ import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
@@ -73,6 +76,8 @@ public class UserMessageActivity extends AppCompatActivity {
             UserReceivedRequestsList login_UserReceivedRequestsList = getUserReceivedRequestsTask.get();
 
             if (login_UserReceivedRequestsList != null) {
+                ((TextView) findViewById(R.id.userMessage_networkError)).setVisibility(View.GONE);
+
                 login_userProfile.setReceivedRequest(login_UserReceivedRequestsList.getReceivedRequests());
 
                 // Update offline and sync with online
@@ -84,10 +89,23 @@ public class UserMessageActivity extends AppCompatActivity {
 
                 requestOverviewAdapter = new RequestOverviewAdapter(this);
                 receivedRequest_RecyclerView.setAdapter(requestOverviewAdapter);
+            } else {
+                // Show the network error
+                ((LinearLayout) findViewById(R.id.receivedRequest_LinearLayout)).setVisibility(View.GONE);
+                ((TextView) findViewById(R.id.userMessage_networkError)).setVisibility(View.VISIBLE);
             }
+
         } catch (InterruptedException e) {
+            // Show the network error
+            ((LinearLayout) findViewById(R.id.receivedRequest_LinearLayout)).setVisibility(View.GONE);
+            ((TextView) findViewById(R.id.userMessage_networkError)).setVisibility(View.VISIBLE);
+
             e.printStackTrace();
         } catch (ExecutionException e) {
+            // Show the network error
+            ((LinearLayout) findViewById(R.id.receivedRequest_LinearLayout)).setVisibility(View.GONE);
+            ((TextView) findViewById(R.id.userMessage_networkError)).setVisibility(View.VISIBLE);
+
             e.printStackTrace();
         }
 

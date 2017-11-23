@@ -50,8 +50,6 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
-import static com.example.cmput301f17t19.echoes.SelectPhotoController.loadPhoto;
-
 /**
  * HabitEventDetail Activity
  *
@@ -351,7 +349,7 @@ public class HabitEventDetailActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == SelectPhotoController.SELECT_PHOTO_GALLERY_CODE && resultCode == RESULT_OK && data != null) {
-            Bitmap bitmap = loadPhoto(this, data);
+            Bitmap bitmap = SelectPhotoController.loadPhoto(this, data);
 
             // Resize the bitmap to user profile's size
             Bitmap resizeBitmap = PhotoOperator.resizeImage(bitmap, imageView.getWidth(), imageView.getHeight());
