@@ -268,11 +268,9 @@ public class SignUpActivity extends AppCompatActivity {
 
             checkUserProfileExistTask.execute(UserName.getText().toString().trim());
 
-            Boolean check = false;
-
             try {
 
-                check = checkUserProfileExistTask.get();
+                Boolean check = checkUserProfileExistTask.get();
 
                 if (check == null) {
                     // Offline, not allowed to sign up
@@ -335,40 +333,35 @@ public class SignUpActivity extends AppCompatActivity {
                     ElasticSearchController.AddNewUserFollowingsTask addNewUserFollowingsTask = new ElasticSearchController.AddNewUserFollowingsTask();
                     addNewUserFollowingsTask.execute(userFollowingList);
 
-                    // Check if offline
-                    if (addNewUserProfileTask.get() == null || addNewUserReceivedRequestsTask.get() == null || addNewUserFollowingsTask.get() == null) {
-                        // Offline
-                        Toast.makeText(SignUpActivity.this, "Sorry. You cannot SignUp while offline.", Toast.LENGTH_SHORT).show();
-                    } else {
-                        //create a new file to store the new user profile to the local/offline storage
-                        offlineStorageController = new OfflineStorageController(this, UserName.getText().toString().trim());
-                        //save that user profile into its file
-                        offlineStorageController.saveInFile(userProfile);
+                    //create a new file to store the new user profile to the local/offline storage
+                    offlineStorageController = new OfflineStorageController(this, UserName.getText().toString().trim());
+                    //save that user profile into its file
+                    offlineStorageController.saveInFile(userProfile);
 
-                        Handler handler=  new Handler();
+                    Handler handler=  new Handler();
 
 
 
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
 
-                            UserSignUp.startAnimation();
+                        UserSignUp.startAnimation();
 
-                            Runnable runnable = new Runnable()  {
+                        Runnable runnable = new Runnable()  {
 
-                                public void run() {
+                            public void run() {
 
-                                    toNextPage();
-
-
-                                }
+                                toNextPage();
 
 
-                            };
+                            }
 
-                            handler.postDelayed(runnable,1000);
 
-                        }
+                        };
+
+                        handler.postDelayed(runnable,1000);
+
                     }
+
                   }else{
 
 

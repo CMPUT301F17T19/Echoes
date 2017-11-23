@@ -119,9 +119,9 @@ public class ElasticSearchController {
 
             } catch (IOException e) {
                 e.printStackTrace();
-            }
 
-            return false;
+                return null;
+            }
         }
     }
 
