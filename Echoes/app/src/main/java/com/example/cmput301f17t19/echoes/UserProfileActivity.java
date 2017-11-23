@@ -28,6 +28,8 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.concurrent.ExecutionException;
+
 import static com.example.cmput301f17t19.echoes.SelectPhotoController.loadPhoto;
 
 /**
@@ -117,19 +119,29 @@ public class UserProfileActivity extends AppCompatActivity {
                 // Get the UserProfile object with the given username
                 offlineStorageController = new OfflineStorageController(this, profile_username);
 
+                userProfile = offlineStorageController.readFromFile();
+
             } else if (bundle.getString(SEARCHED_USERPROFILE_TAG) != null) {
                 // Get the searched profile username passed from other activity
                 searched_profile_username = bundle.getString(SEARCHED_USERPROFILE_TAG);
 
-                // Get the UserProfile object with the given username
-                offlineStorageController = new OfflineStorageController(this, searched_profile_username);
+                // Get the UserProfile object with the given username from online
+                ElasticSearchController.GetUserProfileTask getUserProfileTask = new ElasticSearchController.GetUserProfileTask();
+                getUserProfileTask.execute(searched_profile_username);
+
+                try {
+                    userProfile = getUserProfileTask.get();
+
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } catch (ExecutionException e) {
+                    e.printStackTrace();
+                }
 
             } else {
                 // For UserProfileActivity test
                 profile_username = "dummy3";
             }
-
-            userProfile = offlineStorageController.readFromFile();
 
             setUI();
 
