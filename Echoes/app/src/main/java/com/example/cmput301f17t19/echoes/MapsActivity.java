@@ -170,13 +170,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private void updateMap() {
         if (highlight_CheckBox.isChecked()) {
             // highlight locations that are within 5km of my current location
-            for (Marker marker : location_Markers) {
-                if (isWithinFiveKm(marker, myCurrentLocationMarker)) {
-                    // HighLight
-                    marker.setAlpha((float) 1);
-                } else {
-                    // Do not highlight
-                    marker.setAlpha((float) 0.3);
+            if (myCurrentLocationMarker != null) {
+                for (Marker marker : location_Markers) {
+                    if (isWithinFiveKm(marker, myCurrentLocationMarker)) {
+                        // HighLight
+                        marker.setAlpha((float) 1);
+                    } else {
+                        // Do not highlight
+                        marker.setAlpha((float) 0.3);
+                    }
                 }
             }
 
