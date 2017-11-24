@@ -59,9 +59,13 @@ import java.util.Date;
  */
 public class HabitEventDetailActivity extends AppCompatActivity {
     private static final int PLACE_PICKER_REQUEST = 1;
+    public static final String UserNameHE_TAG = "USERNAMEHE_TAG";
 
     // Check if the user wants to create a new HabitEvent or select a existed HabitEvent
     private boolean isNewHabitEvent;
+
+    // The username of the user creating this habit event
+    private String loginUserName;
 
     // The position of the selected HabitEvent
     private int selected_pos;
@@ -317,18 +321,22 @@ public class HabitEventDetailActivity extends AppCompatActivity {
             }
         });
 
-        Bundle bundle = getIntent().getExtras();
+        // Get the username of the user creating this habit event
+        Intent intent = getIntent();
+
+        if (intent.getStringExtra(UserNameHE_TAG) != null) {
+            loginUserName = intent.getStringExtra(UserNameHE_TAG);
+        }
 
         // Check if the user selected an existed Habit
-        if (bundle == null) {
+        if (intent.getIntExtra(HabitEventOverviewAdapter.SELECTED_HABIT_EVENT_POSITION, -1) == -1) {
             // Open an empty HabitEvent UI
             isNewHabitEvent = true;
-
         } else {
             isNewHabitEvent = false;
 
             // Get the position of the selected HabitEvent object in the HabitEventList
-            selected_pos = bundle.getInt(HabitEventOverviewAdapter.SELECTED_HABIT_EVENT_POSITION);
+            selected_pos = intent.getIntExtra(HabitEventOverviewAdapter.SELECTED_HABIT_EVENT_POSITION, -1);
             selected_HabitEvent = HabitHistoryActivity.getDisplayedHabitEventList().getHabitEvents().get(selected_pos);
 
             // Initialize the Habit UI with the selected_HabitEvent info
@@ -583,7 +591,7 @@ public class HabitEventDetailActivity extends AppCompatActivity {
         try {
             Date eventDate = simpleDateFormat.parse(date_TextView.getText().toString());
 
-            new_HabitEvent = new HabitEvent(eventType, eventDate);
+            new_HabitEvent = new HabitEvent(eventType, eventDate, loginUserName);
 
         } catch (ParseException e) {
             e.printStackTrace();

@@ -35,12 +35,16 @@ public class HabitEventOverviewAdapter extends RecyclerView.Adapter<HabitEventOv
     // Indicator to check if the Habit Event is the Habit Event of my following users
     private boolean isFollowingEvent;
 
+    // The username of the user having this habit event
+    private String mUserName;
+
     /**
      * Constructor for HabitEventOverview Adapter
      */
-    public HabitEventOverviewAdapter(Context context, boolean IsFollowingEvent) {
+    public HabitEventOverviewAdapter(Context context, boolean IsFollowingEvent, String userName) {
         mContext = context;
         isFollowingEvent = IsFollowingEvent;
+        mUserName = userName;
     }
 
     /**
@@ -157,8 +161,10 @@ public class HabitEventOverviewAdapter extends RecyclerView.Adapter<HabitEventOv
                 // Start HabitEvent Detail Activity
                 // Show the details of the selected HabitEvent object in HabitEvent Detail Screen
                 Intent habitEventDetail_Intent = new Intent(mContext, HabitEventDetailActivity.class);
+                // Pass the username of the user having this Habit Event to the Habit Event Detail Activity
+                habitEventDetail_Intent.putExtra(HabitEventDetailActivity.UserNameHE_TAG, mUserName);
                 // Pass the position of the selected HabitEvent
-                habitEventDetail_Intent.putExtra(SELECTED_HABIT_EVENT_POSITION,adapterPosition);
+                habitEventDetail_Intent.putExtra(SELECTED_HABIT_EVENT_POSITION, adapterPosition);
 
                 mContext.startActivity(habitEventDetail_Intent);
             }

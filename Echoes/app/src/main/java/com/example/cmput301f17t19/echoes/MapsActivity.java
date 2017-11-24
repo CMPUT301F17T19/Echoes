@@ -4,13 +4,20 @@
 
 package com.example.cmput301f17t19.echoes;
 
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.location.Location;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -46,6 +53,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     private CheckBox highlight_CheckBox;
 
+    private Context mContext;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +63,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(map);
         mapFragment.getMapAsync(this);
+
+        mContext = this;
 
         location_Markers = new ArrayList<Marker>();
 
@@ -142,9 +153,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         .anchor(0.5f, 0.5f)
                         .title(habitEvent.getLocation().getProvider()));
 
-                if (!habitEvent.getComments().equals("")) {
-                    marker.setSnippet(habitEvent.getComments());
-                }
+                // Show username
+                marker.setSnippet("Comment: " + habitEvent.getComments() + "\n" + habitEvent.getmUserName());
 
                 location_Markers.add(marker);
             }
@@ -155,6 +165,37 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             LatLngBounds bounds = boundsbuilder.build();
             mMap.animateCamera(CameraUpdateFactory.newLatLngBounds(bounds, 20));
         }
+
+        // Reference: https://stackoverflow.com/questions/13904651/android-google-maps-v2-how-to-add-marker-with-multiline-snippet
+        mMap.setInfoWindowAdapter(new GoogleMap.InfoWindowAdapter() {
+
+            @Override
+            public View getInfoWindow(Marker arg0) {
+                return null;
+            }
+
+            @Override
+            public View getInfoContents(Marker marker) {
+
+                LinearLayout info = new LinearLayout(mContext);
+                info.setOrientation(LinearLayout.VERTICAL);
+
+                TextView title = new TextView(mContext);
+                title.setTextColor(Color.BLACK);
+                title.setGravity(Gravity.CENTER);
+                title.setTypeface(null, Typeface.BOLD);
+                title.setText(marker.getTitle());
+
+                TextView snippet = new TextView(mContext);
+                snippet.setTextColor(Color.GRAY);
+                snippet.setText(marker.getSnippet());
+
+                info.addView(title);
+                info.addView(snippet);
+
+                return info;
+            }
+        });
     }
 
     /**

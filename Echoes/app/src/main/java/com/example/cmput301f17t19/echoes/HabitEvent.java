@@ -34,15 +34,20 @@ public class HabitEvent implements Comparable<HabitEvent>, Parcelable {
     private Location location;
     private boolean hasLocation;
 
+    // The username of the user having this Habit Event
+    private String mUserName;
+
     /**
      * Constructor for the HabitEvent object
      *
      * @param title: String, the title of the HabitEvent
      * @param startDate: Date, the date of the HabitEvent
+     * @param userName: String, the username of the user having this HabitEvent
      */
-    public HabitEvent(String title, Date startDate){
+    public HabitEvent(String title, Date startDate, String userName){
         this.Title = title;
         this.StartDate = startDate;
+        this.mUserName = userName;
         this.Comments = "";
     }
 
@@ -80,6 +85,15 @@ public class HabitEvent implements Comparable<HabitEvent>, Parcelable {
      */
     public byte[] getEventPhoto(){
         return this.EventPhoto;
+    }
+
+    /**
+     * Get the username of the user having this Habit Event
+     *
+     * @return String: the username of the user having this Habit Event
+     */
+    public String getmUserName() {
+        return this.mUserName;
     }
 
     /**
@@ -193,6 +207,8 @@ public class HabitEvent implements Comparable<HabitEvent>, Parcelable {
         if (this.hasLocation) {
             this.location = Location.CREATOR.createFromParcel(parcel);
         }
+
+        this.mUserName = parcel.readString();
     }
 
 
@@ -223,6 +239,8 @@ public class HabitEvent implements Comparable<HabitEvent>, Parcelable {
         if (this.location != null) {
             location.writeToParcel(out, flags);
         }
+
+        out.writeString(this.mUserName);
     }
 
     /**

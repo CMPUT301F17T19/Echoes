@@ -118,6 +118,8 @@ public class HabitHistoryActivity extends AppCompatActivity {
             public void onClick(View view) {
                 // Open Habit Event Detail
                 Intent habitEventDetail_Intent = new Intent(mContext, HabitEventDetailActivity.class);
+                // Pass the username to the Habit Event
+                habitEventDetail_Intent.putExtra(HabitEventDetailActivity.UserNameHE_TAG, login_Username);
                 startActivity(habitEventDetail_Intent);
             }
         });
@@ -166,7 +168,7 @@ public class HabitHistoryActivity extends AppCompatActivity {
         mTypeHabitEventList = new HabitEventList();
         mTypeHabitEventList.setHabitEvents((ArrayList<HabitEvent>) login_userProfile.getHabit_event_list().getHabitEvents().clone());
 
-        habitEventOverviewAdapter = new HabitEventOverviewAdapter(this, false);
+        habitEventOverviewAdapter = new HabitEventOverviewAdapter(this, false, login_Username);
 
         habitEventsRecyclerView.setAdapter(habitEventOverviewAdapter);
 

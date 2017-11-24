@@ -26,6 +26,9 @@ public class FollowingHabitEventsActivity extends AppCompatActivity {
 
     private static ArrayList<HabitEvent> followingHabitEvents;
 
+    // The username of the user having these habit events
+    private String mUserName;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -57,6 +60,10 @@ public class FollowingHabitEventsActivity extends AppCompatActivity {
             followingHabitEvents = intent.getParcelableArrayListExtra(FOLLOWINGHABITEVENT_TAG);
         }
 
+        if (intent.getStringExtra(HabitEventDetailActivity.UserNameHE_TAG) != null) {
+            mUserName = intent.getStringExtra(HabitEventDetailActivity.UserNameHE_TAG);
+        }
+
         // Set up recycler view for habit event overview in the Habit History
         followingHabitEventsRecyclerView = (RecyclerView) findViewById(R.id.following_habitevents_recyclerView);
 
@@ -75,7 +82,7 @@ public class FollowingHabitEventsActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        followingHabitEventOverviewAdapter = new HabitEventOverviewAdapter(this, true);
+        followingHabitEventOverviewAdapter = new HabitEventOverviewAdapter(this, true, mUserName);
         followingHabitEventsRecyclerView.setAdapter(followingHabitEventOverviewAdapter);
     }
 
