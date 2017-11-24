@@ -137,6 +137,8 @@ public class HabitStatusAdapter extends RecyclerView.Adapter<HabitStatusAdapter.
 
             Intent followingHabit_HabitEvents_Intent = new Intent(mContext, FollowingHabitEventsActivity.class);
             followingHabit_HabitEvents_Intent.putExtra(FOLLOWINGHABITEVENT_TAG, habit_HabitEvents);
+            // Put the username of the user having these habit events
+            followingHabit_HabitEvents_Intent.putExtra(HabitEventDetailActivity.UserNameHE_TAG, selected_FollowingHabitsStatus.getFollowingUsername());
 
             mContext.startActivity(followingHabit_HabitEvents_Intent);
         }

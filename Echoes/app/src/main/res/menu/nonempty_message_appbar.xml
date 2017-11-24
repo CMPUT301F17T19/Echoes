@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) Team cmput301f17t19, CMPUT301, University of Alberta - All Rights Reserved. You may use, distribute, or modify this code under terms and conditions of the Code of Students Behaviour at University of Alberta
+  -->
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--The message View of the user-->
+    <item
+        android:id="@+id/action_UserMessage"
+        android:icon="@drawable/nonempty_message_ic"
+        android:title="@string/user_message"
+        app:showAsAction="ifRoom"/>
+
+    <!--User Profile View-->
+    <item
+        android:id="@+id/action_UserProfile"
+        android:icon="@drawable/user_ic"
+        android:title="@string/userprofile_title"
+        app:showAsAction="ifRoom"/>
+
+    <!--Menu View-->
+    <item
+        android:id="@+id/action_menu"
+        android:icon="@drawable/menu_ic"
+        android:title="@string/main_menu"
+        app:showAsAction="ifRoom"/>
+
+</menu>

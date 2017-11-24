@@ -59,9 +59,18 @@ import java.util.Date;
  */
 public class HabitEventDetailActivity extends AppCompatActivity {
     private static final int PLACE_PICKER_REQUEST = 1;
+    public static final String UserNameHE_TAG = "USERNAMEHE_TAG";
 
     // Check if the user wants to create a new HabitEvent or select a existed HabitEvent
     private boolean isNewHabitEvent;
+
+    // Check if the user wants to add a new HabitEvent from TO do list
+    private boolean isFromToDoList;
+    // The position of the selected Habit Type in to do list
+    private int todo_selected_pos;
+
+    // The username of the user creating this habit event
+    private String loginUserName;
 
     // The position of the selected HabitEvent
     private int selected_pos;
@@ -120,6 +129,20 @@ public class HabitEventDetailActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_habit_event_details);
+
+        // Get the username of the user creating this habit event
+        Intent intent = getIntent();
+
+        if (intent.getStringExtra(UserNameHE_TAG) != null) {
+            loginUserName = intent.getStringExtra(UserNameHE_TAG);
+        }
+
+        // Check if the user enter this activity from to do list
+        if (intent.getIntExtra(ToDoListAdapter.TODO_Pos_TAG, -1) == -1) {
+            isFromToDoList = false;
+        } else {
+            isFromToDoList = true;
+        }
 
         mActivity = this;
 
@@ -317,22 +340,45 @@ public class HabitEventDetailActivity extends AppCompatActivity {
             }
         });
 
-        Bundle bundle = getIntent().getExtras();
 
-        // Check if the user selected an existed Habit
-        if (bundle == null) {
-            // Open an empty HabitEvent UI
-            isNewHabitEvent = true;
+        // if the user does not enter this activity from to do list
+        if (! isFromToDoList) {
+            // Check if the user selected an existed Habit
+            if (intent.getIntExtra(HabitEventOverviewAdapter.SELECTED_HABIT_EVENT_POSITION, -1) == -1) {
+                // Open an empty HabitEvent UI
+                isNewHabitEvent = true;
+            } else {
+                isNewHabitEvent = false;
+
+                // Get the position of the selected HabitEvent object in the HabitEventList
+                selected_pos = intent.getIntExtra(HabitEventOverviewAdapter.SELECTED_HABIT_EVENT_POSITION, -1);
+                selected_HabitEvent = HabitHistoryActivity.getDisplayedHabitEventList().getHabitEvents().get(selected_pos);
+
+                // Initialize the Habit UI with the selected_HabitEvent info
+                initializeHabitEventUI();
+            }
 
         } else {
-            isNewHabitEvent = false;
+            // The user enter this page from to do list
+            isNewHabitEvent = true;
+            //TODO
+            // Get the position of the selected Habit Type in the To do list
+            todo_selected_pos = intent.getIntExtra(ToDoListAdapter.TODO_Pos_TAG, -1);
+            // Set the Habit Event's Habit Type and Date
+            String habitType = ToDoActivity.getNameArray().get(todo_selected_pos);
 
-            // Get the position of the selected HabitEvent object in the HabitEventList
-            selected_pos = bundle.getInt(HabitEventOverviewAdapter.SELECTED_HABIT_EVENT_POSITION);
-            selected_HabitEvent = HabitHistoryActivity.getDisplayedHabitEventList().getHabitEvents().get(selected_pos);
+            if (!spinnerTypes.contains(habitType)) {
+                // the Habit Type is deleted, add it to the end of types list and Spinner
+                spinnerTypes.add(habitType);
+            }
 
-            // Initialize the Habit UI with the selected_HabitEvent info
-            initializeHabitEventUI();
+            // Set the spinner at this position
+            int type_pos = spinnerTypes.indexOf(habitType);
+            Types.setSelection(type_pos);
+
+            // Set the current day
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            date_TextView.setText(simpleDateFormat.format(Calendar.getInstance().getTime()));
         }
 
     }
@@ -388,8 +434,15 @@ public class HabitEventDetailActivity extends AppCompatActivity {
      * @return ArrayList<String>: an arraylist of user's habit types
      */
     private ArrayList<String> getUserHabitTypes() {
-        // The arraylist of all habits that the login user has
-        ArrayList<Habit> mHabits = HabitHistoryActivity.getLogin_userProfile().getHabit_list().getHabits();
+        ArrayList<Habit> mHabits;
+
+        if (!isFromToDoList) {
+            // The arraylist of all habits that the login user has
+            mHabits = HabitHistoryActivity.getLogin_userProfile().getHabit_list().getHabits();
+        } else {
+            // Get Habits from to do activity
+            mHabits = ToDoActivity.getLogin_userProfile().getHabit_list().getHabits();
+        }
 
         ArrayList<String> habitTypes = new ArrayList<String>();
 
@@ -475,10 +528,18 @@ public class HabitEventDetailActivity extends AppCompatActivity {
 
             String eventDate = date_TextView.getText().toString();
 
-            if (HabitHistoryActivity.getLogin_userProfile().getHabit_event_list().hasHabitEvent(eventType, eventDate)) {
-                Toast.makeText(this, "The HabitEvent for this Type has already done on the selected date.", Toast.LENGTH_LONG).show();
+            if (!isFromToDoList) {
+                if (HabitHistoryActivity.getLogin_userProfile().getHabit_event_list().hasHabitEvent(eventType, eventDate)) {
+                    Toast.makeText(this, "The HabitEvent for this Type has already done on the selected date.", Toast.LENGTH_LONG).show();
 
-                isValid = false;
+                    isValid = false;
+                }
+            } else {
+                if (ToDoActivity.getLogin_userProfile().getHabit_event_list().hasHabitEvent(eventType, eventDate)) {
+                    Toast.makeText(this, "The HabitEvent for this Type has already done on the selected date.", Toast.LENGTH_LONG).show();
+
+                    isValid = false;
+                }
             }
 
             if (isValid) {
@@ -486,16 +547,32 @@ public class HabitEventDetailActivity extends AppCompatActivity {
                 HabitEvent new_HabitEvent = createNewHabitEvent();
 
                 if (new_HabitEvent != null) {
-                    // Add this new HabitEvent to the HabitEventList of the login User
-                    HabitEventList mHabitEventList = HabitHistoryActivity.getLogin_userProfile().getHabit_event_list();
-                    mHabitEventList.add(new_HabitEvent);
-                    // Sort List
-                    mHabitEventList.sortList();
+                    if (!isFromToDoList) {
+                        // Add this new HabitEvent to the HabitEventList of the login User
+                        HabitEventList mHabitEventList = HabitHistoryActivity.getLogin_userProfile().getHabit_event_list();
+                        mHabitEventList.add(new_HabitEvent);
+                        // Sort List
+                        mHabitEventList.sortList();
 
-                    // Update Data in HabitHistory Activity
-                    HabitHistoryActivity.updateHabitEventList(mHabitEventList.getHabitEvents());
-                    // Update Data in online and offline data storage
-                    HabitHistoryActivity.updateDataStorage();
+                        // Update Data in HabitHistory Activity
+                        HabitHistoryActivity.updateHabitEventList(mHabitEventList.getHabitEvents());
+                        // Update Data in online and offline data storage
+                        HabitHistoryActivity.updateDataStorage();
+                    } else {
+                        // Add this new HabitEvent to the HabitEventList of the login User
+                        HabitEventList mHabitEventList = ToDoActivity.getLogin_userProfile().getHabit_event_list();
+                        mHabitEventList.add(new_HabitEvent);
+                        // Sort List
+                        mHabitEventList.sortList();
+
+                        // Update Data in User Profile
+                        ToDoActivity.getLogin_userProfile().getHabit_event_list().setHabitEvents(mHabitEventList.getHabitEvents());
+                        // Remove the view of the selected position in TO DO LIST
+                        ToDoActivity.getNameArray().remove(todo_selected_pos);
+                        ToDoActivity.getReasonArray().remove(todo_selected_pos);
+                        // Update Data in online and offline data storage
+                        ToDoActivity.updateDataStorage();
+                    }
                 }
 
                 // Close HabitEvent Detail
@@ -583,7 +660,7 @@ public class HabitEventDetailActivity extends AppCompatActivity {
         try {
             Date eventDate = simpleDateFormat.parse(date_TextView.getText().toString());
 
-            new_HabitEvent = new HabitEvent(eventType, eventDate);
+            new_HabitEvent = new HabitEvent(eventType, eventDate, loginUserName);
 
         } catch (ParseException e) {
             e.printStackTrace();

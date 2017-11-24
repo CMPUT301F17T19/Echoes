@@ -66,6 +66,7 @@ public class HabitDetail extends AppCompatActivity {
     private CheckBox friday_CheckBox;
     private CheckBox saturday_CheckBox;
 
+    private Button saveButton;
     private Button cancelButton;
 
 
@@ -145,6 +146,15 @@ public class HabitDetail extends AppCompatActivity {
             }
         });
 
+        saveButton = (Button ) findViewById(R.id.save_button);
+
+        saveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addNewHabit();
+            }
+        });
+
         cancelButton = (Button) findViewById(R.id.cancel_button);
 
         cancelButton.setOnClickListener(new View.OnClickListener() {
@@ -216,10 +226,8 @@ public class HabitDetail extends AppCompatActivity {
 
     /**
      * Add a new Habit object or save the changes made to the selected Habit object
-     *
-     * @param view: View, add Habit button View
      */
-    public void addNewHabit(View view) {
+    private void addNewHabit() {
 
         if (isNewHabit) {
             // User is about to add a new Habit
@@ -271,6 +279,9 @@ public class HabitDetail extends AppCompatActivity {
                 for (String plan : testPlan) {
                     Log.d("Test", plan);
                 }
+
+                // Set habit status
+                new_Habit.setProgress(MyHabitsActivity.getMyHabitList().getHabits().get(selected_pos).getProgress());
 
                 if (new_Habit != null) {
                     // Replace this new Habit to the Habit at the selected position in HabitList

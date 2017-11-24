@@ -34,6 +34,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 
 import java.util.ArrayList;
+import java.util.concurrent.ExecutionException;
 
 import static com.example.cmput301f17t19.echoes.LoginActivity.LOGIN_USERNAME;
 
@@ -201,7 +202,30 @@ public class MyHabitsActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.mapp_bar, menu);
+
+        // Check if the user received following request
+        ElasticSearchController.GetUserReceivedRequestsTask getUserReceivedRequestsTask = new ElasticSearchController.GetUserReceivedRequestsTask();
+        getUserReceivedRequestsTask.execute(login_userName);
+
+        try {
+            UserReceivedRequestsList userReceivedRequestsList = getUserReceivedRequestsTask.get();
+
+            if (userReceivedRequestsList != null) {
+                if (userReceivedRequestsList.getReceivedRequests().size() != 0) {
+                    inflater.inflate(R.menu.nonempty_message_appbar, menu);
+                } else {
+                    inflater.inflate(R.menu.mapp_bar, menu);
+                }
+
+            } else {
+                inflater.inflate(R.menu.mapp_bar, menu);
+            }
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
 
         return super.onCreateOptionsMenu(menu);
     }
@@ -227,6 +251,14 @@ public class MyHabitsActivity extends AppCompatActivity {
                 Intent userProfile_intent = new Intent(this, UserProfileActivity.class);
                 userProfile_intent.putExtra(UserProfileActivity.USERPROFILE_TAG, login_userName);
                 startActivity(userProfile_intent);
+
+                break;
+
+            case R.id.action_UserMessage:
+                // Pass the username of the login user to the user message activity
+                Intent userMessage_intent = new Intent(this, UserMessageActivity.class);
+                userMessage_intent.putExtra(LOGIN_USERNAME, login_userName);
+                startActivity(userMessage_intent);
 
                 break;
         }

@@ -21,12 +21,12 @@ import java.util.Date;
  */
 public class Habit {
 
-    public String name;
-    public String reason;
-    public Date startDate;
-    public Plan plan;
-    public Boolean doneToday; // need getters / setters
-    public Float progress;
+    private String name;
+    private String reason;
+    private Date startDate;
+    private Plan plan;
+    private Boolean doneToday; // need getters / setters
+    private Float progress;
 
     /**
      * Constructor for the Habit object
