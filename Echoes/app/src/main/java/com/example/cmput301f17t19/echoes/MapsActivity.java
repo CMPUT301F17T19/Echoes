@@ -98,41 +98,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.getUiSettings().setAllGesturesEnabled(true);
 
         // Show my current location
-        showMyCurrentLocation();
-
-        boolean hasPointInclude = false;
-
-        // Add markers to the habit event that has location
-        for (HabitEvent habitEvent : shown_HabitEvents) {
-            if (habitEvent.getLocation() != null) {
-                LatLng latLng = new LatLng(habitEvent.getLocation().getLatitude(), habitEvent.getLocation().getLongitude());
-                boundsbuilder.include(latLng);
-                hasPointInclude = true;
-                // Add Marker
-                Marker marker = mMap.addMarker(new MarkerOptions()
-                        .position(latLng)
-                        .anchor(0.5f, 0.5f)
-                        .title(habitEvent.getLocation().getProvider()));
-
-                if (!habitEvent.getComments().equals("")) {
-                    marker.setSnippet(habitEvent.getComments());
-                }
-
-                location_Markers.add(marker);
-            }
-        }
-
-        if (hasPointInclude) {
-            // Show all markers on the map with proper zoom level
-            LatLngBounds bounds = boundsbuilder.build();
-            mMap.animateCamera(CameraUpdateFactory.newLatLngBounds(bounds, 20));
-        }
-    }
-
-    /**
-     * Show my current location on the map
-     */
-    private void showMyCurrentLocation() {
         // Reference: https://stackoverflow.com/questions/2227292/how-to-get-latitude-and-longitude-of-the-mobile-device-in-android
         boolean isLocPermissionAllowed = LocationUtil.checkLocationPermission(this);
 
@@ -161,6 +126,34 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         } else {
             Toast.makeText(this, "Access Location Permission Denied. Please allow location accession.", Toast.LENGTH_LONG).show();
+        }
+
+        boolean hasPointInclude = false;
+
+        // Add markers to the habit event that has location
+        for (HabitEvent habitEvent : shown_HabitEvents) {
+            if (habitEvent.getLocation() != null) {
+                LatLng latLng = new LatLng(habitEvent.getLocation().getLatitude(), habitEvent.getLocation().getLongitude());
+                boundsbuilder.include(latLng);
+                hasPointInclude = true;
+                // Add Marker
+                Marker marker = mMap.addMarker(new MarkerOptions()
+                        .position(latLng)
+                        .anchor(0.5f, 0.5f)
+                        .title(habitEvent.getLocation().getProvider()));
+
+                if (!habitEvent.getComments().equals("")) {
+                    marker.setSnippet(habitEvent.getComments());
+                }
+
+                location_Markers.add(marker);
+            }
+        }
+
+        if (hasPointInclude) {
+            // Show all markers on the map with proper zoom level
+            LatLngBounds bounds = boundsbuilder.build();
+            mMap.animateCamera(CameraUpdateFactory.newLatLngBounds(bounds, 20));
         }
     }
 
