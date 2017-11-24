@@ -180,6 +180,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         marker.setAlpha((float) 0.3);
                     }
                 }
+            } else {
+                Toast.makeText(this, "Current location is not available.", Toast.LENGTH_LONG).show();
             }
 
         } else {
