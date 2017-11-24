@@ -1,5 +1,6 @@
 package com.example.cmput301f17t19.echoes;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ListView;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 
@@ -27,10 +29,8 @@ import static com.example.cmput301f17t19.echoes.LoginActivity.LOGIN_USERNAME;
  */
 public class ToDoActivity extends AppCompatActivity {
 
-    //TODO: add getToDo method to HabitList class?
-    public ArrayList<String> nameArray;
-    public ArrayList<String> reasonArray;
-    public ArrayList<Habit> todoArray; // refactor two above arrays to just one
+    private static ArrayList<String> nameArray;
+    private static ArrayList<String> reasonArray;
 
     ListView listView; // will display list of habits
 
@@ -40,6 +40,10 @@ public class ToDoActivity extends AppCompatActivity {
     private static UserProfile login_userProfile;
     // The HabitList of the login user
     private static HabitList myHabitList;
+
+    private static ToDoListAdapter adapter;
+
+    private static Context mContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +65,8 @@ public class ToDoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_todo);
 
+        mContext = this;
+
         Intent intent = getIntent();
 
         login_userName = intent.getStringExtra(LOGIN_USERNAME);
@@ -72,11 +78,12 @@ public class ToDoActivity extends AppCompatActivity {
         nameArray = new ArrayList<String>();
         reasonArray = new ArrayList<String>();
 
-        populateArrays(myHabitList); // populate the listView with the data
+        populateArrays(); // populate the listView with the data
 
-        ToDoListAdapter adapter = new ToDoListAdapter(this,
+        adapter = new ToDoListAdapter(this,
                 nameArray,
-                reasonArray);
+                reasonArray,
+                login_userName);
 
         listView = (ListView) findViewById(R.id.listViewToDo);
         listView.setAdapter(adapter);
@@ -130,20 +137,81 @@ public class ToDoActivity extends AppCompatActivity {
 //    }
 
     // Check all of the users habits, only add ones that are scheduled for today.
-    //TODO: implement system for removing habits from this list once done
-    public void populateArrays(HabitList habitList) {
+    public void populateArrays() {
         for (int index=0; index < myHabitList.getHabits().size(); index++) {
 
             Habit habit = myHabitList.getHabits().get(index);
+
             Calendar c = Calendar.getInstance(); // get current day
             int today = c.get(Calendar.DAY_OF_WEEK);
 
             if (habit.getPlan().getSchedule().get(today-1)){
-                if (!habit.doneToday) {
+                Boolean isDone = false;
+
+                // Today
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                String Today_str = simpleDateFormat.format(Calendar.getInstance().getTime());
+
+                // Check if this habit has done today
+                ArrayList<HabitEvent> habitEvents = login_userProfile.getHabit_event_list().getHabitEvents();
+                for (HabitEvent habitEvent : habitEvents) {
+
+                    if (habitEvent.getTitle().equals(habit.getName()) &&
+                            simpleDateFormat.format(habitEvent.getStartDate()).equals(Today_str)) {
+                        // No need to add this habit type into TO DO LIST
+                        isDone = true;
+                    }
+                }
+
+                if (!isDone) {
                     nameArray.add(habit.getName());
                     reasonArray.add(habit.getReason());
                 }
             }
         }
+    }
+
+    /**
+     * Get the name array
+     *
+     * @return ArrayList<String>: name array
+     */
+    public static ArrayList<String> getNameArray(){
+        return nameArray;
+    }
+
+    /**
+     * Get the reason array
+     *
+     * @return ArrayList<String>: reason array
+     */
+    public static ArrayList<String> getReasonArray() {
+        return reasonArray;
+    }
+
+    /**
+     * Get the login user profile
+     *
+     * @return UserProfile: login user profile
+     */
+    public static UserProfile getLogin_userProfile() {
+        return login_userProfile;
+    }
+
+    /**
+     * Update TO DO list Screen and User Profile file and online data of the logged-in user
+     */
+    public static void updateDataStorage() {
+        adapter.notifyDataSetChanged();
+
+        // Update the Habit Status for the login user for all habits
+        login_userProfile = HabitStatus.updateAllHabitsStatus(login_userProfile);
+
+        // Update offline file
+        OfflineStorageController offlineStorageController = new OfflineStorageController(mContext, login_userProfile.getUserName());
+        offlineStorageController.saveInFile(login_userProfile);
+
+        // Update Online data
+        ElasticSearchController.syncOnlineWithOffline(login_userProfile);
     }
 }
