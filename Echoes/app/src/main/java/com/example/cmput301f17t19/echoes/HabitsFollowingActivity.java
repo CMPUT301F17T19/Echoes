@@ -199,7 +199,30 @@ public class HabitsFollowingActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.mapp_bar, menu);
+
+        // Check if the user received following request
+        ElasticSearchController.GetUserReceivedRequestsTask getUserReceivedRequestsTask = new ElasticSearchController.GetUserReceivedRequestsTask();
+        getUserReceivedRequestsTask.execute(login_UserName);
+
+        try {
+            UserReceivedRequestsList userReceivedRequestsList = getUserReceivedRequestsTask.get();
+
+            if (userReceivedRequestsList != null) {
+                if (userReceivedRequestsList.getReceivedRequests().size() != 0) {
+                    inflater.inflate(R.menu.nonempty_message_appbar, menu);
+                } else {
+                    inflater.inflate(R.menu.mapp_bar, menu);
+                }
+
+            } else {
+                inflater.inflate(R.menu.mapp_bar, menu);
+            }
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
 
         return super.onCreateOptionsMenu(menu);
     }

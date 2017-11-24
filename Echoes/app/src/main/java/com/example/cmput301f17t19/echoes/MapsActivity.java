@@ -73,12 +73,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             shown_HabitEvents = intent.getParcelableArrayListExtra(HABIT_EVENT_SHOW_LOCATION_TAG);
         }
 
-
-        // Set current location as default
-        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
-
-        boundsbuilder = new LatLngBounds.Builder();
-
         highlight_CheckBox = (CheckBox) findViewById(R.id.highlight_location_checkbox);
         highlight_CheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -108,9 +102,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.getUiSettings().setCompassEnabled(true);
         mMap.getUiSettings().setAllGesturesEnabled(true);
 
+        boundsbuilder = new LatLngBounds.Builder();
+
         // Show my current location
         // Reference: https://stackoverflow.com/questions/2227292/how-to-get-latitude-and-longitude-of-the-mobile-device-in-android
         boolean isLocPermissionAllowed = LocationUtil.checkLocationPermission(this);
+
+        // Set current location as default
+        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
 
         if (isLocPermissionAllowed) {
             mFusedLocationClient.getLastLocation()
@@ -160,7 +159,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
         }
 
-        if (hasPointInclude) {
+        if (hasPointInclude || myCurrentLocationMarker != null) {
             // Show all markers on the map with proper zoom level
             LatLngBounds bounds = boundsbuilder.build();
             mMap.animateCamera(CameraUpdateFactory.newLatLngBounds(bounds, 20));
