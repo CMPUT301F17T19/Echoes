@@ -83,6 +83,16 @@ public class MyHabitsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_myhabits);
         this.setTitle(R.string.my_habits);
 
+
+        com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx bottomNavigationViewEx = findViewById(R.id.btm1);
+
+        bottomNavigationViewEx.enableShiftingMode(false);
+        bottomNavigationViewEx.enableItemShiftingMode(false);
+        bottomNavigationViewEx.setTextVisibility(false);
+
+        bottomNavigationViewEx.enableAnimation(false);
+
+
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
 

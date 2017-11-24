@@ -25,23 +25,26 @@
         android:id="@+id/habits_recyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="64"
+        android:layout_weight="10"
         android:layout_margin="8dp"/>
 
-    <LinearLayout
-        android:id="@+id/add_habit_layout"
-        android:layout_gravity="center_horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:layout_margin="8dp">
 
         <Button
+            android:layout_marginLeft="280dp"
             android:id="@+id/habit_add_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/habit_add_button"/>
 
-    </LinearLayout>
+
+    <com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx
+        android:id="@+id/btm1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:itemBackground="@color/redPink"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@android:color/white"
+        app:menu="@menu/bottom_navigation_menu" />
+
 
 </LinearLayout>
