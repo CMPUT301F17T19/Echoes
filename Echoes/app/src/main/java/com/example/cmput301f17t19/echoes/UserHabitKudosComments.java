@@ -104,4 +104,32 @@ public class UserHabitKudosComments {
     public int getTotalKudosNum() {
         return kudos_usernames.size();
     }
+
+    /**
+     * Get the comments_usernames array list
+     */
+    public ArrayList<String> getComments_usernames() {
+        return comments_usernames;
+    }
+
+    /**
+     * Get the comments_contents array list
+     */
+    public ArrayList<String> getComments_contents() {
+        return comments_contents;
+    }
+
+    /**
+     * Add username to comments_usernames list
+     */
+    public void addUsernameComments(String username) {
+        comments_usernames.add(username);
+    }
+
+    /**
+     * Add comment content
+     */
+    public void addCommentContent(String content) {
+        comments_contents.add(content);
+    }
 }

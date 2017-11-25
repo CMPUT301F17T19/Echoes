@@ -116,4 +116,21 @@
 
     </LinearLayout>
 
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#c0c0c0"/>
+
+    <include
+        android:id="@+id/comments_kudos_layout"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        layout="@layout/comments_kudos_layout"
+        android:layout_margin="4dp"/>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#c0c0c0"/>
+
 </LinearLayout>

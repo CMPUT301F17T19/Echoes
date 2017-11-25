@@ -372,9 +372,9 @@ public class FollowingSharingController {
     }
 
     /**
-     * Get the UserHabitKudosComments object for the given login user from online
+     * Get the UserHabitKudosComments object for the given user from online
      *
-     * @return UserHabitKudosComments: the UserHabitKudosComments object for the given owner username + followingUsername + followingHabitTitle
+     * @return UserHabitKudosComments: the UserHabitKudosComments object for followingUsername + followingHabitTitle
      */
     public static UserHabitKudosComments getUserHabitKudosComments(String followingUsername, String followingHabitTitle) {
         UserHabitKudosComments userHabitKudosComments = null;

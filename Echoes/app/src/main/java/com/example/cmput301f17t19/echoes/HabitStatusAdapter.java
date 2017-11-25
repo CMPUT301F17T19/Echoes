@@ -11,6 +11,7 @@
 package com.example.cmput301f17t19.echoes;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -136,6 +137,27 @@ public class HabitStatusAdapter extends RecyclerView.Adapter<HabitStatusAdapter.
             noRecentHabitEvent_TextView = (TextView) itemView.findViewById(R.id.no_mostRecentEvent);
 
             viewComments_Button = (Button) itemView.findViewById(R.id.view_Comments_Button);
+
+            viewComments_Button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (thisUserHabitKudosComments == null) {
+                        Toast.makeText(mContext, "You're offline.", Toast.LENGTH_LONG).show();
+                    } else {
+                        // Open View Comments Activity to show all comments for this following's habit type
+                        Intent commentsIntent = new Intent(mContext, CommentsActivity.class);
+                        // Pass the login username
+                        commentsIntent.putExtra(LoginActivity.LOGIN_USERNAME, loginUserName);
+                        // Pass the following username and following habit title to comments activity (elastic search id)
+                        commentsIntent.putExtra(CommentsActivity.USERHABITKUDOSCOMMENTS_FollowingUsername,
+                                thisUserHabitKudosComments.getFollowingUsername());
+                        commentsIntent.putExtra(CommentsActivity.USERHABITKUDOSCOMMENTS_FollowingHabitTitle,
+                                thisUserHabitKudosComments.getFollowingHabitTitle());
+
+                        mContext.startActivity(commentsIntent);
+                    }
+                }
+            });
 
             kudos_ImageView = (ImageView) itemView.findViewById(R.id.kudos_imageView);
             kudos_num_TextView = (TextView) itemView.findViewById(R.id.kudos_num);

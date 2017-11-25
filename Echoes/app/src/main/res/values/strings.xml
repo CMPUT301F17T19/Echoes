@@ -95,4 +95,8 @@
     <string name="view_comments">View Comments</string>
     <string name="kudos">Kudos</string>
 
+    <string name="send_comment">Send Comment</string>
+    <string name="comments">Comments</string>
+    <string name="kudos_networkError">Cannot view Comments and Kudos when you are offline.</string>
+
 </resources>
