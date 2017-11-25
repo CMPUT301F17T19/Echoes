@@ -312,66 +312,6 @@ public class FollowingSharingController {
                         // Add this followingHabitsStatus to array list
                         myFollowingHabitsStatuses.add(followingHabitsStatus);
                     }
-//                    // Get the Habits of this following
-//                    ArrayList<Habit> followingHabits = following_UserProfile.getHabit_list().getHabits();
-//
-//                    // The habit type of the habits of this following
-//                    ArrayList<String> followingHabitTypes = new ArrayList<String>();
-//
-//                    // Indicate if the Habit in the corresponding index in followingHabits is added to Following Habits list
-//                    ArrayList<Boolean> isHabitHEAdded = new ArrayList<Boolean>();
-//
-//                    // Initialize
-//                    for (int i = 0; i < followingHabits.size(); i++) {
-//                        followingHabitTypes.add(followingHabits.get(i).getName());
-//                        isHabitHEAdded.add(false);
-//                    }
-//
-//                    // all habit events of this following
-//                    ArrayList<HabitEvent> followingHabitEvents = following_UserProfile.getHabit_event_list().getHabitEvents();
-//
-//                    // Go through all habit events of this following
-//                    for (HabitEvent habitEvent : followingHabitEvents) {
-//                        // The habit type of this habit event has not been added
-//                        int habit_pos = followingHabitTypes.indexOf(habitEvent.getTitle());
-//
-//                        // If this habit type exist in this following's habit list
-//                        if (habit_pos != -1) {
-//                            // If this habit type has not been added
-//                            if (!isHabitHEAdded.get(habit_pos)) {
-//                                // Create FollowingHabitsStatus object for this Habit and its most recent HabitEvent
-//                                FollowingHabitsStatus followingHabitsStatus = new FollowingHabitsStatus(following_UserProfile.getUserName(), following_UserProfile.getProfilePicture(),
-//                                        followingHabits.get(habit_pos), habitEvent);
-//
-//                                // Add this followingHabitsStatus to array list
-//                                myFollowingHabitsStatuses.add(followingHabitsStatus);
-//
-//                                // Set isAdded to this habit type
-//                                isHabitHEAdded.set(habit_pos, true);
-//                            }
-//                        }
-//
-//                        // Check if all habits' most recent event is added
-//                        if (isHabitHEAdded.indexOf(false) == -1) {
-//                            break;
-//                        }
-//                    }
-//
-//                    // Check if there are habits that does not have habit event
-//                    for (int i = 0; i < isHabitHEAdded.size(); i++) {
-//                        if (!isHabitHEAdded.get(i)) {
-//                            // Create FollowingHabitsStatus object for this Habit and null Habit Event
-//                            FollowingHabitsStatus followingHabitsStatus = new FollowingHabitsStatus(following_UserProfile.getUserName(), following_UserProfile.getProfilePicture(),
-//                                    followingHabits.get(i), null);
-//
-//                            // Add this followingHabitsStatus to array list
-//                            myFollowingHabitsStatuses.add(followingHabitsStatus);
-//
-//                            // Set isAdded to this habit type
-//                            isHabitHEAdded.set(i, true);
-//                        }
-//                    }
-
                 }
 
             } catch (InterruptedException e) {
@@ -429,5 +369,46 @@ public class FollowingSharingController {
         }
 
         return recentHabitEvents;
+    }
+
+    /**
+     * Get the UserHabitKudosComments object for the given login user from online
+     *
+     * @return UserHabitKudosComments: the UserHabitKudosComments object for the given owner username + followingUsername + followingHabitTitle
+     */
+    public static UserHabitKudosComments getUserHabitKudosComments(String followingUsername, String followingHabitTitle) {
+        UserHabitKudosComments userHabitKudosComments = null;
+
+        // Check if the UserHabitKudosComments for this owner + following username + following habit title exists online
+        ElasticSearchController.CheckUserHabitKudosCommentsExistTask checkUserHabitKudosCommentsExistTask = new ElasticSearchController.CheckUserHabitKudosCommentsExistTask();
+        checkUserHabitKudosCommentsExistTask.execute(followingUsername+followingHabitTitle);
+
+        try {
+            Boolean isExist = checkUserHabitKudosCommentsExistTask.get();
+
+            if (isExist == null) {
+                Log.d("Test", "checkUserHabitKudosCommentsExistTask fail, network error");
+            } else if (isExist) {
+                // Get the UserHabitKudosComments for this id
+                ElasticSearchController.GetUserHabitKudosCommentsTask getUserHabitKudosCommentsTask = new ElasticSearchController.GetUserHabitKudosCommentsTask();
+                getUserHabitKudosCommentsTask.execute(followingUsername+followingHabitTitle);
+
+                userHabitKudosComments = getUserHabitKudosCommentsTask.get();
+
+            } else {
+                // Add the new UserHabitKudosComments for this id
+                userHabitKudosComments = new UserHabitKudosComments(followingUsername, followingHabitTitle);
+
+                ElasticSearchController.AddNewUserHabitKudosCommentsTask addNewUserHabitKudosCommentsTask = new ElasticSearchController.AddNewUserHabitKudosCommentsTask();
+                addNewUserHabitKudosCommentsTask.execute(userHabitKudosComments);
+            }
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+
+        return userHabitKudosComments;
     }
 }

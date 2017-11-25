@@ -16,10 +16,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -34,12 +36,14 @@ import java.util.ArrayList;
 public class HabitStatusAdapter extends RecyclerView.Adapter<HabitStatusAdapter.HabitStatusViewHolder>{
 
     private Context mContext;
+    private String loginUserName;
 
     /**
      * Constructor for HabitStatus Adapter
      */
-    public HabitStatusAdapter(Context context) {
+    public HabitStatusAdapter(Context context, String loginUsername) {
         mContext = context;
+        loginUserName = loginUsername;
     }
 
     /**
@@ -99,6 +103,14 @@ public class HabitStatusAdapter extends RecyclerView.Adapter<HabitStatusAdapter.
         private LinearLayout habitEventLayout;
         private TextView noRecentHabitEvent_TextView;
 
+        // Button for viewing habit comments
+        private Button viewComments_Button;
+        // View for kudos
+        private ImageView kudos_ImageView;
+        private TextView kudos_num_TextView;
+
+        private UserHabitKudosComments thisUserHabitKudosComments;
+
 
         public HabitStatusViewHolder(View itemView) {
 
@@ -122,6 +134,53 @@ public class HabitStatusAdapter extends RecyclerView.Adapter<HabitStatusAdapter.
 
             habitEventLayout = (LinearLayout) itemView.findViewById(R.id.followingHabitMostRecentEvent_layout);
             noRecentHabitEvent_TextView = (TextView) itemView.findViewById(R.id.no_mostRecentEvent);
+
+            viewComments_Button = (Button) itemView.findViewById(R.id.view_Comments_Button);
+
+            kudos_ImageView = (ImageView) itemView.findViewById(R.id.kudos_imageView);
+            kudos_num_TextView = (TextView) itemView.findViewById(R.id.kudos_num);
+
+            kudos_ImageView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (thisUserHabitKudosComments == null) {
+                        Toast.makeText(mContext, "You're offline.", Toast.LENGTH_LONG).show();
+                    } else {
+                        // Check if the login username in the kudos list of userHabitKudosComments
+                        boolean isGivenKudos = thisUserHabitKudosComments.isGivenKudos(loginUserName);
+
+                        if (isGivenKudos) {
+                            // Set unliked heart icon
+                            kudos_ImageView.setImageResource(R.drawable.unliked_ic);
+
+                            // Remove the login username to the kudos list of userHabitKudosComments
+                            thisUserHabitKudosComments.removeKudos(loginUserName);
+
+                            // Update online data
+                            ElasticSearchController.UpdateUserHabitKudosCommentsTask updateUserHabitKudosCommentsTask = new ElasticSearchController.UpdateUserHabitKudosCommentsTask();
+                            updateUserHabitKudosCommentsTask.execute(thisUserHabitKudosComments);
+
+                            // Update kudos number
+                            kudos_num_TextView.setText(Integer.toString(thisUserHabitKudosComments.getTotalKudosNum()));
+
+                        } else {
+                            // Set liked heart icon
+                            kudos_ImageView.setImageResource(R.drawable.liked_ic);
+
+                            // Add the login username to the kudos list of userHabitKudosComments
+                            thisUserHabitKudosComments.addKudos(loginUserName);
+
+                            // Update online data
+                            ElasticSearchController.UpdateUserHabitKudosCommentsTask updateUserHabitKudosCommentsTask = new ElasticSearchController.UpdateUserHabitKudosCommentsTask();
+                            updateUserHabitKudosCommentsTask.execute(thisUserHabitKudosComments);
+
+                            // Update kudos number
+                            kudos_num_TextView.setText(Integer.toString(thisUserHabitKudosComments.getTotalKudosNum()));
+                        }
+
+                    }
+                }
+            });
         }
 
         /**
@@ -164,6 +223,30 @@ public class HabitStatusAdapter extends RecyclerView.Adapter<HabitStatusAdapter.
 
             habitStatusProgressBar.setProgress(Math.round(thisHabit.getProgress() * 100));
             habitStatusProgressBar.setMax(100);
+
+            // Set kudos
+            String followingUsername = followingHabitsStatus_pos.getFollowingUsername();
+            String followingHabitTitle = followingHabitsStatus_pos.getFollowingHabit().getName();
+
+            UserHabitKudosComments userHabitKudosComments = FollowingSharingController.getUserHabitKudosComments(followingUsername, followingHabitTitle);
+
+            thisUserHabitKudosComments = userHabitKudosComments;
+
+            // Set Kudos UI
+            if (userHabitKudosComments == null) {
+                Toast.makeText(mContext, "You're offline.", Toast.LENGTH_LONG).show();
+            } else {
+                // Set kudos icon
+                if (thisUserHabitKudosComments.isGivenKudos(loginUserName)) {
+                    kudos_ImageView.setImageResource(R.drawable.liked_ic);
+                } else {
+                    kudos_ImageView.setImageResource(R.drawable.unliked_ic);
+                }
+
+                // Set kudos number
+                kudos_num_TextView.setText(Integer.toString(thisUserHabitKudosComments.getTotalKudosNum()));
+            }
+
 
             // Set the most recent event
             HabitEvent mostRecentHabitEvent = followingHabitsStatus_pos.getFollowingMostRecentHabitEvent();

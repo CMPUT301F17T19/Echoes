@@ -44,6 +44,8 @@ public class ElasticSearchController {
     private static final String SEARCH_TYPE_REQUESTS = "userreceivedrequests";
     private static final String SEARCH_TYPE_FOLLOWINGS = "userfollowings";
 
+    private static final String SEARCH_TYPE_KUDOS_COMMENTS = "userkudoscomments";
+
     /**
      *  Add new user profile to online database
      *
@@ -546,6 +548,165 @@ public class ElasticSearchController {
                     .index(SEARCH_INDEX)
                     .type(SEARCH_TYPE_FOLLOWINGS)
                     .id(userFollowingList.getUserName())
+                    .build();
+
+            try {
+                DocumentResult execute = client.execute(index);
+
+                if (execute.isSucceeded()) {
+                    Log.d("update", "Update User Habits Success");
+                } else {
+                    Log.d("update", "Update User Habits Fail");
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            return null;
+        }
+    }
+
+    /**
+     *  Add new user's UserHabitKudosComments item to online database
+     *
+     *  @params UserHabitKudosComments: The UserHabitKudosComments object of this user
+     *  @progress Void
+     *  @return Void
+     */
+    public static class AddNewUserHabitKudosCommentsTask extends AsyncTask<UserHabitKudosComments, Void, Void> {
+
+        @Override
+        protected Void doInBackground(UserHabitKudosComments... userHabitKudosCommentses) {
+            verifySettings();
+
+            UserHabitKudosComments userHabitKudosComments = userHabitKudosCommentses[0];
+
+            // Set the unique ID for the document of this UserHabitKudosComments
+            String doc_ID = userHabitKudosComments.getElasticSearchID();
+
+            // Add this new user to online database
+            Index index = new Index.Builder(userHabitKudosComments)
+                    .index(SEARCH_INDEX)
+                    .type(SEARCH_TYPE_KUDOS_COMMENTS)
+                    .id(doc_ID)
+                    .build();
+
+            try {
+                DocumentResult execute = client.execute(index);
+
+                if(execute.isSucceeded()){
+                    Log.d("addUser", "Add user kudos comments Success");
+                }
+            }
+            catch (Exception e) {
+                Log.i("Error", "The application failed to build and send the tweets");
+            }
+
+            return null;
+        }
+    }
+
+    /**
+     * Check if the UserHabitKudosComments of the id has already exist
+     *
+     * @params String: the following username + the following habit title
+     * @progress Void
+     * @return Boolean: true: The id has already exist in online database
+     *                  false: id does not exist
+     *                  null: search failed
+     */
+    public static class CheckUserHabitKudosCommentsExistTask extends AsyncTask<String, Void, Boolean> {
+
+        @Override
+        protected Boolean doInBackground(String... strings) {
+            verifySettings();
+
+            // input search id
+            String searchID = strings[0];
+
+            // Check if UserProfile with id equals userName_IN exists
+            Get get = new Get.Builder(SEARCH_INDEX, searchID)
+                    .type(SEARCH_TYPE_KUDOS_COMMENTS)
+                    .build();
+
+            try {
+                JestResult result = client.execute(get);
+
+                if (result.isSucceeded()) {
+                    Log.d("checkUser", "Check userFollowing UserName Unique Success");
+                    return true;
+                } else {
+                    Log.d("checkUser", "Check userFollowing UserName Unique Fail");
+                    return false;
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            return null;
+        }
+    }
+
+    /**
+     * Get UserHabitKudosComments of the given user
+     *
+     * @params String: the id of the UserHabitKudosComments doc in elasticsearch
+     * @progress Void
+     * @return UserHabitKudosComments: The UserHabitKudosComments with the id
+     */
+    public static class GetUserHabitKudosCommentsTask extends AsyncTask<String, Void, UserHabitKudosComments> {
+
+        @Override
+        protected UserHabitKudosComments doInBackground(String... strings) {
+            verifySettings();
+
+            // input search id
+            String searchID = strings[0];
+
+            // Get the Document with ID equals the input username
+            Get get = new Get.Builder(SEARCH_INDEX, searchID)
+                    .type(SEARCH_TYPE_KUDOS_COMMENTS)
+                    .build();
+
+            try {
+                JestResult result = client.execute(get);
+
+                if (result.isSucceeded()) {
+                    UserHabitKudosComments userHabitKudosComments = result.getSourceAsObject(UserHabitKudosComments.class);
+
+                    return userHabitKudosComments;
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            return null;
+        }
+    }
+
+    /**
+     * Update the UserHabitKudosComments
+     *
+     * @params UserHabitKudosComments: The UserHabitKudosComments object of this user
+     * @progress Void
+     * @return Void
+     */
+    public static class UpdateUserHabitKudosCommentsTask extends AsyncTask<UserHabitKudosComments, Void, Void> {
+
+        @Override
+        protected Void doInBackground(UserHabitKudosComments... userHabitKudosCommentses) {
+            verifySettings();
+
+            UserHabitKudosComments userHabitKudosComments= userHabitKudosCommentses[0];
+
+            // Update this userProfile to online database
+            Index index = new Index.Builder(userHabitKudosComments)
+                    .index(SEARCH_INDEX)
+                    .type(SEARCH_TYPE_KUDOS_COMMENTS)
+                    .id(userHabitKudosComments.getElasticSearchID())
                     .build();
 
             try {

@@ -12,12 +12,38 @@
     <Button
         android:id="@+id/view_Comments_Button"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <TextView
-        android:id="@+id/kudos"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Kudos"/>
+        android:text="@string/view_comments"
+        android:layout_marginRight="100dp"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="right"
+        android:layout_margin="4dp">
+
+        <ImageView
+            android:id="@+id/kudos_imageView"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center"
+            android:layout_margin="4dp"/>
+
+        <TextView
+            android:id="@+id/kudos_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/kudos"
+            android:layout_margin="4dp"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
 
 </LinearLayout>
