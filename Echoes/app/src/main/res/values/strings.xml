@@ -13,8 +13,10 @@
     <string name="habit_reason">Habit Reason:</string>
     <string name="habit_date">Date to Start:</string>
     <string name="habit_status">Habit Status:</string>
+    <string name="habit_plan">Habit Plan</string>
 
     <string name="habit_events">Habit Events</string>
+    <string name="habit_events_type">Habit Events Type:</string>
 
     <string name="habithistory">Habit History</string>
 

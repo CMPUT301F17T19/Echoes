@@ -20,6 +20,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 
 /**
  * Habit Overview Recycler View Adapter
@@ -84,6 +85,7 @@ public class HabitOverviewAdapter extends RecyclerView.Adapter<HabitOverviewAdap
         private TextView habitDateTextView;
         private TextView habitStatusTextView;
         private ProgressBar habitStatusProgressBar;
+        private TextView habitPlanTextView;
 
         public HabitOverviewViewHolder(View itemView) {
 
@@ -95,6 +97,7 @@ public class HabitOverviewAdapter extends RecyclerView.Adapter<HabitOverviewAdap
             habitDateTextView = (TextView) itemView.findViewById(R.id.habitOverview_date);
             habitStatusTextView = (TextView) itemView.findViewById(R.id.habitOverview_status);
             habitStatusProgressBar = (ProgressBar) itemView.findViewById(R.id.habit_status_progressBar);
+            habitPlanTextView = (TextView) itemView.findViewById(R.id.habitPlanTextView);
 
             itemView.setOnClickListener(this);
         }
@@ -114,6 +117,16 @@ public class HabitOverviewAdapter extends RecyclerView.Adapter<HabitOverviewAdap
 
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
             habitDateTextView.setText(simpleDateFormat.format(habit_pos.getStartDate()));
+
+            // Get the array list of string description of habit plan
+            ArrayList<String> planDescription = habit_pos.getPlan().getScheduleDescription();
+            String planDescription_str = "" ;
+
+            for (String plan_str : planDescription) {
+                planDescription_str += plan_str + " ";
+            }
+
+            habitPlanTextView.setText(planDescription_str);
 
             habitStatusTextView.setText(Float.toString(habit_pos.getProgress() * 100) + "%");
 

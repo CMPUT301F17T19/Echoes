@@ -19,6 +19,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
+
 /**
  * Habit Event Overview Recycler View Adapter
  *
@@ -135,11 +137,15 @@ public class HabitEventOverviewAdapter extends RecyclerView.Adapter<HabitEventOv
             habitEventHabitTypeTextView.setText(habitEvent_pos.getTitle());
             // Set the comment and date
             habitEventCommentTextView.setText(habitEvent_pos.getComments());
-            habitEventDateTextView.setText(habitEvent_pos.getStartDate().toString());
+
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            habitEventDateTextView.setText(simpleDateFormat.format(habitEvent_pos.getStartDate()));
 
             // Set image
             if (habitEvent_pos.getEventPhoto() != null) {
                 habitEventImgView.setImageBitmap(BitmapFactory.decodeByteArray(habitEvent_pos.getEventPhoto(), 0, habitEvent_pos.getEventPhoto().length));
+            } else {
+                habitEventImgView.setVisibility(View.GONE);
             }
         }
 
