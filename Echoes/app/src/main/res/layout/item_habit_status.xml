@@ -7,7 +7,13 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="4dp">
+    android:background="@color/white"
+    android:layout_margin="8dp">
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:background="@color/colorAccent"/>
 
     <LinearLayout
         android:orientation="horizontal"
@@ -30,30 +36,53 @@
 
     </LinearLayout>
 
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#c0c0c0"/>
+
+    <include
+        android:id="@+id/followingHabit_Layout"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        layout="@layout/item_habit_overview"
+        android:layout_margin="4dp"/>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#c0c0c0"/>
+
+    <include
+        android:id="@+id/comments_kudos_layout"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        layout="@layout/comments_kudos_layout"
+        android:layout_margin="4dp"/>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#c0c0c0"/>
+
+    <include
+        android:id="@+id/followingHabitMostRecentEvent_layout"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        layout="@layout/item_habitevent_overview"
+        android:layout_margin="4dp"/>
+
     <TextView
-        android:id="@+id/habitName_TextView"
-        android:layout_width="match_parent"
+        android:id="@+id/no_mostRecentEvent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="4dp"
-        android:textSize="18sp"/>
+        android:text="No Recent Habit Event for this Habit"
+        android:layout_margin="4dp"
+        android:layout_gravity="center_horizontal"/>
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="4dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/habit_status"
-            android:layout_marginEnd="18dp"/>
-
-        <TextView
-            android:id="@+id/habit_status_number_TextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-    </LinearLayout>
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:background="@color/colorAccent"/>
 
 </LinearLayout>

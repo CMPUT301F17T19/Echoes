@@ -9,7 +9,8 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.cmput301f17t19.echoes.HabitsFollowingActivity">
+    tools:context="com.example.cmput301f17t19.echoes.HabitsFollowingActivity"
+    android:background="@color/dimPurple">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/my_toolbar"
@@ -24,7 +25,8 @@
         android:id="@+id/habitsFollowing_Layout"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_margin="8dp">
 
         <LinearLayout
             android:orientation="horizontal"
@@ -41,7 +43,8 @@
                 android:hint="@string/search_user_hint"
                 android:textSize="16sp"
                 android:maxLines="1"
-                android:layout_marginRight="8dp"/>
+                android:layout_marginRight="8dp"
+                android:background="@color/white"/>
 
             <Button
                 android:id="@+id/search_user_button"

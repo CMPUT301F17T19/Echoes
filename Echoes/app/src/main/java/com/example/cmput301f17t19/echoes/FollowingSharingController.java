@@ -286,29 +286,92 @@ public class FollowingSharingController {
                 UserProfile following_UserProfile = getUserProfileTask.get();
 
                 if (following_UserProfile != null) {
+
                     // Get the HabitList of this user
                     HabitList followingHabitList = following_UserProfile.getHabit_list();
                     ArrayList<Habit> followingHabits = followingHabitList.getHabits();
 
                     for (Habit habit : followingHabits) {
-                        // Get the habitEvent list of this habit
-                        ArrayList<HabitEvent> thisHabitEvents = new ArrayList<HabitEvent>();
+                        // Get the most recent habitEvent this habit
+                        HabitEvent mostRecentHabitEvent = null;
 
-                        HabitEventList allHabitEventList = following_UserProfile.getHabit_event_list();
-                        ArrayList<HabitEvent> allHabitEvents = allHabitEventList.getHabitEvents();
+                        // all habit events of this following
+                        ArrayList<HabitEvent> allHabitEvents = following_UserProfile.getHabit_event_list().getHabitEvents();
 
                         for (HabitEvent habitEvent : allHabitEvents) {
                             if (habitEvent.getTitle().equals(habit.getName())) {
-                                // Add this habit event to this Habit's HabitEvents list
-                                thisHabitEvents.add(habitEvent);
+                                // Set this habit Event to most recent Habit Event
+                                mostRecentHabitEvent = habitEvent;
+
+                                break;
                             }
                         }
 
-                        FollowingHabitsStatus followingHabitsStatus = new FollowingHabitsStatus(following_UserProfile.getUserName(), following_UserProfile.getProfilePicture(), habit, thisHabitEvents);
+                        FollowingHabitsStatus followingHabitsStatus = new FollowingHabitsStatus(following_UserProfile.getUserName(), following_UserProfile.getProfilePicture(), habit, mostRecentHabitEvent);
 
                         // Add this followingHabitsStatus to array list
                         myFollowingHabitsStatuses.add(followingHabitsStatus);
                     }
+//                    // Get the Habits of this following
+//                    ArrayList<Habit> followingHabits = following_UserProfile.getHabit_list().getHabits();
+//
+//                    // The habit type of the habits of this following
+//                    ArrayList<String> followingHabitTypes = new ArrayList<String>();
+//
+//                    // Indicate if the Habit in the corresponding index in followingHabits is added to Following Habits list
+//                    ArrayList<Boolean> isHabitHEAdded = new ArrayList<Boolean>();
+//
+//                    // Initialize
+//                    for (int i = 0; i < followingHabits.size(); i++) {
+//                        followingHabitTypes.add(followingHabits.get(i).getName());
+//                        isHabitHEAdded.add(false);
+//                    }
+//
+//                    // all habit events of this following
+//                    ArrayList<HabitEvent> followingHabitEvents = following_UserProfile.getHabit_event_list().getHabitEvents();
+//
+//                    // Go through all habit events of this following
+//                    for (HabitEvent habitEvent : followingHabitEvents) {
+//                        // The habit type of this habit event has not been added
+//                        int habit_pos = followingHabitTypes.indexOf(habitEvent.getTitle());
+//
+//                        // If this habit type exist in this following's habit list
+//                        if (habit_pos != -1) {
+//                            // If this habit type has not been added
+//                            if (!isHabitHEAdded.get(habit_pos)) {
+//                                // Create FollowingHabitsStatus object for this Habit and its most recent HabitEvent
+//                                FollowingHabitsStatus followingHabitsStatus = new FollowingHabitsStatus(following_UserProfile.getUserName(), following_UserProfile.getProfilePicture(),
+//                                        followingHabits.get(habit_pos), habitEvent);
+//
+//                                // Add this followingHabitsStatus to array list
+//                                myFollowingHabitsStatuses.add(followingHabitsStatus);
+//
+//                                // Set isAdded to this habit type
+//                                isHabitHEAdded.set(habit_pos, true);
+//                            }
+//                        }
+//
+//                        // Check if all habits' most recent event is added
+//                        if (isHabitHEAdded.indexOf(false) == -1) {
+//                            break;
+//                        }
+//                    }
+//
+//                    // Check if there are habits that does not have habit event
+//                    for (int i = 0; i < isHabitHEAdded.size(); i++) {
+//                        if (!isHabitHEAdded.get(i)) {
+//                            // Create FollowingHabitsStatus object for this Habit and null Habit Event
+//                            FollowingHabitsStatus followingHabitsStatus = new FollowingHabitsStatus(following_UserProfile.getUserName(), following_UserProfile.getProfilePicture(),
+//                                    followingHabits.get(i), null);
+//
+//                            // Add this followingHabitsStatus to array list
+//                            myFollowingHabitsStatuses.add(followingHabitsStatus);
+//
+//                            // Set isAdded to this habit type
+//                            isHabitHEAdded.set(i, true);
+//                        }
+//                    }
+
                 }
 
             } catch (InterruptedException e) {

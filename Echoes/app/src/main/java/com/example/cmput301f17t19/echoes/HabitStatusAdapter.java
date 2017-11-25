@@ -11,18 +11,18 @@
 package com.example.cmput301f17t19.echoes;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-
-import static com.example.cmput301f17t19.echoes.FollowingHabitEventsActivity.FOLLOWINGHABITEVENT_TAG;
 
 /**
  * Habit Status Recycler View Adapter
@@ -79,12 +79,25 @@ public class HabitStatusAdapter extends RecyclerView.Adapter<HabitStatusAdapter.
     /**
      * View Holder for each HabitStatus object displayed in HabitsFollowing
      */
-    class HabitStatusViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    class HabitStatusViewHolder extends RecyclerView.ViewHolder {
 
         private ImageView userProfileImage;
         private TextView userName;
-        private TextView habitName_TextView;
-        private TextView habitStatusNum_TextView;
+
+        private TextView habitTitleTextView;
+        private TextView habitReasonTextView;
+        private TextView habitDateTextView;
+        private TextView habitStatusTextView;
+        private ProgressBar habitStatusProgressBar;
+        private TextView habitPlanTextView;
+
+        private TextView habitEventHabitTypeTextView;
+        private ImageView habitEventImgView;
+        private TextView habitEventCommentTextView;
+        private TextView habitEventDateTextView;
+
+        private LinearLayout habitEventLayout;
+        private TextView noRecentHabitEvent_TextView;
 
 
         public HabitStatusViewHolder(View itemView) {
@@ -94,10 +107,21 @@ public class HabitStatusAdapter extends RecyclerView.Adapter<HabitStatusAdapter.
 
             userProfileImage = (ImageView) itemView.findViewById(R.id.user_profile_img);
             userName = (TextView) itemView.findViewById(R.id.user_name);
-            habitName_TextView = (TextView) itemView.findViewById(R.id.habitName_TextView);
-            habitStatusNum_TextView = (TextView) itemView.findViewById(R.id.habit_status_number_TextView);
 
-            itemView.setOnClickListener(this);
+            habitTitleTextView = (TextView) itemView.findViewById(R.id.habitOverview_title);
+            habitReasonTextView = (TextView) itemView.findViewById(R.id.habitOverview_reason);
+            habitDateTextView = (TextView) itemView.findViewById(R.id.habitOverview_date);
+            habitStatusTextView = (TextView) itemView.findViewById(R.id.habitOverview_status);
+            habitStatusProgressBar = (ProgressBar) itemView.findViewById(R.id.habit_status_progressBar);
+            habitPlanTextView = (TextView) itemView.findViewById(R.id.habitPlanTextView);
+
+            habitEventHabitTypeTextView = (TextView) itemView.findViewById(R.id.habitevent_type_textView);
+            habitEventImgView = (ImageView) itemView.findViewById(R.id.habitevent_photo);
+            habitEventCommentTextView = (TextView) itemView.findViewById(R.id.habitevent_comment);
+            habitEventDateTextView = (TextView) itemView.findViewById(R.id.habitevent_date);
+
+            habitEventLayout = (LinearLayout) itemView.findViewById(R.id.followingHabitMostRecentEvent_layout);
+            noRecentHabitEvent_TextView = (TextView) itemView.findViewById(R.id.no_mostRecentEvent);
         }
 
         /**
@@ -117,30 +141,51 @@ public class HabitStatusAdapter extends RecyclerView.Adapter<HabitStatusAdapter.
             // Set the username
             userName.setText(followingHabitsStatus_pos.getFollowingUsername());
 
-            // Set the habit name and status
+            // Set the habit overview
             Habit thisHabit = followingHabitsStatus_pos.getFollowingHabit();
-            habitName_TextView.setText(thisHabit.getName());
-            habitStatusNum_TextView.setText(Float.toString(thisHabit.getProgress()));
-        }
+            // Set the comment and date
+            habitTitleTextView.setText(thisHabit.getName());
+            habitReasonTextView.setText(thisHabit.getReason());
 
-        /**
-         * Send the intent to open the HabitEvents Activity of selected Habit Status
-         *
-         * @param view: View, the view of Habit Status clicked
-         */
-        @Override
-        public void onClick(View view) {
-            // The selected FollowingHabitsStatus
-            FollowingHabitsStatus selected_FollowingHabitsStatus = HabitsFollowingActivity.getMyFollowingHabitsStatuses().get(getAdapterPosition());
-            // The habit event list of this Habit
-            ArrayList<HabitEvent> habit_HabitEvents = selected_FollowingHabitsStatus.getFollowingHabitEvents();
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            habitDateTextView.setText(simpleDateFormat.format(thisHabit.getStartDate()));
 
-            Intent followingHabit_HabitEvents_Intent = new Intent(mContext, FollowingHabitEventsActivity.class);
-            followingHabit_HabitEvents_Intent.putExtra(FOLLOWINGHABITEVENT_TAG, habit_HabitEvents);
-            // Put the username of the user having these habit events
-            followingHabit_HabitEvents_Intent.putExtra(HabitEventDetailActivity.UserNameHE_TAG, selected_FollowingHabitsStatus.getFollowingUsername());
+            // Get the array list of string description of habit plan
+            ArrayList<String> planDescription = thisHabit.getPlan().getScheduleDescription();
+            String planDescription_str = "" ;
 
-            mContext.startActivity(followingHabit_HabitEvents_Intent);
+            for (String plan_str : planDescription) {
+                planDescription_str += plan_str + " ";
+            }
+
+            habitPlanTextView.setText(planDescription_str);
+
+            habitStatusTextView.setText(Float.toString(thisHabit.getProgress() * 100) + "%");
+
+            habitStatusProgressBar.setProgress(Math.round(thisHabit.getProgress() * 100));
+            habitStatusProgressBar.setMax(100);
+
+            // Set the most recent event
+            HabitEvent mostRecentHabitEvent = followingHabitsStatus_pos.getFollowingMostRecentHabitEvent();
+            if (mostRecentHabitEvent == null) {
+                habitEventLayout.setVisibility(View.GONE);
+            } else {
+                noRecentHabitEvent_TextView.setVisibility(View.GONE);
+
+                // Set habit type
+                habitEventHabitTypeTextView.setText(mostRecentHabitEvent.getTitle());
+                // Set the comment and date
+                habitEventCommentTextView.setText(mostRecentHabitEvent.getComments());
+
+                habitEventDateTextView.setText(simpleDateFormat.format(mostRecentHabitEvent.getStartDate()));
+
+                // Set image
+                if (mostRecentHabitEvent.getEventPhoto() != null) {
+                    habitEventImgView.setImageBitmap(BitmapFactory.decodeByteArray(mostRecentHabitEvent.getEventPhoto(), 0, mostRecentHabitEvent.getEventPhoto().length));
+                } else {
+                    habitEventImgView.setVisibility(View.GONE);
+                }
+            }
         }
     }
 }

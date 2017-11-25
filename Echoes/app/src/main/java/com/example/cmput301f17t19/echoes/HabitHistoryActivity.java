@@ -168,7 +168,7 @@ public class HabitHistoryActivity extends AppCompatActivity {
         mTypeHabitEventList = new HabitEventList();
         mTypeHabitEventList.setHabitEvents((ArrayList<HabitEvent>) login_userProfile.getHabit_event_list().getHabitEvents().clone());
 
-        habitEventOverviewAdapter = new HabitEventOverviewAdapter(this, false, login_Username);
+        habitEventOverviewAdapter = new HabitEventOverviewAdapter(this, login_Username);
 
         habitEventsRecyclerView.setAdapter(habitEventOverviewAdapter);
 
