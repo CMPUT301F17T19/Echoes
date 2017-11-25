@@ -16,6 +16,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
@@ -82,6 +83,7 @@ public class HabitOverviewAdapter extends RecyclerView.Adapter<HabitOverviewAdap
         private TextView habitReasonTextView;
         private TextView habitDateTextView;
         private TextView habitStatusTextView;
+        private ProgressBar habitStatusProgressBar;
 
         public HabitOverviewViewHolder(View itemView) {
 
@@ -92,6 +94,7 @@ public class HabitOverviewAdapter extends RecyclerView.Adapter<HabitOverviewAdap
             habitReasonTextView = (TextView) itemView.findViewById(R.id.habitOverview_reason);
             habitDateTextView = (TextView) itemView.findViewById(R.id.habitOverview_date);
             habitStatusTextView = (TextView) itemView.findViewById(R.id.habitOverview_status);
+            habitStatusProgressBar = (ProgressBar) itemView.findViewById(R.id.habit_status_progressBar);
 
             itemView.setOnClickListener(this);
         }
@@ -112,7 +115,10 @@ public class HabitOverviewAdapter extends RecyclerView.Adapter<HabitOverviewAdap
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
             habitDateTextView.setText(simpleDateFormat.format(habit_pos.getStartDate()));
 
-            habitStatusTextView.setText(Float.toString(habit_pos.getProgress()));
+            habitStatusTextView.setText(Float.toString(habit_pos.getProgress() * 100) + "%");
+
+            habitStatusProgressBar.setProgress(Math.round(habit_pos.getProgress() * 100));
+            habitStatusProgressBar.setMax(100);
         }
 
         /**

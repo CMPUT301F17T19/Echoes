@@ -126,7 +126,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                                 boundsbuilder.include(new LatLng(location.getLatitude(), location.getLongitude()));
                                 LatLngBounds bounds = boundsbuilder.build();
-                                mMap.animateCamera(CameraUpdateFactory.newLatLngBounds(bounds, 20));
+
+                                View mapView = findViewById(R.id.map);
+
+                                mMap.animateCamera(CameraUpdateFactory.newLatLngBounds(bounds, mapView.getWidth(), mapView.getHeight(), 0));
 
                             } else {
                                 Log.d("Map", "Current Location not available.");
@@ -162,7 +165,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         if (hasPointInclude || myCurrentLocationMarker != null) {
             // Show all markers on the map with proper zoom level
             LatLngBounds bounds = boundsbuilder.build();
-            mMap.animateCamera(CameraUpdateFactory.newLatLngBounds(bounds, 20));
+
+            View mapView = findViewById(R.id.map);
+
+            mMap.animateCamera(CameraUpdateFactory.newLatLngBounds(bounds, mapView.getWidth(), mapView.getHeight(), 0));
         }
 
         // Reference: https://stackoverflow.com/questions/13904651/android-google-maps-v2-how-to-add-marker-with-multiline-snippet
