@@ -9,7 +9,8 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.cmput301f17t19.echoes.UserMessageActivity">
+    tools:context="com.example.cmput301f17t19.echoes.UserMessageActivity"
+    android:background="@color/dimPurple">
 
     <android.support.v7.widget.Toolbar
         app:layout_constraintLeft_toLeftOf="parent"
@@ -36,7 +37,8 @@
             android:layout_height="wrap_content"
             android:text="@string/receivedRequest"
             android:textSize="18sp"
-            android:layout_margin="8dp"/>
+            android:layout_margin="8dp"
+            android:background="@color/white"/>
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/receivedRequestRecyclerView"
@@ -51,6 +53,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/userMessage_networkError"
-        android:layout_margin="16dp"/>
+        android:layout_margin="16dp"
+        android:textColor="@color/white"/>
 
 </LinearLayout>

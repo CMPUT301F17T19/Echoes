@@ -176,7 +176,7 @@ public class HabitsFollowingActivity extends AppCompatActivity {
                 // Create the array list of FollowingHabitsStatus, containint all habits statuses of my followings
                 myFollowingHabitsStatuses = FollowingSharingController.createFollowingHabitsStatuses(myFollowings);
 
-                habitStatusAdapter = new HabitStatusAdapter(this);
+                habitStatusAdapter = new HabitStatusAdapter(this, login_UserName);
                 habitStatus_RecyclerView.setAdapter(habitStatusAdapter);
 
             } else {

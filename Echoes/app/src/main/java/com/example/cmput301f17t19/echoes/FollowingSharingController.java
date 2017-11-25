@@ -286,25 +286,28 @@ public class FollowingSharingController {
                 UserProfile following_UserProfile = getUserProfileTask.get();
 
                 if (following_UserProfile != null) {
+
                     // Get the HabitList of this user
                     HabitList followingHabitList = following_UserProfile.getHabit_list();
                     ArrayList<Habit> followingHabits = followingHabitList.getHabits();
 
                     for (Habit habit : followingHabits) {
-                        // Get the habitEvent list of this habit
-                        ArrayList<HabitEvent> thisHabitEvents = new ArrayList<HabitEvent>();
+                        // Get the most recent habitEvent this habit
+                        HabitEvent mostRecentHabitEvent = null;
 
-                        HabitEventList allHabitEventList = following_UserProfile.getHabit_event_list();
-                        ArrayList<HabitEvent> allHabitEvents = allHabitEventList.getHabitEvents();
+                        // all habit events of this following
+                        ArrayList<HabitEvent> allHabitEvents = following_UserProfile.getHabit_event_list().getHabitEvents();
 
                         for (HabitEvent habitEvent : allHabitEvents) {
                             if (habitEvent.getTitle().equals(habit.getName())) {
-                                // Add this habit event to this Habit's HabitEvents list
-                                thisHabitEvents.add(habitEvent);
+                                // Set this habit Event to most recent Habit Event
+                                mostRecentHabitEvent = habitEvent;
+
+                                break;
                             }
                         }
 
-                        FollowingHabitsStatus followingHabitsStatus = new FollowingHabitsStatus(following_UserProfile.getUserName(), following_UserProfile.getProfilePicture(), habit, thisHabitEvents);
+                        FollowingHabitsStatus followingHabitsStatus = new FollowingHabitsStatus(following_UserProfile.getUserName(), following_UserProfile.getProfilePicture(), habit, mostRecentHabitEvent);
 
                         // Add this followingHabitsStatus to array list
                         myFollowingHabitsStatuses.add(followingHabitsStatus);
@@ -366,5 +369,46 @@ public class FollowingSharingController {
         }
 
         return recentHabitEvents;
+    }
+
+    /**
+     * Get the UserHabitKudosComments object for the given user from online
+     *
+     * @return UserHabitKudosComments: the UserHabitKudosComments object for followingUsername + followingHabitTitle
+     */
+    public static UserHabitKudosComments getUserHabitKudosComments(String followingUsername, String followingHabitTitle) {
+        UserHabitKudosComments userHabitKudosComments = null;
+
+        // Check if the UserHabitKudosComments for this owner + following username + following habit title exists online
+        ElasticSearchController.CheckUserHabitKudosCommentsExistTask checkUserHabitKudosCommentsExistTask = new ElasticSearchController.CheckUserHabitKudosCommentsExistTask();
+        checkUserHabitKudosCommentsExistTask.execute(followingUsername+followingHabitTitle);
+
+        try {
+            Boolean isExist = checkUserHabitKudosCommentsExistTask.get();
+
+            if (isExist == null) {
+                Log.d("Test", "checkUserHabitKudosCommentsExistTask fail, network error");
+            } else if (isExist) {
+                // Get the UserHabitKudosComments for this id
+                ElasticSearchController.GetUserHabitKudosCommentsTask getUserHabitKudosCommentsTask = new ElasticSearchController.GetUserHabitKudosCommentsTask();
+                getUserHabitKudosCommentsTask.execute(followingUsername+followingHabitTitle);
+
+                userHabitKudosComments = getUserHabitKudosCommentsTask.get();
+
+            } else {
+                // Add the new UserHabitKudosComments for this id
+                userHabitKudosComments = new UserHabitKudosComments(followingUsername, followingHabitTitle);
+
+                ElasticSearchController.AddNewUserHabitKudosCommentsTask addNewUserHabitKudosCommentsTask = new ElasticSearchController.AddNewUserHabitKudosCommentsTask();
+                addNewUserHabitKudosCommentsTask.execute(userHabitKudosComments);
+            }
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+
+        return userHabitKudosComments;
     }
 }

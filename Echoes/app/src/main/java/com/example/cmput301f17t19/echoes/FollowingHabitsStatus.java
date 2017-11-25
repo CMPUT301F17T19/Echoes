@@ -10,8 +10,6 @@
 
 package com.example.cmput301f17t19.echoes;
 
-import java.util.ArrayList;
-
 /**
  * The Habit Status for the given username (from my followings)
  *
@@ -24,7 +22,7 @@ public class FollowingHabitsStatus {
     private String followingUsername;
     private byte[] followingUserProfileImg;
     private Habit followingHabit;
-    private ArrayList<HabitEvent> followingHabitEvents;
+    private HabitEvent followingMostRecentHabitEvents;
 
     /**
      * Constructor for FollowingHabitsStatus object
@@ -32,13 +30,13 @@ public class FollowingHabitsStatus {
      * @param following_username: String, username of the following
      * @param following_userprofileImg: byte[], the byte array of the profile image of the following user
      * @param following_habit: Habit, habit of the following
-     * @param followingHabit_events: ArrayList<HabitEvent>, the habit events list of the following's this habit
+     * @param followingMostRecentHabit_Events: HabitEvent, the most recent habit events of the following's this habit
      */
-    public FollowingHabitsStatus(String following_username, byte[] following_userprofileImg, Habit following_habit, ArrayList<HabitEvent> followingHabit_events) {
+    public FollowingHabitsStatus(String following_username, byte[] following_userprofileImg, Habit following_habit, HabitEvent followingMostRecentHabit_Events) {
         followingUsername = following_username;
         followingUserProfileImg = following_userprofileImg;
         followingHabit = following_habit;
-        followingHabitEvents = followingHabit_events;
+        followingMostRecentHabitEvents = followingMostRecentHabit_Events;
     }
 
     /**
@@ -63,9 +61,9 @@ public class FollowingHabitsStatus {
     }
 
     /**
-     * Get the array list of habit events of this habit
+     * Get the most recent habit events of this habit
      */
-    public ArrayList<HabitEvent> getFollowingHabitEvents() {
-        return followingHabitEvents;
+    public HabitEvent getFollowingMostRecentHabitEvent() {
+        return followingMostRecentHabitEvents;
     }
 }

@@ -17,12 +17,15 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-
-import static com.example.cmput301f17t19.echoes.FollowingHabitEventsActivity.FOLLOWINGHABITEVENT_TAG;
 
 /**
  * Habit Status Recycler View Adapter
@@ -34,12 +37,14 @@ import static com.example.cmput301f17t19.echoes.FollowingHabitEventsActivity.FOL
 public class HabitStatusAdapter extends RecyclerView.Adapter<HabitStatusAdapter.HabitStatusViewHolder>{
 
     private Context mContext;
+    private String loginUserName;
 
     /**
      * Constructor for HabitStatus Adapter
      */
-    public HabitStatusAdapter(Context context) {
+    public HabitStatusAdapter(Context context, String loginUsername) {
         mContext = context;
+        loginUserName = loginUsername;
     }
 
     /**
@@ -79,12 +84,33 @@ public class HabitStatusAdapter extends RecyclerView.Adapter<HabitStatusAdapter.
     /**
      * View Holder for each HabitStatus object displayed in HabitsFollowing
      */
-    class HabitStatusViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    class HabitStatusViewHolder extends RecyclerView.ViewHolder {
 
         private ImageView userProfileImage;
         private TextView userName;
-        private TextView habitName_TextView;
-        private TextView habitStatusNum_TextView;
+
+        private TextView habitTitleTextView;
+        private TextView habitReasonTextView;
+        private TextView habitDateTextView;
+        private TextView habitStatusTextView;
+        private ProgressBar habitStatusProgressBar;
+        private TextView habitPlanTextView;
+
+        private TextView habitEventHabitTypeTextView;
+        private ImageView habitEventImgView;
+        private TextView habitEventCommentTextView;
+        private TextView habitEventDateTextView;
+
+        private LinearLayout habitEventLayout;
+        private TextView noRecentHabitEvent_TextView;
+
+        // Button for viewing habit comments
+        private Button viewComments_Button;
+        // View for kudos
+        private ImageView kudos_ImageView;
+        private TextView kudos_num_TextView;
+
+        private UserHabitKudosComments thisUserHabitKudosComments;
 
 
         public HabitStatusViewHolder(View itemView) {
@@ -94,10 +120,89 @@ public class HabitStatusAdapter extends RecyclerView.Adapter<HabitStatusAdapter.
 
             userProfileImage = (ImageView) itemView.findViewById(R.id.user_profile_img);
             userName = (TextView) itemView.findViewById(R.id.user_name);
-            habitName_TextView = (TextView) itemView.findViewById(R.id.habitName_TextView);
-            habitStatusNum_TextView = (TextView) itemView.findViewById(R.id.habit_status_number_TextView);
 
-            itemView.setOnClickListener(this);
+            habitTitleTextView = (TextView) itemView.findViewById(R.id.habitOverview_title);
+            habitReasonTextView = (TextView) itemView.findViewById(R.id.habitOverview_reason);
+            habitDateTextView = (TextView) itemView.findViewById(R.id.habitOverview_date);
+            habitStatusTextView = (TextView) itemView.findViewById(R.id.habitOverview_status);
+            habitStatusProgressBar = (ProgressBar) itemView.findViewById(R.id.habit_status_progressBar);
+            habitPlanTextView = (TextView) itemView.findViewById(R.id.habitPlanTextView);
+
+            habitEventHabitTypeTextView = (TextView) itemView.findViewById(R.id.habitevent_type_textView);
+            habitEventImgView = (ImageView) itemView.findViewById(R.id.habitevent_photo);
+            habitEventCommentTextView = (TextView) itemView.findViewById(R.id.habitevent_comment);
+            habitEventDateTextView = (TextView) itemView.findViewById(R.id.habitevent_date);
+
+            habitEventLayout = (LinearLayout) itemView.findViewById(R.id.followingHabitMostRecentEvent_layout);
+            noRecentHabitEvent_TextView = (TextView) itemView.findViewById(R.id.no_mostRecentEvent);
+
+            viewComments_Button = (Button) itemView.findViewById(R.id.view_Comments_Button);
+
+            viewComments_Button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (thisUserHabitKudosComments == null) {
+                        Toast.makeText(mContext, "You're offline.", Toast.LENGTH_LONG).show();
+                    } else {
+                        // Open View Comments Activity to show all comments for this following's habit type
+                        Intent commentsIntent = new Intent(mContext, CommentsActivity.class);
+                        // Pass the login username
+                        commentsIntent.putExtra(LoginActivity.LOGIN_USERNAME, loginUserName);
+                        // Pass the following username and following habit title to comments activity (elastic search id)
+                        commentsIntent.putExtra(CommentsActivity.USERHABITKUDOSCOMMENTS_FollowingUsername,
+                                thisUserHabitKudosComments.getFollowingUsername());
+                        commentsIntent.putExtra(CommentsActivity.USERHABITKUDOSCOMMENTS_FollowingHabitTitle,
+                                thisUserHabitKudosComments.getFollowingHabitTitle());
+
+                        mContext.startActivity(commentsIntent);
+                    }
+                }
+            });
+
+            kudos_ImageView = (ImageView) itemView.findViewById(R.id.kudos_imageView);
+            kudos_num_TextView = (TextView) itemView.findViewById(R.id.kudos_num);
+
+            kudos_ImageView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (thisUserHabitKudosComments == null) {
+                        Toast.makeText(mContext, "You're offline.", Toast.LENGTH_LONG).show();
+                    } else {
+                        // Check if the login username in the kudos list of userHabitKudosComments
+                        boolean isGivenKudos = thisUserHabitKudosComments.isGivenKudos(loginUserName);
+
+                        if (isGivenKudos) {
+                            // Set unliked heart icon
+                            kudos_ImageView.setImageResource(R.drawable.unliked_ic);
+
+                            // Remove the login username to the kudos list of userHabitKudosComments
+                            thisUserHabitKudosComments.removeKudos(loginUserName);
+
+                            // Update online data
+                            ElasticSearchController.UpdateUserHabitKudosCommentsTask updateUserHabitKudosCommentsTask = new ElasticSearchController.UpdateUserHabitKudosCommentsTask();
+                            updateUserHabitKudosCommentsTask.execute(thisUserHabitKudosComments);
+
+                            // Update kudos number
+                            kudos_num_TextView.setText(Integer.toString(thisUserHabitKudosComments.getTotalKudosNum()));
+
+                        } else {
+                            // Set liked heart icon
+                            kudos_ImageView.setImageResource(R.drawable.liked_ic);
+
+                            // Add the login username to the kudos list of userHabitKudosComments
+                            thisUserHabitKudosComments.addKudos(loginUserName);
+
+                            // Update online data
+                            ElasticSearchController.UpdateUserHabitKudosCommentsTask updateUserHabitKudosCommentsTask = new ElasticSearchController.UpdateUserHabitKudosCommentsTask();
+                            updateUserHabitKudosCommentsTask.execute(thisUserHabitKudosComments);
+
+                            // Update kudos number
+                            kudos_num_TextView.setText(Integer.toString(thisUserHabitKudosComments.getTotalKudosNum()));
+                        }
+
+                    }
+                }
+            });
         }
 
         /**
@@ -117,30 +222,75 @@ public class HabitStatusAdapter extends RecyclerView.Adapter<HabitStatusAdapter.
             // Set the username
             userName.setText(followingHabitsStatus_pos.getFollowingUsername());
 
-            // Set the habit name and status
+            // Set the habit overview
             Habit thisHabit = followingHabitsStatus_pos.getFollowingHabit();
-            habitName_TextView.setText(thisHabit.getName());
-            habitStatusNum_TextView.setText(Float.toString(thisHabit.getProgress()));
-        }
+            // Set the comment and date
+            habitTitleTextView.setText(thisHabit.getName());
+            habitReasonTextView.setText(thisHabit.getReason());
 
-        /**
-         * Send the intent to open the HabitEvents Activity of selected Habit Status
-         *
-         * @param view: View, the view of Habit Status clicked
-         */
-        @Override
-        public void onClick(View view) {
-            // The selected FollowingHabitsStatus
-            FollowingHabitsStatus selected_FollowingHabitsStatus = HabitsFollowingActivity.getMyFollowingHabitsStatuses().get(getAdapterPosition());
-            // The habit event list of this Habit
-            ArrayList<HabitEvent> habit_HabitEvents = selected_FollowingHabitsStatus.getFollowingHabitEvents();
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            habitDateTextView.setText(simpleDateFormat.format(thisHabit.getStartDate()));
 
-            Intent followingHabit_HabitEvents_Intent = new Intent(mContext, FollowingHabitEventsActivity.class);
-            followingHabit_HabitEvents_Intent.putExtra(FOLLOWINGHABITEVENT_TAG, habit_HabitEvents);
-            // Put the username of the user having these habit events
-            followingHabit_HabitEvents_Intent.putExtra(HabitEventDetailActivity.UserNameHE_TAG, selected_FollowingHabitsStatus.getFollowingUsername());
+            // Get the array list of string description of habit plan
+            ArrayList<String> planDescription = thisHabit.getPlan().getScheduleDescription();
+            String planDescription_str = "" ;
 
-            mContext.startActivity(followingHabit_HabitEvents_Intent);
+            for (String plan_str : planDescription) {
+                planDescription_str += plan_str + " ";
+            }
+
+            habitPlanTextView.setText(planDescription_str);
+
+            habitStatusTextView.setText(Float.toString(thisHabit.getProgress() * 100) + "%");
+
+            habitStatusProgressBar.setProgress(Math.round(thisHabit.getProgress() * 100));
+            habitStatusProgressBar.setMax(100);
+
+            // Set kudos
+            String followingUsername = followingHabitsStatus_pos.getFollowingUsername();
+            String followingHabitTitle = followingHabitsStatus_pos.getFollowingHabit().getName();
+
+            UserHabitKudosComments userHabitKudosComments = FollowingSharingController.getUserHabitKudosComments(followingUsername, followingHabitTitle);
+
+            thisUserHabitKudosComments = userHabitKudosComments;
+
+            // Set Kudos UI
+            if (userHabitKudosComments == null) {
+                Toast.makeText(mContext, "You're offline.", Toast.LENGTH_LONG).show();
+            } else {
+                // Set kudos icon
+                if (thisUserHabitKudosComments.isGivenKudos(loginUserName)) {
+                    kudos_ImageView.setImageResource(R.drawable.liked_ic);
+                } else {
+                    kudos_ImageView.setImageResource(R.drawable.unliked_ic);
+                }
+
+                // Set kudos number
+                kudos_num_TextView.setText(Integer.toString(thisUserHabitKudosComments.getTotalKudosNum()));
+            }
+
+
+            // Set the most recent event
+            HabitEvent mostRecentHabitEvent = followingHabitsStatus_pos.getFollowingMostRecentHabitEvent();
+            if (mostRecentHabitEvent == null) {
+                habitEventLayout.setVisibility(View.GONE);
+            } else {
+                noRecentHabitEvent_TextView.setVisibility(View.GONE);
+
+                // Set habit type
+                habitEventHabitTypeTextView.setText(mostRecentHabitEvent.getTitle());
+                // Set the comment and date
+                habitEventCommentTextView.setText(mostRecentHabitEvent.getComments());
+
+                habitEventDateTextView.setText(simpleDateFormat.format(mostRecentHabitEvent.getStartDate()));
+
+                // Set image
+                if (mostRecentHabitEvent.getEventPhoto() != null) {
+                    habitEventImgView.setImageBitmap(BitmapFactory.decodeByteArray(mostRecentHabitEvent.getEventPhoto(), 0, mostRecentHabitEvent.getEventPhoto().length));
+                } else {
+                    habitEventImgView.setVisibility(View.GONE);
+                }
+            }
         }
     }
 }

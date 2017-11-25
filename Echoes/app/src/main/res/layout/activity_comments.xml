@@ -9,7 +9,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.cmput301f17t19.echoes.HabitsFollowingActivity"
+    tools:context="com.example.cmput301f17t19.echoes.CommentsActivity"
     android:background="@color/dimPurple">
 
     <android.support.v7.widget.Toolbar
@@ -22,61 +22,55 @@
         app:popupTheme="@style/ThemeOverlay.AppCompat.Dark" />
 
     <LinearLayout
-        android:id="@+id/habitsFollowing_Layout"
+        android:id="@+id/comments_Layout"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="8dp">
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/comments_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4"
+            android:layout_margin="16dp"/>
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:layout_margin="16dp"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/sendingComment_Username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"/>
 
             <EditText
-                android:id="@+id/search_user_edittext"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="6"
-                android:inputType="text"
-                android:hint="@string/search_user_hint"
-                android:textSize="16sp"
-                android:maxLines="1"
-                android:layout_marginRight="8dp"
-                android:background="@color/white"/>
-
-            <Button
-                android:id="@+id/search_user_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/search"/>
+                android:id="@+id/sendingComment_Content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:maxLines="3"/>
 
         </LinearLayout>
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/habitstatus_recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="63"/>
-
         <Button
-            android:id="@+id/recentEventsMap_Button"
+            android:id="@+id/sendingComment_Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/recentEventsMap"
-            android:layout_gravity="center_horizontal"
-            android:layout_margin="8dp"/>
-
+            android:text="@string/send_comment"
+            android:layout_gravity="center_horizontal"/>
     </LinearLayout>
 
     <TextView
-        android:id="@+id/habitsFollowing_NetworkError"
+        android:id="@+id/comments_networkError"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/habitsFollowing_networkError"
-        android:layout_margin="16dp"
-        android:textColor="@color/white"/>
+        android:text="@string/kudos_networkError"
+        android:layout_gravity="center"
+        android:textColor="@color/white"
+        android:layout_margin="16dp"/>
 
 </LinearLayout>

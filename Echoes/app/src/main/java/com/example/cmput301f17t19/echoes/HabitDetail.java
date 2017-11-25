@@ -280,9 +280,6 @@ public class HabitDetail extends AppCompatActivity {
                     Log.d("Test", plan);
                 }
 
-                // Set habit status
-                new_Habit.setProgress(MyHabitsActivity.getMyHabitList().getHabits().get(selected_pos).getProgress());
-
                 if (new_Habit != null) {
                     // Replace this new Habit to the Habit at the selected position in HabitList
                     HabitList mHabitList = MyHabitsActivity.getMyHabitList();
@@ -360,6 +357,10 @@ public class HabitDetail extends AppCompatActivity {
             }
 
             Habit new_Habit = new Habit(habit_Name, habit_Reason, habit_Date, habit_Plan);
+
+            // set progress
+            HabitStatus habitStatus = new HabitStatus(MyHabitsActivity.getLogin_userProfile(), new_Habit);
+            new_Habit.setProgress(habitStatus.statisticalPlannedHabitStatus());
 
             return new_Habit;
 

@@ -19,6 +19,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
+
 /**
  * Habit Event Overview Recycler View Adapter
  *
@@ -32,18 +34,14 @@ public class HabitEventOverviewAdapter extends RecyclerView.Adapter<HabitEventOv
 
     private Context mContext;
 
-    // Indicator to check if the Habit Event is the Habit Event of my following users
-    private boolean isFollowingEvent;
-
     // The username of the user having this habit event
     private String mUserName;
 
     /**
      * Constructor for HabitEventOverview Adapter
      */
-    public HabitEventOverviewAdapter(Context context, boolean IsFollowingEvent, String userName) {
+    public HabitEventOverviewAdapter(Context context, String userName) {
         mContext = context;
-        isFollowingEvent = IsFollowingEvent;
         mUserName = userName;
     }
 
@@ -82,11 +80,7 @@ public class HabitEventOverviewAdapter extends RecyclerView.Adapter<HabitEventOv
      */
     @Override
     public int getItemCount() {
-        if (!isFollowingEvent){
-            return HabitHistoryActivity.getDisplayedHabitEventList().getHabitEvents().size();
-        } else {
-            return FollowingHabitEventsActivity.getFollowingHabitEvents().size();
-        }
+        return HabitHistoryActivity.getDisplayedHabitEventList().getHabitEvents().size();
     }
 
     /**
@@ -122,24 +116,21 @@ public class HabitEventOverviewAdapter extends RecyclerView.Adapter<HabitEventOv
          */
         private void bind(int position) {
 
-            HabitEvent habitEvent_pos;
+            HabitEvent habitEvent_pos = HabitHistoryActivity.getDisplayedHabitEventList().getHabitEvents().get(position);
 
-            if (!isFollowingEvent) {
-                // Get the habit event object at the specific position in the Habit History's list
-                habitEvent_pos = HabitHistoryActivity.getDisplayedHabitEventList().getHabitEvents().get(position);
-            } else {
-                // Get the habit event object at the specific position in the Following Habit Events
-                habitEvent_pos = FollowingHabitEventsActivity.getFollowingHabitEvents().get(position);
-            }
             // Set habit type
             habitEventHabitTypeTextView.setText(habitEvent_pos.getTitle());
             // Set the comment and date
             habitEventCommentTextView.setText(habitEvent_pos.getComments());
-            habitEventDateTextView.setText(habitEvent_pos.getStartDate().toString());
+
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            habitEventDateTextView.setText(simpleDateFormat.format(habitEvent_pos.getStartDate()));
 
             // Set image
             if (habitEvent_pos.getEventPhoto() != null) {
                 habitEventImgView.setImageBitmap(BitmapFactory.decodeByteArray(habitEvent_pos.getEventPhoto(), 0, habitEvent_pos.getEventPhoto().length));
+            } else {
+                habitEventImgView.setVisibility(View.GONE);
             }
         }
 
@@ -151,23 +142,21 @@ public class HabitEventOverviewAdapter extends RecyclerView.Adapter<HabitEventOv
         @Override
         public void onClick(View view) {
 
-            if (!isFollowingEvent) {
-                // The position of the HabitEvent in the list that the user clicks
-                int adapterPosition = getAdapterPosition();
+            // The position of the HabitEvent in the list that the user clicks
+            int adapterPosition = getAdapterPosition();
 
-                // The selected HabitEvent object
-                HabitEvent selected_HabitEvent = HabitHistoryActivity.getDisplayedHabitEventList().getHabitEvents().get(adapterPosition);
+            // The selected HabitEvent object
+            HabitEvent selected_HabitEvent = HabitHistoryActivity.getDisplayedHabitEventList().getHabitEvents().get(adapterPosition);
 
-                // Start HabitEvent Detail Activity
-                // Show the details of the selected HabitEvent object in HabitEvent Detail Screen
-                Intent habitEventDetail_Intent = new Intent(mContext, HabitEventDetailActivity.class);
-                // Pass the username of the user having this Habit Event to the Habit Event Detail Activity
-                habitEventDetail_Intent.putExtra(HabitEventDetailActivity.UserNameHE_TAG, mUserName);
-                // Pass the position of the selected HabitEvent
-                habitEventDetail_Intent.putExtra(SELECTED_HABIT_EVENT_POSITION, adapterPosition);
+            // Start HabitEvent Detail Activity
+            // Show the details of the selected HabitEvent object in HabitEvent Detail Screen
+            Intent habitEventDetail_Intent = new Intent(mContext, HabitEventDetailActivity.class);
+            // Pass the username of the user having this Habit Event to the Habit Event Detail Activity
+            habitEventDetail_Intent.putExtra(HabitEventDetailActivity.UserNameHE_TAG, mUserName);
+            // Pass the position of the selected HabitEvent
+            habitEventDetail_Intent.putExtra(SELECTED_HABIT_EVENT_POSITION, adapterPosition);
 
-                mContext.startActivity(habitEventDetail_Intent);
-            }
+            mContext.startActivity(habitEventDetail_Intent);
         }
     }
 }
