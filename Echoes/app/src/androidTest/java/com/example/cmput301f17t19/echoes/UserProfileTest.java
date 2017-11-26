@@ -4,27 +4,20 @@
 
 package com.example.cmput301f17t19.echoes;
 
-import com.example.cmput301f17t19.echoes.Models.UserProfile;
+import android.test.ActivityInstrumentationTestCase2;
 
-import static junit.framework.Assert.assertEquals;
+import com.example.cmput301f17t19.echoes.Models.UserProfile;
 
 /**
  * Created by CrackCrack on 2017-10-23.
  */
-
-//public class UserProfileTest extends ActivityInstrumentationTestCase2 {
-
-
-public class UserProfileTest{
+public class UserProfileTest extends ActivityInstrumentationTestCase2 {
 
     public UserProfile testProfile;
-    /*
-    public UserProfileTest(Class activityClass) {
-        super(activityClass);
-    }
-    */
+
     public UserProfileTest(){
-        //Image profile_picture = abc.png;
+        super(UserProfile.class);
+
         this.testProfile = new UserProfile("");
     }
 
@@ -47,7 +40,6 @@ public class UserProfileTest{
 
     }
 
-
     public void testComment(){
         String test = "hhhh";
 
@@ -67,8 +59,4 @@ public class UserProfileTest{
 
         assertEquals(test, result);
     }
-
-
-
-
 }

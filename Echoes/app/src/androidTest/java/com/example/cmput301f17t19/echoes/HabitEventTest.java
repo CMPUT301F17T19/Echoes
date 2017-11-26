@@ -4,12 +4,13 @@
 
 package com.example.cmput301f17t19.echoes;
 
-import android.media.Image;
 import android.test.ActivityInstrumentationTestCase2;
 
 import com.example.cmput301f17t19.echoes.Exceptions.ArgTooLongException;
 import com.example.cmput301f17t19.echoes.Models.HabitEvent;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -17,59 +18,89 @@ import java.util.Date;
  */
 
 public class HabitEventTest extends ActivityInstrumentationTestCase2 {
+
     public HabitEventTest() {
         super(HabitEvent.class);
     }
 
-    public void testGetTitle(){
+    private HabitEvent createTestHabitEvent() throws ParseException {
+        String habitEventTitle = "Drink Water";
 
-        HabitEvent habitevent = new HabitEvent("title1", new Date(), "");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Date habitEventDate = simpleDateFormat.parse("2017-11-11");
 
-        assertTrue(habitevent.getTitle().equals("title1"));
+        String habitEventUsername = "John Doe";
+
+        HabitEvent testHabitEvent = new HabitEvent(habitEventTitle, habitEventDate, habitEventUsername);
+
+        return testHabitEvent;
     }
 
-    public void testGetDate(){
-        Date date = new Date();
-        HabitEvent habitevent = new HabitEvent("title1", date, "");
+    public void testGetTitle() throws ParseException {
+        HabitEvent testHabitEvent = createTestHabitEvent();
 
-        assertTrue(habitevent.getStartDate().equals(date));
+        assertTrue(testHabitEvent.getTitle().equals("Drink Water"));
+        assertFalse(testHabitEvent.getTitle().equals("Watch TV"));
     }
 
-    public void testGetComments(){
-        HabitEvent habitevent = new HabitEvent("title1", new Date(), "");
-        assertTrue(habitevent.getComments() == "");
+    public void testGetDate() throws ParseException {
+        HabitEvent testHabitEvent = createTestHabitEvent();
+
+        String testHabitDate_str = (new SimpleDateFormat("yyyy-MM-dd")).format(testHabitEvent.getStartDate());
+
+        assertTrue(testHabitDate_str.equals("2017-11-11"));
+        assertFalse(testHabitDate_str.equals("2017-11-10"));
     }
 
-    public void testGetEventPhoto(){
-        HabitEvent habitevent = new HabitEvent("title1", new Date(), "");
-        Image image = null;
-        assertTrue(habitevent.getEventPhoto() == null);
+    public void testGetComments() throws ParseException {
+        HabitEvent testHabitEvent = createTestHabitEvent();
+
+        assertEquals(testHabitEvent.getComments(), "");
     }
 
-    public void testSetTitle(){
-        HabitEvent habitevent = new HabitEvent("title1", new Date(), "");
-        habitevent.setTitle("title2");
-        assertTrue(habitevent.getTitle().equals("title2"));
+    public void testGetEventPhoto() throws ParseException {
+        HabitEvent testHabitEvent = createTestHabitEvent();
+
+        assertEquals(testHabitEvent.getEventPhoto(), null);
     }
 
-    public void testSetDate(){
-        Date date = new Date();
-        HabitEvent habitevent = new HabitEvent("title1", date, "");
+    public void testSetTitle() throws ParseException {
+        HabitEvent testHabitEvent = createTestHabitEvent();
 
-        assertTrue(habitevent.getStartDate().equals(date));
+        testHabitEvent.setTitle("Watch TV");
 
+        assertEquals(testHabitEvent.getTitle(), "Watch TV");
     }
 
-    public void testSetComments() throws ArgTooLongException {
-        HabitEvent habitevent = new HabitEvent("title1", new Date(), "");
-        habitevent.setComments("This is a comment");
-        assertTrue(habitevent.getComments().equals("This is a comment"));
+    public void testSetDate() throws ParseException {
+        HabitEvent testHabitEvent = createTestHabitEvent();
+
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Date habitEventDate = simpleDateFormat.parse("2017-11-10");
+
+        testHabitEvent.setStartDate(habitEventDate);
+
+        String newHabitEventDate_str = simpleDateFormat.format(testHabitEvent.getStartDate());
+
+        assertEquals(newHabitEventDate_str, "2017-11-10");
     }
 
-    public void testSetEventPhoto(){
-        HabitEvent habitevent = new HabitEvent("title1", new Date(), "");
-        byte[] image2 = null;
-        habitevent.setEventPhoto(image2);
-        assertTrue(habitevent.getEventPhoto() == null);
+    public void testSetComments() throws ArgTooLongException, ParseException {
+        HabitEvent testHabitEvent = createTestHabitEvent();
+
+        String newComment = "NA NA NA";
+
+        testHabitEvent.setComments(newComment);
+
+        assertTrue(testHabitEvent.getComments().equals("NA NA NA"));
+        assertFalse(testHabitEvent.getComments().equals(""));
+    }
+
+    public void testSetEventPhoto() throws ParseException {
+        HabitEvent testHabitEvent = createTestHabitEvent();
+
+        testHabitEvent.setEventPhoto(new byte[1]);
+
+        assertTrue(testHabitEvent.getEventPhoto().length == 1);
     }
 }

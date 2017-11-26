@@ -140,6 +140,9 @@ public class HabitStatus {
 
     /**
      * Update the whole Habits status of the login user
+     *
+     * @param loginUserProfile: the UserProfile of the login user
+     * @return UserProfile: the updated user profile
      */
     public static UserProfile updateAllHabitsStatus(UserProfile loginUserProfile) {
         // Update the Habit Status for the login user for all habits

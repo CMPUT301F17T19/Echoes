@@ -17,6 +17,11 @@ public class UserFollowingList {
     private String userName;
     private ArrayList<Following> followings;
 
+    /**
+     * Constructor for UserFollowingList
+     *
+     * @param username: String, username
+     */
     public UserFollowingList(String username) {
         this.userName = username;
         followings = new ArrayList<Following>();

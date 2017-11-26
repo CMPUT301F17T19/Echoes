@@ -35,6 +35,8 @@ public class FollowingHabitsStatus {
 
     /**
      * Get the username of the following
+     *
+     * @return String: the username of the following
      */
     public String getFollowingUsername() {
         return followingUsername;
@@ -42,6 +44,8 @@ public class FollowingHabitsStatus {
 
     /**
      * Get the profile image of the following
+     *
+     * @return byte[]: the profile image of the following
      */
     public byte[] getFollowingUserProfileImg() {
         return followingUserProfileImg;
@@ -49,6 +53,8 @@ public class FollowingHabitsStatus {
 
     /**
      * Get the following habit
+     *
+     * @return Habit: the following habit
      */
     public Habit getFollowingHabit() {
         return followingHabit;
@@ -56,6 +62,8 @@ public class FollowingHabitsStatus {
 
     /**
      * Get the most recent habit events of this habit
+     *
+     * @return HabitEvent: the following Habit Event
      */
     public HabitEvent getFollowingMostRecentHabitEvent() {
         return followingMostRecentHabitEvents;
