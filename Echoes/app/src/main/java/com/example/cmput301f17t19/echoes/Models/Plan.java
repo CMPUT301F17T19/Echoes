@@ -45,16 +45,6 @@ public class Plan {
         }
     }
 
-//    public Boolean getToDo(Day day) throws InvalidDayException{
-//        if (DAY >= NUM_DAYS) {
-//            throw new InvalidDayException();
-//        }
-//        else {
-//            return schedule.get(day);
-//        }
-//    }
-//
-
     /**
      * Set the status of the day
      *
@@ -144,13 +134,4 @@ public class Plan {
 
         return scheduleDescription;
     }
-
-//
-//    public Boolean scheduledForToday() {
-//        Calendar c = Calendar.getInstance();
-//        day = c.get(Calendar.DAY_OF_WEEK); //Needs testing
-//
-//        return getToDo(day - 1);    // subtract 1, because calender does 1 - 7, we do 0 - 6
-//    }
-
 }

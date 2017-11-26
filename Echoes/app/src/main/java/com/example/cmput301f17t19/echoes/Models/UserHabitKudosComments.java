@@ -7,9 +7,12 @@ package com.example.cmput301f17t19.echoes.Models;
 import java.util.ArrayList;
 
 /**
- * Created by shanlu on 2017-11-25.
+ * UserHabitKudosComments class
+ *
+ * @author Shan Lu
+ * @version 1.0
+ * @since 1.0
  */
-
 public class UserHabitKudosComments {
     // The following username
     private String followingUsername;

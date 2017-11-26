@@ -4,72 +4,88 @@
 
 package com.example.cmput301f17t19.echoes;
 
+import android.test.ActivityInstrumentationTestCase2;
+
 import com.example.cmput301f17t19.echoes.Models.Habit;
 import com.example.cmput301f17t19.echoes.Models.Plan;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
-
-import static junit.framework.Assert.assertEquals;
 
 /**
  * Created by Hayden Bauder on 23/10/2017.
  */
 
-public class HabitTest  {
-    public Habit testHabit;
+public class HabitTest extends ActivityInstrumentationTestCase2 {
+    private Habit testHabit;
 
     public HabitTest() {
-        this.testHabit = new Habit("", "", new Date(), new Plan());
+        super(Habit.class);
+
+        try {
+            this.testHabit = createTestHabit();
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public Habit createTestHabit() throws ParseException {
+        String habitTitle = "Drink Water";
+        String habitReason = "For Health";
+
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Date habitDate = simpleDateFormat.parse("2017-11-11");
+
+        Habit testHabit = new Habit(habitTitle, habitReason, habitDate, new Plan());
+
+        return testHabit;
     }
 
     public void testHabitName() {
-        String test = "This is a test name";
-        String result;
-//        testHabit.setName(test);
-        result = testHabit.getName();
+        if (testHabit != null) {
+            assertTrue(testHabit.getName().equals("Drink Water"));
+            assertFalse(testHabit.getName().equals("Watch TV"));
 
-        assertEquals(test, result);
+            testHabit.setName("Watch TV");
+            assertTrue(testHabit.getName().equals("Watch TV"));
+        }
     }
 
     public void testHabitReason() {
-        String test = "This is a test reason";
-        String result;
-//        testHabit.setReason(test);
-        result = testHabit.getReason();
+        if (testHabit != null) {
+            assertTrue(testHabit.getReason().equals("For Health"));
+            assertFalse(testHabit.getReason().equals("NA NA NA"));
 
-        assertEquals(test, result);
+            testHabit.setReason("NA NA NA");
+            assertTrue(testHabit.getReason().equals("NA NA NA"));
+        }
     }
 
     public void testHabitStartDate() {
-        Date test = new Date();
-        Date result;
-        testHabit.setStartDate(test);
-        result = testHabit.getStartDate();
-
-        assertEquals(test, result);
+        if (testHabit != null) {
+            String habitDate_str = (new SimpleDateFormat("yyyy-MM-dd")).format(testHabit.getStartDate());
+            assertEquals(habitDate_str, "2017-11-11");
+            assertFalse(habitDate_str.equals("2017-11-10"));
+        }
     }
 
     public void testHabitPlan() {
-        Plan test = new Plan();
-        Plan result;
-        testHabit.setPlan(test);
-        result = testHabit.getPlan();
-
-        assertEquals(test, result);
+        if (testHabit != null) {
+            assertTrue(testHabit.getPlan().getSchedule().contains(false));
+            assertFalse(testHabit.getPlan().getSchedule().contains(true));
+        }
     }
 
     public void testHabitProgress() {
-        Float test = 0f;
-        Float result;
-        testHabit.setProgress(test);
-        result = testHabit.getProgress();
+        if (testHabit != null) {
+            assertTrue(testHabit.getProgress() == 0f);
+            assertFalse(testHabit.getProgress() == 1.0f);
 
-        assertEquals(test, result);
-
-        test = 1.0f;
-        testHabit.setProgress(test);
-        result = testHabit.getProgress();
-        assertEquals(test, result);
+            testHabit.setProgress(1.0f);
+            assertTrue(testHabit.getProgress() == 1.0f);
+        }
     }
 
 }
