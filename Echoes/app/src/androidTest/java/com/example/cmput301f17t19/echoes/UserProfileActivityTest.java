@@ -15,6 +15,9 @@ import android.test.ActivityInstrumentationTestCase2;
 import android.util.Log;
 import android.widget.TextView;
 
+import com.example.cmput301f17t19.echoes.Activities.UserProfileActivity;
+import com.example.cmput301f17t19.echoes.Controllers.OfflineStorageController;
+import com.example.cmput301f17t19.echoes.Models.UserProfile;
 import com.robotium.solo.Solo;
 
 /**
@@ -28,7 +31,7 @@ public class UserProfileActivityTest extends ActivityInstrumentationTestCase2 {
     private Solo solo;
 
     public UserProfileActivityTest() {
-        super(com.example.cmput301f17t19.echoes.UserProfileActivity.class);
+        super(UserProfileActivity.class);
     }
 
     public void setUp() throws Exception{

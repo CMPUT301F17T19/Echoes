@@ -5,6 +5,11 @@ import android.test.ActivityInstrumentationTestCase2;
 import android.util.Log;
 import android.widget.EditText;
 
+import com.example.cmput301f17t19.echoes.Activities.LoginActivity;
+import com.example.cmput301f17t19.echoes.Activities.MainMenuActivity;
+import com.example.cmput301f17t19.echoes.Activities.SignUpActivity;
+import com.example.cmput301f17t19.echoes.Controllers.OfflineStorageController;
+import com.example.cmput301f17t19.echoes.Models.UserProfile;
 import com.robotium.solo.Solo;
 
 
@@ -17,7 +22,7 @@ public class LoginActivityTest extends ActivityInstrumentationTestCase2<LoginAct
     public Solo solo;
 
     public LoginActivityTest() {
-        super(com.example.cmput301f17t19.echoes.LoginActivity.class);
+        super(LoginActivity.class);
     }
 
     public void testStart() throws Exception {
@@ -52,9 +57,9 @@ public class LoginActivityTest extends ActivityInstrumentationTestCase2<LoginAct
         solo.clickOnView(solo.getView(R.id.username_sign_in_button));
 
         //load activity
-        solo.waitForActivity(main_menu.class, 2000);
+        solo.waitForActivity(MainMenuActivity.class, 2000);
         //check if successfully log in
-        solo.assertCurrentActivity("Wrong Activity", main_menu.class);
+        solo.assertCurrentActivity("Wrong Activity", MainMenuActivity.class);
 
 
     }

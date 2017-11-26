@@ -5,6 +5,7 @@ package com.example.cmput301f17t19.echoes;
 
 import android.test.ActivityInstrumentationTestCase2;
 
+import com.example.cmput301f17t19.echoes.Activities.ToDoActivity;
 import com.robotium.solo.Solo;
 
 /**

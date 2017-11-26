@@ -12,6 +12,11 @@ package com.example.cmput301f17t19.echoes;
 
 import android.test.ActivityInstrumentationTestCase2;
 
+import com.example.cmput301f17t19.echoes.Activities.MyHabitsActivity;
+import com.example.cmput301f17t19.echoes.Models.Habit;
+import com.example.cmput301f17t19.echoes.Models.HabitList;
+import com.example.cmput301f17t19.echoes.Models.Plan;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -25,7 +30,7 @@ import java.util.Date;
  */
 public class HabitListTest extends ActivityInstrumentationTestCase2 {
     public HabitListTest(){
-        super(com.example.cmput301f17t19.echoes.MyHabitsActivity.class);
+        super(MyHabitsActivity.class);
     }
 
     /**
