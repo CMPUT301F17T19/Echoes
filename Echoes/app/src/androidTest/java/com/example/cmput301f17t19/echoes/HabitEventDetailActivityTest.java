@@ -4,32 +4,60 @@
 
 package com.example.cmput301f17t19.echoes;
 
+import android.app.Activity;
 import android.test.ActivityInstrumentationTestCase2;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
 import com.example.cmput301f17t19.echoes.Activities.HabitEventDetailActivity;
 import com.example.cmput301f17t19.echoes.Activities.HabitHistoryActivity;
+import com.example.cmput301f17t19.echoes.Activities.LoginActivity;
+import com.example.cmput301f17t19.echoes.Activities.MainMenuActivity;
+import com.example.cmput301f17t19.echoes.Controllers.OfflineStorageController;
+import com.example.cmput301f17t19.echoes.Models.UserProfile;
 import com.robotium.solo.Solo;
 
 /**
  * Created by Al on 2017-11-13.
  */
 
-public class HabitEventDetailTest extends ActivityInstrumentationTestCase2 {
-    public HabitEventDetailTest() {
-        super(HabitHistoryActivity.class);
-    }
+public class HabitEventDetailActivityTest extends ActivityInstrumentationTestCase2 {
+
     private Solo solo;
 
+    public HabitEventDetailActivityTest() {
+        super(LoginActivity.class);
+    }
 
     public void setUp() throws Exception{
         solo = new Solo(getInstrumentation(), getActivity());
+        Log.d("SETUP", "setUp()");
     }
 
     public void testStart() throws Exception {
-        HabitHistoryActivity activity = (HabitHistoryActivity) solo.getCurrentActivity();
+        Activity activity = getActivity();
 
+    }
+
+    private void login() {
+        solo.assertCurrentActivity("Wrong Activity",  LoginActivity.class);
+        //create a new username login for testing
+        UserProfile userProfile = new UserProfile("dummy3");
+        OfflineStorageController offlineStorageController = new OfflineStorageController(getActivity().getApplicationContext(), userProfile.getUserName());
+        offlineStorageController.saveInFile(userProfile);
+
+
+        //enter the usrname "dummy3"
+        solo.enterText((EditText) solo.getView(R.id.username),"dummy3");
+        solo.clickOnView(solo.getView(R.id.username_sign_in_button));
+        solo.assertCurrentActivity("Wrong Activity", MainMenuActivity.class);
+    }
+
+    public void testAddHabit() throws Exception {
+        login();
+        solo.assertCurrentActivity("Wrong Activity", MainMenuActivity.class);
+        solo.clickOnView(solo.getView(R.id.habit_history));
         solo.assertCurrentActivity("Wrong Activity", HabitHistoryActivity.class);
 
         // Click on 'ADD HABIT Event' button
@@ -42,31 +70,29 @@ public class HabitEventDetailTest extends ActivityInstrumentationTestCase2 {
     }
 
     public void testcheckbox() throws Exception {
-        testStart();
+        testAddHabit();
 
         solo.assertCurrentActivity("Wrong Activity", HabitEventDetailActivity.class);
 
     }
 
     public void testspinner1() throws Exception {
-        testStart();
+        testAddHabit();
 
         solo.assertCurrentActivity("Wrong Activity", HabitEventDetailActivity.class);
         View spnr = solo.getView(R.id.Types);
         solo.clickOnView(spnr);
     }
 
-
-
     public void testcomment() throws Exception {
-        testStart();
+        testAddHabit();
 
         solo.assertCurrentActivity("Wrong Activity", HabitEventDetailActivity.class);
         solo.enterText((EditText) solo.getView(R.id.WriteComment), "comment");
         assertTrue(solo.searchText("comment"));
     }
     public void testdate() throws Exception {
-        testStart();
+        testAddHabit();
 
         solo.clickOnView(solo.getView(R.id.Get_Date));
         solo.setDatePicker(0, 2017, 11-1, 11);
@@ -74,13 +100,11 @@ public class HabitEventDetailTest extends ActivityInstrumentationTestCase2 {
     }
 
     public void testcheck() throws Exception {
-        testStart();
+        testAddHabit();
 
         View ct = solo.getView(R.id.Save);
         solo.pressSpinnerItem(0,1);
         solo.enterText((EditText) solo.getView(R.id.WriteComment), "comment");
         solo.clickOnView(ct);
     }
-
-
 }
