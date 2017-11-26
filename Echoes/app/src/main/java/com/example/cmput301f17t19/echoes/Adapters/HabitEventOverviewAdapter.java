@@ -128,6 +128,7 @@ public class HabitEventOverviewAdapter extends RecyclerView.Adapter<HabitEventOv
 
             // Set image
             if (habitEvent_pos.getEventPhoto() != null) {
+                habitEventImgView.setVisibility(View.VISIBLE);
                 habitEventImgView.setImageBitmap(BitmapFactory.decodeByteArray(habitEvent_pos.getEventPhoto(), 0, habitEvent_pos.getEventPhoto().length));
             } else {
                 habitEventImgView.setVisibility(View.GONE);
