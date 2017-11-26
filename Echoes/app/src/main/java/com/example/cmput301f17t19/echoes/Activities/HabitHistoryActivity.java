@@ -108,9 +108,6 @@ public class HabitHistoryActivity extends AppCompatActivity {
         Intent intent = getIntent();
         if (intent.getStringExtra(LoginActivity.LOGIN_USERNAME) != null) {
             login_Username = intent.getStringExtra(LoginActivity.LOGIN_USERNAME);
-        } else {
-            // For test
-            login_Username = "dummy3";
         }
 
         addEventButton = (Button) findViewById(R.id.habitevents_add_button);

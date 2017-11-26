@@ -142,15 +142,10 @@ public class UserProfileActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
 
-            } else {
-                // For UserProfileActivity test
-                profile_username = "dummy3";
             }
 
             setUI();
 
-        } else {
-            unitTest();
         }
     }
 
@@ -345,31 +340,5 @@ public class UserProfileActivity extends AppCompatActivity {
                 updateUserProfileTask.execute(userProfile);
             }
         }
-    }
-
-    /**
-     * Unit test for UserProfileActivity
-     */
-    private void unitTest(){
-        // For UserProfileActivity test
-        profile_username = "dummy3";
-
-        // Get the UserProfile object with the given username
-        offlineStorageController = new OfflineStorageController(this, profile_username);
-
-        userProfile = offlineStorageController.readFromFile();
-
-        // Set User Profile Photo, Username, UserBioComment, Email, PhoneNumber, Num of Followers and Following
-        if (userProfile.getProfilePicture() != null){
-            profile_ImageButton.setImageBitmap(BitmapFactory.decodeByteArray(userProfile.getProfilePicture(), 0, userProfile.getProfilePicture().length));
-        }
-
-        profile_username_TextView.setText(userProfile.getUserName());
-        profile_userComment_TextView.setText(userProfile.getComment());
-        profile_userEmail_TextView.setText(userProfile.getEmailAddress());
-        profile_userPhone_TextView.setText(userProfile.getPhoneNumber());
-        profile_userFollower_TextView.setText(Integer.toString(userProfile.getFollower_list().size()));
-        profile_userFollowing_TextView.setText(Integer.toString(userProfile.getFollowing().size()));
-
     }
 }

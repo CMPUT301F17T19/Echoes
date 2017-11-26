@@ -12,6 +12,10 @@ import android.widget.TextView;
 
 import com.example.cmput301f17t19.echoes.Activities.HabitEventDetailActivity;
 import com.example.cmput301f17t19.echoes.Activities.HabitHistoryActivity;
+import com.example.cmput301f17t19.echoes.Activities.LoginActivity;
+import com.example.cmput301f17t19.echoes.Activities.MainMenuActivity;
+import com.example.cmput301f17t19.echoes.Controllers.OfflineStorageController;
+import com.example.cmput301f17t19.echoes.Models.UserProfile;
 import com.robotium.solo.Solo;
 
 /**
@@ -23,7 +27,7 @@ public class HabitHistoryActivityTest extends ActivityInstrumentationTestCase2 {
     private Solo solo;
 
     public HabitHistoryActivityTest() {
-        super(HabitHistoryActivity.class);
+        super(LoginActivity.class);
     }
 
     public void setUp() throws Exception{
@@ -36,12 +40,27 @@ public class HabitHistoryActivityTest extends ActivityInstrumentationTestCase2 {
 
     }
 
+    private void login() {
+        solo.assertCurrentActivity("Wrong Activity",  LoginActivity.class);
+        //create a new username login for testing
+        UserProfile userProfile = new UserProfile("dummy3");
+        OfflineStorageController offlineStorageController = new OfflineStorageController(getActivity().getApplicationContext(), userProfile.getUserName());
+        offlineStorageController.saveInFile(userProfile);
+
+
+        //enter the usrname "dummy3"
+        solo.enterText((EditText) solo.getView(R.id.username),"dummy3");
+        solo.clickOnView(solo.getView(R.id.username_sign_in_button));
+        solo.assertCurrentActivity("Wrong Activity", MainMenuActivity.class);
+    }
+
     /**
      * Test for click 'Add Habit Event' button
      */
     public void testAddNewHabit() {
-        HabitHistoryActivity activity = (HabitHistoryActivity) solo.getCurrentActivity();
-
+        login();
+        solo.assertCurrentActivity("Wrong Activity", MainMenuActivity.class);
+        solo.clickOnView(solo.getView(R.id.habit_history));
         solo.assertCurrentActivity("Wrong Activity", HabitHistoryActivity.class);
 
         // Click on 'ADD HABIT Event' button

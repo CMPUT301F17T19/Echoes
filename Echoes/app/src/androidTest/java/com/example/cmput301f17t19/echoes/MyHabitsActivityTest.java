@@ -19,6 +19,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.cmput301f17t19.echoes.Activities.HabitDetailActivity;
+import com.example.cmput301f17t19.echoes.Activities.LoginActivity;
+import com.example.cmput301f17t19.echoes.Activities.MainMenuActivity;
 import com.example.cmput301f17t19.echoes.Activities.MyHabitsActivity;
 import com.example.cmput301f17t19.echoes.Controllers.OfflineStorageController;
 import com.example.cmput301f17t19.echoes.Models.UserProfile;
@@ -36,7 +38,7 @@ public class MyHabitsActivityTest extends ActivityInstrumentationTestCase2 {
     private Solo solo;
 
     public MyHabitsActivityTest() {
-        super(MyHabitsActivity.class);
+        super(LoginActivity.class);
     }
 
     public void setUp() throws Exception{
@@ -49,12 +51,27 @@ public class MyHabitsActivityTest extends ActivityInstrumentationTestCase2 {
 
     }
 
+    private void login() {
+        solo.assertCurrentActivity("Wrong Activity",  LoginActivity.class);
+        //create a new username login for testing
+        UserProfile userProfile = new UserProfile("dummy3");
+        OfflineStorageController offlineStorageController = new OfflineStorageController(getActivity().getApplicationContext(), userProfile.getUserName());
+        offlineStorageController.saveInFile(userProfile);
+
+
+        //enter the usrname "dummy3"
+        solo.enterText((EditText) solo.getView(R.id.username),"dummy3");
+        solo.clickOnView(solo.getView(R.id.username_sign_in_button));
+        solo.assertCurrentActivity("Wrong Activity", MainMenuActivity.class);
+    }
+
     /**
      * Test for click 'Add Habit' button
      */
     public void testAddNewHabit() {
-        MyHabitsActivity activity = (MyHabitsActivity) solo.getCurrentActivity();
-
+        login();
+        solo.assertCurrentActivity("Wrong Activity", MainMenuActivity.class);
+        solo.clickOnView(solo.getView(R.id.View_My_Habits));
         solo.assertCurrentActivity("Wrong Activity", MyHabitsActivity.class);
 
         // Click on 'ADD HABIT' button
@@ -82,8 +99,9 @@ public class MyHabitsActivityTest extends ActivityInstrumentationTestCase2 {
      * Test for click on a Habit item and Open its HabitDetailActivity Activity
      */
     public void testClickHabitToDetailActivity() {
-        MyHabitsActivity activity = (MyHabitsActivity) solo.getCurrentActivity();
-
+        login();
+        solo.assertCurrentActivity("Wrong Activity", MainMenuActivity.class);
+        solo.clickOnView(solo.getView(R.id.View_My_Habits));
         solo.assertCurrentActivity("Wrong Activity", MyHabitsActivity.class);
 
         // Add a dummy Habit to MyHabits list
@@ -117,7 +135,7 @@ public class MyHabitsActivityTest extends ActivityInstrumentationTestCase2 {
         OfflineStorageController offlineStorageController = new OfflineStorageController(getActivity().getApplicationContext(), userProfile.getUserName());
         offlineStorageController.saveInFile(userProfile);
 
-        final RecyclerView habitList = activity.getHabitsRecyclerView();
+        final RecyclerView habitList = ((MyHabitsActivity) solo.getCurrentActivity()).getHabitsRecyclerView();
         View habitView = habitList.getLayoutManager().getChildAt(0);
 
         // Check the Name of the Habit
@@ -127,6 +145,6 @@ public class MyHabitsActivityTest extends ActivityInstrumentationTestCase2 {
         // Check the Date of the Habit
         assertEquals("2017-11-11", ((TextView) solo.getView(R.id.habitOverview_date)).getText().toString());
         // Check the progress of the Habit
-        assertEquals("0.0", ((TextView) solo.getView(R.id.habitOverview_status)).getText().toString());
+        assertEquals("0.0%", ((TextView) solo.getView(R.id.habitOverview_status)).getText().toString());
     }
 }

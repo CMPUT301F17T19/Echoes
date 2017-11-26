@@ -47,10 +47,7 @@ public class UserMessageActivity extends AppCompatActivity {
 
         // Get the login username and user Profile
         Intent intent = getIntent();
-        if (intent.getStringExtra(LoginActivity.LOGIN_USERNAME) == null) {
-            // For test
-            login_userName = "dummy3";
-        } else {
+        if (intent.getStringExtra(LoginActivity.LOGIN_USERNAME) != null) {
             login_userName = intent.getStringExtra(LoginActivity.LOGIN_USERNAME);
         }
 

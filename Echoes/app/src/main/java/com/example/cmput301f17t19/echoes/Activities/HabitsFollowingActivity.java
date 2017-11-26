@@ -99,9 +99,6 @@ public class HabitsFollowingActivity extends AppCompatActivity {
         Intent intent = getIntent();
         if (intent.getStringExtra(LoginActivity.LOGIN_USERNAME) != null) {
             login_UserName = intent.getStringExtra(LoginActivity.LOGIN_USERNAME);
-        } else {
-            // For test
-            login_UserName = "dummy3";
         }
 
         searchUser_EditText = (EditText) findViewById(R.id.search_user_edittext);

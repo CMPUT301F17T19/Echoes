@@ -1,6 +1,6 @@
 /*
-* Copyright (c) Team cmput301f17t19, CMPUT301, University of Alberta - All Rights Reserved. You may use, distribute, or modify this code under terms and conditions of the Code of Students Behaviour at University of Alberta
-*/
+ * Copyright (c) Team cmput301f17t19, CMPUT301, University of Alberta - All Rights Reserved. You may use, distribute, or modify this code under terms and conditions of the Code of Students Behaviour at University of Alberta
+ */
 
 package com.example.cmput301f17t19.echoes;
 
@@ -8,6 +8,7 @@ import android.app.Activity;
 import android.test.ActivityInstrumentationTestCase2;
 import android.widget.EditText;
 
+import com.example.cmput301f17t19.echoes.Activities.CommentsActivity;
 import com.example.cmput301f17t19.echoes.Activities.HabitDetailActivity;
 import com.example.cmput301f17t19.echoes.Activities.LoginActivity;
 import com.example.cmput301f17t19.echoes.Activities.MainMenuActivity;
@@ -16,16 +17,14 @@ import com.example.cmput301f17t19.echoes.Controllers.OfflineStorageController;
 import com.example.cmput301f17t19.echoes.Models.UserProfile;
 import com.robotium.solo.Solo;
 
-
 /**
- * Created by taijieyang on 2017/11/12.
+ * Created by shanlu on 2017-11-26.
  */
 
-public class HabitDetailActivityTest extends ActivityInstrumentationTestCase2 {
-
+public class CommentsActivityTest extends ActivityInstrumentationTestCase2 {
     private Solo solo;
 
-    public HabitDetailActivityTest() {
+    public CommentsActivityTest() {
         super(LoginActivity.class);
     }
 
@@ -51,38 +50,36 @@ public class HabitDetailActivityTest extends ActivityInstrumentationTestCase2 {
         solo.assertCurrentActivity("Wrong Activity", MainMenuActivity.class);
     }
 
-    public void testcheckDataValid() {
+    public void testCommentsActivityTest() {
         login();
         solo.assertCurrentActivity("Wrong Activity", MainMenuActivity.class);
         solo.clickOnView(solo.getView(R.id.View_My_Habits));
         solo.assertCurrentActivity("Wrong Activity", MyHabitsActivity.class);
 
-        // Click on 'ADD HABIT' button
         solo.clickOnView(solo.getView(R.id.habit_add_button));
-
-        // Open HabitDetailActivity with all field empty, and Date field be "Click to select start date"
-        // Wait for HabitDetailActivity Activity
         solo.waitForActivity(HabitDetailActivity.class, 2000);
         solo.assertCurrentActivity("Wrong Activity", HabitDetailActivity.class);
 
-        solo.enterText((EditText) solo.getView(R.id.Habit_name_editText), "This is a test habit");
-
-        solo.enterText((EditText) solo.getView(R.id.Habit_reason_editText), "This habit is for test");
-
+        // Enter habit name: dummyHabit
+        solo.enterText((EditText) solo.getView(R.id.Habit_name_editText), "dummyHabit");
+        // Set start Date
+        // Reference: https://stackoverflow.com/questions/6837012/robotium-how-to-set-a-date-in-date-picker-using-robotium
         solo.clickOnText("Click to select start date");
         solo.setDatePicker(0, 2017, 11-1, 11);
         solo.clickOnText("OK");
-
-        solo.clickOnView(solo.getView(R.id.sunday_checkbox));
+        // Click on Monday checkbox
         solo.clickOnView(solo.getView(R.id.monday_checkBox));
 
-        // add successful
+        // click save button
         solo.clickOnView(solo.getView(R.id.save_button));
-        solo.waitForActivity(MyHabitsActivity.class, 2000);
+
+        // Go back to MyHabits Activity
+        solo.waitForActivity(MyHabitsActivity.class, 10000);
         solo.assertCurrentActivity("Wrong Activity", MyHabitsActivity.class);
+
+        // Click on View Comments button
+        solo.clickOnView(solo.getView(R.id.view_Comments_Button));
+        solo.waitForActivity(CommentsActivity.class, 2000);
+        solo.assertCurrentActivity("Wrong Activity", CommentsActivity.class);
     }
-
 }
-
-
-

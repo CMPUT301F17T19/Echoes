@@ -69,7 +69,9 @@ public class ElasticSearchControllerTest extends ActivityInstrumentationTestCase
         try {
             Boolean isExist = checkUserProfileExistTask.get();
 
-            assertTrue(isExist);
+            if (isExist != null) {
+                assertTrue(isExist);
+            }
 
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -88,7 +90,9 @@ public class ElasticSearchControllerTest extends ActivityInstrumentationTestCase
         try {
             Boolean isExist = checkUserProfileExistTask.get();
 
-            assertFalse(isExist);
+            if (isExist != null) {
+                assertFalse(isExist);
+            }
 
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -102,7 +106,9 @@ public class ElasticSearchControllerTest extends ActivityInstrumentationTestCase
         try {
             Boolean isExist = checkUserProfileExistTask1.get();
 
-            assertTrue(isExist);
+            if (isExist != null) {
+                assertTrue(isExist);
+            }
 
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -141,7 +147,9 @@ public class ElasticSearchControllerTest extends ActivityInstrumentationTestCase
         try {
             UserProfile getUserProfile = getUserProfileTask.get();
 
-            assertTrue(getDummyUser.getUserName().equals(getUserProfile.getUserName()));
+            if (getUserProfile != null) {
+                assertTrue(getDummyUser.getUserName().equals(getUserProfile.getUserName()));
+            }
 
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -160,29 +168,31 @@ public class ElasticSearchControllerTest extends ActivityInstrumentationTestCase
         try {
             UserProfile getUserProfile = getUserProfileTask.get();
 
-            HabitList habits = getUserProfile.getHabit_list();
+            if (getUserProfile != null) {
+                HabitList habits = getUserProfile.getHabit_list();
 
-            // Update this habits list
-            Habit testHabit1 = new Habit("updateHa1", "testUpdate1", new Date(), new Plan());
-            Habit testHabit2 = new Habit("updateHa2", "testUpdate2", new Date(), new Plan());
+                // Update this habits list
+                Habit testHabit1 = new Habit("updateHa1", "testUpdate1", new Date(), new Plan());
+                Habit testHabit2 = new Habit("updateHa2", "testUpdate2", new Date(), new Plan());
 
-            habits.add(testHabit1);
-            habits.add(testHabit2);
+                habits.add(testHabit1);
+                habits.add(testHabit2);
 
-            ElasticSearchController.UpdateUserProfileTask updateUserProfileTask = new ElasticSearchController.UpdateUserProfileTask();
-            updateUserProfileTask.execute(getUserProfile);
+                ElasticSearchController.UpdateUserProfileTask updateUserProfileTask = new ElasticSearchController.UpdateUserProfileTask();
+                updateUserProfileTask.execute(getUserProfile);
 
-            // Get the updated userProfile
-            ElasticSearchController.GetUserProfileTask getUserProfileTaskT = new ElasticSearchController.GetUserProfileTask();
-            getUserProfileTaskT.execute("dummy1");
+                // Get the updated userProfile
+                ElasticSearchController.GetUserProfileTask getUserProfileTaskT = new ElasticSearchController.GetUserProfileTask();
+                getUserProfileTaskT.execute("dummy1");
 
-            UserProfile getUserProfileT = getUserProfileTaskT.get();
+                UserProfile getUserProfileT = getUserProfileTaskT.get();
 
-            // Check if habits of this userProfile updated
-            HabitList habitsT = getUserProfileT.getHabit_list();
+                // Check if habits of this userProfile updated
+                HabitList habitsT = getUserProfileT.getHabit_list();
 
-            assertTrue(habitsT.getHabits().get(0).getName().equals("updateHa1"));
-            assertTrue(habitsT.getHabits().get(1).getName().equals("updateHa2"));
+                assertTrue(habitsT.getHabits().get(0).getName().equals("updateHa1"));
+                assertTrue(habitsT.getHabits().get(1).getName().equals("updateHa2"));
+            }
 
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -201,29 +211,33 @@ public class ElasticSearchControllerTest extends ActivityInstrumentationTestCase
         try {
             UserProfile getUserProfile = getUserProfileTask.get();
 
-            HabitEventList habitEvents = getUserProfile.getHabit_event_list();
+            if (getUserProfile != null) {
+                HabitEventList habitEvents = getUserProfile.getHabit_event_list();
 
-            // Update this habits list
-            HabitEvent testHabitEvent1 = new HabitEvent("updateHaE1", new Date(), "dummy1");
-            HabitEvent testHabitEvent2 = new HabitEvent("updateHaE2", new Date(), "dummy1");
+                // Update this habits list
+                HabitEvent testHabitEvent1 = new HabitEvent("updateHaE1", new Date(), "dummy1");
+                HabitEvent testHabitEvent2 = new HabitEvent("updateHaE2", new Date(), "dummy1");
 
-            habitEvents.add(testHabitEvent1);
-            habitEvents.add(testHabitEvent2);
+                habitEvents.add(testHabitEvent1);
+                habitEvents.add(testHabitEvent2);
 
-            ElasticSearchController.UpdateUserProfileTask updateUserProfileTask = new ElasticSearchController.UpdateUserProfileTask();
-            updateUserProfileTask.execute(getUserProfile);
+                ElasticSearchController.UpdateUserProfileTask updateUserProfileTask = new ElasticSearchController.UpdateUserProfileTask();
+                updateUserProfileTask.execute(getUserProfile);
 
-            // Get the updated userProfile
-            ElasticSearchController.GetUserProfileTask getUserProfileTaskT = new ElasticSearchController.GetUserProfileTask();
-            getUserProfileTaskT.execute("dummy1");
+                // Get the updated userProfile
+                ElasticSearchController.GetUserProfileTask getUserProfileTaskT = new ElasticSearchController.GetUserProfileTask();
+                getUserProfileTaskT.execute("dummy1");
 
-            UserProfile getUserProfileT = getUserProfileTaskT.get();
+                UserProfile getUserProfileT = getUserProfileTaskT.get();
 
-            // Check if habits of this userProfile updated
-            HabitEventList habitEventsT = getUserProfileT.getHabit_event_list();
+                if (getUserProfileT != null) {
+                    // Check if habits of this userProfile updated
+                    HabitEventList habitEventsT = getUserProfileT.getHabit_event_list();
 
-            assertTrue(habitEventsT.getHabitEvents().get(0).getTitle().equals("updateHaE1"));
-            assertTrue(habitEventsT.getHabitEvents().get(1).getTitle().equals("updateHaE2"));
+                    assertTrue(habitEventsT.getHabitEvents().get(0).getTitle().equals("updateHaE1"));
+                    assertTrue(habitEventsT.getHabitEvents().get(1).getTitle().equals("updateHaE2"));
+                }
+            }
 
         } catch (InterruptedException e) {
             e.printStackTrace();
