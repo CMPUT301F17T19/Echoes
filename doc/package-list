@@ -1,1 +1,7 @@
 com.example.cmput301f17t19.echoes
+com.example.cmput301f17t19.echoes.Activities
+com.example.cmput301f17t19.echoes.Adapters
+com.example.cmput301f17t19.echoes.Controllers
+com.example.cmput301f17t19.echoes.Exceptions
+com.example.cmput301f17t19.echoes.Models
+com.example.cmput301f17t19.echoes.Utils
