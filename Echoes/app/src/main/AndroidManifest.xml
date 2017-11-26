@@ -26,7 +26,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
-            android:name=".LoginActivity"
+            android:name=".Activities.LoginActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,17 +34,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".HabitHistoryActivity" />
-        <activity android:name=".MyHabitsActivity" />
-        <activity android:name=".SignUpActivity" />
-        <activity android:name=".UserProfileActivity" />
-        <activity android:name=".main_menu" />
-        <activity android:name=".ToDoActivity" />
-        <activity android:name=".HabitDetail" />
-        <activity android:name=".HabitEventDetailActivity" />
-        <activity android:name=".HabitsFollowingActivity" />
-        <activity android:name=".SearchedUserActivity" />
-        <activity android:name=".UserMessageActivity" />
+        <activity android:name=".Activities.HabitHistoryActivity" />
+        <activity android:name=".Activities.MyHabitsActivity" />
+        <activity android:name=".Activities.SignUpActivity" />
+        <activity android:name=".Activities.UserProfileActivity" />
+        <activity android:name=".Activities.MainMenuActivity" />
+        <activity android:name=".Activities.ToDoActivity" />
+        <activity android:name=".Activities.HabitDetailActivity" />
+        <activity android:name=".Activities.HabitEventDetailActivity" />
+        <activity android:name=".Activities.HabitsFollowingActivity" />
+        <activity android:name=".Activities.SearchedUserActivity" />
+        <activity android:name=".Activities.UserMessageActivity" />
         <activity android:name=".FollowingHabitEventsActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -59,9 +59,9 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".MapsActivity"
+            android:name=".Activities.MapsActivity"
             android:label="@string/title_activity_maps" />
-        <activity android:name=".CommentsActivity"></activity>
+        <activity android:name=".Activities.CommentsActivity"></activity>
     </application>
 
 </manifest>

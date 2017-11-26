@@ -4,6 +4,8 @@
 
 package com.example.cmput301f17t19.echoes;
 
+import com.example.cmput301f17t19.echoes.Models.UserProfile;
+
 import static junit.framework.Assert.assertEquals;
 
 /**

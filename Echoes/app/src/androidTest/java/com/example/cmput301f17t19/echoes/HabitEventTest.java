@@ -7,6 +7,9 @@ package com.example.cmput301f17t19.echoes;
 import android.media.Image;
 import android.test.ActivityInstrumentationTestCase2;
 
+import com.example.cmput301f17t19.echoes.Exceptions.ArgTooLongException;
+import com.example.cmput301f17t19.echoes.Models.HabitEvent;
+
 import java.util.Date;
 
 /**
@@ -15,7 +18,7 @@ import java.util.Date;
 
 public class HabitEventTest extends ActivityInstrumentationTestCase2 {
     public HabitEventTest() {
-        super(com.example.cmput301f17t19.echoes.HabitEvent.class);
+        super(HabitEvent.class);
     }
 
     public void testGetTitle(){

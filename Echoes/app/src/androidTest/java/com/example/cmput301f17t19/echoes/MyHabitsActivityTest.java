@@ -18,6 +18,10 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.cmput301f17t19.echoes.Activities.HabitDetailActivity;
+import com.example.cmput301f17t19.echoes.Activities.MyHabitsActivity;
+import com.example.cmput301f17t19.echoes.Controllers.OfflineStorageController;
+import com.example.cmput301f17t19.echoes.Models.UserProfile;
 import com.robotium.solo.Solo;
 
 /**
@@ -32,7 +36,7 @@ public class MyHabitsActivityTest extends ActivityInstrumentationTestCase2 {
     private Solo solo;
 
     public MyHabitsActivityTest() {
-        super(com.example.cmput301f17t19.echoes.MyHabitsActivity.class);
+        super(MyHabitsActivity.class);
     }
 
     public void setUp() throws Exception{
@@ -57,9 +61,9 @@ public class MyHabitsActivityTest extends ActivityInstrumentationTestCase2 {
         solo.clickOnView(solo.getView(R.id.habit_add_button));
 
         // Open HabitDetailActivity with all field empty, and Date field be "Click to select start date"
-        // Wait for HabitDetail Activity
-        solo.waitForActivity(HabitDetail.class, 2000);
-        solo.assertCurrentActivity("Wrong Activity", HabitDetail.class);
+        // Wait for HabitDetailActivity Activity
+        solo.waitForActivity(HabitDetailActivity.class, 2000);
+        solo.assertCurrentActivity("Wrong Activity", HabitDetailActivity.class);
 
         // Search for Habit Name EditText
         EditText habit_name_EditText = (EditText) solo.getView(R.id.Habit_name_editText);
@@ -75,7 +79,7 @@ public class MyHabitsActivityTest extends ActivityInstrumentationTestCase2 {
     }
 
     /**
-     * Test for click on a Habit item and Open its HabitDetail Activity
+     * Test for click on a Habit item and Open its HabitDetailActivity Activity
      */
     public void testClickHabitToDetailActivity() {
         MyHabitsActivity activity = (MyHabitsActivity) solo.getCurrentActivity();
@@ -86,9 +90,9 @@ public class MyHabitsActivityTest extends ActivityInstrumentationTestCase2 {
         // Click on 'ADD HABIT' button
         solo.clickOnView(solo.getView(R.id.habit_add_button));
         // Open HabitDetailActivity with all field empty, and Date field be "Click to select start date"
-        // Wait for HabitDetail Activity
-        solo.waitForActivity(HabitDetail.class, 2000);
-        solo.assertCurrentActivity("Wrong Activity", HabitDetail.class);
+        // Wait for HabitDetailActivity Activity
+        solo.waitForActivity(HabitDetailActivity.class, 2000);
+        solo.assertCurrentActivity("Wrong Activity", HabitDetailActivity.class);
 
         // Enter habit name: dummyHabit
         solo.enterText((EditText) solo.getView(R.id.Habit_name_editText), "dummyHabit");

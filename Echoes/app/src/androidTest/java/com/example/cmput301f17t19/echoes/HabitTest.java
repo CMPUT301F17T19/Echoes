@@ -4,6 +4,9 @@
 
 package com.example.cmput301f17t19.echoes;
 
+import com.example.cmput301f17t19.echoes.Models.Habit;
+import com.example.cmput301f17t19.echoes.Models.Plan;
+
 import java.util.Date;
 
 import static junit.framework.Assert.assertEquals;

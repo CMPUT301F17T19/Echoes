@@ -12,6 +12,13 @@ package com.example.cmput301f17t19.echoes;
 
 import android.test.ActivityInstrumentationTestCase2;
 
+import com.example.cmput301f17t19.echoes.Activities.LoginActivity;
+import com.example.cmput301f17t19.echoes.Controllers.OfflineStorageController;
+import com.example.cmput301f17t19.echoes.Models.Habit;
+import com.example.cmput301f17t19.echoes.Models.HabitList;
+import com.example.cmput301f17t19.echoes.Models.Plan;
+import com.example.cmput301f17t19.echoes.Models.UserProfile;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -26,7 +33,7 @@ import java.util.Date;
 public class OfflineStorageControllerTest extends ActivityInstrumentationTestCase2 {
 
     public OfflineStorageControllerTest() {
-        super(com.example.cmput301f17t19.echoes.LoginActivity.class);
+        super(LoginActivity.class);
     }
 
     /**

@@ -12,6 +12,17 @@ package com.example.cmput301f17t19.echoes;
 
 import android.test.ActivityInstrumentationTestCase2;
 
+import com.example.cmput301f17t19.echoes.Activities.LoginActivity;
+import com.example.cmput301f17t19.echoes.Controllers.ElasticSearchController;
+import com.example.cmput301f17t19.echoes.Models.Habit;
+import com.example.cmput301f17t19.echoes.Models.HabitEvent;
+import com.example.cmput301f17t19.echoes.Models.HabitEventList;
+import com.example.cmput301f17t19.echoes.Models.HabitList;
+import com.example.cmput301f17t19.echoes.Models.Plan;
+import com.example.cmput301f17t19.echoes.Models.UserFollowingList;
+import com.example.cmput301f17t19.echoes.Models.UserProfile;
+import com.example.cmput301f17t19.echoes.Models.UserReceivedRequestsList;
+
 import java.util.Date;
 import java.util.concurrent.ExecutionException;
 
@@ -25,7 +36,7 @@ import java.util.concurrent.ExecutionException;
 public class ElasticSearchControllerTest extends ActivityInstrumentationTestCase2 {
 
     public ElasticSearchControllerTest(){
-        super(com.example.cmput301f17t19.echoes.LoginActivity.class);
+        super(LoginActivity.class);
     }
 
     /**

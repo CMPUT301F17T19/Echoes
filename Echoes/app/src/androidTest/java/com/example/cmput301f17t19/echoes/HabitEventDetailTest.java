@@ -8,6 +8,8 @@ import android.test.ActivityInstrumentationTestCase2;
 import android.view.View;
 import android.widget.EditText;
 
+import com.example.cmput301f17t19.echoes.Activities.HabitEventDetailActivity;
+import com.example.cmput301f17t19.echoes.Activities.HabitHistoryActivity;
 import com.robotium.solo.Solo;
 
 /**
@@ -16,7 +18,7 @@ import com.robotium.solo.Solo;
 
 public class HabitEventDetailTest extends ActivityInstrumentationTestCase2 {
     public HabitEventDetailTest() {
-        super(com.example.cmput301f17t19.echoes.HabitHistoryActivity.class);
+        super(HabitHistoryActivity.class);
     }
     private Solo solo;
 
