@@ -25,16 +25,16 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
+import android.widget.ImageButton;
 
+import com.example.cmput301f17t19.echoes.Adapters.HabitOverviewAdapter;
 import com.example.cmput301f17t19.echoes.Controllers.ElasticSearchController;
+import com.example.cmput301f17t19.echoes.Controllers.OfflineStorageController;
 import com.example.cmput301f17t19.echoes.Models.Habit;
 import com.example.cmput301f17t19.echoes.Models.HabitList;
-import com.example.cmput301f17t19.echoes.Adapters.HabitOverviewAdapter;
-import com.example.cmput301f17t19.echoes.Controllers.OfflineStorageController;
-import com.example.cmput301f17t19.echoes.R;
 import com.example.cmput301f17t19.echoes.Models.UserProfile;
 import com.example.cmput301f17t19.echoes.Models.UserReceivedRequestsList;
+import com.example.cmput301f17t19.echoes.R;
 
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
@@ -60,7 +60,7 @@ public class MyHabitsActivity extends AppCompatActivity {
     // The HabitList of the login user
     private static HabitList mHabitList;
 
-    private Button addHabitButton;
+    private ImageButton addHabitButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,7 +76,7 @@ public class MyHabitsActivity extends AppCompatActivity {
 
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            window.setStatusBarColor(ContextCompat.getColor(this, R.color.primary_dark));
+            window.setStatusBarColor(ContextCompat.getColor(this, R.color.redPink));
         }
 
 
@@ -118,7 +118,7 @@ public class MyHabitsActivity extends AppCompatActivity {
 
         habitsRecyclerView.setHasFixedSize(true);
 
-        addHabitButton = (Button) findViewById(R.id.habit_add_button);
+        addHabitButton = (ImageButton) findViewById(R.id.habit_add_button);
 
         addHabitButton.setOnClickListener(new View.OnClickListener() {
             @Override

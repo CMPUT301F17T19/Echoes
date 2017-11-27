@@ -19,6 +19,7 @@
     <color name="iron">#CCCCCC</color>
     <color name="dimPurple">#645D89</color>
     <color name="white">#FFFFFF</color>
+    <color name="not_so_white">#c7edebeb</color>
     <color name="transparent">#6cffffff</color>
     <color name="maincolor">#a813e7f3</color>
 </resources>

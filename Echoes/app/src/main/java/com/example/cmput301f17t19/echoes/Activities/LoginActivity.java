@@ -197,6 +197,7 @@ public class LoginActivity extends AppCompatActivity  {
 
                         public void run() {
 
+                            Username_sign_in_button.stopAnimation();
                             toNextPage();
 
 
@@ -231,8 +232,11 @@ public class LoginActivity extends AppCompatActivity  {
         final Intent main_menu_Intent = new Intent(LoginActivity.this, MainMenuActivity.class);
         main_menu_Intent.putExtra(LOGIN_USERNAME, login_UserName);
 
-        int cx = 380;
-        int cy = 830;
+        //int cx = 380;
+        //int cy = 830;
+
+        int cx = (Username_sign_in_button.getLeft() + Username_sign_in_button.getRight()) / 2;
+        int cy = (Username_sign_in_button.getTop() + Username_sign_in_button.getBottom()) / 2;
 
         Animator animator = ViewAnimationUtils.createCircularReveal(animateView,cx,cy,0,getResources().getDisplayMetrics().heightPixels * 1.2f);
         animator.setDuration(400);
@@ -247,7 +251,7 @@ public class LoginActivity extends AppCompatActivity  {
 
             @Override
             public void onAnimationEnd(Animator animation) {
-                Username_sign_in_button.stopAnimation();
+
                 animateView.setVisibility(View.VISIBLE);
                 //ActivityOptions activityOptions = ActivityOptions.makeSceneTransitionAnimation(mActivity, Username_sign_in_button, "transition");
                 startActivity(main_menu_Intent);
