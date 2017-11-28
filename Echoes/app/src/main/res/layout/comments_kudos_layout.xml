@@ -9,11 +9,22 @@
     android:layout_height="wrap_content"
     android:layout_margin="4dp">
 
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/comment"
+        />
+
+
     <Button
         android:id="@+id/view_Comments_Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@color/white"
         android:text="@string/view_comments"
+        android:src="@drawable/comment"
         android:layout_marginRight="100dp"/>
 
     <LinearLayout
@@ -33,6 +44,9 @@
         <TextView
             android:id="@+id/kudos_num"
             android:layout_width="wrap_content"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="16dp"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
             android:layout_gravity="center"/>
@@ -40,6 +54,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="16dp"
             android:text="@string/kudos"
             android:layout_margin="4dp"
             android:layout_gravity="center"/>

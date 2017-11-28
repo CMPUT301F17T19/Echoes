@@ -40,7 +40,7 @@
         android:layout_above="@+id/btm1"
         android:layout_below="@+id/my_toolbar"
 
-        android:layout_margin="8dp"/>
+        />
 
 
         <ImageButton

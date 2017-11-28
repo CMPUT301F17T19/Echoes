@@ -92,7 +92,7 @@
     <string name="userMessage_networkError">You can only see your message from other users when you are online.</string>
     <string name="habitsFollowing_networkError">You can only see all Habits from your followings when you are online.</string>
 
-    <string name="view_comments">View Comments</string>
+    <string name="view_comments">Comment</string>
     <string name="kudos">Kudos</string>
 
     <string name="send_comment">Send Comment</string>
