@@ -130,6 +130,7 @@
                 android:layout_width="225dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
+                android:buttonTint="@color/redPink"
                 android:text="Sunday" />
 
             <CheckBox
@@ -137,6 +138,7 @@
                 android:layout_width="225dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
+                android:buttonTint="@color/redPink"
                 android:text="Monday" />
 
             <CheckBox
@@ -144,6 +146,7 @@
                 android:layout_width="225dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
+                android:buttonTint="@color/redPink"
                 android:text="Tuesday" />
 
             <CheckBox
@@ -151,6 +154,7 @@
                 android:layout_width="225dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
+                android:buttonTint="@color/redPink"
                 android:text="Wednesday" />
 
             <CheckBox
@@ -158,6 +162,7 @@
                 android:layout_width="225dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
+                android:buttonTint="@color/redPink"
                 android:text="Thursday" />
 
             <CheckBox
@@ -165,6 +170,7 @@
                 android:layout_width="225dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
+                android:buttonTint="@color/redPink"
                 android:text="Friday" />
 
             <CheckBox
@@ -172,6 +178,7 @@
                 android:layout_width="225dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
+                android:buttonTint="@color/redPink"
                 android:text="Saturday" />
 
         </LinearLayout>
