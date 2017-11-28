@@ -8,6 +8,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context="com.example.cmput301f17t19.echoes.Activities.MyHabitsActivity"
     >
 
@@ -27,6 +28,7 @@
         android:layout_height="?attr/actionBarSize"
         android:background="@color/redPink"
         android:layout_alignParentTop="true"
+
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Dark" />
@@ -34,9 +36,10 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/habits_recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_above="@+id/btm1"
         android:layout_below="@+id/my_toolbar"
-        android:layout_weight="10"
+
         android:layout_margin="8dp"/>
 
 
@@ -45,18 +48,21 @@
             android:id="@+id/habit_add_button"
             android:background="@drawable/test_button"
             android:src="@drawable/ic_add"
-            android:layout_width="50dp"
+            android:layout_width="60dp"
+
             android:layout_above="@+id/btm1"
+            android:layout_margin="15dp"
             android:layout_alignParentRight="true"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
 
             />
 
 
     <com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx
         android:id="@+id/btm1"
+
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="55dp"
         android:elevation="4dp"
         android:layout_alignParentBottom="true"
         app:itemBackground="@color/not_so_white"

@@ -4,6 +4,7 @@
 
 package com.example.cmput301f17t19.echoes.Activities;
 
+import android.animation.Animator;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -23,8 +24,10 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewAnimationUtils;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.animation.AccelerateInterpolator;
 import android.widget.ImageButton;
 
 import com.example.cmput301f17t19.echoes.Adapters.HabitOverviewAdapter;
@@ -62,6 +65,8 @@ public class MyHabitsActivity extends AppCompatActivity {
 
     private ImageButton addHabitButton;
 
+    private View animateView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -90,7 +95,7 @@ public class MyHabitsActivity extends AppCompatActivity {
 
         bottomNavigationViewEx.enableShiftingMode(false);
         bottomNavigationViewEx.enableItemShiftingMode(false);
-        bottomNavigationViewEx.setTextVisibility(false);
+
 
         bottomNavigationViewEx.enableAnimation(false);
 
@@ -100,6 +105,9 @@ public class MyHabitsActivity extends AppCompatActivity {
 
         mContext = this;
 
+
+        animateView = findViewById(R.id.animate_view_3);
+
         // Get the login username and user Profile
         Intent intent = getIntent();
         if (intent.getStringExtra(LoginActivity.LOGIN_USERNAME) != null) {
@@ -108,6 +116,15 @@ public class MyHabitsActivity extends AppCompatActivity {
 
         // Set up recycler view for habit event overview in the Habit History
         habitsRecyclerView = (RecyclerView) findViewById(R.id.habits_recyclerView);
+        /*
+        Display display = ((WindowManager)this.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay();
+
+        int height = display.getHeight();
+
+        ViewGroup.LayoutParams params=habitsRecyclerView.getLayoutParams();
+        params.height=height - 55;
+        habitsRecyclerView.setLayoutParams(params);
+        */
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         habitsRecyclerView.setLayoutManager(layoutManager);
@@ -124,8 +141,9 @@ public class MyHabitsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // Open an empty Habit Detail Screen
-                Intent habitDetail_Intent = new Intent(mContext, HabitDetailActivity.class);
-                mContext.startActivity(habitDetail_Intent);
+                //Intent habitDetail_Intent = new Intent(mContext, HabitDetailActivity.class);
+                //mContext.startActivity(habitDetail_Intent);
+                toNextPage();
             }
         });
     }
@@ -137,6 +155,7 @@ public class MyHabitsActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
+        animateView.setVisibility(View.INVISIBLE);
         // the User Profile of the login user
         login_userProfile = OfflineStorageController.getLogin_UserProfile(this, login_userName);
 
@@ -314,4 +333,55 @@ public class MyHabitsActivity extends AppCompatActivity {
     public RecyclerView getHabitsRecyclerView() {
         return habitsRecyclerView;
     }
+
+
+    private void toNextPage(){
+
+        // Open an empty Habit Detail Screen
+        final  Intent habitDetail_Intent = new Intent(MyHabitsActivity.this, HabitDetailActivity.class);
+
+
+
+
+        //int cx = 380;
+        //int cy = 830;
+
+        int cx = (addHabitButton.getLeft() + addHabitButton.getRight()) / 2;
+        int cy = (addHabitButton.getTop() + addHabitButton.getBottom()) / 2;
+
+        Animator animator = ViewAnimationUtils.createCircularReveal(animateView,cx,cy,0,getResources().getDisplayMetrics().heightPixels * 1.2f);
+        animator.setDuration(400);
+        animator.setInterpolator(new AccelerateInterpolator());
+        animateView.setVisibility(View.VISIBLE);
+        animator.start();
+        animator.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+
+                animateView.setVisibility(View.VISIBLE);
+                //ActivityOptions activityOptions = ActivityOptions.makeSceneTransitionAnimation(mActivity, Username_sign_in_button, "transition");
+                startActivity(habitDetail_Intent);
+
+
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+
+            }
+        });
+
+    }
+
+
 }

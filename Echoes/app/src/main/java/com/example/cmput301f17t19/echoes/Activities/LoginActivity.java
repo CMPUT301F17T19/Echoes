@@ -94,7 +94,7 @@ public class LoginActivity extends AppCompatActivity  {
 
         Username_sign_in_button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-
+                hideKeyboard(LoginActivity.this);
                 login();
 
 
@@ -156,6 +156,7 @@ public class LoginActivity extends AppCompatActivity  {
     @Override
     protected void onStart() {
         super.onStart();
+        animateView.setVisibility(View.INVISIBLE);
         userEditText.getText().clear();
     }
 
@@ -235,8 +236,8 @@ public class LoginActivity extends AppCompatActivity  {
         //int cx = 380;
         //int cy = 830;
 
-        int cx = (Username_sign_in_button.getLeft() + Username_sign_in_button.getRight()) / 2;
-        int cy = (Username_sign_in_button.getTop() + Username_sign_in_button.getBottom()) / 2;
+        int cx = (Username_sign_in_button.getLeft() + Username_sign_in_button.getRight()+30) / 2;
+        int cy = (Username_sign_in_button.getTop() + Username_sign_in_button.getBottom()) / 2*3;
 
         Animator animator = ViewAnimationUtils.createCircularReveal(animateView,cx,cy,0,getResources().getDisplayMetrics().heightPixels * 1.2f);
         animator.setDuration(400);

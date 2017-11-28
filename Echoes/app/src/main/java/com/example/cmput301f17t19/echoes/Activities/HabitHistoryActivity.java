@@ -90,7 +90,7 @@ public class HabitHistoryActivity extends AppCompatActivity {
 
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            window.setStatusBarColor(ContextCompat.getColor(this, R.color.primary_dark));
+            window.setStatusBarColor(ContextCompat.getColor(this, R.color.redPink));
         }
 
 
