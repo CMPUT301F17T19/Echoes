@@ -4,7 +4,10 @@
 
 package com.example.cmput301f17t19.echoes.Activities;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
@@ -171,11 +174,15 @@ public class MainMenuActivity extends AppCompatActivity {
      * @param view
      */
     public void Following(View view) {
-        Intent intent = new Intent(this, HabitsFollowingActivity.class);
-        intent.putExtra(LoginActivity.LOGIN_USERNAME, login_UserName);
+        if(isNetworkStatusAvialable (getApplicationContext())) {
+            Intent intent = new Intent(this, HabitsFollowingActivity.class);
+            intent.putExtra(LoginActivity.LOGIN_USERNAME, login_UserName);
 
-        startActivity(intent);
-        finish();
+            startActivity(intent);
+            finish();
+        } else {
+            Toast.makeText(getApplicationContext(), "Internet is not available", Toast.LENGTH_SHORT).show();
+        }
     }
 
     /**
@@ -197,13 +204,17 @@ public class MainMenuActivity extends AppCompatActivity {
      * @param view
      */
     public void Habits_history(View view) {
-        // Pass the login User Name to the HabitHistory Activity
-        Intent intent = new Intent(this, HabitHistoryActivity.class);
-        intent.putExtra(LoginActivity.LOGIN_USERNAME, login_UserName);
+        if(isNetworkStatusAvialable (getApplicationContext())) {
+            // Pass the login User Name to the HabitHistory Activity
+            Intent intent = new Intent(this, HabitHistoryActivity.class);
+            intent.putExtra(LoginActivity.LOGIN_USERNAME, login_UserName);
 
-        startActivity(intent);
+            startActivity(intent);
 
-        finish();
+            finish();
+        } else {
+            Toast.makeText(getApplicationContext(), "Internet is not available", Toast.LENGTH_SHORT).show();
+        }
     }
 
     /**
@@ -212,39 +223,44 @@ public class MainMenuActivity extends AppCompatActivity {
      * @param view
      */
     public void Habits_events_map(View view) {
-        // Show my habit events and my followings' most recent habit events for each habit on map
-        // My habit events in habit history
-        ArrayList<HabitEvent> shownHabitEvents_Map = login_UserProfile.getHabit_event_list().getHabitEvents();
-        // Get My followings
-        ElasticSearchController.GetUserFollowingListTask getUserFollowingListTask = new ElasticSearchController.GetUserFollowingListTask();
-        getUserFollowingListTask.execute(login_UserName);
-        try {
-            UserFollowingList userFollowingList = getUserFollowingListTask.get();
+        if(isNetworkStatusAvialable (getApplicationContext())) {
+            // Show my habit events and my followings' most recent habit events for each habit on map
+            // My habit events in habit history
+            ArrayList<HabitEvent> shownHabitEvents_Map = login_UserProfile.getHabit_event_list().getHabitEvents();
+            // Get My followings
+            ElasticSearchController.GetUserFollowingListTask getUserFollowingListTask = new ElasticSearchController.GetUserFollowingListTask();
+            getUserFollowingListTask.execute(login_UserName);
+            try {
+                UserFollowingList userFollowingList = getUserFollowingListTask.get();
 
-            if (userFollowingList != null) {
-                ArrayList<Following> myFollowings = userFollowingList.getFollowings();
+                if (userFollowingList != null) {
+                    ArrayList<Following> myFollowings = userFollowingList.getFollowings();
 
-                // My followings most recent habit events for each habit
-                ArrayList<HabitEvent> myFollowingRecentHabitEvents = FollowingSharingController.createFollowingRecentHabitEvents(myFollowings);
+                    // My followings most recent habit events for each habit
+                    ArrayList<HabitEvent> myFollowingRecentHabitEvents = FollowingSharingController.createFollowingRecentHabitEvents(myFollowings);
 
-                // Add this array list to habit events shown on map
-                for (HabitEvent habitEvent : myFollowingRecentHabitEvents) {
-                    shownHabitEvents_Map.add(habitEvent);
+                    // Add this array list to habit events shown on map
+                    for (HabitEvent habitEvent : myFollowingRecentHabitEvents) {
+                        shownHabitEvents_Map.add(habitEvent);
+                    }
                 }
+
+                Intent map_intent = new Intent(this, MapsActivity.class);
+                map_intent.putParcelableArrayListExtra(MapsActivity.HABIT_EVENT_SHOW_LOCATION_TAG, shownHabitEvents_Map);
+
+                startActivity(map_intent);
+
+            } catch (InterruptedException e) {
+                Toast.makeText(this, "You can only see habit events of your followings and yours on Map online.", Toast.LENGTH_LONG).show();
+                e.printStackTrace();
+            } catch (ExecutionException e) {
+                Toast.makeText(this, "You can only see habit events of your followings and yours on Map online.", Toast.LENGTH_LONG).show();
+                e.printStackTrace();
             }
-
-            Intent map_intent = new Intent(this, MapsActivity.class);
-            map_intent.putParcelableArrayListExtra(MapsActivity.HABIT_EVENT_SHOW_LOCATION_TAG, shownHabitEvents_Map);
-
-            startActivity(map_intent);
-
-        } catch (InterruptedException e) {
-            Toast.makeText(this, "You can only see habit events of your followings and yours on Map online.", Toast.LENGTH_LONG).show();
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            Toast.makeText(this, "You can only see habit events of your followings and yours on Map online.", Toast.LENGTH_LONG).show();
-            e.printStackTrace();
+        } else {
+            Toast.makeText(getApplicationContext(), "Internet is not available", Toast.LENGTH_SHORT).show();
         }
+
     }
 
     /**
@@ -274,5 +290,23 @@ public class MainMenuActivity extends AppCompatActivity {
 
         // Sync the offline file with online data storage
         ElasticSearchController.syncOnlineWithOffline(login_UserProfile);
+    }
+
+    /**
+     * Check to see if there is an internet connection
+     *
+     * @param context
+     * @return
+     */
+    public static boolean isNetworkStatusAvialable (Context context) {
+        ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        if (connectivityManager != null)
+        {
+            NetworkInfo netInfos = connectivityManager.getActiveNetworkInfo();
+            if(netInfos != null)
+                if(netInfos.isConnected())
+                    return true;
+        }
+        return false;
     }
 }

@@ -34,6 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Habit Name:"
+            android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -42,6 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
+            android:backgroundTint="@color/black"
             android:ems="10"
             android:hint="Please enter habit name"
             android:inputType="textPersonName"
@@ -61,6 +63,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Habit Reason:"
+            android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -70,6 +73,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Please enter habit reason"
+            android:backgroundTint="@color/black"
             android:inputType="textPersonName"
             android:textSize="14sp" />
 
@@ -88,6 +92,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Started Date:"
+            android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -116,20 +121,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Habit Plan:"
+            android:textColor="@color/black"
             android:textSize="18sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <LinearLayout
             android:id="@+id/day_select_layout"
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <CheckBox
                 android:id="@+id/sunday_checkbox"
                 android:layout_width="225dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
+                android:buttonTint="@color/black"
                 android:text="Sunday" />
 
             <CheckBox
@@ -137,6 +144,7 @@
                 android:layout_width="225dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
+                android:buttonTint="@color/black"
                 android:text="Monday" />
 
             <CheckBox
@@ -144,6 +152,7 @@
                 android:layout_width="225dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
+                android:buttonTint="@color/black"
                 android:text="Tuesday" />
 
             <CheckBox
@@ -151,6 +160,7 @@
                 android:layout_width="225dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
+                android:buttonTint="@color/black"
                 android:text="Wednesday" />
 
             <CheckBox
@@ -158,6 +168,7 @@
                 android:layout_width="225dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
+                android:buttonTint="@color/black"
                 android:text="Thursday" />
 
             <CheckBox
@@ -165,6 +176,7 @@
                 android:layout_width="225dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
+                android:buttonTint="@color/black"
                 android:text="Friday" />
 
             <CheckBox
@@ -172,6 +184,7 @@
                 android:layout_width="225dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
+                android:buttonTint="@color/black"
                 android:text="Saturday" />
 
         </LinearLayout>
@@ -189,6 +202,8 @@
             android:id="@+id/save_button"
             android:layout_width="120dp"
             android:layout_height="50dp"
+            android:textColor="@color/white"
+            android:background="@drawable/btn"
             android:text="Save" />
 
         <Button
@@ -196,6 +211,8 @@
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:layout_marginLeft="100dp"
+            android:textColor="@color/white"
+            android:background="@drawable/btn"
             android:text="Cancel" />
     </LinearLayout>
 
