@@ -30,6 +30,7 @@
             android:id="@+id/Habit_Type"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:textColor="@color/black"
             android:text="Habit Type:" />
 
         <Spinner
@@ -51,11 +52,13 @@
             android:id="@+id/Comment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/black"
             android:text="Optional Comment:" />
 
         <EditText
             android:id="@+id/WriteComment"
             android:layout_width="match_parent"
+            android:backgroundTint="@color/black"
             android:layout_height="wrap_content" />
     </LinearLayout>
 
@@ -70,12 +73,14 @@
             android:id="@+id/Date"
             android:layout_width="wrap_content"
             android:layout_height="27dp"
+            android:textColor="@color/black"
             android:text="Date:" />
 
         <TextView
             android:id="@+id/Get_Date"
             android:layout_width="wrap_content"
             android:text="Click to select event date"
+            android:textColor="@color/black"
             android:layout_height="27dp"
             android:layout_weight="1.54" />
     </LinearLayout>
@@ -92,6 +97,7 @@
             android:id="@+id/Photo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/black"
             android:text="Optional Photo:" />
 
         <ImageView
@@ -140,12 +146,14 @@
             android:id="@+id/Attch_Location"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/black"
             android:text="Attch Location:" />
 
         <RadioGroup
             android:id="@+id/loc_radiogroup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="horizontal"
             android:layout_marginStart="8dp">
 
             <RadioButton
@@ -158,6 +166,7 @@
                 android:id="@+id/No"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="80dp"
                 android:text="No" />
 
         </RadioGroup>
@@ -168,27 +177,28 @@
         android:id="@+id/habit_event_loc_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="8dp">
+        android:layout_margin="8dp"
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/Location"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Location:"
             android:layout_marginEnd="8dp"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:text="Location:"
+            android:textColor="@color/black" />
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="6">
+            android:layout_weight="6"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/lat_location"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content" />
 
             <TextView
                 android:id="@+id/lon_location"
@@ -201,8 +211,10 @@
             android:id="@+id/habitevent_select_loc_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/btn"
             android:text="@string/select_loc"
-            android:layout_weight="1"/>
+            android:textColor="@color/white" />
 
     </LinearLayout>
 
@@ -215,15 +227,20 @@
 
         <Button
             android:id="@+id/Save"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:textColor="@color/white"
+            android:background="@drawable/btn"
             android:layout_weight="1"
             android:text="Save" />
 
         <Button
             android:id="@+id/Cancel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:textColor="@color/white"
+            android:background="@drawable/btn"
+            android:layout_marginLeft="80dp"
             android:layout_weight="1"
             android:text="Cancel" />
     </LinearLayout>
