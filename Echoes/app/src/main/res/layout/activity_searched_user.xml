@@ -57,9 +57,10 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="30dp"
         android:visibility="invisible"/>
-    <View
-        android:layout_width="fill_parent"
-        android:layout_height="3dp"
-        android:background="@color/colorAccent"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/iron"
+        />
 
 </LinearLayout>
