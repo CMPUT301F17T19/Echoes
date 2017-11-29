@@ -93,16 +93,20 @@
 
         <Button
             android:id="@+id/habitevents_map"
-            android:layout_width="wrap_content"
+            android:layout_width="140dp"
             android:layout_height="wrap_content"
             android:text="@string/habit_events_map"
+            android:textColor="@color/white"
+            android:background="@drawable/btn"
             android:layout_marginRight="16dp"/>
 
         <Button
             android:id="@+id/habitevents_add_button"
-            android:layout_width="wrap_content"
+            android:layout_width="140dp"
             android:layout_height="wrap_content"
             android:text="@string/habit_events_add_button"
+            android:textColor="@color/white"
+            android:background="@drawable/btn"
             android:layout_marginLeft="16dp"/>
 
     </LinearLayout>
