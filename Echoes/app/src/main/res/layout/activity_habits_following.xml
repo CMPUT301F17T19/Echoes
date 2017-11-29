@@ -70,6 +70,8 @@
             android:layout_height="wrap_content"
             android:text="@string/recentEventsMap"
             android:layout_gravity="center_horizontal"
+            android:textColor="@color/white"
+            android:background="@drawable/btn"
             android:layout_margin="8dp"/>
 
     </LinearLayout>
