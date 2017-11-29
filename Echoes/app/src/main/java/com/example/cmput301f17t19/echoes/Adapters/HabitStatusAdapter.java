@@ -11,7 +11,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -120,7 +119,7 @@ public class HabitStatusAdapter extends RecyclerView.Adapter<HabitStatusAdapter.
         private TextView noRecentHabitEvent_TextView;
 
         // Button for viewing habit comments
-        private Button viewComments_Button;
+        private TextView viewComments_Button;
         // View for kudos
         private ImageView kudos_ImageView;
         private TextView kudos_num_TextView;
@@ -160,7 +159,7 @@ public class HabitStatusAdapter extends RecyclerView.Adapter<HabitStatusAdapter.
             habitEventLayout = (LinearLayout) itemView.findViewById(R.id.followingHabitMostRecentEvent_layout);
             noRecentHabitEvent_TextView = (TextView) itemView.findViewById(R.id.no_mostRecentEvent);
 
-            viewComments_Button = (Button) itemView.findViewById(R.id.view_Comments_Button);
+            viewComments_Button = (TextView) itemView.findViewById(R.id.view_Comments_Button);
 
             viewComments_Button.setOnClickListener(new View.OnClickListener() {
                 @Override
