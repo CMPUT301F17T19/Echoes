@@ -72,5 +72,9 @@
             android:layout_height="wrap_content" />
 
     </LinearLayout>
-
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/iron"
+        />
 </LinearLayout>
