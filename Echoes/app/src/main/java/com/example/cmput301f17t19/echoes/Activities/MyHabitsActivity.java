@@ -11,8 +11,12 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
@@ -28,12 +32,17 @@ import android.view.ViewAnimationUtils;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.AccelerateInterpolator;
+import android.widget.Toast;
 
 import com.example.cmput301f17t19.echoes.Adapters.HabitOverviewAdapter;
 import com.example.cmput301f17t19.echoes.Controllers.ElasticSearchController;
+import com.example.cmput301f17t19.echoes.Controllers.FollowingSharingController;
 import com.example.cmput301f17t19.echoes.Controllers.OfflineStorageController;
+import com.example.cmput301f17t19.echoes.Models.Following;
 import com.example.cmput301f17t19.echoes.Models.Habit;
+import com.example.cmput301f17t19.echoes.Models.HabitEvent;
 import com.example.cmput301f17t19.echoes.Models.HabitList;
+import com.example.cmput301f17t19.echoes.Models.UserFollowingList;
 import com.example.cmput301f17t19.echoes.Models.UserProfile;
 import com.example.cmput301f17t19.echoes.Models.UserReceivedRequestsList;
 import com.example.cmput301f17t19.echoes.R;
@@ -68,6 +77,10 @@ public class MyHabitsActivity extends AppCompatActivity {
 
     private View animateView;
 
+
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -99,6 +112,125 @@ public class MyHabitsActivity extends AppCompatActivity {
 
 
         bottomNavigationViewEx.enableAnimation(false);
+
+
+        //set up bottom navigation bar
+
+        bottomNavigationViewEx.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                switch (item.getItemId()){
+
+                    case R.id.td:
+
+                        Intent intent_td = new Intent(MyHabitsActivity.this, ToDoActivity.class);
+                        intent_td.putExtra(LoginActivity.LOGIN_USERNAME, login_userName);
+                        startActivity(intent_td);
+                        finish();
+
+                        break;
+
+
+                    case R.id.myhabit:
+                        /*
+                        // Pass the login User Name to the MyHabits Activity
+                        Intent intent = new Intent(this, MyHabitsActivity.class);
+                        intent.putExtra(LoginActivity.LOGIN_USERNAME, login_UserName);
+
+                        startActivity(intent);
+
+                        finish();
+                        */
+                        break;
+
+
+                    case R.id.history:
+
+                        // Pass the login User Name to the HabitHistory Activity
+                        Intent intent_his = new Intent(MyHabitsActivity.this, HabitHistoryActivity.class);
+                        intent_his.putExtra(LoginActivity.LOGIN_USERNAME, login_userName);
+
+                        startActivity(intent_his);
+
+                        finish();
+
+                        break;
+
+
+
+                    case R.id.maps:
+
+                        if(isNetworkStatusAvialable (getApplicationContext())) {
+                            // Show my habit events and my followings' most recent habit events for each habit on map
+                            // My habit events in habit history
+                            ArrayList<HabitEvent> shownHabitEvents_Map = login_userProfile.getHabit_event_list().getHabitEvents();
+                            // Get My followings
+                            ElasticSearchController.GetUserFollowingListTask getUserFollowingListTask = new ElasticSearchController.GetUserFollowingListTask();
+                            getUserFollowingListTask.execute(login_userName);
+                            try {
+                                UserFollowingList userFollowingList = getUserFollowingListTask.get();
+
+                                if (userFollowingList != null) {
+                                    ArrayList<Following> myFollowings = userFollowingList.getFollowings();
+
+                                    // My followings most recent habit events for each habit
+                                    ArrayList<HabitEvent> myFollowingRecentHabitEvents = FollowingSharingController.createFollowingRecentHabitEvents(myFollowings);
+
+                                    // Add this array list to habit events shown on map
+                                    for (HabitEvent habitEvent : myFollowingRecentHabitEvents) {
+                                        shownHabitEvents_Map.add(habitEvent);
+                                    }
+                                }
+
+                                Intent map_intent = new Intent(MyHabitsActivity.this, MapsActivity.class);
+                                map_intent.putParcelableArrayListExtra(MapsActivity.HABIT_EVENT_SHOW_LOCATION_TAG, shownHabitEvents_Map);
+
+                                startActivity(map_intent);
+
+                            } catch (InterruptedException e) {
+                                Toast.makeText(MyHabitsActivity.this, "You can only see habit events of your followings and yours on Map online.", Toast.LENGTH_LONG).show();
+                                e.printStackTrace();
+                            } catch (ExecutionException e) {
+                                Toast.makeText(MyHabitsActivity.this, "You can only see habit events of your followings and yours on Map online.", Toast.LENGTH_LONG).show();
+                                e.printStackTrace();
+                            }
+                        } else {
+                            Toast.makeText(getApplicationContext(), "Internet is not available", Toast.LENGTH_SHORT).show();
+                        }
+
+
+
+                        break;
+
+
+
+                    case R.id.following:
+
+
+                        if(isNetworkStatusAvialable (getApplicationContext())) {
+                            Intent intent_fol = new Intent(MyHabitsActivity.this, HabitsFollowingActivity.class);
+                            intent_fol.putExtra(LoginActivity.LOGIN_USERNAME, login_userName);
+
+                            startActivity(intent_fol);
+                            finish();
+                        } else {
+                            Toast.makeText(getApplicationContext(), "Internet is not available", Toast.LENGTH_SHORT).show();
+                        }
+
+
+                        break;
+
+
+                }
+
+
+                return false;
+            }
+        });
+
+
+
 
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
@@ -168,6 +300,28 @@ public class MyHabitsActivity extends AppCompatActivity {
         });
     }
 
+
+
+
+
+    //check network
+    public static boolean isNetworkStatusAvialable (Context context) {
+        ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        if (connectivityManager != null)
+        {
+            NetworkInfo netInfos = connectivityManager.getActiveNetworkInfo();
+            if(netInfos != null)
+                if(netInfos.isConnected())
+                    return true;
+        }
+        return false;
+    }
+
+
+
+
+
+
     /**
      * Set user profile and habit list
      */
@@ -194,6 +348,9 @@ public class MyHabitsActivity extends AppCompatActivity {
                 return false;
             }
 
+
+
+
             @Override
             public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
                 // Remove the swiped item from the list and screen
@@ -206,6 +363,11 @@ public class MyHabitsActivity extends AppCompatActivity {
                 // Update the data saved in file
                 updateDataStorage();
             }
+
+
+
+
+
 
             // Reference: https://stackoverflow.com/questions/30820806/adding-a-colored-background-with-text-icon-under-swiped-row-when-using-androids
             @Override
@@ -235,6 +397,12 @@ public class MyHabitsActivity extends AppCompatActivity {
         // Attach item touch helper to the recycler view
         itemTouchHelper.attachToRecyclerView(habitsRecyclerView);
     }
+
+
+
+
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -266,6 +434,10 @@ public class MyHabitsActivity extends AppCompatActivity {
 
         return super.onCreateOptionsMenu(menu);
     }
+
+
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -303,6 +475,10 @@ public class MyHabitsActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+
+
+
+
     /**
      * Get the HabitList displayed in My Habits
      *
@@ -313,6 +489,10 @@ public class MyHabitsActivity extends AppCompatActivity {
         return mHabitList;
     }
 
+
+
+
+
     /**
      * Get the user profile of the login user
      *
@@ -321,6 +501,10 @@ public class MyHabitsActivity extends AppCompatActivity {
     public static UserProfile getLogin_userProfile() {
         return login_userProfile;
     }
+
+
+
+
 
     /**
      * Update the HabitList of the Logged-in User
@@ -331,6 +515,11 @@ public class MyHabitsActivity extends AppCompatActivity {
         login_userProfile.getHabit_list().setHabits(updated_HabitList);
         mHabitList.setHabits(updated_HabitList);
     }
+
+
+
+
+
 
     /**
      * Update My Habits Screen and User Profile file and online data of the logged-in user
@@ -355,12 +544,17 @@ public class MyHabitsActivity extends AppCompatActivity {
     }
 
 
+
+
+
+
+
+
+
     private void toNextPage(){
 
         // Open an empty Habit Detail Screen
         final  Intent habitDetail_Intent = new Intent(MyHabitsActivity.this, HabitDetailActivity.class);
-
-
 
 
         //int cx = 380;
