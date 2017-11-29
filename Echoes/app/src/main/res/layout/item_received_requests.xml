@@ -25,7 +25,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:textSize="18sp"/>
+            android:textColor="@color/black"
+            android:textSize="25sp"/>
 
         <LinearLayout
             android:orientation="horizontal"
@@ -39,16 +40,22 @@
                 android:id="@+id/accept_request_Button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:background="@drawable/btn"
                 android:text="@string/accept"/>
 
             <Button
                 android:id="@+id/decline_request_Button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:background="@drawable/btn"
+                android:layout_marginLeft="50dp"
                 android:text="@string/decline"/>
 
         </LinearLayout>
 
     </LinearLayout>
+    
 
 </LinearLayout>
