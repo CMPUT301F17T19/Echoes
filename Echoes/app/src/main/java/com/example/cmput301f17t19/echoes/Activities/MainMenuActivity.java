@@ -204,17 +204,13 @@ public class MainMenuActivity extends AppCompatActivity {
      * @param view
      */
     public void Habits_history(View view) {
-        if(isNetworkStatusAvialable (getApplicationContext())) {
-            // Pass the login User Name to the HabitHistory Activity
-            Intent intent = new Intent(this, HabitHistoryActivity.class);
-            intent.putExtra(LoginActivity.LOGIN_USERNAME, login_UserName);
+        // Pass the login User Name to the HabitHistory Activity
+        Intent intent = new Intent(this, HabitHistoryActivity.class);
+        intent.putExtra(LoginActivity.LOGIN_USERNAME, login_UserName);
 
-            startActivity(intent);
+        startActivity(intent);
 
-            finish();
-        } else {
-            Toast.makeText(getApplicationContext(), "Internet is not available", Toast.LENGTH_SHORT).show();
-        }
+        finish();
     }
 
     /**
