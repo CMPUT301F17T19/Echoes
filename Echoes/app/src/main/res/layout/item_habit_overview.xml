@@ -80,19 +80,85 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="15dp"
-            android:text="@string/habit_plan"
-            android:layout_marginEnd="8dp"/>
+
 
         <TextView
             android:id="@+id/habitPlanTextView"
-            android:layout_width="match_parent"
+            android:layout_width="1dp"
             android:textSize="15dp"
             android:layout_height="wrap_content" />
 
+        <TextView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:text="Mon"
+            android:gravity="center"
+            android:background="@drawable/redpink_circle_button"
+            android:layout_margin="5dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            />
+
+
+        <TextView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:text="Tue"
+            android:gravity="center"
+            android:background="@drawable/test_button"
+            android:layout_margin="5dp"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:text="Wed"
+            android:gravity="center"
+            android:background="@drawable/test_button"
+            android:layout_margin="5dp"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:text="Thurs"
+            android:gravity="center"
+            android:background="@drawable/test_button"
+            android:layout_margin="5dp"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:text="Fri"
+            android:gravity="center"
+            android:background="@drawable/test_button"
+            android:layout_margin="5dp"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:text="Sat"
+            android:gravity="center"
+            android:background="@drawable/test_button"
+            android:layout_margin="5dp"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:text="Sun"
+            android:gravity="center"
+            android:background="@drawable/test_button"
+            android:layout_margin="5dp"
+            android:textColor="@color/black"
+            />
 
 
     </LinearLayout>

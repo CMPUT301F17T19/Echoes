@@ -3,65 +3,69 @@
   ~ Copyright (c) Team cmput301f17t19, CMPUT301, University of Alberta - All Rights Reserved. You may use, distribute, or modify this code under terms and conditions of the Code of Students Behaviour at University of Alberta
   -->
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+
     android:layout_margin="4dp">
 
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="25dp"
-        android:src="@drawable/comment"
-        />
 
 
-    <Button
+    <TextView
+        android:drawableLeft="@drawable/comment"
+        android:drawablePadding="3dp"
         android:id="@+id/view_Comments_Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:text="@string/view_comments"
-        android:src="@drawable/comment"
-        android:layout_marginRight="100dp"/>
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:gravity="right"
-        android:layout_margin="4dp">
+        android:layout_alignParentLeft="true"
+        android:text="@string/view_comments"
+        android:layout_marginTop="10dp"
+        android:textSize="18dp"
+        android:textColor="@color/black"
+        android:layout_marginLeft="50dp"
+
+       />
+
+
+
 
         <ImageView
             android:id="@+id/kudos_imageView"
             android:layout_width="32dp"
             android:layout_height="32dp"
-            android:layout_gravity="center"
-            android:layout_margin="4dp"/>
+            android:layout_toLeftOf="@+id/kudos_num"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="5dp"/>
 
         <TextView
             android:id="@+id/kudos_num"
             android:layout_width="wrap_content"
             android:textColor="@color/black"
             android:textStyle="bold"
-            android:textSize="16dp"
+            android:textSize="18dp"
+            android:layout_toLeftOf="@+id/kudos"
             android:layout_height="wrap_content"
-            android:layout_margin="4dp"
-            android:layout_gravity="center"/>
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="5dp"
+
+           />
 
         <TextView
+            android:layout_alignParentRight="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
-            android:textStyle="bold"
-            android:textSize="16dp"
+
+            android:id="@+id/kudos"
+            android:textSize="18dp"
+            android:layout_marginRight="50dp"
             android:text="@string/kudos"
-            android:layout_margin="4dp"
-            android:layout_gravity="center"/>
+            android:layout_marginTop="10dp"
+            />
 
-    </LinearLayout>
 
-</LinearLayout>
+
+</RelativeLayout>

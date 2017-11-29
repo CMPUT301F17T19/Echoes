@@ -2,25 +2,31 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_home"
-        android:icon="@drawable/ic_notifications_black_24dp"
-        android:title="title_home" />
+        android:id="@+id/td"
+        android:icon="@drawable/to_do"
+        android:title="To Do" />
 
 
     <item
-        android:id="@+id/navigation_home1"
-        android:icon="@drawable/user"
-        android:title="title_home" />
+        android:id="@+id/myhabit"
+        android:icon="@drawable/my_habit_icon"
+        android:title="My Habit" />
 
     <item
-        android:id="@+id/navigation_home2"
-        android:icon="@drawable/user"
-        android:title="title_home" />
+        android:id="@+id/history"
+        android:icon="@drawable/reward"
+        android:title="Habit History" />
 
     <item
-        android:id="@+id/navigation_home3"
-        android:icon="@drawable/user"
-        android:title="title_home" />
+        android:id="@+id/maps"
+        android:icon="@drawable/map_icon"
+        android:title="Map" />
+
+
+    <item
+        android:id="@+id/following"
+        android:icon="@drawable/following_icon"
+        android:title="Following" />
 
 
 </menu>

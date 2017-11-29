@@ -1,0 +1,33 @@
+<!--
+  ~ Copyright (c) Team cmput301f17t19, CMPUT301, University of Alberta - All Rights Reserved. You may use, distribute, or modify this code under terms and conditions of the Code of Students Behaviour at University of Alberta
+  -->
+
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Large red circle -->
+    <item>
+        <shape
+            android:shape="oval">
+            <stroke
+              />
+            <solid android:color="@color/white" />
+            <size
+                android:width="40dp"
+                android:height="40dp"/>
+        </shape>
+    </item>
+
+    <!-- Small black circle -->
+    <item android:right="0dp"
+        android:left="0dp"
+        android:top="15dp"
+        android:bottom="-15dp">
+        <shape android:shape="oval">
+            <stroke android:color="@android:color/transparent"
+                android:width="35dp"/>
+            <solid android:color="@color/white"/>
+            <size
+                android:width="5dp"
+                android:height="5dp"/>
+        </shape>
+    </item>
+</layer-list>

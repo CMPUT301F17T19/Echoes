@@ -28,7 +28,6 @@ import android.view.ViewAnimationUtils;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.AccelerateInterpolator;
-import android.widget.ImageButton;
 
 import com.example.cmput301f17t19.echoes.Adapters.HabitOverviewAdapter;
 import com.example.cmput301f17t19.echoes.Controllers.ElasticSearchController;
@@ -38,6 +37,8 @@ import com.example.cmput301f17t19.echoes.Models.HabitList;
 import com.example.cmput301f17t19.echoes.Models.UserProfile;
 import com.example.cmput301f17t19.echoes.Models.UserReceivedRequestsList;
 import com.example.cmput301f17t19.echoes.R;
+import com.melnykov.fab.FloatingActionButton;
+import com.melnykov.fab.ScrollDirectionListener;
 
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
@@ -63,7 +64,7 @@ public class MyHabitsActivity extends AppCompatActivity {
     // The HabitList of the login user
     private static HabitList mHabitList;
 
-    private ImageButton addHabitButton;
+    private FloatingActionButton addHabitButton;
 
     private View animateView;
 
@@ -135,7 +136,26 @@ public class MyHabitsActivity extends AppCompatActivity {
 
         habitsRecyclerView.setHasFixedSize(true);
 
-        addHabitButton = (ImageButton) findViewById(R.id.habit_add_button);
+        addHabitButton = (FloatingActionButton) findViewById(R.id.habit_add_button);
+
+        addHabitButton.attachToRecyclerView(habitsRecyclerView, new ScrollDirectionListener() {
+            @Override
+            public void onScrollDown() {
+                addHabitButton.setVisibility(View.VISIBLE);
+            }
+
+            @Override
+            public void onScrollUp() {
+                addHabitButton.setVisibility(View.INVISIBLE);
+            }
+        }, new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(RecyclerView view, int scrollState) {
+
+            }
+
+
+        });
 
         addHabitButton.setOnClickListener(new View.OnClickListener() {
             @Override

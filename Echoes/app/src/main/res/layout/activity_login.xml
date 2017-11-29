@@ -75,6 +75,7 @@
                     android:id="@+id/username"
 
                     android:layout_width="280dp"
+
                     android:layout_height="60dp"
 
                     android:inputType="textVisiblePassword"
