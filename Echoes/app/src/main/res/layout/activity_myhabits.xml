@@ -26,7 +26,7 @@
     <android.support.v7.widget.Toolbar
         android:id="@+id/my_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="40dp"
         android:background="@color/redPink"
         android:layout_alignParentTop="true"
 
@@ -46,7 +46,7 @@
 
         <com.melnykov.fab.FloatingActionButton
 
-            android:layout_marginLeft="330dp"
+            android:layout_marginStart="330dp"
             android:id="@+id/habit_add_button"
             fab:fab_colorNormal="@color/redPink"
             android:src="@drawable/ic_add"
@@ -55,7 +55,7 @@
             android:layout_width="60dp"
             android:layout_above="@+id/btm1"
             android:layout_margin="15dp"
-            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
             android:layout_height="60dp"
 
             />

@@ -7,12 +7,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.cmput301f17t19.echoes.Activities.HabitHistoryActivity"
-    android:background="@color/dimPurple">
+    android:background="@color/white">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/my_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="52dp"
+        android:layout_height="40dp"
         android:background="@color/colorAccent"
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
@@ -30,6 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="6"
             android:inputType="text"
+            android:textColorHint="@color/black"
             android:hint="@string/search_hint"
             android:textSize="17sp"
             android:maxLines="1"
@@ -59,6 +60,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/habit_events_type"
+            android:textColor="@color/black"
             android:textSize="16sp"
             android:layout_marginRight="8dp"
             android:background="@color/white"/>

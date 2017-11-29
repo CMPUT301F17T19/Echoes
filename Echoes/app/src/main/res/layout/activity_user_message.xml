@@ -10,12 +10,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.cmput301f17t19.echoes.Activities.UserMessageActivity"
-    android:background="@color/dimPurple">
+    android:background="@color/white">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/my_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="40dp"
         android:background="@color/colorAccent"
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
@@ -36,6 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/receivedRequest"
+            android:textColor="@color/black"
             android:textSize="18sp"
             android:layout_margin="8dp"
             android:background="@color/white"/>
