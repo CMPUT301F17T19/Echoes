@@ -21,8 +21,7 @@
             android:layout_height="wrap_content"
             android:text="@string/habit_title"
             android:textColor="@color/black"
-            android:textSize="23dp"
-            android:textStyle="bold"
+            android:textSize="20dp"
             android:layout_marginRight="8dp"/>
         
         <TextView
@@ -44,6 +43,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/habit_reason"
+            android:textColor="@color/black"
             android:textSize="15dp"
             android:layout_marginRight="8dp"/>
 
@@ -51,6 +51,7 @@
             android:id="@+id/habitOverview_reason"
             android:layout_width="match_parent"
             android:textSize="15dp"
+            android:textColor="@color/black"
             android:layout_height="wrap_content" />
 
     </LinearLayout>
@@ -63,6 +64,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/black"
             android:textSize="15dp"
             android:text="@string/habit_date"
             android:layout_marginRight="8dp"/>
@@ -70,6 +72,7 @@
         <TextView
             android:id="@+id/habitOverview_date"
             android:textSize="15dp"
+            android:textColor="@color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -181,6 +184,7 @@
             android:layout_height="wrap_content"
             android:textSize="15dp"
             android:text="@string/habit_status"
+            android:textColor="@color/black"
             android:layout_marginRight="8dp"/>
 
         <LinearLayout
