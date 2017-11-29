@@ -181,7 +181,7 @@ public class MainMenuActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         } else {
-            Toast.makeText(getApplicationContext(), "Internet is not avialable", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Internet is not available", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -213,7 +213,7 @@ public class MainMenuActivity extends AppCompatActivity {
 
             finish();
         } else {
-            Toast.makeText(getApplicationContext(), "Internet is not avialable", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Internet is not available", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -258,7 +258,7 @@ public class MainMenuActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
         } else {
-            Toast.makeText(getApplicationContext(), "Internet is not avialable", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Internet is not available", Toast.LENGTH_SHORT).show();
         }
 
     }
