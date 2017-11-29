@@ -19,7 +19,7 @@
         android:bottom="-15dp">
         <shape android:shape="oval">
             <stroke android:color="@android:color/transparent"
-                android:width="35dp"/>
+                android:width="39dp"/>
             <solid android:color="@color/white"/>
             <size
                 android:width="5dp"

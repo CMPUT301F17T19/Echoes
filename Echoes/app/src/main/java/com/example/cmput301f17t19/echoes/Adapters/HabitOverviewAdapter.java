@@ -91,7 +91,14 @@ public class HabitOverviewAdapter extends RecyclerView.Adapter<HabitOverviewAdap
         private TextView habitDateTextView;
         private TextView habitStatusTextView;
         private ProgressBar habitStatusProgressBar;
-        private TextView habitPlanTextView;
+        //private TextView habitPlanTextView;
+        private TextView mon;
+        private TextView tue;
+        private TextView wed;
+        private TextView thurs;
+        private TextView fri;
+        private TextView sat;
+        private TextView sun;
 
         // For kudos and comments
         // Button for viewing habit comments
@@ -112,7 +119,15 @@ public class HabitOverviewAdapter extends RecyclerView.Adapter<HabitOverviewAdap
             habitDateTextView = (TextView) itemView.findViewById(R.id.habitOverview_date);
             habitStatusTextView = (TextView) itemView.findViewById(R.id.habitOverview_status);
             habitStatusProgressBar = (ProgressBar) itemView.findViewById(R.id.habit_status_progressBar);
-            habitPlanTextView = (TextView) itemView.findViewById(R.id.habitPlanTextView);
+            //habitPlanTextView = (TextView) itemView.findViewById(R.id.habitPlanTextView);
+
+            mon = (TextView)itemView.findViewById(R.id.monday);
+            tue = (TextView)itemView.findViewById(R.id.tuesday);
+            wed = (TextView)itemView.findViewById(R.id.wednesday);
+            thurs = (TextView)itemView.findViewById(R.id.thursday);
+            fri = (TextView)itemView.findViewById(R.id.friday);
+            sat = (TextView)itemView.findViewById(R.id.saturday);
+            sun = (TextView)itemView.findViewById(R.id.sunday);
 
             viewComments_Button = (TextView) itemView.findViewById(R.id.view_Comments_Button);
 
@@ -208,13 +223,139 @@ public class HabitOverviewAdapter extends RecyclerView.Adapter<HabitOverviewAdap
 
             // Get the array list of string description of habit plan
             ArrayList<String> planDescription = habit_pos.getPlan().getScheduleDescription();
-            String planDescription_str = "" ;
+
+
+            boolean mo=false;
+            boolean tu=false;
+            boolean we=false;
+            boolean th=false;
+            boolean fr=false;
+            boolean sa=false;
+            boolean su=false;
 
             for (String plan_str : planDescription) {
-                planDescription_str += plan_str + " ";
+
+                if (plan_str.equals("Monday")){
+                    mo = true;
+                }
+
+
+                if (plan_str.equals("Tuesday") ){
+                    tu = true;
+                }
+
+
+                if (plan_str.equals("Wednesday")){
+                    we = true;
+                }
+
+
+                if (plan_str.equals("Thursday")){
+                    th = true;
+                }
+
+
+                if (plan_str.equals("Friday")){
+                    fr = true;
+                }
+
+
+                if (plan_str.equals("Saturday")){
+                    sa = true;
+                }
+
+
+                if (plan_str.equals("Sunday")){
+                    su = true;
+                }
+
+
             }
 
-            habitPlanTextView.setText(planDescription_str);
+
+            if (mo){
+                mon.setBackground(mContext.getDrawable(R.drawable.redpink_circle_button));
+                mon.setTextColor(mContext.getColor(R.color.white));
+            }
+            else{
+
+                mon.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+                mon.setTextColor(mContext.getColor(R.color.black));
+            }
+
+
+            if (tu){
+                tue.setBackground(mContext.getDrawable(R.drawable.redpink_circle_button));
+                tue.setTextColor(mContext.getColor(R.color.white));
+            }
+            else{
+
+                tue.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+                tue.setTextColor(mContext.getColor(R.color.black));
+            }
+
+
+
+            if (we){
+                wed.setBackground(mContext.getDrawable(R.drawable.redpink_circle_button));
+                wed.setTextColor(mContext.getColor(R.color.white));
+            }
+            else{
+
+                wed.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+                wed.setTextColor(mContext.getColor(R.color.black));
+            }
+
+
+
+            if (th){
+                thurs.setBackground(mContext.getDrawable(R.drawable.redpink_circle_button));
+                thurs.setTextColor(mContext.getColor(R.color.white));
+            }
+            else{
+
+                thurs.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+                thurs.setTextColor(mContext.getColor(R.color.black));
+            }
+
+
+
+            if (fr){
+                fri.setBackground(mContext.getDrawable(R.drawable.redpink_circle_button));
+                fri.setTextColor(mContext.getColor(R.color.white));
+            }
+            else{
+
+                fri.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+                fri.setTextColor(mContext.getColor(R.color.black));
+            }
+
+
+
+            if (sa){
+                sat.setBackground(mContext.getDrawable(R.drawable.redpink_circle_button));
+                sat.setTextColor(mContext.getColor(R.color.white));
+            }
+            else{
+
+                sat.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+                sat.setTextColor(mContext.getColor(R.color.black));
+            }
+
+
+
+            if (su){
+                sun.setBackground(mContext.getDrawable(R.drawable.redpink_circle_button));
+                sun.setTextColor(mContext.getColor(R.color.white));
+            }
+            else{
+
+                sun.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+                sun.setTextColor(mContext.getColor(R.color.black));
+            }
+
+
+
 
             habitStatusTextView.setText(Float.toString(habit_pos.getProgress() * 100) + "%");
 

@@ -11,7 +11,7 @@
 
     <string name="habit_title">Habit Title:</string>
     <string name="habit_reason">Habit Reason:</string>
-    <string name="habit_date">Date to Start:</string>
+    <string name="habit_date">Starting From:</string>
     <string name="habit_status">Habit Status:</string>
     <string name="habit_plan">Habit Plan</string>
 
