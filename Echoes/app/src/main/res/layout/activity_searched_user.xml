@@ -57,7 +57,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="30dp"
         android:visibility="invisible"/>
-     <View
+    <View
         android:layout_width="fill_parent"
         android:layout_height="3dp"
         android:background="@color/colorAccent"/>
