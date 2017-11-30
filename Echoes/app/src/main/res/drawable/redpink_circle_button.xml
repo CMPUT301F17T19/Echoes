@@ -5,7 +5,7 @@
             android:shape="oval">
             <stroke
               />
-            <solid android:color="@color/redPink" />
+            <solid android:color="@color/iron" />
             <size
                 android:width="40dp"
                 android:height="40dp"/>
@@ -20,7 +20,7 @@
         <shape android:shape="oval">
             <stroke android:color="@android:color/transparent"
                 android:width="39dp"/>
-            <solid android:color="@color/white"/>
+            <solid android:color="@color/redPink"/>
             <size
                 android:width="5dp"
                 android:height="5dp"/>
