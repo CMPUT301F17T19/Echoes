@@ -124,11 +124,20 @@ public class ToDoActivity extends AppCompatActivity {
         bottomNavigationViewEx.enableAnimation(false);
 
 
+        //set the selected activity icon state true
+        Menu menu = bottomNavigationViewEx.getMenu();
+
+        MenuItem menuItem = menu.getItem(0);
+
+        menuItem.setChecked(true);
+
         //set up bottom navigation bar
 
         bottomNavigationViewEx.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+
 
                 switch (item.getItemId()){
 

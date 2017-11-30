@@ -8,7 +8,7 @@
     <color name="primary_darker">#345bdb</color>
     <color name="accent">#FFFFFF</color>
     <color name="red">#ffff0000</color>
-    <color name="redPink">#ff006f</color>
+    <color name="redPink">#fc2f88</color>
     <color name="black">#000000</color>
     <color name="jet">#222222</color>
     <color name="oil">#333333</color>
@@ -20,6 +20,7 @@
     <color name="dimPurple">#645D89</color>
     <color name="white">#FFFFFF</color>
     <color name="toolbar">#5e00ff</color>
+    <color name="copy">#ff006f</color>
     <color name="not_so_white">#c7edebeb</color>
     <color name="transparent">#6cffffff</color>
     <color name="maincolor">#a813e7f3</color>

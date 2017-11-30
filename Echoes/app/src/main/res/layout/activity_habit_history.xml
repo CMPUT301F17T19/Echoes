@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/habit_history_layout"
@@ -15,6 +15,7 @@
         android:layout_height="40dp"
         android:background="@color/colorAccent"
         android:elevation="4dp"
+        android:layout_alignParentTop="true"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Dark" />
 
@@ -22,6 +23,8 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/my_toolbar"
+        android:id="@+id/second"
         android:layout_margin="8dp">
 
         <EditText
@@ -54,6 +57,7 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/second"
         android:layout_weight="1"
         android:layout_margin="8dp">
 
@@ -81,12 +85,16 @@
         android:id="@+id/habitevents_recyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_above="@+id/habit_events_buttons_layout"
+        android:layout_below="@+id/habit_events_type_layout"
+
         android:layout_weight="63"/>
 
     <LinearLayout
         android:id="@+id/habit_events_buttons_layout"
         android:layout_gravity="center_horizontal"
         android:layout_width="wrap_content"
+        android:layout_above="@+id/btm3"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:layout_margin="8dp">
@@ -111,4 +119,16 @@
 
     </LinearLayout>
 
-</LinearLayout>
+
+    <com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx
+        android:id="@+id/btm3"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:elevation="4dp"
+        android:layout_alignParentBottom="true"
+        app:itemBackground="@color/not_so_white"
+        app:itemIconTint="@drawable/selected_color"
+        app:itemTextColor="@drawable/selected_color"
+        app:menu="@menu/bottom_navigation_menu" />
+
+</RelativeLayout>

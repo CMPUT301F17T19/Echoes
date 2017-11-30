@@ -27,7 +27,7 @@
         android:id="@+id/my_toolbar"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:background="@color/toolbar"
+        android:background="@color/redPink"
         android:layout_alignParentTop="true"
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
@@ -62,7 +62,6 @@
 
     <com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx
         android:id="@+id/btm1"
-
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:elevation="4dp"

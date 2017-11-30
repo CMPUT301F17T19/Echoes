@@ -95,7 +95,7 @@ public class MyHabitsActivity extends AppCompatActivity {
 
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            window.setStatusBarColor(ContextCompat.getColor(this, R.color.toolbar));
+            window.setStatusBarColor(ContextCompat.getColor(this, R.color.redPink));
         }
 
 
@@ -114,11 +114,21 @@ public class MyHabitsActivity extends AppCompatActivity {
         bottomNavigationViewEx.enableAnimation(false);
 
 
+        //set the selected activity icon state true
+        Menu menu = bottomNavigationViewEx.getMenu();
+
+        MenuItem menuItem = menu.getItem(1);
+
+        menuItem.setChecked(true);
+
+
         //set up bottom navigation bar
 
         bottomNavigationViewEx.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+
 
                 switch (item.getItemId()){
 

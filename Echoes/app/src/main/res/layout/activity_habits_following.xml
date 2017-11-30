@@ -3,7 +3,7 @@
   ~ Copyright (c) Team cmput301f17t19, CMPUT301, University of Alberta - All Rights Reserved. You may use, distribute, or modify this code under terms and conditions of the Code of Students Behaviour at University of Alberta
   -->
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
@@ -13,6 +13,7 @@
     android:background="@color/white">
 
     <android.support.v7.widget.Toolbar
+        android:layout_alignParentTop="true"
         android:id="@+id/my_toolbar"
         android:layout_width="match_parent"
         android:layout_height="40dp"
@@ -24,7 +25,9 @@
     <LinearLayout
         android:id="@+id/habitsFollowing_Layout"
         android:orientation="vertical"
+        android:layout_below="@+id/my_toolbar"
         android:layout_width="match_parent"
+        android:layout_above="@+id/btm5"
         android:layout_height="match_parent"
         android:layout_margin="8dp">
 
@@ -80,7 +83,21 @@
         android:id="@+id/habitsFollowing_NetworkError"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/btm5"
         android:text="@string/habitsFollowing_networkError"
+        android:visibility="gone"
         android:layout_margin="16dp"/>
 
-</LinearLayout>
+
+    <com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx
+        android:id="@+id/btm5"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:elevation="4dp"
+        android:layout_alignParentBottom="true"
+        app:itemBackground="@color/not_so_white"
+        app:itemIconTint="@drawable/selected_color"
+        app:itemTextColor="@drawable/selected_color"
+        app:menu="@menu/bottom_navigation_menu" />
+
+</RelativeLayout>

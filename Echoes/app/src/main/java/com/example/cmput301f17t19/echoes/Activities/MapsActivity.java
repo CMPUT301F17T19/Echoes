@@ -13,7 +13,11 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.LinearLayout;
@@ -21,8 +25,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.cmput301f17t19.echoes.Models.HabitEvent;
-import com.example.cmput301f17t19.echoes.Utils.LocationUtil;
 import com.example.cmput301f17t19.echoes.R;
+import com.example.cmput301f17t19.echoes.Utils.LocationUtil;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -58,10 +62,119 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     private Context mContext;
 
+    private com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx bottomNavigationViewEx;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
+
+
+        bottomNavigationViewEx = findViewById(R.id.btm4);
+
+        bottomNavigationViewEx.enableShiftingMode(false);
+        bottomNavigationViewEx.enableItemShiftingMode(false);
+
+
+        bottomNavigationViewEx.enableAnimation(false);
+
+
+        //set the selected activity icon state true
+        Menu menu = bottomNavigationViewEx.getMenu();
+
+        MenuItem menuItem = menu.getItem(3);
+
+        menuItem.setChecked(true);
+
+
+        //set up bottom navigation bar
+        /*
+        bottomNavigationViewEx.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+
+
+                switch (item.getItemId()){
+
+                    case R.id.td:
+
+                        Intent intent_td = new Intent(MapsActivity.this, ToDoActivity.class);
+                        intent_td.putExtra(LoginActivity.LOGIN_USERNAME, login_userName);
+                        startActivity(intent_td);
+                        finish();
+
+                        break;
+
+
+                    case R.id.myhabit:
+
+                        // Pass the login User Name to the MyHabits Activity
+                        Intent intent = new Intent(this, MyHabitsActivity.class);
+                        intent.putExtra(LoginActivity.LOGIN_USERNAME, login_UserName);
+
+                        startActivity(intent);
+
+                        finish();
+
+                        break;
+
+
+                    case R.id.history:
+
+                        // Pass the login User Name to the HabitHistory Activity
+                        Intent intent_his = new Intent(MyHabitsActivity.this, HabitHistoryActivity.class);
+                        intent_his.putExtra(LoginActivity.LOGIN_USERNAME, login_userName);
+
+                        startActivity(intent_his);
+
+                        finish();
+
+                        break;
+
+
+
+                    case R.id.maps:
+
+
+
+                        break;
+
+
+
+                    case R.id.following:
+
+
+                        if(isNetworkStatusAvialable (getApplicationContext())) {
+                            Intent intent_fol = new Intent(MyHabitsActivity.this, HabitsFollowingActivity.class);
+                            intent_fol.putExtra(LoginActivity.LOGIN_USERNAME, login_userName);
+
+                            startActivity(intent_fol);
+                            finish();
+                        } else {
+                            Toast.makeText(getApplicationContext(), "Internet is not available", Toast.LENGTH_SHORT).show();
+                        }
+
+
+                        break;
+
+
+                }
+
+
+                return false;
+            }
+        });
+
+        */
+
+
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(map);

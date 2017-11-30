@@ -5,9 +5,14 @@
 package com.example.cmput301f17t19.echoes.Activities;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
@@ -24,6 +29,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.cmput301f17t19.echoes.Controllers.ElasticSearchController;
 import com.example.cmput301f17t19.echoes.Models.Following;
@@ -69,6 +75,9 @@ public class HabitsFollowingActivity extends AppCompatActivity {
 
     private Activity mActivity;
 
+    private com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx bottomNavigationViewEx;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -90,6 +99,150 @@ public class HabitsFollowingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_habits_following);
         this.setTitle(R.string.habits_following);
+
+
+        bottomNavigationViewEx = findViewById(R.id.btm5);
+
+        bottomNavigationViewEx.enableShiftingMode(false);
+        bottomNavigationViewEx.enableItemShiftingMode(false);
+
+
+        bottomNavigationViewEx.enableAnimation(false);
+
+
+        //set the selected activity icon state true
+        Menu menu = bottomNavigationViewEx.getMenu();
+
+        MenuItem menuItem = menu.getItem(4);
+
+        menuItem.setChecked(true);
+
+
+        //set up bottom navigation bar
+
+        bottomNavigationViewEx.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+
+
+                switch (item.getItemId()){
+
+                    case R.id.td:
+
+                        Intent intent_td = new Intent(HabitsFollowingActivity.this, ToDoActivity.class);
+                        intent_td.putExtra(LoginActivity.LOGIN_USERNAME, login_UserName);
+                        startActivity(intent_td);
+                        finish();
+
+                        break;
+
+
+                    case R.id.myhabit:
+
+                        // Pass the login User Name to the MyHabits Activity
+                        Intent intent = new Intent(HabitsFollowingActivity.this, MyHabitsActivity.class);
+                        intent.putExtra(LoginActivity.LOGIN_USERNAME, login_UserName);
+
+                        startActivity(intent);
+
+                        finish();
+
+                        break;
+
+
+                    case R.id.history:
+
+                        // Pass the login User Name to the HabitHistory Activity
+                        Intent intent_his = new Intent(HabitsFollowingActivity.this, HabitHistoryActivity.class);
+                        intent_his.putExtra(LoginActivity.LOGIN_USERNAME, login_UserName);
+
+                        startActivity(intent_his);
+
+                        finish();
+
+                        break;
+
+
+
+                    case R.id.maps:
+
+                        if(isNetworkStatusAvialable (getApplicationContext())) {
+                            // Show my habit events and my followings' most recent habit events for each habit on map
+                            // My habit events in habit history
+                            ArrayList<HabitEvent> shownHabitEvents_Map = login_userProfile.getHabit_event_list().getHabitEvents();
+                            // Get My followings
+                            ElasticSearchController.GetUserFollowingListTask getUserFollowingListTask = new ElasticSearchController.GetUserFollowingListTask();
+                            getUserFollowingListTask.execute(login_UserName);
+                            try {
+                                UserFollowingList userFollowingList = getUserFollowingListTask.get();
+
+                                if (userFollowingList != null) {
+                                    ArrayList<Following> myFollowings = userFollowingList.getFollowings();
+
+                                    // My followings most recent habit events for each habit
+                                    ArrayList<HabitEvent> myFollowingRecentHabitEvents = FollowingSharingController.createFollowingRecentHabitEvents(myFollowings);
+
+                                    // Add this array list to habit events shown on map
+                                    for (HabitEvent habitEvent : myFollowingRecentHabitEvents) {
+                                        shownHabitEvents_Map.add(habitEvent);
+                                    }
+                                }
+
+                                Intent map_intent = new Intent(HabitsFollowingActivity.this, MapsActivity.class);
+                                map_intent.putParcelableArrayListExtra(MapsActivity.HABIT_EVENT_SHOW_LOCATION_TAG, shownHabitEvents_Map);
+
+                                startActivity(map_intent);
+
+                            } catch (InterruptedException e) {
+                                Toast.makeText(HabitsFollowingActivity.this, "You can only see habit events of your followings and yours on Map online.", Toast.LENGTH_LONG).show();
+                                e.printStackTrace();
+                            } catch (ExecutionException e) {
+                                Toast.makeText(HabitsFollowingActivity.this, "You can only see habit events of your followings and yours on Map online.", Toast.LENGTH_LONG).show();
+                                e.printStackTrace();
+                            }
+                        } else {
+                            Toast.makeText(getApplicationContext(), "Internet is not available", Toast.LENGTH_SHORT).show();
+                        }
+
+
+
+                        break;
+
+
+
+                    case R.id.following:
+
+                        /*
+
+                        if(isNetworkStatusAvialable (getApplicationContext())) {
+                            Intent intent_fol = new Intent(HabitsFollowingActivity.this, HabitsFollowingActivity.class);
+                            intent_fol.putExtra(LoginActivity.LOGIN_USERNAME, login_userName);
+
+                            startActivity(intent_fol);
+                            finish();
+                        } else {
+                            Toast.makeText(getApplicationContext(), "Internet is not available", Toast.LENGTH_SHORT).show();
+                        }
+
+
+                        */
+
+                        break;
+
+
+                }
+
+
+                return false;
+            }
+        });
+
+
+
+
+
+
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
@@ -148,6 +301,29 @@ public class HabitsFollowingActivity extends AppCompatActivity {
 
         habitStatus_RecyclerView.setHasFixedSize(true);
     }
+
+
+
+
+    //check network
+    public static boolean isNetworkStatusAvialable (Context context) {
+        ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        if (connectivityManager != null)
+        {
+            NetworkInfo netInfos = connectivityManager.getActiveNetworkInfo();
+            if(netInfos != null)
+                if(netInfos.isConnected())
+                    return true;
+        }
+        return false;
+    }
+
+
+
+
+
+
+
 
     @Override
     protected void onStart() {
