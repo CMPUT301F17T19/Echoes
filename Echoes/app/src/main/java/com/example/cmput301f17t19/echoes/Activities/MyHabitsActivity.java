@@ -95,7 +95,7 @@ public class MyHabitsActivity extends AppCompatActivity {
 
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            window.setStatusBarColor(ContextCompat.getColor(this, R.color.redPink));
+            window.setStatusBarColor(ContextCompat.getColor(this, R.color.toolbar));
         }
 
 
