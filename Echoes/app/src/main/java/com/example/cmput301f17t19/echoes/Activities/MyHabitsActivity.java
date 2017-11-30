@@ -78,7 +78,7 @@ public class MyHabitsActivity extends AppCompatActivity {
     private View animateView;
 
 
-
+    private com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx bottomNavigationViewEx;
 
 
     @Override
@@ -105,7 +105,7 @@ public class MyHabitsActivity extends AppCompatActivity {
         this.setTitle(R.string.my_habits);
 
 
-        com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx bottomNavigationViewEx = findViewById(R.id.btm1);
+        bottomNavigationViewEx = findViewById(R.id.btm1);
 
         bottomNavigationViewEx.enableShiftingMode(false);
         bottomNavigationViewEx.enableItemShiftingMode(false);
@@ -342,6 +342,8 @@ public class MyHabitsActivity extends AppCompatActivity {
 
         // Implement swipe to left to delete for recycler view
         ItemTouchHelper.SimpleCallback simpleItemTouchCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
+
+
 
             @Override
             public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
