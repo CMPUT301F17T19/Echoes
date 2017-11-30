@@ -242,6 +242,9 @@ public class MainMenuActivity extends AppCompatActivity {
                 }
 
                 Intent map_intent = new Intent(this, MapsActivity.class);
+
+                map_intent.putExtra(LoginActivity.LOGIN_USERNAME, login_UserName);
+
                 map_intent.putParcelableArrayListExtra(MapsActivity.HABIT_EVENT_SHOW_LOCATION_TAG, shownHabitEvents_Map);
 
                 startActivity(map_intent);

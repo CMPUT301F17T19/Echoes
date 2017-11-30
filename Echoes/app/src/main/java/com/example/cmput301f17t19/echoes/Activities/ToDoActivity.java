@@ -115,6 +115,9 @@ public class ToDoActivity extends AppCompatActivity {
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
 
+
+
+
         bottomNavigationViewEx = findViewById(R.id.btm2);
 
         bottomNavigationViewEx.enableShiftingMode(false);
@@ -201,7 +204,7 @@ public class ToDoActivity extends AppCompatActivity {
 
                                 Intent map_intent = new Intent(ToDoActivity.this, MapsActivity.class);
                                 map_intent.putParcelableArrayListExtra(MapsActivity.HABIT_EVENT_SHOW_LOCATION_TAG, shownHabitEvents_Map);
-
+                                map_intent.putExtra(LoginActivity.LOGIN_USERNAME, login_userName);
                                 startActivity(map_intent);
 
                             } catch (InterruptedException e) {

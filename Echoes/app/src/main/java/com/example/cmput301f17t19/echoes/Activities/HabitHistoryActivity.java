@@ -110,6 +110,13 @@ public class HabitHistoryActivity extends AppCompatActivity {
         this.setTitle(R.string.habithistory);
 
 
+        // Get the login username and user Profile
+        Intent intent = getIntent();
+        if (intent.getStringExtra(LoginActivity.LOGIN_USERNAME) != null) {
+            login_Username = intent.getStringExtra(LoginActivity.LOGIN_USERNAME);
+        }
+
+
 
         bottomNavigationViewEx = findViewById(R.id.btm3);
 
@@ -199,6 +206,9 @@ public class HabitHistoryActivity extends AppCompatActivity {
                                 }
 
                                 Intent map_intent = new Intent(HabitHistoryActivity.this, MapsActivity.class);
+
+                                map_intent.putExtra(LoginActivity.LOGIN_USERNAME, login_Username);
+
                                 map_intent.putParcelableArrayListExtra(MapsActivity.HABIT_EVENT_SHOW_LOCATION_TAG, shownHabitEvents_Map);
 
                                 startActivity(map_intent);
@@ -255,11 +265,7 @@ public class HabitHistoryActivity extends AppCompatActivity {
         mContext = this;
         spinnerTypes = new ArrayList<String>();
 
-        // Get the login username and user Profile
-        Intent intent = getIntent();
-        if (intent.getStringExtra(LoginActivity.LOGIN_USERNAME) != null) {
-            login_Username = intent.getStringExtra(LoginActivity.LOGIN_USERNAME);
-        }
+
 
         addEventButton = (Button) findViewById(R.id.habitevents_add_button);
 

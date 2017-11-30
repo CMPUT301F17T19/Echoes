@@ -101,6 +101,11 @@ public class HabitsFollowingActivity extends AppCompatActivity {
         this.setTitle(R.string.habits_following);
 
 
+        Intent intent = getIntent();
+        if (intent.getStringExtra(LoginActivity.LOGIN_USERNAME) != null) {
+            login_UserName = intent.getStringExtra(LoginActivity.LOGIN_USERNAME);
+        }
+
         bottomNavigationViewEx = findViewById(R.id.btm5);
 
         bottomNavigationViewEx.enableShiftingMode(false);
@@ -190,6 +195,7 @@ public class HabitsFollowingActivity extends AppCompatActivity {
                                 }
 
                                 Intent map_intent = new Intent(HabitsFollowingActivity.this, MapsActivity.class);
+                                map_intent.putExtra(LoginActivity.LOGIN_USERNAME, login_UserName);
                                 map_intent.putParcelableArrayListExtra(MapsActivity.HABIT_EVENT_SHOW_LOCATION_TAG, shownHabitEvents_Map);
 
                                 startActivity(map_intent);
@@ -243,16 +249,12 @@ public class HabitsFollowingActivity extends AppCompatActivity {
 
 
 
-
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
 
         mActivity = this;
 
-        Intent intent = getIntent();
-        if (intent.getStringExtra(LoginActivity.LOGIN_USERNAME) != null) {
-            login_UserName = intent.getStringExtra(LoginActivity.LOGIN_USERNAME);
-        }
+
 
         searchUser_EditText = (EditText) findViewById(R.id.search_user_edittext);
         searchUser_Button = (Button) findViewById(R.id.search_user_button);

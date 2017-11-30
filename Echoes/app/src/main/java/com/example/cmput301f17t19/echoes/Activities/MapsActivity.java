@@ -9,7 +9,11 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.location.Location;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.Gravity;
@@ -64,6 +68,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     private com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx bottomNavigationViewEx;
 
+
+    // The userName of the Logged-in user
+    private static String login_userName;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -74,6 +84,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
+
+
+        // Get the login username and user Profile
+        Intent intent = getIntent();
+        if (intent.getStringExtra(LoginActivity.LOGIN_USERNAME) != null) {
+            login_userName = intent.getStringExtra(LoginActivity.LOGIN_USERNAME);
+        }
+
 
 
         bottomNavigationViewEx = findViewById(R.id.btm4);
@@ -94,7 +112,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
         //set up bottom navigation bar
-        /*
+
         bottomNavigationViewEx.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -116,8 +134,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     case R.id.myhabit:
 
                         // Pass the login User Name to the MyHabits Activity
-                        Intent intent = new Intent(this, MyHabitsActivity.class);
-                        intent.putExtra(LoginActivity.LOGIN_USERNAME, login_UserName);
+                        Intent intent = new Intent(MapsActivity.this, MyHabitsActivity.class);
+                        intent.putExtra(LoginActivity.LOGIN_USERNAME, login_userName);
 
                         startActivity(intent);
 
@@ -129,7 +147,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     case R.id.history:
 
                         // Pass the login User Name to the HabitHistory Activity
-                        Intent intent_his = new Intent(MyHabitsActivity.this, HabitHistoryActivity.class);
+                        Intent intent_his = new Intent(MapsActivity.this, HabitHistoryActivity.class);
                         intent_his.putExtra(LoginActivity.LOGIN_USERNAME, login_userName);
 
                         startActivity(intent_his);
@@ -152,7 +170,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
                         if(isNetworkStatusAvialable (getApplicationContext())) {
-                            Intent intent_fol = new Intent(MyHabitsActivity.this, HabitsFollowingActivity.class);
+                            Intent intent_fol = new Intent(MapsActivity.this, HabitsFollowingActivity.class);
                             intent_fol.putExtra(LoginActivity.LOGIN_USERNAME, login_userName);
 
                             startActivity(intent_fol);
@@ -172,7 +190,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
         });
 
-        */
+
 
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
@@ -184,7 +202,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         location_Markers = new ArrayList<Marker>();
 
-        Intent intent = getIntent();
+
         if (intent.getParcelableArrayListExtra(HABIT_EVENT_SHOW_LOCATION_TAG) != null) {
             shown_HabitEvents = intent.getParcelableArrayListExtra(HABIT_EVENT_SHOW_LOCATION_TAG);
         }
@@ -199,6 +217,27 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
         });
     }
+
+
+
+    //check network
+    public static boolean isNetworkStatusAvialable (Context context) {
+        ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        if (connectivityManager != null)
+        {
+            NetworkInfo netInfos = connectivityManager.getActiveNetworkInfo();
+            if(netInfos != null)
+                if(netInfos.isConnected())
+                    return true;
+        }
+        return false;
+    }
+
+
+
+
+
+
 
 
     /**

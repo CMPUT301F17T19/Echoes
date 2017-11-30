@@ -105,6 +105,16 @@ public class MyHabitsActivity extends AppCompatActivity {
         this.setTitle(R.string.my_habits);
 
 
+
+        // Get the login username and user Profile
+        Intent intent = getIntent();
+        if (intent.getStringExtra(LoginActivity.LOGIN_USERNAME) != null) {
+            login_userName = intent.getStringExtra(LoginActivity.LOGIN_USERNAME);
+        }
+
+
+
+
         bottomNavigationViewEx = findViewById(R.id.btm1);
 
         bottomNavigationViewEx.enableShiftingMode(false);
@@ -196,6 +206,8 @@ public class MyHabitsActivity extends AppCompatActivity {
                                 Intent map_intent = new Intent(MyHabitsActivity.this, MapsActivity.class);
                                 map_intent.putParcelableArrayListExtra(MapsActivity.HABIT_EVENT_SHOW_LOCATION_TAG, shownHabitEvents_Map);
 
+                                map_intent.putExtra(LoginActivity.LOGIN_USERNAME, login_userName);
+
                                 startActivity(map_intent);
 
                             } catch (InterruptedException e) {
@@ -251,11 +263,7 @@ public class MyHabitsActivity extends AppCompatActivity {
 
         animateView = findViewById(R.id.animate_view_3);
 
-        // Get the login username and user Profile
-        Intent intent = getIntent();
-        if (intent.getStringExtra(LoginActivity.LOGIN_USERNAME) != null) {
-            login_userName = intent.getStringExtra(LoginActivity.LOGIN_USERNAME);
-        }
+
 
         // Set up recycler view for habit event overview in the Habit History
         habitsRecyclerView = (RecyclerView) findViewById(R.id.habits_recyclerView);
