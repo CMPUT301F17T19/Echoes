@@ -21,25 +21,27 @@ import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.cmput301f17t19.echoes.Adapters.ToDoListAdapter;
 import com.example.cmput301f17t19.echoes.Controllers.ElasticSearchController;
 import com.example.cmput301f17t19.echoes.Controllers.FollowingSharingController;
+import com.example.cmput301f17t19.echoes.Controllers.OfflineStorageController;
 import com.example.cmput301f17t19.echoes.Models.Following;
 import com.example.cmput301f17t19.echoes.Models.Habit;
 import com.example.cmput301f17t19.echoes.Models.HabitEvent;
 import com.example.cmput301f17t19.echoes.Models.HabitList;
 import com.example.cmput301f17t19.echoes.Models.HabitStatus;
-import com.example.cmput301f17t19.echoes.Controllers.OfflineStorageController;
 import com.example.cmput301f17t19.echoes.Models.UserFollowingList;
-import com.example.cmput301f17t19.echoes.R;
-import com.example.cmput301f17t19.echoes.Adapters.ToDoListAdapter;
 import com.example.cmput301f17t19.echoes.Models.UserProfile;
 import com.example.cmput301f17t19.echoes.Models.UserReceivedRequestsList;
+import com.example.cmput301f17t19.echoes.R;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.concurrent.ExecutionException;
 
 /**
@@ -68,6 +70,18 @@ public class ToDoActivity extends AppCompatActivity {
     private static Context mContext;
 
     private com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx bottomNavigationViewEx;
+
+    private TextView mon_day;
+    private TextView tue_day;
+    private TextView wed_day;
+    private TextView thu_day;
+    private TextView fri_day;
+    private TextView sat_day;
+    private TextView sun_day;
+
+    private TextView year;
+
+    private TextView month;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -249,10 +263,577 @@ public class ToDoActivity extends AppCompatActivity {
         });
 
 
+        mon_day = findViewById(R.id.mon_day);
+        tue_day = findViewById(R.id.tue_day);
+        wed_day = findViewById(R.id.wed_day);
+        thu_day = findViewById(R.id.thurs_day);
+        fri_day = findViewById(R.id.fri_day);
+        sat_day = findViewById(R.id.sat_day);
+        sun_day = findViewById(R.id.sun_day);
+
+        year = findViewById(R.id.year);
+
+        month = findViewById(R.id.month);
+
+        Calendar c = Calendar.getInstance(); // get current day
+        int dayOfWeek = c.get(Calendar.DAY_OF_WEEK);
+        int dayOfMonth = c.get(Calendar.DAY_OF_MONTH);
+        int monthOfYear = c.get(Calendar.MONTH);
+        int year_number = c.get(Calendar.YEAR);
+
+        int daysInMonth;
+
+        int daysInMonth2;
+
+        Calendar mycal1 = new GregorianCalendar(year_number, monthOfYear, dayOfMonth);
+
+        daysInMonth = mycal1.getActualMaximum(Calendar.DAY_OF_MONTH);
+
+        //if current month is Jan
+        if (monthOfYear != 0) {
+            Calendar mycal2 = new GregorianCalendar(year_number, monthOfYear - 1, 1);
+            daysInMonth2 = mycal1.getActualMaximum(Calendar.DAY_OF_MONTH);
+
+        } else{
+            Calendar mycal2 = new GregorianCalendar(year_number-1, 11, 1);
+            daysInMonth2 = mycal1.getActualMaximum(Calendar.DAY_OF_MONTH);
+
+        }
+
+
+        year.setText(String.valueOf(year_number));
+
+        if (monthOfYear == 0){
+            //Jan
+            month.setText("January");
+        }
+
+        if (monthOfYear == 1){
+            //Feb
+            month.setText("February");
+        }
+
+        if (monthOfYear == 2){
+            //March
+            month.setText("March");
+        }
+
+
+        if (monthOfYear == 3){
+            //April
+            month.setText("April");
+        }
+
+        if (monthOfYear == 4){
+            //May
+            month.setText("May");
+        }
+
+        if (monthOfYear == 5){
+            //June
+            month.setText("June");
+        }
+
+        if (monthOfYear == 6){
+            //July
+            month.setText("July");
+        }
+
+        if (monthOfYear == 7){
+            //August
+            month.setText("August");
+        }
+
+        if (monthOfYear == 8){
+            //Sept
+            month.setText("September");
+        }
+
+        if (monthOfYear == 9){
+            //Oct
+            month.setText("October");
+        }
+
+        if (monthOfYear == 10){
+            //Nov
+            month.setText("November");
+        }
+
+        if (monthOfYear == 11){
+            //Dec
+            month.setText("December");
+        }
+
+
+
+        if  (dayOfWeek == Calendar.MONDAY){
+            mon_day.setText(String.valueOf(dayOfMonth));
+            mon_day.setBackground(mContext.getDrawable(R.drawable.date_circle));
+
+            tue_day.setText(String.valueOf((dayOfMonth+1)%daysInMonth));
+            tue_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+
+            wed_day.setText(String.valueOf((dayOfMonth+2)%daysInMonth));
+            wed_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+
+            thu_day.setText(String.valueOf((dayOfMonth+3)%daysInMonth));
+            thu_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+
+            fri_day.setText(String.valueOf((dayOfMonth+4)%daysInMonth));
+            fri_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+
+            sat_day.setText(String.valueOf((dayOfMonth+5)%daysInMonth));
+            sat_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+
+            sun_day.setText(String.valueOf((dayOfMonth+6)%daysInMonth));
+            sun_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+
+        }
+
+
+
+        if  (dayOfWeek == Calendar.TUESDAY){
+
+            if (dayOfMonth-1 >= 1){
+                mon_day.setText(String.valueOf(dayOfMonth-1));
+                mon_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }else{
+                mon_day.setText(String.valueOf(daysInMonth2));
+                mon_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+
+            tue_day.setText(String.valueOf(dayOfMonth));
+            tue_day.setBackground(mContext.getDrawable(R.drawable.date_circle));
+
+            wed_day.setText(String.valueOf((dayOfMonth+1)%daysInMonth));
+            wed_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+
+            thu_day.setText(String.valueOf((dayOfMonth+2)%daysInMonth));
+            thu_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+
+            fri_day.setText(String.valueOf((dayOfMonth+3)%daysInMonth));
+            fri_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+
+            sat_day.setText(String.valueOf((dayOfMonth+4)%daysInMonth));
+            sat_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+
+            sun_day.setText(String.valueOf((dayOfMonth+5)%daysInMonth));
+            sun_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+
+        }
+
+
+        if  (dayOfWeek == Calendar.WEDNESDAY){
+
+            if (dayOfMonth-2 >= 1) {
+                mon_day.setText(String.valueOf(dayOfMonth - 2));
+                mon_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+            else if (dayOfMonth-2 == 0){
+                mon_day.setText(String.valueOf(daysInMonth2));
+                mon_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+            else if (dayOfMonth-2 == -1){
+                mon_day.setText(String.valueOf(daysInMonth2-1));
+                mon_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+
+            if (dayOfMonth-1 >=1) {
+                tue_day.setText(String.valueOf(dayOfMonth - 1));
+                tue_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            } else{
+                tue_day.setText(String.valueOf(daysInMonth2));
+                tue_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+
+            wed_day.setText(String.valueOf(dayOfMonth));
+            wed_day.setBackground(mContext.getDrawable(R.drawable.date_circle));
+
+            thu_day.setText(String.valueOf((dayOfMonth+1)%daysInMonth));
+            thu_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+
+            fri_day.setText(String.valueOf((dayOfMonth+2)%daysInMonth));
+            fri_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+
+            sat_day.setText(String.valueOf((dayOfMonth+3)%daysInMonth));
+            sat_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+
+            sun_day.setText(String.valueOf((dayOfMonth+4)%daysInMonth));
+            sun_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+
+        }
+
+
+
+        if  (dayOfWeek == Calendar.THURSDAY){
+
+            if(dayOfMonth-3 >=1){
+                mon_day.setText(String.valueOf(dayOfMonth - 3));
+                mon_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+            else if (dayOfMonth-3 == 0){
+                mon_day.setText(String.valueOf(daysInMonth2));
+                mon_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+            else if (dayOfMonth-3 == -1){
+                mon_day.setText(String.valueOf(daysInMonth2-1));
+                mon_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+            else if (dayOfMonth-3 == -2){
+                mon_day.setText(String.valueOf(daysInMonth2-2));
+                mon_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+
+            if (dayOfMonth-2 >=1) {
+                tue_day.setText(String.valueOf(dayOfMonth - 2));
+                tue_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+            else if (dayOfMonth-2 == 0){
+                tue_day.setText(String.valueOf(daysInMonth2));
+                tue_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+            else if (dayOfMonth-2 == -1){
+                tue_day.setText(String.valueOf(daysInMonth2-1));
+                tue_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+
+            if (dayOfMonth-1 >= 1) {
+                wed_day.setText(String.valueOf(dayOfMonth - 1));
+                wed_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }else{
+                wed_day.setText(String.valueOf(daysInMonth2));
+                wed_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+
+            thu_day.setText(String.valueOf(dayOfMonth));
+            thu_day.setBackground(mContext.getDrawable(R.drawable.date_circle));
+
+            fri_day.setText(String.valueOf((dayOfMonth+1)%daysInMonth));
+            fri_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+
+            sat_day.setText(String.valueOf((dayOfMonth+2)%daysInMonth));
+            sat_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+
+            sun_day.setText(String.valueOf((dayOfMonth+3)%daysInMonth));
+            sun_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+
+        }
+
+
+
+        if  (dayOfWeek == Calendar.FRIDAY){
+
+            if (dayOfMonth-4 >=1){
+                mon_day.setText(String.valueOf(dayOfMonth-4));
+                mon_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+            else if (dayOfMonth-4 ==0 ){
+                mon_day.setText(String.valueOf(daysInMonth2));
+                mon_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+            else if (dayOfMonth-4 == -1){
+                mon_day.setText(String.valueOf(daysInMonth2-1));
+                mon_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+            else if (dayOfMonth-4 == -2) {
+                mon_day.setText(String.valueOf(daysInMonth2 - 2));
+                mon_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+            else if (dayOfMonth-4 == -3) {
+                mon_day.setText(String.valueOf(daysInMonth2 - 3));
+                mon_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+
+
+            if (dayOfMonth-3 >= 1) {
+                tue_day.setText(String.valueOf(dayOfMonth - 3));
+                tue_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+            else if (dayOfMonth-3 == 0){
+                tue_day.setText(String.valueOf(daysInMonth2));
+                tue_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+            else if (dayOfMonth-3 == -1){
+                tue_day.setText(String.valueOf(daysInMonth2-1));
+                tue_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+            else if (dayOfMonth-3 == -2){
+                tue_day.setText(String.valueOf(daysInMonth2-2));
+                tue_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+
+
+            if (dayOfMonth-2 >= 1) {
+                wed_day.setText(String.valueOf(dayOfMonth - 2));
+                wed_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+            else if (dayOfMonth-2 == 0){
+                wed_day.setText(String.valueOf(daysInMonth2));
+                wed_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+            else if (dayOfMonth-2 == -1){
+                wed_day.setText(String.valueOf(daysInMonth2-1));
+                wed_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+
+
+            if (dayOfMonth-1 >=1 ) {
+                thu_day.setText(String.valueOf(dayOfMonth - 1));
+                thu_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }else{
+                thu_day.setText(String.valueOf(daysInMonth2));
+                thu_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+
+
+            fri_day.setText(String.valueOf(dayOfMonth));
+            fri_day.setBackground(mContext.getDrawable(R.drawable.date_circle));
+
+            sat_day.setText(String.valueOf((dayOfMonth+1)%daysInMonth));
+            sat_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+
+            sun_day.setText(String.valueOf((dayOfMonth+2)%daysInMonth));
+            sun_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+
+        }
+
+
+
+        if  (dayOfWeek == Calendar.SATURDAY){
+
+            if (dayOfMonth-5 >= 1){
+                mon_day.setText(String.valueOf(dayOfMonth-5));
+                mon_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+            else if (dayOfMonth-5 == 0){
+                mon_day.setText(String.valueOf(daysInMonth2));
+                mon_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+            else if (dayOfMonth-5 == -1){
+                mon_day.setText(String.valueOf(daysInMonth2-1));
+                mon_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+            else if (dayOfMonth-5 == -2){
+                mon_day.setText(String.valueOf(daysInMonth2-2));
+                mon_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+            else if (dayOfMonth-5 == -3){
+                mon_day.setText(String.valueOf(daysInMonth2-3));
+                mon_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+            else if (dayOfMonth-5 == -4){
+                mon_day.setText(String.valueOf(daysInMonth2-4));
+                mon_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+
+
+            if (dayOfMonth-4 >= 1) {
+                tue_day.setText(String.valueOf(dayOfMonth - 4));
+                tue_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+            else if (dayOfMonth-4 == 0){
+                tue_day.setText(String.valueOf(daysInMonth2));
+                tue_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+            else if (dayOfMonth-4 == -1){
+                tue_day.setText(String.valueOf(daysInMonth2-1));
+                tue_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+            else if (dayOfMonth-4 == -2){
+                tue_day.setText(String.valueOf(daysInMonth2-2));
+                tue_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+            else if (dayOfMonth-4 == -3){
+                tue_day.setText(String.valueOf(daysInMonth2-3));
+                tue_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+
+
+            if (dayOfMonth-3 >= 1) {
+                wed_day.setText(String.valueOf(dayOfMonth - 3));
+                wed_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+            else if (dayOfMonth-3 == 0){
+                wed_day.setText(String.valueOf(daysInMonth2));
+                wed_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+            else if (dayOfMonth-3 == -1){
+                wed_day.setText(String.valueOf(daysInMonth2-1));
+                wed_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+            else if (dayOfMonth-3 == -2){
+                wed_day.setText(String.valueOf(daysInMonth2-2));
+                wed_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+
+
+            if (dayOfMonth-2 >= 1) {
+                thu_day.setText(String.valueOf(dayOfMonth - 2));
+                thu_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+            else if (dayOfMonth-2 == 0){
+                thu_day.setText(String.valueOf(daysInMonth2));
+                thu_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+            else if (dayOfMonth-2 == -1){
+                thu_day.setText(String.valueOf(daysInMonth2-1));
+                thu_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+
+
+            if (dayOfMonth-1 >=1 ) {
+                fri_day.setText(String.valueOf(dayOfMonth - 1));
+                fri_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }else{
+                fri_day.setText(String.valueOf(daysInMonth2));
+                fri_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+
+
+            sat_day.setText(String.valueOf(dayOfMonth));
+            sat_day.setBackground(mContext.getDrawable(R.drawable.date_circle));
+
+
+            sun_day.setText(String.valueOf((dayOfMonth+1)%daysInMonth));
+            sun_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+
+        }
+
+
+
+
+        if  (dayOfWeek == Calendar.SUNDAY){
+
+            if (dayOfMonth-6 >=1) {
+                mon_day.setText(String.valueOf(dayOfMonth - 6));
+                mon_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+            else if (dayOfMonth-6 == 0){
+                mon_day.setText(String.valueOf(daysInMonth2));
+                mon_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+            else if (dayOfMonth-6 == -1){
+                mon_day.setText(String.valueOf(daysInMonth2-1));
+                mon_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+            else if (dayOfMonth-6 == -2){
+                mon_day.setText(String.valueOf(daysInMonth2-2));
+                mon_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+            else if (dayOfMonth-6 == -3){
+                mon_day.setText(String.valueOf(daysInMonth2-3));
+                mon_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+            else if (dayOfMonth-6 == -4){
+                mon_day.setText(String.valueOf(daysInMonth2-4));
+                mon_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+            else if (dayOfMonth-6 == -5){
+                mon_day.setText(String.valueOf(daysInMonth2-5));
+                mon_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+
+
+            if (dayOfMonth-5 >= 1) {
+                tue_day.setText(String.valueOf(dayOfMonth - 5));
+                tue_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+            else if (dayOfMonth-5 == 0){
+                tue_day.setText(String.valueOf(daysInMonth2));
+                tue_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+            else if (dayOfMonth-5 == -1){
+                tue_day.setText(String.valueOf(daysInMonth2-1));
+                tue_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+            else if (dayOfMonth-5 == -2){
+                tue_day.setText(String.valueOf(daysInMonth2-2));
+                tue_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+            else if (dayOfMonth-5 == -3){
+                tue_day.setText(String.valueOf(daysInMonth2-3));
+                tue_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+            else if (dayOfMonth-5 == -4){
+                tue_day.setText(String.valueOf(daysInMonth2-4));
+                tue_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+
+
+            if (dayOfMonth-4 >=1) {
+                wed_day.setText(String.valueOf(dayOfMonth - 4));
+                wed_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+            else if (dayOfMonth-4 == 0){
+                wed_day.setText(String.valueOf(daysInMonth2));
+                wed_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+            else if (dayOfMonth-4 == -1){
+                wed_day.setText(String.valueOf(daysInMonth2-1));
+                wed_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+            else if (dayOfMonth-4 == -2){
+                wed_day.setText(String.valueOf(daysInMonth2-2));
+                wed_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+            else if (dayOfMonth-4 == -3){
+                wed_day.setText(String.valueOf(daysInMonth2-3));
+                wed_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+
+
+
+            if (dayOfMonth-3 >=1) {
+                thu_day.setText(String.valueOf(dayOfMonth - 3));
+                thu_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+            else if (dayOfMonth-3 == 0){
+                thu_day.setText(String.valueOf(daysInMonth2));
+                thu_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+            else if (dayOfMonth-3 == -1){
+                thu_day.setText(String.valueOf(daysInMonth2-1));
+                thu_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+            else if (dayOfMonth-3 == -2){
+                thu_day.setText(String.valueOf(daysInMonth2-2));
+                thu_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+
+
+            if (dayOfMonth-2 >=1 ) {
+                fri_day.setText(String.valueOf(dayOfMonth - 2));
+                fri_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+            else if (dayOfMonth-2 == 0){
+                fri_day.setText(String.valueOf(daysInMonth2));
+                fri_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+            else if (dayOfMonth-2 == -1){
+                fri_day.setText(String.valueOf(daysInMonth2-1));
+                fri_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+
+
+            if (dayOfMonth-1 >= 1) {
+                sat_day.setText(String.valueOf(dayOfMonth - 1));
+                sat_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+            else {
+                sat_day.setText(String.valueOf(daysInMonth2));
+                sat_day.setBackground(mContext.getDrawable(R.drawable.white_circle_button));
+            }
+
+            sun_day.setText(String.valueOf(dayOfMonth));
+            sun_day.setBackground(mContext.getDrawable(R.drawable.date_circle));
+
+        }
 
 
 
     }
+
+
 
 
 

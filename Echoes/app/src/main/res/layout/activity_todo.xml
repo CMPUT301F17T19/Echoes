@@ -21,7 +21,7 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="210dp"
+        android:layout_height="235dp"
         android:layout_below="@+id/my_toolbar"
         android:background="@color/redPink"
         android:layout_marginBottom="20dp"
@@ -61,10 +61,21 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/profile_photo"
         android:text="February"
-        android:layout_marginBottom="20dp"
+        android:id="@+id/month"
         android:textStyle="bold"
         android:textColor="@color/white"
         android:textSize="25dp"
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2017"
+        android:id="@+id/year"
+        android:textColor="@color/white"
+        android:layout_below="@+id/month"
+        android:textStyle="bold"
         android:layout_centerHorizontal="true"
         />
 
