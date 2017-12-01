@@ -3,21 +3,61 @@
   ~ Copyright (c) Team cmput301f17t19, CMPUT301, University of Alberta - All Rights Reserved. You may use, distribute, or modify this code under terms and conditions of the Code of Students Behaviour at University of Alberta
   -->
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
     android:background="@color/white">
 
+    <de.hdodenhof.circleimageview.CircleImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/profile_photo_3"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:src="@drawable/user_profile_icon"
+        app:civ_border_width="2dp"
+        android:layout_margin="8dp"
+        android:layout_gravity="center"
+        android:layout_alignParentLeft="true"
+        app:civ_border_color="#FF000000"/>
+
     <TextView
         android:id="@+id/comment_username"
+        android:textColor="@color/black"
+        android:text="Peter"
+        android:layout_marginLeft="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/profile_photo_3"
+        android:layout_gravity="center"
+        android:textSize="18dp"
+        android:layout_marginBottom="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textStyle="bold"
         android:layout_marginRight="16dp"/>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/comment_username"
+        android:background="@drawable/btn2"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_toRightOf="@+id/profile_photo_3"
+        >
     <TextView
         android:id="@+id/comment_content"
+        android:layout_margin="10dp"
+        android:textStyle="bold"
         android:layout_width="match_parent"
+        android:textColor="@color/white"
+        android:text="Hello. How are you doing?"
+        android:textSize="16dp"
+        android:layout_centerVertical="true"
+
         android:layout_height="wrap_content" />
 
-</LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

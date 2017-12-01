@@ -24,8 +24,10 @@ import android.widget.TextView;
 import com.example.cmput301f17t19.echoes.Adapters.CommentAdapter;
 import com.example.cmput301f17t19.echoes.Controllers.ElasticSearchController;
 import com.example.cmput301f17t19.echoes.Controllers.FollowingSharingController;
-import com.example.cmput301f17t19.echoes.R;
+import com.example.cmput301f17t19.echoes.Controllers.OfflineStorageController;
 import com.example.cmput301f17t19.echoes.Models.UserHabitKudosComments;
+import com.example.cmput301f17t19.echoes.Models.UserProfile;
+import com.example.cmput301f17t19.echoes.R;
 
 public class CommentsActivity extends AppCompatActivity {
     public static final String USERHABITKUDOSCOMMENTS_FollowingUsername = "UHKC_FollowingUsername";
@@ -47,6 +49,11 @@ public class CommentsActivity extends AppCompatActivity {
 
     private TextView loginUsername_TextView;
     private EditText loginUserComment_EditText;
+
+
+    private static UserProfile login_UserProfile;
+
+    private de.hdodenhof.circleimageview.CircleImageView profile_ImageButton;
 
     private Button sendComment_Button;
 
@@ -102,6 +109,29 @@ public class CommentsActivity extends AppCompatActivity {
         loginUsername_TextView = (TextView) findViewById(R.id.sendingComment_Username);
         loginUsername_TextView.setText(login_UserName);
 
+
+
+
+
+
+
+        /*
+
+        setLogin_UserProfile(login_UserName);
+
+        profile_ImageButton = findViewById(R.id.profile_photo_3);
+
+        // Set User Profile Photo, Username, UserBioComment, Email, PhoneNumber, Num of Followers and Following
+        if (login_UserProfile.getProfilePicture() != null){
+            profile_ImageButton.setImageBitmap(BitmapFactory.decodeByteArray(login_UserProfile.getProfilePicture(), 0, login_UserProfile.getProfilePicture().length));
+        }
+
+        */
+
+
+
+
+
         loginUserComment_EditText = (EditText) findViewById(R.id.sendingComment_Content);
 
         sendComment_Button = (Button) findViewById(R.id.sendingComment_Button);
@@ -155,4 +185,20 @@ public class CommentsActivity extends AppCompatActivity {
     public static UserHabitKudosComments getmUserHabitKudosComments() {
         return mUserHabitKudosComments;
     }
+
+
+
+
+
+    private void setLogin_UserProfile(String login_Username) {
+
+        OfflineStorageController offlineStorageController = new OfflineStorageController(this, login_Username);
+
+        // Get the Offline Storage file of this user
+        login_UserProfile = offlineStorageController.readFromFile();
+
+        // Sync the offline file with online data storage
+        ElasticSearchController.syncOnlineWithOffline(login_UserProfile);
+    }
+
 }
