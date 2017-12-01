@@ -23,7 +23,7 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:layout_below="@+id/my_toolbar"
         android:id="@+id/second"
         android:layout_margin="8dp">
@@ -33,6 +33,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="6"
+            android:layout_gravity="center"
             android:inputType="text"
             android:textColorHint="@color/black"
             android:hint="@string/search_hint"
@@ -45,6 +46,7 @@
             android:id="@+id/search_comment_button"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
+            android:layout_gravity="center"
             android:layout_weight="1"
             android:textColor="@color/white"
             android:background="@drawable/btn"
@@ -67,6 +69,7 @@
             android:id="@+id/habit_events_type_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="@string/habit_events_type"
             android:textColor="@color/black"
 
@@ -77,6 +80,7 @@
         <Spinner
             android:id="@+id/habithistory_filter"
             android:layout_width="match_parent"
+            android:layout_gravity="center"
             android:layout_height="wrap_content"
             android:entries="@array/habithistory_filter_list"
             android:spinnerMode="dropdown"

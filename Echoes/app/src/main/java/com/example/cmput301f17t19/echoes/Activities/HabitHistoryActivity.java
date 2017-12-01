@@ -52,6 +52,7 @@ import com.example.cmput301f17t19.echoes.Models.UserFollowingList;
 import com.example.cmput301f17t19.echoes.Models.UserProfile;
 import com.example.cmput301f17t19.echoes.Models.UserReceivedRequestsList;
 import com.example.cmput301f17t19.echoes.R;
+import com.melnykov.fab.ScrollDirectionListener;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -366,6 +367,25 @@ public class HabitHistoryActivity extends AppCompatActivity {
 
         });
 
+
+        toolButton.attachToRecyclerView(habitEventsRecyclerView, new ScrollDirectionListener() {
+            @Override
+            public void onScrollDown() {
+                toolButton.setVisibility(View.VISIBLE);
+            }
+
+            @Override
+            public void onScrollUp() {
+                toolButton.setVisibility(View.INVISIBLE);
+            }
+        }, new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(RecyclerView view, int scrollState) {
+
+            }
+
+
+        });
 
 
 
