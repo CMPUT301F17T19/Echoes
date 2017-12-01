@@ -19,9 +19,9 @@
         app:popupTheme="@style/ThemeOverlay.AppCompat.Dark" />
 
 
-    <TextView
+    <View
         android:layout_width="match_parent"
-        android:layout_height="180dp"
+        android:layout_height="190dp"
         android:layout_below="@+id/my_toolbar"
         android:background="@color/redPink"
         android:id="@+id/userview"
@@ -33,6 +33,7 @@
         android:layout_height="50dp"
         android:layout_centerHorizontal="true"
         android:text="Good Morning!"
+        android:textStyle="bold"
         android:textSize="30dp"
         android:id="@+id/greed"
         android:textColor="@color/white"
@@ -43,26 +44,258 @@
     <de.hdodenhof.circleimageview.CircleImageView
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/profile_photo"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
         android:src="@drawable/user_profile_icon"
         app:civ_border_width="2dp"
         android:layout_margin="8dp"
         android:layout_gravity="center"
         android:layout_below="@+id/greed"
         android:layout_centerHorizontal="true"
-
         app:civ_border_color="@color/transparent"/>
 
 
-
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:id="@+id/datetime"
-        android:layout_below="@+id/userview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profile_photo"
+        android:text="February"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:layout_centerHorizontal="true"
         />
 
+
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:id="@+id/datetime"
+        android:layout_below="@+id/userview">
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_marginLeft="18dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/mon"
+            android:layout_alignParentLeft="true"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Mon"
+
+                android:textSize="18dp"
+                android:layout_marginBottom="10dp"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="40dp"
+                android:gravity="center"
+                android:id="@+id/mon_day"
+                android:text="7"
+                android:background="@drawable/date_circle"
+                android:textColor="@color/black"
+                android:layout_height="40dp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tue"
+            android:layout_toRightOf="@+id/mon"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Tue"
+                android:textSize="18dp"
+                android:layout_marginBottom="10dp"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="40dp"
+                android:gravity="center"
+                android:id="@+id/tue_day"
+                android:text="7"
+                android:background="@drawable/date_circle"
+                android:textColor="@color/black"
+                android:layout_height="40dp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/wed"
+            android:layout_toRightOf="@+id/tue"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Wed"
+                android:textSize="18dp"
+                android:layout_marginBottom="10dp"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="40dp"
+                android:gravity="center"
+                android:id="@+id/wed_day"
+                android:text="7"
+                android:background="@drawable/date_circle"
+                android:textColor="@color/black"
+                android:layout_height="40dp" />
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/thurs"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Thu"
+                android:textSize="18dp"
+                android:layout_marginBottom="10dp"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="40dp"
+                android:gravity="center"
+                android:text="7"
+                android:background="@drawable/date_circle"
+                android:id="@+id/thurs_day"
+                android:textColor="@color/black"
+                android:layout_height="40dp" />
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_marginRight="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/fri"
+            android:layout_toLeftOf="@+id/sat"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Fri"
+                android:textSize="18dp"
+                android:layout_marginBottom="10dp"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="40dp"
+                android:gravity="center"
+                android:text="7"
+                android:background="@drawable/date_circle"
+                android:id="@+id/fri_day"
+                android:textColor="@color/black"
+                android:layout_height="40dp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_marginRight="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/sat"
+            android:layout_toLeftOf="@+id/sun"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Sat"
+                android:textSize="18dp"
+                android:layout_marginBottom="10dp"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="40dp"
+                android:gravity="center"
+                android:id="@+id/sat_day"
+                android:text="7"
+                android:background="@drawable/date_circle"
+                android:textColor="@color/black"
+                android:layout_height="40dp" />
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_marginRight="18dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/sun"
+            android:layout_alignParentRight="true"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Sun"
+                android:textSize="18dp"
+                android:layout_marginBottom="10dp"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="40dp"
+                android:gravity="center"
+                android:text="7"
+                android:id="@+id/sun_day"
+                android:background="@drawable/date_circle"
+
+                android:textColor="@color/black"
+                android:layout_height="40dp" />
+
+
+
+        </LinearLayout>
+
+
+
+
+   </RelativeLayout>
 
 
     <ListView
