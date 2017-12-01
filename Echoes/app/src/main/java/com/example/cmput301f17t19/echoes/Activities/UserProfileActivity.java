@@ -102,6 +102,7 @@ public class UserProfileActivity extends AppCompatActivity {
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
+        myToolbar.setTitleTextColor(getResources().getColor(R.color.white));
 
         mActivity = this;
         mContext = this;

@@ -44,6 +44,7 @@ public class UserMessageActivity extends AppCompatActivity {
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
+        myToolbar.setTitleTextColor(getResources().getColor(R.color.white));
 
         // Get the login username and user Profile
         Intent intent = getIntent();

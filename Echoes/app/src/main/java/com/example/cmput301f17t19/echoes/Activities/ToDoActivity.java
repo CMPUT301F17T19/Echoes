@@ -133,8 +133,14 @@ public class ToDoActivity extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.listViewToDo);
         listView.setAdapter(adapter);
 
+
+        this.setTitle("To Do");
+
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
+
+
+        myToolbar.setTitleTextColor(getResources().getColor(R.color.white));
 
 
 

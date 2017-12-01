@@ -255,12 +255,15 @@ public class MyHabitsActivity extends AppCompatActivity {
 
 
 
+        mContext = this;
 
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
 
-        mContext = this;
+        myToolbar.setTitleTextColor(getResources().getColor(R.color.white));
+
+
 
 
         animateView = findViewById(R.id.animate_view_3);
@@ -442,10 +445,12 @@ public class MyHabitsActivity extends AppCompatActivity {
                     inflater.inflate(R.menu.nonempty_message_appbar, menu);
                 } else {
                     inflater.inflate(R.menu.mapp_bar, menu);
+
                 }
 
             } else {
                 inflater.inflate(R.menu.mapp_bar, menu);
+
             }
 
         } catch (InterruptedException e) {

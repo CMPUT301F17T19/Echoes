@@ -264,6 +264,7 @@ public class HabitHistoryActivity extends AppCompatActivity {
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
+        myToolbar.setTitleTextColor(getResources().getColor(R.color.white));
 
         mContext = this;
         spinnerTypes = new ArrayList<String>();
