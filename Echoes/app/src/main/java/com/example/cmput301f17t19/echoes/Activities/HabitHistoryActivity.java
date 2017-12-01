@@ -14,6 +14,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.content.ContextCompat;
@@ -29,6 +30,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -88,6 +91,8 @@ public class HabitHistoryActivity extends AppCompatActivity {
 
     private com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx bottomNavigationViewEx;
 
+
+    private com.melnykov.fab.FloatingActionButton toolButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -312,6 +317,60 @@ public class HabitHistoryActivity extends AppCompatActivity {
         habitEventsRecyclerView.addItemDecoration(mDividerItemDecoration);
 
         habitEventsRecyclerView.setHasFixedSize(true);
+
+
+        toolButton = findViewById(R.id.tools);
+
+
+        toolButton.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+
+                Animation startRotateAnimation = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.android_rotate_animation);
+
+                toolButton.startAnimation(startRotateAnimation);
+
+                Handler handler=  new Handler();
+
+
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+
+
+                    addEventButton.setVisibility(View.VISIBLE);
+
+                    habitEventsMapButton.setVisibility(View.VISIBLE);
+
+
+                    Runnable runnable = new Runnable()  {
+
+                        public void run() {
+
+
+                            addEventButton.setVisibility(View.GONE);
+
+                            habitEventsMapButton.setVisibility(View.GONE);
+
+
+                        }
+
+
+                    };
+
+                    handler.postDelayed(runnable,1000);
+
+                }
+
+            }
+
+        });
+
+
+
+
+
+
     }
 
 

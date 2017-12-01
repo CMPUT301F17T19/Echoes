@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) Team cmput301f17t19, CMPUT301, University of Alberta - All Rights Reserved. You may use, distribute, or modify this code under terms and conditions of the Code of Students Behaviour at University of Alberta
+  -->
+
+
+<set
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <rotate
+
+        android:duration = "500"
+
+        android:fromDegrees="0"
+
+        android:pivotX="50%"
+
+        android:pivotY="50%"
+
+        android:startOffset = "0"
+
+        android:toDegrees="360"
+        />
+
+</set>

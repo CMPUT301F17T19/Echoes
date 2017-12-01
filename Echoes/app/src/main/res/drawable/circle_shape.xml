@@ -8,7 +8,7 @@
     <corners
         android:radius="100dp"/>
 
-    <solid android:color="@color/white"
+    <solid android:color="@color/redPink"
 
         />
 
