@@ -20,8 +20,8 @@ import android.widget.TextView;
 
 import com.example.cmput301f17t19.echoes.Activities.HabitDetailActivity;
 import com.example.cmput301f17t19.echoes.Activities.LoginActivity;
-import com.example.cmput301f17t19.echoes.Activities.MainMenuActivity;
 import com.example.cmput301f17t19.echoes.Activities.MyHabitsActivity;
+import com.example.cmput301f17t19.echoes.Activities.ToDoActivity;
 import com.example.cmput301f17t19.echoes.Controllers.OfflineStorageController;
 import com.example.cmput301f17t19.echoes.Models.UserProfile;
 import com.robotium.solo.Solo;
@@ -62,7 +62,7 @@ public class MyHabitsActivityTest extends ActivityInstrumentationTestCase2 {
         //enter the usrname "dummy3"
         solo.enterText((EditText) solo.getView(R.id.username),"dummy3");
         solo.clickOnView(solo.getView(R.id.username_sign_in_button));
-        solo.assertCurrentActivity("Wrong Activity", MainMenuActivity.class);
+        solo.assertCurrentActivity("Wrong Activity", ToDoActivity.class);
     }
 
     /**
@@ -70,8 +70,8 @@ public class MyHabitsActivityTest extends ActivityInstrumentationTestCase2 {
      */
     public void testAddNewHabit() {
         login();
-        solo.assertCurrentActivity("Wrong Activity", MainMenuActivity.class);
-        solo.clickOnView(solo.getView(R.id.View_My_Habits));
+        solo.assertCurrentActivity("Wrong Activity", ToDoActivity.class);
+        solo.clickOnView(solo.getView(R.id.myhabit));
         solo.assertCurrentActivity("Wrong Activity", MyHabitsActivity.class);
 
         // Click on 'ADD HABIT' button
@@ -100,8 +100,8 @@ public class MyHabitsActivityTest extends ActivityInstrumentationTestCase2 {
      */
     public void testClickHabitToDetailActivity() {
         login();
-        solo.assertCurrentActivity("Wrong Activity", MainMenuActivity.class);
-        solo.clickOnView(solo.getView(R.id.View_My_Habits));
+        solo.assertCurrentActivity("Wrong Activity", ToDoActivity.class);
+        solo.clickOnView(solo.getView(R.id.myhabit));
         solo.assertCurrentActivity("Wrong Activity", MyHabitsActivity.class);
 
         // Add a dummy Habit to MyHabits list

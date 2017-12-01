@@ -9,8 +9,8 @@ import android.test.ActivityInstrumentationTestCase2;
 import android.widget.EditText;
 
 import com.example.cmput301f17t19.echoes.Activities.LoginActivity;
-import com.example.cmput301f17t19.echoes.Activities.MainMenuActivity;
 import com.example.cmput301f17t19.echoes.Activities.MapsActivity;
+import com.example.cmput301f17t19.echoes.Activities.ToDoActivity;
 import com.example.cmput301f17t19.echoes.Controllers.OfflineStorageController;
 import com.example.cmput301f17t19.echoes.Models.UserProfile;
 import com.robotium.solo.Solo;
@@ -45,14 +45,14 @@ public class MapsActivityTest extends ActivityInstrumentationTestCase2 {
         //enter the usrname "dummy3"
         solo.enterText((EditText) solo.getView(R.id.username),"dummy3");
         solo.clickOnView(solo.getView(R.id.username_sign_in_button));
-        solo.assertCurrentActivity("Wrong Activity", MainMenuActivity.class);
+        solo.assertCurrentActivity("Wrong Activity", ToDoActivity.class);
     }
 
     public void testOpenMapActivity() {
         login();
 
-        solo.assertCurrentActivity("Wrong Activity", MainMenuActivity.class);
-        solo.clickOnView(solo.getView(R.id.habit_event_map));
+        solo.assertCurrentActivity("Wrong Activity", ToDoActivity.class);
+        solo.clickOnView(solo.getView(R.id.maps));
 
         solo.waitForActivity(MapsActivity.class, 2000);
         solo.assertCurrentActivity("Wrong Activity", MapsActivity.class);

@@ -465,17 +465,6 @@ public class MyHabitsActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
 
-            case R.id.action_menu:
-                // Go back to main menu
-                // Pass the username of the login user to the main menu
-                Intent mainMenu_intent = new Intent(this, MainMenuActivity.class);
-                mainMenu_intent.putExtra(LoginActivity.LOGIN_USERNAME, login_userName);
-                startActivity(mainMenu_intent);
-
-                finish();
-
-                break;
-
             case R.id.action_UserProfile:
                 // Go to User Profile
                 // Pass the username of the login user to the user profile

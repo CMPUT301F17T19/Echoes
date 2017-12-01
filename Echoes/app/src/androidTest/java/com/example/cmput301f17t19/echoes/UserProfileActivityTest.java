@@ -17,7 +17,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.cmput301f17t19.echoes.Activities.LoginActivity;
-import com.example.cmput301f17t19.echoes.Activities.MainMenuActivity;
+import com.example.cmput301f17t19.echoes.Activities.ToDoActivity;
 import com.example.cmput301f17t19.echoes.Activities.UserProfileActivity;
 import com.example.cmput301f17t19.echoes.Controllers.OfflineStorageController;
 import com.example.cmput301f17t19.echoes.Models.UserProfile;
@@ -58,7 +58,7 @@ public class UserProfileActivityTest extends ActivityInstrumentationTestCase2 {
         //enter the usrname "dummy3"
         solo.enterText((EditText) solo.getView(R.id.username),"dummy3");
         solo.clickOnView(solo.getView(R.id.username_sign_in_button));
-        solo.assertCurrentActivity("Wrong Activity", MainMenuActivity.class);
+        solo.assertCurrentActivity("Wrong Activity", ToDoActivity.class);
     }
 
     /**
