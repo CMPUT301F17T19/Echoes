@@ -59,7 +59,7 @@ public class ToDoActivity extends AppCompatActivity {
     // The userName of the Logged-in user
     private static String login_userName;
     // The user profile of the logged-in user
-    private static UserProfile login_userProfile;
+    private static UserProfile login_UserProfile;
     // The HabitList of the login user
     private static HabitList myHabitList;
 
@@ -95,9 +95,9 @@ public class ToDoActivity extends AppCompatActivity {
 
         login_userName = intent.getStringExtra(LoginActivity.LOGIN_USERNAME);
 
-        login_userProfile = OfflineStorageController.getLogin_UserProfile(this, login_userName);
+        setLogin_UserProfile(login_userName);
 
-        myHabitList = login_userProfile.getHabit_list();
+        myHabitList = login_UserProfile.getHabit_list();
 
         nameArray = new ArrayList<String>();
         reasonArray = new ArrayList<String>();
@@ -183,7 +183,7 @@ public class ToDoActivity extends AppCompatActivity {
                         if(isNetworkStatusAvialable (getApplicationContext())) {
                             // Show my habit events and my followings' most recent habit events for each habit on map
                             // My habit events in habit history
-                            ArrayList<HabitEvent> shownHabitEvents_Map = login_userProfile.getHabit_event_list().getHabitEvents();
+                            ArrayList<HabitEvent> shownHabitEvents_Map = login_UserProfile.getHabit_event_list().getHabitEvents();
                             // Get My followings
                             ElasticSearchController.GetUserFollowingListTask getUserFollowingListTask = new ElasticSearchController.GetUserFollowingListTask();
                             getUserFollowingListTask.execute(login_userName);
@@ -206,6 +206,8 @@ public class ToDoActivity extends AppCompatActivity {
                                 map_intent.putParcelableArrayListExtra(MapsActivity.HABIT_EVENT_SHOW_LOCATION_TAG, shownHabitEvents_Map);
                                 map_intent.putExtra(LoginActivity.LOGIN_USERNAME, login_userName);
                                 startActivity(map_intent);
+
+                                finish();
 
                             } catch (InterruptedException e) {
                                 Toast.makeText(ToDoActivity.this, "You can only see habit events of your followings and yours on Map online.", Toast.LENGTH_LONG).show();
@@ -366,7 +368,7 @@ public class ToDoActivity extends AppCompatActivity {
                 String Today_str = simpleDateFormat.format(Calendar.getInstance().getTime());
 
                 // Check if this habit has done today
-                ArrayList<HabitEvent> habitEvents = login_userProfile.getHabit_event_list().getHabitEvents();
+                ArrayList<HabitEvent> habitEvents = login_UserProfile.getHabit_event_list().getHabitEvents();
                 for (HabitEvent habitEvent : habitEvents) {
 
                     if (habitEvent.getTitle().equals(habit.getName()) &&
@@ -408,7 +410,7 @@ public class ToDoActivity extends AppCompatActivity {
      * @return UserProfile: login user profile
      */
     public static UserProfile getLogin_userProfile() {
-        return login_userProfile;
+        return login_UserProfile;
     }
 
     /**
@@ -418,13 +420,30 @@ public class ToDoActivity extends AppCompatActivity {
         adapter.notifyDataSetChanged();
 
         // Update the Habit Status for the login user for all habits
-        login_userProfile = HabitStatus.updateAllHabitsStatus(login_userProfile);
+        login_UserProfile = HabitStatus.updateAllHabitsStatus(login_UserProfile);
 
         // Update offline file
-        OfflineStorageController offlineStorageController = new OfflineStorageController(mContext, login_userProfile.getUserName());
-        offlineStorageController.saveInFile(login_userProfile);
+        OfflineStorageController offlineStorageController = new OfflineStorageController(mContext, login_UserProfile.getUserName());
+        offlineStorageController.saveInFile(login_UserProfile);
 
         // Update Online data
-        ElasticSearchController.syncOnlineWithOffline(login_userProfile);
+        ElasticSearchController.syncOnlineWithOffline(login_UserProfile);
+    }
+
+    /**
+     * Read the offline UserProfile data with logined name
+     * Sync offline data with online storage
+     *
+     * @param login_Username: String, the username of the Login User
+     */
+    private void setLogin_UserProfile(String login_Username) {
+
+        OfflineStorageController offlineStorageController = new OfflineStorageController(this, login_Username);
+
+        // Get the Offline Storage file of this user
+        login_UserProfile = offlineStorageController.readFromFile();
+
+        // Sync the offline file with online data storage
+        ElasticSearchController.syncOnlineWithOffline(login_UserProfile);
     }
 }

@@ -213,6 +213,8 @@ public class HabitHistoryActivity extends AppCompatActivity {
 
                                 startActivity(map_intent);
 
+                                finish();
+
                             } catch (InterruptedException e) {
                                 Toast.makeText(HabitHistoryActivity.this, "You can only see habit events of your followings and yours on Map online.", Toast.LENGTH_LONG).show();
                                 e.printStackTrace();

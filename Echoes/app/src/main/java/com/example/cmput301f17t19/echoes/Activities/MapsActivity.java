@@ -47,7 +47,7 @@ import java.util.ArrayList;
 
 import static com.example.cmput301f17t19.echoes.R.id.map;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
+public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnMapLoadedCallback {
     public static final String HABIT_EVENT_SHOW_LOCATION_TAG = "HABIT_EVENT_SHOW_LOCATION";
 
     private GoogleMap mMap;
@@ -257,6 +257,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.getUiSettings().setCompassEnabled(true);
         mMap.getUiSettings().setAllGesturesEnabled(true);
 
+        mMap.setOnMapLoadedCallback(this);
+
         boundsbuilder = new LatLngBounds.Builder();
 
         // Show my current location
@@ -281,11 +283,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                                         .title("My Current Location"));
 
                                 boundsbuilder.include(new LatLng(location.getLatitude(), location.getLongitude()));
-                                LatLngBounds bounds = boundsbuilder.build();
-
-                                View mapView = findViewById(R.id.map);
-
-                                mMap.animateCamera(CameraUpdateFactory.newLatLngBounds(bounds, mapView.getWidth(), mapView.getHeight(), 0));
 
                             } else {
                                 Log.d("Map", "Current Location not available.");
@@ -297,14 +294,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             Toast.makeText(this, "Access Location Permission Denied. Please allow location accession.", Toast.LENGTH_LONG).show();
         }
 
-        boolean hasPointInclude = false;
-
         // Add markers to the habit event that has location
         for (HabitEvent habitEvent : shown_HabitEvents) {
             if (habitEvent.getLocation() != null) {
                 LatLng latLng = new LatLng(habitEvent.getLocation().getLatitude(), habitEvent.getLocation().getLongitude());
                 boundsbuilder.include(latLng);
-                hasPointInclude = true;
+
                 // Add Marker
                 Marker marker = mMap.addMarker(new MarkerOptions()
                         .position(latLng)
@@ -316,15 +311,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                 location_Markers.add(marker);
             }
-        }
-
-        if (hasPointInclude || myCurrentLocationMarker != null) {
-            // Show all markers on the map with proper zoom level
-            LatLngBounds bounds = boundsbuilder.build();
-
-            View mapView = findViewById(R.id.map);
-
-            mMap.animateCamera(CameraUpdateFactory.newLatLngBounds(bounds, mapView.getWidth(), mapView.getHeight(), 0));
         }
 
         // Reference: https://stackoverflow.com/questions/13904651/android-google-maps-v2-how-to-add-marker-with-multiline-snippet
@@ -410,6 +396,18 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             return true;
         } else {
             return false;
+        }
+    }
+
+    @Override
+    public void onMapLoaded() {
+        if (mMap != null) {
+            if (boundsbuilder != null) {
+                LatLngBounds bounds = boundsbuilder.build();
+
+                mMap.animateCamera(CameraUpdateFactory.newLatLngBounds(bounds, 20));
+                mMap.moveCamera(CameraUpdateFactory.newLatLngBounds(bounds, 20));
+            }
         }
     }
 }

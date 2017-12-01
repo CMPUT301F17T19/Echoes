@@ -230,7 +230,7 @@ public class LoginActivity extends AppCompatActivity  {
 
 
         final String login_UserName = userEditText.getText().toString().trim();
-        final Intent main_menu_Intent = new Intent(LoginActivity.this, MainMenuActivity.class);
+        final Intent main_menu_Intent = new Intent(LoginActivity.this, ToDoActivity.class);
         main_menu_Intent.putExtra(LOGIN_USERNAME, login_UserName);
 
         //int cx = 380;

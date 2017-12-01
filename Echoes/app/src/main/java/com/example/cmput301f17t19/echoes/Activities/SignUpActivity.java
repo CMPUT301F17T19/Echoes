@@ -400,7 +400,7 @@ public class SignUpActivity extends AppCompatActivity {
 
 
         final String login_UserName = UserName.getText().toString().trim();
-        final Intent main_menu_Intent = new Intent(SignUpActivity.this, MainMenuActivity.class);
+        final Intent main_menu_Intent = new Intent(SignUpActivity.this, ToDoActivity.class);
         main_menu_Intent.putExtra(LoginActivity.LOGIN_USERNAME, login_UserName);
 
         //int cx = 380;
