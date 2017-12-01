@@ -9,8 +9,8 @@ import android.test.ActivityInstrumentationTestCase2;
 import android.util.Log;
 import android.widget.EditText;
 
-import com.example.cmput301f17t19.echoes.Activities.MainMenuActivity;
 import com.example.cmput301f17t19.echoes.Activities.SignUpActivity;
+import com.example.cmput301f17t19.echoes.Activities.ToDoActivity;
 import com.example.cmput301f17t19.echoes.Controllers.OfflineStorageController;
 import com.example.cmput301f17t19.echoes.Models.UserProfile;
 import com.robotium.solo.Solo;
@@ -54,7 +54,7 @@ public class SignUpActivityTest extends ActivityInstrumentationTestCase2<SignUpA
         solo.clickOnView(solo.getView(R.id.signup));
 
         //load activity
-        solo.waitForActivity(MainMenuActivity.class, 2000);
+        solo.waitForActivity(ToDoActivity.class, 2000);
         //check if it is in the correct main menu activity
 //        solo.assertCurrentActivity("click SignUp button failed", MainMenuActivity.class);
     }

@@ -38,7 +38,6 @@
         <activity android:name=".Activities.MyHabitsActivity" />
         <activity android:name=".Activities.SignUpActivity" />
         <activity android:name=".Activities.UserProfileActivity" />
-        <activity android:name=".Activities.MainMenuActivity" />
         <activity android:name=".Activities.ToDoActivity" />
         <activity android:name=".Activities.HabitDetailActivity" />
         <activity android:name=".Activities.HabitEventDetailActivity" />

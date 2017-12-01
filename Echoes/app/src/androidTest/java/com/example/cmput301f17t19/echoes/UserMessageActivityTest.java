@@ -9,7 +9,7 @@ import android.test.ActivityInstrumentationTestCase2;
 import android.widget.EditText;
 
 import com.example.cmput301f17t19.echoes.Activities.LoginActivity;
-import com.example.cmput301f17t19.echoes.Activities.MainMenuActivity;
+import com.example.cmput301f17t19.echoes.Activities.ToDoActivity;
 import com.example.cmput301f17t19.echoes.Activities.UserMessageActivity;
 import com.example.cmput301f17t19.echoes.Controllers.OfflineStorageController;
 import com.example.cmput301f17t19.echoes.Models.UserProfile;
@@ -46,7 +46,7 @@ public class UserMessageActivityTest extends ActivityInstrumentationTestCase2 {
         //enter the usrname "dummy3"
         solo.enterText((EditText) solo.getView(R.id.username),"dummy3");
         solo.clickOnView(solo.getView(R.id.username_sign_in_button));
-        solo.assertCurrentActivity("Wrong Activity", MainMenuActivity.class);
+        solo.assertCurrentActivity("Wrong Activity", ToDoActivity.class);
     }
 
     public void testUserMessageActivity() {

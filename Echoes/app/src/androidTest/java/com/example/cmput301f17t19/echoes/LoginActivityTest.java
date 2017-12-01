@@ -6,8 +6,8 @@ import android.util.Log;
 import android.widget.EditText;
 
 import com.example.cmput301f17t19.echoes.Activities.LoginActivity;
-import com.example.cmput301f17t19.echoes.Activities.MainMenuActivity;
 import com.example.cmput301f17t19.echoes.Activities.SignUpActivity;
+import com.example.cmput301f17t19.echoes.Activities.ToDoActivity;
 import com.example.cmput301f17t19.echoes.Controllers.OfflineStorageController;
 import com.example.cmput301f17t19.echoes.Models.UserProfile;
 import com.robotium.solo.Solo;
@@ -57,9 +57,9 @@ public class LoginActivityTest extends ActivityInstrumentationTestCase2<LoginAct
         solo.clickOnView(solo.getView(R.id.username_sign_in_button));
 
         //load activity
-        solo.waitForActivity(MainMenuActivity.class, 2000);
+        solo.waitForActivity(ToDoActivity.class, 2000);
         //check if successfully log in
-        solo.assertCurrentActivity("Wrong Activity", MainMenuActivity.class);
+        solo.assertCurrentActivity("Wrong Activity", ToDoActivity.class);
 
 
     }

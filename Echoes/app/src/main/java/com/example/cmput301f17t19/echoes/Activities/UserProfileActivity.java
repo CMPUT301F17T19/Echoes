@@ -69,6 +69,9 @@ public class UserProfileActivity extends AppCompatActivity {
     // Send request button
     private Button request_Button;
 
+    // Logout button
+    private Button logout_Button;
+
     private Activity mActivity;
     private Context mContext;
 
@@ -114,6 +117,8 @@ public class UserProfileActivity extends AppCompatActivity {
 
         request_Button = (Button) findViewById(R.id.Request_Button);
 
+        logout_Button = (Button) findViewById(R.id.logout_Button);
+
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
             if (bundle.getString(USERPROFILE_TAG) != null) {
@@ -124,6 +129,20 @@ public class UserProfileActivity extends AppCompatActivity {
                 offlineStorageController = new OfflineStorageController(this, profile_username);
 
                 userProfile = offlineStorageController.readFromFile();
+
+                // Show logout button
+                logout_Button.setVisibility(View.VISIBLE);
+
+                logout_Button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        // Logout
+                        Intent intent = new Intent(mContext, LoginActivity.class);
+                        startActivity(intent);
+
+                        finish();
+                    }
+                });
 
             } else if (bundle.getString(SEARCHED_USERPROFILE_TAG) != null) {
                 // Get the searched profile username passed from other activity
@@ -141,6 +160,9 @@ public class UserProfileActivity extends AppCompatActivity {
                 } catch (ExecutionException e) {
                     e.printStackTrace();
                 }
+
+                // Hide logout button
+                logout_Button.setVisibility(View.GONE);
 
             }
 

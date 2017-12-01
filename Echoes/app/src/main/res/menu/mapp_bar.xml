@@ -20,11 +20,4 @@
         android:title="@string/userprofile_title"
         app:showAsAction="ifRoom"/>
 
-    <!--Menu View-->
-    <item
-        android:id="@+id/action_menu"
-        android:icon="@drawable/menu_ic"
-        android:title="@string/main_menu"
-        app:showAsAction="ifRoom"/>
-
 </menu>

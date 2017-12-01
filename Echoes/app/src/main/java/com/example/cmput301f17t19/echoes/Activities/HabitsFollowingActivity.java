@@ -200,6 +200,8 @@ public class HabitsFollowingActivity extends AppCompatActivity {
 
                                 startActivity(map_intent);
 
+                                finish();
+
                             } catch (InterruptedException e) {
                                 Toast.makeText(HabitsFollowingActivity.this, "You can only see habit events of your followings and yours on Map online.", Toast.LENGTH_LONG).show();
                                 e.printStackTrace();
@@ -409,17 +411,6 @@ public class HabitsFollowingActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-
-            case R.id.action_menu:
-                // Go back to main menu
-                // Pass the username of the login user to the main menu
-                Intent mainMenu_intent = new Intent(this, MainMenuActivity.class);
-                mainMenu_intent.putExtra(LoginActivity.LOGIN_USERNAME, login_UserName);
-                startActivity(mainMenu_intent);
-
-                finish();
-
-                break;
 
             case R.id.action_UserProfile:
                 // Go to User Profile

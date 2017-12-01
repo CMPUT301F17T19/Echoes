@@ -3,8 +3,9 @@
     <item name="masked" type="id" />
     <string name="app_name">Echoes</string>
 
+    <string name="logout">Logout</string>
+
     <string name="habithistory_seach">Please enter words to Search</string>
-    <string name="main_menu">Main Menu</string>
 
     <string name="my_habits">My Habits</string>
     <string name="habit_add_button">Add Habit</string>

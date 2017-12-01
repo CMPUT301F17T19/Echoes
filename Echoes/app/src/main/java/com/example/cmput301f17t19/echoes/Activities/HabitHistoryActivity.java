@@ -36,18 +36,19 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.cmput301f17t19.echoes.Adapters.HabitEventOverviewAdapter;
 import com.example.cmput301f17t19.echoes.Controllers.ElasticSearchController;
 import com.example.cmput301f17t19.echoes.Controllers.FollowingSharingController;
+import com.example.cmput301f17t19.echoes.Controllers.OfflineStorageController;
 import com.example.cmput301f17t19.echoes.Models.Following;
 import com.example.cmput301f17t19.echoes.Models.Habit;
 import com.example.cmput301f17t19.echoes.Models.HabitEvent;
 import com.example.cmput301f17t19.echoes.Models.HabitEventList;
-import com.example.cmput301f17t19.echoes.Adapters.HabitEventOverviewAdapter;
 import com.example.cmput301f17t19.echoes.Models.HabitStatus;
-import com.example.cmput301f17t19.echoes.Controllers.OfflineStorageController;
 import com.example.cmput301f17t19.echoes.Models.UserFollowingList;
-import com.example.cmput301f17t19.echoes.R;
 import com.example.cmput301f17t19.echoes.Models.UserProfile;
+import com.example.cmput301f17t19.echoes.Models.UserReceivedRequestsList;
+import com.example.cmput301f17t19.echoes.R;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -212,6 +213,8 @@ public class HabitHistoryActivity extends AppCompatActivity {
                                 map_intent.putParcelableArrayListExtra(MapsActivity.HABIT_EVENT_SHOW_LOCATION_TAG, shownHabitEvents_Map);
 
                                 startActivity(map_intent);
+
+                                finish();
 
                             } catch (InterruptedException e) {
                                 Toast.makeText(HabitHistoryActivity.this, "You can only see habit events of your followings and yours on Map online.", Toast.LENGTH_LONG).show();
@@ -457,7 +460,30 @@ public class HabitHistoryActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.habithistory_app_bar, menu);
+
+        // Check if the user received following request
+        ElasticSearchController.GetUserReceivedRequestsTask getUserReceivedRequestsTask = new ElasticSearchController.GetUserReceivedRequestsTask();
+        getUserReceivedRequestsTask.execute(login_Username);
+
+        try {
+            UserReceivedRequestsList userReceivedRequestsList = getUserReceivedRequestsTask.get();
+
+            if (userReceivedRequestsList != null) {
+                if (userReceivedRequestsList.getReceivedRequests().size() != 0) {
+                    inflater.inflate(R.menu.nonempty_message_appbar, menu);
+                } else {
+                    inflater.inflate(R.menu.mapp_bar, menu);
+                }
+
+            } else {
+                inflater.inflate(R.menu.mapp_bar, menu);
+            }
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
 
         return super.onCreateOptionsMenu(menu);
     }
@@ -466,17 +492,24 @@ public class HabitHistoryActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
 
-            case R.id.action_menu:
+            case R.id.action_UserProfile:
+                // Go to User Profile
+                // Pass the username of the login user to the user profile
+                Intent userProfile_intent = new Intent(this, UserProfileActivity.class);
+                userProfile_intent.putExtra(UserProfileActivity.USERPROFILE_TAG, login_Username);
+                startActivity(userProfile_intent);
 
-                // Go back to main menu
-                Intent mainMenu_intent = new Intent(this, MainMenuActivity.class);
-                mainMenu_intent.putExtra(LoginActivity.LOGIN_USERNAME, login_Username);
-                startActivity(mainMenu_intent);
+                break;
 
-                finish();
+            case R.id.action_UserMessage:
+                // Pass the username of the login user to the user message activity
+                Intent userMessage_intent = new Intent(this, UserMessageActivity.class);
+                userMessage_intent.putExtra(LoginActivity.LOGIN_USERNAME, login_Username);
+                startActivity(userMessage_intent);
 
                 break;
         }
+
         return super.onOptionsItemSelected(item);
     }
 
