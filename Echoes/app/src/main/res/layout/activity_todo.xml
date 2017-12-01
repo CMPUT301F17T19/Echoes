@@ -21,9 +21,10 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="190dp"
+        android:layout_height="210dp"
         android:layout_below="@+id/my_toolbar"
         android:background="@color/redPink"
+        android:layout_marginBottom="20dp"
         android:id="@+id/userview"
         />
 
@@ -44,8 +45,8 @@
     <de.hdodenhof.circleimageview.CircleImageView
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/profile_photo"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
         android:src="@drawable/user_profile_icon"
         app:civ_border_width="2dp"
         android:layout_margin="8dp"
@@ -60,9 +61,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/profile_photo"
         android:text="February"
+        android:layout_marginBottom="20dp"
         android:textStyle="bold"
         android:textColor="@color/white"
-        android:textSize="20dp"
+        android:textSize="25dp"
         android:layout_centerHorizontal="true"
         />
 
@@ -109,7 +111,7 @@
 
         <LinearLayout
             android:orientation="vertical"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="16dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/tue"
@@ -139,11 +141,11 @@
 
         <LinearLayout
             android:orientation="vertical"
-            android:layout_marginLeft="10dp"
+            android:layout_marginRight="16dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/wed"
-            android:layout_toRightOf="@+id/tue"
+            android:layout_toLeftOf="@+id/thurs"
             >
 
             <TextView
@@ -200,11 +202,11 @@
 
         <LinearLayout
             android:orientation="vertical"
-            android:layout_marginRight="10dp"
+            android:layout_marginLeft="16dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/fri"
-            android:layout_toLeftOf="@+id/sat"
+            android:layout_toRightOf="@+id/thurs"
             >
 
             <TextView
@@ -230,7 +232,7 @@
 
         <LinearLayout
             android:orientation="vertical"
-            android:layout_marginRight="10dp"
+            android:layout_marginRight="16dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/sat"
