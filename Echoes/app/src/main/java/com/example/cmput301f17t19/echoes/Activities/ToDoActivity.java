@@ -6,6 +6,7 @@ package com.example.cmput301f17t19.echoes.Activities;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
@@ -71,6 +72,8 @@ public class ToDoActivity extends AppCompatActivity {
 
     private com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx bottomNavigationViewEx;
 
+    private de.hdodenhof.circleimageview.CircleImageView profile_ImageButton;
+
     private TextView mon_day;
     private TextView tue_day;
     private TextView wed_day;
@@ -79,9 +82,13 @@ public class ToDoActivity extends AppCompatActivity {
     private TextView sat_day;
     private TextView sun_day;
 
+    private TextView user;
+
     private TextView year;
 
     private TextView month;
+
+    private TextView greed;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -265,6 +272,20 @@ public class ToDoActivity extends AppCompatActivity {
         });
 
 
+        profile_ImageButton = findViewById(R.id.profile_photo);
+
+        profile_ImageButton.setImageBitmap(BitmapFactory.decodeByteArray(login_UserProfile.getProfilePicture(), 0, login_UserProfile.getProfilePicture().length));
+
+
+
+
+    user = findViewById(R.id.user);
+
+        user.setText(login_userName);
+
+
+        greed = findViewById(R.id.greed);
+
         mon_day = findViewById(R.id.mon_day);
         tue_day = findViewById(R.id.tue_day);
         wed_day = findViewById(R.id.wed_day);
@@ -278,6 +299,32 @@ public class ToDoActivity extends AppCompatActivity {
         month = findViewById(R.id.month);
 
         Calendar c = Calendar.getInstance(); // get current day
+
+        int currentHour = c.get(Calendar.HOUR_OF_DAY);
+
+        if (currentHour<12 && currentHour>=5){
+            greed.setText("Good Morning!");
+        }
+
+        if (currentHour == 12){
+            greed.setText("Good Noon!");
+        }
+
+        if (currentHour>12 && currentHour<18){
+            greed.setText("Good Afternoon!");
+        }
+
+        if (currentHour>=18 && currentHour<=23){
+            greed.setText("Good Evening!");
+        }
+
+        if (currentHour>=0 && currentHour<5){
+            greed.setText("Good Night!");
+        }
+
+
+
+
         int dayOfWeek = c.get(Calendar.DAY_OF_WEEK);
         int dayOfMonth = c.get(Calendar.DAY_OF_MONTH);
         int monthOfYear = c.get(Calendar.MONTH);
