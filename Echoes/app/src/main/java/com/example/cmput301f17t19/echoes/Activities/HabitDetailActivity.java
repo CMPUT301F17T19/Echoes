@@ -249,6 +249,8 @@ public class HabitDetailActivity extends AppCompatActivity {
                     // Add this new Habit to the HabitList of the login User
                     HabitList mHabitList = MyHabitsActivity.getMyHabitList();
                     mHabitList.add(new_Habit);
+                    // sort
+                    mHabitList.sortList();
 
                     // Update Data in My Habits Activity
                     MyHabitsActivity.updateHabitList(mHabitList.getHabits());
@@ -285,6 +287,7 @@ public class HabitDetailActivity extends AppCompatActivity {
                     // Replace this new Habit to the Habit at the selected position in HabitList
                     HabitList mHabitList = MyHabitsActivity.getMyHabitList();
                     mHabitList.getHabits().set(selected_pos, new_Habit);
+                    mHabitList.sortList();
 
                     // Update Data in My Habits Activity
                     MyHabitsActivity.updateHabitList(mHabitList.getHabits());

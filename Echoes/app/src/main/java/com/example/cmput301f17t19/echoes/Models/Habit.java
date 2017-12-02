@@ -4,6 +4,8 @@
 
 package com.example.cmput301f17t19.echoes.Models;
 
+import android.support.annotation.NonNull;
+
 import java.util.Date;
 
 /**
@@ -13,7 +15,7 @@ import java.util.Date;
  * @version 1.0
  * @since 1.0
  */
-public class Habit {
+public class Habit implements Comparable<Habit> {
 
     private String name;
     private String reason;
@@ -55,11 +57,18 @@ public class Habit {
         this.doneToday = Boolean.FALSE;
     }
 
-    /*
-    public Boolean needToDo() {
-        return this.plan.scheduledForToday();
+    /**
+     * Compare the date of this Habit to the input habit object
+     *
+     * @param habit: Habit
+     * @return positive integer: if the date of this Habit is after the date of input
+     *         0: if the date of this Habit is equal to the date of input
+     *         negative integer: if the date of this Habit is before the date of input
+     */
+    @Override
+    public int compareTo(@NonNull Habit habit) {
+        return this.startDate.compareTo(habit.getStartDate());
     }
-    */
 
     /**
      * Set the name of the Habit
