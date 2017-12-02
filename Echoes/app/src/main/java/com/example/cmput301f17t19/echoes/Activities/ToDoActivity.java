@@ -280,11 +280,6 @@ public class ToDoActivity extends AppCompatActivity {
 
         profile_ImageButton = findViewById(R.id.profile_photo);
 
-        profile_ImageButton.setImageBitmap(BitmapFactory.decodeByteArray(login_UserProfile.getProfilePicture(), 0, login_UserProfile.getProfilePicture().length));
-
-
-
-
     user = findViewById(R.id.user);
 
         user.setText(login_userName);
@@ -886,6 +881,15 @@ public class ToDoActivity extends AppCompatActivity {
 
 
 
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        setLogin_UserProfile(login_userName);
+
+        profile_ImageButton.setImageBitmap(BitmapFactory.decodeByteArray(login_UserProfile.getProfilePicture(), 0, login_UserProfile.getProfilePicture().length));
     }
 
 
