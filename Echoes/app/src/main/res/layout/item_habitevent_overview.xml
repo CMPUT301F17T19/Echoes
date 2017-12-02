@@ -20,13 +20,17 @@
 
         <TextView
             android:layout_width="wrap_content"
+            android:textColor="@color/black"
+            android:textStyle="bold"
             android:layout_height="wrap_content"
             android:text="@string/habit_title"
             android:layout_marginEnd="8dp"/>
 
         <TextView
+            android:textStyle="bold"
             android:id="@+id/habitevent_type_textView"
             android:layout_width="match_parent"
+            android:textColor="@color/black"
             android:layout_height="wrap_content"/>
 
     </LinearLayout>
@@ -45,11 +49,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/black"
             android:text="@string/comment"
             android:layout_marginRight="8dp"/>
 
         <TextView
             android:id="@+id/habitevent_comment"
+            android:textColor="@color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -62,12 +68,14 @@
 
         <TextView
             android:layout_width="wrap_content"
+            android:textColor="@color/black"
             android:layout_height="wrap_content"
             android:text="@string/date"
             android:layout_marginRight="8dp"/>
 
         <TextView
             android:id="@+id/habitevent_date"
+            android:textColor="@color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
