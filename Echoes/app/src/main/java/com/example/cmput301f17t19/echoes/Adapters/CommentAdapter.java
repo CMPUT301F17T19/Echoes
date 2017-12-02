@@ -4,6 +4,7 @@
 
 package com.example.cmput301f17t19.echoes.Adapters;
 
+import android.graphics.BitmapFactory;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,8 +12,12 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.cmput301f17t19.echoes.Activities.CommentsActivity;
+import com.example.cmput301f17t19.echoes.Controllers.ElasticSearchController;
 import com.example.cmput301f17t19.echoes.Models.UserHabitKudosComments;
+import com.example.cmput301f17t19.echoes.Models.UserProfile;
 import com.example.cmput301f17t19.echoes.R;
+
+import java.util.concurrent.ExecutionException;
 
 /**
  * Created by shanlu on 2017-11-25.
@@ -69,12 +74,14 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentV
     class CommentViewHolder extends RecyclerView.ViewHolder {
         private TextView commentUsername;
         private TextView commentContent;
+        private de.hdodenhof.circleimageview.CircleImageView commentProfile;
 
         public CommentViewHolder(View itemView) {
             super(itemView);
 
             commentUsername = (TextView) itemView.findViewById(R.id.comment_username);
             commentContent = (TextView) itemView.findViewById(R.id.comment_content);
+            commentProfile = (de.hdodenhof.circleimageview.CircleImageView) itemView.findViewById(R.id.profile_photo_3);
         }
 
         /**
@@ -88,6 +95,23 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentV
             if (userHabitKudosComments != null) {
                 commentUsername.setText(userHabitKudosComments.getComments_usernames().get(position));
                 commentContent.setText(userHabitKudosComments.getComments_contents().get(position));
+
+                // Get the profile of username
+                ElasticSearchController.GetUserProfileTask getUserProfileTask = new ElasticSearchController.GetUserProfileTask();
+                getUserProfileTask.execute(userHabitKudosComments.getComments_usernames().get(position));
+
+                try {
+                    UserProfile userProfile = getUserProfileTask.get();
+
+                    if (userProfile != null) {
+                        commentProfile.setImageBitmap(BitmapFactory.decodeByteArray(userProfile.getProfilePicture(), 0, userProfile.getProfilePicture().length));
+                    }
+
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } catch (ExecutionException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }
