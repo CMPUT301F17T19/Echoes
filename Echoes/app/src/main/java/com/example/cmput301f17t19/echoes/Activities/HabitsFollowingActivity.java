@@ -19,29 +19,31 @@ import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.cmput301f17t19.echoes.Adapters.HabitStatusAdapter;
 import com.example.cmput301f17t19.echoes.Controllers.ElasticSearchController;
+import com.example.cmput301f17t19.echoes.Controllers.FollowingSharingController;
+import com.example.cmput301f17t19.echoes.Controllers.OfflineStorageController;
 import com.example.cmput301f17t19.echoes.Models.Following;
 import com.example.cmput301f17t19.echoes.Models.FollowingHabitsStatus;
-import com.example.cmput301f17t19.echoes.Controllers.FollowingSharingController;
 import com.example.cmput301f17t19.echoes.Models.HabitEvent;
-import com.example.cmput301f17t19.echoes.Adapters.HabitStatusAdapter;
-import com.example.cmput301f17t19.echoes.Controllers.OfflineStorageController;
-import com.example.cmput301f17t19.echoes.R;
 import com.example.cmput301f17t19.echoes.Models.UserFollowingList;
 import com.example.cmput301f17t19.echoes.Models.UserProfile;
 import com.example.cmput301f17t19.echoes.Models.UserReceivedRequestsList;
+import com.example.cmput301f17t19.echoes.R;
 
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
@@ -69,7 +71,6 @@ public class HabitsFollowingActivity extends AppCompatActivity {
     private static ArrayList<FollowingHabitsStatus> myFollowingHabitsStatuses;
 
     private EditText searchUser_EditText;
-    private Button searchUser_Button;
 
     private Button recentHabitEventsMap_Button;
 
@@ -261,20 +262,29 @@ public class HabitsFollowingActivity extends AppCompatActivity {
 
 
         searchUser_EditText = (EditText) findViewById(R.id.search_user_edittext);
-        searchUser_Button = (Button) findViewById(R.id.search_user_button);
 
-        searchUser_Button.setOnClickListener(new View.OnClickListener() {
+        searchUser_EditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
-            public void onClick(View view) {
-                // Open the intent to show a list of users with username contains the entered word (if not empty)
-                String searchedWord = searchUser_EditText.getText().toString().trim();
-                if (searchedWord.length() != 0) {
-                    Intent searchUser_Intent = new Intent(mActivity, SearchedUserActivity.class);
-                    // Send the searched word to the activity
-                    searchUser_Intent.putExtra(SearchedUserActivity.SEARCHED_USER, searchedWord);
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                boolean handled = false;
+                if (actionId == EditorInfo.IME_ACTION_SEARCH) {
 
-                    startActivity(searchUser_Intent);
+                    // Get the searched word
+                    String searchedWord = searchUser_EditText.getText().toString().trim();
+
+                    if (searchedWord.length() != 0) {
+                        Intent searchUser_Intent = new Intent(mActivity, SearchedUserActivity.class);
+                        // Send the searched word to the activity
+                        searchUser_Intent.putExtra(SearchedUserActivity.SEARCHED_USER, searchedWord);
+
+                        startActivity(searchUser_Intent);
+                    }
+
+                    HabitHistoryActivity.hideKeyboard(HabitsFollowingActivity.this);
+
+                    handled = true;
                 }
+                return handled;
             }
         });
 

@@ -40,24 +40,19 @@
             <EditText
                 android:id="@+id/search_user_edittext"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="35dp"
                 android:layout_weight="6"
-                android:textColorHint="@color/black"
+                android:layout_margin="8dp"
+                android:drawableLeft="@drawable/ic_search"
                 android:inputType="text"
-                android:hint="@string/search_user_hint"
-                android:textSize="16sp"
+                android:hint="Search"
+                android:drawablePadding="5dp"
+                android:textColorHint="@color/black"
+                android:imeOptions="actionSearch"
+                android:textSize="17sp"
                 android:maxLines="1"
-                android:layout_marginRight="8dp"
-                android:background="@color/white"/>
-
-            <Button
-                android:id="@+id/search_user_button"
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:layout_weight="1"
-                android:textColor="@color/white"
-                android:background="@drawable/btn"
-                android:text="@string/search"/>
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/btn4"/>
 
         </LinearLayout>
 
