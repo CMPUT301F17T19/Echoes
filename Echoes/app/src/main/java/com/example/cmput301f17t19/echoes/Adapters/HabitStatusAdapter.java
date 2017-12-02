@@ -12,8 +12,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -115,7 +115,7 @@ public class HabitStatusAdapter extends RecyclerView.Adapter<HabitStatusAdapter.
         private TextView habitEventCommentTextView;
         private TextView habitEventDateTextView;
 
-        private LinearLayout habitEventLayout;
+        private RelativeLayout habitEventLayout;
         private TextView noRecentHabitEvent_TextView;
 
         // Button for viewing habit comments
@@ -156,7 +156,7 @@ public class HabitStatusAdapter extends RecyclerView.Adapter<HabitStatusAdapter.
             habitEventCommentTextView = (TextView) itemView.findViewById(R.id.habitevent_comment);
             habitEventDateTextView = (TextView) itemView.findViewById(R.id.habitevent_date);
 
-            habitEventLayout = (LinearLayout) itemView.findViewById(R.id.followingHabitMostRecentEvent_layout);
+            habitEventLayout = (RelativeLayout) itemView.findViewById(R.id.followingHabitMostRecentEvent_layout);
             noRecentHabitEvent_TextView = (TextView) itemView.findViewById(R.id.no_mostRecentEvent);
 
             viewComments_Button = (TextView) itemView.findViewById(R.id.view_Comments_Button);
