@@ -4,6 +4,7 @@
 
 package com.example.cmput301f17t19.echoes.Activities;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -24,6 +25,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.support.v7.widget.helper.ItemTouchHelper;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -32,11 +34,14 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.cmput301f17t19.echoes.Adapters.HabitEventOverviewAdapter;
@@ -88,7 +93,7 @@ public class HabitHistoryActivity extends AppCompatActivity {
     // Search editText
     private static EditText search_EditText;
     // Search button
-    private Button search_Button;
+    //private Button search_Button;
 
     private com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx bottomNavigationViewEx;
 
@@ -305,7 +310,7 @@ public class HabitHistoryActivity extends AppCompatActivity {
         // Search Edit Text
         search_EditText = (EditText) findViewById(R.id.search_comment_edittext);
         // Search Button
-        search_Button = (Button) findViewById(R.id.search_comment_button);
+        //search_Button = (Button) findViewById(R.id.search_comment_button);
 
         // Set up recycler view for habit event overview in the Habit History
         habitEventsRecyclerView = (RecyclerView) findViewById(R.id.habitevents_recyclerView);
@@ -388,7 +393,7 @@ public class HabitHistoryActivity extends AppCompatActivity {
         });
 
 
-
+        hideKeyboard(HabitHistoryActivity.this);
 
 
     }
@@ -417,6 +422,9 @@ public class HabitHistoryActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+
+
+
 
         // the User Profile of the login user
         login_userProfile = OfflineStorageController.getLogin_UserProfile(this, login_Username);
@@ -466,6 +474,8 @@ public class HabitHistoryActivity extends AppCompatActivity {
             }
         });
 
+
+        /*
         search_Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -477,6 +487,30 @@ public class HabitHistoryActivity extends AppCompatActivity {
                 habitEventsRecyclerView.getAdapter().notifyDataSetChanged();
             }
         });
+         */
+
+        search_EditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                boolean handled = false;
+                if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+
+                    // Get the searched word
+                    String enteredWord = search_EditText.getText().toString().trim();
+                    // Filter the Recycler View
+                    mTypeHabitEventList.setHabitEvents((ArrayList<HabitEvent>) filterHabitEvent().getHabitEvents().clone());
+
+                    habitEventsRecyclerView.getAdapter().notifyDataSetChanged();
+
+                    hideKeyboard(HabitHistoryActivity.this);
+
+                    handled = true;
+                }
+                return handled;
+            }
+        });
+
+
 
         // Implement swipe to left to delete for recycler view
         ItemTouchHelper.SimpleCallback simpleItemTouchCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
@@ -534,6 +568,9 @@ public class HabitHistoryActivity extends AppCompatActivity {
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleItemTouchCallback);
         // Attach item touch helper to the recycler view
         itemTouchHelper.attachToRecyclerView(habitEventsRecyclerView);
+
+        hideKeyboard(HabitHistoryActivity.this);
+
     }
 
     // Reference: https://developer.android.com/guide/topics/search/search-dialog.html
@@ -729,4 +766,19 @@ public class HabitHistoryActivity extends AppCompatActivity {
 
         return filteredHabitEventList;
     }
+
+
+    public void hideKeyboard(Activity activity) {
+        InputMethodManager imm = (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
+        //Find the currently focused view, so we can grab the correct window token from it.
+        View view = activity.getCurrentFocus();
+        //If no view currently has focus, create a new one, just so we can grab a window token from it
+        if (view == null) {
+            view = new View(activity);
+        }
+        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+    }
+
+
+
 }

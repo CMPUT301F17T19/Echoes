@@ -23,34 +23,29 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         android:layout_below="@+id/my_toolbar"
         android:id="@+id/second"
-        android:layout_margin="8dp">
+        >
 
         <EditText
             android:id="@+id/search_comment_edittext"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="35dp"
             android:layout_weight="6"
-            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:drawableLeft="@drawable/ic_search"
             android:inputType="text"
+            android:hint="Search"
+            android:drawablePadding="5dp"
             android:textColorHint="@color/black"
-            android:hint="@string/search_hint"
+            android:imeOptions="actionSearch"
             android:textSize="17sp"
             android:maxLines="1"
             android:layout_marginEnd="8dp"
-            android:background="@color/white"/>
+            android:background="@drawable/btn4"/>
 
-        <Button
-            android:id="@+id/search_comment_button"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:textColor="@color/white"
-            android:background="@drawable/btn"
-            android:text="@string/search"/>
+
 
     </LinearLayout>
 
@@ -59,7 +54,7 @@
         android:layout_gravity="start"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="30dp"
 
         android:layout_below="@+id/second"
         android:layout_weight="1"
@@ -69,7 +64,7 @@
             android:id="@+id/habit_events_type_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
             android:text="@string/habit_events_type"
             android:textColor="@color/black"
 
@@ -80,7 +75,7 @@
         <Spinner
             android:id="@+id/habithistory_filter"
             android:layout_width="match_parent"
-            android:layout_gravity="center"
+
             android:layout_height="wrap_content"
             android:entries="@array/habithistory_filter_list"
             android:spinnerMode="dropdown"
