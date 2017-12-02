@@ -3,7 +3,7 @@
   ~ Copyright (c) Team cmput301f17t19, CMPUT301, University of Alberta - All Rights Reserved. You may use, distribute, or modify this code under terms and conditions of the Code of Students Behaviour at University of Alberta
   -->
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/profile_layout"
@@ -14,6 +14,7 @@
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/my_toolbar"
+        android:layout_alignParentTop="true"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:background="@color/redPink"
@@ -21,22 +22,32 @@
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Dark" />
 
+    <TextView
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="35dp"
+        android:layout_height="190dp"
+        android:layout_width="match_parent"
+        android:background="@color/redPink"
+        />
+
+
     <LinearLayout
         android:id="@+id/profile_info_layout"
         android:layout_width="match_parent"
+        android:layout_below="@+id/my_toolbar"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_margin="8dp">
+       >
 
 
         <de.hdodenhof.circleimageview.CircleImageView
             xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/profile_photo"
-            android:layout_width="110dp"
-            android:layout_height="110dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:src="@drawable/user_profile_icon"
             app:civ_border_width="2dp"
-            android:layout_margin="8dp"
+            android:layout_marginTop="110dp"
             android:layout_gravity="center"
             app:civ_border_color="#FF000000"/>
 
@@ -46,13 +57,16 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_margin="8dp"
-            android:textSize="24sp"
+            android:textSize="30sp"
+            android:textStyle="bold"
             android:textColor="@color/black"
             android:text="@string/Username"/>
 
         <TextView
             android:id="@+id/profile_comment"
             android:layout_width="match_parent"
+            android:gravity="center"
+            android:textStyle="italic"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="16dp"
@@ -61,7 +75,7 @@
             android:layout_marginLeft="64dp"
             android:text="@string/comment"
             android:textColor="@color/black"
-            android:textSize="16sp"/>
+            android:textSize="25dp"/>
 
         <LinearLayout
             android:id="@+id/email_layout"
@@ -121,30 +135,36 @@
 
     <LinearLayout
         android:id="@+id/follow_layout"
+        android:layout_below="@+id/profile_info_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_margin="16dp"
+        android:layout_centerHorizontal="true"
         android:orientation="horizontal">
 
         <LinearLayout
             android:id="@+id/followers_layout"
             android:layout_width="wrap_content"
+            android:layout_marginTop="15dp"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
+            android:layout_marginRight="5dp"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/follower_num"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="3dp"
+                android:textStyle="bold"
+                android:textSize="20dp"
                 android:textColor="@color/black" />
 
             <TextView
                 android:id="@+id/followers_title"
+                android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="20dp"
                 android:layout_margin="4dp"
                 android:text="@string/follower"
                 android:textColor="@color/black" />
@@ -153,23 +173,29 @@
 
         <LinearLayout
             android:id="@+id/following_layout"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/following_num"
                 android:layout_width="wrap_content"
+                android:layout_marginBottom="3dp"
+                android:textStyle="bold"
+                android:textSize="20dp"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
-                android:layout_margin="4dp" />
+                android:layout_gravity="center" />
 
             <TextView
                 android:id="@+id/following_title"
                 android:layout_width="wrap_content"
+                android:textSize="20dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
+                android:textStyle="bold"
                 android:text="@string/following"
                 android:textColor="@color/black" />
 
@@ -180,29 +206,36 @@
 
     <Button
         android:id="@+id/logout_Button"
-        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:layout_alignParentBottom="true"
         android:textColor="@color/white"
-        android:background="@drawable/btn"
-        android:layout_margin="8dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/btn2"
         android:text="@string/logout"/>
 
     <Button
         android:id="@+id/Request_Button"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
         android:textColor="@color/white"
-        android:background="@drawable/btn"
-        android:layout_margin="8dp"/>
+        android:background="@drawable/btn2"
+        android:layout_margin="20dp"/>
 
     <TextView
         android:id="@+id/userProfile_newtorkError"
         android:layout_width="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        android:textStyle="bold"
+       android:layout_centerHorizontal="true"
         android:text="@string/userProfile_networkError"
         android:layout_margin="16dp"/>
 
-</LinearLayout>
+</RelativeLayout>
