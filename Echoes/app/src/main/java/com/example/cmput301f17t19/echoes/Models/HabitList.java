@@ -5,6 +5,7 @@
 package com.example.cmput301f17t19.echoes.Models;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * Represents a List of User's habits
@@ -110,5 +111,13 @@ public class HabitList {
     public void setHabits(ArrayList<Habit> habits) {
         this.habits = habits;
     }
+
+    /**
+     * Sort the Habit objects in the list in reverse chronological order (most recent coming first).
+     */
+    public void sortList(){
+        Collections.sort(habits, Collections.<Habit>reverseOrder());
+    }
+
 
 }
