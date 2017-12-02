@@ -18,6 +18,7 @@
             android:layout_height="wrap_content"
             android:text="@string/habit_title"
             android:textSize="18dp"
+            android:textStyle="bold"
             android:textColor="@color/black"
             android:layout_marginEnd="8dp"/>
 

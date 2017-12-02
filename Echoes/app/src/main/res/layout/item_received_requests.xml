@@ -24,6 +24,7 @@
         <TextView
             android:id="@+id/request_username"
             android:layout_width="wrap_content"
+            android:textStyle="bold"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:textColor="@color/black"
@@ -42,7 +43,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
-                android:background="@drawable/btn"
+                android:background="@drawable/btn2"
                 android:text="@string/accept"/>
 
             <Button
@@ -50,7 +51,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
-                android:background="@drawable/btn"
+                android:background="@drawable/btn2"
                 android:layout_marginLeft="50dp"
                 android:text="@string/decline"/>
 
