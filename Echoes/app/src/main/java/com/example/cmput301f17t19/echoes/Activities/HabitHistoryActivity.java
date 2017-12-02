@@ -474,21 +474,6 @@ public class HabitHistoryActivity extends AppCompatActivity {
             }
         });
 
-
-        /*
-        search_Button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Get the searched word
-                String enteredWord = search_EditText.getText().toString().trim();
-                // Filter the Recycler View
-                mTypeHabitEventList.setHabitEvents((ArrayList<HabitEvent>) filterHabitEvent().getHabitEvents().clone());
-
-                habitEventsRecyclerView.getAdapter().notifyDataSetChanged();
-            }
-        });
-         */
-
         search_EditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
@@ -768,7 +753,7 @@ public class HabitHistoryActivity extends AppCompatActivity {
     }
 
 
-    public void hideKeyboard(Activity activity) {
+    public static void hideKeyboard(Activity activity) {
         InputMethodManager imm = (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
         //Find the currently focused view, so we can grab the correct window token from it.
         View view = activity.getCurrentFocus();
