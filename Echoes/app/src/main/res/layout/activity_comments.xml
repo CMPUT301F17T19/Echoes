@@ -3,7 +3,7 @@
   ~ Copyright (c) Team cmput301f17t19, CMPUT301, University of Alberta - All Rights Reserved. You may use, distribute, or modify this code under terms and conditions of the Code of Students Behaviour at University of Alberta
   -->
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
@@ -17,6 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:background="@color/redPink"
+        android:layout_alignParentTop="true"
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Dark" />
@@ -24,53 +25,66 @@
     <LinearLayout
         android:id="@+id/comments_Layout"
         android:orientation="vertical"
+        android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
+        android:layout_below="@+id/my_toolbar"
         android:layout_height="match_parent">
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/comments_recyclerView"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="4"
+            android:layout_weight="7"
             android:layout_margin="16dp"/>
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_margin="16dp"
-            android:background="@color/white">
+            android:background="@color/iron"
+            android:id="@+id/text_input"
+           >
 
             <TextView
                 android:id="@+id/sendingComment_Username"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginRight="16dp"/>
 
             <EditText
                 android:id="@+id/sendingComment_Content"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:background="@drawable/btn3"
+                android:textSize="20dp"
+                android:inputType="text"
+                android:imeOptions="actionDone"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/black"
+                android:layout_height="wrap_content"
                 android:maxLines="3"/>
 
         </LinearLayout>
 
-        <Button
-            android:id="@+id/sendingComment_Button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/send_comment"
-            android:layout_gravity="center_horizontal"/>
+
     </LinearLayout>
 
     <TextView
         android:id="@+id/comments_networkError"
         android:layout_width="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
         android:layout_height="wrap_content"
         android:text="@string/kudos_networkError"
         android:layout_gravity="center"
         android:textColor="@color/white"
         android:layout_margin="16dp"/>
 
-</LinearLayout>
+</RelativeLayout>

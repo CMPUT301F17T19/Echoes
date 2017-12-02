@@ -139,7 +139,6 @@
                     android:layout_height="wrap_content"
                     android:text=" Create One!"
                     android:textColor="@color/white"
-
                     android:textSize="18dp"
                     />
 

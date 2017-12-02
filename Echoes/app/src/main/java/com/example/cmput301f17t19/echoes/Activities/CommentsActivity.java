@@ -4,6 +4,7 @@
 
 package com.example.cmput301f17t19.echoes.Activities;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -13,10 +14,12 @@ import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -55,7 +58,7 @@ public class CommentsActivity extends AppCompatActivity {
 
     private de.hdodenhof.circleimageview.CircleImageView profile_ImageButton;
 
-    private Button sendComment_Button;
+    //private Button sendComment_Button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -134,8 +137,9 @@ public class CommentsActivity extends AppCompatActivity {
 
         loginUserComment_EditText = (EditText) findViewById(R.id.sendingComment_Content);
 
-        sendComment_Button = (Button) findViewById(R.id.sendingComment_Button);
+        //sendComment_Button = (Button) findViewById(R.id.sendingComment_Button);
 
+        /*
         sendComment_Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -164,10 +168,56 @@ public class CommentsActivity extends AppCompatActivity {
                 }
             }
         });
+        */
+
+        loginUserComment_EditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                boolean handled = false;
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
+
+
+                    // Send the comment if edit text not empty
+                    String comment = loginUserComment_EditText.getText().toString().trim();
+
+                    if (!comment.equals("")) {
+                        // Add the login username and the comment to mUserHabitKudosComments's comment_username list and comment_content list
+                        if (mUserHabitKudosComments != null) {
+                            mUserHabitKudosComments.addUsernameComments(login_UserName);
+                            mUserHabitKudosComments.addCommentContent(comment);
+
+                            // Update the list
+                            commentAdapter.notifyDataSetChanged();
+
+                            // Update online data
+                            ElasticSearchController.UpdateUserHabitKudosCommentsTask updateUserHabitKudosCommentsTask = new ElasticSearchController.UpdateUserHabitKudosCommentsTask();
+                            updateUserHabitKudosCommentsTask.execute(mUserHabitKudosComments);
+
+                            // Clear edit text
+                            loginUserComment_EditText.setText("");
+
+                        } else {
+                            Log.d("Test", "Send Comment Error");
+                        }
+                    }
+
+
+                    handled = true;
+                }
+                return handled;
+            }
+        });
+
+
+
+
+
     }
 
     protected void onStart() {
         super.onStart();
+
+        hideKeyboard(CommentsActivity.this);
 
         if (mUserHabitKudosComments != null) {
             commentAdapter = new CommentAdapter();
@@ -200,5 +250,20 @@ public class CommentsActivity extends AppCompatActivity {
         // Sync the offline file with online data storage
         ElasticSearchController.syncOnlineWithOffline(login_UserProfile);
     }
+
+
+
+    public void hideKeyboard(Activity activity) {
+        InputMethodManager imm = (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
+        //Find the currently focused view, so we can grab the correct window token from it.
+        View view = activity.getCurrentFocus();
+        //If no view currently has focus, create a new one, just so we can grab a window token from it
+        if (view == null) {
+            view = new View(activity);
+        }
+        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+    }
+
+
 
 }
