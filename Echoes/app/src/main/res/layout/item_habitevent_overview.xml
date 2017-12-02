@@ -4,30 +4,37 @@
   -->
 
 <!--View for each habit event in HabitEventsList. Displayed in Habit History-->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="@color/white"
-    android:layout_marginTop="8dp"
-    android:layout_marginBottom="8dp">
+    android:background="@color/white2"
+    android:layout_marginBottom="10dp"
+    android:layout_marginTop="10dp"
+  >
 
     <LinearLayout
+        android:layout_alignParentTop="true"
         android:orientation="horizontal"
         android:layout_width="match_parent"
+        android:id="@+id/top"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="20dp"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp">
+       >
 
         <TextView
             android:layout_width="wrap_content"
             android:textColor="@color/black"
             android:textStyle="bold"
+            android:textSize="18dp"
             android:layout_height="wrap_content"
             android:text="@string/habit_title"
             android:layout_marginEnd="8dp"/>
 
         <TextView
             android:textStyle="bold"
+            android:textSize="18dp"
             android:id="@+id/habitevent_type_textView"
             android:layout_width="match_parent"
             android:textColor="@color/black"
@@ -35,20 +42,33 @@
 
     </LinearLayout>
 
+
+
+
+
     <ImageView
+        android:layout_alignParentBottom="true"
         android:id="@+id/habitevent_photo"
-        android:layout_width="300dp"
-        android:layout_height="100dp"
-        android:layout_margin="8dp"/>
+        android:layout_below="@+id/d"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="fitXY"
+       />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp">
+        android:layout_below="@+id/top"
+        android:layout_margin="25dp"
+        android:id="@+id/c"
+        >
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="15dp"
             android:textColor="@color/black"
             android:text="@string/comment"
             android:layout_marginRight="8dp"/>
@@ -56,6 +76,7 @@
         <TextView
             android:id="@+id/habitevent_comment"
             android:textColor="@color/black"
+            android:textSize="15dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -63,8 +84,12 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:id="@+id/d"
+        android:layout_marginLeft="25dp"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp">
+        android:layout_below="@+id/c"
+        android:layout_marginBottom="15dp"
+        >
 
         <TextView
             android:layout_width="wrap_content"
@@ -80,9 +105,9 @@
             android:layout_height="wrap_content" />
 
     </LinearLayout>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="10dp"
-        android:background="@color/iron"
-        />
-</LinearLayout>
+
+
+
+
+
+</RelativeLayout>

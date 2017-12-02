@@ -100,12 +100,18 @@
             android:textColor="@color/black"
             android:text="Optional Photo:" />
 
-        <ImageView
-            android:id="@+id/imageId"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_weight="0.46" />
+
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageId"
+        android:scaleType="fitXY"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
+        android:src="@drawable/ic_image"
+        android:layout_height="200dp"
+        />
 
     <LinearLayout
         android:id="@+id/habit_event_add_photo_layout"

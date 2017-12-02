@@ -67,28 +67,37 @@
             android:layout_marginLeft="20dp"
             android:text="@string/habit_events_type"
             android:textColor="@color/black"
-
+            android:textStyle="bold"
             android:textSize="16sp"
             android:layout_marginRight="8dp"
-            android:background="@color/white"/>
+            />
 
         <Spinner
             android:id="@+id/habithistory_filter"
             android:layout_width="match_parent"
-
+            android:textColor="@color/black"
             android:layout_height="wrap_content"
             android:entries="@array/habithistory_filter_list"
             android:spinnerMode="dropdown"
-            android:background="@color/white"/>
+          />
 
     </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:id="@+id/gap2"
+        android:layout_below="@+id/habit_events_type_layout"
+        android:background="@color/iron"
+        />
+
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/habitevents_recyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_above="@+id/btm3"
-        android:layout_below="@+id/habit_events_type_layout"
+        android:layout_below="@+id/gap2"
 
         android:layout_weight="63"/>
 
