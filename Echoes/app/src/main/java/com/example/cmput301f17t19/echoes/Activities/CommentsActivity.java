@@ -56,10 +56,6 @@ public class CommentsActivity extends AppCompatActivity {
 
     private static UserProfile login_UserProfile;
 
-    private de.hdodenhof.circleimageview.CircleImageView profile_ImageButton;
-
-    //private Button sendComment_Button;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -87,6 +83,8 @@ public class CommentsActivity extends AppCompatActivity {
             login_UserName = intent.getStringExtra(LoginActivity.LOGIN_USERNAME);
         }
 
+        login_UserProfile = OfflineStorageController.getLogin_UserProfile(this, login_UserName);
+
         if (intent.getStringExtra(USERHABITKUDOSCOMMENTS_FollowingUsername) != null &&
                 intent.getStringExtra(USERHABITKUDOSCOMMENTS_FollowingHabitTitle) != null) {
             userHabitKudosComments_FollowingUsername = intent.getStringExtra(USERHABITKUDOSCOMMENTS_FollowingUsername);
@@ -112,63 +110,7 @@ public class CommentsActivity extends AppCompatActivity {
         loginUsername_TextView = (TextView) findViewById(R.id.sendingComment_Username);
         loginUsername_TextView.setText(login_UserName);
 
-
-
-
-
-
-
-        /*
-
-        setLogin_UserProfile(login_UserName);
-
-        profile_ImageButton = findViewById(R.id.profile_photo_3);
-
-        // Set User Profile Photo, Username, UserBioComment, Email, PhoneNumber, Num of Followers and Following
-        if (login_UserProfile.getProfilePicture() != null){
-            profile_ImageButton.setImageBitmap(BitmapFactory.decodeByteArray(login_UserProfile.getProfilePicture(), 0, login_UserProfile.getProfilePicture().length));
-        }
-
-        */
-
-
-
-
-
         loginUserComment_EditText = (EditText) findViewById(R.id.sendingComment_Content);
-
-        //sendComment_Button = (Button) findViewById(R.id.sendingComment_Button);
-
-        /*
-        sendComment_Button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Send the comment if edit text not empty
-                String comment = loginUserComment_EditText.getText().toString().trim();
-
-                if (!comment.equals("")) {
-                    // Add the login username and the comment to mUserHabitKudosComments's comment_username list and comment_content list
-                    if (mUserHabitKudosComments != null) {
-                        mUserHabitKudosComments.addUsernameComments(login_UserName);
-                        mUserHabitKudosComments.addCommentContent(comment);
-
-                        // Update the list
-                        commentAdapter.notifyDataSetChanged();
-
-                        // Update online data
-                        ElasticSearchController.UpdateUserHabitKudosCommentsTask updateUserHabitKudosCommentsTask = new ElasticSearchController.UpdateUserHabitKudosCommentsTask();
-                        updateUserHabitKudosCommentsTask.execute(mUserHabitKudosComments);
-
-                        // Clear edit text
-                        loginUserComment_EditText.setText("");
-
-                    } else {
-                        Log.d("Test", "Send Comment Error");
-                    }
-                }
-            }
-        });
-        */
 
         loginUserComment_EditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
@@ -207,11 +149,6 @@ public class CommentsActivity extends AppCompatActivity {
                 return handled;
             }
         });
-
-
-
-
-
     }
 
     protected void onStart() {
@@ -235,23 +172,6 @@ public class CommentsActivity extends AppCompatActivity {
     public static UserHabitKudosComments getmUserHabitKudosComments() {
         return mUserHabitKudosComments;
     }
-
-
-
-
-
-    private void setLogin_UserProfile(String login_Username) {
-
-        OfflineStorageController offlineStorageController = new OfflineStorageController(this, login_Username);
-
-        // Get the Offline Storage file of this user
-        login_UserProfile = offlineStorageController.readFromFile();
-
-        // Sync the offline file with online data storage
-        ElasticSearchController.syncOnlineWithOffline(login_UserProfile);
-    }
-
-
 
     public void hideKeyboard(Activity activity) {
         InputMethodManager imm = (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
