@@ -301,6 +301,7 @@ public class HabitHistoryActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent map_intent = new Intent(mContext, MapsActivity.class);
+                map_intent.putExtra(LoginActivity.LOGIN_USERNAME, login_Username);
                 map_intent.putParcelableArrayListExtra(MapsActivity.HABIT_EVENT_SHOW_LOCATION_TAG, mTypeHabitEventList.getHabitEvents());
 
                 startActivity(map_intent);

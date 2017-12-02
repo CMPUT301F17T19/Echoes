@@ -299,6 +299,7 @@ public class HabitsFollowingActivity extends AppCompatActivity {
 
                 // Send my followings most recent habit events of each habit to map intent
                 Intent map_intent = new Intent(mActivity, MapsActivity.class);
+                map_intent.putExtra(LoginActivity.LOGIN_USERNAME, login_UserName);
                 map_intent.putParcelableArrayListExtra(MapsActivity.HABIT_EVENT_SHOW_LOCATION_TAG, recentFollowingHabitEvents);
 
                 startActivity(map_intent);
