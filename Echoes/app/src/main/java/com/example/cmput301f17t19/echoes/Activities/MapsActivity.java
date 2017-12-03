@@ -62,6 +62,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     LatLngBounds.Builder boundsbuilder;
 
+    boolean isPointIncluded;
+
     private CheckBox highlight_CheckBox;
 
     private Context mContext;
@@ -91,6 +93,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         if (intent.getStringExtra(LoginActivity.LOGIN_USERNAME) != null) {
             login_userName = intent.getStringExtra(LoginActivity.LOGIN_USERNAME);
         }
+
+        isPointIncluded = false;
 
 
 
@@ -284,6 +288,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                                 boundsbuilder.include(new LatLng(location.getLatitude(), location.getLongitude()));
 
+                                isPointIncluded = true;
+
                             } else {
                                 Log.d("Map", "Current Location not available.");
                             }
@@ -299,6 +305,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             if (habitEvent.getLocation() != null) {
                 LatLng latLng = new LatLng(habitEvent.getLocation().getLatitude(), habitEvent.getLocation().getLongitude());
                 boundsbuilder.include(latLng);
+
+                isPointIncluded = true;
 
                 // Add Marker
                 Marker marker = mMap.addMarker(new MarkerOptions()
@@ -402,7 +410,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapLoaded() {
         if (mMap != null) {
-            if (boundsbuilder != null) {
+            if (boundsbuilder != null && isPointIncluded) {
                 LatLngBounds bounds = boundsbuilder.build();
 
                 mMap.animateCamera(CameraUpdateFactory.newLatLngBounds(bounds, 20));
