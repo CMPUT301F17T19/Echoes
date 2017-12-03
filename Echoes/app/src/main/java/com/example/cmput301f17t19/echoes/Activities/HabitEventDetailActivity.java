@@ -15,6 +15,7 @@ import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -173,6 +174,17 @@ public class HabitEventDetailActivity extends AppCompatActivity {
 
         // Set the Spinner
         spinnerTypes = getUserHabitTypes();
+
+
+        this.setTitle("Habit Event Detail");
+
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionBar(myToolbar);
+
+
+        myToolbar.setTitleTextColor(getResources().getColor(R.color.white));
+
+
 
         ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(
                 this, android.R.layout.simple_spinner_item, spinnerTypes);

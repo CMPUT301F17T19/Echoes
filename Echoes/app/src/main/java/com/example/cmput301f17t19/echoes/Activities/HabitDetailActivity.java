@@ -100,6 +100,10 @@ public class HabitDetailActivity extends AppCompatActivity {
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
 
+        myToolbar.setTitleTextColor(getResources().getColor(R.color.white));
+
+
+
         sunday_CheckBox = (CheckBox) findViewById(R.id.sunday_checkbox);
         monday_CheckBox = (CheckBox) findViewById(R.id.monday_checkBox);
         tuesday_CheckBox = (CheckBox) findViewById(R.id.tuesday_checkBox);

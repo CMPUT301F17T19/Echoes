@@ -59,8 +59,13 @@ public class SearchedUserActivity extends AppCompatActivity {
         setContentView(R.layout.activity_searched_user);
         this.setTitle(R.string.searched_user);
 
+
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
+
+
+        myToolbar.setTitleTextColor(getResources().getColor(R.color.white));
+
 
         mActivity = this;
 
