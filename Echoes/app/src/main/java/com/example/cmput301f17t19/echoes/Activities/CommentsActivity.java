@@ -145,6 +145,8 @@ public class CommentsActivity extends AppCompatActivity {
                             // Clear edit text
                             loginUserComment_EditText.setText("");
 
+                            hideKeyboard(CommentsActivity.this);
+
                         } else {
                             Log.d("Test", "Send Comment Error");
                         }

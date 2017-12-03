@@ -303,6 +303,7 @@ public class HabitsFollowingActivity extends AppCompatActivity {
                 map_intent.putParcelableArrayListExtra(MapsActivity.HABIT_EVENT_SHOW_LOCATION_TAG, recentFollowingHabitEvents);
 
                 startActivity(map_intent);
+                finish();
             }
         });
 
@@ -345,6 +346,8 @@ public class HabitsFollowingActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+
+        HabitHistoryActivity.hideKeyboard(HabitsFollowingActivity.this);
 
         login_userProfile = OfflineStorageController.getLogin_UserProfile(this, login_UserName);
 

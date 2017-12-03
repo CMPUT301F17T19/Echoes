@@ -305,6 +305,7 @@ public class HabitHistoryActivity extends AppCompatActivity {
                 map_intent.putParcelableArrayListExtra(MapsActivity.HABIT_EVENT_SHOW_LOCATION_TAG, mTypeHabitEventList.getHabitEvents());
 
                 startActivity(map_intent);
+                finish();
             }
         });
 
