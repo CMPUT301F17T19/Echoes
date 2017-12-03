@@ -205,7 +205,7 @@ public class HabitEventDetailActivity extends AppCompatActivity {
                     @Override
                     public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
                         //Set the date textview with the date selected
-                        date_TextView.setText(year + "-" + ++monthOfYear + "-" + dayOfMonth);
+                        date_TextView.setText(String.format(Locale.getDefault(), "%04d", year) + "-" + String.format(Locale.getDefault(), "%02d", ++monthOfYear) + "-" + String.format(Locale.getDefault(), "%02d", dayOfMonth));
                     }
                 };
 
@@ -378,7 +378,6 @@ public class HabitEventDetailActivity extends AppCompatActivity {
         } else {
             // The user enter this page from to do list
             isNewHabitEvent = true;
-            //TODO
             // Get the position of the selected Habit Type in the To do list
             todo_selected_pos = intent.getIntExtra(ToDoListAdapter.TODO_Pos_TAG, -1);
             // Set the Habit Event's Habit Type and Date
