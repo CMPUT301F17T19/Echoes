@@ -26,6 +26,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.cmput301f17t19.echoes.Adapters.CommentAdapter;
+import com.example.cmput301f17t19.echoes.Controllers.CommentThread;
 import com.example.cmput301f17t19.echoes.Controllers.ElasticSearchController;
 import com.example.cmput301f17t19.echoes.Controllers.FollowingSharingController;
 import com.example.cmput301f17t19.echoes.Controllers.OfflineStorageController;
@@ -56,6 +57,8 @@ public class CommentsActivity extends AppCompatActivity {
 
 
     private static UserProfile login_UserProfile;
+
+    private CommentThread commentThread;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,6 +103,8 @@ public class CommentsActivity extends AppCompatActivity {
 
         if (userHabitKudosComments_FollowingUsername != null && userHabitKudosComments_FollowingHabitTitle != null) {
             mUserHabitKudosComments = FollowingSharingController.getUserHabitKudosComments(userHabitKudosComments_FollowingUsername, userHabitKudosComments_FollowingHabitTitle);
+
+            commentThread = new CommentThread(userHabitKudosComments_FollowingUsername, userHabitKudosComments_FollowingHabitTitle);
         }
 
         // Set up recycler view
@@ -173,6 +178,17 @@ public class CommentsActivity extends AppCompatActivity {
         } else {
             ((LinearLayout) findViewById(R.id.comments_Layout)).setVisibility(View.GONE);
         }
+
+        try {
+            while(commentThread.isAlive()) {
+                System.out.println("Main thread will be alive till the child thread is live");
+                Thread.sleep(1500);
+            }
+        }
+        catch(InterruptedException e) {
+            System.out.println("Main thread interrupted");
+        }
+        System.out.println("Main thread's run is over" );
     }
 
     /**
@@ -180,6 +196,19 @@ public class CommentsActivity extends AppCompatActivity {
      */
     public static UserHabitKudosComments getmUserHabitKudosComments() {
         return mUserHabitKudosComments;
+    }
+
+    /**
+     * Set the UserHabitKudosComments
+     */
+    public static void setUserHabitKudosComments(UserHabitKudosComments userHabitKudosComments) {
+        mUserHabitKudosComments = userHabitKudosComments;
+        // Update the list
+        commentAdapter.notifyDataSetChanged();
+
+        // Update online data
+        ElasticSearchController.UpdateUserHabitKudosCommentsTask updateUserHabitKudosCommentsTask = new ElasticSearchController.UpdateUserHabitKudosCommentsTask();
+        updateUserHabitKudosCommentsTask.execute(mUserHabitKudosComments);
     }
 
     public void hideKeyboard(Activity activity) {
