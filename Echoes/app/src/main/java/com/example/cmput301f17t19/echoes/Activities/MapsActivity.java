@@ -32,6 +32,9 @@ import com.example.cmput301f17t19.echoes.Models.HabitEvent;
 import com.example.cmput301f17t19.echoes.R;
 import com.example.cmput301f17t19.echoes.Utils.LocationUtil;
 import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationCallback;
+import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -59,6 +62,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     // My current location marker
     private Marker myCurrentLocationMarker;
     FusedLocationProviderClient mFusedLocationClient;
+
+    private LocationCallback mLocationCallback;
 
     LatLngBounds.Builder boundsbuilder;
 
@@ -206,6 +211,19 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         location_Markers = new ArrayList<Marker>();
 
+        mLocationCallback = new LocationCallback() {
+            @Override
+            public void onLocationResult(LocationResult locationResult) {
+                for (Location location : locationResult.getLocations()) {
+                    // Set my current location marker
+                    myCurrentLocationMarker = mMap.addMarker(new MarkerOptions()
+                            .position(new LatLng(location.getLatitude(), location.getLongitude()))
+                            .anchor(0.5f, 0.5f)
+                            .title("My Current Location"));
+                }
+            };
+        };
+
 
         if (intent.getParcelableArrayListExtra(HABIT_EVENT_SHOW_LOCATION_TAG) != null) {
             shown_HabitEvents = intent.getParcelableArrayListExtra(HABIT_EVENT_SHOW_LOCATION_TAG);
@@ -286,6 +304,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                                         .anchor(0.5f, 0.5f)
                                         .title("My Current Location"));
 
+                                Log.d("Lon", Double.toString(location.getLongitude()));
+                                Log.d("Lat", Double.toString(location.getLatitude()));
+
                                 boundsbuilder.include(new LatLng(location.getLatitude(), location.getLongitude()));
 
                                 isPointIncluded = true;
@@ -295,6 +316,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                             }
                         }
                     });
+
+            mFusedLocationClient.requestLocationUpdates(new LocationRequest(), mLocationCallback, null);
+
 
         } else {
             Toast.makeText(this, "Access Location Permission Denied. Please allow location accession.", Toast.LENGTH_LONG).show();
@@ -351,6 +375,28 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 return info;
             }
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        boolean isLocPermissionAllowed = LocationUtil.checkLocationPermission(this);
+
+        // Set current location as default
+        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
+
+        if (isLocPermissionAllowed) {
+            if (mLocationCallback !=null) {
+                mFusedLocationClient.requestLocationUpdates(new LocationRequest(), mLocationCallback, null);
+            }
+        }
+    }
+
+
+    @Override
+    protected void onPause(){
+        super.onPause();
+        mFusedLocationClient.removeLocationUpdates(mLocationCallback);
     }
 
     /**
