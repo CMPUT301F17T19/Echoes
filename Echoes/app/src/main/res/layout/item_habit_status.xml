@@ -47,14 +47,14 @@
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         layout="@layout/item_habit_overview"
-        android:layout_margin="4dp"/>
+      />
 
     <include
         android:id="@+id/followingHabitMostRecentEvent_layout"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         layout="@layout/item_habitevent_overview"
-        android:layout_margin="4dp"/>
+       />
 
     <TextView
         android:id="@+id/no_mostRecentEvent"
