@@ -62,7 +62,7 @@ public class SearchedUserActivityTest extends ActivityInstrumentationTestCase2 {
         solo.enterText(searchuser_EditText, "dummy3");
 
         // Click on search button
-        solo.clickOnView(solo.getView(R.id.search_user_button));
+        solo.sendKey(Solo.ENTER);
 
         solo.waitForActivity(SearchedUserActivity.class, 2000);
 //        solo.assertCurrentActivity("Wrong Activity", SearchedUserActivity.class);

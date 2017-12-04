@@ -15,7 +15,6 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentActivity;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -304,15 +303,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                                         .anchor(0.5f, 0.5f)
                                         .title("My Current Location"));
 
-                                Log.d("Lon", Double.toString(location.getLongitude()));
-                                Log.d("Lat", Double.toString(location.getLatitude()));
-
                                 boundsbuilder.include(new LatLng(location.getLatitude(), location.getLongitude()));
 
                                 isPointIncluded = true;
 
                             } else {
-                                Log.d("Map", "Current Location not available.");
+                                Toast.makeText(mContext, "Please set location in your Settings to High Accuracy", Toast.LENGTH_LONG).show();
                             }
                         }
                     });

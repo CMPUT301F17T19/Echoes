@@ -60,6 +60,7 @@ public class HabitEventDetailActivityTest extends ActivityInstrumentationTestCas
         solo.clickOnView(solo.getView(R.id.history));
         solo.assertCurrentActivity("Wrong Activity", HabitHistoryActivity.class);
 
+        solo.clickOnView(solo.getView(R.id.tools));
         // Click on 'ADD HABIT Event' button
         solo.clickOnView(solo.getView(R.id.habitevents_add_button));
 

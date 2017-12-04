@@ -889,7 +889,9 @@ public class ToDoActivity extends AppCompatActivity {
 
         setLogin_UserProfile(login_userName);
 
-        profile_ImageButton.setImageBitmap(BitmapFactory.decodeByteArray(login_UserProfile.getProfilePicture(), 0, login_UserProfile.getProfilePicture().length));
+        if (login_UserProfile.getProfilePicture() != null && login_UserProfile.getProfilePicture().length != 0) {
+            profile_ImageButton.setImageBitmap(BitmapFactory.decodeByteArray(login_UserProfile.getProfilePicture(), 0, login_UserProfile.getProfilePicture().length));
+        }
     }
 
 
