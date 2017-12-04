@@ -207,11 +207,14 @@ public class FollowingSharingController {
 
         try {
             UserFollowingList userFollowingList = getUserFollowingListTask.get();
-            userFollowingList.getFollowings().add(new Following(loginUserProfile.getUserName()));
 
-            // Save online data storage
-            ElasticSearchController.UpdateUserFollowingListTask updateUserFollowingListTask = new ElasticSearchController.UpdateUserFollowingListTask();
-            updateUserFollowingListTask.execute(userFollowingList);
+            if (userFollowingList != null) {
+                userFollowingList.getFollowings().add(new Following(loginUserProfile.getUserName()));
+
+                // Save online data storage
+                ElasticSearchController.UpdateUserFollowingListTask updateUserFollowingListTask = new ElasticSearchController.UpdateUserFollowingListTask();
+                updateUserFollowingListTask.execute(userFollowingList);
+            }
 
         } catch (InterruptedException e) {
             e.printStackTrace();
