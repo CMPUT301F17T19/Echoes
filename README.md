@@ -1,6 +1,8 @@
 # Echoes
 Project for CMPUT 301 Fall 2017
 
+The Echoes is a simple, attractive, and easy-to-use app that assists users in forming Good habits. This app allows users to track, encourage, and share their habits as well as share their habit event locations.
+
 ## Team Members
 	Hayden Bauder
 	Mitchell Ballou
