@@ -2,50 +2,43 @@
 Project for CMPUT 301 Fall 2017
 
 ## Team Members
+	Hayden Bauder
+	Mitchell Ballou
+	Shan Lu
+	Taijie Yang
+	Xinrui Lu
+	Zhaozhen Liang
 
-
-
-
-
-### Sign up / Profile
-	Create a new account
-	Log in	
-	Look at my profile/overview
-
-### Habits / ToDo
-	Create a new Habit
-	Show it in the ToDo list
-	Create a habit that will not be in the todo list
-        Click the habit in the todo list to add a new habit event to habit history
-        Edit an existing habit
-        Delete a habit
-
-### Habit Event
-	Create a new Habit event
-        Edit a habit event
-        Delete a habit event
-        Search word in habit events' comment
-        Filter habit events with selected habit type
-        Apply search and filter together
-        Click show map in Habit History to just show the habit events with geolocation of the login user
-
-### Geolocation
-	Add a habit event to the map
-        Click the map from bottom navigation, show all habit events of the login user and the habit events of the followings of the login user on the map. Click the highlight checkbox, highlight the habit events that are within 5km of the current location.
-
-### Following
-	Sign into another profile
-	Follow the another user, the followed user should login to accept the following request.
-        The followed user should add several habits and corresponding habit events, and some of these habit events should have geolocations.
-        The user who has followings can see the followings habits and their most recent habit event for each following habit in Following. Clicking on the map button in Following, the habit events with geolocations followed by the user are displayed on the map, click on the highlight checkbox, locations that are more than 5km from the current location are displayed with more transparency.
-
-### WOW factor
-	Like the habit we made earlier
-        Comment on the habit of followings, this following logins and check the comment of the habit in My Habits.
-
-### Offline Behavior
-	Show offline sync
-
+### App Feature Specification
+	1. User can create a new account or log in to look at his/her profile.
+	2. User can create a new habit and add it to My Habits screen. The habit that the user created
+	has a habit title (20 chars max), a reason (30 chars max), a start date and a scheduled plan.
+	3. User can edit or delete the existing habits.
+	4. User can see the overview with a statistical and visual habit status indicator of each habit 
+	in My Habits.
+	5. User can see all habits that need to do today from To Do screen.
+	6. From To Do screen, user can click on the habit that need to to today to add a new habit event
+	of this selected habit to Habit History.
+	7. From Habit History, user can add a new habit evnet with the existing habit type, optional comment,
+	optional photo, and optional location.
+	8. User can edit or delete the existing habit events in Habit History.
+	9. User can see all overviews of habit events in Habit History.
+	10. User can filter habit events in Habit History with the given type of the habit and searched words 
+	in habit events' comment.
+	11. User can click map to show all habit events with locations on the map.
+	12. User can search other users and send a following request to follow all habits with their most recent 
+	habit events.
+	13. User can grant the following requests from other users in Message screen.
+	14. User can see all habits with most recent events from his/her followings in Following screen.
+	15. Click the map button in Following screen, user can just see the most recent habit events of his/her 
+	followings on the map.
+	16. User can give kudos to his/her habits and the habits of his/her followings.
+	17. User can leave comments to his/her habits and the habits of his/her followings.
+	18. User can click the map from bottom navigation to see all habit events of the login user and the habit 
+	events of the followings of the login user on the map. User can click the highlight checkbox to highlight the
+	habit events that are within 5km of the current location.
+	19. When the user is offline, user can also add/edit/delete habits and habit events, all changes made will be
+	synchronized with online data once the user gets connectivity.
 
 ### UI Feature Specification
 
