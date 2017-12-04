@@ -45,6 +45,7 @@ public class HabitsFollowingActivityTest extends ActivityInstrumentationTestCase
         //enter the usrname "dummy3"
         solo.enterText((EditText) solo.getView(R.id.username),"dummy3");
         solo.clickOnView(solo.getView(R.id.username_sign_in_button));
+        solo.waitForActivity(ToDoActivity.class, 2000);
         solo.assertCurrentActivity("Wrong Activity", ToDoActivity.class);
     }
 
